@@ -9,8 +9,9 @@ import {
     WORKSPACE_TITLE,
     type RoleKey,
 } from '../src/server/lib/domain'
+import { TERMINAL_STAGES } from '../src/server/lib/aging'
 import { TABLE_ACCESS } from '../src/server/lib/security'
-import { OUTPUT_FILES, ROLE_EXPORTS, renderAll, reportFields, validateCatalog, type OutputKey } from '../tools/generate-fluent-operations'
+import { choiceColumns, OUTPUT_FILES, ROLE_EXPORTS, renderAll, reportFields, validateCatalog, type OutputKey } from '../tools/generate-fluent-operations'
 import { declaredColumns } from '../tools/generate-fluent-ui'
 import {
     baseQuery,
@@ -25,6 +26,7 @@ import {
     SLA_CONDITIONS,
     SLA_DEFINITIONS,
     SLA_START_STAGE,
+    SLA_STOP_STAGES,
     STAGE_PARTITION,
     WORKSPACE_LIST_CATEGORIES,
     WORKSPACE_ROUTE,
@@ -68,9 +70,28 @@ describe('operations catalog partitions cover the domain choice sets', () => {
 
     it('control totals', () => {
         expect(Object.keys(CASE_STAGES)).toHaveLength(8)
-        expect(STAGE_PARTITION.buckets.open).toHaveLength(4)
-        expect(STAGE_PARTITION.buckets.terminal).toHaveLength(3)
+        expect(STAGE_PARTITION.buckets.in_work).toHaveLength(4)
+        expect(STAGE_PARTITION.buckets.shipped).toEqual(['shipped'])
+        expect(STAGE_PARTITION.buckets.terminal).toHaveLength(2)
         expect(Object.keys(PARTITIONS)).toHaveLength(5)
+    })
+
+    it('terminal stages are the domain definition (aging.ts), so shipped cases stay active and keep aging', () => {
+        expect(sorted(STAGE_PARTITION.buckets.terminal ?? [])).toEqual(sorted(TERMINAL_STAGES))
+        expect(STAGE_PARTITION.buckets.terminal).not.toContain('shipped')
+        // The lifecycle re-declares the terminal set in three server files that this workstream does
+        // not own; pin each literal to aging.ts so a change in any one of them fails here.
+        const literals: Record<string, RegExp> = {
+            '../src/server/lib/stageMachine.ts': /const CASE_TERMINAL: ReadonlySet<CaseStage> = new Set<CaseStage>\(\[([^\]]*)\]\)/,
+            '../src/server/rules/awardsCase.ts': /const TERMINAL: ReadonlySet<string> = new Set\(\[([^\]]*)\]\)/,
+            '../src/server/jobs/nightlyAging.ts': /addQuery\('stage', 'NOT IN', '([^']*)'\)/,
+        }
+        for (const [file, pattern] of Object.entries(literals)) {
+            const src = readFileSync(new URL(file, import.meta.url), 'utf8')
+            const literal = pattern.exec(src)?.[1]
+            expect(literal, file).toBeDefined()
+            expect(sorted((literal ?? '').split(',').map((s) => s.trim().replace(/'/g, ''))), file).toEqual(sorted(TERMINAL_STAGES))
+        }
     })
 })
 
@@ -86,11 +107,12 @@ describe('SLA definitions derive from the aging thresholds', () => {
         expect(SLA_DEFINITIONS).toHaveLength(2)
     })
 
-    it('start / pause / stop conditions follow the stage partition', () => {
-        expect(STAGE_PARTITION.buckets.open?.[0]).toBe(SLA_START_STAGE)
+    it('start / pause / stop conditions follow the stage partition; the clock stops at shipment and at the terminal stages', () => {
+        expect(STAGE_PARTITION.buckets.in_work?.[0]).toBe(SLA_START_STAGE)
         expect(SLA_CONDITIONS.start).toBe(`active=true^stage=${SLA_START_STAGE}`)
         expect(SLA_CONDITIONS.pause).toBe('on_hold=true')
-        expect(SLA_CONDITIONS.stop).toBe(`stageIN${STAGE_PARTITION.buckets.terminal?.join(',')}`)
+        expect(sorted(SLA_STOP_STAGES)).toEqual(sorted([...(STAGE_PARTITION.buckets.shipped ?? []), ...TERMINAL_STAGES]))
+        expect(SLA_CONDITIONS.stop).toBe(`stageIN${SLA_STOP_STAGES.join(',')}`)
         const declared = declaredColumns().awards_case
         for (const field of ['stage', 'on_hold', 'active']) expect(declared.has(field)).toBe(true)
     })
@@ -136,6 +158,18 @@ describe('operations reports', () => {
     it('reports span exactly the four operational tables', () => {
         expect(sorted(new Set(OPERATIONS_REPORTS.map((r) => r.table)))).toEqual(sorted(['awards_case', 'engraving_job', 'heraldry_request', 'migration_exception']))
     })
+
+    it('aging views use the aging job population (active cases, any stage) and say "days in stage"; nothing is published by default', () => {
+        for (const key of ['aging_red_cases', 'aging_amber_cases'] as const) {
+            const report = reportByKey(key)
+            expect(baseQuery(report.filter).split('^')).toEqual(['active=true', `aging_flag=${key === 'aging_red_cases' ? 'red' : 'amber'}`])
+            expect(report.title).toContain('days in stage')
+        }
+        expect(baseQuery(reportByKey('cases_by_stage').filter)).toBe('active=true')
+        const rendered = renderAll().reports
+        expect(rendered.match(/is_published: false/g)).toHaveLength(OPERATIONS_REPORTS.length)
+        expect(rendered).not.toContain('is_published: true')
+    })
 })
 
 describe('dashboard', () => {
@@ -150,6 +184,25 @@ describe('dashboard', () => {
         }
         expect(rendered).toContain(`name: '${WORKSPACE_TITLE}'`)
         expect(rendered).toContain(`title: '${WORKSPACE_TITLE}'`)
+    })
+
+    it('widget data wiring follows the SDK dashboard guide and keeps every report grouping (both dimensions of stacked reports)', () => {
+        const rendered = renderAll().workspace
+        const choice = choiceColumns()
+        expect(rendered.match(/component: 'single-score'/g)).toHaveLength(DASHBOARD_COUNTERS.length)
+        expect(rendered.match(/showZero: true/g)?.length).toBeGreaterThanOrEqual(DASHBOARD_COUNTERS.length)
+        expect(rendered).not.toMatch(/aggregate: 'COUNT'|\{ field: '/)
+        for (const chart of DASHBOARD_CHARTS) {
+            const report = reportByKey(chart.report)
+            if (chart.component === 'list-simple') continue
+            for (const field of [report.groupBy, report.stackBy].flatMap((f) => (f ? [f] : []))) {
+                expect(rendered).toContain(`groupByField: '${field}', isChoice: ${choice[report.table].has(field)}`)
+            }
+            if (report.stackBy) expect(chart.component).toBe('pivot-table')
+        }
+        const stacked = OPERATIONS_REPORTS.filter((r) => r.stackBy).map((r) => r.key)
+        expect(stacked).toEqual(['vendor_work_by_vendor'])
+        expect(rendered.match(/component: 'pivot-table'/g)).toHaveLength(stacked.length)
     })
 
     it('counter row fills the 48-column grid; control totals', () => {

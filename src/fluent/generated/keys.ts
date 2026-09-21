@@ -1223,6 +1223,10 @@ declare global {
                         table: 'par_dashboard_widget'
                         id: '9ddb2c34ea1e4c7f95e60d2e18f89bfc'
                     }
+                    ops_widget_count_active_cases: {
+                        table: 'par_dashboard_widget'
+                        id: 'e20259d02bac4505ada2bad28e00d64a'
+                    }
                     ops_widget_count_amber: {
                         table: 'par_dashboard_widget'
                         id: '1872c980a347435684adeed8b88cffcf'
@@ -1242,6 +1246,7 @@ declare global {
                     ops_widget_count_open_cases: {
                         table: 'par_dashboard_widget'
                         id: '89c8aba1205548a688a31086d1cdcd80'
+                        deleted: true
                     }
                     ops_widget_count_red: {
                         table: 'par_dashboard_widget'

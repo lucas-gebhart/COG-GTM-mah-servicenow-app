@@ -10,7 +10,7 @@
  * the Fluent parser rejects those constructs. Run `npx tsx tools/generate-fluent-operations.ts`
  * to regenerate, or `--check` to fail when the files on disk are stale.
  */
-import { readFileSync, writeFileSync } from 'node:fs'
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { TABLES, WORKSPACE_TITLE, type DomainTableKey, type RoleKey } from '../src/server/lib/domain'
 import { declaredColumns } from './generate-fluent-ui'
@@ -77,6 +77,20 @@ const reportExport = (key: string): string => `opsReport_${key}`
 const reportId = (key: string): string => `ops_report_${key}`
 const applicabilityExport = (table: DomainTableKey): string => `opsApplicability_${table}`
 
+const TABLES_DIR = fileURLToPath(new URL('../src/fluent/tables/', import.meta.url))
+
+/** Choice columns per table, parsed from the Fluent table files (drives `isChoice` on dashboard groupings). */
+export function choiceColumns(): Record<DomainTableKey, Set<string>> {
+    const out = {} as Record<DomainTableKey, Set<string>>
+    for (const file of readdirSync(TABLES_DIR)) {
+        if (!file.endsWith('.now.ts')) continue
+        const key = file.replace('.now.ts', '') as DomainTableKey
+        const src = readFileSync(TABLES_DIR + file, 'utf8')
+        out[key] = new Set([...src.matchAll(/^ {8}([a-z0-9_]+): ChoiceColumn\(/gm)].flatMap((m) => (m[1] === undefined ? [] : [m[1]])))
+    }
+    return out
+}
+
 export function reportColumns(report: OperationsReport): readonly string[] {
     if (report.type !== 'list') return []
     return report.columns ?? []
@@ -101,6 +115,7 @@ export function validateCatalog(): void {
             throw new Error(`list report ${report.key} has no columns`)
         }
         if (report.type !== 'list' && !report.groupBy) throw new Error(`chart report ${report.key} has no groupBy`)
+        if (report.stackBy && report.type !== 'bar') throw new Error(`report ${report.key}: stackBy is only valid on bar reports`)
         for (const field of reportFields(report)) {
             if (!declared[report.table].has(field)) throw new Error(`report ${report.key}: ${TABLES[report.table]}.${field} is not a declared column`)
         }
@@ -110,6 +125,8 @@ export function validateCatalog(): void {
         const report = reportByKey(chart.report)
         if (chart.component === 'list-simple' && report.type !== 'list') throw new Error(`chart ${chart.report}: list widget bound to a chart report`)
         if (chart.component !== 'list-simple' && report.type === 'list') throw new Error(`chart ${chart.report}: chart widget bound to a list report`)
+        if (chart.component === 'pivot-table' && !report.stackBy) throw new Error(`chart ${chart.report}: pivot-table needs a stackBy column`)
+        if (chart.component !== 'pivot-table' && report.stackBy) throw new Error(`chart ${chart.report}: stacked report must render as a pivot-table (second grouping would be dropped)`)
         if (chart.x + chart.width > 48) throw new Error(`chart ${chart.report} overflows the 48-column grid`)
     }
     for (const category of WORKSPACE_LIST_CATEGORIES) {
@@ -221,6 +238,23 @@ function widgetId(prefix: string, key: string): string {
     return `ops_widget_${prefix}_${key}`
 }
 
+// Widget componentProps follow the Platform Analytics data-wiring contract documented in
+// node_modules/@servicenow/sdk/docs/guides/dashboard-guide.md: a table data source with an id, metrics
+// bound to that id, and (for category charts) groupBy entries naming the data source and field.
+const DS = 'ds_1'
+
+function dataSourceLines(report: OperationsReport, extra = ''): string[] {
+    return [
+        `                        dataSources: [`,
+        `                            { sourceType: 'table', tableOrViewName: ${q(TABLES[report.table])}, filterQuery: ${q(baseQuery(report.filter))}, id: ${q(DS)}${extra} },`,
+        `                        ],`,
+    ]
+}
+
+function groupByEntry(field: string, isChoice: boolean, extra: string): string {
+    return `                            { groupBy: [{ dataSource: ${q(DS)}, groupByField: ${q(field)}, isChoice: ${isChoice} }], ${extra} },`
+}
+
 function renderCounterWidget(index: number, key: string, label: string, report: OperationsReport): string[] {
     const width = 48 / DASHBOARD_COUNTERS.length
     return [
@@ -228,15 +262,10 @@ function renderCounterWidget(index: number, key: string, label: string, report: 
         `                    $id: Now.ID[${q(widgetId('count', key))}],`,
         `                    component: 'single-score',`,
         `                    componentProps: {`,
-        `                        label: ${q(label)},`,
-        `                        dataSources: [`,
-        `                            {`,
-        `                                table: ${q(TABLES[report.table])},`,
-        `                                filterQuery: ${q(baseQuery(report.filter))},`,
-        `                                label: ${q(label)},`,
-        `                            },`,
-        `                        ],`,
-        `                        metrics: [{ aggregate: 'COUNT' }],`,
+        `                        headerTitle: ${q(label)},`,
+        `                        showZero: true,`,
+        ...dataSourceLines(report),
+        `                        metrics: [{ dataSource: ${q(DS)}, aggregateFunction: 'COUNT', axisId: 'primary' }],`,
         `                    },`,
         `                    width: ${width},`,
         `                    height: ${COUNTER_ROW_HEIGHT},`,
@@ -245,33 +274,54 @@ function renderCounterWidget(index: number, key: string, label: string, report: 
     ]
 }
 
-function renderChartWidget(chart: (typeof DASHBOARD_CHARTS)[number]): string[] {
+function renderChartWidget(chart: (typeof DASHBOARD_CHARTS)[number], choice: Record<DomainTableKey, Set<string>>): string[] {
     const report = reportByKey(chart.report)
+    const isChoice = (field: string): boolean => choice[report.table].has(field)
     const lines = [
         `                {`,
         `                    $id: Now.ID[${q(widgetId('chart', chart.report))}],`,
         `                    component: ${q(chart.component)},`,
         `                    componentProps: {`,
-        `                        label: ${q(report.title)},`,
     ]
     if (chart.component === 'list-simple') {
         lines.push(
+            `                        listTitle: ${q(report.title)},`,
             `                        table: ${q(TABLES[report.table])},`,
             `                        query: ${q(report.filter)},`,
+            `                        fixedQuery: '',`,
             `                        columns: ${q(reportColumns(report).join(','))},`,
             `                        limit: ${chart.limit ?? 15},`,
+            `                        showBorder: true,`,
+        )
+    } else if (chart.component === 'pivot-table') {
+        const groupBy = report.groupBy ?? ''
+        const stackBy = report.stackBy ?? ''
+        lines.push(
+            `                        headerTitle: ${q(report.title)},`,
+            `                        newReporting: true,`,
+            `                        dataCategory: 'group',`,
+            `                        showZero: true,`,
+            `                        showFirstGroupAggregate: true,`,
+            `                        showSecondGroupAggregate: true,`,
+            `                        showTotalAggregate: true,`,
+            ...dataSourceLines(report, `, dataCategories: ['trend', 'group', 'simple']`),
+            `                        groupBy: [`,
+            groupByEntry(groupBy, isChoice(groupBy), `categoryIndex: 0, maxNumberOfGroups: 'ALL', numberOfGroupsBasedOn: 'NO_OF_GROUP_BASED_ON_PER_METRIC'`),
+            groupByEntry(stackBy, isChoice(stackBy), `categoryIndex: 1, maxNumberOfGroups: 'ALL', numberOfGroupsBasedOn: 'NO_OF_GROUP_BASED_ON_PER_METRIC'`),
+            `                        ],`,
+            `                        metrics: [{ dataSource: ${q(DS)}, aggregateFunction: 'COUNT', axisId: 'primary', id: 'metric_1', numberFormat: { customFormat: false } }],`,
         )
     } else {
+        const groupBy = report.groupBy ?? ''
         lines.push(
-            `                        dataSources: [`,
-            `                            {`,
-            `                                table: ${q(TABLES[report.table])},`,
-            `                                filterQuery: ${q(baseQuery(report.filter))},`,
-            `                                label: ${q(report.title)},`,
-            `                            },`,
+            `                        headerTitle: ${q(report.title)},`,
+            `                        showDataLabels: true,`,
+            `                        showLegend: ${chart.component === 'donut'},`,
+            ...dataSourceLines(report),
+            `                        groupBy: [`,
+            groupByEntry(groupBy, isChoice(groupBy), `maxNumberOfGroups: 'ALL', sortBy: 'value', sortByOrder: 'desc'`),
             `                        ],`,
-            `                        metrics: [{ aggregate: 'COUNT' }],`,
-            `                        groupBy: [{ field: ${q(report.groupBy ?? '')} }],`,
+            `                        metrics: [{ dataSource: ${q(DS)}, aggregateFunction: 'COUNT', axisId: 'primary' }],`,
         )
     }
     lines.push(
@@ -384,7 +434,8 @@ export function renderWorkspace(): string {
     DASHBOARD_COUNTERS.forEach((counter, i) => {
         lines.push(...renderCounterWidget(i, counter.key, counter.label, reportByKey(counter.report)))
     })
-    for (const chart of DASHBOARD_CHARTS) lines.push(...renderChartWidget(chart))
+    const choice = choiceColumns()
+    for (const chart of DASHBOARD_CHARTS) lines.push(...renderChartWidget(chart, choice))
     lines.push(
         `            ],`,
         `        },`,

@@ -26,6 +26,7 @@ import {
     type RequestState,
     type RoleKey,
 } from '../../src/server/lib/domain'
+import { TERMINAL_STAGES as DOMAIN_TERMINAL_STAGES } from '../../src/server/lib/aging'
 import { TABLE_ACCESS } from '../../src/server/lib/security'
 import { UI_LAYOUT } from '../../src/server/lib/uiLayout'
 
@@ -50,11 +51,18 @@ export interface Partition<K extends string> {
     readonly buckets: Readonly<Record<string, readonly K[]>>
 }
 
+/**
+ * Case stages. `terminal` is the domain's own definition (src/server/lib/aging.ts): only closed and
+ * cancelled cases have `active=false`, stop aging and stop the SLA clocks by default. `shipped` is a
+ * distinct bucket because a shipped case is still active and still ages until it is closed, while the
+ * 60/75-day awards target (and therefore the SLA stop condition) ends at shipment.
+ */
 export const STAGE_PARTITION: Partition<CaseStage> = {
     choices: CASE_STAGES,
     buckets: {
-        open: ['authorized', 'engraving', 'assembly_qc', 'warehouse'],
-        terminal: ['shipped', 'closed', 'cancelled'],
+        in_work: ['authorized', 'engraving', 'assembly_qc', 'warehouse'],
+        shipped: ['shipped'],
+        terminal: [...DOMAIN_TERMINAL_STAGES],
         exception: ['unmapped'],
     },
 }
@@ -134,15 +142,19 @@ export function queryFields(filter: string): string[] {
     return fields
 }
 
-const OPEN_STAGES = bucket(STAGE_PARTITION, 'open')
-const TERMINAL_STAGES = bucket(STAGE_PARTITION, 'terminal')
 const OPEN_ENGRAVING = bucket(ENGRAVING_PARTITION, 'open')
 const VENDOR_STATES = bucket(REQUEST_PARTITION, 'vendor')
 const OPEN_EXCEPTIONS = bucket(EXCEPTION_STATE_PARTITION, 'open')
 const UNMAPPED_EXCEPTION_TYPES = bucket(EXCEPTION_TYPE_PARTITION, 'unmapped_status')
 
-const openCases = `active=true^${inQuery('stage', OPEN_STAGES)}`
-const agingFlag = (flag: AgingFlag): string => `${openCases}^aging_flag=${flag}`
+/**
+ * Active awards cases: `active` is maintained by the awards-case before rule and is false exactly for
+ * the terminal stages, so this matches the population the nightly aging job scores (every non-terminal
+ * stage, shipped and unmapped included) and the filters used by the existing application menu.
+ */
+const activeCases = 'active=true'
+const agingFlag = (flag: AgingFlag): string => `${activeCases}^aging_flag=${flag}`
+const inStage = (flag: AgingFlag, days: string): string => `${AGING_FLAGS[flag]} (${days} days in stage)`
 
 // ------------------------------------------------------------------ SLA definitions
 
@@ -156,14 +168,21 @@ export interface SlaDefinition {
 
 const slaName = (flag: AgingFlag, days: number): string => `MAH awards case — ${AGING_FLAGS[flag].toLowerCase()} (${days}d)`
 
-/** Stage whose entry starts the awards-case SLA timers (the first open stage). */
+/** Stage whose entry starts the awards-case SLA timers (the first in-work stage). */
 export const SLA_START_STAGE: CaseStage = 'authorized'
 
-/** Awards-case SLA conditions; the timer follows the same stage semantics as the nightly aging job. */
+/** The awards target ends at shipment, so the SLA stops on shipped as well as on the domain's terminal stages. */
+export const SLA_STOP_STAGES: readonly CaseStage[] = [...bucket(STAGE_PARTITION, 'shipped'), ...bucket(STAGE_PARTITION, 'terminal')]
+
+/**
+ * Awards-case SLA conditions. The SLA clock runs once, from authorization to shipment (pausing on hold);
+ * the nightly aging job's `days_in_stage` / `aging_flag` restart at every stage change, so the two
+ * clocks share thresholds but measure different things (docs/SLA.md).
+ */
 export const SLA_CONDITIONS = {
     start: `active=true^stage=${SLA_START_STAGE}`,
     pause: 'on_hold=true',
-    stop: inQuery('stage', TERMINAL_STAGES),
+    stop: inQuery('stage', SLA_STOP_STAGES),
 } as const
 
 export const SLA_DEFINITIONS: readonly SlaDefinition[] = [
@@ -172,14 +191,14 @@ export const SLA_DEFINITIONS: readonly SlaDefinition[] = [
         flag: 'amber',
         days: AGING_THRESHOLDS.amberDays,
         name: slaName('amber', AGING_THRESHOLDS.amberDays),
-        description: `Wall-clock ${AGING_THRESHOLDS.amberDays}-day target from authorization to shipment; mirrors the ${AGING_FLAGS.amber} aging flag set by the nightly aging job.`,
+        description: `Wall-clock ${AGING_THRESHOLDS.amberDays}-day target from authorization to shipment, paused while on hold. Same threshold as the ${AGING_FLAGS.amber} aging flag, which measures days in the current stage instead.`,
     },
     {
         key: 'awards_case_red',
         flag: 'red',
         days: AGING_THRESHOLDS.redDays,
         name: slaName('red', AGING_THRESHOLDS.redDays),
-        description: `Wall-clock ${AGING_THRESHOLDS.redDays}-day breach threshold from authorization to shipment; mirrors the ${AGING_FLAGS.red} aging flag set by the nightly aging job.`,
+        description: `Wall-clock ${AGING_THRESHOLDS.redDays}-day breach threshold from authorization to shipment, paused while on hold. Same threshold as the ${AGING_FLAGS.red} aging flag, which measures days in the current stage instead.`,
     },
 ]
 
@@ -197,7 +216,7 @@ export interface OperationsReport {
     readonly filter: string
     /** Group-by column (charts). */
     readonly groupBy?: string
-    /** Stack-by column (bar charts). */
+    /** Second grouping column (stacked bar report; pivot columns on the dashboard). */
     readonly stackBy?: string
     /** Columns shown (lists); defaults to the table's list layout. */
     readonly columns?: readonly string[]
@@ -208,26 +227,26 @@ const cols = (table: DomainTableKey): readonly string[] => UI_LAYOUT[table].list
 export const OPERATIONS_REPORTS: readonly OperationsReport[] = [
     {
         key: 'cases_by_stage',
-        title: 'Open awards cases by stage',
-        description: 'Count of open awards cases in each fulfilment stage (authorization through warehouse).',
+        title: 'Active awards cases by stage',
+        description: 'Count of active (not closed or cancelled) awards cases in each stage, authorization through shipped plus unmapped.',
         table: 'awards_case',
         type: 'bar',
-        filter: openCases,
+        filter: activeCases,
         groupBy: 'stage',
     },
     {
         key: 'aging_distribution',
-        title: 'Open awards cases by aging flag',
-        description: `Green / ${AGING_FLAGS.amber} (${AGING_THRESHOLDS.amberDays}d) / ${AGING_FLAGS.red} (${AGING_THRESHOLDS.redDays}d) distribution of open awards cases.`,
+        title: 'Active awards cases by aging flag',
+        description: `Green / ${AGING_FLAGS.amber} (${AGING_THRESHOLDS.amberDays}+ days in stage) / ${AGING_FLAGS.red} (${AGING_THRESHOLDS.redDays}+ days in stage) distribution of active awards cases, as scored by the nightly aging job.`,
         table: 'awards_case',
         type: 'donut',
-        filter: openCases,
+        filter: activeCases,
         groupBy: 'aging_flag',
     },
     {
         key: 'aging_red_cases',
-        title: `Aging — ${AGING_FLAGS.red.toLowerCase()} (${AGING_THRESHOLDS.redDays}+ days)`,
-        description: `Open awards cases past the ${AGING_THRESHOLDS.redDays}-day red threshold, oldest first.`,
+        title: `Aging — ${inStage('red', `${AGING_THRESHOLDS.redDays}+`).toLowerCase()}`,
+        description: `Active awards cases whose current stage has lasted ${AGING_THRESHOLDS.redDays}+ days (aging flag red), longest first. Days in stage restart at every stage change; the authorization-to-shipment clock is the SLA.`,
         table: 'awards_case',
         type: 'list',
         filter: `${agingFlag('red')}^ORDERBYDESCdays_in_stage`,
@@ -235,8 +254,8 @@ export const OPERATIONS_REPORTS: readonly OperationsReport[] = [
     },
     {
         key: 'aging_amber_cases',
-        title: `Aging — ${AGING_FLAGS.amber.toLowerCase()} (${AGING_THRESHOLDS.amberDays}–${AGING_THRESHOLDS.redDays - 1} days)`,
-        description: `Open awards cases between the ${AGING_THRESHOLDS.amberDays}-day amber and ${AGING_THRESHOLDS.redDays}-day red thresholds, oldest first.`,
+        title: `Aging — ${inStage('amber', `${AGING_THRESHOLDS.amberDays}–${AGING_THRESHOLDS.redDays - 1}`).toLowerCase()}`,
+        description: `Active awards cases whose current stage has lasted ${AGING_THRESHOLDS.amberDays}–${AGING_THRESHOLDS.redDays - 1} days (aging flag amber), longest first. Days in stage restart at every stage change; the authorization-to-shipment clock is the SLA.`,
         table: 'awards_case',
         type: 'list',
         filter: `${agingFlag('amber')}^ORDERBYDESCdays_in_stage`,
@@ -245,10 +264,10 @@ export const OPERATIONS_REPORTS: readonly OperationsReport[] = [
     {
         key: 'cases_on_hold',
         title: 'Awards cases on hold',
-        description: 'Open awards cases with the on-hold flag set (SLA timers paused), oldest first.',
+        description: 'Active awards cases with the on-hold flag set (SLA clocks paused), longest in stage first.',
         table: 'awards_case',
         type: 'list',
-        filter: `${openCases}^on_hold=true^ORDERBYDESCdays_in_stage`,
+        filter: `${activeCases}^on_hold=true^ORDERBYDESCdays_in_stage`,
         columns: cols('awards_case'),
     },
     {
@@ -290,7 +309,7 @@ export const OPERATIONS_REPORTS: readonly OperationsReport[] = [
     {
         key: 'vendor_work_by_vendor',
         title: 'Vendor work by vendor and state',
-        description: 'Heraldry requests released to vendors, grouped by vendor and stacked by request state.',
+        description: 'Heraldry requests released to vendors, grouped by vendor and stacked by request state (vendor × state matrix on the dashboard).',
         table: 'heraldry_request',
         type: 'bar',
         filter: `active=true^${inQuery('state', VENDOR_STATES)}`,
@@ -376,7 +395,7 @@ export interface DashboardCounter {
 
 export interface DashboardChart {
     readonly report: string
-    readonly component: 'vertical-bar' | 'horizontal-bar' | 'donut' | 'list-simple'
+    readonly component: 'vertical-bar' | 'horizontal-bar' | 'donut' | 'pivot-table' | 'list-simple'
     readonly width: number
     readonly height: number
     readonly x: number
@@ -385,9 +404,9 @@ export interface DashboardChart {
 }
 
 export const DASHBOARD_COUNTERS: readonly DashboardCounter[] = [
-    { key: 'open_cases', label: 'Open awards cases', report: 'cases_by_stage' },
-    { key: 'red', label: `${AGING_FLAGS.red} (${AGING_THRESHOLDS.redDays}+ days)`, report: 'aging_red_cases' },
-    { key: 'amber', label: `${AGING_FLAGS.amber} (${AGING_THRESHOLDS.amberDays}+ days)`, report: 'aging_amber_cases' },
+    { key: 'active_cases', label: 'Active awards cases', report: 'cases_by_stage' },
+    { key: 'red', label: inStage('red', `${AGING_THRESHOLDS.redDays}+`), report: 'aging_red_cases' },
+    { key: 'amber', label: inStage('amber', `${AGING_THRESHOLDS.amberDays}–${AGING_THRESHOLDS.redDays - 1}`), report: 'aging_amber_cases' },
     { key: 'on_hold', label: 'On hold', report: 'cases_on_hold' },
     { key: 'engraving', label: 'Engraving jobs open', report: 'engraving_queue' },
     { key: 'vendor', label: 'Requests at vendors', report: 'vendor_work' },
@@ -405,7 +424,7 @@ export const DASHBOARD_CHARTS: readonly DashboardChart[] = [
     { report: 'assembly_qc_queue', component: 'list-simple', width: 24, height: 14, x: 24, y: 21, limit: 15 },
     { report: 'warehouse_queue', component: 'list-simple', width: 24, height: 14, x: 0, y: 35, limit: 15 },
     { report: 'vendor_work', component: 'list-simple', width: 24, height: 14, x: 24, y: 35, limit: 15 },
-    { report: 'vendor_work_by_vendor', component: 'vertical-bar', width: 16, height: 14, x: 0, y: 49 },
+    { report: 'vendor_work_by_vendor', component: 'pivot-table', width: 16, height: 14, x: 0, y: 49 },
     { report: 'migration_exceptions_by_type', component: 'horizontal-bar', width: 16, height: 14, x: 16, y: 49 },
     { report: 'unmapped_legacy_statuses', component: 'list-simple', width: 16, height: 14, x: 32, y: 49, limit: 15 },
 ]
@@ -445,8 +464,8 @@ export const MODULE_ORDER_BASE = 500
 
 export const OPERATIONS_MODULES: readonly OperationsModule[] = [
     { key: 'ops_dashboard', title: 'Operations dashboard', hint: `${WORKSPACE_TITLE} workspace landing page: stage / aging counters, queues and vendor work`, order: MODULE_ORDER_BASE + 10, target: { kind: 'dashboard' } },
-    { key: 'aging_red', title: `Aging — ${AGING_FLAGS.red.toLowerCase()}`, hint: `Open awards cases past the ${AGING_THRESHOLDS.redDays}-day red threshold`, order: MODULE_ORDER_BASE + 20, target: { kind: 'report', report: 'aging_red_cases' } },
-    { key: 'aging_amber', title: `Aging — ${AGING_FLAGS.amber.toLowerCase()}`, hint: `Open awards cases past the ${AGING_THRESHOLDS.amberDays}-day amber threshold`, order: MODULE_ORDER_BASE + 30, target: { kind: 'report', report: 'aging_amber_cases' } },
+    { key: 'aging_red', title: `Aging — ${AGING_FLAGS.red.toLowerCase()}`, hint: `Active awards cases ${AGING_THRESHOLDS.redDays}+ days in their current stage (aging flag red)`, order: MODULE_ORDER_BASE + 20, target: { kind: 'report', report: 'aging_red_cases' } },
+    { key: 'aging_amber', title: `Aging — ${AGING_FLAGS.amber.toLowerCase()}`, hint: `Active awards cases ${AGING_THRESHOLDS.amberDays}–${AGING_THRESHOLDS.redDays - 1} days in their current stage (aging flag amber)`, order: MODULE_ORDER_BASE + 30, target: { kind: 'report', report: 'aging_amber_cases' } },
     { key: 'engraving_queue', title: 'Engraving queue', hint: 'Open engraving jobs in work order', order: MODULE_ORDER_BASE + 40, target: { kind: 'report', report: 'engraving_queue' } },
     { key: 'assembly_qc_queue', title: 'Assembly/QC queue', hint: 'Awards cases waiting for assembly and quality control', order: MODULE_ORDER_BASE + 50, target: { kind: 'report', report: 'assembly_qc_queue' } },
     { key: 'warehouse_queue', title: 'Warehouse queue', hint: 'Awards cases ready to pick, pack and ship', order: MODULE_ORDER_BASE + 60, target: { kind: 'report', report: 'warehouse_queue' } },

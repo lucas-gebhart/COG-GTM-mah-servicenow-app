@@ -21,15 +21,32 @@ Both definitions share the same conditions:
 
 | Condition | Encoded query | Meaning |
 |---|---|---|
-| Start | `active=true^stage=authorized` | timer starts when a case enters the first open stage |
+| Start | `active=true^stage=authorized` | timer starts when a case enters the first in-work stage |
 | Pause | `on_hold=true` | timer pauses while the case is on hold |
-| Stop | `stageINshipped,closed,cancelled` | timer stops at any terminal stage |
+| Stop | `stageINshipped,closed,cancelled` | timer stops at shipment (the awards target is met) or at a terminal stage |
 
-The stage buckets (`open` = authorized, engraving, assembly_qc, warehouse; `terminal` =
-shipped, closed, cancelled; `exception` = unmapped) are declared once in
+The stage buckets (`in_work` = authorized, engraving, assembly_qc, warehouse; `shipped`;
+`terminal` = closed, cancelled; `exception` = unmapped) are declared once in
 `tools/lib/operations-catalog.ts` and asserted against `CASE_STAGES` by
 `tests/operations-sync.test.ts`, so adding a stage to the domain fails the build until it is
-assigned to a bucket.
+assigned to a bucket. `terminal` is imported from `src/server/lib/aging.ts`, the case
+lifecycle's own definition: only closed and cancelled cases are inactive. A shipped case is still
+active and still ages (the aging job and the `active=true` queues include it) until it is closed;
+the SLA nevertheless stops at `shipped`, because the 60/75-day awards target is
+authorization-to-shipment. `SLA_STOP_STAGES` = `shipped` bucket + `terminal` bucket makes that
+distinction explicit and the test pins it.
+
+### SLA clock versus aging flag
+
+The SLA is one clock per case: it starts once at authorization, accumulates across every stage,
+pauses while on hold and stops at shipment. The nightly aging job (`src/server/lib/aging.ts`)
+is a different clock: `days_in_stage` is measured from `stage_entered_at`, restarts at every
+stage change and does not pause on hold; `aging_flag` turns amber at 60 and red at 75 days *in
+the current stage*. The two share thresholds, not results: a case 50 days authorized, 20 days
+in engraving and 10 days in assembly is red on the SLA (80 days) and green on the aging flag
+(10 days). The operations reports, counters and modules in `docs/WORKSPACE.md` are aging-flag
+views and are labelled "days in stage"; the SLA view is the `task_sla` list once the engine
+evaluates the table (below).
 
 ## What is Fluent, what is generated, what is manual
 
@@ -59,7 +76,7 @@ instance-specific identifiers:
   the definitions use `type = SLA` and the standard flow.
 * `schedule` = the SDK's `DEFAULT_NO_SCHEDULE_ID` (`38fa64edc0a8016400f4a5724b0434b8`) together
   with `schedule_source = no_schedule`, which the SDK documents as "24x7, no schedule applied".
-  This is what makes the 60/75-day targets wall-clock durations, matching the aging job.
+  This is what makes the 60/75-day targets wall-clock durations.
 * `timezone_source` keeps the SDK default (`task.caller_id.time_zone`). With no schedule
   attached the time zone does not change the elapsed-time calculation.
 * `retroactive` keeps the SDK default (off): timers start when the start condition is first
@@ -74,9 +91,10 @@ application, so:
 * the two definitions **install cleanly** and appear under *Service Level Management > SLA
   Definitions* filtered by table `x_cog_mah_awards_case`;
 * the engine will **not** create `task_sla` records for awards cases until the table extends
-  `task`. Until then the operational 60/75-day behaviour is provided by the nightly aging job
-  and surfaced through the `aging_flag` reports, dashboard counters and the `Aging — red` /
-  `Aging — amber` modules described in `docs/WORKSPACE.md`.
+  `task`. Until then the only 60/75-day signal on the instance is the per-stage aging flag from
+  the nightly aging job, surfaced through the `aging_flag` reports, dashboard counters and the
+  `Aging — red` / `Aging — amber` modules described in `docs/WORKSPACE.md` (see "SLA clock
+  versus aging flag" for why that is not the same measurement).
 
 Changing the table hierarchy is owned by the data-model workstream
 (`src/fluent/tables/awards_case.now.ts`), so it is not done here. If the team decides to make
