@@ -243,7 +243,7 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
         legacy: 'Named users in the Domino ACL (one test principal per role) and the vendor group',
         behaviour: 'Synthetic `sys_user` / `sys_user_group` records ship with the application; role grants and group membership are applied post-install by `npm run grant-roles` because those tables are not application files',
         files: ['src/server/lib/testUsers.ts', 'src/fluent/security/test_users.now.ts', 'tools/grant-test-roles.ts'],
-        artefacts: ['mah.tacom … mah.admin, mah.vendor.clearfield', 'MAH Vendor - Clearfield Colors & Regalia'],
+        artefacts: ['mah.tacom … mah.admin, mah.vendor.clearfield', 'MAH Vendor - Clearfield Colors and Regalia'],
         tests: ['has one user per application role, unique user names and known groups', 'grant plan resolves every role to its x_cog_mah name and every group to its display name'],
     },
     {

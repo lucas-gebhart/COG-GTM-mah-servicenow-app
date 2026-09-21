@@ -13,7 +13,7 @@
  * export never carries. Credentials come from the environment only (see .env.example).
  */
 import { fileURLToPath } from 'node:url'
-import { roleGrantPlan, type RoleGrantPlan } from '../src/server/lib/testUsers'
+import { QUERYABLE_VALUE, roleGrantPlan, type RoleGrantPlan } from '../src/server/lib/testUsers'
 import { callInstance, type InstanceConfig, instanceFromEnv } from './lib/instance'
 
 interface TableRow {
@@ -24,7 +24,7 @@ interface TableResponse {
     result: TableRow[]
 }
 
-const SAFE_VALUE = /^[A-Za-z0-9 ._@'-]{1,100}$/
+const SAFE_VALUE = QUERYABLE_VALUE
 
 function encodedQuery(pairs: readonly (readonly [string, string])[]): string {
     for (const [field, value] of pairs) {

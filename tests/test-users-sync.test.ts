@@ -38,13 +38,16 @@ describe('test user registry', () => {
         const plan = roleGrantPlan()
         expect(plan.userRoles).toHaveLength(TEST_USERS.reduce((n, u) => n + u.roles.length, 0))
         for (const g of plan.userRoles) expect(g.role).toMatch(/^x_cog_mah\./)
-        expect(plan.groupRoles).toEqual([{ group: 'MAH Vendor - Clearfield Colors & Regalia', role: 'x_cog_mah.vendor' }])
-        expect(plan.memberships).toEqual([{ userName: 'mah.vendor.clearfield', group: 'MAH Vendor - Clearfield Colors & Regalia' }])
-        expect(plan.vendorLinks).toEqual([{ cageCode: '1CLR7', userName: 'mah.vendor.clearfield', group: 'MAH Vendor - Clearfield Colors & Regalia' }])
+        expect(plan.groupRoles).toEqual([{ group: 'MAH Vendor - Clearfield Colors and Regalia', role: 'x_cog_mah.vendor' }])
+        expect(plan.memberships).toEqual([{ userName: 'mah.vendor.clearfield', group: 'MAH Vendor - Clearfield Colors and Regalia' }])
+        expect(plan.vendorLinks).toEqual([{ cageCode: '1CLR7', userName: 'mah.vendor.clearfield', group: 'MAH Vendor - Clearfield Colors and Regalia' }])
         const [first] = TEST_USERS
         if (!first) throw new Error('registry is empty')
         expect(() => roleGrantPlan([{ ...first, groups: ['nope'] }], TEST_GROUPS)).toThrow(/unknown group/)
         expect(() => roleGrantPlan([...TEST_USERS, { ...first, userName: 'dup', vendorCageCode: '1CLR7' }], TEST_GROUPS)).toThrow(/two test users/)
+        const [group] = TEST_GROUPS
+        if (!group) throw new Error('no groups')
+        expect(() => roleGrantPlan(TEST_USERS, [{ ...group, name: 'Colors & Regalia' }])).toThrow(/not queryable/)
     })
 
     it('every vendor CAGE the registry links to exists exactly once in the sample legacy export', () => {

@@ -41,7 +41,7 @@ export interface TestGroup {
 export const TEST_GROUPS: readonly TestGroup[] = [
     {
         key: 'vendor_clearfield',
-        name: 'MAH Vendor - Clearfield Colors & Regalia',
+        name: 'MAH Vendor - Clearfield Colors and Regalia',
         description: "Portal users of vendor CAGE 1CLR7. Members see only that vendor's heraldry requests.",
         roles: ['vendor'],
         vendorCageCode: '1CLR7',
@@ -152,7 +152,16 @@ export interface RoleGrantPlan {
  * Flatten the registry into the three membership tables the Table API tool has to populate, plus
  * the vendor links (portal_user / user_group are cut-over settings, never migrated from the legacy export).
  */
+/** Values the grant tooling looks up by equality on the instance; keeps its whitelist strict (no `&`, `^`, `=`). */
+export const QUERYABLE_VALUE = /^[A-Za-z0-9 ._@'-]{1,100}$/
+
 export function roleGrantPlan(users: readonly TestUser[] = TEST_USERS, groups: readonly TestGroup[] = TEST_GROUPS): RoleGrantPlan {
+    for (const g of groups) {
+        if (!QUERYABLE_VALUE.test(g.name)) throw new Error(`test group name is not queryable: ${g.name}`)
+    }
+    for (const u of users) {
+        if (!QUERYABLE_VALUE.test(u.userName)) throw new Error(`test user name is not queryable: ${u.userName}`)
+    }
     const groupByKey = new Map(groups.map((g) => [g.key, g]))
     const userRoles: { userName: string; role: string }[] = []
     const memberships: { userName: string; group: string }[] = []

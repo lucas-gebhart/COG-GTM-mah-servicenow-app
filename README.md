@@ -245,7 +245,7 @@ contains the session user — the ServiceNow equivalent of the Domino Readers fi
 
 `src/server/lib/testUsers.ts` is the registry of synthetic principals, one user per role (`mah.tacom`,
 `mah.csr`, `mah.engraver`, `mah.assembler`, `mah.warehouse`, `mah.dla`, `mah.admin`, and the vendor portal
-user `mah.vendor.clearfield` in group `MAH Vendor - Clearfield Colors & Regalia`). `src/fluent/security/test_users.now.ts`
+user `mah.vendor.clearfield` in group `MAH Vendor - Clearfield Colors and Regalia`). `src/fluent/security/test_users.now.ts`
 installs the `sys_user` / `sys_user_group` records with the application; the role grants and group
 membership are not application files (the installer skips `sys_user_has_role`, `sys_group_has_role`,
 `sys_user_grmember`), so run `npm run grant-roles` once after `now-sdk install` — it is idempotent and

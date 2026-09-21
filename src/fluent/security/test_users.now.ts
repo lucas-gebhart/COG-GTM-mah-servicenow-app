@@ -117,7 +117,7 @@ export const group_vendor_clearfield = Record({
     $id: Now.ID['group_vendor_clearfield'],
     table: 'sys_user_group',
     data: {
-        name: 'MAH Vendor - Clearfield Colors & Regalia',
+        name: 'MAH Vendor - Clearfield Colors and Regalia',
         description: 'Portal users of vendor CAGE 1CLR7. Members see only that vendor\'s heraldry requests.',
         active: true,
     },
