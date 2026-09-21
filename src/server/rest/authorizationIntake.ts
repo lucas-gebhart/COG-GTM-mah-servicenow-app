@@ -11,7 +11,7 @@
  *   5. returns only a generic summary to the caller and writes detailed JSON logs.
  */
 import { GlideRecord, gs } from '@servicenow/glide'
-import { intakeCaseDescription, parseAuthorizationFile, summarizeParse, type AuthorizationRecord, type ParsedAuthorizationFile } from '../lib/authFileParser.ts'
+import { formatParseLog, intakeCaseDescription, parseAuthorizationFile, summarizeParse, type AuthorizationRecord, type IntakeLogEntry, type ParsedAuthorizationFile } from '../lib/authFileParser.ts'
 import { computeDedupeKey } from '../lib/dedupe.ts'
 import { LIMITS, ROLES, TABLES } from '../lib/domain.ts'
 import { isValidFileName } from '../lib/validators.ts'
@@ -203,31 +203,30 @@ export function loadParsedFile(parsed: ParsedAuthorizationFile, hash: string, by
     let duplicates = 0
     let accepted = 0
     let failed = 0
-    const log: string[] = [`bytes=${bytes}`, `format=${parsed.format}`]
-    for (const issue of parsed.fileIssues) log.push(`file:${issue.field}:${issue.code}`)
-    for (const r of parsed.rejected) log.push(`rejected:${r.source_record_id}:${r.issues.map((i) => `${i.field}/${i.code}`).join(',')}`)
+    const log: IntakeLogEntry[] = []
 
     for (const record of parsed.records) {
         const existingCase = findCaseBySource(record)
         if (existingCase) {
             duplicates += 1
-            log.push(`duplicate:${record.source_record_id}:${existingCase}`)
+            log.push({ kind: 'duplicate', source_record_id: record.source_record_id, case_number: existingCase })
             continue
         }
         const requesterSysId = findOrCreateRequester(record)
         if (!requesterSysId) {
             failed += 1
-            log.push(`failed:${record.source_record_id}:requester`)
+            log.push({ kind: 'failed', source_record_id: record.source_record_id, table: TABLES.requester })
             continue
         }
         const caseNumber = createCase(record, requesterSysId, fileSysId)
         if (!caseNumber) {
             failed += 1
-            log.push(`failed:${record.source_record_id}:awards_case`)
+            log.push({ kind: 'failed', source_record_id: record.source_record_id, table: TABLES.awards_case })
             continue
         }
         cases.push(caseNumber)
         accepted += 1
+        log.push({ kind: 'accepted', source_record_id: record.source_record_id, case_number: caseNumber })
     }
 
     const incomplete = parsed.rejected.length > 0 || parsed.fileIssues.length > 0 || failed > 0
@@ -235,10 +234,10 @@ export function loadParsedFile(parsed: ParsedAuthorizationFile, hash: string, by
     file.setValue('rejected_count', String(parsed.rejected.length + failed))
     file.setValue('duplicate_count', String(duplicates))
     file.setValue('parse_status', accepted === 0 ? 'failed' : incomplete ? 'partial' : 'parsed')
-    file.setValue('parse_log', log.join('\n').slice(0, 8000))
+    file.setValue('parse_log', formatParseLog(parsed, bytes, log))
     file.setValue('state', 'closed')
     file.setValue('active', 'false')
-    file.update()
+    if (!file.update()) throw new Error(`${TABLES.authorization_file} update was aborted by a table rule`)
 
     return {
         fileSysId,

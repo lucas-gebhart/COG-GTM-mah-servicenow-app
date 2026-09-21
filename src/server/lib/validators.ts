@@ -38,7 +38,8 @@ const SAFE_TEXT = /^[A-Za-z0-9 .,'&/()#:-]*$/
 /** Authorization-file names as transmitted by HRC/NPRC (`HRC_AWD_20260615_7.txt`): letters, digits, dot, underscore, space, hyphen. */
 const FILE_NAME = /^[A-Za-z0-9._ -]{1,120}$/
 /** Multi-line justification text: SAFE_TEXT plus newlines, semicolons, question and quotation marks. */
-const SAFE_MULTILINE = /^[A-Za-z0-9 .,'&/()#:;?"!\r\n-]*$/
+const SAFE_MULTILINE = /^[A-Za-z0-9 .,'&/()#:;?"!_\r\n-]*$/
+const UNSAFE_MULTILINE_CHARS = /[^A-Za-z0-9 .,'&/()#:;?"!_\r\n-]/g
 /** Engraving text: letters, digits, spaces, period, comma, apostrophe, hyphen, ampersand, slash. */
 const ENGRAVING = /^[A-Za-z0-9 .,'&/-]*$/
 /** NSN: 4-digit FSC + 2-digit NCB + 7-digit item number, dashes optional. */
@@ -66,6 +67,11 @@ export function isSafeText(value: string, max: number = LIMITS.name): boolean {
 
 export function isSafeMultiline(value: string, max: number = LIMITS.justification): boolean {
     return value.length <= max && SAFE_MULTILINE.test(value)
+}
+
+/** Coerces server-generated text (logs, system notes) into the multiline whitelist so a table rule cannot reject it. */
+export function toSafeMultiline(value: string, max: number = LIMITS.justification): string {
+    return value.replace(UNSAFE_MULTILINE_CHARS, '').slice(0, max)
 }
 
 export function validateSafeText(field: string, value: unknown, max: number = LIMITS.name, required = false): ValidationResult {

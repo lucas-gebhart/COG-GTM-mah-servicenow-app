@@ -11,6 +11,7 @@ import { normalizeLegacyDate } from './dates.ts'
 import {
     isValidFileName,
     mergeResults,
+    toSafeMultiline,
     validateEmail,
     validateEngravingText,
     validateMultiline,
@@ -505,6 +506,30 @@ export function parseAuthorizationFile(body: string, contentType: string, fileNa
         }
     }
     return parseAuthorizationDelimited(body, fileName ?? 'authorization.txt')
+}
+
+/** One line per intake outcome, in the order they happened. */
+export type IntakeLogEntry =
+    | { kind: 'duplicate'; source_record_id: string; case_number: string }
+    | { kind: 'failed'; source_record_id: string; table: string }
+    | { kind: 'accepted'; source_record_id: string; case_number: string }
+
+/**
+ * Parse log persisted on the authorization_file record (validated by the table rule with
+ * `validateMultiline`): header, file-level issues, rejected records with their issue codes, then
+ * the per-record outcomes. Always returns text that passes `isSafeMultiline`.
+ */
+export function formatParseLog(p: ParsedAuthorizationFile, bytes: number, entries: readonly IntakeLogEntry[], max = 8000): string {
+    const path = (field: string) => field.replace(/\[(\d+)\]/g, '($1)')
+    const lines = [`bytes: ${bytes}; format: ${p.format}; records: ${p.records.length}; rejected: ${p.rejected.length}`]
+    for (const issue of p.fileIssues) lines.push(`file issue: ${path(issue.field)} (${issue.code})`)
+    for (const r of p.rejected) lines.push(`rejected ${r.source_record_id}: ${r.issues.map((i) => `${path(i.field)} (${i.code})`).join('; ')}`)
+    for (const e of entries) {
+        if (e.kind === 'duplicate') lines.push(`duplicate ${e.source_record_id}: already ${e.case_number}`)
+        else if (e.kind === 'failed') lines.push(`failed ${e.source_record_id}: ${e.table} insert refused by table rule`)
+        else lines.push(`accepted ${e.source_record_id}: ${e.case_number}`)
+    }
+    return toSafeMultiline(lines.join('\n'), max)
 }
 
 export function summarizeParse(p: ParsedAuthorizationFile): { records: number; awardLines: number; rejected: number; fileIssues: number } {

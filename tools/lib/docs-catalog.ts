@@ -200,6 +200,7 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
         tests: [
             'parses and normalizes a valid record',
             'writes values the table rules accept: agency-style file names and the case short description',
+            'parse log passes the parse_log table rule even when it carries field paths, ids and issue codes',
             'rejects records with unknown awards, bad ids and injection attempts',
             'is idempotent within a file: duplicate source ids are rejected',
             'rejects malformed bodies and oversize files at the file level',

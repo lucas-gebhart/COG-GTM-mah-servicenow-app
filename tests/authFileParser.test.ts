@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { detectDelimiter, intakeCaseDescription, parseAuthorizationDelimited, parseAuthorizationFile, parseAuthorizationJson, splitDelimited, summarizeParse } from '../src/server/lib/authFileParser'
+import { detectDelimiter, formatParseLog, intakeCaseDescription, parseAuthorizationDelimited, parseAuthorizationFile, parseAuthorizationJson, splitDelimited, summarizeParse } from '../src/server/lib/authFileParser'
 import { LIMITS } from '../src/server/lib/domain'
-import { validateFileName, validateSafeText } from '../src/server/lib/validators'
+import { validateFileName, validateMultiline, validateSafeText } from '../src/server/lib/validators'
 
 const validRecord = {
     source_record_id: 'HRC-2024-000123',
@@ -54,6 +54,28 @@ describe('JSON authorization files', () => {
         const description = intakeCaseDescription(record)
         expect(description).toBe('HRC authorization HRC-2024-000123 - 2 award line(s)')
         expect(validateSafeText('short_description', description, 160).valid).toBe(true)
+    })
+
+    it('parse log passes the parse_log table rule even when it carries field paths, ids and issue codes', () => {
+        const p = parseAuthorizationJson({
+            file_name: 'NPRC_AWD_20260921_2.json',
+            records: [
+                validRecord,
+                { ...validRecord, source_record_id: 'HRC-2', awards: [{ award_name: 'Medal of Awesomeness', quantity: 1 }] },
+                { ...validRecord, source_record_id: 'HRC-3', requester: { ...validRecord.requester, last_name: 'Alvarez<script>' } },
+            ],
+            unexpected_top_level: '<b>x</b>',
+        })
+        const log = formatParseLog(p, 4096, [
+            { kind: 'accepted', source_record_id: 'HRC-2024-000123', case_number: 'MAH0001153' },
+            { kind: 'duplicate', source_record_id: 'HRC-2024-000123', case_number: 'MAH0001153' },
+            { kind: 'failed', source_record_id: 'HRC-9', table: 'x_cog_mah_awards_case' },
+        ])
+        expect(log.split('\n')[0]).toBe('bytes: 4096; format: json; records: 1; rejected: 2')
+        expect(log).toContain('rejected HRC-2: awards(0).award_name (whitelist)')
+        expect(log).toContain('failed HRC-9: x_cog_mah_awards_case insert refused by table rule')
+        expect(validateMultiline('parse_log', log, 8000).valid).toBe(true)
+        expect(formatParseLog(p, 1, [], 40).length).toBeLessThanOrEqual(40)
     })
 
     it('rejects records with unknown awards, bad ids and injection attempts', () => {
