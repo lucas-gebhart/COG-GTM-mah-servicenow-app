@@ -38,6 +38,8 @@ import {
     WORKSPACE_LIST_CATEGORIES,
     WORKSPACE_PATH,
     WORKSPACE_ROUTE,
+    WORKSPACE_ROUTE_ACL,
+    LIST_SIMPLE_COMPONENT_SYS_ID,
     type OperationsReport,
 } from './lib/operations-catalog'
 
@@ -289,7 +291,9 @@ function renderChartWidget(chart: (typeof DASHBOARD_CHARTS)[number], choice: Rec
     const lines = [
         `                {`,
         `                    $id: Now.ID[${q(widgetId('chart', chart.report))}],`,
-        `                    component: ${q(chart.component)},`,
+        chart.component === 'list-simple'
+            ? `                    component: ${q(LIST_SIMPLE_COMPONENT_SYS_ID)}, // list-simple: List - Simple macroponent sys_id (missing from the SDK 4.12.1 component resolver)`
+            : `                    component: ${q(chart.component)},`,
         `                    componentProps: {`,
     ]
     if (chart.component === 'list-simple') {
@@ -425,7 +429,7 @@ export function renderWorkspace(): string {
         `    type: 'ux_route',`,
         `    operation: 'read',`,
         `    roles: ${rolesLiteral(dashboardRoles())},`,
-        `    name: ${q(`now.${WORKSPACE_PATH}.*`)},`,
+        `    name: ${q(WORKSPACE_ROUTE_ACL)},`,
         `})`,
         '',
         `export const opsDashboard = Dashboard({`,

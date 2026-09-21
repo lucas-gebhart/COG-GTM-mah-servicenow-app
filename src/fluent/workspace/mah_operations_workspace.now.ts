@@ -180,14 +180,14 @@ export const opsWorkspace = Workspace({
     tables: ['x_cog_mah_awards_case', 'x_cog_mah_award_line', 'x_cog_mah_requester', 'x_cog_mah_authorization_file', 'x_cog_mah_engraving_job', 'x_cog_mah_shipment', 'x_cog_mah_heraldry_request', 'x_cog_mah_request_line', 'x_cog_mah_heraldic_item', 'x_cog_mah_ses_flag_request', 'x_cog_mah_vendor', 'x_cog_mah_case_note', 'x_cog_mah_status_map', 'x_cog_mah_migration_exception'],
 })
 
-// Route ACL: who may open /now/mah-operations/home. Record-level ACLs are owned by src/fluent/security/acls.now.ts.
+// Route ACL: who may open /x/cog/mah-operations/home. Record-level ACLs are owned by src/fluent/security/acls.now.ts.
 export const opsWorkspaceRouteAcl = Acl({
     $id: Now.ID['ops_workspace_route_acl'],
     localOrExisting: 'Existing',
     type: 'ux_route',
     operation: 'read',
     roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.csr', 'x_cog_mah.engraver', 'x_cog_mah.assembler', 'x_cog_mah.warehouse', 'x_cog_mah.dla', 'x_cog_mah.admin'],
-    name: 'now.mah-operations.*',
+    name: 'x.cog.mah-operations.*',
 })
 
 export const opsDashboard = Dashboard({
@@ -380,7 +380,7 @@ export const opsDashboard = Dashboard({
                 },
                 {
                     $id: Now.ID['ops_widget_chart_aging_red_cases'],
-                    component: 'list-simple',
+                    component: '2b1c080881e05dc63b917044290b233f', // list-simple: List - Simple macroponent sys_id (missing from the SDK 4.12.1 component resolver)
                     componentProps: {
                         listTitle: 'Aging — red (75+ days in stage)',
                         table: 'x_cog_mah_awards_case',
@@ -396,7 +396,7 @@ export const opsDashboard = Dashboard({
                 },
                 {
                     $id: Now.ID['ops_widget_chart_assembly_qc_queue'],
-                    component: 'list-simple',
+                    component: '2b1c080881e05dc63b917044290b233f', // list-simple: List - Simple macroponent sys_id (missing from the SDK 4.12.1 component resolver)
                     componentProps: {
                         listTitle: 'Assembly / QC queue',
                         table: 'x_cog_mah_awards_case',
@@ -412,7 +412,7 @@ export const opsDashboard = Dashboard({
                 },
                 {
                     $id: Now.ID['ops_widget_chart_warehouse_queue'],
-                    component: 'list-simple',
+                    component: '2b1c080881e05dc63b917044290b233f', // list-simple: List - Simple macroponent sys_id (missing from the SDK 4.12.1 component resolver)
                     componentProps: {
                         listTitle: 'Warehouse ready-to-ship queue',
                         table: 'x_cog_mah_awards_case',
@@ -428,7 +428,7 @@ export const opsDashboard = Dashboard({
                 },
                 {
                     $id: Now.ID['ops_widget_chart_vendor_work'],
-                    component: 'list-simple',
+                    component: '2b1c080881e05dc63b917044290b233f', // list-simple: List - Simple macroponent sys_id (missing from the SDK 4.12.1 component resolver)
                     componentProps: {
                         listTitle: 'Vendor work',
                         table: 'x_cog_mah_heraldry_request',
@@ -487,7 +487,7 @@ export const opsDashboard = Dashboard({
                 },
                 {
                     $id: Now.ID['ops_widget_chart_unmapped_legacy_statuses'],
-                    component: 'list-simple',
+                    component: '2b1c080881e05dc63b917044290b233f', // list-simple: List - Simple macroponent sys_id (missing from the SDK 4.12.1 component resolver)
                     componentProps: {
                         listTitle: 'Unmapped legacy statuses',
                         table: 'x_cog_mah_migration_exception',

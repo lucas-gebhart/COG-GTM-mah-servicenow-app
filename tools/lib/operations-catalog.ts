@@ -18,6 +18,7 @@ import {
     MIGRATION_EXCEPTION_TYPES,
     REQUEST_STATES,
     ROLES,
+    SCOPE,
     TERMINAL_CASE_STAGES,
     TERMINAL_REQUEST_STATES,
     WORKSPACE_TITLE,
@@ -33,10 +34,26 @@ import { UI_LAYOUT } from '../../src/server/lib/uiLayout'
 
 // ------------------------------------------------------------------ workspace identity
 
-/** URL segment of the workspace: `/now/<path>/<landing>`; app_menu.now.ts links to the same route. */
+/**
+ * URL segment of the workspace. Scoped-app experiences are served under `/x/<vendor>/<path>`
+ * (vendor = the middle segment of the scope, `x_cog_mah` -> `cog`), not `/now/<path>` like
+ * global ones; the `ux_route` ACL name is that URL with slashes replaced by dots plus `.*`
+ * (platform example: `x.snc.notification-dashboard.*`). app_menu.now.ts links to the same route.
+ */
 export const WORKSPACE_PATH = 'mah-operations'
 export const WORKSPACE_LANDING = 'home'
-export const WORKSPACE_ROUTE = `now/${WORKSPACE_PATH}/${WORKSPACE_LANDING}`
+export const WORKSPACE_URL_PREFIX = `x/${SCOPE.split('_')[1]}`
+export const WORKSPACE_ROUTE = `${WORKSPACE_URL_PREFIX}/${WORKSPACE_PATH}/${WORKSPACE_LANDING}`
+export const WORKSPACE_ROUTE_ACL = `${WORKSPACE_URL_PREFIX.replace('/', '.')}.${WORKSPACE_PATH}.*`
+
+/**
+ * `sys_ux_macroponent` sys_id of the platform "List - Simple" visualization (scope
+ * `sn_record_list_con`). @servicenow/sdk 4.12.1 documents `component: 'list-simple'` but its
+ * dashboard component resolver has no entry for it, so the literal string lands in the
+ * `par_dashboard_widget.component` reference and the widget renders "Unknown error occurred".
+ * 32-hex values pass through the resolver untouched.
+ */
+export const LIST_SIMPLE_COMPONENT_SYS_ID = '2b1c080881e05dc63b917044290b233f'
 
 // ------------------------------------------------------------------ choice partitions
 //

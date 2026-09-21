@@ -32,6 +32,8 @@ import {
     STAGE_PARTITION,
     WORKSPACE_LIST_CATEGORIES,
     WORKSPACE_ROUTE,
+    WORKSPACE_ROUTE_ACL,
+    LIST_SIMPLE_COMPONENT_SYS_ID,
 } from '../tools/lib/operations-catalog'
 
 const REQUIRED_MODULE_TITLES = [
@@ -224,6 +226,29 @@ describe('dashboard', () => {
         expect(rendered.match(/component: 'pivot-table'/g)).toHaveLength(stacked.length)
     })
 
+    it('every dashboard widget component is resolvable by the installed SDK (name in its resolver map, or a macroponent sys_id)', () => {
+        const resolver = readFileSync('node_modules/@servicenow/sdk-build-plugins/src/dashboard/dashboard-component-resolver.ts', 'utf8')
+        const known = new Set([...resolver.matchAll(/^\s+'?([a-z-]+)'?: '[0-9a-fA-F]{32}',$/gm)].map((m) => m[1]))
+        expect(known.has('single-score')).toBe(true)
+        expect(known.has('list-simple')).toBe(false)
+        const rendered = renderAll().workspace
+        const components = [...rendered.matchAll(/^\s+component: '([^']+)',/gm)].map((m) => m[1] ?? '')
+        expect(components).toHaveLength(DASHBOARD_COUNTERS.length + DASHBOARD_CHARTS.length)
+        for (const component of components) {
+            expect(known.has(component) || /^[0-9a-f]{32}$/.test(component), component).toBe(true)
+        }
+        expect(components.filter((c) => c === LIST_SIMPLE_COMPONENT_SYS_ID)).toHaveLength(DASHBOARD_CHARTS.filter((c) => c.component === 'list-simple').length)
+    })
+
+    it('workspace route and route ACL follow the scoped-experience URL scheme (/x/<vendor>/<path>, ACL x.<vendor>.<path>.*)', () => {
+        expect(WORKSPACE_ROUTE).toBe('x/cog/mah-operations/home')
+        expect(WORKSPACE_ROUTE_ACL).toBe('x.cog.mah-operations.*')
+        const rendered = renderAll().workspace
+        expect(rendered).toContain(`type: 'ux_route'`)
+        expect(rendered).toContain(`name: '${WORKSPACE_ROUTE_ACL}'`)
+        expect(rendered).not.toContain(`now.mah-operations`)
+    })
+
     it('counter row fills the 48-column grid; control totals', () => {
         expect(48 % DASHBOARD_COUNTERS.length).toBe(0)
         expect(DASHBOARD_COUNTERS).toHaveLength(8)
@@ -284,7 +309,7 @@ describe('application modules', () => {
     it('docs/WORKSPACE.md module table lists exactly the catalog modules (both directions)', () => {
         const doc = readFileSync('docs/WORKSPACE.md', 'utf8')
         const section = doc.slice(doc.indexOf('### Application modules'), doc.indexOf('## What remains manual'))
-        const documented = [...section.matchAll(/^\| ([^|]+?) \| (?:report|list|`now)/gm)].map((m) => m[1] ?? '')
+        const documented = [...section.matchAll(/^\| ([^|]+?) \| (?:report|list|`x\/)/gm)].map((m) => m[1] ?? '')
         expect(sorted(documented)).toEqual(sorted(OPERATIONS_MODULES.map((m) => m.title)))
         expect(doc).toContain(`${OPERATIONS_MODULES.length} modules`.replace(/^\d+/, (n) => ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][Number(n)] ?? n))
     })

@@ -26,7 +26,7 @@ export const opsMod_ops_dashboard = Record({
         title: 'Operations dashboard',
         application: mahMenu,
         link_type: 'DIRECT',
-        query: 'now/mah-operations/home',
+        query: 'x/cog/mah-operations/home',
         hint: 'MAH Operations workspace landing page: stage / aging counters, queues and vendor work',
         active: true,
         order: 510,

@@ -292,7 +292,7 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
         behaviour: 'Record producers on the Service Portal / Employee Center backed by validated server scripts',
         files: ['src/fluent/catalog/record_producers.now.ts', 'src/producers/statusInquiry.producer.js', 'src/producers/dd1348Request.producer.js', 'src/producers/sesFlagRequest.producer.js', 'src/server/services/statusInquiry.ts'],
         artefacts: ['Awards case status inquiry', 'DD Form 1348-6 heraldic item request', 'SES flag request', 'MAHStatusInquiry'],
-        tests: [],
+        tests: ['never passes a raw producer.<variable> into a validator (typeof check would reject the platform string object)'],
     },
 
     // ---------------------------------------------------------------- export / migration

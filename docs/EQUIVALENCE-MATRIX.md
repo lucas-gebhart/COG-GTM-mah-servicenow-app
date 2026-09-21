@@ -73,7 +73,7 @@ gains a case that no row references.
 
 | Legacy behaviour | What it does | Implementation | Instance artefact(s) | Proven by |
 | --- | --- | --- | --- | --- |
-| XPages: status inquiry, DD 1348-6 request, SES flag request | Record producers on the Service Portal / Employee Center backed by validated server scripts | `src/fluent/catalog/record_producers.now.ts`<br>`src/producers/statusInquiry.producer.js`<br>`src/producers/dd1348Request.producer.js`<br>`src/producers/sesFlagRequest.producer.js`<br>`src/server/services/statusInquiry.ts` | Awards case status inquiry<br>DD Form 1348-6 heraldic item request<br>SES flag request<br>MAHStatusInquiry | metadata only — verified by `now-sdk build` and on-instance screenshots |
+| XPages: status inquiry, DD 1348-6 request, SES flag request | Record producers on the Service Portal / Employee Center backed by validated server scripts | `src/fluent/catalog/record_producers.now.ts`<br>`src/producers/statusInquiry.producer.js`<br>`src/producers/dd1348Request.producer.js`<br>`src/producers/sesFlagRequest.producer.js`<br>`src/server/services/statusInquiry.ts` | Awards case status inquiry<br>DD Form 1348-6 heraldic item request<br>SES flag request<br>MAHStatusInquiry | "never passes a raw producer.<variable> into a validator (typeof check would reject the platform string object)" |
 
 ### Export / migration
 
@@ -86,5 +86,5 @@ gains a case that no row references.
 | Response documents (ParentUNID) and duplicate business keys | Parents resolved by legacy_unid; orphans quarantined; disagreeing envelope / form ParentUNID flagged; duplicate keys recorded | `src/server/migration/rowTransforms.ts`<br>`src/server/migration/transformEngine.ts`<br>`src/server/migration/dryRun.ts`<br>`tools/lib/csv.ts` | x_cog_mah_migration_exception (orphan_parent, contradictory_source, duplicate_business_key) | "flags disagreeing envelope / form ParentUNID on AwardLine and uses the envelope value"<br>"round-trips RFC 4180 quoting, CRLF, BOM and duplicate headers positionally"<br>"replays the engine decisions: orphans, duplicate keys, merges, unmapped statuses, totals" |
 | Reconciliation of the export against the target | Source counts / totals computed offline by the dry run and compared check-by-check with the instance report | `src/server/migration/compare.ts`<br>`src/server/services/reconciliation.ts`<br>`tools/migrate.ts`<br>`tools/reconcile.ts`<br>`src/includes/MAHReconciliation.js` | GET /api/x_cog_mah/authorization_intake/reconciliation<br>MAHReconciliation | "comparison passes on an identical target and names each differing check"<br>"builds the Import Set payload from staging columns plus batch traceability" |
 
-35 legacy behaviours mapped; 86 distinct Vitest cases referenced.
+35 legacy behaviours mapped; 87 distinct Vitest cases referenced.
 <!-- /gen:equivalence -->
