@@ -31,6 +31,24 @@ export const TABLES = {
 export type DomainTableKey = keyof typeof TABLES
 export type DomainTableName = (typeof TABLES)[DomainTableKey]
 
+/** Field that receives the mapped legacy status on each table (`unmapped` lands here too). */
+export const TARGET_STATUS_FIELD: Readonly<Record<DomainTableKey, string>> = {
+    awards_case: 'stage',
+    award_line: 'status',
+    requester: 'state',
+    authorization_file: 'parse_status',
+    engraving_job: 'status',
+    shipment: 'status',
+    heraldry_request: 'state',
+    request_line: 'status',
+    heraldic_item: 'state',
+    ses_flag_request: 'state',
+    vendor: 'state',
+    case_note: 'state',
+    status_map: 'state',
+    migration_exception: 'state',
+}
+
 /** Auto-number prefixes per the data model contract. */
 export const NUMBER_PREFIXES = {
     awards_case: 'MAH',

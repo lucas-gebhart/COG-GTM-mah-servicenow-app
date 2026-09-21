@@ -7,7 +7,7 @@
  * never drift from the data it describes.
  */
 import { GlideAggregate, type GlideRecord } from '@servicenow/glide'
-import { CASE_STAGE_ORDER, LEGACY_FORMS, MIGRATION_EXCEPTION_TYPES, REQUEST_STATE_ORDER, TABLES, type DomainTableKey } from '../lib/domain'
+import { CASE_STAGE_ORDER, LEGACY_FORMS, MIGRATION_EXCEPTION_TYPES, REQUEST_STATE_ORDER, TABLES, TARGET_STATUS_FIELD, type DomainTableKey } from '../lib/domain'
 import { nowValue } from '../rules/glideSupport'
 
 export interface TableCount {
@@ -52,25 +52,8 @@ export const RECONCILED_TABLES: readonly { key: DomainTableKey; legacyForm: stri
     { key: 'heraldic_item', legacyForm: LEGACY_FORMS.heraldic_item },
     { key: 'ses_flag_request', legacyForm: LEGACY_FORMS.ses_flag_request },
     { key: 'vendor', legacyForm: LEGACY_FORMS.vendor },
+    { key: 'case_note', legacyForm: LEGACY_FORMS.case_note },
 ]
-
-/** Field that receives the mapped legacy status on each table. */
-const STATUS_FIELD: Readonly<Record<DomainTableKey, string>> = {
-    awards_case: 'stage',
-    award_line: 'status',
-    requester: 'state',
-    authorization_file: 'parse_status',
-    engraving_job: 'status',
-    shipment: 'status',
-    heraldry_request: 'state',
-    request_line: 'status',
-    heraldic_item: 'state',
-    ses_flag_request: 'state',
-    vendor: 'state',
-    case_note: 'state',
-    status_map: 'state',
-    migration_exception: 'state',
-}
 
 function countRows(table: string, apply?: (gr: GlideRecord<string>) => void): number {
     const ga = new GlideAggregate(table)
@@ -107,7 +90,7 @@ export function buildReconciliationReport(): ReconciliationReport {
     let unmappedTotal = 0
     for (const entry of RECONCILED_TABLES) {
         const table = TABLES[entry.key]
-        const statusField = STATUS_FIELD[entry.key]
+        const statusField = TARGET_STATUS_FIELD[entry.key]
         const unmapped = countRows(table, (gr) => gr.addQuery(statusField, 'unmapped'))
         unmappedTotal += unmapped
         tables.push({
