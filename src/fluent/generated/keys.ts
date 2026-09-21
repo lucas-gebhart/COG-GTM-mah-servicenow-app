@@ -2776,6 +2776,10 @@ declare global {
                         table: 'sys_module'
                         id: 'b50b5974b7ba4c67a188f91752ece943'
                     }
+                    src_server_rest_respond_ts: {
+                        table: 'sys_module'
+                        id: '4a47cbecef87489f9e6841e55d1886ab'
+                    }
                     src_server_rules_awardLine_ts: {
                         table: 'sys_module'
                         id: 'ec4c8687b518413a9e724e6fc10fcd46'
