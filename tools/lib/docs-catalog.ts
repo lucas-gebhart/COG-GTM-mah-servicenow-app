@@ -383,6 +383,7 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
             'escapes every HTML-significant character',
             'renders the reconciliation totals, per-table rows and queues in the page',
             'never emits report values unescaped and ships no scripts or external assets',
+            'is well-formed XHTML without a DOCTYPE, as the Jelly <g:no_escape> output is re-parsed as XML',
             'renders a generic denial page with only a correlation reference',
         ],
     },

@@ -1,7 +1,9 @@
 /**
  * Server-rendered HTML for the operator "Reconciliation report" UI page (`x_cog_mah_reconciliation.do`).
  * Pure: takes a report, returns markup. Every dynamic value is HTML-escaped; no scripts, no
- * external assets, so the page works under the platform CSP and offline.
+ * external assets, so the page works under the platform CSP and offline. The markup is emitted through
+ * a Jelly `<g:no_escape>` and re-parsed as XML by the platform, so it must be well-formed XHTML with
+ * no DOCTYPE ("A DOCTYPE is not allowed in content").
  */
 import type { ReconciliationReport } from '../services/reconciliation.ts'
 
@@ -27,6 +29,8 @@ const STYLE = [
     'pre{background:#f3f3f3;padding:10px;overflow:auto;font-size:11px}',
 ].join('')
 
+const HEAD = `<html><head><meta charset="utf-8"/><title>MAH reconciliation report</title><style>${STYLE}</style></head><body>`
+
 function card(label: string, value: number | string, warn = false): string {
     return `<div class="card${warn && Number(value) > 0 ? ' warn' : ''}"><b>${escapeHtml(value)}</b>${escapeHtml(label)}</div>`
 }
@@ -50,7 +54,7 @@ export function reconciliationHtml(report: ReconciliationReport): string {
     const totalRows = report.tables.reduce((sum, t) => sum + t.rows, 0)
     const totalLegacy = report.tables.reduce((sum, t) => sum + t.withLegacyUnid, 0)
     return (
-        `<!DOCTYPE html><html><head><meta charset="utf-8"/><title>MAH reconciliation report</title><style>${STYLE}</style></head><body>` +
+        `${HEAD}` +
         `<h1>MAH reconciliation report</h1>` +
         `<div class="meta">Generated ${escapeHtml(report.generated_at)} from the live x_cog_mah tables (GlideAggregate). ` +
         `Compare with the legacy export using <code>npm run reconcile</code>.</div>` +
@@ -79,7 +83,7 @@ export function reconciliationHtml(report: ReconciliationReport): string {
 
 export function deniedHtml(reference: string): string {
     return (
-        `<!DOCTYPE html><html><head><meta charset="utf-8"/><title>MAH reconciliation report</title><style>${STYLE}</style></head><body>` +
+        `${HEAD}` +
         `<h1>MAH reconciliation report</h1><p>${escapeHtml(GENERIC_PAGE_DENIED)}</p>` +
         `<div class="meta">Reference ${escapeHtml(reference)}</div></body></html>`
     )

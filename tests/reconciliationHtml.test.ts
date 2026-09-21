@@ -50,6 +50,21 @@ describe('reconciliation UI page renderer', () => {
         expect(html).not.toContain('<link')
     })
 
+    it('is well-formed XHTML without a DOCTYPE, as the Jelly <g:no_escape> output is re-parsed as XML', () => {
+        for (const html of [reconciliationHtml(REPORT), deniedHtml('ref')]) {
+            expect(html).not.toMatch(/<!DOCTYPE/i)
+            expect(html.startsWith('<html>')).toBe(true)
+            const opens = new Map<string, number>()
+            for (const m of html.matchAll(/<(\/?)([a-z][a-z0-9]*)[^>]*?(\/?)>/g)) {
+                const [, close, tag, selfClose] = m
+                if (selfClose || !tag) continue
+                opens.set(tag, (opens.get(tag) ?? 0) + (close ? -1 : 1))
+            }
+            expect([...opens.entries()].filter(([, n]) => n !== 0)).toEqual([])
+            expect(html).not.toMatch(/&(?!amp;|lt;|gt;|quot;|#39;)/)
+        }
+    })
+
     it('renders a generic denial page with only a correlation reference', () => {
         const html = deniedHtml('abc123')
         expect(html).toContain(GENERIC_PAGE_DENIED)
