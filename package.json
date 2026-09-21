@@ -1,0 +1,38 @@
+{
+    "name": "mah-case-management",
+    "version": "0.1.0",
+    "description": "MAH Case Management (x_cog_mah): ServiceNow scoped application authored with the ServiceNow SDK / Fluent. Target side of a legacy modernization reference application. Synthetic data only.",
+    "license": "UNLICENSED",
+    "private": true,
+    "type": "module",
+    "imports": {
+        "#now:*": "./@types/servicenow/fluent/*/index.js"
+    },
+    "scripts": {
+        "build": "now-sdk build",
+        "deploy": "now-sdk install",
+        "transform": "now-sdk transform",
+        "types": "now-sdk dependencies",
+        "lint": "eslint . && tsc -p tsconfig.json --noEmit",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "migrate": "tsx tools/migrate.ts",
+        "reconcile": "tsx tools/reconcile.ts",
+        "gen:sample-data": "tsx tools/generate-sample-data.ts",
+        "gen:docs": "tsx tools/generate-docs.ts"
+    },
+    "devDependencies": {
+        "@servicenow/glide": "27.0.5",
+        "@servicenow/sdk": "4.12.1",
+        "@types/node": "24.13.4",
+        "csv-parse": "7.0.2",
+        "eslint": "10.10.0",
+        "tsx": "4.23.13",
+        "typescript": "5.9.3",
+        "typescript-eslint": "8.70.0",
+        "vitest": "4.1.11"
+    },
+    "engines": {
+        "node": ">=20"
+    }
+}
