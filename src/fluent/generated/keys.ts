@@ -892,14 +892,17 @@ declare global {
                     mod_aging_amber: {
                         table: 'sys_app_module'
                         id: '38a1db13063348aeae4b2208ec53efc0'
+                        deleted: true
                     }
                     mod_aging_red: {
                         table: 'sys_app_module'
                         id: '458fac4e05c14d8e9b8f7a76d505a2e4'
+                        deleted: true
                     }
                     mod_assembly_queue: {
                         table: 'sys_app_module'
                         id: 'e674e98f5fa84048961868e39189cbdc'
+                        deleted: true
                     }
                     mod_auth_files: {
                         table: 'sys_app_module'
@@ -924,6 +927,7 @@ declare global {
                     mod_engraving_queue: {
                         table: 'sys_app_module'
                         id: '4d0c25132a924238a4a05fb1d542e823'
+                        deleted: true
                     }
                     mod_exceptions: {
                         table: 'sys_app_module'
@@ -976,6 +980,7 @@ declare global {
                     mod_review_queue: {
                         table: 'sys_app_module'
                         id: 'a1432f7d07ab467392c6bf090bcd67bc'
+                        deleted: true
                     }
                     mod_sep_admin: {
                         table: 'sys_app_module'
@@ -992,6 +997,7 @@ declare global {
                     mod_sep_ops: {
                         table: 'sys_app_module'
                         id: '85b4e7e9a0114ce5972b696aa0c6f9ea'
+                        deleted: true
                     }
                     mod_ses: {
                         table: 'sys_app_module'
@@ -1000,6 +1006,7 @@ declare global {
                     mod_ses_pending: {
                         table: 'sys_app_module'
                         id: 'aae13e198c5242c7968021a66e4e7e5f'
+                        deleted: true
                     }
                     mod_shipments: {
                         table: 'sys_app_module'
@@ -1012,6 +1019,7 @@ declare global {
                     mod_vendor_work: {
                         table: 'sys_app_module'
                         id: 'abee812bf31e4a16978af716d44c74a5'
+                        deleted: true
                     }
                     mod_vendors: {
                         table: 'sys_app_module'
@@ -1020,10 +1028,12 @@ declare global {
                     mod_warehouse_queue: {
                         table: 'sys_app_module'
                         id: '4f1dd01509d5486f9e107e8fe042d7e4'
+                        deleted: true
                     }
                     mod_workspace: {
                         table: 'sys_app_module'
                         id: 'c7bbf951eb454746894423b879172b11'
+                        deleted: true
                     }
                     ntf_case_aging_red: {
                         table: 'sysevent_email_action'
@@ -1185,9 +1195,17 @@ declare global {
                         table: 'sys_app_module'
                         id: '550be30a98984e258f4922fa93fbe8cb'
                     }
+                    ops_mod_review_queue: {
+                        table: 'sys_app_module'
+                        id: '2dac2d311a0548d59ea2aec24ed1d4ce'
+                    }
                     ops_mod_separator: {
                         table: 'sys_app_module'
                         id: '3744ddacdc7d456ebe82dd8c77a6b533'
+                    }
+                    ops_mod_ses_pending: {
+                        table: 'sys_app_module'
+                        id: '66352a60b9d7488fbdfad4611459a510'
                     }
                     ops_mod_vendor_work: {
                         table: 'sys_app_module'

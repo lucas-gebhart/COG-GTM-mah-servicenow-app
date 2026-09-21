@@ -5,7 +5,7 @@ import { LEGACY_FORMS, LOAD_ORDER, csvHeader, stagingColumnMap, type LegacyFormN
 import { compareReports, renderComparison, type TargetReport } from '../src/server/migration/compare'
 import { dryRun } from '../src/server/migration/dryRun'
 import { transformRow, type SourceRow } from '../src/server/migration/rowTransforms'
-import { VALUE_MAPS, mapAwardName, mapRequisitionPriority } from '../src/server/migration/valueMaps'
+import { RELATIONSHIP_MAP, VALUE_MAPS, mapAwardName, mapRequesterType, mapRequisitionPriority } from '../src/server/migration/valueMaps'
 import { parseCsv, rowToObject, toCsv } from '../tools/lib/csv'
 import { MIGRATION_FILES, renderAll } from '../tools/generate-fluent-migration'
 import { headerMismatch } from '../tools/lib/sourceExport'
@@ -244,5 +244,18 @@ describe('legacy contract ↔ data model', () => {
             expect(header.length, form).toBe(stagingColumnMap(form).length)
             expect(header[0], form).toBe('UNID')
         }
+    })
+})
+
+describe('requester type', () => {
+    it('derives veteran / next of kin / unit from every relationship spelling the relationship map knows', () => {
+        expect(mapRequesterType('Self')).toMatchObject({ value: 'veteran', mapped: true })
+        expect(mapRequesterType('Widow')).toMatchObject({ value: 'next_of_kin', mapped: true })
+        expect(mapRequesterType('Nephew')).toMatchObject({ value: 'next_of_kin', mapped: true })
+        expect(mapRequesterType('Executor')).toMatchObject({ value: 'next_of_kin', mapped: true })
+        expect(mapRequesterType('Museum')).toMatchObject({ value: 'unit', mapped: true })
+        expect(mapRequesterType('Vet')).toMatchObject({ value: 'veteran', mapped: true })
+        expect(mapRequesterType('Landlord')).toMatchObject({ value: 'next_of_kin', mapped: false })
+        for (const spelling of RELATIONSHIP_MAP.aliases.keys()) expect(mapRequesterType(spelling).mapped, spelling).toBe(true)
     })
 })

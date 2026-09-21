@@ -1,8 +1,9 @@
+import { execFileSync } from 'node:child_process'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import { LEGACY_ROLE_MAP, TABLES, type DomainTableKey } from '../src/server/lib/domain'
-import { DOMINO_MAPPING, EQUIVALENCE_MATRIX, TABLE_ORDER } from '../tools/lib/docs-catalog'
+import { DOMINO_MAPPING, EQUIVALENCE_MATRIX, excludedWordsIn, TABLE_ORDER } from '../tools/lib/docs-catalog'
 import { BLOCKS, catalogProblems, DOC_FILES, renderFile } from '../tools/generate-docs'
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url))
@@ -98,10 +99,12 @@ describe('generated documentation', () => {
         }
     })
 
-    it('never uses the excluded word in README or docs', () => {
-        for (const file of DOC_FILES) {
-            const src = readFileSync(`${ROOT}${file}`, 'utf8').toLowerCase()
-            expect(src.includes('demo'), file).toBe(false)
+    it('never uses an excluded word anywhere tracked: docs, source, tools, tests, sample data', () => {
+        const tracked = execFileSync('git', ['ls-files', '-z'], { cwd: ROOT, encoding: 'utf8' }).split('\0').filter(Boolean)
+        expect(tracked.length).toBeGreaterThan(100)
+        for (const file of tracked) {
+            if (file === 'package-lock.json' || /\.(png|gif|jpg|webm|mp4)$/.test(file)) continue
+            expect(excludedWordsIn(readFileSync(`${ROOT}${file}`, 'utf8')), file).toEqual([])
         }
     })
 })

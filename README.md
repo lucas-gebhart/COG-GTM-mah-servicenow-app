@@ -329,7 +329,7 @@ npm run migrate -- --source ../COG-GTM-haas-domino-legacy/export/csv --batch-id 
 
 # 3. Re-run the comparison at any time (or against a saved target report, offline)
 npm run reconcile -- --source ../COG-GTM-haas-domino-legacy/export/csv --strict
-npm run reconcile -- --source sample-data/csv --target-file out/target.json
+npm run reconcile -- --source sample-data --target-file out/target.json
 ```
 
 `tools/migrate.ts` validates every CSV header against the shared contract, pushes rows through
@@ -337,7 +337,7 @@ npm run reconcile -- --source sample-data/csv --target-file out/target.json
 `POST /api/x_cog_mah/authorization_intake/migration/finalize` (requester coalescing across both source
 databases, aging recompute, exception roll-up), fetches the reconciliation report and writes
 `expected.json`, `load.json`, `finalize.json`, `target.json` and `comparison.json` to `--out`.
-The same tooling runs unchanged against `sample-data/csv` and against the sibling export.
+The same tooling runs unchanged against `sample-data` and against the sibling export.
 
 The step-by-step cut-over procedure, with rollback and go / no-go checkpoints, is in
 [docs/MIGRATION-RUNBOOK.md](docs/MIGRATION-RUNBOOK.md).

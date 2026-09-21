@@ -1,5 +1,5 @@
 /**
- * Reads a legacy export directory (the HAAS `export/csv/` folder or `sample-data/csv/`) into
+ * Reads a legacy export directory (the HAAS `export/csv/` folder or `sample-data/`) into
  * per-form rows keyed exactly like the staging tables. The header of every file is checked
  * against the contract so a drifted export fails loudly instead of loading shifted columns.
  */

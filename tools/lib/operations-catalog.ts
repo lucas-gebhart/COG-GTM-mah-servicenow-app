@@ -18,6 +18,8 @@ import {
     MIGRATION_EXCEPTION_TYPES,
     REQUEST_STATES,
     ROLES,
+    TERMINAL_CASE_STAGES,
+    TERMINAL_REQUEST_STATES,
     WORKSPACE_TITLE,
     type AgingFlag,
     type CaseStage,
@@ -26,7 +28,6 @@ import {
     type RequestState,
     type RoleKey,
 } from '../../src/server/lib/domain'
-import { TERMINAL_STAGES as DOMAIN_TERMINAL_STAGES } from '../../src/server/lib/aging'
 import { TABLE_ACCESS } from '../../src/server/lib/security'
 import { UI_LAYOUT } from '../../src/server/lib/uiLayout'
 
@@ -52,7 +53,7 @@ export interface Partition<K extends string> {
 }
 
 /**
- * Case stages. `terminal` is the domain's own definition (src/server/lib/aging.ts): only closed and
+ * Case stages. `terminal` is the domain's own definition (TERMINAL_CASE_STAGES): only closed and
  * cancelled cases have `active=false`, stop aging and stop the SLA clocks by default. `shipped` is a
  * distinct bucket because a shipped case is still active and still ages until it is closed, while the
  * 60/75-day awards target (and therefore the SLA stop condition) ends at shipment.
@@ -62,7 +63,7 @@ export const STAGE_PARTITION: Partition<CaseStage> = {
     buckets: {
         in_work: ['authorized', 'engraving', 'assembly_qc', 'warehouse'],
         shipped: ['shipped'],
-        terminal: [...DOMAIN_TERMINAL_STAGES],
+        terminal: [...TERMINAL_CASE_STAGES],
         exception: ['unmapped'],
     },
 }
@@ -81,7 +82,7 @@ export const REQUEST_PARTITION: Partition<RequestState> = {
     buckets: {
         internal: ['draft', 'submitted', 'in_review'],
         vendor: ['released_to_vendor', 'in_production', 'shipped'],
-        terminal: ['complete', 'cancelled'],
+        terminal: [...TERMINAL_REQUEST_STATES],
         exception: ['unmapped'],
     },
 }
@@ -456,8 +457,11 @@ export interface OperationsModule {
     readonly title: string
     readonly hint: string
     readonly order: number
-    /** Either the dashboard route or a report key. */
-    readonly target: { readonly kind: 'dashboard' } | { readonly kind: 'report'; readonly report: string }
+    /** The dashboard route, a report key, or a filtered list on a domain table. */
+    readonly target:
+        | { readonly kind: 'dashboard' }
+        | { readonly kind: 'report'; readonly report: string }
+        | { readonly kind: 'list'; readonly table: DomainTableKey; readonly filter: string; readonly roles: readonly RoleKey[] }
 }
 
 export const MODULE_ORDER_BASE = 500
@@ -470,12 +474,21 @@ export const OPERATIONS_MODULES: readonly OperationsModule[] = [
     { key: 'assembly_qc_queue', title: 'Assembly/QC queue', hint: 'Awards cases waiting for assembly and quality control', order: MODULE_ORDER_BASE + 50, target: { kind: 'report', report: 'assembly_qc_queue' } },
     { key: 'warehouse_queue', title: 'Warehouse queue', hint: 'Awards cases ready to pick, pack and ship', order: MODULE_ORDER_BASE + 60, target: { kind: 'report', report: 'warehouse_queue' } },
     { key: 'vendor_work', title: 'Vendor work', hint: 'Heraldry requests released to vendors, in production or shipped', order: MODULE_ORDER_BASE + 70, target: { kind: 'report', report: 'vendor_work' } },
-    { key: 'migration_exceptions', title: 'Migration exceptions', hint: 'Open migration exceptions by type', order: MODULE_ORDER_BASE + 80, target: { kind: 'report', report: 'migration_exceptions_by_type' } },
+    { key: 'review_queue', title: 'DD 1348-6 review queue', hint: 'Submitted heraldry requests awaiting DLA / TACOM review, highest requisition priority first', order: MODULE_ORDER_BASE + 80, target: { kind: 'list', table: 'heraldry_request', filter: `active=true^stateIN${REQUEST_PARTITION.buckets.internal?.filter((s) => s !== 'draft').join(',') ?? ''}^ORDERBYrequisition_priority^ORDERBYsubmitted_at`, roles: ['tacom_staff', 'dla', 'admin'] } },
+    { key: 'ses_pending', title: 'SES flags pending decision', hint: 'Submitted SES flag requests waiting for a TACOM decision, earliest appointment first', order: MODULE_ORDER_BASE + 90, target: { kind: 'list', table: 'ses_flag_request', filter: 'active=true^state=submitted^ORDERBYappointment_date', roles: ['tacom_staff', 'admin'] } },
+    { key: 'migration_exceptions', title: 'Migration exceptions', hint: 'Open migration exceptions by type', order: MODULE_ORDER_BASE + 100, target: { kind: 'report', report: 'migration_exceptions_by_type' } },
 ]
 
 /** Module visibility follows the read matrix of the underlying table; the dashboard follows awards cases. */
 export function moduleRoles(mod: OperationsModule): readonly RoleKey[] {
-    return mod.target.kind === 'dashboard' ? dashboardRoles() : reportRoles(reportByKey(mod.target.report))
+    switch (mod.target.kind) {
+        case 'dashboard':
+            return dashboardRoles()
+        case 'report':
+            return reportRoles(reportByKey(mod.target.report))
+        case 'list':
+            return mod.target.roles
+    }
 }
 
 /** Union of all module roles, in ROLES declaration order (used for the navigator separator). */

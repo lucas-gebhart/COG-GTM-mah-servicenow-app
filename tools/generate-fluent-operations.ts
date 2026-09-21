@@ -134,8 +134,17 @@ export function validateCatalog(): void {
             if (reportByKey(key).type !== 'list') throw new Error(`workspace list ${key} must be a list report`)
         }
     }
+    const moduleTitles = new Set<string>()
     for (const mod of OPERATIONS_MODULES) {
+        if (moduleTitles.has(mod.title)) throw new Error(`duplicate module title ${mod.title}`)
+        moduleTitles.add(mod.title)
         if (mod.target.kind === 'report') reportByKey(mod.target.report)
+        if (mod.target.kind === 'list') {
+            const readable = tableReadRoles(mod.target.table)
+            for (const role of mod.target.roles) {
+                if (!readable.includes(role)) throw new Error(`module ${mod.key}: role ${role} cannot read ${mod.target.table}`)
+            }
+        }
     }
 }
 
@@ -483,6 +492,8 @@ export function renderModules(): string {
         )
         if (mod.target.kind === 'dashboard') {
             lines.push(`        link_type: 'DIRECT',`, `        query: ${q(WORKSPACE_ROUTE)},`)
+        } else if (mod.target.kind === 'list') {
+            lines.push(`        link_type: 'LIST',`, `        name: ${q(TABLES[mod.target.table])},`, `        filter: ${q(mod.target.filter)},`)
         } else {
             lines.push(`        link_type: 'REPORT',`, `        report: ${reportExport(mod.target.report)},`)
         }

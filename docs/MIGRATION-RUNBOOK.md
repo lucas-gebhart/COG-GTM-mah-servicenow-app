@@ -176,7 +176,7 @@ Goal: prove source = target with numbers, not impressions.
 
 ```bash
 npm run reconcile -- --source ../COG-GTM-haas-domino-legacy/export/csv --strict      # live instance
-npm run reconcile -- --source sample-data/csv --target-file out/<batch>/target.json  # offline replay
+npm run reconcile -- --source sample-data --target-file out/<batch>/target.json  # offline replay
 ```
 
 `--strict` exits non-zero on any `DIFF`. Beyond the counts:

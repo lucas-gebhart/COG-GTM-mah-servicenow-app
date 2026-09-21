@@ -2,7 +2,7 @@
  * Legacy export → ServiceNow loader.
  *
  *   npm run migrate -- --source ../COG-GTM-haas-domino-legacy/export/csv --batch-id 20260921-full
- *   npm run migrate -- --source sample-data/csv --dry-run          # no instance, expectation only
+ *   npm run migrate -- --source sample-data --dry-run          # no instance, expectation only
  *
  * For every legacy form in contract load order (parents before children):
  *   1. read + header-check the CSV (tools/lib/sourceExport.ts);
@@ -48,7 +48,7 @@ export function parseArgs(argv: readonly string[]): MigrateArgs {
     const forms = get('--forms')?.split(',').map((f) => f.trim()) as LegacyFormName[] | undefined
     for (const f of forms ?? []) if (!(f in LEGACY_FORMS)) throw new Error(`--forms: unknown legacy form ${f}`)
     return {
-        source: resolve(get('--source') ?? 'sample-data/csv'),
+        source: resolve(get('--source') ?? 'sample-data'),
         batchId,
         chunk,
         dryRun: argv.includes('--dry-run'),

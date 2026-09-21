@@ -124,6 +124,38 @@ export const opsMod_vendor_work = Record({
     },
 })
 
+export const opsMod_review_queue = Record({
+    $id: Now.ID['ops_mod_review_queue'],
+    table: 'sys_app_module',
+    data: {
+        title: 'DD 1348-6 review queue',
+        application: mahMenu,
+        link_type: 'LIST',
+        name: 'x_cog_mah_heraldry_request',
+        filter: 'active=true^stateINsubmitted,in_review^ORDERBYrequisition_priority^ORDERBYsubmitted_at',
+        hint: 'Submitted heraldry requests awaiting DLA / TACOM review, highest requisition priority first',
+        active: true,
+        order: 580,
+        roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.dla', 'x_cog_mah.admin'],
+    },
+})
+
+export const opsMod_ses_pending = Record({
+    $id: Now.ID['ops_mod_ses_pending'],
+    table: 'sys_app_module',
+    data: {
+        title: 'SES flags pending decision',
+        application: mahMenu,
+        link_type: 'LIST',
+        name: 'x_cog_mah_ses_flag_request',
+        filter: 'active=true^state=submitted^ORDERBYappointment_date',
+        hint: 'Submitted SES flag requests waiting for a TACOM decision, earliest appointment first',
+        active: true,
+        order: 590,
+        roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.admin'],
+    },
+})
+
 export const opsMod_migration_exceptions = Record({
     $id: Now.ID['ops_mod_migration_exceptions'],
     table: 'sys_app_module',
@@ -134,7 +166,7 @@ export const opsMod_migration_exceptions = Record({
         report: opsReport_migration_exceptions_by_type,
         hint: 'Open migration exceptions by type',
         active: true,
-        order: 580,
+        order: 600,
         roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.admin'],
     },
 })

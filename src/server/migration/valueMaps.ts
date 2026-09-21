@@ -196,6 +196,21 @@ export const REQUESTER_TYPE_MAP = defineValueMap({
     },
 })
 
+const RELATIONSHIP_TO_TYPE: Readonly<Record<string, string>> = { self: 'veteran', unit: 'unit' }
+
+/**
+ * Requester type from the free-text Relationship item. The relationship vocabulary is the richer one
+ * (Widow, Nephew, Executor, Grandson …), so it is consulted first and collapsed to veteran / unit /
+ * next of kin; the direct type spellings are the fallback. `mapped` is false only when neither knows the text.
+ */
+export function mapRequesterType(relationshipRaw: unknown): MappedValue {
+    const rel = RELATIONSHIP_MAP.map(relationshipRaw)
+    if (rel.mapped && rel.normalized !== '') {
+        return { value: RELATIONSHIP_TO_TYPE[rel.value] ?? 'next_of_kin', mapped: true, normalized: rel.normalized }
+    }
+    return REQUESTER_TYPE_MAP.map(relationshipRaw)
+}
+
 export const QC_RESULT_MAP = defineValueMap({
     name: 'qc_result',
     choices: QC_RESULTS,

@@ -4,14 +4,14 @@
  * Replaces the `QuerySave` LotusScript on the `AwardsCase` and `Request` forms and the
  * hidden `AllowedNext` computed-for-display fields on the XPages.
  */
-import { CASE_STAGE_ORDER, RELEASED_TO_VENDOR_MESSAGE, REQUEST_STATE_ORDER, ROLES, type CaseStage, type RequestState, type RoleKey } from './domain'
+import { CASE_STAGE_ORDER, RELEASED_TO_VENDOR_MESSAGE, REQUEST_STATE_ORDER, ROLES, TERMINAL_CASE_STAGES, TERMINAL_REQUEST_STATES, type CaseStage, type RequestState, type RoleKey } from './domain'
 
 export interface TransitionDecision {
     allowed: boolean
     reason?: string
 }
 
-const CASE_TERMINAL: ReadonlySet<CaseStage> = new Set<CaseStage>(['closed', 'cancelled'])
+const CASE_TERMINAL: ReadonlySet<CaseStage> = new Set<CaseStage>(TERMINAL_CASE_STAGES)
 
 /** Roles permitted to move a case *into* a given stage. Admin and TACOM staff may do anything. */
 export const CASE_STAGE_ROLES: Readonly<Record<CaseStage, readonly RoleKey[]>> = {
@@ -77,7 +77,7 @@ export function canTransitionCase(ctx: CaseTransitionContext): TransitionDecisio
 
 // ---------------------------------------------------------------------------------------
 
-const REQUEST_TERMINAL: ReadonlySet<RequestState> = new Set<RequestState>(['complete', 'cancelled'])
+const REQUEST_TERMINAL: ReadonlySet<RequestState> = new Set<RequestState>(TERMINAL_REQUEST_STATES)
 
 /** Fields that stay editable after release (everything else is frozen). */
 export const POST_RELEASE_EDITABLE_FIELDS: ReadonlySet<string> = new Set([

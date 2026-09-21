@@ -1,7 +1,9 @@
 /**
- * Application navigator: "MAH Case Management" with mission-shaped modules. The queue modules
- * carry filters so operators land directly on their work (engraving queue, aging red, vendor
- * in production, ...) — the equivalents of the categorised Domino views the XPages app opened.
+ * Application navigator: "MAH Case Management" with mission-shaped modules — the equivalents of the
+ * categorised Domino views the XPages app opened. Record-oriented modules (lists, "new" links,
+ * migration and administration) live here; the operational queue, aging, dashboard and review
+ * modules are generated into operations_modules.now.ts from tools/lib/operations-catalog.ts so a
+ * queue definition exists exactly once.
  */
 import '@servicenow/sdk/global'
 import { ApplicationMenu, Record } from '@servicenow/sdk/core'
@@ -26,141 +28,6 @@ export const mahMenu = ApplicationMenu({
     roles: [tacomStaff, csr, engraver, assembler, warehouse, vendor, dla, admin],
     active: true,
     order: 100,
-})
-
-// ------------------------------------------------------------------ Operations
-export const modSepOps = Record({
-    $id: Now.ID['mod_sep_ops'],
-    table: 'sys_app_module',
-    data: { title: 'Operations', application: mahMenu, link_type: 'SEPARATOR', active: true, order: 100, roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.csr', 'x_cog_mah.engraver', 'x_cog_mah.assembler', 'x_cog_mah.warehouse', 'x_cog_mah.dla', 'x_cog_mah.admin'] },
-})
-export const modWorkspace = Record({
-    $id: Now.ID['mod_workspace'],
-    table: 'sys_app_module',
-    data: {
-        title: 'MAH Operations workspace',
-        application: mahMenu,
-        link_type: 'DIRECT',
-        query: 'now/mah-operations/home',
-        hint: 'Operator workspace: cases by stage, aging, engraving / assembly / warehouse queues, vendor work',
-        active: true,
-        order: 110,
-        roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.csr', 'x_cog_mah.engraver', 'x_cog_mah.assembler', 'x_cog_mah.warehouse', 'x_cog_mah.dla', 'x_cog_mah.admin'],
-    },
-})
-export const modAgingRed = Record({
-    $id: Now.ID['mod_aging_red'],
-    table: 'sys_app_module',
-    data: {
-        title: 'Aging: red (75+ days)',
-        application: mahMenu,
-        link_type: 'LIST',
-        name: 'x_cog_mah_awards_case',
-        filter: 'active=true^aging_flag=red^ORDERBYDESCdays_in_stage',
-        hint: 'Open awards cases past the 75-day red threshold',
-        active: true,
-        order: 120,
-        roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.csr', 'x_cog_mah.admin'],
-    },
-})
-export const modAgingAmber = Record({
-    $id: Now.ID['mod_aging_amber'],
-    table: 'sys_app_module',
-    data: {
-        title: 'Aging: amber (60–74 days)',
-        application: mahMenu,
-        link_type: 'LIST',
-        name: 'x_cog_mah_awards_case',
-        filter: 'active=true^aging_flag=amber^ORDERBYDESCdays_in_stage',
-        active: true,
-        order: 130,
-        roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.csr', 'x_cog_mah.admin'],
-    },
-})
-export const modEngravingQueue = Record({
-    $id: Now.ID['mod_engraving_queue'],
-    table: 'sys_app_module',
-    data: {
-        title: 'Engraving queue',
-        application: mahMenu,
-        link_type: 'LIST',
-        name: 'x_cog_mah_engraving_job',
-        filter: 'active=true^statusINqueued,in_progress,rework^ORDERBYDESCpriority_handling^ORDERBYsys_created_on',
-        hint: 'Engraving jobs waiting or in progress (priority handling first)',
-        active: true,
-        order: 140,
-        roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.engraver', 'x_cog_mah.admin'],
-    },
-})
-export const modAssemblyQueue = Record({
-    $id: Now.ID['mod_assembly_queue'],
-    table: 'sys_app_module',
-    data: {
-        title: 'Assembly / QC queue',
-        application: mahMenu,
-        link_type: 'LIST',
-        name: 'x_cog_mah_awards_case',
-        filter: 'active=true^stage=assembly_qc^ORDERBYDESCpriority_handling^ORDERBYstage_entered_at',
-        active: true,
-        order: 150,
-        roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.assembler', 'x_cog_mah.admin'],
-    },
-})
-export const modWarehouseQueue = Record({
-    $id: Now.ID['mod_warehouse_queue'],
-    table: 'sys_app_module',
-    data: {
-        title: 'Warehouse queue',
-        application: mahMenu,
-        link_type: 'LIST',
-        name: 'x_cog_mah_awards_case',
-        filter: 'active=true^stage=warehouse^ORDERBYDESCpriority_handling^ORDERBYstage_entered_at',
-        active: true,
-        order: 160,
-        roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.warehouse', 'x_cog_mah.admin'],
-    },
-})
-export const modVendorWork = Record({
-    $id: Now.ID['mod_vendor_work'],
-    table: 'sys_app_module',
-    data: {
-        title: 'Vendor work (released / in production)',
-        application: mahMenu,
-        link_type: 'LIST',
-        name: 'x_cog_mah_heraldry_request',
-        filter: 'active=true^stateINreleased_to_vendor,in_production,shipped^ORDERBYvendor^ORDERBYreleased_to_vendor',
-        active: true,
-        order: 170,
-        roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.vendor', 'x_cog_mah.admin'],
-    },
-})
-export const modReviewQueue = Record({
-    $id: Now.ID['mod_review_queue'],
-    table: 'sys_app_module',
-    data: {
-        title: 'DD 1348-6 review queue',
-        application: mahMenu,
-        link_type: 'LIST',
-        name: 'x_cog_mah_heraldry_request',
-        filter: 'active=true^stateINsubmitted,in_review^ORDERBYrequisition_priority^ORDERBYsubmitted_at',
-        active: true,
-        order: 180,
-        roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.dla', 'x_cog_mah.admin'],
-    },
-})
-export const modSesPending = Record({
-    $id: Now.ID['mod_ses_pending'],
-    table: 'sys_app_module',
-    data: {
-        title: 'SES flags pending decision',
-        application: mahMenu,
-        link_type: 'LIST',
-        name: 'x_cog_mah_ses_flag_request',
-        filter: 'active=true^state=submitted^ORDERBYappointment_date',
-        active: true,
-        order: 190,
-        roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.admin'],
-    },
 })
 
 // ------------------------------------------------------------------ Awards (medals)

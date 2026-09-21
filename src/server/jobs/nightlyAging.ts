@@ -8,7 +8,7 @@
  */
 import { GlideAggregate, GlideRecord, gs } from '@servicenow/glide'
 import { computeAging } from '../lib/aging'
-import { EVENTS, SCHEDULED_JOB_NAME, TABLES, type AgingFlag, type CaseStage } from '../lib/domain'
+import { EVENTS, SCHEDULED_JOB_NAME, TABLES, TERMINAL_CASE_STAGES, type AgingFlag, type CaseStage } from '../lib/domain'
 import { nowValue, securityLog, str } from '../rules/glideSupport'
 
 export interface AgingRunSummary {
@@ -29,7 +29,7 @@ export function runNightlyAging(): AgingRunSummary {
 
     const gr = new GlideRecord(TABLES.awards_case)
     gr.addQuery('active', 'true')
-    gr.addQuery('stage', 'NOT IN', 'closed,cancelled')
+    gr.addQuery('stage', 'NOT IN', TERMINAL_CASE_STAGES.join(','))
     gr.query()
     while (gr.next()) {
         summary.scanned += 1

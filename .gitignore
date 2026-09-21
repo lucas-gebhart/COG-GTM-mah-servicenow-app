@@ -13,3 +13,4 @@ out/
 reconciliation-*.json
 migration-run-*.json
 .DS_Store
+reports/

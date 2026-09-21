@@ -152,6 +152,12 @@ export const CASE_STAGE_ORDER: readonly CaseStage[] = [
     'closed',
 ]
 
+/** Stages where a case is finished: `active=false`, aging and SLA clocks stop, no forward transition. */
+export const TERMINAL_CASE_STAGES: readonly CaseStage[] = ['closed', 'cancelled']
+export function isTerminalCaseStage(stage: string): boolean {
+    return (TERMINAL_CASE_STAGES as readonly string[]).includes(stage)
+}
+
 export const AGING_FLAGS = {
     green: 'Green',
     amber: 'Amber',
@@ -314,6 +320,12 @@ export const REQUEST_STATE_ORDER: readonly RequestState[] = [
     'shipped',
     'complete',
 ]
+
+/** States where a heraldry request is finished: `active=false`, no forward transition. */
+export const TERMINAL_REQUEST_STATES: readonly RequestState[] = ['complete', 'cancelled']
+export function isTerminalRequestState(state: string): boolean {
+    return (TERMINAL_REQUEST_STATES as readonly string[]).includes(state)
+}
 
 export const SES_FLAG_STATES = {
     draft: 'Draft',

@@ -13,6 +13,7 @@ import {
     dateColumns,
 } from '../tools/generate-sample-data'
 import { parseCsv, rowToObject } from '../tools/lib/csv'
+import { excludedWordsIn } from '../tools/lib/docs-catalog'
 import { csvHeader, LEGACY_FORMS, LOAD_ORDER, sourceKey, stagingColumnMap, type LegacyFormName } from '../src/server/lib/legacyContract'
 import { mapLegacyStatus } from '../src/server/lib/statusMap'
 import { daysBetween, normalizeLegacyDate } from '../src/server/lib/dates'
@@ -424,7 +425,7 @@ describe('CSV fidelity', () => {
         expect(audit.unids).toEqual({ total: 455, distinct: 455, malformed: 0 })
         const readme = renderReadme(audit)
         expect(readme).toContain('modernization reference application')
-        expect(readme.toLowerCase()).not.toContain('demo')
+        expect(excludedWordsIn(readme)).toEqual([])
         expect(readme).toContain('| vetmedals-AwardLine.csv | AwardLine | 120 |')
     })
 })

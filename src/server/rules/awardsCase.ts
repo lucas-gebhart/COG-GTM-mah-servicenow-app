@@ -6,12 +6,10 @@
  */
 import { GlideRecord, gs } from '@servicenow/glide'
 import { computeAging } from '../lib/aging'
-import { EVENTS, TABLES, type CaseStage } from '../lib/domain'
+import { EVENTS, isTerminalCaseStage, TABLES, type CaseStage } from '../lib/domain'
 import { canTransitionCase } from '../lib/stageMachine'
 import { mergeResults, validateSafeText } from '../lib/validators'
 import { abortWithMessage, abortWithValidation, currentRoleKeys, insertCaseNote, nowValue, securityLog, str, type AnyRecord } from './glideSupport'
-
-const TERMINAL: ReadonlySet<string> = new Set(['closed', 'cancelled'])
 
 function openLineCount(caseSysId: string): number {
     if (!caseSysId) return 0
@@ -71,14 +69,14 @@ export function awardsCaseBefore(current: AnyRecord, previous: AnyRecord): void 
             return
         }
         current.setValue('stage_entered_at', nowValue())
-        if (TERMINAL.has(toStage)) current.setValue('closed_at', nowValue())
+        if (isTerminalCaseStage(toStage)) current.setValue('closed_at', nowValue())
         else current.setValue('closed_at', '')
     }
     if (isInsert && str(current, 'stage_entered_at') === '') current.setValue('stage_entered_at', nowValue())
 
     // Lifecycle state and active flag follow the stage.
     current.setValue('state', toStage === 'closed' ? 'closed' : toStage === 'cancelled' ? 'cancelled' : toStage === 'unmapped' ? 'unmapped' : 'open')
-    current.setValue('active', TERMINAL.has(toStage) ? 'false' : 'true')
+    current.setValue('active', isTerminalCaseStage(toStage) ? 'false' : 'true')
 
     // Aging is recomputed on every save so the list is never stale between nightly runs.
     const aging = computeAging(

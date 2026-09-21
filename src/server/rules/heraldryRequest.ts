@@ -6,7 +6,7 @@
  * input-validation formula.
  */
 import { GlideRecord, gs } from '@servicenow/glide'
-import { EVENTS, RELEASED_TO_VENDOR_MESSAGE, TABLES, type RequestState } from '../lib/domain'
+import { EVENTS, isTerminalRequestState, RELEASED_TO_VENDOR_MESSAGE, TABLES, type RequestState } from '../lib/domain'
 import { totalRequestLines } from '../lib/pricing'
 import { blockedPostReleaseEdits, canTransitionRequest } from '../lib/stageMachine'
 import { validateDd1348Header, validateEmail, validatePhone, validateSafeText, mergeResults } from '../lib/validators'
@@ -143,7 +143,7 @@ export function heraldryRequestBefore(current: AnyRecord, previous: AnyRecord): 
     }
 
     // 5. Derived fields.
-    current.setValue('active', ['complete', 'cancelled'].includes(str(current, 'state')) ? 'false' : 'true')
+    current.setValue('active', isTerminalRequestState(str(current, 'state')) ? 'false' : 'true')
     if (isInsert) {
         if (str(current, 'legacy_form') === '') current.setValue('legacy_form', 'Request')
         current.setValue('line_count', '0')

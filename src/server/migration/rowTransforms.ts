@@ -43,12 +43,12 @@ import {
     FILE_FORMAT_MAP,
     HERALDIC_CATEGORY_MAP,
     mapAwardName,
+    mapRequesterType,
     mapRequisitionPriority,
     NOTE_TYPE_MAP,
     parseLegacyBoolean,
     QC_RESULT_MAP,
     RELATIONSHIP_MAP,
-    REQUESTER_TYPE_MAP,
     SERVICE_COMPONENT_MAP,
     SERVICE_ERA_MAP,
     SES_FLAG_TYPE_MAP,
@@ -462,7 +462,7 @@ function requester(b: RowBuilder, ctx: Required<TransformContext>): RowTransform
     requesterCommon(b, 'RequesterID')
 
     const relationshipRaw = b.get('Relationship')
-    const type = REQUESTER_TYPE_MAP.map(relationshipRaw)
+    const type = mapRequesterType(relationshipRaw)
     b.set('type', type.value)
     if (!type.mapped) b.warn('unmapped_value', 'type', relationshipRaw, 'Relationship does not indicate veteran / next of kin / unit; stored as next_of_kin')
     b.text('relationship', 'Relationship', 40)

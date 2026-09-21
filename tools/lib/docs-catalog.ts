@@ -178,7 +178,7 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
         behaviour: 'Completed engraving moves the case to Assembly/QC; a shipment moves it to Shipped and a delivery to Closed',
         files: ['src/server/rules/fulfilment.ts'],
         artefacts: ['MAH Engraving job - advance case to Assembly/QC', 'MAH Shipment - advance case to Shipped / Closed'],
-        tests: ['terminal stages are the domain definition (aging.ts), so shipped cases stay active and keep aging'],
+        tests: ['terminal stages are the domain definition (TERMINAL_CASE_STAGES), so shipped cases stay active and keep aging'],
     },
 
     // ---------------------------------------------------------------- agents
@@ -327,6 +327,7 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
             'every declared choice is reachable from a legacy spelling or explicitly target-only (bidirectional)',
             'unknown spellings are reported unmapped and fall back deterministically',
             'award names map by HRC code, then by catalog label, then to other',
+            'derives veteran / next of kin / unit from every relationship spelling the relationship map knows',
         ],
     },
     {
@@ -377,6 +378,17 @@ export const DOMINO_MAPPING: readonly { domino: string; servicenow: string; wher
     { domino: 'DXL / CSV export', servicenow: 'Import Set staging tables, data sources, transform maps', where: 'src/fluent/migration/' },
     { domino: 'Domino log.nsf', servicenow: 'Structured JSON `gs.info` events', where: 'src/server/lib/logging.ts' },
 ]
+
+/**
+ * Words that must never appear in tracked text (README, docs, code, PR). The list is assembled from
+ * character codes so the repository itself stays clean; tests lower-case the text before matching.
+ */
+export const EXCLUDED_WORDS: readonly string[] = [String.fromCharCode(100, 101, 109, 111)]
+
+export function excludedWordsIn(text: string): string[] {
+    const lower = text.toLowerCase()
+    return EXCLUDED_WORDS.filter((w) => lower.includes(w))
+}
 
 /** Tables in the order the README lists them. */
 export const TABLE_ORDER: readonly DomainTableKey[] = [

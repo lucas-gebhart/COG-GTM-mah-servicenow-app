@@ -1,4 +1,5 @@
-import { readFileSync } from 'node:fs'
+import { readdirSync, readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import {
     AGING_FLAGS,
@@ -6,6 +7,7 @@ import {
     CASE_STAGES,
     ROLES,
     TABLES,
+    TERMINAL_CASE_STAGES,
     WORKSPACE_TITLE,
     type RoleKey,
 } from '../src/server/lib/domain'
@@ -40,6 +42,8 @@ const REQUIRED_MODULE_TITLES = [
     'Assembly/QC queue',
     'Warehouse queue',
     'Vendor work',
+    'DD 1348-6 review queue',
+    'SES flags pending decision',
     'Migration exceptions',
 ]
 
@@ -76,22 +80,23 @@ describe('operations catalog partitions cover the domain choice sets', () => {
         expect(Object.keys(PARTITIONS)).toHaveLength(5)
     })
 
-    it('terminal stages are the domain definition (aging.ts), so shipped cases stay active and keep aging', () => {
+    it('terminal stages are the domain definition (TERMINAL_CASE_STAGES), so shipped cases stay active and keep aging', () => {
         expect(sorted(STAGE_PARTITION.buckets.terminal ?? [])).toEqual(sorted(TERMINAL_STAGES))
         expect(STAGE_PARTITION.buckets.terminal).not.toContain('shipped')
-        // The lifecycle re-declares the terminal set in three server files that this workstream does
-        // not own; pin each literal to aging.ts so a change in any one of them fails here.
-        const literals: Record<string, RegExp> = {
-            '../src/server/lib/stageMachine.ts': /const CASE_TERMINAL: ReadonlySet<CaseStage> = new Set<CaseStage>\(\[([^\]]*)\]\)/,
-            '../src/server/rules/awardsCase.ts': /const TERMINAL: ReadonlySet<string> = new Set\(\[([^\]]*)\]\)/,
-            '../src/server/jobs/nightlyAging.ts': /addQuery\('stage', 'NOT IN', '([^']*)'\)/,
+        // Every consumer derives the terminal set from domain.ts; no file may re-declare the literal.
+        expect(sorted(TERMINAL_CASE_STAGES)).toEqual(sorted(TERMINAL_STAGES))
+        const caseLiteral = /\[\s*'closed'\s*,\s*'cancelled'\s*\]|'closed,cancelled'/
+        const requestLiteral = /\[\s*'complete'\s*,\s*'cancelled'\s*\]/
+        const serverFiles = readdirSync('src/server', { recursive: true, withFileTypes: true })
+            .filter((e) => e.isFile() && e.name.endsWith('.ts') && e.name !== 'domain.ts')
+            .map((e) => join(e.parentPath, e.name))
+        expect(serverFiles.length).toBeGreaterThan(10)
+        for (const file of serverFiles) {
+            const src = readFileSync(file, 'utf8')
+            expect(src, file).not.toMatch(caseLiteral)
+            expect(src, file).not.toMatch(requestLiteral)
         }
-        for (const [file, pattern] of Object.entries(literals)) {
-            const src = readFileSync(new URL(file, import.meta.url), 'utf8')
-            const literal = pattern.exec(src)?.[1]
-            expect(literal, file).toBeDefined()
-            expect(sorted((literal ?? '').split(',').map((s) => s.trim().replace(/'/g, ''))), file).toEqual(sorted(TERMINAL_STAGES))
-        }
+        expect(readFileSync('tools/lib/operations-catalog.ts', 'utf8')).not.toMatch(caseLiteral)
     })
 })
 
@@ -219,7 +224,7 @@ describe('dashboard', () => {
 describe('application modules', () => {
     it('module titles match the required set exactly (both directions)', () => {
         expect(sorted(OPERATIONS_MODULES.map((m) => m.title))).toEqual(sorted(REQUIRED_MODULE_TITLES))
-        expect(OPERATIONS_MODULES).toHaveLength(8)
+        expect(OPERATIONS_MODULES).toHaveLength(10)
     })
 
     it('module roles are domain roles, every domain role is used, and vendor sees only "Vendor work"', () => {
@@ -236,10 +241,30 @@ describe('application modules', () => {
         expect(vendorModules).toEqual(['Vendor work'])
     })
 
-    it('dashboard module links to the same workspace route as the existing application menu', () => {
+    it('operations modules are defined exactly once: no navigator destination or title is duplicated across app_menu.now.ts and the generated file', () => {
         const appMenu = readFileSync('src/fluent/ui/app_menu.now.ts', 'utf8')
-        expect(appMenu).toContain(`'${WORKSPACE_ROUTE}'`)
-        expect(renderAll().modules).toContain(`query: '${WORKSPACE_ROUTE}'`)
+        const generated = renderAll().modules
+        expect(generated).toContain(`query: '${WORKSPACE_ROUTE}'`)
+        expect(appMenu).not.toContain(WORKSPACE_ROUTE)
+        const destinations = (src: string): string[] => {
+            const out: string[] = []
+            for (const m of src.matchAll(/table: 'sys_app_module',\s*data: \{([\s\S]*?)\n\s*\},?\n\s*\}\)/g)) {
+                const body = m[1] ?? ''
+                const title = /title: '([^']+)'/.exec(body)?.[1] ?? ''
+                const link = /link_type: '([^']+)'/.exec(body)?.[1] ?? ''
+                const name = /\bname: '([^']+)'/.exec(body)?.[1] ?? ''
+                const filter = /filter: '([^']*)'/.exec(body)?.[1] ?? ''
+                const query = /query: '([^']*)'/.exec(body)?.[1] ?? ''
+                const report = /report: (\w+)/.exec(body)?.[1] ?? ''
+                out.push(`title:${title}`)
+                if (link !== 'SEPARATOR') out.push(`${link}|${name}|${filter}|${query}|${report}`)
+            }
+            return out
+        }
+        const all = [...destinations(appMenu), ...destinations(generated)]
+        expect(all.length).toBeGreaterThan(OPERATIONS_MODULES.length + 10)
+        const dupes = all.filter((d, i) => all.indexOf(d) !== i)
+        expect(dupes).toEqual([])
     })
 
     it('role exports referenced by the workspace file exist in roles.now.ts with the domain role names', () => {

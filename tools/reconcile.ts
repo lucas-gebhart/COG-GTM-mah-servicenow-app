@@ -21,7 +21,7 @@ export async function main(argv: readonly string[], log: (s: string) => void = c
         const i = argv.indexOf(flag)
         return i >= 0 ? argv[i + 1] : undefined
     }
-    const source = resolve(get('--source') ?? 'sample-data/csv')
+    const source = resolve(get('--source') ?? 'sample-data')
     const out = resolve(get('--out') ?? 'reports/reconcile.json')
     const targetFile = get('--target-file')
 
