@@ -5,10 +5,10 @@
  * 60-character limit, quantity 1-999) and the `CreateEngravingJob` PostSave agent.
  */
 import { GlideRecord } from '@servicenow/glide'
-import { TABLES } from '../lib/domain'
-import { mergeResults, validateEngravingText, validateQuantity } from '../lib/validators'
-import { abortWithValidation, nowValue, str, type AnyRecord } from './glideSupport'
-import { rollUpCaseLines } from './awardsCase'
+import { TABLES } from '../lib/domain.ts'
+import { mergeResults, validateEngravingText, validateQuantity } from '../lib/validators.ts'
+import { abortWithValidation, nowValue, str, type AnyRecord } from './glideSupport.ts'
+import { rollUpCaseLines } from './awardsCase.ts'
 
 /** before insert/update */
 export function awardLineBefore(current: AnyRecord): void {

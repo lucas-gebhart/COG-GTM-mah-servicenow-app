@@ -20,7 +20,7 @@ import {
     SES_FLAG_STATES,
     SHIPMENT_STATUSES,
     type LegacyForm,
-} from './domain'
+} from './domain.ts'
 
 export const UNMAPPED = 'unmapped' as const
 

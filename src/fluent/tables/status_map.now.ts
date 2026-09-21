@@ -26,7 +26,7 @@ export const x_cog_mah_status_map = Table({
     audit: true,
     display: 'legacy_status',
     schema: {
-        number: StringColumn({ label: 'Number', maxLength: 40, default: 'javascript:getNextObjNumberPadded();', readOnly: true }),
+        number: StringColumn({ label: 'Number', maxLength: 40, default: 'javascript:global.getNextObjNumberPadded();', readOnly: true }),
         legacy_unid: StringColumn({ label: 'Legacy UNID', maxLength: LIMITS.legacyUnid, unique: true }),
         legacy_form: ChoiceColumn({ label: 'Legacy form', choices: LEGACY_FORM_CHOICES, mandatory: true, dropdown: 'dropdown_with_none' }),
         legacy_status_raw: StringColumn({ label: 'Legacy status (example raw)', maxLength: 100 }),

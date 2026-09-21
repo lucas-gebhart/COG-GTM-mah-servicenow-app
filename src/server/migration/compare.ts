@@ -3,7 +3,7 @@
  * the instance reconciliation report (computed from the loaded tables). Pure so the sample
  * data tests can pin it and `tools/reconcile.ts` can print it.
  */
-import type { ExpectedTargets } from './dryRun'
+import type { ExpectedTargets } from './dryRun.ts'
 
 /** Shape of GET /api/x_cog_mah/authorization_intake/reconciliation that the comparison reads. */
 export interface TargetReport {

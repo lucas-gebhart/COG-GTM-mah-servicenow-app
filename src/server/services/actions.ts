@@ -5,9 +5,9 @@
  * Errors surface through gs.addErrorMessage with a generic sentence and a JSON log line.
  */
 import { GlideRecord, gs } from '@servicenow/glide'
-import { TABLES, type CaseStage, type RequestState } from '../lib/domain'
-import { nextCaseStage } from '../lib/stageMachine'
-import { securityLog, str, type AnyRecord } from '../rules/glideSupport'
+import { TABLES, type CaseStage, type RequestState } from '../lib/domain.ts'
+import { nextCaseStage } from '../lib/stageMachine.ts'
+import { securityLog, str, type AnyRecord } from '../rules/glideSupport.ts'
 
 type Params = unknown[]
 

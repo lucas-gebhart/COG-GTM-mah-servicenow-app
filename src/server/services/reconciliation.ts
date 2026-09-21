@@ -7,8 +7,8 @@
  * never drift from the data it describes.
  */
 import { GlideAggregate, type GlideRecord } from '@servicenow/glide'
-import { CASE_STAGE_ORDER, LEGACY_FORMS, MIGRATION_EXCEPTION_TYPES, REQUEST_STATE_ORDER, TABLES, TARGET_STATUS_FIELD, type DomainTableKey } from '../lib/domain'
-import { nowValue } from '../rules/glideSupport'
+import { CASE_STAGE_ORDER, LEGACY_FORMS, MIGRATION_EXCEPTION_TYPES, REQUEST_STATE_ORDER, TABLES, TARGET_STATUS_FIELD, type DomainTableKey } from '../lib/domain.ts'
+import { nowValue } from '../rules/glideSupport.ts'
 
 export interface TableCount {
     table: string

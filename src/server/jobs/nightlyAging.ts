@@ -7,9 +7,9 @@
  * used by the reconciliation report.
  */
 import { GlideAggregate, GlideRecord, gs } from '@servicenow/glide'
-import { computeAging } from '../lib/aging'
-import { EVENTS, SCHEDULED_JOB_NAME, TABLES, TERMINAL_CASE_STAGES, type AgingFlag, type CaseStage } from '../lib/domain'
-import { nowValue, securityLog, str } from '../rules/glideSupport'
+import { computeAging } from '../lib/aging.ts'
+import { EVENTS, SCHEDULED_JOB_NAME, TABLES, TERMINAL_CASE_STAGES, type AgingFlag, type CaseStage } from '../lib/domain.ts'
+import { nowValue, securityLog, str } from '../rules/glideSupport.ts'
 
 export interface AgingRunSummary {
     job: string

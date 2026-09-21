@@ -6,7 +6,7 @@
  *
  * Layouts mirror the Domino views / XPages the application replaces (see docs/EQUIVALENCE-MATRIX.md).
  */
-import type { DomainTableKey } from './domain'
+import type { DomainTableKey } from './domain.ts'
 
 export interface FormSection {
     caption: string

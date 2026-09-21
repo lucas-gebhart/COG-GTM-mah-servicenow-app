@@ -30,8 +30,8 @@ import {
     SES_FLAG_TYPES,
     SOURCE_AGENCIES,
     UNITS_OF_ISSUE,
-} from '../lib/domain'
-import { normalizeStatusText } from '../lib/statusMap'
+} from '../lib/domain.ts'
+import { normalizeStatusText } from '../lib/statusMap.ts'
 
 export interface MappedValue {
     value: string

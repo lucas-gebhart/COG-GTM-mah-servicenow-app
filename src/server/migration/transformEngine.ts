@@ -16,12 +16,12 @@
  * `legacy_unid` and replaces the exceptions written for that row in the same batch.
  */
 import { GlideAggregate, GlideDateTime, GlideRecord, gs } from '@servicenow/glide'
-import { coalesceRequesters, type DedupeCandidate } from '../lib/dedupe'
-import { TABLES } from '../lib/domain'
-import { EXTRA_STAGING_COLUMNS, LEGACY_FORMS, stagingColumnMap, TARGET_BUSINESS_KEY_FIELD, type LegacyFormName } from '../lib/legacyContract'
-import { formatSecurityEvent, type SecurityEventType } from '../lib/logging'
-import { buildStatusLookup, DEFAULT_STATUS_MAP, normalizeStatusText, type StatusLookup, type StatusMapEntry } from '../lib/statusMap'
-import { DIRECT_FIELD_MAPS, type ReferenceLookup, type RowTransform, type RowWarning, type SourceRow, transformRow } from './rowTransforms'
+import { coalesceRequesters, type DedupeCandidate } from '../lib/dedupe.ts'
+import { TABLES } from '../lib/domain.ts'
+import { EXTRA_STAGING_COLUMNS, LEGACY_FORMS, stagingColumnMap, TARGET_BUSINESS_KEY_FIELD, type LegacyFormName } from '../lib/legacyContract.ts'
+import { formatSecurityEvent, type SecurityEventType } from '../lib/logging.ts'
+import { buildStatusLookup, DEFAULT_STATUS_MAP, normalizeStatusText, type StatusLookup, type StatusMapEntry } from '../lib/statusMap.ts'
+import { DIRECT_FIELD_MAPS, type ReferenceLookup, type RowTransform, type RowWarning, type SourceRow, transformRow } from './rowTransforms.ts'
 
 type AnyRecord = GlideRecord<string>
 

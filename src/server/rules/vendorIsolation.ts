@@ -7,8 +7,8 @@
  * session user holds x_cog_mah.vendor and no internal role.
  */
 import { GlideRecord, gs } from '@servicenow/glide'
-import { ROLES, TABLES } from '../lib/domain'
-import { securityLog } from './glideSupport'
+import { ROLES, TABLES } from '../lib/domain.ts'
+import { securityLog } from './glideSupport.ts'
 
 /** Internal roles that see everything; a vendor with one of these is treated as staff. */
 const INTERNAL_ROLES: readonly string[] = [ROLES.tacom_staff, ROLES.csr, ROLES.dla, ROLES.admin, 'admin']

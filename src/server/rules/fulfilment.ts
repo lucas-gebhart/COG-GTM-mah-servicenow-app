@@ -7,9 +7,9 @@
  * form validation formulas.
  */
 import { GlideRecord, gs } from '@servicenow/glide'
-import { EVENTS, TABLES } from '../lib/domain'
-import { mergeResults, validateEmail, validateEngravingText, validateMultiline, validatePhone, validateQuantity, validateSafeText } from '../lib/validators'
-import { abortWithMessage, abortWithValidation, nowValue, securityLog, setIfEmpty, str, type AnyRecord } from './glideSupport'
+import { EVENTS, TABLES } from '../lib/domain.ts'
+import { mergeResults, validateEmail, validateEngravingText, validateMultiline, validatePhone, validateQuantity, validateSafeText } from '../lib/validators.ts'
+import { abortWithMessage, abortWithValidation, nowValue, securityLog, setIfEmpty, str, type AnyRecord } from './glideSupport.ts'
 
 // ---------------------------------------------------------------- engraving job
 

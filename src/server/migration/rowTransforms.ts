@@ -16,13 +16,13 @@
  *   - children carry a required parent lookup; a missing parent is an orphan and the row is
  *     quarantined instead of inserted.
  */
-import { computeAging } from '../lib/aging'
-import { normalizeLegacyDate } from '../lib/dates'
-import { computeDedupeKey } from '../lib/dedupe'
-import { CASE_STAGES, LEGACY_FORMS as LEGACY_FORM_KEYS, LIMITS, TABLES, type CaseStage, type MigrationExceptionType } from '../lib/domain'
-import { LEGACY_FORMS, type LegacyFormName } from '../lib/legacyContract'
-import { computeExtendedPrice, toNumber } from '../lib/pricing'
-import { buildStatusLookup, mapLegacyStatus, type StatusLookup, UNMAPPED } from '../lib/statusMap'
+import { computeAging } from '../lib/aging.ts'
+import { normalizeLegacyDate } from '../lib/dates.ts'
+import { computeDedupeKey } from '../lib/dedupe.ts'
+import { CASE_STAGES, LEGACY_FORMS as LEGACY_FORM_KEYS, LIMITS, TABLES, type CaseStage, type MigrationExceptionType } from '../lib/domain.ts'
+import { LEGACY_FORMS, type LegacyFormName } from '../lib/legacyContract.ts'
+import { computeExtendedPrice, toNumber } from '../lib/pricing.ts'
+import { buildStatusLookup, mapLegacyStatus, type StatusLookup, UNMAPPED } from '../lib/statusMap.ts'
 import {
     isSafeText,
     validateCageCode,
@@ -34,7 +34,7 @@ import {
     validatePhone,
     validateQuantity,
     validateUic,
-} from '../lib/validators'
+} from '../lib/validators.ts'
 import {
     AWARD_DEVICE_MAP,
     CARRIER_MAP,
@@ -55,7 +55,7 @@ import {
     SOURCE_AGENCY_MAP,
     UNIT_OF_ISSUE_MAP,
     type ValueMap,
-} from './valueMaps'
+} from './valueMaps.ts'
 
 export type SourceRow = Readonly<Record<string, string | undefined>>
 

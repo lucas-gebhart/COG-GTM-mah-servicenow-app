@@ -5,11 +5,11 @@
  * computed field, and the per-save part of the `NightlyAging` agent.
  */
 import { GlideRecord, gs } from '@servicenow/glide'
-import { computeAging } from '../lib/aging'
-import { EVENTS, isTerminalCaseStage, TABLES, type CaseStage } from '../lib/domain'
-import { canTransitionCase } from '../lib/stageMachine'
-import { mergeResults, validateSafeText } from '../lib/validators'
-import { abortWithMessage, abortWithValidation, currentRoleKeys, insertCaseNote, nowValue, securityLog, str, type AnyRecord } from './glideSupport'
+import { computeAging } from '../lib/aging.ts'
+import { EVENTS, isTerminalCaseStage, TABLES, type CaseStage } from '../lib/domain.ts'
+import { canTransitionCase } from '../lib/stageMachine.ts'
+import { mergeResults, validateSafeText } from '../lib/validators.ts'
+import { abortWithMessage, abortWithValidation, currentRoleKeys, insertCaseNote, nowValue, securityLog, str, type AnyRecord } from './glideSupport.ts'
 
 function openLineCount(caseSysId: string): number {
     if (!caseSysId) return 0

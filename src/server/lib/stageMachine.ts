@@ -4,7 +4,7 @@
  * Replaces the `QuerySave` LotusScript on the `AwardsCase` and `Request` forms and the
  * hidden `AllowedNext` computed-for-display fields on the XPages.
  */
-import { CASE_STAGE_ORDER, RELEASED_TO_VENDOR_MESSAGE, REQUEST_STATE_ORDER, ROLES, TERMINAL_CASE_STAGES, TERMINAL_REQUEST_STATES, type CaseStage, type RequestState, type RoleKey } from './domain'
+import { CASE_STAGE_ORDER, RELEASED_TO_VENDOR_MESSAGE, REQUEST_STATE_ORDER, ROLES, TERMINAL_CASE_STAGES, TERMINAL_REQUEST_STATES, type CaseStage, type RequestState, type RoleKey } from './domain.ts'
 
 export interface TransitionDecision {
     allowed: boolean

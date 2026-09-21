@@ -10,7 +10,7 @@
  * [Vendor] sees only released work assigned to it (enforced by query rules), [Admin]
  * is the application administrator.
  */
-import { ROLES, TABLES, type RoleKey, type DomainTableKey as TableKey } from './domain'
+import { ROLES, TABLES, type RoleKey, type DomainTableKey as TableKey } from './domain.ts'
 
 export type Operation = 'create' | 'read' | 'write' | 'delete'
 

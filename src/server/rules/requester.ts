@@ -5,10 +5,10 @@
  * agent that re-pointed AwardsCase documents at the surviving requester.
  */
 import { GlideRecord } from '@servicenow/glide'
-import { computeDedupeKey } from '../lib/dedupe'
-import { TABLES } from '../lib/domain'
-import { mergeResults, validateEmail, validatePhone, validateSafeText } from '../lib/validators'
-import { abortWithMessage, abortWithValidation, insertCaseNote, securityLog, str, type AnyRecord } from './glideSupport'
+import { computeDedupeKey } from '../lib/dedupe.ts'
+import { TABLES } from '../lib/domain.ts'
+import { mergeResults, validateEmail, validatePhone, validateSafeText } from '../lib/validators.ts'
+import { abortWithMessage, abortWithValidation, insertCaseNote, securityLog, str, type AnyRecord } from './glideSupport.ts'
 
 /** before insert/update */
 export function requesterBefore(current: AnyRecord, previous: AnyRecord): void {

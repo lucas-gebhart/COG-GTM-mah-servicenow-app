@@ -6,8 +6,8 @@
  * required; one row per award line) and produces fully validated, normalized case
  * records keyed on the source record id so the intake is idempotent.
  */
-import { AWARD_CATALOG, AWARD_DEVICES, LIMITS, REQUESTER_TYPES, SOURCE_AGENCIES, type AwardKey, type RequesterType, type SourceAgency } from './domain'
-import { normalizeLegacyDate } from './dates'
+import { AWARD_CATALOG, AWARD_DEVICES, LIMITS, REQUESTER_TYPES, SOURCE_AGENCIES, type AwardKey, type RequesterType, type SourceAgency } from './domain.ts'
+import { normalizeLegacyDate } from './dates.ts'
 import {
     mergeResults,
     validateEmail,
@@ -18,7 +18,7 @@ import {
     validateSafeText,
     type ValidationIssue,
     type ValidationResult,
-} from './validators'
+} from './validators.ts'
 
 export interface AuthorizationAward {
     award_name: AwardKey

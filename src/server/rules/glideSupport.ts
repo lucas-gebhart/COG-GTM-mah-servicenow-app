@@ -5,9 +5,9 @@
  * unit-tested) and this file only adapts GlideRecord / gs to those functions.
  */
 import { GlideDateTime, GlideRecord, gs } from '@servicenow/glide'
-import { ROLES, type RoleKey } from '../lib/domain'
-import { formatSecurityEvent, type SecurityEventInput } from '../lib/logging'
-import { GENERIC_VALIDATION_MESSAGE, type ValidationResult } from '../lib/validators'
+import { ROLES, type RoleKey } from '../lib/domain.ts'
+import { formatSecurityEvent, type SecurityEventInput } from '../lib/logging.ts'
+import { GENERIC_VALIDATION_MESSAGE, type ValidationResult } from '../lib/validators.ts'
 
 export type AnyRecord = GlideRecord<string>
 

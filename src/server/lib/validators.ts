@@ -6,7 +6,7 @@
  * Replaces the legacy @Formula input translation/validation on the DD Form 1348-6 XPage
  * and the QuerySave LotusScript on the `Request` form.
  */
-import { LIMITS } from './domain'
+import { LIMITS } from './domain.ts'
 
 export interface ValidationIssue {
     field: string

@@ -9,7 +9,7 @@
  *     because `sys_user_has_role`, `sys_group_has_role` and `sys_user_grmember` are not
  *     application-file tables and the application installer skips them ("permission denied").
  */
-import { ROLES, type RoleKey } from './domain'
+import { ROLES, type RoleKey } from './domain.ts'
 
 export interface TestUser {
     /** Fluent `Now.ID` key of the sys_user record (`user_<key>`). */

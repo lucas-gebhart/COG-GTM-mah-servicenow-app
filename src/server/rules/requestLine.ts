@@ -6,12 +6,12 @@
  * parent-level `LineCount` / `TotalPrice` roll-up agent.
  */
 import { GlideRecord } from '@servicenow/glide'
-import { RELEASED_TO_VENDOR_MESSAGE, TABLES } from '../lib/domain'
-import { computeExtendedPrice } from '../lib/pricing'
-import { blockedPostReleaseEdits } from '../lib/stageMachine'
-import { mergeResults, validateNsn, validateQuantity, validateSafeText } from '../lib/validators'
-import { abortWithMessage, abortWithValidation, changedFields, currentRoleKeys, setIfEmpty, str, type AnyRecord } from './glideSupport'
-import { rollUpRequestTotals } from './heraldryRequest'
+import { RELEASED_TO_VENDOR_MESSAGE, TABLES } from '../lib/domain.ts'
+import { computeExtendedPrice } from '../lib/pricing.ts'
+import { blockedPostReleaseEdits } from '../lib/stageMachine.ts'
+import { mergeResults, validateNsn, validateQuantity, validateSafeText } from '../lib/validators.ts'
+import { abortWithMessage, abortWithValidation, changedFields, currentRoleKeys, setIfEmpty, str, type AnyRecord } from './glideSupport.ts'
+import { rollUpRequestTotals } from './heraldryRequest.ts'
 
 const LINE_FIELDS = ['heraldic_item', 'nsn_or_exception', 'nomenclature', 'unit_of_issue', 'quantity', 'unit_price', 'line_number'] as const
 

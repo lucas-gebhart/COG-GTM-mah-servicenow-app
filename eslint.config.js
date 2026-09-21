@@ -78,6 +78,25 @@ export default tseslint.config(
         },
     },
     {
+        // Server modules are installed as sys_module rows keyed by their full path *including* the
+        // `.ts` extension, and the instance module loader does not probe extensions. A relative
+        // import without `.ts` compiles locally but throws ModuleResolutionException at runtime.
+        files: ['src/server/**/*.ts'],
+        rules: {
+            'no-restricted-syntax': [
+                'error',
+                {
+                    selector: "ImportDeclaration[source.value=/^\\.{1,2}\\/(?!.*\\.(ts|json)$)/]",
+                    message: 'Relative imports inside src/server must end in .ts (the instance resolves sys_module paths verbatim).',
+                },
+                {
+                    selector: "ExportAllDeclaration[source.value=/^\\.{1,2}\\/(?!.*\\.(ts|json)$)/], ExportNamedDeclaration[source.value=/^\\.{1,2}\\/(?!.*\\.(ts|json)$)/]",
+                    message: 'Relative re-exports inside src/server must end in .ts (the instance resolves sys_module paths verbatim).',
+                },
+            ],
+        },
+    },
+    {
         // Fluent metadata files rely on SDK-provided ambient globals (Now.ID, script``, etc.)
         files: ['src/fluent/**/*.now.ts'],
         languageOptions: {

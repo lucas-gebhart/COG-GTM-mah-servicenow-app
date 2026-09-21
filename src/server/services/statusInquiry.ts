@@ -5,9 +5,9 @@
  * note are returned; PII on the requester is never echoed back.
  */
 import { GlideRecord } from '@servicenow/glide'
-import { TABLES } from '../lib/domain'
-import { validateSafeText } from '../lib/validators'
-import { securityLog, str, type AnyRecord } from '../rules/glideSupport'
+import { TABLES } from '../lib/domain.ts'
+import { validateSafeText } from '../lib/validators.ts'
+import { securityLog, str, type AnyRecord } from '../rules/glideSupport.ts'
 
 export interface StatusInquiryInput {
     case_number: string

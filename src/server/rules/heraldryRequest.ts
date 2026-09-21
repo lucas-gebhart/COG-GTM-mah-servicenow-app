@@ -6,10 +6,10 @@
  * input-validation formula.
  */
 import { GlideRecord, gs } from '@servicenow/glide'
-import { EVENTS, isTerminalRequestState, RELEASED_TO_VENDOR_MESSAGE, TABLES, type RequestState } from '../lib/domain'
-import { totalRequestLines } from '../lib/pricing'
-import { blockedPostReleaseEdits, canTransitionRequest } from '../lib/stageMachine'
-import { validateDd1348Header, validateEmail, validatePhone, validateSafeText, mergeResults } from '../lib/validators'
+import { EVENTS, isTerminalRequestState, RELEASED_TO_VENDOR_MESSAGE, TABLES, type RequestState } from '../lib/domain.ts'
+import { totalRequestLines } from '../lib/pricing.ts'
+import { blockedPostReleaseEdits, canTransitionRequest } from '../lib/stageMachine.ts'
+import { validateDd1348Header, validateEmail, validatePhone, validateSafeText, mergeResults } from '../lib/validators.ts'
 import {
     abortWithMessage,
     abortWithValidation,
@@ -20,7 +20,7 @@ import {
     securityLog,
     str,
     type AnyRecord,
-} from './glideSupport'
+} from './glideSupport.ts'
 
 const HEADER_FIELDS = [
     'document_number',

@@ -22,7 +22,7 @@ export const x_cog_mah_requester = Table({
     audit: true,
     display: 'name',
     schema: {
-        number: StringColumn({ label: 'Number', maxLength: 40, default: 'javascript:getNextObjNumberPadded();', readOnly: true }),
+        number: StringColumn({ label: 'Number', maxLength: 40, default: 'javascript:global.getNextObjNumberPadded();', readOnly: true }),
         legacy_unid: StringColumn({ label: 'Legacy UNID', maxLength: LIMITS.legacyUnid, unique: true }),
         legacy_form: StringColumn({ label: 'Legacy form', maxLength: 40 }),
         legacy_status_raw: StringColumn({ label: 'Legacy status (raw)', maxLength: 100 }),

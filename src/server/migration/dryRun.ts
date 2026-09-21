@@ -8,11 +8,11 @@
  * compares it with the instance report so "source 3,000 = target 3,000" is asserted, not
  * eyeballed, and the sample-data tests pin the exact totals.
  */
-import { coalesceRequesters, type DedupeCandidate } from '../lib/dedupe'
-import { CASE_STAGE_ORDER, MIGRATION_EXCEPTION_TYPES, REQUEST_STATE_ORDER, TABLES, TARGET_STATUS_FIELD, type DomainTableKey } from '../lib/domain'
-import { LEGACY_FORMS, LOAD_ORDER, TARGET_BUSINESS_KEY_FIELD, type LegacyFormName } from '../lib/legacyContract'
-import { buildStatusLookup, DEFAULT_STATUS_MAP, type StatusLookup } from '../lib/statusMap'
-import { type RowTransform, type SourceRow, transformRow } from './rowTransforms'
+import { coalesceRequesters, type DedupeCandidate } from '../lib/dedupe.ts'
+import { CASE_STAGE_ORDER, MIGRATION_EXCEPTION_TYPES, REQUEST_STATE_ORDER, TABLES, TARGET_STATUS_FIELD, type DomainTableKey } from '../lib/domain.ts'
+import { LEGACY_FORMS, LOAD_ORDER, TARGET_BUSINESS_KEY_FIELD, type LegacyFormName } from '../lib/legacyContract.ts'
+import { buildStatusLookup, DEFAULT_STATUS_MAP, type StatusLookup } from '../lib/statusMap.ts'
+import { type RowTransform, type SourceRow, transformRow } from './rowTransforms.ts'
 
 export interface FormDryRun {
     form: LegacyFormName

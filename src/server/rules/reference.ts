@@ -3,9 +3,9 @@
  * vendors. Replaces the corresponding Domino form validation formulas.
  */
 import { GlideRecord, gs } from '@servicenow/glide'
-import { TABLES } from '../lib/domain'
-import { mergeResults, validateCageCode, validateEmail, validateMultiline, validateNsn, validatePhone, validateSafeText } from '../lib/validators'
-import { abortWithMessage, abortWithValidation, nowValue, securityLog, setIfEmpty, str, type AnyRecord } from './glideSupport'
+import { TABLES } from '../lib/domain.ts'
+import { mergeResults, validateCageCode, validateEmail, validateMultiline, validateNsn, validatePhone, validateSafeText } from '../lib/validators.ts'
+import { abortWithMessage, abortWithValidation, nowValue, securityLog, setIfEmpty, str, type AnyRecord } from './glideSupport.ts'
 
 export function authorizationFileBefore(current: AnyRecord): void {
     const table = TABLES.authorization_file

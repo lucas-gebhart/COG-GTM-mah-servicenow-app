@@ -11,10 +11,10 @@
  *   5. returns only a generic summary to the caller and writes detailed JSON logs.
  */
 import { GlideRecord, gs } from '@servicenow/glide'
-import { parseAuthorizationFile, summarizeParse, type AuthorizationRecord, type ParsedAuthorizationFile } from '../lib/authFileParser'
-import { computeDedupeKey } from '../lib/dedupe'
-import { LIMITS, ROLES, TABLES } from '../lib/domain'
-import { hasAnyRole, nowValue, securityLog, str } from '../rules/glideSupport'
+import { parseAuthorizationFile, summarizeParse, type AuthorizationRecord, type ParsedAuthorizationFile } from '../lib/authFileParser.ts'
+import { computeDedupeKey } from '../lib/dedupe.ts'
+import { LIMITS, ROLES, TABLES } from '../lib/domain.ts'
+import { hasAnyRole, nowValue, securityLog, str } from '../rules/glideSupport.ts'
 
 /** Subset of the platform RESTAPIRequest / RESTAPIResponse surfaces used here. */
 export interface IntakeRequest {

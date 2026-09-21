@@ -4,8 +4,8 @@
  * Replaces the `NightlyAging` LotusScript agent, which walked the `(AllCases)` view once a
  * night and stamped `DaysInStage` / `AgingFlag` onto each document.
  */
-import { AGING_THRESHOLDS, TERMINAL_CASE_STAGES, type AgingFlag, type CaseStage } from './domain'
-import { daysBetween } from './dates'
+import { AGING_THRESHOLDS, TERMINAL_CASE_STAGES, type AgingFlag, type CaseStage } from './domain.ts'
+import { daysBetween } from './dates.ts'
 
 export const TERMINAL_STAGES: ReadonlySet<CaseStage> = new Set<CaseStage>(TERMINAL_CASE_STAGES)
 

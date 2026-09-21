@@ -11,12 +11,12 @@
  * intake, and log data access as JSON.
  */
 import { gs } from '@servicenow/glide'
-import { runNightlyAging } from '../jobs/nightlyAging'
-import { batchExceptionCounts, coalesceRequesterTable } from '../migration/transformEngine'
-import { hasAnyRole, securityLog } from '../rules/glideSupport'
-import { buildReconciliationReport } from '../services/reconciliation'
-import { lookupCaseStatus } from '../services/statusInquiry'
-import type { IntakeRequest, IntakeResponse } from './authorizationIntake'
+import { runNightlyAging } from '../jobs/nightlyAging.ts'
+import { batchExceptionCounts, coalesceRequesterTable } from '../migration/transformEngine.ts'
+import { hasAnyRole, securityLog } from '../rules/glideSupport.ts'
+import { buildReconciliationReport } from '../services/reconciliation.ts'
+import { lookupCaseStatus } from '../services/statusInquiry.ts'
+import type { IntakeRequest, IntakeResponse } from './authorizationIntake.ts'
 
 const GENERIC_ERROR = 'The request could not be processed.'
 
