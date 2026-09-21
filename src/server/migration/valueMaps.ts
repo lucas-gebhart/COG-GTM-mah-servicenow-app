@@ -50,6 +50,10 @@ export interface ValueMap {
     blankAliases: readonly string[]
     map: (raw: unknown) => MappedValue
     aliasCount: number
+    /** Choice keys reachable from at least one legacy spelling. */
+    aliasTargets: readonly string[]
+    /** Every normalized legacy spelling → choice key (for documentation generators). */
+    aliases: ReadonlyMap<string, string>
 }
 
 interface ValueMapSpec {
@@ -87,6 +91,8 @@ function defineValueMap(spec: ValueMapSpec): ValueMap {
         fallback,
         blankAliases: spec.blankAliases ?? [''],
         aliasCount,
+        aliasTargets: [...new Set(index.values())],
+        aliases: index,
         map(raw: unknown): MappedValue {
             let normalized = normalizeStatusText(raw)
             if (spec.prepare) normalized = spec.prepare(normalized)
