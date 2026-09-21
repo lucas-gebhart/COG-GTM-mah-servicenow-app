@@ -949,6 +949,408 @@ declare global {
                         table: 'sysevent_email_action'
                         id: '01fb9ba25af24c84b74a58015ce7f072'
                     }
+                    ops_applicability_awards_case: {
+                        table: 'sys_ux_applicability'
+                        id: '34ec5841ac004dc9bedaf10ce56c6c55'
+                    }
+                    ops_applicability_engraving_job: {
+                        table: 'sys_ux_applicability'
+                        id: 'd1d049df573c44e192dcfe91b7ee8a4b'
+                    }
+                    ops_applicability_heraldry_request: {
+                        table: 'sys_ux_applicability'
+                        id: '99f2c07a2cb742c48bc0089f1290f567'
+                    }
+                    ops_applicability_migration_exception: {
+                        table: 'sys_ux_applicability'
+                        id: 'ec61a66ebc89487f956d66b4d323dd36'
+                    }
+                    ops_dashboard: {
+                        table: 'par_dashboard'
+                        id: '8ef86883bfcb4f69a6067c42b8cb449c'
+                    }
+                    ops_dashboard_tab_operations: {
+                        table: 'par_dashboard_tab'
+                        id: '273df7f92d43459088506c566ab777e3'
+                    }
+                    ops_list_aging_amber_cases: {
+                        table: 'sys_ux_list'
+                        id: '5fd2a5d8d4664dbdad11afbb53fde18f'
+                    }
+                    ops_list_aging_red_cases: {
+                        table: 'sys_ux_list'
+                        id: '3b9e1fd383c540188d945d1152416306'
+                    }
+                    ops_list_applicability_aging_amber_cases: {
+                        table: 'sys_ux_applicability_m2m_list'
+                        id: 'cee7e57043f94455963309989dda233d'
+                    }
+                    ops_list_applicability_aging_red_cases: {
+                        table: 'sys_ux_applicability_m2m_list'
+                        id: '4b61af9565ed4018aa59b056daf12786'
+                    }
+                    ops_list_applicability_assembly_qc_queue: {
+                        table: 'sys_ux_applicability_m2m_list'
+                        id: 'efae74d11b5b4a0daf32f3a0d9a42a34'
+                    }
+                    ops_list_applicability_cases_on_hold: {
+                        table: 'sys_ux_applicability_m2m_list'
+                        id: 'f500ee921a214628b35e4a796e59a624'
+                    }
+                    ops_list_applicability_engraving_queue: {
+                        table: 'sys_ux_applicability_m2m_list'
+                        id: '592e2b1299474cb3b1384215dbcf5948'
+                    }
+                    ops_list_applicability_unmapped_legacy_statuses: {
+                        table: 'sys_ux_applicability_m2m_list'
+                        id: 'f4fa19623951408a8fb56265ff55823d'
+                    }
+                    ops_list_applicability_unmapped_stage_cases: {
+                        table: 'sys_ux_applicability_m2m_list'
+                        id: '38b73263005549e29764143185afff7a'
+                    }
+                    ops_list_applicability_vendor_work: {
+                        table: 'sys_ux_applicability_m2m_list'
+                        id: '2d82c2b64a7c42a88bae92b4cfbc0624'
+                    }
+                    ops_list_applicability_warehouse_queue: {
+                        table: 'sys_ux_applicability_m2m_list'
+                        id: '8661bce1ac09439eba5faca160f251e8'
+                    }
+                    ops_list_assembly_qc_queue: {
+                        table: 'sys_ux_list'
+                        id: '470ad85f745a4d56a448d74094a33ae6'
+                    }
+                    ops_list_cases_on_hold: {
+                        table: 'sys_ux_list'
+                        id: '7978388d9b3d4991b1f42e18faa6cf5d'
+                    }
+                    ops_list_category_awards: {
+                        table: 'sys_ux_list_category'
+                        id: 'a3a6ae6c3e044e3981c9757e0aeb84ff'
+                    }
+                    ops_list_category_engraving: {
+                        table: 'sys_ux_list_category'
+                        id: 'a6481452e4a944b88c7e21fa24339a08'
+                    }
+                    ops_list_category_heraldry: {
+                        table: 'sys_ux_list_category'
+                        id: '52e4a5e57c524cf8aebeaa0f537ee4c4'
+                    }
+                    ops_list_category_migration: {
+                        table: 'sys_ux_list_category'
+                        id: 'a548edf8504b47b9898af675ec1af3b1'
+                    }
+                    ops_list_engraving_queue: {
+                        table: 'sys_ux_list'
+                        id: '4c7d134c16bb4d22a7f2a5f92d3a7f46'
+                    }
+                    ops_list_menu: {
+                        table: 'sys_ux_list_menu_config'
+                        id: 'c47748f96e884fbbad0e9c9c7d40a9f3'
+                    }
+                    ops_list_unmapped_legacy_statuses: {
+                        table: 'sys_ux_list'
+                        id: 'ab7ae1b7b46e40119362e9d91f815711'
+                    }
+                    ops_list_unmapped_stage_cases: {
+                        table: 'sys_ux_list'
+                        id: 'e310ad03a81f45b6818c4a8c4382ce16'
+                    }
+                    ops_list_vendor_work: {
+                        table: 'sys_ux_list'
+                        id: 'dce5b8274beb49ac9756171ce697a0f1'
+                    }
+                    ops_list_warehouse_queue: {
+                        table: 'sys_ux_list'
+                        id: 'dd40185e410846239ac40ab4cb223424'
+                    }
+                    ops_mod_aging_amber: {
+                        table: 'sys_app_module'
+                        id: '09b5faeb9fe0490c801266be447f885a'
+                    }
+                    ops_mod_aging_red: {
+                        table: 'sys_app_module'
+                        id: 'a9b5435e5f3d40068ff5980cc7c97241'
+                    }
+                    ops_mod_assembly_qc_queue: {
+                        table: 'sys_app_module'
+                        id: 'ba19bc22352445938400f8b41d335957'
+                    }
+                    ops_mod_engraving_queue: {
+                        table: 'sys_app_module'
+                        id: 'f977d03580004aeeb77dd1a236cd8532'
+                    }
+                    ops_mod_migration_exceptions: {
+                        table: 'sys_app_module'
+                        id: 'e8d4abb3cf2248d2b897893ad3265a90'
+                    }
+                    ops_mod_ops_dashboard: {
+                        table: 'sys_app_module'
+                        id: '550be30a98984e258f4922fa93fbe8cb'
+                    }
+                    ops_mod_separator: {
+                        table: 'sys_app_module'
+                        id: '3744ddacdc7d456ebe82dd8c77a6b533'
+                    }
+                    ops_mod_vendor_work: {
+                        table: 'sys_app_module'
+                        id: 'c42eb2f6e6264213ae73dffabe742f58'
+                    }
+                    ops_mod_warehouse_queue: {
+                        table: 'sys_app_module'
+                        id: '08ec0f72a63e47da85f840eaa0bc158c'
+                    }
+                    ops_report_aging_amber_cases: {
+                        table: 'sys_report'
+                        id: '0dc3ab0126e341fc96275abf8ac5f9bb'
+                    }
+                    ops_report_aging_distribution: {
+                        table: 'sys_report'
+                        id: '192db0b2e553438ca4bf767ee8af98b7'
+                    }
+                    ops_report_aging_red_cases: {
+                        table: 'sys_report'
+                        id: '580ecab3062e41a1b6a12ca7703a26cf'
+                    }
+                    ops_report_assembly_qc_queue: {
+                        table: 'sys_report'
+                        id: 'f79144a774de4d79a0bc5328a8ff44e7'
+                    }
+                    ops_report_cases_by_stage: {
+                        table: 'sys_report'
+                        id: '91c0f0c71d9b4a8a8bba60328ff36ae6'
+                    }
+                    ops_report_cases_on_hold: {
+                        table: 'sys_report'
+                        id: 'a0648e48c831446699f38d3d7a2a230a'
+                    }
+                    ops_report_engraving_by_status: {
+                        table: 'sys_report'
+                        id: '57810d7b4f56429484d6b01a7a30b378'
+                    }
+                    ops_report_engraving_queue: {
+                        table: 'sys_report'
+                        id: 'dfe5da35a6e847f29330cc09daa38679'
+                    }
+                    ops_report_migration_exceptions_by_type: {
+                        table: 'sys_report'
+                        id: '59370c4d6c894d148433d77c1228f494'
+                    }
+                    ops_report_source: {
+                        table: 'sys_report_source'
+                        id: '658c78f4428745d38b6617011250cd02'
+                        deleted: true
+                    }
+                    ops_report_spike: {
+                        table: 'sys_report'
+                        id: '6377e09c558b472d8504f72f7af1db5e'
+                        deleted: true
+                    }
+                    ops_report_unmapped_legacy_statuses: {
+                        table: 'sys_report'
+                        id: 'c9986b3785cb4bfb9ef523646a46cdc3'
+                    }
+                    ops_report_unmapped_stage_cases: {
+                        table: 'sys_report'
+                        id: 'f651f67932164d2086aa30ada22b0814'
+                    }
+                    ops_report_vendor_work: {
+                        table: 'sys_report'
+                        id: '2dd696a7c5e948e18f46476a6b790886'
+                    }
+                    ops_report_vendor_work_by_vendor: {
+                        table: 'sys_report'
+                        id: '30dfa3d5fe9a4b04a0abeb31b4a65a7e'
+                    }
+                    ops_report_warehouse_queue: {
+                        table: 'sys_report'
+                        id: '2173fd40c8bb492d94bbd729a5c1a6e5'
+                    }
+                    ops_source_awards_case: {
+                        table: 'sys_report_source'
+                        id: 'fa0cafceb0bf4a8bbd54faa1a9b65f07'
+                    }
+                    ops_source_engraving_job: {
+                        table: 'sys_report_source'
+                        id: 'a350299ddc924b98ac5adc388fb83cdc'
+                    }
+                    ops_source_heraldry_request: {
+                        table: 'sys_report_source'
+                        id: 'a3a0d1e3e08e4cc2934a86b814a60a3e'
+                    }
+                    ops_source_migration_exception: {
+                        table: 'sys_report_source'
+                        id: '3533e0a0dfb541f1b42dcc732c258cc4'
+                    }
+                    ops_widget_chart_aging_distribution: {
+                        table: 'par_dashboard_widget'
+                        id: '91f104a6bbae4a1087177309463d2350'
+                    }
+                    ops_widget_chart_aging_red_cases: {
+                        table: 'par_dashboard_widget'
+                        id: 'e2defae3b72640719f820321edc66778'
+                    }
+                    ops_widget_chart_assembly_qc_queue: {
+                        table: 'par_dashboard_widget'
+                        id: 'e026a4c9ea42430f90fbc1fe1b6fc124'
+                    }
+                    ops_widget_chart_cases_by_stage: {
+                        table: 'par_dashboard_widget'
+                        id: 'ff5a977a6b454031ab85c39f1b9c37db'
+                    }
+                    ops_widget_chart_engraving_by_status: {
+                        table: 'par_dashboard_widget'
+                        id: 'e3347862ef544532a4a3ecc57bc1f6f7'
+                    }
+                    ops_widget_chart_migration_exceptions_by_type: {
+                        table: 'par_dashboard_widget'
+                        id: 'e5d68eb05bea4d1e965f2d0ef3798b99'
+                    }
+                    ops_widget_chart_unmapped_legacy_statuses: {
+                        table: 'par_dashboard_widget'
+                        id: 'b85cc091bb944eddbb5bb2fdaf41ae50'
+                    }
+                    ops_widget_chart_vendor_work: {
+                        table: 'par_dashboard_widget'
+                        id: 'ff0ec78819364ecaa1ba52c956085dca'
+                    }
+                    ops_widget_chart_vendor_work_by_vendor: {
+                        table: 'par_dashboard_widget'
+                        id: '7474f5dd948440d5bbe61fffaeba02ac'
+                    }
+                    ops_widget_chart_warehouse_queue: {
+                        table: 'par_dashboard_widget'
+                        id: '9ddb2c34ea1e4c7f95e60d2e18f89bfc'
+                    }
+                    ops_widget_count_amber: {
+                        table: 'par_dashboard_widget'
+                        id: '1872c980a347435684adeed8b88cffcf'
+                    }
+                    ops_widget_count_engraving: {
+                        table: 'par_dashboard_widget'
+                        id: '0ba516c4447545c48a1faa0e9ac4dbef'
+                    }
+                    ops_widget_count_exceptions: {
+                        table: 'par_dashboard_widget'
+                        id: 'f5c6f355dc2b41a6bd90984a326bd598'
+                    }
+                    ops_widget_count_on_hold: {
+                        table: 'par_dashboard_widget'
+                        id: '6ecaad56b61a4694b0981a6cfa526fbd'
+                    }
+                    ops_widget_count_open_cases: {
+                        table: 'par_dashboard_widget'
+                        id: '89c8aba1205548a688a31086d1cdcd80'
+                    }
+                    ops_widget_count_red: {
+                        table: 'par_dashboard_widget'
+                        id: '438b3279f9ad40ae9fcc78cb29d36cb9'
+                    }
+                    ops_widget_count_unmapped: {
+                        table: 'par_dashboard_widget'
+                        id: '2bd488a2a4254831a376396041b5d753'
+                    }
+                    ops_widget_count_vendor: {
+                        table: 'par_dashboard_widget'
+                        id: '645e73ecc17e4098826bd0b49670cb38'
+                    }
+                    ops_workspace: {
+                        table: 'sys_ux_page_registry'
+                        id: '9de6743a47234a609f661e82ba4bd8e3'
+                    }
+                    ops_workspace_route_acl: {
+                        table: 'sys_security_acl'
+                        id: '4f10278dea2a4b33addac840e90a8319'
+                    }
+                    ops_workspace_sys_ux_app_config_workspace: {
+                        table: 'sys_ux_app_config'
+                        id: '8a6791a011794df0b5c0a036c181c3cd'
+                    }
+                    ops_workspace_sys_ux_app_route_home: {
+                        table: 'sys_ux_app_route'
+                        id: '4a5680803b65463a98f43127eac0465c'
+                    }
+                    ops_workspace_sys_ux_app_route_list: {
+                        table: 'sys_ux_app_route'
+                        id: '5af0e00f66f24383848bd423133de5ad'
+                    }
+                    ops_workspace_sys_ux_app_route_record: {
+                        table: 'sys_ux_app_route'
+                        id: 'f80d9e8a1f244ea6bf86017e6b7290eb'
+                    }
+                    'ops_workspace_sys_ux_app_route_simple-list': {
+                        table: 'sys_ux_app_route'
+                        id: 'cc8ee887603d4931a9f3f656f436ad77'
+                    }
+                    ops_workspace_sys_ux_macroponent_record: {
+                        table: 'sys_ux_macroponent'
+                        id: 'cf87fe0d78dc46739b1cc8324fcb7299'
+                    }
+                    ops_workspace_sys_ux_page_property_chrome_footer: {
+                        table: 'sys_ux_page_property'
+                        id: '1213084cfecc4bea93c6de4dd4e245cf'
+                    }
+                    ops_workspace_sys_ux_page_property_chrome_header: {
+                        table: 'sys_ux_page_property'
+                        id: '5c3213373ed541e7b744000f4708985b'
+                    }
+                    ops_workspace_sys_ux_page_property_chrome_tab: {
+                        table: 'sys_ux_page_property'
+                        id: 'e8a7a99b32bc486497d3120740d299b2'
+                    }
+                    ops_workspace_sys_ux_page_property_chrome_toolbar: {
+                        table: 'sys_ux_page_property'
+                        id: 'b17fe30f0721411d941b5444052659ea'
+                    }
+                    ops_workspace_sys_ux_page_property_listConfigId: {
+                        table: 'sys_ux_page_property'
+                        id: 'eca6cf17a4194eccb30aa3ce6b8a515b'
+                    }
+                    ops_workspace_sys_ux_page_property_view: {
+                        table: 'sys_ux_page_property'
+                        id: '3f0866f5c65e4c7bb4f5e9c5f2f4abd9'
+                    }
+                    ops_workspace_sys_ux_page_property_wbApplicabilityConfigId: {
+                        table: 'sys_ux_page_property'
+                        id: '60e11ab2f8514c159a6e962c433abfc3'
+                    }
+                    ops_workspace_sys_ux_registry_m2m_category_unifiedNav: {
+                        table: 'sys_ux_registry_m2m_category'
+                        id: '47698ffc0e2f49d799be4efc3011db1d'
+                    }
+                    ops_workspace_sys_ux_screen_home: {
+                        table: 'sys_ux_screen'
+                        id: 'ca9c3b6c0ab3499dacf9639f61baaebb'
+                    }
+                    ops_workspace_sys_ux_screen_list: {
+                        table: 'sys_ux_screen'
+                        id: 'bdd3c0169c2f4515935afbabdfdc775a'
+                    }
+                    ops_workspace_sys_ux_screen_record: {
+                        table: 'sys_ux_screen'
+                        id: '77ccab4b5b4b4a6ead3c7608f970e501'
+                    }
+                    'ops_workspace_sys_ux_screen_simple-list': {
+                        table: 'sys_ux_screen'
+                        id: '37b1df1bdb424ddfb956c45f0ad303b9'
+                    }
+                    ops_workspace_sys_ux_screen_type_home: {
+                        table: 'sys_ux_screen_type'
+                        id: '9d645533481446259c42a6676cd58411'
+                    }
+                    ops_workspace_sys_ux_screen_type_list: {
+                        table: 'sys_ux_screen_type'
+                        id: 'dd7a371474ec45abb55661c7de16f918'
+                    }
+                    ops_workspace_sys_ux_screen_type_record: {
+                        table: 'sys_ux_screen_type'
+                        id: '845fb907dda640fd943042ef7d7db515'
+                    }
+                    'ops_workspace_sys_ux_screen_type_simple-list': {
+                        table: 'sys_ux_screen_type'
+                        id: '46ea1d280113409b9baab19e2ce67731'
+                    }
                     package_json: {
                         table: 'sys_module'
                         id: '8f7bc9f3144c4e5582d1b1a1c4e968f7'
@@ -1120,6 +1522,19 @@ declare global {
                     si_status_inquiry: {
                         table: 'sys_script_include'
                         id: '662cb91ec57a47cd85b55012fd174c31'
+                    }
+                    sla_awards_case_amber: {
+                        table: 'contract_sla'
+                        id: '9c39dd6523854662a08709ac25b6b2ae'
+                    }
+                    sla_awards_case_red: {
+                        table: 'contract_sla'
+                        id: '07ab64667d964360b7174c6e1155aa6c'
+                    }
+                    sla_spike: {
+                        table: 'contract_sla'
+                        id: '07af65b67e0f43b3a7892cc8124bcbb2'
+                        deleted: true
                     }
                     src_server_jobs_nightlyAging_ts: {
                         table: 'sys_module'
@@ -1589,6 +2004,19 @@ declare global {
                                 id: '1a63cf943a5c40208fe7e505c27dcc0c'
                                 key: {
                                     name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '010dceb5fef44751aad874699e994e2b'
+                        key: {
+                            sys_security_acl: '4f10278dea2a4b33addac840e90a8319'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
                                 }
                             }
                         }
@@ -2443,6 +2871,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'par_dashboard_visibility'
+                        id: '0715bb7430554c12972dd1bce91379e4'
+                        key: {
+                            dashboard: '8ef86883bfcb4f69a6067c42b8cb449c'
+                            experience: '9de6743a47234a609f661e82ba4bd8e3'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '071e75da46734da6888ddbd3130f5b10'
                         key: {
@@ -3022,6 +3458,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '0b6f7c895b454da4a27e99379689b6a8'
+                        key: {
+                            sys_security_acl: '4f10278dea2a4b33addac840e90a8319'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '0bcdf25a1c8346cbb0b9b9928fe5d497'
                         key: {
@@ -3147,6 +3596,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'awards_case'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0c8e4741720746d2978fe9cfb21b2de6'
+                        key: {
+                            sys_security_acl: '4f10278dea2a4b33addac840e90a8319'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
                         }
                     },
                     {
@@ -3394,6 +3856,14 @@ declare global {
                             value: '09'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'par_dashboard_canvas'
+                        id: '0ea1c5897ae6410f9ad04468c32841ba'
+                        key: {
+                            dashboard: '8ef86883bfcb4f69a6067c42b8cb449c'
+                            dashboard_tab: '273df7f92d43459088506c566ab777e3'
                         }
                     },
                     {
@@ -12897,6 +13367,19 @@ declare global {
                     },
                     {
                         table: 'sys_security_acl_role'
+                        id: '4af3de0584e44ba3b38faf355fbed36b'
+                        key: {
+                            sys_security_acl: '4f10278dea2a4b33addac840e90a8319'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
                         id: '4b1de9d9cd8d4097aa5d827d8d45c18e'
                         key: {
                             sys_security_acl: 'f80c1f84779b4d7a87e6d0dd7ec06335'
@@ -21893,6 +22376,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '862f8aad896d4b6396cf7751b625a407'
+                        key: {
+                            sys_security_acl: '4f10278dea2a4b33addac840e90a8319'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: '8632f8d94bfb4e4e9e24acf94eb2fb0f'
                         key: {
@@ -28034,6 +28530,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'ac2088a403ef4b73bd335d965b2f467a'
+                        key: {
+                            sys_security_acl: '4f10278dea2a4b33addac840e90a8319'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'ua_table_licensing_config'
                         id: 'ac4b5ae3427e4e2f829e25d1d9ac3369'
                         deleted: true
@@ -34134,6 +34643,19 @@ declare global {
                                 id: '0a517467fdfe4a3bb09bcefb19a6c864'
                                 key: {
                                     name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd24a8db456d34249a6505dc8095b5d6f'
+                        key: {
+                            sys_security_acl: '4f10278dea2a4b33addac840e90a8319'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
                                 }
                             }
                         }
