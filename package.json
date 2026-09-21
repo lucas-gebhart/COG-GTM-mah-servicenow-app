@@ -19,7 +19,9 @@
         "migrate": "tsx tools/migrate.ts",
         "reconcile": "tsx tools/reconcile.ts",
         "gen:sample-data": "tsx tools/generate-sample-data.ts",
-        "gen:docs": "tsx tools/generate-docs.ts"
+        "gen:docs": "tsx tools/generate-docs.ts",
+        "gen:ui": "tsx tools/generate-fluent-ui.ts",
+        "gen:security": "tsx tools/generate-fluent-security.ts"
     },
     "devDependencies": {
         "@servicenow/glide": "27.0.5",

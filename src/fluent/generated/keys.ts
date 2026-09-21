@@ -529,6 +529,14 @@ declare global {
                         table: 'sys_security_acl'
                         id: '38907405899543129286caecfe81960f'
                     }
+                    app_category: {
+                        table: 'sys_app_category'
+                        id: '66f503e72723408c8e232e9cfd37667c'
+                    }
+                    app_menu: {
+                        table: 'sys_app_application'
+                        id: '6eb049f21a014eef8a996a7b9826e46a'
+                    }
                     bom_json: {
                         table: 'sys_module'
                         id: '2dd75b3d1cf64bf7a030937706b4fc62'
@@ -629,6 +637,46 @@ declare global {
                         table: 'sys_script'
                         id: 'aec4175487af4c2c9b8b87f13bda8694'
                     }
+                    cs_award_line_engraving: {
+                        table: 'sys_script_client'
+                        id: 'bf6dea69a55d488dac0c10d24db48087'
+                    }
+                    cs_awards_case_onload: {
+                        table: 'sys_script_client'
+                        id: '6d12ac26aa164aab9e16dba741d7230c'
+                    }
+                    cs_dd1348_document_number: {
+                        table: 'sys_script_client'
+                        id: 'c1caf51661334f5693966eac3aecea17'
+                    }
+                    cs_dd1348_dodaac: {
+                        table: 'sys_script_client'
+                        id: '16cf67a694bf4bb3bff984e0cdc271b7'
+                    }
+                    cs_dd1348_onload: {
+                        table: 'sys_script_client'
+                        id: 'b30e0a0687454a8ea0aa8c598e4df53d'
+                    }
+                    cs_dd1348_priority: {
+                        table: 'sys_script_client'
+                        id: 'e36a3d32ce764d14a8317e7d267a3d7d'
+                    }
+                    cs_dd1348_uic: {
+                        table: 'sys_script_client'
+                        id: '36a35f38498c4cadb9e5e0193d79042d'
+                    }
+                    cs_line_item_lookup: {
+                        table: 'sys_script_client'
+                        id: 'c0102a04769244939a3ebbadddc59efb'
+                    }
+                    cs_line_price_qty: {
+                        table: 'sys_script_client'
+                        id: '0b851e136f1f479ba6a3d84ba674ee63'
+                    }
+                    cs_line_price_unit: {
+                        table: 'sys_script_client'
+                        id: '73550b5c6f2a4f49b643fe8566a8e344'
+                    }
                     evt_case_aging_red: {
                         table: 'sysevent_register'
                         id: 'f1003fcc2a654c25bcdd987d05ed05a4'
@@ -649,9 +697,237 @@ declare global {
                         table: 'sysevent_register'
                         id: 'f43f8a4316264a8ea65b7c83cc73add8'
                     }
+                    flow_awards_case_lifecycle: {
+                        table: 'sys_hub_flow'
+                        id: '687e2d99690c4eb7984afec4096c135f'
+                    }
+                    flow_case_create_shipment: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: '00341f22df3d4123b8904415a5502019'
+                    }
+                    flow_case_find_shipment: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: '7edeeae500664da797941aa2a2f3e55d'
+                    }
+                    flow_case_if_delivery_timeout: {
+                        table: 'sys_hub_flow_logic_instance_v2'
+                        id: '6127a09755ae44928321d5da62785c13'
+                    }
+                    flow_case_if_no_shipment: {
+                        table: 'sys_hub_flow_logic_instance_v2'
+                        id: 'cd124171c0fe4eedbe9d47a787118f8a'
+                    }
+                    flow_case_if_priority: {
+                        table: 'sys_hub_flow_logic_instance_v2'
+                        id: '5b3ef70e3a9a4a0aa963cd58cb5e078d'
+                    }
+                    flow_case_if_shipped: {
+                        table: 'sys_hub_flow_logic_instance_v2'
+                        id: '6a0a135021b741dfb4d658027331b4a8'
+                    }
+                    flow_case_if_warehouse: {
+                        table: 'sys_hub_flow_logic_instance_v2'
+                        id: 'e0f77aad5b6841a0a9db5e68ea20cbd7'
+                    }
+                    flow_case_priority_note: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: 'e186fb32161b47468d72d9da88663ede'
+                    }
+                    flow_case_timeout_note: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: '2ed38d4e9838402390d244138e223781'
+                    }
+                    flow_case_timeout_worknote: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: '0e7685cc3e744f78b9de5dbc30869df6'
+                    }
+                    flow_case_trigger: {
+                        table: 'sys_hub_trigger_instance_v2'
+                        id: '6e72ce7c9c1748188f47b673e200d5e4'
+                    }
+                    flow_case_wait_delivery: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: '659257d5b01f4a05aabcccc0e3a8a716'
+                    }
+                    flow_vendor_if_no_ack: {
+                        table: 'sys_hub_flow_logic_instance_v2'
+                        id: 'a2d1b7f8436a4b2dbdff47bb8f235a85'
+                    }
+                    flow_vendor_if_shipped: {
+                        table: 'sys_hub_flow_logic_instance_v2'
+                        id: '39a36dfe1d404ef097c0e1cb96b65c3f'
+                    }
+                    flow_vendor_mark_shipped: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: 'c6ef4ee7671c4bb09b85d6b2db9ac8ce'
+                    }
+                    flow_vendor_no_ack_note: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: 'cdf07f61918a4347902e28952f77e53c'
+                    }
+                    flow_vendor_no_ack_worknote: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: '2c9eeeb781ba4ad3ae7c851a1886739f'
+                    }
+                    flow_vendor_notify: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: '00c0eed151e24a70bc77862f5b30f781'
+                    }
+                    flow_vendor_release: {
+                        table: 'sys_hub_flow'
+                        id: '40f6b1ce0ee340689db8f322c88d2c06'
+                    }
+                    flow_vendor_trigger: {
+                        table: 'sys_hub_trigger_instance_v2'
+                        id: 'ae91694f1cd34008bd0ea6b796c74b52'
+                    }
+                    flow_vendor_wait_ack: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: '7897ab9c4cd74699a04b8b9522ad7e82'
+                    }
+                    flow_vendor_wait_ship: {
+                        table: 'sys_hub_action_instance_v2'
+                        id: '6d417b326acc44538c87005c2ecc640d'
+                    }
                     job_nightly_aging: {
                         table: 'sysauto_script'
                         id: '4129a3ea3cf24675a4f468615b29ced4'
+                    }
+                    mod_aging_amber: {
+                        table: 'sys_app_module'
+                        id: '38a1db13063348aeae4b2208ec53efc0'
+                    }
+                    mod_aging_red: {
+                        table: 'sys_app_module'
+                        id: '458fac4e05c14d8e9b8f7a76d505a2e4'
+                    }
+                    mod_assembly_queue: {
+                        table: 'sys_app_module'
+                        id: 'e674e98f5fa84048961868e39189cbdc'
+                    }
+                    mod_auth_files: {
+                        table: 'sys_app_module'
+                        id: '0a8c45a929294b898ba9f542987c1d82'
+                    }
+                    mod_case_notes: {
+                        table: 'sys_app_module'
+                        id: 'aacf4449dba7441e8b9dd7a2ef6036ab'
+                    }
+                    mod_cases: {
+                        table: 'sys_app_module'
+                        id: 'b992a45e11334ed7814c3cd4e911ec6c'
+                    }
+                    mod_catalog: {
+                        table: 'sys_app_module'
+                        id: '24fe1c4b79254e2d8cddfc1cc8744204'
+                    }
+                    mod_engraving_jobs: {
+                        table: 'sys_app_module'
+                        id: 'e39e1f61af124d99b44df2846e991e28'
+                    }
+                    mod_engraving_queue: {
+                        table: 'sys_app_module'
+                        id: '4d0c25132a924238a4a05fb1d542e823'
+                    }
+                    mod_exceptions: {
+                        table: 'sys_app_module'
+                        id: '2748054c17d14aa681dde7fbc8edefa6'
+                    }
+                    mod_import_sets: {
+                        table: 'sys_app_module'
+                        id: 'cd8ede7b2d5a46318508e0776cea0b0b'
+                    }
+                    mod_lines: {
+                        table: 'sys_app_module'
+                        id: '647fbc0df3154daf81fcbec04bfad690'
+                    }
+                    mod_new_case: {
+                        table: 'sys_app_module'
+                        id: 'dbb62d9c6a1b4e11b6a9e3ad6307b510'
+                    }
+                    mod_new_request: {
+                        table: 'sys_app_module'
+                        id: '2a8070cafa9b45499da1adc6c39b537c'
+                    }
+                    mod_nightly_aging: {
+                        table: 'sys_app_module'
+                        id: '5122d50e107d4c69afd3f560754e7af5'
+                    }
+                    mod_properties: {
+                        table: 'sys_app_module'
+                        id: '3a3533a5ccff4ba295af19fd71bbe9df'
+                    }
+                    mod_reconciliation: {
+                        table: 'sys_app_module'
+                        id: '90a89941067447e8a086b4b39cb418fd'
+                    }
+                    mod_request_lines: {
+                        table: 'sys_app_module'
+                        id: '4835dacc786144beb03470f8367b84a8'
+                    }
+                    mod_requester_dupes: {
+                        table: 'sys_app_module'
+                        id: '522ff0ee7b5143a0a9ae6248753b3671'
+                    }
+                    mod_requesters: {
+                        table: 'sys_app_module'
+                        id: 'b756f804200e42feb48413b2bb9f7b09'
+                    }
+                    mod_requests: {
+                        table: 'sys_app_module'
+                        id: '36b969def6fd46df8103ee08652185ac'
+                    }
+                    mod_review_queue: {
+                        table: 'sys_app_module'
+                        id: 'a1432f7d07ab467392c6bf090bcd67bc'
+                    }
+                    mod_sep_admin: {
+                        table: 'sys_app_module'
+                        id: '13798444812745f08954640863f2391c'
+                    }
+                    mod_sep_awards: {
+                        table: 'sys_app_module'
+                        id: '184d11a2f1704ad8997cf11c341c43f0'
+                    }
+                    mod_sep_heraldry: {
+                        table: 'sys_app_module'
+                        id: '7d880e94ac414b36b4403bf90129dbaa'
+                    }
+                    mod_sep_ops: {
+                        table: 'sys_app_module'
+                        id: '85b4e7e9a0114ce5972b696aa0c6f9ea'
+                    }
+                    mod_ses: {
+                        table: 'sys_app_module'
+                        id: '940c22566282485ebc84d14302d4d5e5'
+                    }
+                    mod_ses_pending: {
+                        table: 'sys_app_module'
+                        id: 'aae13e198c5242c7968021a66e4e7e5f'
+                    }
+                    mod_shipments: {
+                        table: 'sys_app_module'
+                        id: 'aed704d3ab5040e48cd41c3366e5b8ed'
+                    }
+                    mod_status_map: {
+                        table: 'sys_app_module'
+                        id: '7e7434a051ec40cc98f7e9da7c061c0f'
+                    }
+                    mod_vendor_work: {
+                        table: 'sys_app_module'
+                        id: 'abee812bf31e4a16978af716d44c74a5'
+                    }
+                    mod_vendors: {
+                        table: 'sys_app_module'
+                        id: '593d580740d94818a853c46c3f5b5043'
+                    }
+                    mod_warehouse_queue: {
+                        table: 'sys_app_module'
+                        id: '4f1dd01509d5486f9e107e8fe042d7e4'
+                    }
+                    mod_workspace: {
+                        table: 'sys_app_module'
+                        id: 'c7bbf951eb454746894423b879172b11'
                     }
                     ntf_case_aging_red: {
                         table: 'sysevent_email_action'
@@ -741,6 +1017,98 @@ declare global {
                         table: 'sys_ws_query_parameter'
                         id: '2bfe1209f48e482bb580f5885d5c1049'
                     }
+                    rl_authorization_file: {
+                        table: 'sys_ui_related_list'
+                        id: '86d4c1dbe1674936a324d3b38b708531'
+                    }
+                    rl_authorization_file_awards_case_authorization_file: {
+                        table: 'sys_ui_related_list_entry'
+                        id: '2ffe0f2cb4f0405aaa3408fa13b83653'
+                    }
+                    rl_award_line: {
+                        table: 'sys_ui_related_list'
+                        id: '790d9f72941e4386b9f5ef0e60e6684c'
+                    }
+                    rl_award_line_engraving_job_award_line: {
+                        table: 'sys_ui_related_list_entry'
+                        id: '94c273fe9d6340e8a926708b70b79232'
+                    }
+                    rl_awards_case: {
+                        table: 'sys_ui_related_list'
+                        id: 'b0cc4284e9f8473bb70945f0bf1ca6a0'
+                    }
+                    rl_awards_case_award_line_awards_case: {
+                        table: 'sys_ui_related_list_entry'
+                        id: '652f9e14c8cd4c3c9ddde84860bfd461'
+                    }
+                    rl_awards_case_case_note_awards_case: {
+                        table: 'sys_ui_related_list_entry'
+                        id: '6c9ef7b5fb3443ba930665724c683dc7'
+                    }
+                    rl_awards_case_engraving_job_awards_case: {
+                        table: 'sys_ui_related_list_entry'
+                        id: '2650fde80f1e446bbe3b087b66940d01'
+                    }
+                    rl_awards_case_shipment_awards_case: {
+                        table: 'sys_ui_related_list_entry'
+                        id: 'c97774864e7447e4a060f0a69dff1170'
+                    }
+                    rl_heraldic_item: {
+                        table: 'sys_ui_related_list'
+                        id: '8422ddaeb6f74b9fbf3ea01d5d404594'
+                    }
+                    rl_heraldic_item_request_line_heraldic_item: {
+                        table: 'sys_ui_related_list_entry'
+                        id: 'a4524a046125461ebc5e2330e25ba68f'
+                    }
+                    rl_heraldry_request: {
+                        table: 'sys_ui_related_list'
+                        id: '524e669e2ab6406e8f217fe5850e280d'
+                    }
+                    rl_heraldry_request_case_note_heraldry_request: {
+                        table: 'sys_ui_related_list_entry'
+                        id: '0c2a3b2914cb476db5f6cd5b1dbf0bda'
+                    }
+                    rl_heraldry_request_request_line_heraldry_request: {
+                        table: 'sys_ui_related_list_entry'
+                        id: '28c042e38ea5423a9293752038a96c34'
+                    }
+                    rl_requester: {
+                        table: 'sys_ui_related_list'
+                        id: 'ca24973c60b64f5ab236d58b1fe17bcf'
+                    }
+                    rl_requester_awards_case_requester: {
+                        table: 'sys_ui_related_list_entry'
+                        id: 'e7717e0abb004ef7845b3b5b3f18971e'
+                    }
+                    rl_vendor: {
+                        table: 'sys_ui_related_list'
+                        id: '916cc95e74374245b70021fcfbb0cb70'
+                    }
+                    rl_vendor_heraldic_item_preferred_vendor: {
+                        table: 'sys_ui_related_list_entry'
+                        id: 'e3f603f167b943b995acc939c8019099'
+                    }
+                    rl_vendor_heraldry_request_vendor: {
+                        table: 'sys_ui_related_list_entry'
+                        id: '3e15027c3b0946c085e518ef6f0a3935'
+                    }
+                    rp_dd1348_request: {
+                        table: 'sc_cat_item_producer'
+                        id: '74be602ca0cc4a8e981f83a5138007a4'
+                    }
+                    rp_ses_flag_request: {
+                        table: 'sc_cat_item_producer'
+                        id: '7bc9b30be6b04ceb9c3db83a627856b2'
+                    }
+                    rp_status_inquiry: {
+                        table: 'sc_cat_item_producer'
+                        id: '969f94a196d0490b8b6d9377803b654b'
+                    }
+                    sc_category_mah: {
+                        table: 'sc_category'
+                        id: '264a3ed81796464688efa04710410f77'
+                    }
                     si_aging: {
                         table: 'sys_script_include'
                         id: '3c3db29e77734b5ca5bfbdf4bb2e2012'
@@ -796,6 +1164,10 @@ declare global {
                     src_server_lib_statusMap_ts: {
                         table: 'sys_module'
                         id: 'de47ca1d73b9461d9a41a9abb5823025'
+                    }
+                    src_server_lib_uiLayout_ts: {
+                        table: 'sys_module'
+                        id: 'b9e00b744eb548c39a43e33b97a8b90c'
                     }
                     src_server_lib_validators_ts: {
                         table: 'sys_module'
@@ -857,6 +1229,86 @@ declare global {
                         table: 'sys_module'
                         id: '355a136c624b4fdda7ac6457347fdfe4'
                     }
+                    ua_case_advance: {
+                        table: 'sys_ui_action'
+                        id: 'f1c61b3ac432470aa6c736d6c73e7b58'
+                    }
+                    ua_case_cancel: {
+                        table: 'sys_ui_action'
+                        id: '09bec9170d4c4a499a30efb0ccf0fa35'
+                    }
+                    ua_req_advance: {
+                        table: 'sys_ui_action'
+                        id: '9ac09a15971f4fdaae5b9a0c048d1593'
+                    }
+                    ua_req_cancel: {
+                        table: 'sys_ui_action'
+                        id: '00e9d3126d3848c5afb1bc0aab5e7e99'
+                    }
+                    ua_req_release: {
+                        table: 'sys_ui_action'
+                        id: '2e43030eda084195ba6098b5213f638b'
+                    }
+                    ua_req_review: {
+                        table: 'sys_ui_action'
+                        id: 'd5169f681b9f4f10a37a8ee1e1471b31'
+                    }
+                    ua_req_submit: {
+                        table: 'sys_ui_action'
+                        id: '4ae8ad27fcc04ed8aa267191744db18e'
+                    }
+                    ua_requester_merge: {
+                        table: 'sys_ui_action'
+                        id: 'ae06e2fe9e004ababaa0c4cd9f434fe2'
+                    }
+                    ua_ses_approve: {
+                        table: 'sys_ui_action'
+                        id: 'ba39b055dd0e407e97dfcd9e1cfe5991'
+                    }
+                    ua_ses_reject: {
+                        table: 'sys_ui_action'
+                        id: 'd393f94714c54f9dbae4e2f06c65c244'
+                    }
+                    ws_li_case_advance: {
+                        table: 'sys_ux_form_action_layout_item'
+                        id: 'a3ede7142073432d9af51d8e472aad9d'
+                    }
+                    ws_li_case_cancel: {
+                        table: 'sys_ux_form_action_layout_item'
+                        id: '29b87317949842b2a18e4d6f996048d5'
+                    }
+                    ws_li_req_advance: {
+                        table: 'sys_ux_form_action_layout_item'
+                        id: '0c65d5859edb4c71841cbcb52f66e036'
+                    }
+                    ws_li_req_cancel: {
+                        table: 'sys_ux_form_action_layout_item'
+                        id: '516afacd96bf467d8572fed38b12925b'
+                    }
+                    ws_li_req_release: {
+                        table: 'sys_ux_form_action_layout_item'
+                        id: 'acea60554d6e4e288821c505383b41b7'
+                    }
+                    ws_li_req_review: {
+                        table: 'sys_ux_form_action_layout_item'
+                        id: 'a4886d0927a74b219a3f27879de6b3cb'
+                    }
+                    ws_li_req_submit: {
+                        table: 'sys_ux_form_action_layout_item'
+                        id: 'a5ae0e5c9ffe4bcd900fe3e5a0e7e11c'
+                    }
+                    ws_li_requester_merge: {
+                        table: 'sys_ux_form_action_layout_item'
+                        id: 'd1ce4e628f0f444ea60bed10b52b4ae2'
+                    }
+                    ws_li_ses_approve: {
+                        table: 'sys_ux_form_action_layout_item'
+                        id: 'a6976abe735e40e799e94c9695e991cb'
+                    }
+                    ws_li_ses_reject: {
+                        table: 'sys_ux_form_action_layout_item'
+                        id: '75a57732d40840449fd8221939baed01'
+                    }
                 }
                 composite: [
                     {
@@ -868,6 +1320,29 @@ declare global {
                             value: 'PG'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '0009b97342a54ce5a72bec3a9deafb2d'
+                        key: {
+                            list_id: {
+                                id: 'cf5511109a474b5b9dfe16d52a2fc965'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
                         }
                     },
                     {
@@ -889,6 +1364,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '0021d831d8654180b0a20b1df01fe7c4'
+                        key: {
+                            list_id: {
+                                id: '10adad80ad9c40aab9762476bbc628b7'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'status'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '0039926dca82414987fccab33e00681d'
                         key: {
@@ -897,6 +1395,74 @@ declare global {
                             value: 'unmapped'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '004698ebc6694bce8949530c1a87a100'
+                        key: {
+                            sys_ui_section: {
+                                id: 'e27af0542efc4125bdbfd55a990e87ef'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Decision'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '004aa64e4826466fb6070730a8941252'
+                        key: {
+                            list_id: {
+                                id: '10adad80ad9c40aab9762476bbc628b7'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'device'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '005e850b4e18469d981f4f603ee709e7'
+                        key: {
+                            list_id: {
+                                id: '45ecbf25305d4e88b4d2f963808be522'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
                         }
                     },
                     {
@@ -916,6 +1482,82 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ux_form_action'
+                        id: '00bb341828fd4b76ad0dc2cc6ac5f777'
+                        key: {
+                            ui_action: 'ua_case_advance'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form'
+                        id: '00c91487f7ee463f893e530a3becc102'
+                        key: {
+                            name: 'x_cog_mah_requester'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '00fe0c23d7db44d7a6ce84d284f81fb7'
+                        key: {
+                            sys_ui_form: {
+                                id: '584eb275fb88471b9a50c4d5f38c5520'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'b8fd7b687fe74c24b24affc99889db66'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '00ffa9bcc3fb439aaaea481634e13fdc'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'started'
+                            position: '9'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '01085a5b15ae41a38277ce0113c69bc1'
                         key: {
@@ -926,6 +1568,28 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '0131d26835d547f393323e66cf5dc9a8'
+                        key: {
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
                         }
                     },
                     {
@@ -951,12 +1615,79 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '01b2357ad7c345648d7fa5093c7cc2fb'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b8fd7b687fe74c24b24affc99889db66'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '01cfbfd2419a469ba14cd68db24a548b'
+                        key: {
+                            list_id: {
+                                id: 'f90ad93423ff4ff1a44ccea0c4ef00a8'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'approved_by'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '01d5cbc01bd849ad83673508a8d51e4c'
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'number'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '01f89f44b135490ea0bf2496aaf652c0'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b8fd7b687fe74c24b24affc99889db66'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
                         }
                     },
                     {
@@ -978,6 +1709,28 @@ declare global {
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'justification'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '022e6af087d64fbf80e6f0d3fad844a4'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'capabilities'
+                            position: '6'
                         }
                     },
                     {
@@ -1021,6 +1774,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '03163ac35a5b4ff2a8fb550929129653'
+                        key: {
+                            sys_ui_section: {
+                                id: '944af3b62e1c430981c5490c03bd7e00'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '0338ca7badb54870bbc2445acf5cb7e7'
                         key: {
@@ -1045,6 +1820,29 @@ declare global {
                             name: 'x_cog_mah_probe'
                             element: 'state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '03a32d5ae91d4e51a4f1333b092b0de1'
+                        key: {
+                            list_id: {
+                                id: 'cf5511109a474b5b9dfe16d52a2fc965'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'note_type'
                         }
                     },
                     {
@@ -1098,12 +1896,41 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form'
+                        id: '041f7cdf62d648c9809f20a3eb6de820'
+                        key: {
+                            name: 'x_cog_mah_ses_flag_request'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '04483937527e41a8a80c86449cced7c4'
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'NULL'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '0450cadcf9694792858b175f81cfe83a'
+                        key: {
+                            name: 'x_cog_mah_vendor'
+                            caption: 'Portal access (replaces Readers fields)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -1182,6 +2009,39 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: '04f361d82dd344488dad444679ea6c99'
+                        key: {
+                            sys_ui_form: {
+                                id: '1a38439dee3a43e6aa73ce53a04793f8'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '7a5855a85a2542e0a768166a0117a5cf'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '0519da4c26244e608001fb39b730760a'
                         key: {
@@ -1198,6 +2058,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_action_role'
+                        id: '054b523941354a838e12fe6f57ba9ea5'
+                        key: {
+                            sys_ui_action: '4ae8ad27fcc04ed8aa267191744db18e'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '055c169a7193448f8511d49fa0c92ab1'
                         key: {
@@ -1208,6 +2081,14 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sc_cat_item_catalog'
+                        id: '056c9f860fad46ac865edd0cb05a9873'
+                        key: {
+                            sc_cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            sc_catalog: 'e0d08b13c3330100c8b837659bba8fb4'
                         }
                     },
                     {
@@ -1228,6 +2109,28 @@ declare global {
                             value: '08'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '0632241df4cb4ce98bd4afb4bf88e773'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'last_name'
+                            position: '5'
                         }
                     },
                     {
@@ -1257,6 +2160,28 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'legacy_status_raw'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '066dd64c02714442b1b602347bfde092'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '15'
                         }
                     },
                     {
@@ -1327,6 +2252,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '074820b7474b460bbf08aeb5de0fc85e'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b53bcf93e2884fcdbc9317016c7f7201'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Mailing address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'zip'
+                            position: '6'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '078c7acffb664cb6b6f5fad753cf88b0'
                         key: {
@@ -1346,6 +2293,39 @@ declare global {
                             value: 'closed'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '07c04835547a4b7b9f23fa2670c4658d'
+                        key: {
+                            sys_ui_form: {
+                                id: 'b7336cfb17764cbbbc393ddeaa7be3c4'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '8ddef1236acb4b9d89f304dcfd0f5788'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -1394,6 +2374,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '08c51b955a574bc88fc6710e3c323a86'
+                        key: {
+                            sys_ui_section: {
+                                id: 'e27af0542efc4125bdbfd55a990e87ef'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Decision'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '092309230ccd4c19b999d9815328a05e'
                         key: {
@@ -1419,6 +2421,94 @@ declare global {
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'status'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '0963dbe252b14cfea248950f505af72d'
+                        key: {
+                            sys_ui_form: {
+                                id: '8da7345207c942f7b407a907d8d146dc'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'f1bd62852bea47dab7f8feb6200004ab'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Description'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '0970e484faf149cc8484a40971076d60'
+                        key: {
+                            sys_ui_form: {
+                                id: '3853b0db9ab04bf482ab5e7c39b09595'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'e62896180f4749e998d8bef7fed26b7b'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '097f0a270e964c9ca3785d659b517723'
+                        key: {
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'target_field'
+                            position: '6'
                         }
                     },
                     {
@@ -1502,6 +2592,20 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: '0a7330d894d4415c83d748004f7dce63'
+                        key: {
+                            ui_policy: {
+                                id: 'fb5d196b960249f89f6afdb6f7d36ee1'
+                                key: {
+                                    table: 'x_cog_mah_awards_case'
+                                    short_description: 'MAH awards case: computed fields are read-only'
+                                }
+                            }
+                            field: 'aging_flag'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '0a79944019e54bc9910df218a475b7c0'
                         key: {
@@ -1569,6 +2673,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '0b4ec127730a46cbaf773ce7129f1dc7'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'source_agency'
+                            position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '0bcdf25a1c8346cbb0b9b9928fe5d497'
+                        key: {
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'match_count'
+                            position: '8'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '0beafc9f557a4f669563aa95fc5f9448'
                         key: {
@@ -1588,12 +2736,81 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '0c195857b8ff44698ba2571ce661e82d'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '0c38598fd346450faae440f025aaf24a'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'signal_code'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '0c60617e512c48278210ba86a60bb795'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'legacy_unid'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '0c6ee050af6b4fb7be9998bd08ba1ee2'
+                        key: {
+                            sys_ui_form: {
+                                id: '041f7cdf62d648c9809f20a3eb6de820'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'e27af0542efc4125bdbfd55a990e87ef'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Decision'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -1626,10 +2843,56 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '0d302597e33844ae8511c73757d09388'
+                        key: {
+                            list_id: {
+                                id: 'f90ad93423ff4ff1a44ccea0c4ef00a8'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'executive_name'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '0d4cb0fd72954a8b887e1337113b7741'
                         key: {
                             name: 'x_cog_mah_awards_case'
+                            element: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '0d7bc707b54a41ec8ac9d0a2cf8a0ecd'
+                        key: {
+                            list_id: {
+                                id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
                             element: 'legacy_unid'
                         }
                     },
@@ -1644,6 +2907,36 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '0dac9602cda24c869a74f041134e9afd'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'active'
+                            position: '13'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy'
+                        id: '0dd55f7dad334e4294280bc95b782f68'
+                        key: {
+                            table: 'x_cog_mah_ses_flag_request'
+                            short_description: 'MAH SES flag: rejection reason mandatory when rejected'
                         }
                     },
                     {
@@ -1708,6 +3001,82 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '0ee1456466c64684b6681a673f4d5b04'
+                        key: {
+                            list_id: {
+                                id: '69a22ff51afb49e39f2322dfec758b18'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'status'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '0f070e564310490791baaa6fbf1102b4'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: '0f1a433a3a9d4292bcce7997f9e75c9f'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'preferred_vendor'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '0f29f0e1d3694252bf8dc13d47d1055d'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b53bcf93e2884fcdbc9317016c7f7201'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Mailing address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'city'
+                            position: '3'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '0f318b59fc40402aba546a01869b5f57'
                         key: {
@@ -1741,6 +3110,83 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: '0f3aa3a32d2b4ab39f7f34f13d54b0fe'
+                        key: {
+                            sys_ui_form: {
+                                id: 'aa8e8a248d83478aa47d062c74747cbc'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'b4f1545eebf84e5f8bed047fb5812ec5'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Notes'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '0f4bf699de8f478c8c254d30641f701c'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'poc_email'
+                            position: '10'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '0f5117c456c3499e887ef92c46eae027'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b7355d764c784705bf574eff9451fd57'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '0f5d9d2f871546d286a2ffb99db2b5be'
                         key: {
@@ -1751,6 +3197,29 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '0f6273e17a4d4fc787c2b81f6e91c7b3'
+                        key: {
+                            list_id: {
+                                id: 'b32d8ad9b38c4f5a89275a1003278db5'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'type'
                         }
                     },
                     {
@@ -1780,11 +3249,94 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '0fbc1f98bf87465e9aeb5dcc7224bd00'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'engraver'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '10147fc29d3446a599fca8eba676d7cc'
+                        key: {
+                            name: 'x_cog_mah_vendor'
+                            caption: 'Vendor'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '1015d25abdcb4d4499ed19598212445d'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'ship_to_zip'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '1031cda5d49d455eb25613068a9b465c'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'dodaac'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '1032e7f9dc044b559e9be0bdf5b9981f'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
                         }
                     },
                     {
@@ -1821,6 +3373,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list'
+                        id: '10adad80ad9c40aab9762476bbc628b7'
+                        key: {
+                            name: 'x_cog_mah_award_line'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '10aeed77f30d4d818b58baa23453b584'
                         key: {
@@ -1831,6 +3400,35 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '10b42f197b494d28a04c268b44eb90e2'
+                        key: {
+                            ui_policy: {
+                                id: '304ab10f935a4bbc8d4356d86c18624f'
+                                key: {
+                                    table: 'x_cog_mah_requester'
+                                    short_description: 'MAH requester: merged duplicates are read-only'
+                                }
+                            }
+                            field: 'zip'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: '10bc5b42e7e74d458befce93039d4d0d'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '12'
                         }
                     },
                     {
@@ -1861,6 +3459,20 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: '10fa78d06fbf41b3b127c54de8a30db6'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'vendor'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '1103e3484cd24f5ab284b0eede3c9180'
                         key: {
@@ -1875,6 +3487,89 @@ declare global {
                             name: 'x_cog_mah_award_line'
                             element: 'device_count'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list'
+                        id: '112033b1bb2144c8b98ced9c8456957d'
+                        key: {
+                            name: 'x_cog_mah_awards_case'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '112ea84499ad4b30ae974ea3ac5ff47e'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'vendor_ship_date'
+                            position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '112efd63d1604b98b317ec75eb86ba87'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b53bcf93e2884fcdbc9317016c7f7201'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Mailing address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '1161ab65aacd4e37b39a99fe20543197'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'type'
+                            position: '2'
                         }
                     },
                     {
@@ -1909,6 +3604,194 @@ declare global {
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'suffix'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '11bffcfaa8b24e38ba50ae509c29952e'
+                        key: {
+                            sys_ui_form: {
+                                id: 'ca1db85743724794a18481b985cf261b'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '11c43760383845d8b3cd7433cbe998fe'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'position_title'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '11fff6cdfba0422390148c04d1c53625'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f8c977fbf77540ae96093f91c9ed3572'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '126c2eb78c024b60b75435ffa4e3610c'
+                        key: {
+                            sys_ui_section: {
+                                id: '18a7d558315c4854a4c66b3c8e273476'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '1291ea5a85d94c19a7f7ebca13523837'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'exception_type'
+                            position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '1294315936404eed8ae414e8ac2c8c66'
+                        key: {
+                            sys_ui_section: {
+                                id: '93f9cc1187784e2d97d7285a8acd2f44'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Ship to and justification'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'justification'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '12bcf1a833ab460288c096942952e3cd'
+                        key: {
+                            list_id: {
+                                id: 'cf5511109a474b5b9dfe16d52a2fc965'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'noted_at'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '12c5240329c34302a74e348814dde54e'
+                        key: {
+                            sys_ui_section: {
+                                id: 'e27af0542efc4125bdbfd55a990e87ef'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Decision'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
                         }
                     },
                     {
@@ -1958,6 +3841,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '1305d310abcd4c0188083b4238d6239b'
+                        key: {
+                            list_id: {
+                                id: '4cb2ed013cc044f0adef977189e9497c'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'active'
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: '13162315d0344e649a1a4a63b3dbb7d4'
                         key: {
@@ -1985,6 +3891,38 @@ declare global {
                         }
                     },
                     {
+                        table: 'item_option_new'
+                        id: '138024fcdaee42bc83bc85f986febb08'
+                        key: {
+                            cat_item: '969f94a196d0490b8b6d9377803b654b'
+                            variable_set: 'NULL'
+                            name: 'case_number'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '139c062449894019a388b27504cdb6f8'
+                        key: {
+                            list_id: {
+                                id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'legacy_form'
+                        }
+                    },
+                    {
                         table: 'sys_number'
                         id: '139d32f98766400f880135bc0e0b79f4'
                         key: {
@@ -2002,12 +3940,67 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '14096aa718b143b3a6b886cd72e51f6a'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'state'
+                            position: '10'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '1424b4ba461a4e2eb3982a49d1d4811e'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'text'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '1437ef07b2c24531bd980fbd76e66b36'
+                        key: {
+                            sys_ui_form: {
+                                id: '041f7cdf62d648c9809f20a3eb6de820'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -2036,6 +4029,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ux_form_action'
+                        id: '14898532d6b64dd287e96f1bdfd9a8fe'
+                        key: {
+                            ui_action: 'ua_req_submit'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '150647a3908c48dc9b43036dc891ce50'
                         key: {
@@ -2046,6 +4046,28 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '150e8d0458384db3b4fb5ca1390a995c'
+                        key: {
+                            sys_ui_section: {
+                                id: 'ff4380d798cc43f5a5427fdf51480e6a'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
                         }
                     },
                     {
@@ -2087,6 +4109,39 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: '157676df7188479bb9bf0539a3258d1c'
+                        key: {
+                            sys_ui_form: {
+                                id: '00c91487f7ee463f893e530a3becc102'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '694583497e464e70ba3c4297de192358'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Deduplication'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '15815ac2ca0a48cc8f7f3cd6ba0fbdaa'
                         key: {
@@ -2095,6 +4150,28 @@ declare global {
                             value: 'in_progress'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '15f6c3debfb84e6a86b46bb137598a57'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b7355d764c784705bf574eff9451fd57'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
                         }
                     },
                     {
@@ -2125,6 +4202,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '161acf3730e54ef08fd4203c30cb6a42'
+                        key: {
+                            list_id: {
+                                id: '112033b1bb2144c8b98ced9c8456957d'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'stage'
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: '1623966d921043d2809fddf44ac67c3b'
                         key: {
@@ -2145,6 +4245,128 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'submitted_by'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '166784bcd76a4800ae2440f4bbd1be4c'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'device_count'
+                            position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '166ed84bde534a44b48d36201699823d'
+                        key: {
+                            sys_ui_form: {
+                                id: 'ba96c8b6e3f748728934b2ae84b961a6'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '0450cadcf9694792858b175f81cfe83a'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Portal access (replaces Readers fields)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '16a25b0d6e2741e390184cd883b090d0'
+                        key: {
+                            list_id: {
+                                id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'status'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '16b9ca0233194827b253a50eeba25596'
+                        key: {
+                            sys_ui_section: {
+                                id: 'de1813b6f5b24fb59c5f1badd984259f'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Fulfilment summary'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '16d7b7b55f4e4808a1df93fd1906a1cd'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '8'
                         }
                     },
                     {
@@ -2182,6 +4404,28 @@ declare global {
                             name: 'x_cog_mah_requester'
                             element: 'email'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '179ec5767b74460f8a954453356249f2'
+                        key: {
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
                         }
                     },
                     {
@@ -2229,11 +4473,71 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '1869bc27a7d84e83814aee6b23ddae5d'
+                        key: {
+                            list_id: {
+                                id: '10adad80ad9c40aab9762476bbc628b7'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'engraving_required'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: '1894242bae6b49318218c4b3a93e1710'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'requisition_priority'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '18a7d558315c4854a4c66b3c8e273476'
+                        key: {
+                            name: 'x_cog_mah_engraving_job'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '18d3746febd043988a42afa78a373932'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'target_table'
+                            position: '12'
                         }
                     },
                     {
@@ -2243,6 +4547,39 @@ declare global {
                             name: 'x_cog_mah_case_note'
                             element: 'author'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '18df05bf382d493091ad28e69f95298a'
+                        key: {
+                            sys_ui_form: {
+                                id: '44e2f62534bc423e8cdb278d7995eacf'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'de1813b6f5b24fb59c5f1badd984259f'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Fulfilment summary'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -2264,6 +4601,27 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '1991e34e1d6f4f77924f0d1bbf19e21b'
+                        key: {
+                            sys_ui_action: 'd5169f681b9f4f10a37a8ee1e1471b31'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sc_cat_item_catalog'
+                        id: '1997597e2092488e8e7e82bc94b6e10b'
+                        key: {
+                            sc_cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                            sc_catalog: 'e0d08b13c3330100c8b837659bba8fb4'
                         }
                     },
                     {
@@ -2344,6 +4702,42 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form'
+                        id: '1a38439dee3a43e6aa73ce53a04793f8'
+                        key: {
+                            name: 'x_cog_mah_award_line'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '1a59b41a335241f3817c8c87a2e293fa'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd38c1a001a5a485081617cda142ee996'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'ship_to_country'
+                            position: '8'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '1a5f88316054469eab2056f567a73b66'
                         key: {
@@ -2411,6 +4805,43 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '1abf6e9cd3ed407993250eb154b37b9f'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'source_agency'
+                            position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                        key: {
+                            name: 'x_cog_mah_awards_case'
+                            caption: 'Awards case'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '1aec34d9519046e9aa3ae64cb10b4cdd'
                         key: {
@@ -2432,6 +4863,73 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '1b5fc8fdfb25481d81e729186efede21'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'weight_oz'
+                            position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '1b796cad7e534826bc144ce29978b132'
+                        key: {
+                            list_id: {
+                                id: '1c29015c7a2b4630af3570b983a9e17c'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'rejected_count'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '1b823698cec34e7396e873831424c72c'
+                        key: {
+                            sys_ui_section: {
+                                id: '8ddef1236acb4b9d89f304dcfd0f5788'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: '1b915daa174d4c7abb05c9c942723a0d'
                         key: {
@@ -2450,12 +4948,78 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '1ba55af6ccf6459da1f7d8b38b33c162'
+                        key: {
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'author'
+                            position: '7'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '1bd25a7855354f138663e96d288570d0'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'nsn_or_exception'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '1be901dd788d464094131041287b8893'
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'poc'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '1bf3e9e6c62a42179d5bcf6345c1a203'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'font'
+                            position: '8'
                         }
                     },
                     {
@@ -2469,6 +5033,23 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list'
+                        id: '1c29015c7a2b4630af3570b983a9e17c'
+                        key: {
+                            name: 'x_cog_mah_authorization_file'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
                         }
                     },
                     {
@@ -2518,6 +5099,28 @@ declare global {
                             name: 'x_cog_mah_status_map'
                             element: 'legacy_form'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '1ca5fc40d8ae45a689cdee26e7b10ae5'
+                        key: {
+                            sys_ui_section: {
+                                id: '7a5855a85a2542e0a768166a0117a5cf'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
                         }
                     },
                     {
@@ -2613,11 +5216,79 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '1e9b1728029244d59f2606762ded4cf5'
+                        key: {
+                            list_id: {
+                                id: '112033b1bb2144c8b98ced9c8456957d'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '1f470413aa2245058d221949a58a5464'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'ship_to_state'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '1f532a425af745be9deefdacf9463d30'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'unit_price'
+                            position: '11'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '1f722f72c60243beb54271a0746e8e59'
+                        key: {
+                            list_id: {
+                                id: 'cf5511109a474b5b9dfe16d52a2fc965'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'author'
                         }
                     },
                     {
@@ -2650,6 +5321,28 @@ declare global {
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'pieces'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '1fd0d5c627464471bc67c94975a9216c'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'dodaac'
+                            position: '3'
                         }
                     },
                     {
@@ -2694,11 +5387,64 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '2102ef9af9ef46569c8e15d18543e079'
+                        key: {
+                            sys_ui_section: {
+                                id: 'ea0a22db549141378f406255bfb23494'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Detail'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'raw_value'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '2106651b5d134a7aa91cb48327c94291'
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'record_count'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '21a85c1c2c324ba5bab2fd92693dc6aa'
+                        key: {
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: '21b609982fee4bb88c42b856fd721383'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'justification'
                         }
                     },
                     {
@@ -2731,6 +5477,43 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: '22b508333b9f4830b4e100320e51d46c'
+                        key: {
+                            ui_policy: {
+                                id: 'dddec8ca30d14275803193320b5b5cb0'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: header fields mandatory once out of Draft'
+                                }
+                            }
+                            field: 'requisition_priority'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '22b9126b12204b46a0f9f2828e01c725'
+                        key: {
+                            list_id: {
+                                id: '1c29015c7a2b4630af3570b983a9e17c'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'accepted_count'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '22cf5554ab704681843672dd3ae140ea'
                         key: {
@@ -2754,6 +5537,51 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '2301376fd0b942cbb52f120cdd669202'
+                        key: {
+                            list_id: {
+                                id: '1c29015c7a2b4630af3570b983a9e17c'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'parse_status'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '233e815d2d56484d9e19cc4845406d37'
+                        key: {
+                            sys_ui_section: {
+                                id: '911e32c64d324dc39d49098cb11a4c70'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
                         }
                     },
                     {
@@ -2813,6 +5641,52 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: '23e9a44cc08a4bf59c385bd663d0d5a5'
+                        key: {
+                            sys_ui_form: {
+                                id: '3853b0db9ab04bf482ab5e7c39b09595'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'ff4380d798cc43f5a5427fdf51480e6a'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '240b6a0b1396429e9c938eb9bfddb0b8'
+                        key: {
+                            sys_ui_action: 'f1c61b3ac432470aa6c736d6c73e7b58'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '241ee4d9929e4b338b5148fb3c41b49f'
                         key: {
@@ -2840,12 +5714,108 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '24bd52c23e62453795d4f5fd84a6a7d1'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'delivered'
+                            position: '11'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy'
+                        id: '24c746d97a3c4eb5b1d23827e10c33e7'
+                        key: {
+                            table: 'x_cog_mah_heraldry_request'
+                            short_description: 'MAH DD1348-6: cancel reason mandatory and visible when cancelled'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '24c9d4e871cc439396283165c8ac38ee'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'line_number'
+                            position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '24d7e378ae23455abab916d74e0364fd'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'preferred_vendor'
+                            position: '11'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '24f22a171ef94b96b9e420da6827f442'
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'awards_case'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '2502e2ea421c4340bb7c296fb4cf07fd'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b7355d764c784705bf574eff9451fd57'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
                         }
                     },
                     {
@@ -2867,6 +5837,58 @@ declare global {
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'legacy_form'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '25a0fbf40ccd45d586746ab2d8f31c9e'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'vendor_tracking_number'
+                            position: '10'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '25af4217bdd44a7b86ff13c23fe1095f'
+                        key: {
+                            name: 'x_cog_mah_requester'
+                            caption: 'Requester'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '25f0ccd37f0a41f799de6a2951fe843c'
+                        key: {
+                            name: 'x_cog_mah_ses_flag_request'
+                            caption: 'Justification and delivery'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -2901,6 +5923,73 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '262ef7803c5146b5ae2614af43c649c3'
+                        key: {
+                            list_id: {
+                                id: '45ecbf25305d4e88b4d2f963808be522'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'unit_of_issue'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '264326b6852c4ed4a43278775b0e0627'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f8c977fbf77540ae96093f91c9ed3572'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '2646354377ae40daa5c4867514eedd88'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd38c1a001a5a485081617cda142ee996'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '9'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '2656284a2f4b499180a2a606b272a5af'
                         key: {
@@ -2911,6 +6000,28 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '26610cc177af400998a5db1264dbf2ea'
+                        key: {
+                            sys_ui_section: {
+                                id: 'ff4380d798cc43f5a5427fdf51480e6a'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
                         }
                     },
                     {
@@ -2931,11 +6042,63 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy'
+                        id: '26a332df14c6468ba7d89a3d9d75aaf4'
+                        key: {
+                            table: 'x_cog_mah_awards_case'
+                            short_description: 'MAH awards case: cancel reason mandatory when cancelled'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '26a3e71fc1f94c13bc212dac10f3a1f7'
+                        key: {
+                            sys_ui_section: {
+                                id: '18a7d558315c4854a4c66b3c8e273476'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '26baee17fbe74c9cbc296047482f8032'
                         key: {
                             logical_table_name: 'x_cog_mah_award_line'
                             col_name_string: 'awards_case'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '26dd3bc1e7f1494da4eed7375de890d5'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'quantity'
+                            position: '10'
                         }
                     },
                     {
@@ -2959,11 +6122,67 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: '27777b304d4d4466825adfa0971c7efb'
+                        key: {
+                            sys_ui_form: {
+                                id: '00c91487f7ee463f893e530a3becc102'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '279325383e1f48a8b1cc6e995af2aae9'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'awards_case'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '27a4692a5c77471ca52131f75315e45d'
+                        key: {
+                            list_id: {
+                                id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'exception_type'
                         }
                     },
                     {
@@ -2973,6 +6192,28 @@ declare global {
                             name: 'x_cog_mah_case_note'
                             element: 'legacy_author'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '27f12839724f496cbecd0759a08b45e0'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
                         }
                     },
                     {
@@ -2989,6 +6230,28 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '2812eb9ccbb6454185859a70da395098'
+                        key: {
+                            sys_ui_section: {
+                                id: '7a5855a85a2542e0a768166a0117a5cf'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
                         }
                     },
                     {
@@ -3045,11 +6308,77 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                        key: {
+                            name: 'x_cog_mah_status_map'
+                            caption: 'Status mapping'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '28b50432962d4befb23b90f24b66839e'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'requesting_unit'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: '28bf1cd46b454748ab9176ef94adf074'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '10'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '28caa4c1d0bb44f79d050e90e95a0e92'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'legacy_last_modified'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '28f527f278cf45a68b3cb6329ed29609'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
                         }
                     },
                     {
@@ -3097,6 +6426,39 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: '29872729a4bb447ab4cd4efc63b40cf8'
+                        key: {
+                            sys_ui_form: {
+                                id: 'ca1db85743724794a18481b985cf261b'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '6194c2b85a9c4088a7cd768378714963'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '29aa0f96b9bb42959a2964bf4e70389d'
                         key: {
@@ -3118,6 +6480,28 @@ declare global {
                         id: '29b76dc5236242c7b7eb77ce31aa384b'
                         key: {
                             name: 'x_cog_mah_shipment'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '29e623f3c08140bbaec3468178395562'
+                        key: {
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'active'
+                            position: '9'
                         }
                     },
                     {
@@ -3167,6 +6551,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '2ab875b00d4e40e3885cf1188ce6f7fc'
+                        key: {
+                            list_id: {
+                                id: 'cf5511109a474b5b9dfe16d52a2fc965'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'customer_visible'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '2ac4f58846c940ff993f235488b40fbd'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '9'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '2b3401cb9b4441af881f0b1dfee94b19'
                         key: {
@@ -3175,6 +6604,29 @@ declare global {
                             value: 'submitted'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '2b6d6161d0684db1ac6029c166f03bc5'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'document_number'
                         }
                     },
                     {
@@ -3197,11 +6649,96 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '2c5ee80f0666429a8971bd1535a0dc64'
+                        key: {
+                            sys_ui_section: {
+                                id: '6194c2b85a9c4088a7cd768378714963'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '2c83af848d064f6dac6e5725a61784d3'
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'duplicate_count'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '2c95f151667545bda2824ff769111a2a'
+                        key: {
+                            sys_ui_form: {
+                                id: 'ba96c8b6e3f748728934b2ae84b961a6'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '911e32c64d324dc39d49098cb11a4c70'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy'
+                        id: '2ccffe65eeb94a59bb3280a88e15769b'
+                        key: {
+                            table: 'x_cog_mah_award_line'
+                            short_description: 'MAH award line: engraving text only when engraving is required'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '2d03102a83364477bbcda89782e9f230'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '6'
                         }
                     },
                     {
@@ -3250,6 +6787,43 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '2d973ff6709e49a29c33d2baa3868dca'
+                        key: {
+                            list_id: {
+                                id: 'f90ad93423ff4ff1a44ccea0c4ef00a8'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '2da7ab03aa16427c88df09528df77cc7'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'required_delivery_date'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '2dbddbd4b1e34f2cb4f051cce12a2df1'
                         key: {
@@ -3280,12 +6854,64 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '2dea64a8dea349ec94aeef5adce48d56'
+                        key: {
+                            sys_ui_section: {
+                                id: '0450cadcf9694792858b175f81cfe83a'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Portal access (replaces Readers fields)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '2e0852ffaa9d45bbba7d01936ef35ee4'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'relationship'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '2e41756bceb64acf9925c357dc803bdc'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sc_cat_item_category'
+                        id: '2e882b1691d24fb082db84599b9cdba3'
+                        key: {
+                            sc_cat_item: '969f94a196d0490b8b6d9377803b654b'
+                            sc_category: '264a3ed81796464688efa04710410f77'
                         }
                     },
                     {
@@ -3319,6 +6945,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '2eda61b30470492fa6b6baa734c05a1e'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'file_name'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: '2ee81a3c321c4fc4822c6edf337f6e0c'
                         key: {
@@ -3342,6 +6990,28 @@ declare global {
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'device_count'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '2f2ada93ceb544a2bb5ae7f8921729fb'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b4f1545eebf84e5f8bed047fb5812ec5'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Notes'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'notes'
+                            position: '0'
                         }
                     },
                     {
@@ -3402,6 +7072,59 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '2fd8498da60c4204800ee5bacec4e5fa'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'poc_phone'
+                            position: '11'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: '2ffb7687cf1b434cb1c93494039d2ef2'
+                        key: {
+                            cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                            variable_set: 'NULL'
+                            name: 'flag_type'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '3010bb82e5294d019d27e72f5768ce60'
+                        key: {
+                            sys_ui_section: {
+                                id: '694583497e464e70ba3c4297de192358'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Deduplication'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'dedupe_key'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '30343a6a3d1f41f7a6c38b88524d7694'
                         key: {
@@ -3412,6 +7135,36 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '3041ee7cb281490eb7da27bfc8cd20c8'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b53bcf93e2884fcdbc9317016c7f7201'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Mailing address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'country'
+                            position: '7'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy'
+                        id: '304ab10f935a4bbc8d4356d86c18624f'
+                        key: {
+                            table: 'x_cog_mah_requester'
+                            short_description: 'MAH requester: merged duplicates are read-only'
                         }
                     },
                     {
@@ -3444,6 +7197,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '313cb1a609164cfda16e17196f2462af'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '3143634de37341eda5e31ed12d639360'
                         key: {
@@ -3454,6 +7229,21 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '316755dd1ec84e84a38c263af1044e43'
+                        key: {
+                            name: 'x_cog_mah_heraldry_request'
+                            caption: 'Review and vendor release'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -3481,6 +7271,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '319019093839498eae80e561b682f81c'
+                        key: {
+                            list_id: {
+                                id: 'f90ad93423ff4ff1a44ccea0c4ef00a8'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'flag_type'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '319e4053f97d4323a6342231bb375dcc'
                         key: {
@@ -3498,12 +7311,93 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '320b0e669ea04160a9c6f7bf442d6bc9'
+                        key: {
+                            list_id: {
+                                id: 'f90ad93423ff4ff1a44ccea0c4ef00a8'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '3216ccf840704fee913b56440632bf9d'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'legacy_form'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '3219d404feff4cd3aef9e448e40adf35'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '324fa714317b401cb664b15c0a60aa5d'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f1bd62852bea47dab7f8feb6200004ab'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Description'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'description'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '326335f96db441049206c54e43ce6811'
+                        key: {
+                            ui_policy: {
+                                id: 'dddec8ca30d14275803193320b5b5cb0'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: header fields mandatory once out of Draft'
+                                }
+                            }
+                            field: 'document_number'
                         }
                     },
                     {
@@ -3515,6 +7409,29 @@ declare global {
                             value: 'unmapped'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '32c2f83282e4440dbcc8294adf56b759'
+                        key: {
+                            list_id: {
+                                id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'field_name'
                         }
                     },
                     {
@@ -3536,6 +7453,64 @@ declare global {
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '3339e3ff92de438abbdfb82d83876ec8'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'uic'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '338da73259354c9e8b65889ceadeb4e9'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '14'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '33b54f94b6fb4a76af542e24dccaf3c7'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'fund_code'
                         }
                     },
                     {
@@ -3577,6 +7552,20 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: '341ac088623c4f6aad5d966143d09967'
+                        key: {
+                            ui_policy: {
+                                id: '304ab10f935a4bbc8d4356d86c18624f'
+                                key: {
+                                    table: 'x_cog_mah_requester'
+                                    short_description: 'MAH requester: merged duplicates are read-only'
+                                }
+                            }
+                            field: 'dob'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '348690d64eb947d4bc7bd8d41a4eacc3'
                         key: {
@@ -3592,6 +7581,76 @@ declare global {
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '34bd3678a831473daf72ed07bfb65f29'
+                        key: {
+                            sys_ui_section: {
+                                id: '911e32c64d324dc39d49098cb11a4c70'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '3556efbd8d8244ca8c630117ee7edf81'
+                        key: {
+                            sys_ui_form: {
+                                id: '44e2f62534bc423e8cdb278d7995eacf'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '6e0ca606fe2e4f91b51faab466f7624c'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Description'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: '356aef2dc59141978cd0660068c2816b'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '14'
                         }
                     },
                     {
@@ -3703,6 +7762,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '36c868e98c3e468b8b335583b8f4a33d'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '371a2d387d464ea5922a25f977d92442'
                         key: {
@@ -3738,6 +7819,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '3743919fdf204b8d865fa3b1334a8c27'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'source_table'
+                            position: '6'
+                        }
+                    },
+                    {
                         table: 'sys_number'
                         id: '3769130658484c5081cf8c8860d6deac'
                         key: {
@@ -3767,11 +7870,111 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '377f82498c384272bfeb85a61d6b9fee'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'active'
+                            position: '15'
+                        }
+                    },
+                    {
                         table: 'sys_number'
                         id: '3785fdd4a4254a54aa5d2477a867915b'
                         key: {
                             category: 'x_cog_mah_shipment'
                             prefix: 'MSH'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '37ba1d1c204d4f9dbc835cd10eac7d08'
+                        key: {
+                            sys_ui_form: {
+                                id: '00c91487f7ee463f893e530a3becc102'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'b53bcf93e2884fcdbc9317016c7f7201'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Mailing address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '37c36fad229746beb071f5397bb9a0a3'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'vendor'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '37d20c6abdae45ea990908abcdac4297'
+                        key: {
+                            list_id: {
+                                id: '4cb2ed013cc044f0adef977189e9497c'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
                         }
                     },
                     {
@@ -3828,12 +8031,79 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '384a7690aaa44bdca242e78b031aa102'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'authorization_file'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: '384cba4654f0418397d7734816c90181'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'project_code'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '385153386ff84ba2bef4dec339f8a5e2'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'cancel_reason'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form'
+                        id: '3853b0db9ab04bf482ab5e7c39b09595'
+                        key: {
+                            name: 'x_cog_mah_shipment'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '3876f84f668747a6b58ff72a288b900d'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'engraving_text'
+                            position: '12'
                         }
                     },
                     {
@@ -3854,6 +8124,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '38b86dabfbb149869856332d2c3c9608'
+                        key: {
+                            sys_ui_section: {
+                                id: 'ff4380d798cc43f5a5427fdf51480e6a'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '38cb4335d5d24674a9bdae6b8f9f221d'
                         key: {
@@ -3871,11 +8163,79 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: '38f03feb6f2747428f865b665223f86d'
+                        key: {
+                            ui_policy: {
+                                id: '304ab10f935a4bbc8d4356d86c18624f'
+                                key: {
+                                    table: 'x_cog_mah_requester'
+                                    short_description: 'MAH requester: merged duplicates are read-only'
+                                }
+                            }
+                            field: 'service_number_last4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '398c9cfd79c94a39b8c0427c2acf62fc'
+                        key: {
+                            list_id: {
+                                id: 'cf5511109a474b5b9dfe16d52a2fc965'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'awards_case'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '39a2e4e9785245458bf397edc2bea4bb'
+                        key: {
+                            sys_ui_section: {
+                                id: '42d98ae0d6314255a41b66e7d5907d2b'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '39a5ab8d589e4dcd8e09d8da413a2116'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'nomenclature'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: '39da2b42d9564d49b1967d4826805633'
+                        key: {
+                            cat_item: '969f94a196d0490b8b6d9377803b654b'
+                            variable_set: 'NULL'
+                            name: 'service_number_last4'
                         }
                     },
                     {
@@ -3952,6 +8312,52 @@ declare global {
                                     name: 'x_cog_mah.assembler'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '3b34dd58ad774229bd12ec50c4a5fd8c'
+                        key: {
+                            list_id: {
+                                id: '4cb2ed013cc044f0adef977189e9497c'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'poc'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '3b5efe695d5247cd883ef41cf87a44e4'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'requisition_priority'
                         }
                     },
                     {
@@ -4040,6 +8446,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '3c1b05d993b94ea8b3c975fbef4e1fea'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b8fd7b687fe74c24b24affc99889db66'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '3c271c5b6e7a4a11bbe8e2f1a772c5e0'
                         key: {
@@ -4103,6 +8531,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'item_option_new'
+                        id: '3d09d6331113482799956327572f1913'
+                        key: {
+                            cat_item: '969f94a196d0490b8b6d9377803b654b'
+                            variable_set: 'NULL'
+                            name: 'zip'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '3d2ca73c40ec4a0c8007f2948bf85ae5'
                         key: {
@@ -4124,6 +8561,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_action_role'
+                        id: '3d40eb53299449a68347b5b1dc3a156c'
+                        key: {
+                            sys_ui_action: '9ac09a15971f4fdaae5b9a0c048d1593'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '3d77efcc86944f008ab0a07ae1822c68'
                         key: {
@@ -4137,6 +8587,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '3da3c460e4ae4ff3b1f77ebb82c22493'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '3db96a7d7f544a9188b4e4951bf26c52'
                         key: {
@@ -4145,6 +8617,28 @@ declare global {
                             value: 'nprc'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '3ddada83462f47648dbbd82b7802b898'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
                         }
                     },
                     {
@@ -4183,6 +8677,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '3e6067c89438446382ff0ae7468383a9'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '13'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '3e8a7c472b224be8b5e0bd7b1bb836cf'
                         key: {
@@ -4200,11 +8716,96 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '3ea14d530dec42a69f001d9c24b57d79'
+                        key: {
+                            list_id: {
+                                id: '10adad80ad9c40aab9762476bbc628b7'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
+                        }
+                    },
+                    {
                         table: 'sys_ws_query_parameter_map'
                         id: '3eafb781f12e48aca95e5c443b1bea72'
                         key: {
                             web_service_operation: '58296fd224b24c12af3155eb11b1ba1a'
                             web_service_query_parameter: '2bfe1209f48e482bb580f5885d5c1049'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '3ebe72927a3f4ad88af72d6b64e42d0c'
+                        key: {
+                            sys_ui_section: {
+                                id: '8ddef1236acb4b9d89f304dcfd0f5788'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '3f0e75f8b4b84865a14fe46d7fc49ae8'
+                        key: {
+                            list_id: {
+                                id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'nomenclature'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list'
+                        id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                        key: {
+                            name: 'x_cog_mah_request_line'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
                         }
                     },
                     {
@@ -4221,6 +8822,43 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: '3f5a349809494f8685d364e034d41ab7'
+                        key: {
+                            ui_policy: {
+                                id: '26a332df14c6468ba7d89a3d9d75aaf4'
+                                key: {
+                                    table: 'x_cog_mah_awards_case'
+                                    short_description: 'MAH awards case: cancel reason mandatory when cancelled'
+                                }
+                            }
+                            field: 'cancel_reason'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '3f5f6d096b7b4223bf513c2e01da3034'
+                        key: {
+                            list_id: {
+                                id: '45ecbf25305d4e88b4d2f963808be522'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'stock_number'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '3f75c69c85f54050b88bf946f0a67ec3'
                         key: {
@@ -4234,12 +8872,93 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '3fd51e23a1de4e6c94482f21f11f9d6b'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'stage'
+                            position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '4017c104b7444586bc6cfaf21b0033c7'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'justification'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '404716be511b47d1895634d65d1d4219'
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'shipped'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '4069cfc2745f4ffdb5e54a5b39181612'
+                        key: {
+                            list_id: {
+                                id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'source_row'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '406e580514fb4393a5dfa95ce2cd24ae'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'requisition_priority'
+                            position: '5'
                         }
                     },
                     {
@@ -4252,12 +8971,125 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: '40881d1f39a94836b8ee8f821f455fbe'
+                        key: {
+                            sys_ui_form: {
+                                id: 'e60c6b3897bc41dd8a918c4604f52cee'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '40add9ae6bf645a2aea3750105419f8b'
+                        key: {
+                            sys_ui_action: 'f1c61b3ac432470aa6c736d6c73e7b58'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '40b021e1a51e43eb8107b03c2d680a43'
+                        key: {
+                            sys_ui_section: {
+                                id: 'ab6c307f56e145afa53748e27639862b'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Parse log'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'source_hash'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '40b27569cc0948eaac1252756611ad56'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'requester'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '40b6b9b68ebf4d868f5dfd68202246fa'
+                        key: {
+                            list_id: {
+                                id: '45ecbf25305d4e88b4d2f963808be522'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'active'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '40c35f31684841a698622fa1dca695b4'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'pieces'
+                            position: '8'
                         }
                     },
                     {
@@ -4301,6 +9133,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '413ec37677bd488ab72539b9eb6b2be7'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '10'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '417024605fe0437586edcaf0dba3a398'
                         key: {
@@ -4335,6 +9189,20 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: '4216d121b9554f37b09060f0bbfb6c62'
+                        key: {
+                            ui_policy: {
+                                id: 'f7ff83af6dcd4d699d0e28acccdfca53'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: vendor fulfilment fields visible only after release'
+                                }
+                            }
+                            field: 'vendor_ship_date'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '423b84d084ea4a23a953991a061c3881'
                         key: {
@@ -4354,6 +9222,28 @@ declare global {
                                     name: 'x_cog_mah.vendor'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '424025d5f5354c9f9ab0af68f1f5a7cb'
+                        key: {
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_author'
+                            position: '8'
                         }
                     },
                     {
@@ -4394,6 +9284,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: '42d98ae0d6314255a41b66e7d5907d2b'
+                        key: {
+                            name: 'x_cog_mah_ses_flag_request'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '430178be87b9477b9432a6ed95e65496'
                         key: {
@@ -4419,11 +9324,64 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '432d2ac1b9f44af2be37cfdec5f678ff'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'device'
+                            position: '5'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: '4343f67f79f54cc8bda67718334003c0'
+                        key: {
+                            cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                            variable_set: 'NULL'
+                            name: 'executive_name'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '435f6540a1114cd899103bfdee88f796'
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'import_set'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '4362af7bccac4acebf022291b2c9ed67'
+                        key: {
+                            sys_ui_section: {
+                                id: 'ff4380d798cc43f5a5427fdf51480e6a'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
                         }
                     },
                     {
@@ -4504,6 +9462,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ux_form_action'
+                        id: '447b32e33ee1485d9892c7c72e73c537'
+                        key: {
+                            ui_action: 'ua_req_cancel'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '4494f9009ce84939a9abaed4dde26f5e'
                         key: {
@@ -4517,6 +9482,42 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '44d422a33614458ababd23d078022abe'
+                        key: {
+                            sys_ui_section: {
+                                id: 'ff4380d798cc43f5a5427fdf51480e6a'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form'
+                        id: '44e2f62534bc423e8cdb278d7995eacf'
+                        key: {
+                            name: 'x_cog_mah_awards_case'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '44f1d82bcaf7438fb26742b4c0360396'
                         key: {
@@ -4525,6 +9526,51 @@ declare global {
                             value: 'resolved'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '44fd5636ce1d412b8bc4804dec120ca1'
+                        key: {
+                            list_id: {
+                                id: '10adad80ad9c40aab9762476bbc628b7'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'line_number'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '451cf85f13714f92b48b95600f085cb9'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'state'
+                            position: '3'
                         }
                     },
                     {
@@ -4561,11 +9607,117 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '456266fe42d24810bcaa216e42e53d38'
+                        key: {
+                            sys_ui_section: {
+                                id: '6194c2b85a9c4088a7cd768378714963'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '456a3d4ab3e5445687730af6a3841712'
+                        key: {
+                            sys_ui_action: 'd5169f681b9f4f10a37a8ee1e1471b31'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: '456fa97dad8d44f591a0b09acc4df860'
+                        key: {
+                            cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                            variable_set: 'NULL'
+                            name: 'justification'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '458f4e06c71041959d6c828fdb65871c'
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'unit_of_issue'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '45cd8b13187c4491b0054104ab2f61d2'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'category'
+                            position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list'
+                        id: '45ecbf25305d4e88b4d2f963808be522'
+                        key: {
+                            name: 'x_cog_mah_heraldic_item'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '45fef56e8b4443d3a851bd5c48f88db2'
+                        key: {
+                            list_id: {
+                                id: 'f90ad93423ff4ff1a44ccea0c4ef00a8'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'position_title'
                         }
                     },
                     {
@@ -4580,12 +9732,56 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '462fb4d8ebec4e7984639b34cd1531f9'
+                        key: {
+                            sys_ui_section: {
+                                id: '42d98ae0d6314255a41b66e7d5907d2b'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '463ea9d694cf4010b90ae691f8157d10'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'aging_flag'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '46406ca6d1044314bf88bc5979c50ddb'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'tracking_number'
+                            position: '5'
                         }
                     },
                     {
@@ -4611,12 +9807,47 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '46776bb386b04b4db34e51d5b77b2745'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c4019f8b0024e91926ee4d9022a5a9f'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Resolution'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '467dded36eee4016a6039417d0c2c547'
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'awards_case'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '46883251b12541478485b7cc5f354f21'
+                        key: {
+                            sys_ui_action: '09bec9170d4c4a499a30efb0ccf0fa35'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -4647,6 +9878,29 @@ declare global {
                             value: 'hrc'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '4721a79fbca2417588e86910f585667b'
+                        key: {
+                            list_id: {
+                                id: '45ecbf25305d4e88b4d2f963808be522'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'unit_price'
                         }
                     },
                     {
@@ -4689,6 +9943,28 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '4815e708fcc04e93a56a2203047d1757'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b53bcf93e2884fcdbc9317016c7f7201'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Mailing address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'address_state'
+                            position: '5'
                         }
                     },
                     {
@@ -4765,6 +10041,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '4928493ebf084952853a45dd68526722'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'quantity'
+                            position: '8'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '493c472c627c4c33a5db55a3775b6c65'
                         key: {
@@ -4807,6 +10105,97 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '49bb78e5177c4e8280fd1a91fd790ae8'
+                        key: {
+                            list_id: {
+                                id: '112033b1bb2144c8b98ced9c8456957d'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'source_agency'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '49d1dbf0aeae43cf92a8c1e2b5530a56'
+                        key: {
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '49e5a2deab68481fbc4ba5bb98d884f8'
+                        key: {
+                            list_id: {
+                                id: 'b32d8ad9b38c4f5a89275a1003278db5'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '49f7c4e024164e378b091bc609c2c84a'
+                        key: {
+                            list_id: {
+                                id: '4ab5920b24a4446c97ae33667ce578d3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'delivered'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '4a0f1d20b9e24b268ed552b5d371005a'
                         key: {
@@ -4829,6 +10218,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '4a438978614446f7843b7f04dafdd25b'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'requesting_office'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '4a51fc7ca0214c4fa25a412cd97a806d'
                         key: {
@@ -4837,6 +10248,39 @@ declare global {
                                 id: 'cea6b709e3e34c8289d1a396a0bed20e'
                                 key: {
                                     name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '4a5eb5b7ca8644f7ae98b03b670c070f'
+                        key: {
+                            sys_ui_form: {
+                                id: 'ba96c8b6e3f748728934b2ae84b961a6'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
                                 }
                             }
                         }
@@ -4861,6 +10305,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list'
+                        id: '4ab5920b24a4446c97ae33667ce578d3'
+                        key: {
+                            name: 'x_cog_mah_shipment'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '4ada07784aa74e3f8be7d652b2032a9a'
                         key: {
@@ -4871,6 +10332,28 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '4adcc321887f4b43be7bc4bdb4431955'
+                        key: {
+                            sys_ui_section: {
+                                id: '8ddef1236acb4b9d89f304dcfd0f5788'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
                         }
                     },
                     {
@@ -4888,6 +10371,29 @@ declare global {
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'unit_of_issue'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '4af3700056bb4adaa9122ddde25fdf37'
+                        key: {
+                            list_id: {
+                                id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'message'
                         }
                     },
                     {
@@ -4930,6 +10436,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '4bb5cd30203044edb6b20866874f7d40'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'signal_code'
+                            position: '8'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '4be2513a62e6421189bbfc869bc9f6db'
                         key: {
@@ -4967,6 +10495,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '4c159d19150d4600bbf007464b78e74f'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'flag_type'
+                            position: '8'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '4c39b951ebb24b06b8b058b66ee8e360'
                         key: {
@@ -4981,6 +10531,69 @@ declare global {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'legacy_unid'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '4ca985674ec44c72bdb06fdb0033283b'
+                        key: {
+                            sys_ui_form: {
+                                id: '44e2f62534bc423e8cdb278d7995eacf'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list'
+                        id: '4cb2ed013cc044f0adef977189e9497c'
+                        key: {
+                            name: 'x_cog_mah_vendor'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '4cc252db1ce94647abcd936dd42199b5'
+                        key: {
+                            sys_ui_action: 'd393f94714c54f9dbae4e2f06c65c244'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -5001,6 +10614,146 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '4ce31a121d2c4388ae6754a71d72abea'
+                        key: {
+                            sys_ui_section: {
+                                id: '7598cb39ef524014950ffd9e32ac0f7b'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '4d0e6f15fa4f4661a764a9e0cd37abd7'
+                        key: {
+                            list_id: {
+                                id: '69a22ff51afb49e39f2322dfec758b18'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'award_line'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '4d9c1e66f96244289c11dabe418249c9'
+                        key: {
+                            sys_ui_action: '00e9d3126d3848c5afb1bc0aab5e7e99'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '4dc027739bc348cbbadf66e4998ae660'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'record_count'
+                            position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '4e13e83d5de1437a8c0f3e472284f680'
+                        key: {
+                            list_id: {
+                                id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'heraldry_request'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '4e496482361f4e8db14b8f41b7d7705d'
+                        key: {
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'customer_visible'
+                            position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '4e4c8c75b6694746b52f2d46b5a68251'
+                        key: {
+                            name: 'x_cog_mah_heraldry_request'
+                            caption: 'Totals'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '4e556c14fa904cea8bd7ca2f0289bd7b'
                         key: {
@@ -5014,11 +10767,48 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '4e7a83bb088f4de29fa6846c1709bff4'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'authorization_date'
+                            position: '6'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '4e840d432dbb4ceeade419a108c679c4'
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'active'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: '4e8428214ce54a42a64a8337731852b6'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '05'
                         }
                     },
                     {
@@ -5052,6 +10842,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '4f400ec847e34238b346d6f3e7ac48a9'
+                        key: {
+                            sys_ui_section: {
+                                id: '694583497e464e70ba3c4297de192358'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Deduplication'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'merged_into'
+                            position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '4f7f288eb89a4885a0040842c4eb8dcd'
+                        key: {
+                            sys_ui_section: {
+                                id: '944af3b62e1c430981c5490c03bd7e00'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '4fd39fa4ac0e45738252311f330acec2'
                         key: {
@@ -5071,11 +10905,47 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: '50000475659c42dda440edb4747c9516'
+                        key: {
+                            ui_policy: {
+                                id: 'fb5d196b960249f89f6afdb6f7d36ee1'
+                                key: {
+                                    table: 'x_cog_mah_awards_case'
+                                    short_description: 'MAH awards case: computed fields are read-only'
+                                }
+                            }
+                            field: 'line_count'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '501c2d8370614787955a14e53dbca8fb'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'priority_handling'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '502cb744ef5049418aa004f9ad0b68cd'
+                        key: {
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'target_value'
+                            position: '7'
                         }
                     },
                     {
@@ -5118,6 +10988,28 @@ declare global {
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'ship_to_address_1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '505e1711a9ec41959270d39a4a4849f7'
+                        key: {
+                            sys_ui_section: {
+                                id: '93f9cc1187784e2d97d7285a8acd2f44'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Ship to and justification'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'ship_to'
+                            position: '0'
                         }
                     },
                     {
@@ -5195,6 +11087,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '50f88d252187404ab54c20585c0d4d4c'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '12'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '50fdf8625fff4e74ab118ac6d07704fa'
                         key: {
@@ -5211,6 +11125,28 @@ declare global {
                             value: 'unmapped'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '511dfb880a0a4cb39ac0902e9c2aba3f'
+                        key: {
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '10'
                         }
                     },
                     {
@@ -5241,6 +11177,29 @@ declare global {
                             name: 'x_cog_mah_requester'
                             element: 'service_number_last4'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '516a4c13164a4032b6c30d68e128c35c'
+                        key: {
+                            list_id: {
+                                id: '69a22ff51afb49e39f2322dfec758b18'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'started'
                         }
                     },
                     {
@@ -5313,6 +11272,35 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '52e6c943bf334de88afc785c78268a36'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'rejected_count'
+                            position: '11'
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: '52ea997adeae470aa0e9c945630755b5'
+                        key: {
+                            ui_action: 'ua_req_advance'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '5300a06290c84ddc888ad5b42910a562'
                         key: {
@@ -5345,6 +11333,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '5340d93d39e44ccbb4f0e7c53db8b460'
+                        key: {
+                            list_id: {
+                                id: '69a22ff51afb49e39f2322dfec758b18'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'font'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '5345922648a241a6924d3107c7b3865b'
                         key: {
@@ -5366,11 +11377,111 @@ declare global {
                         }
                     },
                     {
+                        table: 'item_option_new'
+                        id: '5393d942c3684ebb982936c1a6919a24'
+                        key: {
+                            cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                            variable_set: 'NULL'
+                            name: 'quantity'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '53a9089748c34790833dda1e4597ceea'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '13'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '53dd5d97cca14864b112e55e871e6007'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'requester_poc_phone'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '53ed4fd569d54b8aa715e8765431ca8e'
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5405c111b7a94ae499e4536dbcbf056d'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'vendor_acknowledged'
+                            position: '8'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '5410b8da8fb942168b85e30977c44f21'
+                        key: {
+                            sys_ui_form: {
+                                id: '8da7345207c942f7b407a907d8d146dc'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -5384,6 +11495,29 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '54844bc3dda143e0b3f30ea6edc19187'
+                        key: {
+                            list_id: {
+                                id: '4cb2ed013cc044f0adef977189e9497c'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'uei'
                         }
                     },
                     {
@@ -5406,6 +11540,28 @@ declare global {
                             name: 'x_cog_mah_status_map'
                             element: 'legacy_unid'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '54c12e19e2524a4eb3ef3d95375fb298'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c4019f8b0024e91926ee4d9022a5a9f'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Resolution'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'resolved_at'
+                            position: '4'
                         }
                     },
                     {
@@ -5459,6 +11615,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '5579fd0b09654f398de8dc964f9eb590'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '557eec78319f499bac55227cbb0977d4'
                         key: {
@@ -5483,6 +11661,28 @@ declare global {
                         key: {
                             category: 'x_cog_mah_status_map'
                             prefix: 'MSM'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '55d6f993ef3644c2858617b1d68f3dc9'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
                         }
                     },
                     {
@@ -5559,6 +11759,34 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form'
+                        id: '56cece56535344eb9be3483ed643347c'
+                        key: {
+                            name: 'x_cog_mah_engraving_job'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '56e5510bfda741c693180514fcf5a3f8'
+                        key: {
+                            ui_policy: {
+                                id: 'fb5d196b960249f89f6afdb6f7d36ee1'
+                                key: {
+                                    table: 'x_cog_mah_awards_case'
+                                    short_description: 'MAH awards case: computed fields are read-only'
+                                }
+                            }
+                            field: 'days_in_stage'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '56f8c234a38a468abe2fceb99dd0130d'
                         key: {
@@ -5584,6 +11812,37 @@ declare global {
                             value: 'national_defense_service_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: '5770da3c85b64c7496844b67d1d7b9b4'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'requisition_priority'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '57992e8c4ece4c78991fd83c74963f9a'
+                        key: {
+                            sys_ui_section: {
+                                id: '4e4c8c75b6694746b52f2d46b5a68251'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Totals'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'cancel_reason'
+                            position: '4'
                         }
                     },
                     {
@@ -5615,6 +11874,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '57b1ac8a0c064cdc8ebd20a763afff67'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'priority_handling'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '57eb278583434968b84d455083b001a9'
                         key: {
@@ -5636,6 +11917,43 @@ declare global {
                                     name: 'x_cog_mah.engraver'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '58226998e5ba46d790370a5472a6d5fa'
+                        key: {
+                            list_id: {
+                                id: 'f19e45f3932a41a68cdb3b40ba7977fc'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'active'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form'
+                        id: '584eb275fb88471b9a50c4d5f38c5520'
+                        key: {
+                            name: 'x_cog_mah_case_note'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -5684,6 +12002,28 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '58ce0b7d1a7e4a0caab693323ec9987b'
+                        key: {
+                            sys_ui_section: {
+                                id: '7a5855a85a2542e0a768166a0117a5cf'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
                         }
                     },
                     {
@@ -5745,6 +12085,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '5947cd0862034d648d3994fc0595f77e'
+                        key: {
+                            sys_ui_section: {
+                                id: '25f0ccd37f0a41f799de6a2951fe843c'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Justification and delivery'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'justification'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '595d48d1bd174baf90effc8ee434a74b'
                         key: {
@@ -5799,6 +12161,82 @@ declare global {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'poc_email'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '599285e9c0d84e4aaf83e0ed8d8abbdc'
+                        key: {
+                            sys_ui_section: {
+                                id: 'e27af0542efc4125bdbfd55a990e87ef'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Decision'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'rejection_reason'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: '5993e41e451a44c9a08b767be0864d8b'
+                        key: {
+                            cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                            variable_set: 'NULL'
+                            name: 'poc_phone'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '59dce605754249248e8f85cd4a2d3907'
+                        key: {
+                            list_id: {
+                                id: '69a22ff51afb49e39f2322dfec758b18'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'text'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '59dd61b74af1427e92560aeca182b638'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'status'
+                            position: '7'
                         }
                     },
                     {
@@ -5868,6 +12306,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '5a8b0b2b65ad457aa71e4436573784f3'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'released_to_vendor'
+                            position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5a91cf15b37f43d689ae3bc9f2e3b9db'
+                        key: {
+                            sys_ui_section: {
+                                id: '911e32c64d324dc39d49098cb11a4c70'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '5aa28d3797ed4734a883709a7fdd557a'
                         key: {
@@ -5876,6 +12358,50 @@ declare global {
                             value: 'cancelled'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5aa4eccfe11b4da58c1c01368bffb2c1'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'active'
+                            position: '12'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5adb5c64e161498f8431ba25991afe56'
+                        key: {
+                            sys_ui_section: {
+                                id: 'de1813b6f5b24fb59c5f1badd984259f'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Fulfilment summary'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'total_quantity'
+                            position: '2'
                         }
                     },
                     {
@@ -5895,6 +12421,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'question_choice'
+                        id: '5b1f2dd1aa8a411f8fc728a3ce68257a'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '04'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '5b4b4a4f0520492d80a3563e27de5ecc'
                         key: {
@@ -5909,6 +12450,41 @@ declare global {
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '5bac23b0105e43e587799a1715172df8'
+                        key: {
+                            sys_ui_action: 'd393f94714c54f9dbae4e2f06c65c244'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5bae67afa39d42f3a11fac3eadfe3bb3'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'phone'
+                            position: '14'
                         }
                     },
                     {
@@ -5930,6 +12506,28 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5ca3d0eec8044d4ebaa5f1ce86e22a06'
+                        key: {
+                            sys_ui_section: {
+                                id: 'ab6c307f56e145afa53748e27639862b'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Parse log'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'parse_log'
+                            position: '1'
                         }
                     },
                     {
@@ -6009,12 +12607,157 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '5dc0edcc186348b8a9d2faede18a5823'
+                        key: {
+                            list_id: {
+                                id: '112033b1bb2144c8b98ced9c8456957d'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'assigned_to'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5de77a8252734be39caac5661fde48e7'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'awards_case'
+                            position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '5de84f9744174f9283c5ed2c612c9ae5'
+                        key: {
+                            sys_ui_form: {
+                                id: '56cece56535344eb9be3483ed643347c'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '18a7d558315c4854a4c66b3c8e273476'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5df09713d3314539aaed7ae79d460c6d'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '5dfb896fb10c4203844ce74df854b628'
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'active'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5e013f9de76f460594e74ac001cd9aa4'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'middle_initial'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '5e1d5eff57674af18589c200f899db1d'
+                        key: {
+                            list_id: {
+                                id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'quantity'
                         }
                     },
                     {
@@ -6036,6 +12779,28 @@ declare global {
                         key: {
                             logical_table_name: 'x_cog_mah_ses_flag_request'
                             col_name_string: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5ea379c2277f4c11959903325a6f4a20'
+                        key: {
+                            sys_ui_section: {
+                                id: '7a5855a85a2542e0a768166a0117a5cf'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
                         }
                     },
                     {
@@ -6073,6 +12838,28 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'line_count'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5effb51263bc403fbfa1457727fd3e7e'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'nomenclature'
+                            position: '4'
                         }
                     },
                     {
@@ -6117,6 +12904,42 @@ declare global {
                             value: 'silver_oak_leaf_cluster'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '5f66a11537834bb1a151146f26dcaabd'
+                        key: {
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '5fa9c4d1c4aa434780bc0aaf2463a3cc'
+                        key: {
+                            ui_policy: {
+                                id: 'fb5d196b960249f89f6afdb6f7d36ee1'
+                                key: {
+                                    table: 'x_cog_mah_awards_case'
+                                    short_description: 'MAH awards case: computed fields are read-only'
+                                }
+                            }
+                            field: 'stage_entered_at'
                         }
                     },
                     {
@@ -6201,6 +13024,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: '6194c2b85a9c4088a7cd768378714963'
+                        key: {
+                            name: 'x_cog_mah_request_line'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '61a8233628ce499dbd9e364e7e99b5a7'
                         key: {
@@ -6236,6 +13074,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '622b4eb40d19466383320e65a8857558'
+                        key: {
+                            sys_ui_section: {
+                                id: 'de1813b6f5b24fb59c5f1badd984259f'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Fulfilment summary'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'line_count'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '6269d3d0e1124373a822461115f1c7fc'
                         key: {
@@ -6261,6 +13121,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '62ec448988894b08a47ab95d7669ef0a'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'status'
+                            position: '7'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '62f06b869ce8479db6c020acff856712'
                         key: {
@@ -6278,6 +13160,50 @@ declare global {
                             name: 'x_cog_mah_engraving_job'
                             element: 'priority_handling'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '632b0d67ce804d61842d4467b5f5ea24'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '63492cca621341fda7169dfa58940b59'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'stock_on_hand'
+                            position: '10'
                         }
                     },
                     {
@@ -6302,6 +13228,73 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '639f85d503f1400088c72d72abb8d380'
+                        key: {
+                            list_id: {
+                                id: 'b32d8ad9b38c4f5a89275a1003278db5'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'sys_updated_on'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '63be23104118479cb97599eb22e23bcf'
+                        key: {
+                            sys_ui_section: {
+                                id: 'e27af0542efc4125bdbfd55a990e87ef'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Decision'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'approved_by'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '64002f6761d8401d966df4165ae45362'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f8c977fbf77540ae96093f91c9ed3572'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
                         }
                     },
                     {
@@ -6352,12 +13345,59 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: '647c3caa0e774a97bde6a8ede827deae'
+                        key: {
+                            ui_policy: {
+                                id: 'fb5d196b960249f89f6afdb6f7d36ee1'
+                                key: {
+                                    table: 'x_cog_mah_awards_case'
+                                    short_description: 'MAH awards case: computed fields are read-only'
+                                }
+                            }
+                            field: 'total_quantity'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '648b500eaf9b435f9b0e5688ea0326c5'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'font'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '648c419b12f946babe2b6b1df3acf7ee'
+                        key: {
+                            sys_ui_form: {
+                                id: '44e2f62534bc423e8cdb278d7995eacf'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'b7355d764c784705bf574eff9451fd57'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -6449,6 +13489,42 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_action_role'
+                        id: '65a462d75b3e476a8b79e7f18aa072e8'
+                        key: {
+                            sys_ui_action: '4ae8ad27fcc04ed8aa267191744db18e'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '65a78020a4eb468c9627dd4690b2bf3e'
+                        key: {
+                            list_id: {
+                                id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'unit_of_issue'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '65d6ed9a22f24dc38c4b492f07fd7829'
                         key: {
@@ -6471,6 +13547,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'question_choice'
+                        id: '663663bfc7284d24bbec35de166046cb'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '15'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '6639b09b75bc41cfb5085bbf085e6ac5'
                         key: {
@@ -6488,6 +13579,52 @@ declare global {
                             name: 'x_cog_mah_shipment'
                             element: 'shipped_by'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '6660ed11c7ad4d3e80db490c6aa7e518'
+                        key: {
+                            sys_ui_form: {
+                                id: '1a38439dee3a43e6aa73ce53a04793f8'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '666ece7d13554ab9bc270a996d4618ce'
+                        key: {
+                            sys_ui_action: 'f1c61b3ac432470aa6c736d6c73e7b58'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -6512,11 +13649,67 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '66a9f774148b4edc9d38e5985fcfa486'
+                        key: {
+                            list_id: {
+                                id: '4cb2ed013cc044f0adef977189e9497c'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'name'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '66d52b55b49d497c9258aa4641850e1c'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'legacy_form'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '66da8d41b40b4b168f3389dd962a262f'
+                        key: {
+                            sys_ui_form: {
+                                id: '44e2f62534bc423e8cdb278d7995eacf'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'd38c1a001a5a485081617cda142ee996'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -6551,6 +13744,20 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '6745be3561ca44908e58cf9801fa93d2'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'document_number'
                         }
                     },
                     {
@@ -6612,6 +13819,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '683f66ccaec84d639325013452f60eb9'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'status'
+                            position: '9'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '68470dc428964953bcf15d54f2aad0b4'
                         key: {
@@ -6640,6 +13869,39 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: '68c454e1791f414492f52028912e8ef1'
+                        key: {
+                            sys_ui_form: {
+                                id: '041f7cdf62d648c9809f20a3eb6de820'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '42d98ae0d6314255a41b66e7d5907d2b'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '68cf2f4839c74b6e9255949bc42fb2ee'
                         key: {
@@ -6648,6 +13910,28 @@ declare global {
                             value: 'shipped'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '68d0a677c089495c8cba456356264ab9'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'nomenclature'
+                            position: '6'
                         }
                     },
                     {
@@ -6686,6 +13970,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: '694583497e464e70ba3c4297de192358'
+                        key: {
+                            name: 'x_cog_mah_requester'
+                            caption: 'Deduplication'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: '6948cc659bc24c1882cf4b6a6ad5a12a'
                         key: {
@@ -6702,6 +14001,23 @@ declare global {
                             value: 'engraving_job'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list'
+                        id: '69a22ff51afb49e39f2322dfec758b18'
+                        key: {
+                            name: 'x_cog_mah_engraving_job'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
                         }
                     },
                     {
@@ -6740,6 +14056,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '6a6f6707ec7847c69826265aeaf57f9d'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'completed'
+                            position: '10'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '6abb546fd5004d79b6c3fd7873404e4a'
                         key: {
@@ -6753,6 +14091,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '6abcdd084bef4214a148e93d7ba3819e'
+                        key: {
+                            sys_ui_section: {
+                                id: '7a5855a85a2542e0a768166a0117a5cf'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '6af9253811d1430f98bf4fcd5488b1a0'
                         key: {
@@ -6761,6 +14121,29 @@ declare global {
                             value: 'korea_defense_service_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '6af97e31cd9643518053c5624b629896'
+                        key: {
+                            list_id: {
+                                id: '10adad80ad9c40aab9762476bbc628b7'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'awards_case'
                         }
                     },
                     {
@@ -6803,6 +14186,28 @@ declare global {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'legacy_last_modified'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '6b6ae384cace4c3da1d24fb7bb9dd87c'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'days_in_stage'
+                            position: '11'
                         }
                     },
                     {
@@ -6850,6 +14255,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: '6c4019f8b0024e91926ee4d9022a5a9f'
+                        key: {
+                            name: 'x_cog_mah_migration_exception'
+                            caption: 'Resolution'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '6c5e6cc331ef4274b5bc531672c883d1'
                         key: {
@@ -6885,6 +14305,65 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                        key: {
+                            name: 'x_cog_mah_heraldry_request'
+                            caption: 'DD Form 1348-6 header'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '6cf38a5a9ded4dc8b29dab11acb4b55f'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'format'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '6d577b7a221a46b8aec250fef95ebaca'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '13'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '6d585a4fd6694731a818690eeb15e1c7'
                         key: {
@@ -6909,6 +14388,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '6d965b58484340ddbe0de3c475533adb'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b7355d764c784705bf574eff9451fd57'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '6d97c8d59c274a6d955a4b14b85f6cc7'
                         key: {
@@ -6922,6 +14423,57 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: '6ddacb8f4def4179ad20664e158bf026'
+                        key: {
+                            name: 'x_cog_mah_authorization_file'
+                            caption: 'Authorization file'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '6de5b038df564161aa3e19754d28dd6a'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '13'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '6df82bbcdf4f4f1ead3e53da6b9c9488'
+                        key: {
+                            ui_policy: {
+                                id: '304ab10f935a4bbc8d4356d86c18624f'
+                                key: {
+                                    table: 'x_cog_mah_requester'
+                                    short_description: 'MAH requester: merged duplicates are read-only'
+                                }
+                            }
+                            field: 'last_name'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '6dfa0b74262245c4b50b8e2ee72cbbb0'
                         key: {
@@ -6932,6 +14484,21 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '6e0ca606fe2e4f91b51faab466f7624c'
+                        key: {
+                            name: 'x_cog_mah_awards_case'
+                            caption: 'Description'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -6998,6 +14565,61 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: '6e7ef31f645440d3b86d4485b5e2d69c'
+                        key: {
+                            sys_ui_form: {
+                                id: '56cece56535344eb9be3483ed643347c'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'd362a4f3a6834913a299511358ae87e1'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '6e8af53666f94bdfb04fd58400282589'
+                        key: {
+                            sys_ui_section: {
+                                id: '42d98ae0d6314255a41b66e7d5907d2b'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '6e996ec2dffb46c999adb2c9da1aac7f'
                         key: {
@@ -7034,6 +14656,28 @@ declare global {
                         key: {
                             logical_table_name: 'x_cog_mah_authorization_file'
                             col_name_string: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '6f54175f10aa47d28aa50b443cf0d435'
+                        key: {
+                            sys_ui_section: {
+                                id: '911e32c64d324dc39d49098cb11a4c70'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
                         }
                     },
                     {
@@ -7117,6 +14761,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '702282d5c30243a6a822ae4ed1cdc019'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '7'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '706658bcc7c847bbbe4c16b529bfa56d'
                         key: {
@@ -7145,6 +14811,43 @@ declare global {
                             name: 'x_cog_mah_requester'
                             element: 'middle_initial'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '70bca8c7a66c4194b92e06454bc9bf31'
+                        key: {
+                            name: 'x_cog_mah_vendor'
+                            caption: 'Address'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '70c68e56fab441b8911b4e7ea0e22930'
+                        key: {
+                            sys_ui_section: {
+                                id: 'e27af0542efc4125bdbfd55a990e87ef'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Decision'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'delivered_at'
+                            position: '5'
                         }
                     },
                     {
@@ -7191,6 +14894,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '7171cf21aa4d49319e9a99641e7c5c0d'
+                        key: {
+                            list_id: {
+                                id: '112033b1bb2144c8b98ced9c8456957d'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'requester'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '7181dad286ba4c128fd26a3a44f812a1'
                         deleted: true
@@ -7212,11 +14938,56 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '71b72a4b87b2410ca163c18c72e8214a'
+                        key: {
+                            list_id: {
+                                id: '1c29015c7a2b4630af3570b983a9e17c'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'received'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '71b7466e42084172bb6d99acfabd8720'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'dodaac'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '71c8d78637f74e6e968f33be2ec1542f'
+                        key: {
+                            sys_ui_section: {
+                                id: 'e62896180f4749e998d8bef7fed26b7b'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'ship_to'
+                            position: '0'
                         }
                     },
                     {
@@ -7309,6 +15080,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '72e0976ff0bd46e99f0706ed9baebc98'
+                        key: {
+                            sys_ui_section: {
+                                id: '694583497e464e70ba3c4297de192358'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Deduplication'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'merge_target'
+                            position: '6'
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: '7308c51317b048d9b7d7d51b38f31a23'
                         key: {
@@ -7367,6 +15160,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '737a99ab2b804afa905999e6b61cfcac'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd38c1a001a5a485081617cda142ee996'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'ship_to_city'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '73885808aa5948a79e682bbe94cbf6bc'
                         key: {
@@ -7389,6 +15204,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '73a9cd91db2640bda8bc4ddcc28b3cda'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '8'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '73a9d8c2e81a40edbd405775ab47b7d8'
                         key: {
@@ -7397,6 +15234,29 @@ declare global {
                             value: 'boat'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '73ab4c5515a849a7b8d02ca5ae289989'
+                        key: {
+                            list_id: {
+                                id: '45ecbf25305d4e88b4d2f963808be522'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'lead_time_days'
                         }
                     },
                     {
@@ -7430,6 +15290,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '740a4af59f68438291a454f881b8be67'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd38c1a001a5a485081617cda142ee996'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '745bd849107f4f67a932755f5936f6d0'
                         key: {
@@ -7441,12 +15323,201 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '745f967ce9af47519ebacb4a266e623c'
+                        key: {
+                            list_id: {
+                                id: '4ab5920b24a4446c97ae33667ce578d3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'awards_case'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '7488750111914b94ac1125310d306636'
+                        key: {
+                            list_id: {
+                                id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'unit_price'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '748d07fb314b4ab9aa4dbf8c514feec5'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '8'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '749cbcc78d7440beb63891025d208e25'
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'NULL'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '749fb4d0450e4f12a0eaa3a8ce87c48c'
+                        key: {
+                            sys_ui_section: {
+                                id: '694583497e464e70ba3c4297de192358'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Deduplication'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '74a3d122a6704150b14dd1c7f8d6750b'
+                        key: {
+                            sys_ui_form: {
+                                id: 'aa8e8a248d83478aa47d062c74747cbc'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '74a486125f8c48a0bc9a947d0ca0dba4'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b7355d764c784705bf574eff9451fd57'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '74c69ffc87084c05bc38b49dea747578'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'extended_price'
+                            position: '12'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '74d384014b6d4a34beb27d87e15cec55'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '7'
                         }
                     },
                     {
@@ -7460,6 +15531,28 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '74df5a0ba11e4749a720751042fcea05'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
                         }
                     },
                     {
@@ -7507,6 +15600,87 @@ declare global {
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'merged_into'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '7598cb39ef524014950ffd9e32ac0f7b'
+                        key: {
+                            name: 'x_cog_mah_requester'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '75eb5bf713eb49b7bf1a5df025a74b78'
+                        key: {
+                            sys_ui_section: {
+                                id: '42d98ae0d6314255a41b66e7d5907d2b'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '75f9def1102248bcbfdb683923d90b2f'
+                        key: {
+                            sys_ui_section: {
+                                id: 'c2e12efed206423ea29baa2866020b81'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'body'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '7669eb1439314f5c8ac13ad692f02c8a'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd362a4f3a6834913a299511358ae87e1'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'text'
+                            position: '0'
                         }
                     },
                     {
@@ -7566,6 +15740,39 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: '76eed889a23f4d61bad9af1b2f3c68a7'
+                        key: {
+                            sys_ui_form: {
+                                id: '041f7cdf62d648c9809f20a3eb6de820'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '25f0ccd37f0a41f799de6a2951fe843c'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Justification and delivery'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '7734d59044e34c1dbf3918c8fa793699'
                         key: {
@@ -7574,6 +15781,43 @@ declare global {
                             value: 'script'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '77a7aaedf1e742759c0242b0981803f1'
+                        key: {
+                            name: 'x_cog_mah_case_note'
+                            caption: 'Case note'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '77e56638938041a6817559d553bb8bc1'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'rework_count'
+                            position: '11'
                         }
                     },
                     {
@@ -7620,6 +15864,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '78833c5b583d4f4da645ae59b5a39e3c'
+                        key: {
+                            list_id: {
+                                id: '4ab5920b24a4446c97ae33667ce578d3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'status'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '7885be4ff88a4aa289e621e8807c33c6'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c4019f8b0024e91926ee4d9022a5a9f'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Resolution'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'resolution'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '78be3eb3f9e74c92a229c396c24002a0'
                         key: {
@@ -7654,6 +15943,44 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '7932d6d2c67d4c588e714f716885f3aa'
+                        key: {
+                            list_id: {
+                                id: 'b32d8ad9b38c4f5a89275a1003278db5'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'zip'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: '7945cb62be8446e0abf85ba84993b17f'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '03'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '794c23897a4a45ea86e45ddfc9326eac'
                         key: {
@@ -7670,6 +15997,39 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'category'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '79c63c273234413fb61751e9bed85570'
+                        key: {
+                            sys_ui_form: {
+                                id: '584eb275fb88471b9a50c4d5f38c5520'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -7690,6 +16050,43 @@ declare global {
                             value: 'awards_case'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '7a3a3254cbbf40d3928a69d66e419f21'
+                        key: {
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'note_type'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '7a5855a85a2542e0a768166a0117a5cf'
+                        key: {
+                            name: 'x_cog_mah_award_line'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -7720,11 +16117,55 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '7a9ceb151b8e44bcaf197766303bdc8b'
+                        key: {
+                            sys_ui_section: {
+                                id: '694583497e464e70ba3c4297de192358'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Deduplication'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '7'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: '7aaf639e895648259e93357f7bcc2b90'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'source_agency'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '7ab637f0848c45dfb14861a898eb6f21'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
                         }
                     },
                     {
@@ -7758,6 +16199,28 @@ declare global {
                             name: 'x_cog_mah_engraving_job'
                             element: 'active'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '7b2acf5802c44f7890b76359ff6c2bd7'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd38c1a001a5a485081617cda142ee996'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'ship_to_state'
+                            position: '6'
                         }
                     },
                     {
@@ -7801,6 +16264,20 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '7beeae10f8f14c25bc1a7b4e8b38a8ef'
+                        key: {
+                            ui_policy: {
+                                id: 'dddec8ca30d14275803193320b5b5cb0'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: header fields mandatory once out of Draft'
+                                }
+                            }
+                            field: 'ship_to'
                         }
                     },
                     {
@@ -7869,6 +16346,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_action_role'
+                        id: '7d1da2746230461c91104a849e228cf1'
+                        key: {
+                            sys_ui_action: '2e43030eda084195ba6098b5213f638b'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '7d6187a012ab41d8aa194faff1486310'
                         key: {
@@ -7879,6 +16369,28 @@ declare global {
                                     name: 'x_cog_mah.warehouse'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '7d7770219df24c92b9a79bcd82025800'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'submitted_by'
+                            position: '13'
                         }
                     },
                     {
@@ -7925,11 +16437,91 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '7de3e5304cc94566a495db8ac77b859c'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c4019f8b0024e91926ee4d9022a5a9f'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Resolution'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '7de6c4b5afb94514b76af3f62ea8f0aa'
+                        key: {
+                            sys_ui_section: {
+                                id: '694583497e464e70ba3c4297de192358'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Deduplication'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'case_count'
+                            position: '3'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '7dffeb72a80546c9b28988ee2afda50a'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'legacy_last_modified'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '7e0a56817b5b4b7898efe27d43862a2f'
+                        key: {
+                            sys_ui_action: '2e43030eda084195ba6098b5213f638b'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '7e1acf1cea844d5a92f89d3472a48666'
+                        key: {
+                            list_id: {
+                                id: '69a22ff51afb49e39f2322dfec758b18'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'engraver'
                         }
                     },
                     {
@@ -8026,12 +16618,56 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '7f420e2337a3422e9f964693386f36f9'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '6'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '7f510766c3794ec48bcbf32582332b1c'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'legacy_last_modified'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '7f5e6572c6234e3fbcd39286e44bf8b7'
+                        key: {
+                            sys_ui_section: {
+                                id: '7598cb39ef524014950ffd9e32ac0f7b'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
                         }
                     },
                     {
@@ -8058,6 +16694,28 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '8000163ca2c04a068157cdbe58717f3b'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'engraving_required'
+                            position: '11'
                         }
                     },
                     {
@@ -8151,11 +16809,93 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '8126e71e6741431aab529c082bfc52ca'
+                        key: {
+                            sys_ui_section: {
+                                id: '6194c2b85a9c4088a7cd768378714963'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '8136d75980b541f5878e2a0abfdb5fd3'
+                        key: {
+                            sys_ui_section: {
+                                id: '0450cadcf9694792858b175f81cfe83a'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Portal access (replaces Readers fields)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '8144f9cc1be9493aa4c84303a8072793'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'engraver'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: '8197d8ab14b4444194ccad2c04037943'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '01'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '819ca773c6fd408baa4386bd8c435f73'
+                        key: {
+                            list_id: {
+                                id: 'f19e45f3932a41a68cdb3b40ba7977fc'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'target_field'
                         }
                     },
                     {
@@ -8193,6 +16933,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'question_choice'
+                        id: '824a1decfde44697a77138aa15394798'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '11'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '825c04439d3c4ad096800d8b1eba12c9'
                         key: {
@@ -8224,6 +16979,85 @@ declare global {
                                     name: 'x_cog_mah.assembler'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '82aa8be76675422795dfb7becb9695ed'
+                        key: {
+                            list_id: {
+                                id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'line_number'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '82ab734c3de34768a0f815ff10ff629a'
+                        key: {
+                            sys_ui_form: {
+                                id: 'b7336cfb17764cbbbc393ddeaa7be3c4'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '82c702ae39a64f6c9e230b5281dbf863'
+                        key: {
+                            list_id: {
+                                id: '45ecbf25305d4e88b4d2f963808be522'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'preferred_vendor'
                         }
                     },
                     {
@@ -8309,6 +17143,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '8372368512794e839ddfb1893c44b060'
+                        key: {
+                            sys_ui_section: {
+                                id: '18a7d558315c4854a4c66b3c8e273476'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '839f17f1e44d40cd80fecef85f267b17'
                         key: {
@@ -8322,11 +17178,62 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: '840765c774294d8f96195a9dd27baa4c'
+                        key: {
+                            name: 'x_cog_mah_heraldic_item'
+                            caption: 'Heraldic item'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '84547d6e38894ca68fab19572e865cae'
                         key: {
                             logical_table_name: 'x_cog_mah_authorization_file'
                             col_name_string: 'source_hash'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '8475434731764598835b09c88e69549f'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'ship_to'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '848791d9d8f4426d9703084c58a398a5'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'unit_of_issue'
+                            position: '9'
                         }
                     },
                     {
@@ -8375,6 +17282,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '8526ec9504f045eb8d635ac13cf8be83'
+                        key: {
+                            sys_ui_section: {
+                                id: 'de1813b6f5b24fb59c5f1badd984259f'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Fulfilment summary'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'closed_at'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '856129674e41429b9a108ac5401ce66f'
                         key: {
@@ -8413,6 +17342,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '85c040a67cbc4874bdbf5cd98140750f'
+                        key: {
+                            list_id: {
+                                id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '85d3c32b9ee24bf588fb5a7f7c8fbe2f'
                         key: {
@@ -8432,11 +17384,85 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_action_role'
+                        id: '8609b0eec496430fa9c4dd42da245df1'
+                        key: {
+                            sys_ui_action: 'ae06e2fe9e004ababaa0c4cd9f434fe2'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '8610c26180d748319063ffeae4af4f62'
+                        key: {
+                            list_id: {
+                                id: '4ab5920b24a4446c97ae33667ce578d3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'pieces'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '861692b8362e4a358efbade964f9ec5b'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'started'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '8632f8d94bfb4e4e9e24acf94eb2fb0f'
+                        key: {
+                            list_id: {
+                                id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'extended_price'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: '8691524643e84a0c8ca65518a82d1788'
+                        key: {
+                            question: {
+                                id: '2ffb7687cf1b434cb1c93494039d2ef2'
+                                key: {
+                                    cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                                    variable_set: 'NULL'
+                                    name: 'flag_type'
+                                }
+                            }
+                            value: 'outdoor'
                         }
                     },
                     {
@@ -8450,6 +17476,29 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '86a452e7c77b41fb9341a34ca024263b'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'released_to_vendor'
                         }
                     },
                     {
@@ -8469,6 +17518,39 @@ declare global {
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'legacy_status_raw'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '86a8decc1a774f249c1754fade711013'
+                        key: {
+                            sys_ui_form: {
+                                id: 'cb60c0edf6a74ddc8c00fc6b3b780c7d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'f8c977fbf77540ae96093f91c9ed3572'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -8515,11 +17597,101 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '873dfc539541401a9cd55cdf58ab15eb'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b8fd7b687fe74c24b24affc99889db66'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '876c5ff59c584354b2cca6e37fb0aeb7'
+                        key: {
+                            sys_ui_form: {
+                                id: 'cb60c0edf6a74ddc8c00fc6b3b780c7d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'cd1c91a4e02047959245f34b4072947d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Notes'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '879ed13fcc914f7eac274479768e6de9'
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'legacy_last_modified'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '87a27adbf7c54782b29fcd455a865f9f'
+                        key: {
+                            sys_ui_action: '00e9d3126d3848c5afb1bc0aab5e7e99'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '87bf7832d0984877adbfefc562f2a7bf'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '6'
                         }
                     },
                     {
@@ -8546,6 +17718,50 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '880b89cd7bab43fcb9f8acf8316427b1'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'submitted_at'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '881271681e784a24a6683dc497d7e44c'
+                        key: {
+                            sys_ui_section: {
+                                id: '18a7d558315c4854a4c66b3c8e273476'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
                         }
                     },
                     {
@@ -8582,6 +17798,74 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '88a7233f0854488b94c0cd892b7d2798'
+                        key: {
+                            sys_ui_section: {
+                                id: '7a5855a85a2542e0a768166a0117a5cf'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '88b1952f6da74958a1f748162a40c400'
+                        key: {
+                            list_id: {
+                                id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '88be9d9da26d4b848c00e130eb82cdcf'
+                        key: {
+                            list_id: {
+                                id: '69a22ff51afb49e39f2322dfec758b18'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'completed'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '88bff5d1a5714e38ab49319b940eb1bf'
                         key: {
@@ -8611,12 +17895,57 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '8940f2828cf046ffb2d572faea6918b9'
+                        key: {
+                            list_id: {
+                                id: 'f19e45f3932a41a68cdb3b40ba7977fc'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'legacy_form'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '896314858b4a4210bb8d8d64488fc2ed'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'required_delivery_date'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '89825b6f506f480c9b7bdf79977caaad'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'award_line'
+                            position: '3'
                         }
                     },
                     {
@@ -8629,11 +17958,88 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '89dc282ba7d1477eb2839379bd4eaf66'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd38c1a001a5a485081617cda142ee996'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'ship_to_name'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: '89e5e939d123474cb027a8711665107f'
+                        key: {
+                            sys_ui_form: {
+                                id: '8da7345207c942f7b407a907d8d146dc'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '944af3b62e1c430981c5490c03bd7e00'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '89f2e27b8f6642a680a9ad6f2398b8dd'
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '8a03cc9a2cda45259115931251b3898c'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
                         }
                     },
                     {
@@ -8660,6 +18066,43 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '8a3be708e849406f8703112470268b6f'
+                        key: {
+                            sys_ui_section: {
+                                id: '7598cb39ef524014950ffd9e32ac0f7b'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: '8a686037d80f4d719692092aa9002514'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '09'
                         }
                     },
                     {
@@ -8749,6 +18192,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '8b7b072cf0724cdcb64b7535f1fe8708'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'required_delivery_date'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '8b85ec7f9b4f42ea9c29e13873c01999'
                         key: {
@@ -8782,11 +18248,48 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '8bd4bf1104cf4fe4aba135ff43c70eff'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '16'
+                        }
+                    },
+                    {
                         table: 'sys_number'
                         id: '8bdf94487080461dbe91243f627611ce'
                         key: {
                             category: 'x_cog_mah_awards_case'
                             prefix: 'MAH'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: '8be80c24183841dbabcac9930fa1a8b3'
+                        key: {
+                            question: {
+                                id: '2ffb7687cf1b434cb1c93494039d2ef2'
+                                key: {
+                                    cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                                    variable_set: 'NULL'
+                                    name: 'flag_type'
+                                }
+                            }
+                            value: 'desk'
                         }
                     },
                     {
@@ -8820,11 +18323,69 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '8c04813c7f2744bea185d4f7a8d1e172'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'state'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '8c0b14312a304662a51a83af8390773d'
                         key: {
                             logical_table_name: 'x_cog_mah_migration_exception'
                             col_name_string: 'exception_type,state'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '8c1114fe1b1a4141949ef3857b753848'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f8c977fbf77540ae96093f91c9ed3572'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: '8c23ff61268c4e969939be6cf4e6ddf3'
+                        key: {
+                            sys_ui_action: '09bec9170d4c4a499a30efb0ccf0fa35'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -8894,6 +18455,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '8d28ff16056d426b86d5fe1066da0398'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'uic'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '8d6bef3a8a6c402bb345bde3d6fa491a'
                         key: {
@@ -8918,6 +18502,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '8d8316db6f1c45088cdacdee80ce882f'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '14'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '8d83a9f6254d46eeb4947ade5a307073'
+                        key: {
+                            sys_ui_section: {
+                                id: '42d98ae0d6314255a41b66e7d5907d2b'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '8d86dfa0b9da4b19aef0c9f6162106b6'
                         key: {
@@ -8928,6 +18556,27 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form'
+                        id: '8da7345207c942f7b407a907d8d146dc'
+                        key: {
+                            name: 'x_cog_mah_heraldic_item'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: '8db1a60be9a244a287dc573c80e605cd'
+                        key: {
+                            ui_action: 'ua_req_release'
                         }
                     },
                     {
@@ -8947,6 +18596,21 @@ declare global {
                             value: 'closed'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '8ddef1236acb4b9d89f304dcfd0f5788'
+                        key: {
+                            name: 'x_cog_mah_authorization_file'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -8993,6 +18657,50 @@ declare global {
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'name'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '8e872f0a05794c30b89175051bceefab'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'service_level'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '8efe596a7b9a430fb49e0fed891dd5a7'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'project_code'
+                            position: '6'
                         }
                     },
                     {
@@ -9052,6 +18760,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy'
+                        id: '8ff962c795b34749abfe08b635a300fd'
+                        key: {
+                            table: 'x_cog_mah_heraldry_request'
+                            short_description: 'MAH DD1348-6: lock header after release to vendor'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '8ffc6856e53c4238b15421392bf110bf'
                         key: {
@@ -9083,6 +18799,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '9076bfabe7744ee39978cda24ea5f45a'
+                        key: {
+                            sys_ui_section: {
+                                id: '7a5855a85a2542e0a768166a0117a5cf'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '909f6b4e98cb4141ba4b909bcea7446a'
                         key: {
@@ -9093,6 +18831,28 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '90dbe0302ede4167a50ef8c8501e84f9'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'poc'
+                            position: '8'
                         }
                     },
                     {
@@ -9117,6 +18877,21 @@ declare global {
                             value: 'distinguished_flying_cross'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '911e32c64d324dc39d49098cb11a4c70'
+                        key: {
+                            name: 'x_cog_mah_vendor'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -9150,6 +18925,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '9181c65aed95496eb9169c8d2261f616'
+                        key: {
+                            sys_ui_section: {
+                                id: 'ff4380d798cc43f5a5427fdf51480e6a'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '91832942e4644a47a49952d07e263da2'
                         key: {
@@ -9177,6 +18974,28 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '91a183fe475841c9afc73220584153ba'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'requesting_unit'
+                            position: '12'
                         }
                     },
                     {
@@ -9214,6 +19033,51 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '91f642b0123a4698ae7374c5d8727a1e'
+                        key: {
+                            list_id: {
+                                id: '4ab5920b24a4446c97ae33667ce578d3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'carrier'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '9235f9b2c1c7432cb5b1987d0bb43da4'
+                        key: {
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'seeded'
+                            position: '4'
                         }
                     },
                     {
@@ -9275,10 +19139,98 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '9293e721ab8a40db8e7f920992b8e518'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'awards_case'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_user_role'
                         id: '92986fb87ff54a05a20f0d07ba3a4e3e'
                         key: {
                             name: 'x_cog_mah.assembler'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '92995bb5e52f46d188161810c134550f'
+                        key: {
+                            sys_ui_section: {
+                                id: '944af3b62e1c430981c5490c03bd7e00'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '92f273dbd70c4ed7a85badf34f7ab64c'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f8c977fbf77540ae96093f91c9ed3572'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '93032a5a41f946c9a7f77df2dc4ecd5e'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'accepted_count'
+                            position: '10'
                         }
                     },
                     {
@@ -9295,6 +19247,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '93697f27c7f84587b0e994d550810159'
+                        key: {
+                            sys_ui_section: {
+                                id: '8ddef1236acb4b9d89f304dcfd0f5788'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '938ce71b02034f1dadf4baf56d4c5c37'
                         key: {
@@ -9304,12 +19278,65 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: '93f9cc1187784e2d97d7285a8acd2f44'
+                        key: {
+                            name: 'x_cog_mah_heraldry_request'
+                            caption: 'Ship to and justification'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '943da1b8995545db90d84b9dff07e7f1'
+                        key: {
+                            list_id: {
+                                id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'source_table'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '9444b56e25f6447288582149968893e5'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'poc_phone'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '944af3b62e1c430981c5490c03bd7e00'
+                        key: {
+                            name: 'x_cog_mah_heraldic_item'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -9420,6 +19447,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '95714bcf2f234ce1a7355d9d400e164e'
+                        key: {
+                            list_id: {
+                                id: '69a22ff51afb49e39f2322dfec758b18'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'rework_count'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '95780abeef2e468b909fc42bde737114'
                         key: {
@@ -9482,12 +19532,65 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '961bc17710fb425ca5fb5457f79a8623'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b53bcf93e2884fcdbc9317016c7f7201'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Mailing address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'address_2'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '967dfc115ddc4b3ab33ee3d47a6c42d0'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'stage'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: '96abc745422f4cb5a857c31eadfdd1aa'
+                        key: {
+                            cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                            variable_set: 'NULL'
+                            name: 'position_title'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '96ad88136a2c44b58727b4a362dad1d2'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b8fd7b687fe74c24b24affc99889db66'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
                         }
                     },
                     {
@@ -9509,6 +19612,29 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '96cf535f400b442faaac1317af6a141f'
+                        key: {
+                            list_id: {
+                                id: '1c29015c7a2b4630af3570b983a9e17c'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'format'
                         }
                     },
                     {
@@ -9536,6 +19662,28 @@ declare global {
                         key: {
                             logical_table_name: 'x_cog_mah_shipment'
                             col_name_string: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '971f664404b044198beb815d6e9b28e1'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'document_number'
+                            position: '2'
                         }
                     },
                     {
@@ -9578,6 +19726,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '97d39de5463745698058e14e5b720f9c'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '11'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '97e039fcac744bddb25e099bad5b8488'
+                        key: {
+                            list_id: {
+                                id: 'b32d8ad9b38c4f5a89275a1003278db5'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'city'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '97f23a85bd2f4a7694b478a1235bc87a'
                         key: {
@@ -9607,6 +19800,21 @@ declare global {
                                     name: 'x_cog_mah.vendor'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: '984d4ad66dbc49368edab5dbe0fa2623'
+                        key: {
+                            name: 'x_cog_mah_engraving_job'
+                            caption: 'Engraving job'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -9644,6 +19852,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'item_option_new'
+                        id: '9913682a28ca48c095aa1a275cebc55c'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'requester_poc_phone'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '9918ae5981174f05a204792d102715c1'
                         key: {
@@ -9654,6 +19871,20 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: '993da5feaa1b4a31ad05486f022d8f04'
+                        key: {
+                            ui_policy: {
+                                id: '304ab10f935a4bbc8d4356d86c18624f'
+                                key: {
+                                    table: 'x_cog_mah_requester'
+                                    short_description: 'MAH requester: merged duplicates are read-only'
+                                }
+                            }
+                            field: 'address_1'
                         }
                     },
                     {
@@ -9692,6 +19923,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '99f2b9db372f4a7dab05b77fb8f70548'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '16'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '99f77b43b5b846f99182aa8e615661ef'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'received'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '99fb0fb2f2b4418991b378877dd24d79'
                         key: {
@@ -9727,6 +20002,65 @@ declare global {
                         }
                     },
                     {
+                        table: 'question_choice'
+                        id: '9a7885c23d8f4cd1a5257cfc6582ba7d'
+                        key: {
+                            question: {
+                                id: '2ffb7687cf1b434cb1c93494039d2ef2'
+                                key: {
+                                    cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                                    variable_set: 'NULL'
+                                    name: 'flag_type'
+                                }
+                            }
+                            value: 'boat'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '9a8b55f6575a4611bdff034b7d4a1cd3'
+                        key: {
+                            sys_ui_section: {
+                                id: '694583497e464e70ba3c4297de192358'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Deduplication'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '9b11e66cec094933968312bbd1ccbb9e'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'state'
+                            position: '12'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '9b23709670fe45cb90a8272d5a25fe0d'
                         key: {
@@ -9746,6 +20080,29 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '9b3a0561c5ad4ed3911d5df8798d172b'
+                        key: {
+                            list_id: {
+                                id: 'f19e45f3932a41a68cdb3b40ba7977fc'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'seeded'
                         }
                     },
                     {
@@ -9773,6 +20130,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '9b93e9c9bc2747f4bde4c32feff0ef3b'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'unit_name'
+                            position: '10'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '9bd09658e7ad46bda37059e13a7850c0'
+                        key: {
+                            list_id: {
+                                id: '4cb2ed013cc044f0adef977189e9497c'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'portal_user'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '9cac3cde049e434797167d4b6c9e1fb1'
                         key: {
@@ -9797,6 +20199,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '9cf29ec20fb14d82ad3adeb468b6859a'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'shipped_by'
+                            position: '12'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '9cf7437a7f6848b68de55ec9e76ccba3'
                         key: {
@@ -9805,6 +20229,29 @@ declare global {
                             value: 'cancelled'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '9d068b50140f4883a4e1021cb254d28f'
+                        key: {
+                            list_id: {
+                                id: 'f19e45f3932a41a68cdb3b40ba7977fc'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'match_count'
                         }
                     },
                     {
@@ -9873,12 +20320,57 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '9e1f96f0a4e54c2fb97c1ab482d0651d'
+                        key: {
+                            sys_ui_section: {
+                                id: '18a7d558315c4854a4c66b3c8e273476'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '9e2007bc6a874c2287a2408a2ddc3e43'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'name'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '9e825d804e254c6f8e828d37f9f5420d'
+                        key: {
+                            list_id: {
+                                id: '112033b1bb2144c8b98ced9c8456957d'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'authorization_date'
                         }
                     },
                     {
@@ -9955,6 +20447,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '9f20cf81914d41979018666de096e086'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'executive_name'
+                            position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '9f4b204b75c840afa3b759d1fc6f16df'
+                        key: {
+                            sys_ui_section: {
+                                id: '6194c2b85a9c4088a7cd768378714963'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '9f58630deb6e410f8b17a151191fc7fa'
                         key: {
@@ -9968,11 +20504,77 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: '9f5e804c80334fb493eeaf4db7371edc'
+                        key: {
+                            sys_ui_section: {
+                                id: '42d98ae0d6314255a41b66e7d5907d2b'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '9f626e21fbf24340a143bc6bb28469c3'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '9f7079566b494bf6a91d86c66db6b67e'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'fund_code'
+                            position: '7'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: '9f74bf0714f94423a178c4af9c131069'
+                        key: {
+                            sys_ui_section: {
+                                id: 'de1813b6f5b24fb59c5f1badd984259f'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Fulfilment summary'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
                         }
                     },
                     {
@@ -10097,6 +20699,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'a02710cdedbb4471aa75ee3de8010740'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'name'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'a02a5d936a224108aa4d0ebd37cfbc29'
                         key: {
@@ -10116,12 +20740,90 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'a037dd309697423c9de9af1194764e23'
+                        key: {
+                            list_id: {
+                                id: '10adad80ad9c40aab9762476bbc628b7'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'award_name'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a050bead503f40f9901df88fe6942a7e'
+                        key: {
+                            sys_ui_section: {
+                                id: 'e27af0542efc4125bdbfd55a990e87ef'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Decision'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'approved_at'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'a06d2e6fffd849dd87895f76f69d1ebe'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'released_to_vendor'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: 'a07ad42fc9a44fe5b0c83c91ddb64bb9'
+                        key: {
+                            sys_ui_form: {
+                                id: '44e2f62534bc423e8cdb278d7995eacf'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'f728e38fa1b745f58be0606196ccd42f'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Notes'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -10143,6 +20845,51 @@ declare global {
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'address'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a0e7a65617fd43478f0a4bf0665b5a21'
+                        key: {
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'heraldry_request'
+                            position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'a10ea7823b404848aab0f8c2311cb40c'
+                        key: {
+                            list_id: {
+                                id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'nsn_or_exception'
                         }
                     },
                     {
@@ -10241,6 +20988,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'a1f658d7cea74e279b62cb99146d1e9f'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'phone'
+                            position: '10'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'a2026615162c4617ab6ef1fc5527476f'
                         key: {
@@ -10266,6 +21035,28 @@ declare global {
                             value: 'cancelled'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a2fc650b9ca74dcc9b5f6fcf2aae54ae'
+                        key: {
+                            sys_ui_section: {
+                                id: '4e4c8c75b6694746b52f2d46b5a68251'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Totals'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'total_extended_price'
+                            position: '2'
                         }
                     },
                     {
@@ -10384,6 +21175,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'a3d736d762c04aa092da8645b7be15b0'
+                        key: {
+                            sys_ui_section: {
+                                id: '944af3b62e1c430981c5490c03bd7e00'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'a3dc4ac947f34d66b62e7c42ef16f610'
                         key: {
@@ -10419,6 +21232,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'a4503ba86f6742e38c641aff23625681'
+                        key: {
+                            sys_ui_section: {
+                                id: '70bca8c7a66c4194b92e06454bc9bf31'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'address'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'a4709487b8694d2abff1bb741b128f01'
                         key: {
@@ -10441,6 +21276,20 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: 'a4a249df0fb444b3bbd667428a14aa9a'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'requester_poc'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'a4ac4c8137d645a69cfbcc157dd63a71'
                         key: {
@@ -10449,6 +21298,28 @@ declare global {
                             value: 'partial'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a4be95a1a4f74527a8313df3130cef84'
+                        key: {
+                            sys_ui_section: {
+                                id: '18a7d558315c4854a4c66b3c8e273476'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
                         }
                     },
                     {
@@ -10486,11 +21357,77 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'a5644c446aaf4facbba8e5959126bf2e'
+                        key: {
+                            sys_ui_section: {
+                                id: 'ff4380d798cc43f5a5427fdf51480e6a'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a56ab8c9071e4c82a2459d454d349ed4'
+                        key: {
+                            sys_ui_section: {
+                                id: '8ddef1236acb4b9d89f304dcfd0f5788'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'a57b2d67f0c948cca2ca6431ea190191'
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'seeded'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a5bba6ccb36a475197e2656e430d078e'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'line_number'
+                            position: '3'
                         }
                     },
                     {
@@ -10510,6 +21447,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'a5df545ab02a4550bf9fa31c693ed6cb'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'stock_number'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'a5f63697fc0b4a1480f83d6e899ecff6'
                         key: {
@@ -10524,6 +21483,28 @@ declare global {
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'legacy_form'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a635cb70e2c24a91a1de56a6b0443718'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'requester_poc'
+                            position: '13'
                         }
                     },
                     {
@@ -10595,6 +21576,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'a6c64d5b16c3474c9b9851e0aa9b43ec'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '17'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'a6c762aef2634dcd97eef466d54dd0de'
                         key: {
@@ -10617,11 +21620,106 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: 'a70171cef27148e8af408b6cd677b091'
+                        key: {
+                            sys_ui_form: {
+                                id: 'b7336cfb17764cbbbc393ddeaa7be3c4'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'ab6c307f56e145afa53748e27639862b'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Parse log'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: 'a702e9b05df84a908302feedd9b358a4'
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: 'a75de3d5435a4a25b124f98b450e9c31'
+                        key: {
+                            ui_action: 'ua_req_review'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a7849e64d6ea47e78e61789ff2b8f3ae'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'intake_channel'
+                            position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: 'a78b0dbcd97049d3af45908570ddc3ec'
+                        key: {
+                            sys_ui_form: {
+                                id: 'cb60c0edf6a74ddc8c00fc6b3b780c7d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -10674,6 +21772,44 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: 'a8688720fae64786b6532eaa20b693e3'
+                        key: {
+                            name: 'x_cog_mah_shipment'
+                            caption: 'Shipment'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'a8cea7bdb7104911ac5924c0f08bf782'
+                        key: {
+                            list_id: {
+                                id: 'f19e45f3932a41a68cdb3b40ba7977fc'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'a8d8fe66515d4efbb226bc148d55a53f'
                         key: {
@@ -10684,6 +21820,28 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a902e6deec7141ecb8983db5048ab53b'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'released_by'
+                            position: '7'
                         }
                     },
                     {
@@ -10702,6 +21860,29 @@ declare global {
                             name: 'x_cog_mah_authorization_file'
                             element: 'NULL'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'a91e2a3440b14817b76f0cb28e9d6941'
+                        key: {
+                            list_id: {
+                                id: '10adad80ad9c40aab9762476bbc628b7'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'device_count'
                         }
                     },
                     {
@@ -10736,6 +21917,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'a988c79dc0114c138244bf1a2ae0d07d'
+                        key: {
+                            list_id: {
+                                id: '45ecbf25305d4e88b4d2f963808be522'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'nomenclature'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'a9900639133f418891005edb8b71d8a4'
                         key: {
@@ -10746,6 +21950,28 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a9907b188d7e4c1691560658e3ff12a2'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'service_number_last4'
+                            position: '11'
                         }
                     },
                     {
@@ -10770,6 +21996,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'a9dfdec133b348e1bced5e2ae7fc6d93'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b53bcf93e2884fcdbc9317016c7f7201'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Mailing address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '8'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a9f89f7df9ac474d8a1b02ef06130332'
+                        key: {
+                            sys_ui_section: {
+                                id: '6e0ca606fe2e4f91b51faab466f7624c'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Description'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'short_description'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'a9f992d640d6456faa5b164554af9beb'
                         key: {
@@ -10788,6 +22058,28 @@ declare global {
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'address_1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'aa76572b468947ce96feb0d958b5016a'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'source_record_id'
+                            position: '5'
                         }
                     },
                     {
@@ -10815,6 +22107,20 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form'
+                        id: 'aa8e8a248d83478aa47d062c74747cbc'
+                        key: {
+                            name: 'x_cog_mah_status_map'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'aaa5768b642c4c2799c2f85555d0cce6'
                         deleted: true
@@ -10833,6 +22139,29 @@ declare global {
                             value: 'award_line'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'ab17b426deb04ee8a171b62088cf0e35'
+                        key: {
+                            list_id: {
+                                id: 'b32d8ad9b38c4f5a89275a1003278db5'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'address_state'
                         }
                     },
                     {
@@ -10855,6 +22184,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: 'ab6c307f56e145afa53748e27639862b'
+                        key: {
+                            name: 'x_cog_mah_authorization_file'
+                            caption: 'Parse log'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'ab939e502baa4cf7b27ee35c26c55471'
                         key: {
@@ -10863,6 +22207,19 @@ declare global {
                             value: 'other'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: 'aba8c8ff69be42cda4c0267e7f3ee8d3'
+                        key: {
+                            sys_ui_action: 'f1c61b3ac432470aa6c736d6c73e7b58'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -10876,6 +22233,57 @@ declare global {
                                     name: 'x_cog_mah.assembler'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'abb380aa2f2442c9a69a9361bc0d2f5a'
+                        key: {
+                            sys_ui_section: {
+                                id: '6194c2b85a9c4088a7cd768378714963'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'abcb9ee8ded345c0b88c8ebd227af263'
+                        key: {
+                            sys_ui_section: {
+                                id: '4e4c8c75b6694746b52f2d46b5a68251'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Totals'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: 'abd9312c1567494a965ea095fa9793d8'
+                        key: {
+                            ui_action: 'ua_requester_merge'
                         }
                     },
                     {
@@ -10925,6 +22333,28 @@ declare global {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'requesting_office'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'acec78252ee443748d5d1525824558ea'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '7'
                         }
                     },
                     {
@@ -11012,6 +22442,42 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'adc74aef569a4df6b93438fefdbd3ac1'
+                        key: {
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'awards_case'
+                            position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'add3057992d24c6a830641e745ce4d0e'
+                        key: {
+                            ui_policy: {
+                                id: 'dddec8ca30d14275803193320b5b5cb0'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: header fields mandatory once out of Draft'
+                                }
+                            }
+                            field: 'uic'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'add813d1ef6a4a6aa278bc47204ae2ed'
                         key: {
@@ -11020,6 +22486,19 @@ declare global {
                                 id: '0a517467fdfe4a3bb09bcefb19a6c864'
                                 key: {
                                     name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: 'ade0f2ea040b446dbf6c5b31c124be7d'
+                        key: {
+                            sys_ui_action: '4ae8ad27fcc04ed8aa267191744db18e'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
                                 }
                             }
                         }
@@ -11075,6 +22554,50 @@ declare global {
                             value: 'pending'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'aecb1625e05f41508d6e4b5c4ca8324b'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'aee04c9b9c2d47f2b2015275ba39f65f'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'lead_time_days'
+                            position: '10'
                         }
                     },
                     {
@@ -11172,6 +22695,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'afe5f8a60bff4b77a637fb321c69c46e'
+                        key: {
+                            sys_ui_section: {
+                                id: '8ddef1236acb4b9d89f304dcfd0f5788'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'aff2e110973e4063aa8ee36ed164dd56'
                         key: {
@@ -11190,6 +22735,21 @@ declare global {
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'closed_at'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'affe23b031e64b65bfd14becca9f856f'
+                        key: {
+                            name: 'x_cog_mah_request_line'
+                            caption: 'Request line'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -11216,6 +22776,28 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'b023639206de43daa55f4e27f5b4d4c8'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'cage_code'
+                            position: '3'
                         }
                     },
                     {
@@ -11248,12 +22830,71 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'b067db7ada7f4592b1208a1036f781df'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f8c977fbf77540ae96093f91c9ed3572'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'b075d65b368d4f7c9536889ef8db823c'
+                        key: {
+                            ui_policy: {
+                                id: 'dddec8ca30d14275803193320b5b5cb0'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: header fields mandatory once out of Draft'
+                                }
+                            }
+                            field: 'justification'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'b08325eecd5b4121b6110d584129ca9a'
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'parent_unid'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'b098f00744ff4de1b8119d9c17a9f651'
+                        key: {
+                            list_id: {
+                                id: '4cb2ed013cc044f0adef977189e9497c'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'contract_number'
                         }
                     },
                     {
@@ -11304,11 +22945,122 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'b1653d63874a41e2b2f73577ae6e4bbb'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'shipped'
+                            position: '10'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'b182a656c77048abbdb9dc1c37f7bc8a'
+                        key: {
+                            sys_ui_section: {
+                                id: '694583497e464e70ba3c4297de192358'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Deduplication'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'duplicate_count'
+                            position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'b1a152f4ed18418292add8f77e45071f'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'drawing_number'
+                            position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'b1c2dfb3038b45a5989e823fcaba044b'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b7355d764c784705bf574eff9451fd57'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'b1da2396f81d451a81b119619933218f'
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'parent_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'b2218576124746ab994ea2700240b40c'
+                        key: {
+                            list_id: {
+                                id: '10adad80ad9c40aab9762476bbc628b7'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'quantity'
                         }
                     },
                     {
@@ -11320,6 +23072,21 @@ declare global {
                             value: 'parsed'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: 'b2baede7361a4f2ba2926a0be2121582'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '06'
                         }
                     },
                     {
@@ -11341,6 +23108,60 @@ declare global {
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'b31a73993a2b42b3aace2696828d4acc'
+                        key: {
+                            sys_ui_section: {
+                                id: '0450cadcf9694792858b175f81cfe83a'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Portal access (replaces Readers fields)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list'
+                        id: 'b32d8ad9b38c4f5a89275a1003278db5'
+                        key: {
+                            name: 'x_cog_mah_requester'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                        key: {
+                            name: 'x_cog_mah_migration_exception'
+                            caption: 'Migration exception'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -11370,11 +23191,38 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: 'b3718f5d51174c67af6804bfcd6357a4'
+                        key: {
+                            ui_policy: {
+                                id: '304ab10f935a4bbc8d4356d86c18624f'
+                                key: {
+                                    table: 'x_cog_mah_requester'
+                                    short_description: 'MAH requester: merged duplicates are read-only'
+                                }
+                            }
+                            field: 'first_name'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'b376150b11f24bf3a37c2a51514481a3'
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: 'b3b42bda0be5442b88299ca6ad3c0979'
+                        key: {
+                            sys_ui_action: '00e9d3126d3848c5afb1bc0aab5e7e99'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -11437,6 +23285,95 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'b4b683ecb4e24a25b6c8a066f772c1e6'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'requester_poc_email'
+                            position: '14'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'b4f1545eebf84e5f8bed047fb5812ec5'
+                        key: {
+                            name: 'x_cog_mah_status_map'
+                            caption: 'Notes'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'b50d145c2e65410da18cac734333b5cf'
+                        key: {
+                            sys_ui_section: {
+                                id: '944af3b62e1c430981c5490c03bd7e00'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'b53bcf93e2884fcdbc9317016c7f7201'
+                        key: {
+                            name: 'x_cog_mah_requester'
+                            caption: 'Mailing address'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                        key: {
+                            name: 'x_cog_mah_award_line'
+                            caption: 'Award line'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'b569e43816314ef18e50221338fde336'
                         key: {
@@ -11482,6 +23419,39 @@ declare global {
                         key: {
                             category: 'x_cog_mah_authorization_file'
                             prefix: 'MAF'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: 'b5aa17aed03c42e2a049a59b2bfd789d'
+                        key: {
+                            sys_ui_form: {
+                                id: '56cece56535344eb9be3483ed643347c'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -11564,6 +23534,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'b630d0eb7dc1468eb5f0d8c4f2c7e56f'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd38c1a001a5a485081617cda142ee996'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'ship_to_zip'
+                            position: '7'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'b63bc251e24342ddb0fe5b917d9a23ce'
                         key: {
@@ -11582,6 +23574,28 @@ declare global {
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'target_table'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'b6a61b9c38c94727b0fcbf2f7e342ce4'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'source_row'
+                            position: '7'
                         }
                     },
                     {
@@ -11674,6 +23688,35 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form'
+                        id: 'b7336cfb17764cbbbc393ddeaa7be3c4'
+                        key: {
+                            name: 'x_cog_mah_authorization_file'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'b7355d764c784705bf574eff9451fd57'
+                        key: {
+                            name: 'x_cog_mah_awards_case'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'b7789b1d67f243c9a324083568aa2c50'
                         key: {
@@ -11709,6 +23752,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'b7fe4d267d50433fb13b435c58b75a75'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'email'
+                            position: '13'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'b7fe9b03185746ad9dd1ec2731e4cb90'
                         key: {
@@ -11727,6 +23792,69 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: 'b86814d5e9964e2ea42007896ef5dbea'
+                        key: {
+                            cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                            variable_set: 'NULL'
+                            name: 'poc_email'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'b869158b4b1148d2818a05539e5a391c'
+                        key: {
+                            sys_ui_section: {
+                                id: '25f0ccd37f0a41f799de6a2951fe843c'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Justification and delivery'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'ship_to'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: 'b86ce4051fd4464d8dd58ad210f5f5f0'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'uic'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'b8a375dcebac4296949b10f403a3a8b3'
+                        key: {
+                            list_id: {
+                                id: 'f19e45f3932a41a68cdb3b40ba7977fc'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'target_value'
                         }
                     },
                     {
@@ -11754,11 +23882,71 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'b8ca10b0aba24279a2bba870aa898778'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'target_sys_id'
+                            position: '13'
+                        }
+                    },
+                    {
                         table: 'sys_number'
                         id: 'b8e90f0ad49e4986a1042012ca4c0225'
                         key: {
                             category: 'x_cog_mah_heraldic_item'
                             prefix: 'HIT'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'b8edbeb6e60a45cb81db3ac886bc4e43'
+                        key: {
+                            list_id: {
+                                id: 'cf5511109a474b5b9dfe16d52a2fc965'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'body'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'b8fd7b687fe74c24b24affc99889db66'
+                        key: {
+                            name: 'x_cog_mah_case_note'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -11770,6 +23958,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'b9532d70c8bb4b22a273240d43449ea4'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'b97f2e8a0a544fe486758dc153195097'
                         key: {
@@ -11778,6 +23988,70 @@ declare global {
                             value: 'approved'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: 'b98d0c1aef884a1a9b6221f59b7a2fde'
+                        key: {
+                            sys_ui_form: {
+                                id: 'cb60c0edf6a74ddc8c00fc6b3b780c7d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '4e4c8c75b6694746b52f2d46b5a68251'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Totals'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'b9f0efe2d5914a229435610caffcc5dd'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'award_name'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: 'b9f436736869486e9be09d434bf67a75'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'requester_poc_email'
                         }
                     },
                     {
@@ -11810,6 +24084,100 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form'
+                        id: 'ba96c8b6e3f748728934b2ae84b961a6'
+                        key: {
+                            name: 'x_cog_mah_vendor'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'bac3fe16bd71450fbd68c497ff7fcd42'
+                        key: {
+                            list_id: {
+                                id: '4ab5920b24a4446c97ae33667ce578d3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'service_level'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'bad38887ff3a4591beb65e565a347d64'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'first_name'
+                            position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: 'bb4684b38c4a4e5bb44faad3aa30d4cb'
+                        key: {
+                            sys_ui_action: '9ac09a15971f4fdaae5b9a0c048d1593'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'bbfb19500e2f416196725a057c36e3ea'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'exception_item'
+                            position: '3'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'bc0f7fbea7d24fd1a39c02b024845a39'
                         key: {
@@ -11832,11 +24200,64 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'bc26f05a83064105afaf0073cbccb1ff'
+                        key: {
+                            list_id: {
+                                id: '112033b1bb2144c8b98ced9c8456957d'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'total_quantity'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'bc2eae24b296446fbe9f5ff64b850e09'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'field_name'
+                            position: '14'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'bc323635fe63464a8d93951dca2b4436'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'description'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy'
+                        id: 'bc399bb9366545a29dcf8784c46ad1e5'
+                        key: {
+                            table: 'x_cog_mah_request_line'
+                            short_description: 'MAH request line: extended price is computed'
                         }
                     },
                     {
@@ -11879,6 +24300,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'bc5c70b278994f839a9e37c6a26e1b71'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b8fd7b687fe74c24b24affc99889db66'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'bccc6436cd2f428dab8c0f07011c4297'
                         key: {
@@ -11897,6 +24340,43 @@ declare global {
                                     name: 'x_cog_mah.engraver'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                        key: {
+                            name: 'x_cog_mah_ses_flag_request'
+                            caption: 'SES flag request'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'bcfadb7b28824092b048b5a11b219123'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'batch_id'
+                            position: '4'
                         }
                     },
                     {
@@ -11947,6 +24427,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'bd63fa365c134a7b8e81c1818148596b'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'active'
+                            position: '11'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'bd70bfd741904d78abee53a0725407be'
                         key: {
@@ -11960,12 +24462,57 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'bd7cba6d60b04284acc9a3fb74814c95'
+                        key: {
+                            list_id: {
+                                id: 'b32d8ad9b38c4f5a89275a1003278db5'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'case_count'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'bdd6980a04364278b26923d2184091bd'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'be085082a5e4411faec57aaed85ea1ed'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
                         }
                     },
                     {
@@ -12022,6 +24569,64 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_action_role'
+                        id: 'be64d8c0ab5340eaaa42c8d2c9fb32eb'
+                        key: {
+                            sys_ui_action: 'd5169f681b9f4f10a37a8ee1e1471b31'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'be669fcb117a4edd98333a73f636d768'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'stage_entered_at'
+                            position: '12'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'be690d0a93cf4df38d7363a1bad1a1c0'
+                        key: {
+                            list_id: {
+                                id: 'f90ad93423ff4ff1a44ccea0c4ef00a8'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'requesting_office'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: 'be86e3e1e9834446968a746eacfacb21'
                         key: {
@@ -12067,6 +24672,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'bf7a3e2277b44c829d8e3090e3c3193c'
+                        key: {
+                            sys_ui_section: {
+                                id: '984d4ad66dbc49368edab5dbe0fa2623'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'awards_case'
+                            position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'bf7c5425629b4b94aa80e5fcaa592eaf'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'bf7fdd7ff03b40ce935b18bf1e82ef0a'
                         key: {
@@ -12083,6 +24732,29 @@ declare global {
                             value: 'automobile_flag'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'bfb5b674448740bdb2b7c43d5cc83edd'
+                        key: {
+                            list_id: {
+                                id: '1c29015c7a2b4630af3570b983a9e17c'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'source_agency'
                         }
                     },
                     {
@@ -12132,6 +24804,27 @@ declare global {
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'active'
+                        }
+                    },
+                    {
+                        table: 'sc_cat_item_category'
+                        id: 'c04f5be16a4b482c898912174df4d1ba'
+                        key: {
+                            sc_cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                            sc_category: '264a3ed81796464688efa04710410f77'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: 'c083c9ed14c54fcab3a46394819e0002'
+                        key: {
+                            sys_ui_action: 'ba39b055dd0e407e97dfcd9e1cfe5991'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -12189,6 +24882,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'item_option_new'
+                        id: 'c129841ad57d41bfb2a85d3ccd7254a1'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'document_number'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'c13b30657c2548d3a4634bdbfad28d3c'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'appointment_date'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'c193229a7b044282a0023b5d33ad2c76'
                         key: {
@@ -12223,6 +24947,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'question_choice'
+                        id: 'c204f68ad16f4df7bb4a66cfd8a42c43'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '13'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'c26f066ba1d8469e85f37af83afac7b7'
                         key: {
@@ -12252,6 +24991,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'item_option_new'
+                        id: 'c2a309fb81614f8aa656122e6ee62044'
+                        key: {
+                            cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                            variable_set: 'NULL'
+                            name: 'requesting_office'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'c2cac0f43aa34130ad9fea951d47e02e'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'name'
+                            position: '7'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'c2e0da76213242a396334add54eacd0a'
                         key: {
@@ -12262,6 +25032,21 @@ declare global {
                                     name: 'x_cog_mah.engraver'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'c2e12efed206423ea29baa2866020b81'
+                        key: {
+                            name: 'x_cog_mah_case_note'
+                            caption: 'Note'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
                         }
                     },
                     {
@@ -12322,11 +25107,47 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_action_role'
+                        id: 'c3ca266bfad3400e9425fd050f3c8052'
+                        key: {
+                            sys_ui_action: 'ba39b055dd0e407e97dfcd9e1cfe5991'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'c3d7e5d626b64909ae310a9341486280'
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'c3de2a4198b6406db780bc361e60ab49'
+                        key: {
+                            list_id: {
+                                id: '45ecbf25305d4e88b4d2f963808be522'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'exception_item'
                         }
                     },
                     {
@@ -12368,10 +25189,55 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'c3fc33c949174cbbaee8b7bf8f8797c4'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_user_role'
                         id: 'c3ffa7c1d67144489b17ba4646eb673e'
                         key: {
                             name: 'x_cog_mah.csr'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'c46c737a575a42418012e8a757e4ad4a'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'vendor'
                         }
                     },
                     {
@@ -12448,6 +25314,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'c4f43cb957bf4b94809bfa482e58b588'
+                        key: {
+                            list_id: {
+                                id: '112033b1bb2144c8b98ced9c8456957d'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'aging_flag'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'c50fd8a7e3db491d9e2e276abe6b46d6'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd38c1a001a5a485081617cda142ee996'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'ship_to_address_1'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'c51b146d7d844e749bb3078fb3d6afc1'
                         key: {
@@ -12479,6 +25390,20 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: 'c58d35803a864848bed66c5330fab487'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'dodaac'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'c5a23e3b2e51433390e4d75ed09c1023'
                         key: {
@@ -12487,6 +25412,51 @@ declare global {
                             value: 'inherent_resolve_campaign_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'c5d01edd3117445b8a6bf5db6e429285'
+                        key: {
+                            list_id: {
+                                id: 'cf5511109a474b5b9dfe16d52a2fc965'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'heraldry_request'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'c618444598dc4eeba220f29e53555943'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f8c977fbf77540ae96093f91c9ed3572'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
                         }
                     },
                     {
@@ -12501,6 +25471,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'c64d6fa7cf4743c482690698c871b091'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f728e38fa1b745f58be0606196ccd42f'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Notes'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'work_notes'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'c6a6f8911eaf4dd783b5e34ac7137a15'
                         key: {
@@ -12511,6 +25503,13 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: 'c6adbad35d9e4ad49406275f8f164642'
+                        key: {
+                            ui_action: 'ua_ses_approve'
                         }
                     },
                     {
@@ -12544,6 +25543,45 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'c6e435f395d54060bab2f563e42a57bc'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'vendor_quantity_shipped'
+                            position: '13'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list'
+                        id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                        key: {
+                            name: 'x_cog_mah_migration_exception'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'c70ac43b39e74eafb177068e2fca8700'
                         key: {
@@ -12552,6 +25590,28 @@ declare global {
                             value: 'received'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'c71304f978a2403a99d86ae4254e9dd6'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'state'
+                            position: '7'
                         }
                     },
                     {
@@ -12565,6 +25625,29 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'c77f8868de6947f79b3f20a1c378dd5a'
+                        key: {
+                            list_id: {
+                                id: '1c29015c7a2b4630af3570b983a9e17c'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'duplicate_count'
                         }
                     },
                     {
@@ -12617,6 +25700,42 @@ declare global {
                             value: 'heraldry_request'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'c81fd9895e7d4f25aba5d3f13d0ddb02'
+                        key: {
+                            sys_ui_section: {
+                                id: '944af3b62e1c430981c5490c03bd7e00'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'c8ac11a8726a40dbad9a224797087d43'
+                        key: {
+                            ui_policy: {
+                                id: '24c746d97a3c4eb5b1d23827e10c33e7'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: cancel reason mandatory and visible when cancelled'
+                                }
+                            }
+                            field: 'cancel_reason'
                         }
                     },
                     {
@@ -12718,6 +25837,42 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: 'c9a866e5ee744fb786fb49dae84aa87a'
+                        key: {
+                            ui_policy: {
+                                id: 'fb5d196b960249f89f6afdb6f7d36ee1'
+                                key: {
+                                    table: 'x_cog_mah_awards_case'
+                                    short_description: 'MAH awards case: computed fields are read-only'
+                                }
+                            }
+                            field: 'closed_at'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'c9ab69673e964b6590c5be088736a5d8'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'assigned_to'
+                            position: '13'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'c9b576d2aca44b88a6334cb41cb9ff85'
                         key: {
@@ -12748,11 +25903,69 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'c9fcc979f7f4431484ff7d47ddd8de1e'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'aging_flag'
+                            position: '10'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form'
+                        id: 'ca1db85743724794a18481b985cf261b'
+                        key: {
+                            name: 'x_cog_mah_request_line'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'ca3e360979db411890edd493377158cf'
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'cage_code'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'ca3f730f698a47b78e0cbad16d1fd775'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'submitted_by'
+                            position: '2'
                         }
                     },
                     {
@@ -12772,12 +25985,43 @@ declare global {
                         }
                     },
                     {
+                        table: 'item_option_new'
+                        id: 'cacc3be935cd46d0b0761cb84fd67a07'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'ship_to'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'cad76ab6237248479fc118a0549d648b'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'address_state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'cadee5d38e364ed29a91fe2d2a3d07be'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '9'
                         }
                     },
                     {
@@ -12789,11 +26033,80 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form'
+                        id: 'cb60c0edf6a74ddc8c00fc6b3b780c7d'
+                        key: {
+                            name: 'x_cog_mah_heraldry_request'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'cb9b3d9939dc413fb028e6103f7567bc'
+                        key: {
+                            sys_ui_section: {
+                                id: '6194c2b85a9c4088a7cd768378714963'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_form'
+                            position: '2'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'cbb48b83803c48d199ae1fb7f4279618'
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'legacy_form'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: 'cbc877e51af845dd8057f552d4a97361'
+                        key: {
+                            sys_ui_form: {
+                                id: '584eb275fb88471b9a50c4d5f38c5520'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'c2e12efed206423ea29baa2866020b81'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
                         }
                     },
                     {
@@ -12823,6 +26136,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'cc45a147fe7244cfb9771bca90aeebc0'
+                        key: {
+                            sys_ui_section: {
+                                id: '7598cb39ef524014950ffd9e32ac0f7b'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_last_modified'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'cc539b6ba5cd40168ff311ad5b56a822'
                         key: {
@@ -12831,6 +26166,28 @@ declare global {
                             value: 'SE'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'ccb38bbe97894a4b840ff934f23683ee'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '14'
                         }
                     },
                     {
@@ -12849,11 +26206,93 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'ccec26cf17f847849d71bdd1c4ab904b'
+                        key: {
+                            list_id: {
+                                id: '112033b1bb2144c8b98ced9c8456957d'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'sys_updated_on'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'cd1903002e614a6c8194a364ced34813'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'duplicate_count'
+                            position: '12'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'cd1c91a4e02047959245f34b4072947d'
+                        key: {
+                            name: 'x_cog_mah_heraldry_request'
+                            caption: 'Notes'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'cd31ed50bbc34156bcc43413536a9948'
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'notes'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'cd3d080aa97a40a7bf213f26253fba84'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
                         }
                     },
                     {
@@ -12900,6 +26339,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'cd87443471064e54a901f64aaa99532b'
+                        key: {
+                            list_id: {
+                                id: '4cb2ed013cc044f0adef977189e9497c'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'email'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'cdb32b14fab7410a83f10d2768bafd74'
                         key: {
@@ -12925,11 +26387,79 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'cdfc6648c37445889e2644c75166cebe'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'dob'
+                            position: '12'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'ce0220d916ce45f59fccb9f62b15f5dd'
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'note_type'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: 'ce382db0aaf246a1806ccaaed123e39b'
+                        key: {
+                            sys_ui_form: {
+                                id: 'ba96c8b6e3f748728934b2ae84b961a6'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '70bca8c7a66c4194b92e06454bc9bf31'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: 'ce3c81d38d2c41e2b8612c780f67975a'
+                        key: {
+                            sys_ui_action: '00e9d3126d3848c5afb1bc0aab5e7e99'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -12984,6 +26514,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list'
+                        id: 'cf5511109a474b5b9dfe16d52a2fc965'
+                        key: {
+                            name: 'x_cog_mah_case_note'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: 'cf95cb6ac8ea4ed7b7c189460626f68d'
                         key: {
@@ -12992,10 +26539,60 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'cfb27088a0c048ccae815b827a75fdfe'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'unit_of_issue'
+                            position: '8'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: 'cfbf359b6b0543de88cd6153505c8b30'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '08'
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: 'cfdcd6e5ec0c4338a47a15be6dc24be5'
                         key: {
                             name: 'x_cog_mah_shipment'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: 'cfe6890a0219426385bbad411f463d85'
+                        key: {
+                            sys_ui_action: '4ae8ad27fcc04ed8aa267191744db18e'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -13044,6 +26641,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'd0ad5dd537424ec194cb0f76fc1a90f3'
+                        key: {
+                            sys_ui_section: {
+                                id: '4e4c8c75b6694746b52f2d46b5a68251'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Totals'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'line_count'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'd0b7633b181a48d0af2b06a54f274206'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b8fd7b687fe74c24b24affc99889db66'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'd0dd4aa899754b5aabd8f780ccc3eabf'
                         key: {
@@ -13083,6 +26724,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'd1047ecf30e9471081d83ce9fcd3485c'
+                        key: {
+                            sys_ui_section: {
+                                id: '911e32c64d324dc39d49098cb11a4c70'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'd13e1ff2a7524bec9586549dc02ea773'
                         key: {
@@ -13093,6 +26756,51 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'd15feba015c744ddb33088b7ebb13b12'
+                        key: {
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '10'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'd170a71d57c442d4b3d0e9ca88c0e04d'
+                        key: {
+                            list_id: {
+                                id: 'b32d8ad9b38c4f5a89275a1003278db5'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'merged_into'
                         }
                     },
                     {
@@ -13129,6 +26837,39 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: 'd1e147cd7bad46d882bb894f796f577e'
+                        key: {
+                            sys_ui_form: {
+                                id: '00c91487f7ee463f893e530a3becc102'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '7598cb39ef524014950ffd9e32ac0f7b'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'd1e36e3f387d4590ab8203cc825b72a7'
                         key: {
@@ -13157,6 +26898,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sc_cat_item_catalog'
+                        id: 'd21d5faeb2794c96b8ebe9b2d21d8a8e'
+                        key: {
+                            sc_cat_item: '969f94a196d0490b8b6d9377803b654b'
+                            sc_catalog: 'e0d08b13c3330100c8b837659bba8fb4'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'd2286880e1b744afadaa961cc4d30eb5'
                         key: {
@@ -13167,6 +26916,29 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'd26638f1427a42ecb5c1b93483645e49'
+                        key: {
+                            list_id: {
+                                id: '69a22ff51afb49e39f2322dfec758b18'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'awards_case'
                         }
                     },
                     {
@@ -13205,11 +26977,63 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: 'd362a4f3a6834913a299511358ae87e1'
+                        key: {
+                            name: 'x_cog_mah_engraving_job'
+                            caption: 'Engraving'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'd375987582ff414685acca77817eb1aa'
+                        key: {
+                            ui_policy: {
+                                id: '304ab10f935a4bbc8d4356d86c18624f'
+                                key: {
+                                    table: 'x_cog_mah_requester'
+                                    short_description: 'MAH requester: merged duplicates are read-only'
+                                }
+                            }
+                            field: 'merge_target'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'd3802bf3c1b64cf481f59c1b7023e3b5'
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'd381489cf0824072a890d9165e4f9116'
+                        key: {
+                            list_id: {
+                                id: '112033b1bb2144c8b98ced9c8456957d'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'line_count'
                         }
                     },
                     {
@@ -13234,12 +27058,41 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: 'd38c1a001a5a485081617cda142ee996'
+                        key: {
+                            name: 'x_cog_mah_awards_case'
+                            caption: 'Ship to'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: 'd39a1acdbd654c4f8621313ce448b0a2'
                         deleted: true
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'd3bfc355abe341be8ec63a4d3dd75233'
+                        key: {
+                            ui_policy: {
+                                id: 'bc399bb9366545a29dcf8784c46ad1e5'
+                                key: {
+                                    table: 'x_cog_mah_request_line'
+                                    short_description: 'MAH request line: extended price is computed'
+                                }
+                            }
+                            field: 'extended_price'
                         }
                     },
                     {
@@ -13253,6 +27106,28 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'd3d780b8b201494284233ddb5f942828'
+                        key: {
+                            sys_ui_section: {
+                                id: '944af3b62e1c430981c5490c03bd7e00'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
                         }
                     },
                     {
@@ -13301,6 +27176,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'd5018a3ea4974f53934dc463dd77965f'
+                        key: {
+                            list_id: {
+                                id: 'b32d8ad9b38c4f5a89275a1003278db5'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'name'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'd505f1a904924f7a81f6955999e2b16f'
                         key: {
@@ -13322,6 +27220,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'd5415d24c57b49deba11aefe6033c9b2'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b53bcf93e2884fcdbc9317016c7f7201'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Mailing address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'address_1'
+                            position: '1'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'd5ae6b77eec845ffba6ebb73a6bfca6b'
                         key: {
@@ -13332,6 +27252,28 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'd5bd5bc4f28a4712b882078e0f1ef793'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'parse_status'
+                            position: '8'
                         }
                     },
                     {
@@ -13362,6 +27304,28 @@ declare global {
                             name: 'x_cog_mah_probe'
                             element: 'qty'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'd5f53af4c5f840fab546018b8ab4fe35'
+                        key: {
+                            sys_ui_section: {
+                                id: 'f728e38fa1b745f58be0606196ccd42f'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Notes'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'notes'
+                            position: '0'
                         }
                     },
                     {
@@ -13424,6 +27388,43 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'd743eef0c79147beaa998f5ca5094024'
+                        key: {
+                            list_id: {
+                                id: '69a22ff51afb49e39f2322dfec758b18'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'priority_handling'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'd74a3feb802b43a2b05f5f4d75a14ca6'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'uic'
                         }
                     },
                     {
@@ -13502,11 +27503,48 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: 'd85661decc034ffe99a936e3fda6426a'
+                        key: {
+                            ui_policy: {
+                                id: 'f7ff83af6dcd4d699d0e28acccdfca53'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: vendor fulfilment fields visible only after release'
+                                }
+                            }
+                            field: 'vendor_notes'
+                        }
+                    },
+                    {
                         table: 'sys_number'
                         id: 'd898dc1511c5402cb9b91e92817b3795'
                         key: {
                             category: 'x_cog_mah_ses_flag_request'
                             prefix: 'SES'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'd8b4ee3c35e84bb484b99d9fc3529784'
+                        key: {
+                            ui_policy: {
+                                id: 'dddec8ca30d14275803193320b5b5cb0'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: header fields mandatory once out of Draft'
+                                }
+                            }
+                            field: 'requester_poc'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: 'd8c83ff083674b8f997960fdfd17f84a'
+                        key: {
+                            cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                            variable_set: 'NULL'
+                            name: 'ship_to'
                         }
                     },
                     {
@@ -13605,6 +27643,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'd9c3fde966a045cf9a9eae4101f2bbd4'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '7'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'd9e6494323b8438ab4b6e6024150f298'
                         key: {
@@ -13615,6 +27675,28 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'da0440c31ecb4983b628b37627b034ab'
+                        key: {
+                            sys_ui_section: {
+                                id: '18a7d558315c4854a4c66b3c8e273476'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
                         }
                     },
                     {
@@ -13639,6 +27721,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'da72c55f5b854577983673cbf47b2be8'
+                        key: {
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status'
+                            position: '3'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: 'da76c8b6b7624bbab4dc5c64d42617f3'
                         key: {
@@ -13660,6 +27764,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'da924bb0e5dc4b66b57806e53f019907'
+                        key: {
+                            sys_ui_section: {
+                                id: '6194c2b85a9c4088a7cd768378714963'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'dad0c2ce7b7d4444968f3cedcaec8ae5'
                         key: {
@@ -13668,6 +27794,39 @@ declare global {
                                 id: '1a63cf943a5c40208fe7e505c27dcc0c'
                                 key: {
                                     name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: 'daf19f4cbbbe4d9dbfa095ea5f746938'
+                        key: {
+                            sys_ui_form: {
+                                id: 'e60c6b3897bc41dd8a918c4604f52cee'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'ea0a22db549141378f406255bfb23494'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Detail'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
                                 }
                             }
                         }
@@ -13704,11 +27863,47 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: 'dc84bf6b93404406afccfca2dfe31156'
+                        key: {
+                            ui_policy: {
+                                id: 'f7ff83af6dcd4d699d0e28acccdfca53'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: vendor fulfilment fields visible only after release'
+                                }
+                            }
+                            field: 'vendor_acknowledged'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'dcbee1edac9f4e0f9cd2c9b746e19475'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'legacy_status_raw'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'dcc32fec36b84ea98cbaaeb14407182a'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'requester'
+                            position: '2'
                         }
                     },
                     {
@@ -13773,6 +27968,44 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy'
+                        id: 'dddec8ca30d14275803193320b5b5cb0'
+                        key: {
+                            table: 'x_cog_mah_heraldry_request'
+                            short_description: 'MAH DD1348-6: header fields mandatory once out of Draft'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'de1813b6f5b24fb59c5f1badd984259f'
+                        key: {
+                            name: 'x_cog_mah_awards_case'
+                            caption: 'Fulfilment summary'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: 'de478e61550844629c363f78678afbfc'
+                        key: {
+                            question: {
+                                id: '2ffb7687cf1b434cb1c93494039d2ef2'
+                                key: {
+                                    cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                                    variable_set: 'NULL'
+                                    name: 'flag_type'
+                                }
+                            }
+                            value: 'indoor'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'de5cb108cc4b409a900d4d70c0c469bb'
                         key: {
@@ -13781,11 +28014,101 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'de66b5a55e9444de98f2cb3b6760814a'
+                        key: {
+                            list_id: {
+                                id: '69a22ff51afb49e39f2322dfec758b18'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'dec57b69af0746ff8b316d2bb198e3c8'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'email'
+                            position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'dee27394a0fb49a2aef919a94b50e023'
+                        key: {
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'noted_at'
+                            position: '6'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'df0259671df74db7a2056d5be287533f'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'df2de2b876544bea8b48f9e19368efd5'
+                        key: {
+                            list_id: {
+                                id: '1c29015c7a2b4630af3570b983a9e17c'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'record_count'
                         }
                     },
                     {
@@ -13842,6 +28165,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_action_role'
+                        id: 'e07bbb7c6f354760869973a3e2961069'
+                        key: {
+                            sys_ui_action: 'f1c61b3ac432470aa6c736d6c73e7b58'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'e081b46666684855851167181567e58f'
                         key: {
@@ -13855,11 +28191,100 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'e0c6a72e05e6465ea19fd78056cc4565'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'requester_poc_phone'
+                            position: '15'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e0cf0d30e16e4e16ac9b700f4e8f348c'
+                        key: {
+                            sys_ui_section: {
+                                id: '6ddacb8f4def4179ad20664e158bf026'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Authorization file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '7'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'e11183c2b4b741b5bd6d161ae4ae48d0'
+                        key: {
+                            list_id: {
+                                id: '4ab5920b24a4446c97ae33667ce578d3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'e12bf40b6903481486670080e65ede2d'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'legacy_form'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e150175fb7884aa595dcddf5251fdfb1'
+                        key: {
+                            sys_ui_section: {
+                                id: '0450cadcf9694792858b175f81cfe83a'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Portal access (replaces Readers fields)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'portal_user'
+                            position: '1'
                         }
                     },
                     {
@@ -13881,6 +28306,20 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: 'e19842183d834be3b68ac533f956514b'
+                        key: {
+                            ui_policy: {
+                                id: '304ab10f935a4bbc8d4356d86c18624f'
+                                key: {
+                                    table: 'x_cog_mah_requester'
+                                    short_description: 'MAH requester: merged duplicates are read-only'
+                                }
+                            }
+                            field: 'email'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'e19f99474de04a6da24e8870c79ed4ca'
                         key: {
@@ -13896,6 +28335,28 @@ declare global {
                         id: 'e1b784bb771e485e892f57e382fbe1ae'
                         key: {
                             name: 'x_cog_mah_status_map'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e1c34bd3170843049d9c002a2f45411e'
+                        key: {
+                            sys_ui_section: {
+                                id: '0450cadcf9694792858b175f81cfe83a'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Portal access (replaces Readers fields)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'user_group'
+                            position: '3'
                         }
                     },
                     {
@@ -13929,6 +28390,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'e22442786ffa4668ac6d354857dad8bc'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b7355d764c784705bf574eff9451fd57'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'e22f02dbd4e3473399de22d4bbba6ea1'
                         key: {
@@ -13942,12 +28425,82 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: 'e27ac07cd41149849f88c0ede96e814a'
+                        key: {
+                            sys_ui_form: {
+                                id: '3853b0db9ab04bf482ab5e7c39b09595'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'e27af0542efc4125bdbfd55a990e87ef'
+                        key: {
+                            name: 'x_cog_mah_ses_flag_request'
+                            caption: 'Decision'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'e29449a1776746aca8e2b6512b796e85'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'address_2'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e2958e856a17419b8655918649442be9'
+                        key: {
+                            sys_ui_section: {
+                                id: '77a7aaedf1e742759c0242b0981803f1'
+                                key: {
+                                    name: 'x_cog_mah_case_note'
+                                    caption: 'Case note'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '5'
                         }
                     },
                     {
@@ -13959,6 +28512,28 @@ declare global {
                             value: 'open'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e2affb4daac14a19a1ab3536a3166ada'
+                        key: {
+                            sys_ui_section: {
+                                id: 'cd1c91a4e02047959245f34b4072947d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Notes'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'vendor_notes'
+                            position: '1'
                         }
                     },
                     {
@@ -13988,6 +28563,28 @@ declare global {
                                     name: 'x_cog_mah.engraver'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e2deb7fdff5d4947bd4a6501270e3241'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'parent_unid'
+                            position: '11'
                         }
                     },
                     {
@@ -14032,11 +28629,55 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'e343abd4b54f4b15809f9e5dfbef8e29'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'heraldic_item'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'e35ba588877b4dec8e3a56c4a5065d82'
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'legacy_status_raw'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e38992bf13864fdbbb338293b01b77a2'
+                        key: {
+                            sys_ui_section: {
+                                id: '7598cb39ef524014950ffd9e32ac0f7b'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
                         }
                     },
                     {
@@ -14065,6 +28706,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'e45d77e5dbb34f31a211157967330e7c'
+                        key: {
+                            list_id: {
+                                id: 'f90ad93423ff4ff1a44ccea0c4ef00a8'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'appointment_date'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'e4c43c3389c64df78f2731de87066275'
                         key: {
@@ -14082,6 +28746,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'e4df5c686c6a4375af5c1abc71f34567'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'uei'
+                            position: '4'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'e4e395ad04ba43fcb4c21848ff63632c'
                         key: {
@@ -14090,6 +28776,42 @@ declare global {
                             value: 'nprc'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e4eab2b6794b49d3aa0d57a9e6521e7f'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b53bcf93e2884fcdbc9317016c7f7201'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Mailing address'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'e4f7f6513e204300b8f464f7fa271445'
+                        key: {
+                            ui_policy: {
+                                id: 'dddec8ca30d14275803193320b5b5cb0'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: header fields mandatory once out of Draft'
+                                }
+                            }
+                            field: 'dodaac'
                         }
                     },
                     {
@@ -14116,6 +28838,42 @@ declare global {
                             name: 'x_cog_mah_authorization_file'
                             element: 'duplicate_count'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'e571fb78382b4c0d996cde4823ab34c9'
+                        key: {
+                            list_id: {
+                                id: '3f200f01cfa9447a91f8ac6379d11b2c'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'heraldic_item'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: 'e572500ce75d41b99bcbdb9dc3574a78'
+                        key: {
+                            sys_ui_action: '09bec9170d4c4a499a30efb0ccf0fa35'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -14191,6 +28949,20 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form'
+                        id: 'e60c6b3897bc41dd8a918c4604f52cee'
+                        key: {
+                            name: 'x_cog_mah_migration_exception'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'e6129e1aa5084a3ebbecebab2fb99b7d'
                         key: {
@@ -14215,12 +28987,49 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: 'e62896180f4749e998d8bef7fed26b7b'
+                        key: {
+                            name: 'x_cog_mah_shipment'
+                            caption: 'Ship to'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'e633d8472e754e568125c6fafcb179e1'
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e65ed61d42ba4a99ae506c5bbfc5d63a'
+                        key: {
+                            sys_ui_section: {
+                                id: '42d98ae0d6314255a41b66e7d5907d2b'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
                         }
                     },
                     {
@@ -14268,6 +29077,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'item_option_new'
+                        id: 'e6a522ef7c334e3796dce46f6a250bc1'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'requester_poc'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'e6b3c604dc5543fd993412536f0ff72f'
                         key: {
@@ -14287,6 +29105,42 @@ declare global {
                             value: 'unmapped'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e72b1b4c362f4ed5b5a83114bb3607a9'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'active'
+                            position: '16'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'e79c6513174d4c308a6404610aa9c9ac'
+                        key: {
+                            ui_policy: {
+                                id: 'f7ff83af6dcd4d699d0e28acccdfca53'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: vendor fulfilment fields visible only after release'
+                                }
+                            }
+                            field: 'vendor_tracking_number'
                         }
                     },
                     {
@@ -14321,6 +29175,42 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: 'e7f47b3d9e0e4555b4610d8d12ad861e'
+                        key: {
+                            ui_policy: {
+                                id: '304ab10f935a4bbc8d4356d86c18624f'
+                                key: {
+                                    table: 'x_cog_mah_requester'
+                                    short_description: 'MAH requester: merged duplicates are read-only'
+                                }
+                            }
+                            field: 'phone'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e811c3c332db4780b0ede1482ca3eb98'
+                        key: {
+                            sys_ui_section: {
+                                id: 'ea0a22db549141378f406255bfb23494'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Detail'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'message'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'e82bb4100e78486aaed2d11a0575c472'
                         key: {
@@ -14337,6 +29227,23 @@ declare global {
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'parse_log'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list'
+                        id: 'e843154295ce4bf6ae532242f360907b'
+                        key: {
+                            name: 'x_cog_mah_heraldry_request'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
                         }
                     },
                     {
@@ -14382,6 +29289,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'e8d451e2f2894127a89491ee2712ba4a'
+                        key: {
+                            list_id: {
+                                id: '4cb2ed013cc044f0adef977189e9497c'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'user_group'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'e8d7e1926d9b4c5f9bc0425826a44dcb'
                         key: {
@@ -14414,6 +29344,29 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'e91215903f584e2e9c1ac0fcccb645de'
+                        key: {
+                            list_id: {
+                                id: '4cb2ed013cc044f0adef977189e9497c'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'cage_code'
                         }
                     },
                     {
@@ -14463,12 +29416,57 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'e998c4d219af4e31b9ba59ee806ada60'
+                        key: {
+                            list_id: {
+                                id: 'b32d8ad9b38c4f5a89275a1003278db5'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'service_number_last4'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'e9a433c0965340478c49e17a945e5915'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'legacy_unid'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'e9b13d481c4d4fdcb0b8e521ebf6b28a'
+                        key: {
+                            sys_ui_section: {
+                                id: '4e4c8c75b6694746b52f2d46b5a68251'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Totals'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
                         }
                     },
                     {
@@ -14525,6 +29523,35 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: 'e9ffd7eaef8d4f6390203a9df4c22394'
+                        key: {
+                            ui_policy: {
+                                id: '2ccffe65eeb94a59bb3280a88e15769b'
+                                key: {
+                                    table: 'x_cog_mah_award_line'
+                                    short_description: 'MAH award line: engraving text only when engraving is required'
+                                }
+                            }
+                            field: 'engraving_text'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'ea0a22db549141378f406255bfb23494'
+                        key: {
+                            name: 'x_cog_mah_migration_exception'
+                            caption: 'Detail'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'ea0a330d10944f9388b8356c0d8f356e'
                         key: {
@@ -14562,6 +29589,29 @@ declare global {
                             name: 'x_cog_mah_engraving_job'
                             element: 'status'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'ea98f74982bc457fbd19a2800b626dd5'
+                        key: {
+                            list_id: {
+                                id: '1c29015c7a2b4630af3570b983a9e17c'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'file_name'
                         }
                     },
                     {
@@ -14606,6 +29656,15 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: 'eb386520edf640dfa3f792a03c9ac016'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'requesting_unit'
                         }
                     },
                     {
@@ -14654,12 +29713,101 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'eba6eec63a3c492da69bb9bc335bc330'
+                        key: {
+                            sys_ui_section: {
+                                id: '911e32c64d324dc39d49098cb11a4c70'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.end_split'
+                            position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'ebe38bd00b4641299486a4f2aa47a8ab'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'line_count'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'ebf915ea7eaa4dfba4887f98d418e90c'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'legacy_status_raw'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'ebf964b24f7849b587313e551458a650'
+                        key: {
+                            sys_ui_section: {
+                                id: 'de1813b6f5b24fb59c5f1badd984259f'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Fulfilment summary'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'cancel_reason'
+                            position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'ec015a85120047b48888625a929ab510'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd38c1a001a5a485081617cda142ee996'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'ship_to_address_2'
+                            position: '3'
                         }
                     },
                     {
@@ -14787,6 +29935,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'ed088b43bdf64df3968b515c39bde042'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'heraldry_request'
+                            position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'ed10fbba11404f9986b81b266c3e4146'
+                        key: {
+                            sys_ui_section: {
+                                id: '316755dd1ec84e84a38c263af1044e43'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Review and vendor release'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'reviewer'
+                            position: '3'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: 'ed1197c3db73449baadb28e0eb797a77'
                         deleted: true
@@ -14814,6 +30006,28 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'ed705a5bb9ba4ba6a3e355f2c99015f3'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'priority_handling'
+                            position: '7'
                         }
                     },
                     {
@@ -14855,11 +30069,82 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: 'edd6dff5d1164363adb471395e7feb4a'
+                        key: {
+                            sys_ui_form: {
+                                id: 'cb60c0edf6a74ddc8c00fc6b3b780c7d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'edfc6dab7e274545a16f320fb263f12c'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'category'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'ee122da0e404497e857ee06f92ec2600'
+                        key: {
+                            list_id: {
+                                id: '10adad80ad9c40aab9762476bbc628b7'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'engraving_text'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: 'ee13d74682cc48f397a41858d1942278'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '02'
                         }
                     },
                     {
@@ -14902,6 +30187,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'ef06b700f45f4c03986aef85f8ad24e9'
+                        key: {
+                            sys_ui_section: {
+                                id: '8ddef1236acb4b9d89f304dcfd0f5788'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_ws_header_map'
                         id: 'ef1c9d42b5444b479a1639613cd2a8b1'
                         key: {
@@ -14923,6 +30230,28 @@ declare global {
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'aging_flag'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'ef4a55279d974434b9703b25eb8a4bfa'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'contract_number'
+                            position: '5'
                         }
                     },
                     {
@@ -14953,6 +30282,19 @@ declare global {
                             name: 'x_cog_mah_vendor'
                             element: 'email'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: 'ef95b7563e5c4ae6aab4f185fdd6ee6e'
+                        key: {
+                            sys_ui_action: 'ae06e2fe9e004ababaa0c4cd9f434fe2'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -14994,6 +30336,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'eff1ad409c0f4ea5ab20fb9fe39f2aa2'
+                        key: {
+                            list_id: {
+                                id: '1c29015c7a2b4630af3570b983a9e17c'
+                                key: {
+                                    name: 'x_cog_mah_authorization_file'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'eff369bc568c4928b571e322e04bb5cf'
                         key: {
@@ -15004,6 +30369,28 @@ declare global {
                                     name: 'x_cog_mah.warehouse'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'f01b422477144461b0bf7c54a4639ccb'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'active'
+                            position: '12'
                         }
                     },
                     {
@@ -15023,6 +30410,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sc_cat_item_category'
+                        id: 'f09dab3264c047018c8d2ae2815d92c0'
+                        key: {
+                            sc_cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            sc_category: '264a3ed81796464688efa04710410f77'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'f0c2ae6e642945e2bb5ad455df10a6d0'
                         key: {
@@ -15033,6 +30428,28 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'f0d1e420d6cd49fb8ea5224dd10e41e5'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c4019f8b0024e91926ee4d9022a5a9f'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Resolution'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'resolved_by'
+                            position: '3'
                         }
                     },
                     {
@@ -15061,6 +30478,78 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_action_role'
+                        id: 'f13051e371ab444ea279e50905801bfd'
+                        key: {
+                            sys_ui_action: '9ac09a15971f4fdaae5b9a0c048d1593'
+                            sys_user_role: {
+                                id: 'b6cc086383b5473697c1598ddc634729'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'f146f494f4764675a72acf7814b089a7'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'project_code'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'f15376663860452bbf0fcd16efae0992'
+                        key: {
+                            sys_ui_section: {
+                                id: '7598cb39ef524014950ffd9e32ac0f7b'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_status_raw'
+                            position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'f1867e123f6b4c3eba7137c70d0c3642'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'total_extended_price'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'f191a6b7940f468c88beb22d28eceeb3'
                         key: {
@@ -15069,6 +30558,37 @@ declare global {
                             value: 'assembly_qc'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'f1931b9bdfa84400af2762c2e3ddd0e9'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'requisition_priority'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list'
+                        id: 'f19e45f3932a41a68cdb3b40ba7977fc'
+                        key: {
+                            name: 'x_cog_mah_status_map'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
                         }
                     },
                     {
@@ -15086,6 +30606,44 @@ declare global {
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'noted_at'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'f1bd62852bea47dab7f8feb6200004ab'
+                        key: {
+                            name: 'x_cog_mah_heraldic_item'
+                            caption: 'Description'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'f1d4dbbcf6db4d95affa7042223ebec1'
+                        key: {
+                            list_id: {
+                                id: 'f90ad93423ff4ff1a44ccea0c4ef00a8'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'quantity'
                         }
                     },
                     {
@@ -15137,6 +30695,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'f295eaea9d97461cae879999f638a637'
+                        key: {
+                            sys_ui_section: {
+                                id: '840765c774294d8f96195a9dd27baa4c'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    caption: 'Heraldic item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'unit_price'
+                            position: '9'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'f2a92aaa29ce465ab4e0e9599425c90d'
                         key: {
@@ -15155,6 +30735,43 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'preferred_vendor'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'f2fc6484011a48d6bafd599fee77c37c'
+                        key: {
+                            sys_ui_section: {
+                                id: 'a8688720fae64786b6532eaa20b693e3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    caption: 'Shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'carrier'
+                            position: '3'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: 'f337dced8a6348629dd9b8d568236192'
+                        key: {
+                            question: {
+                                id: '2ffb7687cf1b434cb1c93494039d2ef2'
+                                key: {
+                                    cat_item: '7bc9b30be6b04ceb9c3db83a627856b2'
+                                    variable_set: 'NULL'
+                                    name: 'flag_type'
+                                }
+                            }
+                            value: 'automobile'
                         }
                     },
                     {
@@ -15183,6 +30800,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'f41bbca7a07d4d14a062aff647ee9217'
+                        key: {
+                            list_id: {
+                                id: '4ab5920b24a4446c97ae33667ce578d3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'tracking_number'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'f42d9be2e5b34565b956915dc2a13401'
                         key: {
@@ -15205,6 +30845,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'f4c97403b5ce4ccb9c77d503cc03d212'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b5537c7c7f6943cd8a64eccd5d94c791'
+                                key: {
+                                    name: 'x_cog_mah_award_line'
+                                    caption: 'Award line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'f4cc54f1380b4407b51fac874fb1cffc'
                         deleted: true
@@ -15212,6 +30874,13 @@ declare global {
                             name: 'x_cog_mah_probe'
                             element: 'work_notes'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: 'f4d167d8d77842ebac10b2c26ddf6551'
+                        key: {
+                            ui_action: 'ua_ses_reject'
                         }
                     },
                     {
@@ -15239,6 +30908,42 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_action_role'
+                        id: 'f5516f6169344e8293642583328f77c0'
+                        key: {
+                            sys_ui_action: 'ae06e2fe9e004ababaa0c4cd9f434fe2'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'f563805b120741c198cd55687f11e220'
+                        key: {
+                            list_id: {
+                                id: '45ecbf25305d4e88b4d2f963808be522'
+                                key: {
+                                    name: 'x_cog_mah_heraldic_item'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'category'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'f56cc8f10dc447c3a4152cb7ffc0ca8f'
                         key: {
@@ -15252,11 +30957,71 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'f585f5628b14452ab82aad2b3ef43045'
+                        key: {
+                            sys_ui_section: {
+                                id: '7598cb39ef524014950ffd9e32ac0f7b'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_ws_query_parameter_map'
                         id: 'f5879fcb35ac41d683ebfb6fcd7ba031'
                         key: {
                             web_service_operation: '49cb73d0c53d4c399b8c5cdacb4b5615'
                             web_service_query_parameter: '1f7f5802f60f466fb1cfb503a1befef5'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'f58defc64e3443b9ab0da9621593c9b7'
+                        key: {
+                            list_id: {
+                                id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'number'
+                        }
+                    },
+                    {
+                        table: 'question_choice'
+                        id: 'f5b391fabce645e8850f40b204e49188'
+                        key: {
+                            question: {
+                                id: '5770da3c85b64c7496844b67d1d7b9b4'
+                                key: {
+                                    cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                                    variable_set: 'NULL'
+                                    name: 'requisition_priority'
+                                }
+                            }
+                            value: '07'
                         }
                     },
                     {
@@ -15270,6 +31035,74 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'f5cf6ffcacd04f248581d1e4314eb2a6'
+                        key: {
+                            list_id: {
+                                id: 'f19e45f3932a41a68cdb3b40ba7977fc'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'legacy_status'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'f61c6a80d74043eaac4610ea0d81a9e4'
+                        key: {
+                            sys_ui_section: {
+                                id: '4e4c8c75b6694746b52f2d46b5a68251'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Totals'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'f642fa2d55354841b8c517b5b7ad4b1e'
+                        key: {
+                            list_id: {
+                                id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'batch_id'
                         }
                     },
                     {
@@ -15308,12 +31141,42 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'f6bd92ceff96445581a8f7e0aebac63e'
+                        key: {
+                            list_id: {
+                                id: '4ab5920b24a4446c97ae33667ce578d3'
+                                key: {
+                                    name: 'x_cog_mah_shipment'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'shipped'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'f6c07125e22049068bfe6fb526ffd741'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'source_agency'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: 'f6e62c68563f460d95a3ffd5f9d224e3'
+                        key: {
+                            ui_action: 'ua_case_cancel'
                         }
                     },
                     {
@@ -15327,6 +31190,65 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'f70f82fe20fd4873ad52a88868a349f8'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c4019f8b0024e91926ee4d9022a5a9f'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Resolution'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'f728e38fa1b745f58be0606196ccd42f'
+                        key: {
+                            name: 'x_cog_mah_awards_case'
+                            caption: 'Notes'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'f7519f6eb9f249e8a267e57f777cb090'
+                        key: {
+                            sys_ui_section: {
+                                id: '911e32c64d324dc39d49098cb11a4c70'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Legacy record (HAAS)'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'legacy_unid'
+                            position: '1'
                         }
                     },
                     {
@@ -15361,6 +31283,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_policy_action'
+                        id: 'f7e644eb617c4714b50d319e4a32082a'
+                        key: {
+                            ui_policy: {
+                                id: '0dd55f7dad334e4294280bc95b782f68'
+                                key: {
+                                    table: 'x_cog_mah_ses_flag_request'
+                                    short_description: 'MAH SES flag: rejection reason mandatory when rejected'
+                                }
+                            }
+                            field: 'rejection_reason'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy'
+                        id: 'f7ff83af6dcd4d699d0e28acccdfca53'
+                        key: {
+                            table: 'x_cog_mah_heraldry_request'
+                            short_description: 'MAH DD1348-6: vendor fulfilment fields visible only after release'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'f81a5af8ff8d4b5c83c358279d5822c7'
                         key: {
@@ -15378,6 +31322,28 @@ declare global {
                             value: 'complete'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'f85c83611dee4009bc57309f7e8c5851'
+                        key: {
+                            sys_ui_section: {
+                                id: 'cd1c91a4e02047959245f34b4072947d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Notes'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'work_notes'
+                            position: '0'
                         }
                     },
                     {
@@ -15424,6 +31390,35 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_section'
+                        id: 'f8c977fbf77540ae96093f91c9ed3572'
+                        key: {
+                            name: 'x_cog_mah_heraldry_request'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy_action'
+                        id: 'f8ca25c693a845439c365b53c65e7488'
+                        key: {
+                            ui_policy: {
+                                id: '8ff962c795b34749abfe08b635a300fd'
+                                key: {
+                                    table: 'x_cog_mah_heraldry_request'
+                                    short_description: 'MAH DD1348-6: lock header after release to vendor'
+                                }
+                            }
+                            field: 'requester_poc_email'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'f8db8102d5254f669a3cffdea35c7767'
                         key: {
@@ -15445,6 +31440,23 @@ declare global {
                                     name: 'x_cog_mah.vendor'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list'
+                        id: 'f90ad93423ff4ff1a44ccea0c4ef00a8'
+                        key: {
+                            name: 'x_cog_mah_ses_flag_request'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
                         }
                     },
                     {
@@ -15473,6 +31485,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'f95b90119c8b4b6ba8c5d1a7be949825'
+                        key: {
+                            sys_ui_section: {
+                                id: '10147fc29d3446a599fca8eba676d7cc'
+                                key: {
+                                    name: 'x_cog_mah_vendor'
+                                    caption: 'Vendor'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'f97bdc39100d4780a006441e8abb867d'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd38c1a001a5a485081617cda142ee996'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Ship to'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '5'
+                        }
+                    },
+                    {
                         table: 'ua_table_licensing_config'
                         id: 'f991480834574f78b85097c50b14155f'
                         key: {
@@ -15485,6 +31541,42 @@ declare global {
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'stock_on_hand'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_action_role'
+                        id: 'f9984c536d564eee9d9baa4ea8a81bb2'
+                        key: {
+                            sys_ui_action: 'f1c61b3ac432470aa6c736d6c73e7b58'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'f9a00bc1fede4942a93b10974519e4c3'
+                        key: {
+                            list_id: {
+                                id: 'c6f2658e405b459ebacc05f6d7b4ca6c'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'parent_unid'
                         }
                     },
                     {
@@ -15561,12 +31653,57 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: 'faa7c9d27a244c69ad7f095f9346d19d'
+                        key: {
+                            list_id: {
+                                id: 'e843154295ce4bf6ae532242f360907b'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'requesting_unit'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'fab0bf4ccaf3411b81a110acc2f1b995'
                         deleted: true
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'parent'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'fabdd7e67eea42178fa21c3cca4b440f'
+                        key: {
+                            sys_ui_section: {
+                                id: 'de1813b6f5b24fb59c5f1badd984259f'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Fulfilment summary'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.split'
+                            position: '3'
                         }
                     },
                     {
@@ -15595,6 +31732,80 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'fae495c4861249a5bef0eb2f3dc4c261'
+                        key: {
+                            sys_ui_section: {
+                                id: 'affe23b031e64b65bfd14becca9f856f'
+                                key: {
+                                    name: 'x_cog_mah_request_line'
+                                    caption: 'Request line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'status'
+                            position: '8'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'fb04ef0fe965414db28b18bff1acad45'
+                        key: {
+                            sys_ui_section: {
+                                id: '28a35dbc749d4a059ecb15fce3e5dc4e'
+                                key: {
+                                    name: 'x_cog_mah_status_map'
+                                    caption: 'Status mapping'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'number'
+                            position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_policy'
+                        id: 'fb5d196b960249f89f6afdb6f7d36ee1'
+                        key: {
+                            table: 'x_cog_mah_awards_case'
+                            short_description: 'MAH awards case: computed fields are read-only'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'fb7e0c9c66f2485b9e2f6010c88aa067'
+                        key: {
+                            sys_ui_section: {
+                                id: '6c8947a9d8fa42aeb4cf1844daa6522d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'DD Form 1348-6 header'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'required_delivery_date'
+                            position: '11'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'fb8a0cc70f1e4483863c96bb855b0e9e'
                         key: {
@@ -15608,6 +31819,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'fb9f1f19e4d3405e8235f80337d1ac2a'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: '.begin_split'
+                            position: '0'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'fbea4189c1ac43c9a3898bd1244e99c5'
                         key: {
@@ -15618,6 +31851,51 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'fc55a78361744c788a15120d7c5ded33'
+                        key: {
+                            sys_ui_section: {
+                                id: 'bcf904529a3c41308e4c045d8ec3ffcc'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    caption: 'SES flag request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'quantity'
+                            position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'fc580356c00249969973fc573e240663'
+                        key: {
+                            list_id: {
+                                id: '112033b1bb2144c8b98ced9c8456957d'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'days_in_stage'
                         }
                     },
                     {
@@ -15653,11 +31931,99 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_form_section'
+                        id: 'fcceeb3290a74fd6b50ead80c0e28ca0'
+                        key: {
+                            sys_ui_form: {
+                                id: 'e60c6b3897bc41dd8a918c4604f52cee'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '6c4019f8b0024e91926ee4d9022a5a9f'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Resolution'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_form_section'
+                        id: 'fcd53ce2b13b4ddba156f01ec2aa8a38'
+                        key: {
+                            sys_ui_form: {
+                                id: 'cb60c0edf6a74ddc8c00fc6b3b780c7d'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            sys_ui_section: {
+                                id: '93f9cc1187784e2d97d7285a8acd2f44'
+                                key: {
+                                    name: 'x_cog_mah_heraldry_request'
+                                    caption: 'Ship to and justification'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'fcd84656fa18401bb71a2e0664bf02ce'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'requesting_unit'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'fd0dcb5dd0344ce78ca2935c63209e9a'
+                        key: {
+                            sys_ui_section: {
+                                id: 'b33a3a64983343eb8eff76a7167dd2b9'
+                                key: {
+                                    name: 'x_cog_mah_migration_exception'
+                                    caption: 'Migration exception'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'import_set'
+                            position: '5'
                         }
                     },
                     {
@@ -15693,6 +32059,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'fd7cd8c38a764d5792fbf66d8fd66f05'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'assignment_group'
+                            position: '14'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'fd96873bdbae437babd094516a0ff59c'
+                        key: {
+                            list_id: {
+                                id: 'f90ad93423ff4ff1a44ccea0c4ef00a8'
+                                key: {
+                                    name: 'x_cog_mah_ses_flag_request'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'approved_at'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'fd9ec48d61ec43008e30d5f8a80a4afd'
                         key: {
@@ -15701,11 +32112,64 @@ declare global {
                         }
                     },
                     {
+                        table: 'item_option_new'
+                        id: 'fda8f1f0210c4bf7a94a6c3cb967d4f8'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'fund_code'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'fdbf8e618096473e8036299be452e4b7'
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'target_value'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'fdd800be3b974a11b95d7e86e2549cb8'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'suffix'
+                            position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'fded73cd340c4b568c31a8bd81318b25'
+                        key: {
+                            sys_ui_section: {
+                                id: '25af4217bdd44a7b86ff13c23fe1095f'
+                                key: {
+                                    name: 'x_cog_mah_requester'
+                                    caption: 'Requester'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'relationship'
+                            position: '9'
                         }
                     },
                     {
@@ -15719,6 +32183,28 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'fe1194e1afc847508f1f4e9526495782'
+                        key: {
+                            sys_ui_section: {
+                                id: 'd362a4f3a6834913a299511358ae87e1'
+                                key: {
+                                    name: 'x_cog_mah_engraving_job'
+                                    caption: 'Engraving'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'qc_notes'
+                            position: '1'
                         }
                     },
                     {
@@ -15782,6 +32268,43 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_element'
+                        id: 'ff3db502d57749779a8aacfff9611f96'
+                        key: {
+                            sys_ui_section: {
+                                id: '1ad0f46304db42ad87180b6f5bc07c3b'
+                                key: {
+                                    name: 'x_cog_mah_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'active'
+                            position: '15'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_section'
+                        id: 'ff4380d798cc43f5a5427fdf51480e6a'
+                        key: {
+                            name: 'x_cog_mah_shipment'
+                            caption: 'Legacy record (HAAS)'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'ff9eb9dc0f734d49b6b59f41e81f20e2'
                         key: {
@@ -15818,6 +32341,15 @@ declare global {
                             value: 'KT'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'item_option_new'
+                        id: 'ffcca064954845468280a38123ef0556'
+                        key: {
+                            cat_item: '74be602ca0cc4a8e981f83a5138007a4'
+                            variable_set: 'NULL'
+                            name: 'dodaac'
                         }
                     },
                 ]
