@@ -35,6 +35,8 @@ const EMAIL = /^[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9.-]{1,189}\.[A-Za-z]{2,24}$/
 const PHONE = /^\+?[0-9(][0-9 ().-]{6,23}$/
 /** Names, unit designations and addresses: letters, digits, space and a short punctuation whitelist. */
 const SAFE_TEXT = /^[A-Za-z0-9 .,'&/()#:-]*$/
+/** Authorization-file names as transmitted by HRC/NPRC (`HRC_AWD_20260615_7.txt`): letters, digits, dot, underscore, space, hyphen. */
+const FILE_NAME = /^[A-Za-z0-9._ -]{1,120}$/
 /** Multi-line justification text: SAFE_TEXT plus newlines, semicolons, question and quotation marks. */
 const SAFE_MULTILINE = /^[A-Za-z0-9 .,'&/()#:;?"!\r\n-]*$/
 /** Engraving text: letters, digits, spaces, period, comma, apostrophe, hyphen, ampersand, slash. */
@@ -71,6 +73,18 @@ export function validateSafeText(field: string, value: unknown, max: number = LI
     if (required && value.trim() === '') return fail(field, 'required', `${field} is required`)
     if (value.length > max) return fail(field, 'length', `${field} exceeds ${max} characters`)
     if (!SAFE_TEXT.test(value)) return fail(field, 'charset', `${field} contains characters that are not permitted`)
+    return ok()
+}
+
+export function isValidFileName(value: unknown): value is string {
+    return typeof value === 'string' && FILE_NAME.test(value)
+}
+
+export function validateFileName(field: string, value: unknown, required = false): ValidationResult {
+    if (value === undefined || value === null || value === '') {
+        return required ? fail(field, 'required', `${field} is required`) : ok()
+    }
+    if (!isValidFileName(value)) return fail(field, 'format', 'File name contains characters that are not permitted')
     return ok()
 }
 

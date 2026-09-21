@@ -199,6 +199,7 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
         artefacts: ['/api/x_cog_mah/authorization_intake'],
         tests: [
             'parses and normalizes a valid record',
+            'writes values the table rules accept: agency-style file names and the case short description',
             'rejects records with unknown awards, bad ids and injection attempts',
             'is idempotent within a file: duplicate source ids are rejected',
             'rejects malformed bodies and oversize files at the file level',

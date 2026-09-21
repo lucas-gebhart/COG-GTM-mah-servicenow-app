@@ -9,6 +9,7 @@
 import { AWARD_CATALOG, AWARD_DEVICES, LIMITS, REQUESTER_TYPES, SOURCE_AGENCIES, type AwardKey, type RequesterType, type SourceAgency } from './domain.ts'
 import { normalizeLegacyDate } from './dates.ts'
 import {
+    isValidFileName,
     mergeResults,
     validateEmail,
     validateEngravingText,
@@ -330,8 +331,13 @@ function finish(fileName: string, agency: SourceAgency | null, raws: RawRecord[]
 
 function validateFileName(v: unknown, fallback: string): { name: string; issues: ValidationIssue[] } {
     const s = str(v) || fallback
-    if (!/^[A-Za-z0-9._ -]{1,120}$/.test(s)) return { name: fallback, issues: [{ field: 'file_name', code: 'format', message: 'File name contains characters that are not permitted' }] }
+    if (!isValidFileName(s)) return { name: fallback, issues: [{ field: 'file_name', code: 'format', message: 'File name contains characters that are not permitted' }] }
     return { name: s, issues: [] }
+}
+
+/** Short description written onto an intake-created awards case; must satisfy the case's SAFE_TEXT rule. */
+export function intakeCaseDescription(record: Pick<AuthorizationRecord, 'source_agency' | 'source_record_id' | 'awards'>): string {
+    return `${record.source_agency.toUpperCase()} authorization ${record.source_record_id} - ${record.awards.length} award line(s)`
 }
 
 /** Parse a JSON payload (already deserialized). */

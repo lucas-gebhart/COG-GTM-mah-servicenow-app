@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { detectDelimiter, parseAuthorizationDelimited, parseAuthorizationFile, parseAuthorizationJson, splitDelimited, summarizeParse } from '../src/server/lib/authFileParser'
+import { detectDelimiter, intakeCaseDescription, parseAuthorizationDelimited, parseAuthorizationFile, parseAuthorizationJson, splitDelimited, summarizeParse } from '../src/server/lib/authFileParser'
 import { LIMITS } from '../src/server/lib/domain'
+import { validateFileName, validateSafeText } from '../src/server/lib/validators'
 
 const validRecord = {
     source_record_id: 'HRC-2024-000123',
@@ -41,6 +42,18 @@ describe('JSON authorization files', () => {
         expect(r.awards[0]).toEqual({ award_name: 'bronze_star_medal', device: 'v_device', quantity: 1, engraving_text: 'SFC JORDAN ALVAREZ', engraving_required: true })
         expect(r.awards[1]).toEqual({ award_name: 'army_commendation_medal', device: 'bronze_oak_leaf_cluster', quantity: 2, engraving_text: '', engraving_required: false })
         expect(summarizeParse(p)).toEqual({ records: 1, awardLines: 2, rejected: 0, fileIssues: 0 })
+    })
+
+    it('writes values the table rules accept: agency-style file names and the case short description', () => {
+        const p = parseAuthorizationJson({ file_name: 'HRC_AWD_20260615_7.txt', source_agency: 'HRC', records: [validRecord] })
+        expect(p.fileIssues).toEqual([])
+        expect(validateFileName('file_name', p.file_name, true).valid).toBe(true)
+        expect(parseAuthorizationJson({ file_name: '../etc/passwd', records: [validRecord] }).fileIssues[0]?.field).toBe('file_name')
+        const record = p.records[0]
+        if (!record) throw new Error('expected one record')
+        const description = intakeCaseDescription(record)
+        expect(description).toBe('HRC authorization HRC-2024-000123 - 2 award line(s)')
+        expect(validateSafeText('short_description', description, 160).valid).toBe(true)
     })
 
     it('rejects records with unknown awards, bad ids and injection attempts', () => {

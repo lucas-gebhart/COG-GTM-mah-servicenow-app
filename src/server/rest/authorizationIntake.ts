@@ -11,9 +11,10 @@
  *   5. returns only a generic summary to the caller and writes detailed JSON logs.
  */
 import { GlideRecord, gs } from '@servicenow/glide'
-import { parseAuthorizationFile, summarizeParse, type AuthorizationRecord, type ParsedAuthorizationFile } from '../lib/authFileParser.ts'
+import { intakeCaseDescription, parseAuthorizationFile, summarizeParse, type AuthorizationRecord, type ParsedAuthorizationFile } from '../lib/authFileParser.ts'
 import { computeDedupeKey } from '../lib/dedupe.ts'
 import { LIMITS, ROLES, TABLES } from '../lib/domain.ts'
+import { isValidFileName } from '../lib/validators.ts'
 import { hasAnyRole, nowValue, securityLog, str } from '../rules/glideSupport.ts'
 
 /** Subset of the platform RESTAPIRequest / RESTAPIResponse surfaces used here. */
@@ -36,11 +37,12 @@ export interface IntakeSummary {
     accepted: number
     rejected: number
     duplicates: number
+    /** Records that parsed cleanly but were refused by a table rule at insert time. */
+    failed: number
     cases: string[]
 }
 
 const GENERIC_ERROR = 'The request could not be processed.'
-const SAFE_FILE_NAME = /^[A-Za-z0-9._ -]{1,120}$/
 
 /** Stable 16-hex-digit content hash (FNV-1a 64 emulated with two 32-bit lanes) — no crypto dependency needed for idempotency. */
 export function contentHash(text: string): string {
@@ -107,7 +109,7 @@ export function authorizationIntake(request: IntakeRequest, response: IntakeResp
         }
         const contentType = header(request, 'Content-Type') || 'application/json'
         const requestedName = header(request, 'X-File-Name') || queryParam(request, 'file_name')
-        const fileName = SAFE_FILE_NAME.test(requestedName) ? requestedName : undefined
+        const fileName = isValidFileName(requestedName) ? requestedName : undefined
 
         securityLog({
             event: 'intake_received',
@@ -128,6 +130,7 @@ export function authorizationIntake(request: IntakeRequest, response: IntakeResp
                 accepted: Number(str(existing, 'accepted_count') || 0),
                 rejected: Number(str(existing, 'rejected_count') || 0),
                 duplicates: Number(str(existing, 'duplicate_count') || 0),
+                failed: 0,
                 cases: caseNumbersForFile(existing.getUniqueValue()),
             }
             securityLog({ event: 'intake_completed', source: 'rest:authorization_intake', outcome: 'success', reason: 'duplicate_file', record: existing.getUniqueValue(), details: { reference } })
@@ -157,7 +160,7 @@ export function authorizationIntake(request: IntakeRequest, response: IntakeResp
             outcome: 'success',
             table: TABLES.authorization_file,
             record: result.fileSysId,
-            details: { reference, accepted: result.summary.accepted, rejected: result.summary.rejected, duplicates: result.summary.duplicates },
+            details: { reference, accepted: result.summary.accepted, rejected: result.summary.rejected, duplicates: result.summary.duplicates, failed: result.summary.failed },
         })
         response.setStatus(201)
         response.setBody(result.summary)
@@ -193,11 +196,13 @@ export function loadParsedFile(parsed: ParsedAuthorizationFile, hash: string, by
     file.setValue('legacy_form', 'AuthorizationFile')
     file.setValue('state', 'open')
     file.setValue('active', 'true')
-    const fileSysId = String(file.insert())
+    const fileSysId = insertedSysId(file)
+    if (!fileSysId) throw new Error(`${TABLES.authorization_file} insert was aborted by a table rule`)
 
     const cases: string[] = []
     let duplicates = 0
     let accepted = 0
+    let failed = 0
     const log: string[] = [`bytes=${bytes}`, `format=${parsed.format}`]
     for (const issue of parsed.fileIssues) log.push(`file:${issue.field}:${issue.code}`)
     for (const r of parsed.rejected) log.push(`rejected:${r.source_record_id}:${r.issues.map((i) => `${i.field}/${i.code}`).join(',')}`)
@@ -210,15 +215,26 @@ export function loadParsedFile(parsed: ParsedAuthorizationFile, hash: string, by
             continue
         }
         const requesterSysId = findOrCreateRequester(record)
+        if (!requesterSysId) {
+            failed += 1
+            log.push(`failed:${record.source_record_id}:requester`)
+            continue
+        }
         const caseNumber = createCase(record, requesterSysId, fileSysId)
+        if (!caseNumber) {
+            failed += 1
+            log.push(`failed:${record.source_record_id}:awards_case`)
+            continue
+        }
         cases.push(caseNumber)
         accepted += 1
     }
 
+    const incomplete = parsed.rejected.length > 0 || parsed.fileIssues.length > 0 || failed > 0
     file.setValue('accepted_count', String(accepted))
-    file.setValue('rejected_count', String(parsed.rejected.length))
+    file.setValue('rejected_count', String(parsed.rejected.length + failed))
     file.setValue('duplicate_count', String(duplicates))
-    file.setValue('parse_status', accepted === 0 ? 'failed' : parsed.rejected.length > 0 || parsed.fileIssues.length > 0 ? 'partial' : 'parsed')
+    file.setValue('parse_status', accepted === 0 ? 'failed' : incomplete ? 'partial' : 'parsed')
     file.setValue('parse_log', log.join('\n').slice(0, 8000))
     file.setValue('state', 'closed')
     file.setValue('active', 'false')
@@ -226,8 +242,14 @@ export function loadParsedFile(parsed: ParsedAuthorizationFile, hash: string, by
 
     return {
         fileSysId,
-        summary: { status: 'accepted', authorization_file: str(file, 'number'), accepted, rejected: parsed.rejected.length, duplicates, cases },
+        summary: { status: 'accepted', authorization_file: str(file, 'number'), accepted, rejected: parsed.rejected.length, duplicates, failed, cases },
     }
+}
+
+/** `GlideRecord.insert()` returns null when a before rule calls `setAbortAction(true)`. */
+function insertedSysId(gr: GlideRecord<string>): string {
+    const id = gr.insert()
+    return id === null || id === undefined ? '' : String(id)
 }
 
 function findCaseBySource(record: AuthorizationRecord): string | null {
@@ -278,7 +300,7 @@ function findOrCreateRequester(record: AuthorizationRecord): string {
     gr.setValue('state', 'active')
     gr.setValue('active', 'true')
     gr.setValue('legacy_form', 'Requester')
-    return String(gr.insert())
+    return insertedSysId(gr)
 }
 
 function createCase(record: AuthorizationRecord, requesterSysId: string, fileSysId: string): string {
@@ -301,8 +323,9 @@ function createCase(record: AuthorizationRecord, requesterSysId: string, fileSys
     c.setValue('ship_to_state', rq.state)
     c.setValue('ship_to_zip', rq.zip)
     c.setValue('ship_to_country', 'US')
-    c.setValue('short_description', `${record.source_agency.toUpperCase()} authorization ${record.source_record_id} — ${record.awards.length} award line(s)`)
-    const caseSysId = String(c.insert())
+    c.setValue('short_description', intakeCaseDescription(record))
+    const caseSysId = insertedSysId(c)
+    if (!caseSysId) return ''
 
     let lineNo = 0
     for (const award of record.awards) {

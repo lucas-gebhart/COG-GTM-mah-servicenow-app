@@ -4,13 +4,13 @@
  */
 import { GlideRecord, gs } from '@servicenow/glide'
 import { TABLES } from '../lib/domain.ts'
-import { mergeResults, validateCageCode, validateEmail, validateMultiline, validateNsn, validatePhone, validateSafeText } from '../lib/validators.ts'
+import { mergeResults, validateCageCode, validateEmail, validateFileName, validateMultiline, validateNsn, validatePhone, validateSafeText } from '../lib/validators.ts'
 import { abortWithMessage, abortWithValidation, nowValue, securityLog, setIfEmpty, str, type AnyRecord } from './glideSupport.ts'
 
 export function authorizationFileBefore(current: AnyRecord): void {
     const table = TABLES.authorization_file
     const result = mergeResults([
-        validateSafeText('file_name', str(current, 'file_name'), 120, true),
+        validateFileName('file_name', str(current, 'file_name'), true),
         validateMultiline('parse_log', str(current, 'parse_log'), 8000),
     ])
     if (!result.valid) {
