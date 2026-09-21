@@ -1,7 +1,7 @@
 /**
  * Response plumbing shared by every Scripted REST handler in the application.
  *
- * `response.setBody(obj)` hands the object to the platform serializer, which renders every
+ * The platform `setBody` route hands the object to the platform serializer, which renders every
  * JavaScript number as a Java double (`"accepted": 1.0`) and wraps the payload in `{ "result": ... }`.
  * Writing `JSON.stringify(obj)` through the stream writer keeps integers as integers and gives
  * callers exactly the documented payload shape.

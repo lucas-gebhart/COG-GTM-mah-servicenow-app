@@ -100,6 +100,20 @@ describe('operations catalog partitions cover the domain choice sets', () => {
     })
 })
 
+describe('Scripted REST handlers answer through the shared JSON writer', () => {
+    it('no handler calls response.setBody (platform serializer renders integers as doubles)', () => {
+        const restFiles = readdirSync('src/server/rest', { withFileTypes: true })
+            .filter((e) => e.isFile() && e.name.endsWith('.ts'))
+            .map((e) => join(e.parentPath, e.name))
+        expect(restFiles.length).toBeGreaterThanOrEqual(3)
+        for (const file of restFiles) {
+            const src = readFileSync(file, 'utf8')
+            expect(src, file).not.toMatch(/\.setBody\(/)
+            if (!file.endsWith('respond.ts')) expect(src, file).toMatch(/from '\.\/respond\.ts'/)
+        }
+    })
+})
+
 describe('SLA definitions derive from the aging thresholds', () => {
     it('one SLA per non-green aging flag with the matching threshold', () => {
         const flags = sorted(Object.keys(AGING_FLAGS).filter((f) => f !== 'green'))
