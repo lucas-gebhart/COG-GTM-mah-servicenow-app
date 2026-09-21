@@ -9,9 +9,109 @@ declare global {
                         table: 'sys_module'
                         id: '2dd75b3d1cf64bf7a030937706b4fc62'
                     }
+                    br_authorization_file_before: {
+                        table: 'sys_script'
+                        id: 'e892e5bb6ae0403b91ab18d1d796b39d'
+                    }
+                    br_award_line_after: {
+                        table: 'sys_script'
+                        id: 'e5db3769bee84df99e8bf8cea05b98dc'
+                    }
+                    br_award_line_before: {
+                        table: 'sys_script'
+                        id: '2ef416519c654f4db0a0b0633e91aa97'
+                    }
+                    br_awards_case_after: {
+                        table: 'sys_script'
+                        id: '5e71151bfb00498385cc9fbd06d87629'
+                    }
+                    br_awards_case_before: {
+                        table: 'sys_script'
+                        id: '45d09b0e8af14b62aaebfff6c973f51a'
+                    }
+                    br_case_note_before: {
+                        table: 'sys_script'
+                        id: 'ecf5e16433684b9bba45d1451adb83a9'
+                    }
+                    br_case_note_vendor_query: {
+                        table: 'sys_script'
+                        id: 'b98242b518cb4c3e9e41bef542065ede'
+                    }
+                    br_engraving_job_after: {
+                        table: 'sys_script'
+                        id: 'e79fc7b136f043a0af05aca2947f931a'
+                    }
+                    br_engraving_job_before: {
+                        table: 'sys_script'
+                        id: 'b3aa461058e6490a89eb15b1176a6653'
+                    }
+                    br_heraldic_item_before: {
+                        table: 'sys_script'
+                        id: '2a720a8ee08f46d98c3c3ea8d5718414'
+                    }
+                    br_heraldry_request_after: {
+                        table: 'sys_script'
+                        id: '08a3abd74a7147cb84be8729a1343f61'
+                    }
+                    br_heraldry_request_before: {
+                        table: 'sys_script'
+                        id: 'b43d3541b49349afbf37fa8fb15a4cfc'
+                    }
+                    br_heraldry_request_vendor_query: {
+                        table: 'sys_script'
+                        id: '27e165a532854811ab48263c7d26633e'
+                    }
+                    br_request_line_after: {
+                        table: 'sys_script'
+                        id: 'e626a9438cde440f93b1602c0bf36016'
+                    }
+                    br_request_line_before: {
+                        table: 'sys_script'
+                        id: '68eda8901dd846f8b58724572fb7ef93'
+                    }
+                    br_request_line_vendor_query: {
+                        table: 'sys_script'
+                        id: '461ca290271c4b0984f615ac96b921e1'
+                    }
+                    br_requester_after: {
+                        table: 'sys_script'
+                        id: '31ff43c7eb0c461383e7ee5e76fc872f'
+                    }
+                    br_requester_before: {
+                        table: 'sys_script'
+                        id: '07ab87928f1442eb8745b5a086a7a40d'
+                    }
+                    br_ses_flag_after: {
+                        table: 'sys_script'
+                        id: '1f2eb892eff54aa09ca391359c50eebc'
+                    }
+                    br_ses_flag_before: {
+                        table: 'sys_script'
+                        id: '09470534c3474d33b7592b24cefe001d'
+                    }
+                    br_shipment_after: {
+                        table: 'sys_script'
+                        id: '3fac90663e9a4fb49a439dc2b32a0f70'
+                    }
+                    br_shipment_before: {
+                        table: 'sys_script'
+                        id: '0da66a5ba049461ab37f3df1068b4a86'
+                    }
+                    br_vendor_before: {
+                        table: 'sys_script'
+                        id: 'ce8a854fd42349fc9bf9ca2aaf00d0c9'
+                    }
+                    br_vendor_query: {
+                        table: 'sys_script'
+                        id: 'aec4175487af4c2c9b8b87f13bda8694'
+                    }
                     package_json: {
                         table: 'sys_module'
                         id: '8f7bc9f3144c4e5582d1b1a1c4e968f7'
+                    }
+                    src_server_jobs_nightlyAging_ts: {
+                        table: 'sys_module'
+                        id: 'b8f83e2e2d8b4ecfb06609800eb26d72'
                     }
                     src_server_lib_aging_ts: {
                         table: 'sys_module'
@@ -52,6 +152,46 @@ declare global {
                     src_server_lib_validators_ts: {
                         table: 'sys_module'
                         id: '2140277860d54e57830314b13f95256c'
+                    }
+                    src_server_rest_authorizationIntake_ts: {
+                        table: 'sys_module'
+                        id: 'a4a70a3fac9c4ebf8bf63e3be1137c7f'
+                    }
+                    src_server_rules_awardLine_ts: {
+                        table: 'sys_module'
+                        id: '517d257704734fa3b11711f0830e147e'
+                    }
+                    src_server_rules_awardsCase_ts: {
+                        table: 'sys_module'
+                        id: '778733e6057b4485a47172ae85002621'
+                    }
+                    src_server_rules_fulfilment_ts: {
+                        table: 'sys_module'
+                        id: 'f3c8a0ed00b2443eadd1c82dd6985792'
+                    }
+                    src_server_rules_glideSupport_ts: {
+                        table: 'sys_module'
+                        id: 'e45f8df6da8941df894516295035cf56'
+                    }
+                    src_server_rules_heraldryRequest_ts: {
+                        table: 'sys_module'
+                        id: '4993a8d7c5014a929c0d2a74661377f2'
+                    }
+                    src_server_rules_reference_ts: {
+                        table: 'sys_module'
+                        id: 'abe1bcfc0fce435ebc4d7061d9ca180c'
+                    }
+                    src_server_rules_requester_ts: {
+                        table: 'sys_module'
+                        id: '30f722a4ec014daf870ca9b3ad8762be'
+                    }
+                    src_server_rules_requestLine_ts: {
+                        table: 'sys_module'
+                        id: 'ff8c858d7d564f88898cd4ba85ae82a6'
+                    }
+                    src_server_rules_vendorIsolation_ts: {
+                        table: 'sys_module'
+                        id: '830a0470b78d4e18bff92c835b8a3fbf'
                     }
                 }
                 composite: [

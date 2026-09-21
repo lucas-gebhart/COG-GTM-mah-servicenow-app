@@ -37,7 +37,7 @@ export const x_cog_mah_awards_case = Table({
         authorization_date: DateColumn({ label: 'Authorization date' }),
 
         stage: ChoiceColumn({ label: 'Stage', choices: CASE_STAGES, default: 'authorized', dropdown: 'dropdown_without_none' }),
-        stage_entered_at: DateTimeColumn({ label: 'Stage entered', default: 'javascript:gs.nowDateTime();' }),
+        stage_entered_at: DateTimeColumn({ label: 'Stage entered' }),
         days_in_stage: IntegerColumn({ label: 'Days in stage', default: 0, readOnly: true }),
         aging_flag: ChoiceColumn({ label: 'Aging flag', choices: AGING_FLAGS, default: 'green', dropdown: 'dropdown_without_none' }),
         assigned_to: ReferenceColumn({

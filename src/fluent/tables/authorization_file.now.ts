@@ -30,7 +30,7 @@ export const x_cog_mah_authorization_file = Table({
         active: BooleanColumn({ label: 'Active', default: true }),
 
         file_name: StringColumn({ label: 'File name', maxLength: 255, mandatory: true }),
-        received: DateTimeColumn({ label: 'Received', default: 'javascript:gs.nowDateTime();' }),
+        received: DateTimeColumn({ label: 'Received' }),
         source_agency: ChoiceColumn({ label: 'Source agency', choices: SOURCE_AGENCIES, default: 'hrc', dropdown: 'dropdown_without_none' }),
         format: ChoiceColumn({ label: 'Format', choices: FILE_FORMATS, default: 'json', dropdown: 'dropdown_without_none' }),
         record_count: IntegerColumn({ label: 'Record count', default: 0 }),

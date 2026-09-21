@@ -371,6 +371,15 @@ export const MIGRATION_EXCEPTION_STATES = {
     accepted: 'Accepted as-is',
 } as const
 
+/** Event registry names (max 40 chars each); fired by business rules and the nightly job, consumed by notifications. */
+export const EVENTS = {
+    case_stage_changed: 'x_cog_mah.case.stage_changed',
+    case_aging_red: 'x_cog_mah.case.aging_red',
+    request_submitted: 'x_cog_mah.request.submitted',
+    request_released: 'x_cog_mah.request.released',
+    ses_submitted: 'x_cog_mah.ses.submitted',
+} as const
+
 export const ROLES = {
     tacom_staff: 'x_cog_mah.tacom_staff',
     csr: 'x_cog_mah.csr',

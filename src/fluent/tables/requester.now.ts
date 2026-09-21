@@ -49,7 +49,7 @@ export const x_cog_mah_requester = Table({
         zip: StringColumn({ label: 'ZIP', maxLength: 10 }),
         country: StringColumn({ label: 'Country', maxLength: 2, default: 'US' }),
 
-        dedupe_key: StringColumn({ label: 'Dedupe key', maxLength: 80, readOnly: true }),
+        dedupe_key: StringColumn({ label: 'Dedupe key', maxLength: 120, readOnly: true }),
         merged_into: ReferenceColumn({ label: 'Merged into', referenceTable: 'x_cog_mah_requester', cascadeRule: 'clear' }),
         duplicate_count: IntegerColumn({ label: 'Duplicates merged', default: 0, readOnly: true }),
         case_count: IntegerColumn({ label: 'Open cases', default: 0, readOnly: true }),

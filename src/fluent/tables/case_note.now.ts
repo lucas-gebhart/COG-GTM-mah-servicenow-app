@@ -31,7 +31,7 @@ export const x_cog_mah_case_note = Table({
         awards_case: ReferenceColumn({ label: 'Awards case', referenceTable: 'x_cog_mah_awards_case', cascadeRule: 'delete' }),
         heraldry_request: ReferenceColumn({ label: 'Heraldry request', referenceTable: 'x_cog_mah_heraldry_request', cascadeRule: 'delete' }),
         note_type: ChoiceColumn({ label: 'Note type', choices: NOTE_TYPES, default: 'internal', dropdown: 'dropdown_without_none' }),
-        noted_at: DateTimeColumn({ label: 'Noted at', default: 'javascript:gs.nowDateTime();' }),
+        noted_at: DateTimeColumn({ label: 'Noted at' }),
         author: ReferenceColumn({ label: 'Author', referenceTable: 'sys_user' }),
         legacy_author: StringColumn({ label: 'Legacy author (Notes name)', maxLength: 160 }),
         body: MultiLineTextColumn({ label: 'Note', maxLength: LIMITS.justification, mandatory: true }),
