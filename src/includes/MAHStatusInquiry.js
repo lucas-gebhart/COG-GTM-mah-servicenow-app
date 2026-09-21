@@ -1,4 +1,3 @@
-/* eslint-disable no-undef, @typescript-eslint/no-require-imports */
 /**
  * Client-callable Script Include (GlideAjax) behind the Status inquiry record producer.
  * Validation and lookup live in src/server/services/statusInquiry.ts.

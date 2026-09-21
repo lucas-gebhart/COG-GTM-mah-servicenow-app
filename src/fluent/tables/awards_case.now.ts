@@ -9,7 +9,18 @@ import {
     ReferenceColumn,
     GenericColumn,
 } from '@servicenow/sdk/core'
-import { AGING_FLAGS, CASE_STAGES, LIFECYCLE_STATES, LIMITS, SOURCE_AGENCIES } from '../../server/lib/domain'
+import {
+    AGING_FLAGS,
+    CASE_PRIORITIES,
+    CASE_STAGES,
+    LIFECYCLE_STATES,
+    LIMITS,
+    NOK_RELATIONSHIPS,
+    QC_RESULTS,
+    SERVICE_COMPONENTS,
+    SERVICE_ERAS,
+    SOURCE_AGENCIES,
+} from '../../server/lib/domain'
 
 /**
  * Replaces the Domino `AwardsCase` form. One case per authorization record received
@@ -29,12 +40,26 @@ export const x_cog_mah_awards_case = Table({
         state: ChoiceColumn({ label: 'State', choices: LIFECYCLE_STATES, default: 'open', dropdown: 'dropdown_without_none' }),
         active: BooleanColumn({ label: 'Active', default: true }),
 
+        legacy_number: StringColumn({ label: 'Legacy case number', maxLength: 40 }),
         short_description: StringColumn({ label: 'Short description', maxLength: 160 }),
         requester: ReferenceColumn({ label: 'Requester', referenceTable: 'x_cog_mah_requester', cascadeRule: 'restrict' }),
         authorization_file: ReferenceColumn({ label: 'Authorization file', referenceTable: 'x_cog_mah_authorization_file', cascadeRule: 'clear' }),
         source_agency: ChoiceColumn({ label: 'Source agency', choices: SOURCE_AGENCIES, default: 'hrc', dropdown: 'dropdown_without_none' }),
         source_record_id: StringColumn({ label: 'Source record ID', maxLength: 64 }),
         authorization_date: DateColumn({ label: 'Authorization date' }),
+        authorization_file_line: IntegerColumn({ label: 'Authorization file line' }),
+
+        veteran_last_name: StringColumn({ label: 'Veteran last name', maxLength: LIMITS.name }),
+        veteran_first_name: StringColumn({ label: 'Veteran first name', maxLength: LIMITS.name }),
+        veteran_middle_initial: StringColumn({ label: 'Veteran middle initial', maxLength: 1 }),
+        veteran_rank: StringColumn({ label: 'Veteran rank', maxLength: 10 }),
+        service_number_last4: StringColumn({ label: 'Service number (last 4)', maxLength: 4 }),
+        service_component: ChoiceColumn({ label: 'Component', choices: SERVICE_COMPONENTS, dropdown: 'dropdown_with_none' }),
+        service_era: ChoiceColumn({ label: 'Era', choices: SERVICE_ERAS, dropdown: 'dropdown_with_none' }),
+        service_from: DateColumn({ label: 'Service from' }),
+        service_to: DateColumn({ label: 'Service to' }),
+        veteran_deceased: BooleanColumn({ label: 'Veteran deceased', default: false }),
+        requester_relationship: ChoiceColumn({ label: 'Requester relationship', choices: NOK_RELATIONSHIPS, dropdown: 'dropdown_with_none' }),
 
         stage: ChoiceColumn({ label: 'Stage', choices: CASE_STAGES, default: 'authorized', dropdown: 'dropdown_without_none' }),
         stage_entered_at: DateTimeColumn({ label: 'Stage entered' }),
@@ -47,7 +72,13 @@ export const x_cog_mah_awards_case = Table({
             referenceQual: 'active=true^roles=x_cog_mah.tacom_staff',
         }),
         assignment_group: ReferenceColumn({ label: 'Assignment group', referenceTable: 'sys_user_group' }),
+        priority: ChoiceColumn({ label: 'Priority', choices: CASE_PRIORITIES, default: 'routine', dropdown: 'dropdown_without_none' }),
         priority_handling: BooleanColumn({ label: 'Priority handling (congressional / funeral)', default: false }),
+        on_hold: BooleanColumn({ label: 'On hold', default: false }),
+        hold_reason: StringColumn({ label: 'Hold reason', maxLength: 255 }),
+        engraving_required: BooleanColumn({ label: 'Engraving required', default: false }),
+        qc_result: ChoiceColumn({ label: 'QC result', choices: QC_RESULTS, default: 'pending', dropdown: 'dropdown_without_none' }),
+        pick_bin: StringColumn({ label: 'Warehouse pick bin', maxLength: 20 }),
 
         ship_to_name: StringColumn({ label: 'Ship to name', maxLength: LIMITS.name }),
         ship_to_address_1: StringColumn({ label: 'Ship to address 1', maxLength: 100 }),
@@ -69,6 +100,7 @@ export const x_cog_mah_awards_case = Table({
         { name: 'idx_case_legacy_unid', unique: true, element: 'legacy_unid' },
         { name: 'idx_case_source_record', unique: false, element: ['source_agency', 'source_record_id'] },
         { name: 'idx_case_stage_aging', unique: false, element: ['stage', 'aging_flag'] },
+        { name: 'idx_case_legacy_number', unique: false, element: 'legacy_number' },
     ],
     autoNumber: { prefix: 'MAH', number: 1000, numberOfDigits: 7 },
     allowWebServiceAccess: true,

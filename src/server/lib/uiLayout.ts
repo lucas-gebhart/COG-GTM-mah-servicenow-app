@@ -40,15 +40,24 @@ const LEGACY: FormSection = {
 
 export const UI_LAYOUT: Readonly<Record<DomainTableKey, TableLayout>> = {
     awards_case: {
-        list: ['number', 'requester', 'stage', 'aging_flag', 'days_in_stage', 'source_agency', 'authorization_date', 'assigned_to', 'line_count', 'total_quantity', 'sys_updated_on'],
+        list: ['number', 'legacy_number', 'veteran_last_name', 'requester', 'stage', 'aging_flag', 'days_in_stage', 'priority', 'source_agency', 'authorization_date', 'assigned_to', 'line_count', 'total_quantity', 'sys_updated_on'],
         listSums: ['line_count', 'total_quantity'],
         sections: [
             {
                 caption: 'Awards case',
-                left: ['number', 'requester', 'source_agency', 'authorization_file', 'source_record_id', 'authorization_date', 'priority_handling'],
-                right: ['stage', 'aging_flag', 'days_in_stage', 'stage_entered_at', 'assigned_to', 'assignment_group', 'active'],
+                left: ['number', 'legacy_number', 'requester', 'requester_relationship', 'source_agency', 'authorization_file', 'authorization_file_line', 'source_record_id', 'authorization_date'],
+                right: ['stage', 'aging_flag', 'days_in_stage', 'stage_entered_at', 'priority', 'priority_handling', 'assigned_to', 'assignment_group', 'active'],
             },
-            { caption: 'Description', left: ['short_description'] },
+            {
+                caption: 'Veteran / service member',
+                left: ['veteran_last_name', 'veteran_first_name', 'veteran_middle_initial', 'veteran_rank', 'service_number_last4'],
+                right: ['service_component', 'service_era', 'service_from', 'service_to', 'veteran_deceased'],
+            },
+            {
+                caption: 'Handling',
+                left: ['on_hold', 'hold_reason', 'engraving_required'],
+                right: ['qc_result', 'pick_bin', 'short_description'],
+            },
             {
                 caption: 'Ship to',
                 left: ['ship_to_name', 'ship_to_address_1', 'ship_to_address_2', 'ship_to_city'],
@@ -71,26 +80,32 @@ export const UI_LAYOUT: Readonly<Record<DomainTableKey, TableLayout>> = {
         legacyViews: ['Cases\\By Stage', 'Cases\\Aging', 'Cases\\By Requester', 'Cases\\All'],
     },
     award_line: {
-        list: ['number', 'awards_case', 'line_number', 'award_name', 'device', 'device_count', 'quantity', 'engraving_required', 'engraving_text', 'status'],
+        list: ['number', 'awards_case', 'line_number', 'award_name', 'device', 'device_count', 'quantity', 'engraving_required', 'engraving_text', 'status', 'stock_on_hand'],
         listSums: ['quantity'],
         sections: [
             {
                 caption: 'Award line',
-                left: ['number', 'awards_case', 'line_number', 'award_name', 'device', 'device_count'],
-                right: ['quantity', 'status', 'stock_on_hand', 'engraving_required', 'engraving_text', 'active'],
+                left: ['number', 'awards_case', 'line_number', 'award_name', 'device', 'device_count', 'set_type'],
+                right: ['quantity', 'status', 'stock_on_hand', 'stock_number', 'backorder_eta', 'engraving_required', 'engraving_text', 'active'],
             },
+            { caption: 'Authorization', left: ['authority', 'legacy_award_name'], right: ['legacy_award_code'] },
             LEGACY,
         ],
         relatedLists: [{ child: 'engraving_job', field: 'award_line' }],
         legacyViews: ['Lines\\By Case', 'Lines\\Engraving Queue'],
     },
     requester: {
-        list: ['number', 'name', 'type', 'service_number_last4', 'city', 'address_state', 'zip', 'case_count', 'merged_into', 'sys_updated_on'],
+        list: ['number', 'legacy_number', 'name', 'type', 'service_number_last4', 'city', 'address_state', 'zip', 'case_count', 'merged_into', 'sys_updated_on'],
         sections: [
             {
                 caption: 'Requester',
-                left: ['number', 'type', 'first_name', 'middle_initial', 'last_name', 'suffix', 'name'],
-                right: ['relationship', 'unit_name', 'service_number_last4', 'dob', 'email', 'phone', 'active'],
+                left: ['number', 'legacy_number', 'type', 'first_name', 'middle_initial', 'last_name', 'suffix', 'name'],
+                right: ['relationship', 'veteran_name', 'service_number_last4', 'dob', 'email', 'phone', 'preferred_contact', 'active'],
+            },
+            {
+                caption: 'Unit (for unit requesters)',
+                left: ['unit_name', 'rank', 'role_title'],
+                right: ['dodaac', 'uic'],
             },
             {
                 caption: 'Mailing address',
@@ -113,8 +128,13 @@ export const UI_LAYOUT: Readonly<Record<DomainTableKey, TableLayout>> = {
         sections: [
             {
                 caption: 'Authorization file',
-                left: ['number', 'file_name', 'source_agency', 'format', 'received', 'intake_channel'],
-                right: ['parse_status', 'record_count', 'accepted_count', 'rejected_count', 'duplicate_count', 'submitted_by'],
+                left: ['number', 'file_name', 'legacy_number', 'source_agency', 'format', 'layout', 'received', 'intake_channel'],
+                right: ['parse_status', 'record_count', 'accepted_count', 'rejected_count', 'duplicate_count', 'submitted_by', 'checksum_match'],
+            },
+            {
+                caption: 'Batch results',
+                left: ['transmission_date', 'authorization_date', 'imported_at'],
+                right: ['cases_created', 'lines_created', 'requesters_created', 'requesters_matched'],
             },
             { caption: 'Parse log', left: ['source_hash', 'parse_log'] },
             LEGACY,
@@ -123,47 +143,47 @@ export const UI_LAYOUT: Readonly<Record<DomainTableKey, TableLayout>> = {
         legacyViews: ['Intake\\Authorization Files'],
     },
     engraving_job: {
-        list: ['number', 'awards_case', 'award_line', 'engraver', 'font', 'text', 'status', 'priority_handling', 'started', 'completed', 'rework_count'],
+        list: ['number', 'legacy_number', 'awards_case', 'award_line', 'engraver', 'machine', 'font', 'text', 'status', 'priority', 'queued', 'started', 'completed', 'rework_count'],
         sections: [
             {
                 caption: 'Engraving job',
-                left: ['number', 'awards_case', 'award_line', 'engraver', 'priority_handling'],
-                right: ['status', 'font', 'started', 'completed', 'rework_count'],
+                left: ['number', 'legacy_number', 'awards_case', 'award_line', 'engraver', 'machine', 'priority', 'priority_handling'],
+                right: ['status', 'font', 'queued', 'started', 'completed', 'rework_count', 'proof_checked'],
             },
-            { caption: 'Engraving', left: ['text', 'qc_notes'] },
+            { caption: 'Engraving', left: ['text', 'items', 'qc_notes'] },
             LEGACY,
         ],
         relatedLists: [],
         legacyViews: ['Engraving\\Queue', 'Engraving\\By Engraver'],
     },
     shipment: {
-        list: ['number', 'awards_case', 'carrier', 'service_level', 'tracking_number', 'pieces', 'shipped', 'delivered', 'status'],
+        list: ['number', 'legacy_number', 'awards_case', 'carrier', 'service_level', 'tracking_number', 'pieces', 'partial', 'picked', 'shipped', 'delivered', 'status'],
         sections: [
             {
                 caption: 'Shipment',
-                left: ['number', 'awards_case', 'carrier', 'service_level', 'tracking_number'],
-                right: ['status', 'pieces', 'weight_oz', 'shipped', 'delivered', 'shipped_by'],
+                left: ['number', 'legacy_number', 'awards_case', 'carrier', 'service_level', 'tracking_number', 'partial'],
+                right: ['status', 'pieces', 'weight_oz', 'picked', 'shipped', 'delivered', 'shipped_by'],
             },
-            { caption: 'Ship to', left: ['ship_to'] },
+            { caption: 'Ship to and contents', left: ['ship_to', 'contents', 'exception_note'] },
             LEGACY,
         ],
         relatedLists: [],
         legacyViews: ['Warehouse\\Shipments'],
     },
     heraldry_request: {
-        list: ['number', 'document_number', 'dodaac', 'uic', 'requisition_priority', 'requesting_unit', 'state', 'vendor', 'released_to_vendor', 'required_delivery_date', 'line_count', 'total_extended_price'],
+        list: ['number', 'document_number', 'dodaac', 'uic', 'requisition_priority', 'request_type', 'requesting_unit', 'state', 'vendor', 'released_to_vendor', 'required_delivery_date', 'line_count', 'total_extended_price'],
         listSums: ['line_count', 'total_extended_price'],
         sections: [
             {
                 caption: 'DD Form 1348-6 header',
-                left: ['number', 'document_number', 'dodaac', 'uic', 'requisition_priority', 'project_code', 'fund_code', 'signal_code'],
-                right: ['state', 'required_delivery_date', 'requesting_unit', 'requester_poc', 'requester_poc_email', 'requester_poc_phone', 'active'],
+                left: ['number', 'document_number', 'dodaac', 'uic', 'requisition_priority', 'project_code', 'fund_code', 'signal_code', 'supplementary_address'],
+                right: ['state', 'request_type', 'priority_handling', 'required_delivery_date', 'requesting_unit', 'requester', 'requester_poc', 'requester_poc_email', 'requester_poc_phone', 'active'],
             },
-            { caption: 'Ship to and justification', left: ['ship_to', 'justification'] },
+            { caption: 'Ship to and justification', left: ['ship_to_dodaac', 'ship_to', 'justification'] },
             {
                 caption: 'Review and vendor release',
-                left: ['submitted_at', 'submitted_by', 'reviewer', 'vendor'],
-                right: ['released_to_vendor', 'released_by', 'vendor_acknowledged', 'vendor_ship_date', 'vendor_tracking_number'],
+                left: ['submitted_at', 'submitted_by', 'reviewer', 'approved_at', 'vendor', 'legacy_vendor_key'],
+                right: ['released_to_vendor', 'released_by', 'vendor_acknowledged', 'estimated_ship_date', 'vendor_ship_date', 'vendor_tracking_number'],
             },
             {
                 caption: 'Totals',
@@ -185,8 +205,8 @@ export const UI_LAYOUT: Readonly<Record<DomainTableKey, TableLayout>> = {
         sections: [
             {
                 caption: 'Request line',
-                left: ['number', 'heraldry_request', 'line_number', 'heraldic_item', 'nsn_or_exception', 'nomenclature'],
-                right: ['status', 'unit_of_issue', 'quantity', 'unit_price', 'extended_price', 'vendor_quantity_shipped'],
+                left: ['number', 'heraldry_request', 'line_number', 'line_document_number', 'heraldic_item', 'nsn_or_exception', 'nomenclature', 'exception_data'],
+                right: ['status', 'unit_of_issue', 'quantity', 'unit_price', 'extended_price', 'vendor_quantity_shipped', 'vendor_ship_date'],
             },
             LEGACY,
         ],
@@ -198,8 +218,8 @@ export const UI_LAYOUT: Readonly<Record<DomainTableKey, TableLayout>> = {
         sections: [
             {
                 caption: 'Heraldic item',
-                left: ['number', 'stock_number', 'exception_item', 'nomenclature', 'category', 'drawing_number'],
-                right: ['unit_of_issue', 'unit_price', 'lead_time_days', 'preferred_vendor', 'active'],
+                left: ['number', 'stock_number', 'fsc', 'niin', 'exception_item', 'nomenclature', 'category', 'branch', 'drawing_number'],
+                right: ['unit_of_issue', 'unit_price', 'lead_time_days', 'max_qty_per_request', 'preferred_vendor', 'approved_vendors', 'reference', 'active'],
             },
             { caption: 'Description', left: ['description'] },
             LEGACY,
@@ -208,19 +228,19 @@ export const UI_LAYOUT: Readonly<Record<DomainTableKey, TableLayout>> = {
         legacyViews: ['Catalog\\Heraldic Items', 'Catalog\\By Category'],
     },
     ses_flag_request: {
-        list: ['number', 'requesting_office', 'executive_name', 'position_title', 'flag_type', 'quantity', 'state', 'appointment_date', 'approved_by', 'approved_at'],
+        list: ['number', 'legacy_number', 'requesting_office', 'executive_name', 'position_title', 'executive_tier', 'flag_type', 'quantity', 'state', 'vendor', 'approved_at', 'delivered_at'],
         listSums: ['quantity'],
         sections: [
             {
                 caption: 'SES flag request',
-                left: ['number', 'requesting_office', 'executive_name', 'position_title', 'appointment_date'],
-                right: ['state', 'flag_type', 'quantity', 'poc_email', 'poc_phone', 'active'],
+                left: ['number', 'legacy_number', 'requesting_office', 'dodaac', 'uic', 'executive_name', 'position_title', 'executive_tier', 'appointment_date'],
+                right: ['state', 'flag_type', 'legacy_flag_type', 'quantity', 'poc_email', 'poc_phone', 'active'],
             },
             { caption: 'Justification and delivery', left: ['justification', 'ship_to'] },
             {
-                caption: 'Decision',
-                left: ['approved_by', 'approved_at'],
-                right: ['rejection_reason', 'delivered_at'],
+                caption: 'Decision and fulfilment',
+                left: ['approved_by', 'approved_at', 'rejection_reason'],
+                right: ['vendor', 'released_to_vendor', 'delivered_at'],
             },
             LEGACY,
         ],
@@ -228,14 +248,18 @@ export const UI_LAYOUT: Readonly<Record<DomainTableKey, TableLayout>> = {
         legacyViews: ['SES\\Pending', 'SES\\All'],
     },
     vendor: {
-        list: ['number', 'name', 'cage_code', 'uei', 'contract_number', 'poc', 'email', 'portal_user', 'user_group', 'active'],
+        list: ['number', 'name', 'cage_code', 'uei', 'contract_number', 'poc', 'email', 'lead_time_days', 'portal_user', 'user_group', 'active'],
         sections: [
             {
                 caption: 'Vendor',
-                left: ['number', 'name', 'cage_code', 'uei', 'contract_number', 'capabilities'],
+                left: ['number', 'name', 'cage_code', 'uei', 'contract_number', 'capabilities', 'lead_time_days'],
                 right: ['poc', 'email', 'phone', 'active', 'state'],
             },
-            { caption: 'Portal access (replaces Readers fields)', left: ['portal_user'], right: ['user_group'] },
+            {
+                caption: 'Portal access (replaces Readers fields)',
+                left: ['portal_user', 'legacy_vendor_users'],
+                right: ['user_group', 'legacy_user_group'],
+            },
             { caption: 'Address', left: ['address'] },
             LEGACY,
         ],
@@ -246,14 +270,15 @@ export const UI_LAYOUT: Readonly<Record<DomainTableKey, TableLayout>> = {
         legacyViews: ['Vendors\\Active'],
     },
     case_note: {
-        list: ['number', 'awards_case', 'heraldry_request', 'note_type', 'noted_at', 'author', 'customer_visible', 'body'],
+        list: ['number', 'awards_case', 'heraldry_request', 'note_type', 'summary', 'noted_at', 'author', 'legacy_author', 'customer_visible', 'follow_up_date', 'follow_up_done'],
         sections: [
             {
                 caption: 'Case note',
-                left: ['number', 'awards_case', 'heraldry_request', 'note_type'],
-                right: ['noted_at', 'author', 'legacy_author', 'customer_visible'],
+                left: ['number', 'awards_case', 'heraldry_request', 'note_type', 'legacy_note_type', 'summary'],
+                right: ['noted_at', 'author', 'legacy_author', 'customer_visible', 'contact_name', 'contact_phone'],
             },
             { caption: 'Note', left: ['body'] },
+            { caption: 'Follow-up', left: ['follow_up_date'], right: ['follow_up_done'] },
             LEGACY,
         ],
         relatedLists: [],

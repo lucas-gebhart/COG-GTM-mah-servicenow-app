@@ -1,4 +1,3 @@
-/* eslint-disable no-undef, no-unused-vars, @typescript-eslint/no-require-imports */
 /**
  * SES flag request record producer (pre-insert). Whitelist-validates the free text and the
  * quantity range before the record is written; mapToField already copied the variables.

@@ -10,6 +10,7 @@
 import {
     CASE_STAGES,
     CATALOG_STATES,
+    LIFECYCLE_STATES,
     ENGRAVING_STATUSES,
     LEGACY_FORMS,
     LINE_STATUSES,
@@ -68,6 +69,7 @@ export const STATUS_TARGET_CHOICES: Readonly<Record<LegacyForm, Readonly<Record<
     HeraldicItem: CATALOG_STATES,
     SESFlagRequest: SES_FLAG_STATES,
     Vendor: CATALOG_STATES,
+    CaseNote: LIFECYCLE_STATES,
 }
 
 export const DEFAULT_STATUS_MAP: readonly StatusMapEntry[] = [
@@ -78,11 +80,12 @@ export const DEFAULT_STATUS_MAP: readonly StatusMapEntry[] = [
         warehouse: ['Warehouse', 'At Warehouse', 'Ready to Ship', 'WHSE', 'Packed'],
         shipped: ['Shipped', 'Mailed', 'In Transit', 'Sent'],
         closed: ['Closed', 'Complete', 'Completed', 'Closed - Complete', 'Delivered', 'Done'],
-        cancelled: ['Cancelled', 'Canceled', 'Cancel', 'Void', 'Withdrawn', 'Closed - Cancelled'],
+        cancelled: ['Cancelled', 'Canceled', 'Cancel', 'CXL', 'Void', 'Withdrawn', 'Closed - Cancelled'],
     }),
     ...entries(LEGACY_FORMS.award_line, 'status', {
         pending: ['Pending', 'New', 'Open', 'Authorized'],
-        in_progress: ['In Progress', 'Engraving', 'Assembly', 'Working'],
+        in_progress: ['In Progress', 'Engraving', 'Engraved', 'Assembly', 'Picked', 'Working'],
+        backordered: ['Backordered', 'Back Order', 'B/O', 'BO'],
         complete: ['Complete', 'Completed', 'Done', 'Shipped', 'Closed'],
         cancelled: ['Cancelled', 'Canceled', 'Void'],
     }),
@@ -95,7 +98,7 @@ export const DEFAULT_STATUS_MAP: readonly StatusMapEntry[] = [
         received: ['Received', 'New', 'Uploaded'],
         parsing: ['Parsing', 'Processing', 'In Progress'],
         parsed: ['Parsed', 'Imported', 'Complete', 'Completed', 'Loaded'],
-        partial: ['Parsed with errors', 'Partial', 'Imported with errors', 'Warnings'],
+        partial: ['Parsed with errors', 'Partial', 'Imported with errors', 'Imported with Errors', 'Warnings'],
         failed: ['Failed', 'Error', 'Rejected'],
     }),
     ...entries(LEGACY_FORMS.engraving_job, 'status', {
@@ -117,16 +120,17 @@ export const DEFAULT_STATUS_MAP: readonly StatusMapEntry[] = [
     ...entries(LEGACY_FORMS.heraldry_request, 'state', {
         draft: ['Draft', 'New', 'Open', 'Not Submitted'],
         submitted: ['Submitted', 'Pending', 'Pending Review', 'Received'],
-        in_review: ['In Review', 'Under Review', 'Review', 'Reviewing', 'DLA Review'],
+        in_review: ['In Review', 'Under Review', 'Review', 'Reviewing', 'DLA Review', 'Approved'],
         released_to_vendor: ['Released to Vendor', 'Released', 'Vendor', 'Sent to Vendor', 'Released - Vendor', 'At Vendor'],
         in_production: ['In Production', 'Production', 'Manufacturing', 'Being Made'],
-        shipped: ['Shipped', 'In Transit', 'Sent'],
+        shipped: ['Shipped', 'Shiped', 'Ship', 'In Transit', 'Sent'],
         complete: ['Complete', 'Completed', 'Closed', 'Delivered', 'Done'],
-        cancelled: ['Cancelled', 'Canceled', 'Cancel', 'Void', 'Withdrawn'],
+        cancelled: ['Cancelled', 'Canceled', 'Cancel', 'CXL', 'Void', 'Withdrawn'],
     }),
     ...entries(LEGACY_FORMS.request_line, 'status', {
         pending: ['Pending', 'New', 'Open', 'Draft'],
         in_progress: ['In Progress', 'Released', 'Production', 'In Production', 'Ordered'],
+        backordered: ['Backordered', 'Back Order', 'B/O', 'BO'],
         complete: ['Complete', 'Completed', 'Shipped', 'Delivered', 'Closed'],
         cancelled: ['Cancelled', 'Canceled', 'Void'],
     }),
@@ -138,14 +142,20 @@ export const DEFAULT_STATUS_MAP: readonly StatusMapEntry[] = [
         draft: ['Draft', 'New', 'Open'],
         submitted: ['Submitted', 'Pending', 'Received'],
         approved: ['Approved', 'Authorized', 'Validated'],
-        in_production: ['In Production', 'Production', 'Ordered'],
+        in_production: ['In Production', 'Production', 'Ordered', 'Released to Vendor', 'Released'],
         delivered: ['Delivered', 'Complete', 'Completed', 'Closed', 'Shipped'],
-        rejected: ['Rejected', 'Denied', 'Not Approved'],
+        rejected: ['Rejected', 'Denied', 'Not Approved', 'Returned'],
         cancelled: ['Cancelled', 'Canceled', 'Withdrawn', 'Void'],
     }),
     ...entries(LEGACY_FORMS.vendor, 'state', {
         active: ['Active', 'Approved', 'Current', 'Yes', ''],
         inactive: ['Inactive', 'Suspended', 'Debarred', 'No', 'Terminated'],
+    }),
+    // Case notes carry no legacy status; FollowUpDone drives the lifecycle state.
+    ...entries(LEGACY_FORMS.case_note, 'state', {
+        open: ['', 'No', 'Open', 'Follow-up pending'],
+        closed: ['Yes', 'Done', 'Closed', 'Complete'],
+        cancelled: ['Cancelled', 'Deleted', 'Void'],
     }),
 ]
 

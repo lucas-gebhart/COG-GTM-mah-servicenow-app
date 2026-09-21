@@ -8,7 +8,7 @@ import {
     MultiLineTextColumn,
     ReferenceColumn,
 } from '@servicenow/sdk/core'
-import { LEGACY_FORMS, LIMITS, MIGRATION_EXCEPTION_STATES, MIGRATION_EXCEPTION_TYPES } from '../../server/lib/domain'
+import { LEGACY_FORM_CHOICES, LIMITS, MIGRATION_EXCEPTION_STATES, MIGRATION_EXCEPTION_TYPES } from '../../server/lib/domain'
 
 /**
  * Quarantine for rows the transform maps could not load cleanly: orphaned lines
@@ -23,7 +23,7 @@ export const x_cog_mah_migration_exception = Table({
     schema: {
         number: StringColumn({ label: 'Number', maxLength: 40, default: 'javascript:getNextObjNumberPadded();', readOnly: true }),
         legacy_unid: StringColumn({ label: 'Legacy UNID (offending row)', maxLength: LIMITS.legacyUnid }),
-        legacy_form: ChoiceColumn({ label: 'Legacy form', choices: LEGACY_FORMS, dropdown: 'dropdown_with_none' }),
+        legacy_form: ChoiceColumn({ label: 'Legacy form', choices: LEGACY_FORM_CHOICES, dropdown: 'dropdown_with_none' }),
         legacy_status_raw: StringColumn({ label: 'Legacy status (raw)', maxLength: 100 }),
         legacy_last_modified: DateTimeColumn({ label: 'Legacy last modified' }),
         state: ChoiceColumn({ label: 'State', choices: MIGRATION_EXCEPTION_STATES, default: 'open', dropdown: 'dropdown_without_none' }),

@@ -1,4 +1,3 @@
-/* eslint-disable no-undef, @typescript-eslint/no-require-imports */
 /**
  * Script Include bridge for the aging engine so the nightly job can be triggered from a
  * background script or a UI action (`new x_cog_mah.MAHAging().runNow()`).

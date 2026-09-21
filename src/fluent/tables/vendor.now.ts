@@ -7,6 +7,7 @@ import {
     EmailColumn,
     MultiLineTextColumn,
     ReferenceColumn,
+    IntegerColumn,
 } from '@servicenow/sdk/core'
 import { CATALOG_STATES, LIMITS } from '../../server/lib/domain'
 
@@ -45,6 +46,9 @@ export const x_cog_mah_vendor = Table({
         }),
         user_group: ReferenceColumn({ label: 'User group', referenceTable: 'sys_user_group' }),
         capabilities: StringColumn({ label: 'Capabilities', maxLength: 255 }),
+        lead_time_days: IntegerColumn({ label: 'Lead time (days)', default: 30 }),
+        legacy_user_group: StringColumn({ label: 'Legacy vendor group name', maxLength: 60 }),
+        legacy_vendor_users: StringColumn({ label: 'Legacy vendor users (Notes names)', maxLength: 255 }),
     },
     index: [
         { name: 'idx_vnd_legacy_unid', unique: true, element: 'legacy_unid' },

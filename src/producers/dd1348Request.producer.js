@@ -1,4 +1,3 @@
-/* eslint-disable no-undef, no-unused-vars, @typescript-eslint/no-require-imports */
 /**
  * DD Form 1348-6 record producer (pre-insert). Normalizes the header, runs the shared header
  * validator so the requester gets field-level feedback before the before-insert business rule

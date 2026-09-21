@@ -7,6 +7,7 @@ import {
     IntegerColumn,
     MultiLineTextColumn,
     ReferenceColumn,
+    DateColumn,
 } from '@servicenow/sdk/core'
 import { FILE_FORMATS, LIFECYCLE_STATES, LIMITS, PARSE_STATUSES, SOURCE_AGENCIES } from '../../server/lib/domain'
 
@@ -42,6 +43,16 @@ export const x_cog_mah_authorization_file = Table({
         source_hash: StringColumn({ label: 'Source hash (SHA-256)', maxLength: 64, readOnly: true }),
         submitted_by: ReferenceColumn({ label: 'Submitted by', referenceTable: 'sys_user' }),
         intake_channel: StringColumn({ label: 'Intake channel', maxLength: 40, default: 'manual' }),
+        legacy_number: StringColumn({ label: 'Legacy file key', maxLength: 255 }),
+        layout: StringColumn({ label: 'Layout', maxLength: 20 }),
+        transmission_date: DateColumn({ label: 'Transmission date' }),
+        authorization_date: DateColumn({ label: 'Authorization date' }),
+        imported_at: DateTimeColumn({ label: 'Imported' }),
+        cases_created: IntegerColumn({ label: 'Cases created', default: 0 }),
+        lines_created: IntegerColumn({ label: 'Lines created', default: 0 }),
+        requesters_created: IntegerColumn({ label: 'Requesters created', default: 0 }),
+        requesters_matched: IntegerColumn({ label: 'Requesters matched', default: 0 }),
+        checksum_match: BooleanColumn({ label: 'Trailer checksum matched', default: true }),
     },
     index: [
         { name: 'idx_file_legacy_unid', unique: true, element: 'legacy_unid' },

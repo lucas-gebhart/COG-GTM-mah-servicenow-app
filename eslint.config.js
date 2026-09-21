@@ -12,6 +12,7 @@ const serviceNowServerGlobals = {
     GlideSysAttachment: 'readonly',
     GlideStringUtil: 'readonly',
     Class: 'readonly',
+    require: 'readonly',
     JSON: 'readonly',
     current: 'writable',
     previous: 'readonly',
@@ -87,8 +88,8 @@ export default tseslint.config(
         },
     },
     {
-        // Script Includes and other server-side JS included via Now.include()
-        files: ['src/server/**/*.server.js'],
+        // Script Includes, record producer scripts and other server-side JS included via Now.include()
+        files: ['src/server/**/*.server.js', 'src/includes/**/*.js', 'src/producers/**/*.js'],
         languageOptions: {
             ecmaVersion: 2021,
             sourceType: 'script',
@@ -99,6 +100,9 @@ export default tseslint.config(
             'prefer-const': 'off',
             eqeqeq: ['error', 'smart'],
             'no-undef': 'error',
+            '@typescript-eslint/no-unused-vars': 'off',
+            '@typescript-eslint/no-require-imports': 'off',
+            '@typescript-eslint/prefer-for-of': 'off',
             'no-unused-vars': ['error', { vars: 'local', args: 'after-used' }],
         },
     },
@@ -114,6 +118,8 @@ export default tseslint.config(
             'no-var': 'off',
             'prefer-const': 'off',
             'no-undef': 'error',
+            '@typescript-eslint/no-unused-vars': 'off',
+            '@typescript-eslint/prefer-for-of': 'off',
             'no-unused-vars': ['error', { vars: 'local', args: 'none' }],
         },
     },

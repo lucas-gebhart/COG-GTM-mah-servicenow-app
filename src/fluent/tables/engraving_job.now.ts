@@ -8,7 +8,7 @@ import {
     MultiLineTextColumn,
     ReferenceColumn,
 } from '@servicenow/sdk/core'
-import { ENGRAVING_FONTS, ENGRAVING_STATUSES, LIFECYCLE_STATES, LIMITS } from '../../server/lib/domain'
+import { CASE_PRIORITIES, ENGRAVING_FONTS, ENGRAVING_STATUSES, LIFECYCLE_STATES, LIMITS } from '../../server/lib/domain'
 
 /** Replaces the Domino `EngravingJob` form: the engraver's work queue for one award line. */
 export const x_cog_mah_engraving_job = Table({
@@ -25,7 +25,8 @@ export const x_cog_mah_engraving_job = Table({
         state: ChoiceColumn({ label: 'State', choices: LIFECYCLE_STATES, default: 'open', dropdown: 'dropdown_without_none' }),
         active: BooleanColumn({ label: 'Active', default: true }),
 
-        award_line: ReferenceColumn({ label: 'Award line', referenceTable: 'x_cog_mah_award_line', mandatory: true, cascadeRule: 'delete' }),
+        legacy_number: StringColumn({ label: 'Legacy job number', maxLength: 40 }),
+        award_line: ReferenceColumn({ label: 'Award line', referenceTable: 'x_cog_mah_award_line', cascadeRule: 'delete' }),
         awards_case: ReferenceColumn({ label: 'Awards case', referenceTable: 'x_cog_mah_awards_case', cascadeRule: 'delete' }),
         engraver: ReferenceColumn({
             label: 'Engraver',
@@ -35,7 +36,12 @@ export const x_cog_mah_engraving_job = Table({
         }),
         font: ChoiceColumn({ label: 'Font', choices: ENGRAVING_FONTS, default: 'roman_block', dropdown: 'dropdown_without_none' }),
         text: StringColumn({ label: 'Engraving text', maxLength: LIMITS.engravingText, mandatory: true }),
+        items: MultiLineTextColumn({ label: 'Items (award :: text)', maxLength: 1000 }),
+        machine: StringColumn({ label: 'Machine', maxLength: 20 }),
+        proof_checked: BooleanColumn({ label: 'Proof checked', default: false }),
+        queued: DateTimeColumn({ label: 'Queued' }),
         status: ChoiceColumn({ label: 'Status', choices: ENGRAVING_STATUSES, default: 'queued', dropdown: 'dropdown_without_none' }),
+        priority: ChoiceColumn({ label: 'Priority', choices: CASE_PRIORITIES, default: 'routine', dropdown: 'dropdown_without_none' }),
         priority_handling: BooleanColumn({ label: 'Priority handling', default: false }),
         started: DateTimeColumn({ label: 'Started' }),
         completed: DateTimeColumn({ label: 'Completed' }),

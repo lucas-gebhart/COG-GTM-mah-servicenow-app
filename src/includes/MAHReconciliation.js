@@ -1,4 +1,3 @@
-/* eslint-disable no-undef, @typescript-eslint/no-require-imports */
 /**
  * Script Include bridge: exposes the reconciliation module to reports, scheduled
  * reports and background scripts (`new x_cog_mah.MAHReconciliation().report()`).

@@ -1,4 +1,3 @@
-/* eslint-disable no-undef, no-unused-vars, @typescript-eslint/no-require-imports */
 /**
  * Status inquiry record producer (pre-insert script). Runs the parameterized lookup in
  * src/server/services/statusInquiry.ts and echoes only operational status. Nothing is

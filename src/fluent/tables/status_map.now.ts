@@ -6,7 +6,7 @@ import {
     DateTimeColumn,
     IntegerColumn,
 } from '@servicenow/sdk/core'
-import { LEGACY_FORMS, LIFECYCLE_STATES, LIMITS } from '../../server/lib/domain'
+import { LEGACY_FORM_CHOICES, LIFECYCLE_STATES, LIMITS } from '../../server/lib/domain'
 
 const TARGET_FIELDS = {
     stage: 'stage',
@@ -28,7 +28,7 @@ export const x_cog_mah_status_map = Table({
     schema: {
         number: StringColumn({ label: 'Number', maxLength: 40, default: 'javascript:getNextObjNumberPadded();', readOnly: true }),
         legacy_unid: StringColumn({ label: 'Legacy UNID', maxLength: LIMITS.legacyUnid, unique: true }),
-        legacy_form: ChoiceColumn({ label: 'Legacy form', choices: LEGACY_FORMS, mandatory: true, dropdown: 'dropdown_with_none' }),
+        legacy_form: ChoiceColumn({ label: 'Legacy form', choices: LEGACY_FORM_CHOICES, mandatory: true, dropdown: 'dropdown_with_none' }),
         legacy_status_raw: StringColumn({ label: 'Legacy status (example raw)', maxLength: 100 }),
         legacy_last_modified: DateTimeColumn({ label: 'Legacy last modified' }),
         state: ChoiceColumn({ label: 'State', choices: LIFECYCLE_STATES, default: 'open', dropdown: 'dropdown_without_none' }),

@@ -6,6 +6,7 @@ import {
     DateTimeColumn,
     MultiLineTextColumn,
     ReferenceColumn,
+    DateColumn,
 } from '@servicenow/sdk/core'
 import { LIFECYCLE_STATES, LIMITS, NOTE_TYPES } from '../../server/lib/domain'
 
@@ -36,6 +37,12 @@ export const x_cog_mah_case_note = Table({
         legacy_author: StringColumn({ label: 'Legacy author (Notes name)', maxLength: 160 }),
         body: MultiLineTextColumn({ label: 'Note', maxLength: LIMITS.justification, mandatory: true }),
         customer_visible: BooleanColumn({ label: 'Customer visible', default: false }),
+        legacy_note_type: StringColumn({ label: 'Legacy note type', maxLength: 40 }),
+        summary: StringColumn({ label: 'Summary', maxLength: 160 }),
+        contact_name: StringColumn({ label: 'Contact name', maxLength: LIMITS.name }),
+        contact_phone: StringColumn({ label: 'Contact phone', maxLength: LIMITS.phone }),
+        follow_up_date: DateColumn({ label: 'Follow-up date' }),
+        follow_up_done: BooleanColumn({ label: 'Follow-up done', default: false }),
     },
     index: [
         { name: 'idx_note_legacy_unid', unique: true, element: 'legacy_unid' },

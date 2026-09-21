@@ -7,6 +7,7 @@ import {
     DecimalColumn,
     IntegerColumn,
     ReferenceColumn,
+    DateColumn,
 } from '@servicenow/sdk/core'
 import { LIFECYCLE_STATES, LIMITS, LINE_STATUSES, UNITS_OF_ISSUE } from '../../server/lib/domain'
 
@@ -36,6 +37,9 @@ export const x_cog_mah_request_line = Table({
         }),
         nsn_or_exception: StringColumn({ label: 'NSN or exception', maxLength: LIMITS.stockNumber }),
         nomenclature: StringColumn({ label: 'Nomenclature (snapshot)', maxLength: LIMITS.name }),
+        line_document_number: StringColumn({ label: 'Line document number', maxLength: 20 }),
+        exception_data: StringColumn({ label: 'Exception data (non-NSN item)', maxLength: 255 }),
+        vendor_ship_date: DateColumn({ label: 'Vendor ship date' }),
         unit_of_issue: ChoiceColumn({ label: 'Unit of issue', choices: UNITS_OF_ISSUE, default: 'EA', dropdown: 'dropdown_without_none' }),
         quantity: IntegerColumn({ label: 'Quantity', default: 1, mandatory: true }),
         unit_price: DecimalColumn({ label: 'Unit price', scale: 2, default: 0 }),

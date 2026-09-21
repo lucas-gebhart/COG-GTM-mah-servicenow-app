@@ -102,13 +102,15 @@ export function normalizeLegacyDate(raw: unknown): NormalizedDate | null {
     }
 
     // Notes: 07-Mar-2024, 07-MAR-2024 14:05:00, 7 Mar 2024
-    m = /^(\d{1,2})[- ]([A-Za-z]{3,4})[- ](\d{4})(?:\s+(\d{1,2}:\d{2}(?::\d{2})?)\s*(AM|PM|am|pm)?)?$/.exec(s)
+    m = /^(\d{1,2})[- ]([A-Za-z]{3,4})[- ](\d{2}|\d{4})(?:\s+(\d{1,2}:\d{2}(?::\d{2})?)\s*(AM|PM|am|pm)?)?$/.exec(s)
     if (m) {
         const mon = MONTHS[(m[2] ?? '').toUpperCase()]
         if (!mon) return null
         const time = parseTime(m[4], m[5])
         if (!time) return null
-        return build(Number(m[3]), mon, Number(m[1]), time[0], time[1], time[2], 'notes')
+        let y = Number(m[3])
+        if (y < 100) y += y >= 70 ? 1900 : 2000
+        return build(y, mon, Number(m[1]), time[0], time[1], time[2], 'notes')
     }
 
     // Compact: 20240307 or 20240307140500

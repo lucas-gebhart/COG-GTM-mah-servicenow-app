@@ -48,7 +48,12 @@ export const x_cog_mah_heraldry_request = Table({
         signal_code: StringColumn({ label: 'Signal code', maxLength: 1, default: 'A' }),
         required_delivery_date: DateColumn({ label: 'Required delivery date' }),
 
+        request_type: StringColumn({ label: 'Request type', maxLength: 40 }),
+        priority_handling: BooleanColumn({ label: 'Expedite', default: false }),
+        supplementary_address: StringColumn({ label: 'Supplementary address', maxLength: LIMITS.dodaac }),
+        ship_to_dodaac: StringColumn({ label: 'Ship-to DODAAC', maxLength: LIMITS.dodaac }),
         requesting_unit: StringColumn({ label: 'Requesting unit', maxLength: LIMITS.name }),
+        requester: ReferenceColumn({ label: 'Requester (unit POC)', referenceTable: 'x_cog_mah_requester', cascadeRule: 'clear' }),
         requester_poc: StringColumn({ label: 'Requester POC', maxLength: LIMITS.name, mandatory: true }),
         requester_poc_email: EmailColumn({ label: 'POC email', maxLength: LIMITS.email }),
         requester_poc_phone: StringColumn({ label: 'POC phone', maxLength: LIMITS.phone }),
@@ -58,6 +63,9 @@ export const x_cog_mah_heraldry_request = Table({
         vendor: ReferenceColumn({ label: 'Vendor', referenceTable: 'x_cog_mah_vendor', cascadeRule: 'restrict' }),
         released_to_vendor: DateColumn({ label: 'Released to vendor' }),
         released_by: ReferenceColumn({ label: 'Released by', referenceTable: 'sys_user' }),
+        approved_at: DateTimeColumn({ label: 'Approved' }),
+        estimated_ship_date: DateColumn({ label: 'Estimated ship date' }),
+        legacy_vendor_key: StringColumn({ label: 'Legacy vendor key', maxLength: LIMITS.cageCode }),
         submitted_at: DateTimeColumn({ label: 'Submitted' }),
         submitted_by: ReferenceColumn({ label: 'Submitted by', referenceTable: 'sys_user' }),
         reviewer: ReferenceColumn({

@@ -39,6 +39,12 @@ export const x_cog_mah_heraldic_item = Table({
         lead_time_days: IntegerColumn({ label: 'Lead time (days)', default: 30 }),
         preferred_vendor: ReferenceColumn({ label: 'Preferred vendor', referenceTable: 'x_cog_mah_vendor', cascadeRule: 'clear' }),
         drawing_number: StringColumn({ label: 'TIOH drawing number', maxLength: 40 }),
+        branch: StringColumn({ label: 'Branch / regiment', maxLength: 60 }),
+        fsc: StringColumn({ label: 'Federal supply class', maxLength: 4 }),
+        niin: StringColumn({ label: 'NIIN', maxLength: 11 }),
+        max_qty_per_request: IntegerColumn({ label: 'Max quantity per request', default: 0 }),
+        approved_vendors: StringColumn({ label: 'Approved vendor CAGE codes', maxLength: 255 }),
+        reference: StringColumn({ label: 'Regulatory reference', maxLength: 60 }),
     },
     index: [
         { name: 'idx_item_legacy_unid', unique: true, element: 'legacy_unid' },

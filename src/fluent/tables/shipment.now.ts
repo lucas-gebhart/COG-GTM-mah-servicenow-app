@@ -25,7 +25,10 @@ export const x_cog_mah_shipment = Table({
         state: ChoiceColumn({ label: 'State', choices: LIFECYCLE_STATES, default: 'open', dropdown: 'dropdown_without_none' }),
         active: BooleanColumn({ label: 'Active', default: true }),
 
+        legacy_number: StringColumn({ label: 'Legacy shipment number', maxLength: 40 }),
         awards_case: ReferenceColumn({ label: 'Awards case', referenceTable: 'x_cog_mah_awards_case', mandatory: true, cascadeRule: 'delete' }),
+        partial: BooleanColumn({ label: 'Partial shipment', default: false }),
+        contents: StringColumn({ label: 'Contents', maxLength: 255 }),
         carrier: ChoiceColumn({ label: 'Carrier', choices: CARRIERS, default: 'usps', dropdown: 'dropdown_without_none' }),
         service_level: StringColumn({ label: 'Service level', maxLength: 40 }),
         tracking_number: StringColumn({ label: 'Tracking number', maxLength: 40 }),
@@ -34,6 +37,8 @@ export const x_cog_mah_shipment = Table({
         ship_to: MultiLineTextColumn({ label: 'Ship to (snapshot)', maxLength: 400 }),
         shipped: DateTimeColumn({ label: 'Shipped' }),
         delivered: DateTimeColumn({ label: 'Delivered' }),
+        picked: DateTimeColumn({ label: 'Picked' }),
+        exception_note: StringColumn({ label: 'Exception note', maxLength: 255 }),
         status: ChoiceColumn({ label: 'Status', choices: SHIPMENT_STATUSES, default: 'pending', dropdown: 'dropdown_without_none' }),
         shipped_by: ReferenceColumn({
             label: 'Shipped by',

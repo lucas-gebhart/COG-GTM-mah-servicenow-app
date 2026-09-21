@@ -47,7 +47,7 @@ export const NUMBER_PREFIXES = {
     case_note: 'MCN',
     status_map: 'MSM',
     migration_exception: 'MMX',
-} as const satisfies Record<DomainTableKey, string>
+} as const
 
 /** Legacy Domino form names (the `Form` item on every Notes document). */
 export const LEGACY_FORMS = {
@@ -62,9 +62,32 @@ export const LEGACY_FORMS = {
     heraldic_item: 'HeraldicItem',
     ses_flag_request: 'SESFlagRequest',
     vendor: 'Vendor',
+    case_note: 'CaseNote',
 } as const
 
 export type LegacyForm = (typeof LEGACY_FORMS)[keyof typeof LEGACY_FORMS]
+
+/** Choice list keyed by the legacy form name itself, so `legacy_form` stores the same literal on every table. */
+export const LEGACY_FORM_CHOICES = {
+    AwardsCase: 'AwardsCase',
+    AwardLine: 'AwardLine',
+    Requester: 'Requester',
+    AuthorizationFile: 'AuthorizationFile',
+    EngravingJob: 'EngravingJob',
+    ShipmentRecord: 'ShipmentRecord',
+    Request: 'Request',
+    RequestLine: 'RequestLine',
+    HeraldicItem: 'HeraldicItem',
+    SESFlagRequest: 'SESFlagRequest',
+    Vendor: 'Vendor',
+    CaseNote: 'CaseNote',
+} as const
+
+// Compile-time shape checks kept out of the object literals so the Fluent parser can resolve them.
+const _numberPrefixesCheck: Readonly<Record<DomainTableKey, string>> = NUMBER_PREFIXES
+const _legacyFormChoicesCheck: Readonly<Record<LegacyForm, LegacyForm>> = LEGACY_FORM_CHOICES
+void _numberPrefixesCheck
+void _legacyFormChoicesCheck
 
 /** Coarse lifecycle state shared by every domain table. */
 export const LIFECYCLE_STATES = {
@@ -124,7 +147,57 @@ export const AGING_THRESHOLDS = { amberDays: 60, redDays: 75 } as const
 export const SOURCE_AGENCIES = {
     hrc: 'HRC',
     nprc: 'NPRC',
+    congressional: 'Congressional inquiry',
+    manual: 'Manual entry',
     other: 'Other',
+} as const
+
+/** Case handling priority (legacy `Priority` item on AwardsCase / EngravingJob). */
+export const CASE_PRIORITIES = {
+    routine: 'Routine',
+    expedite: 'Expedite',
+    congressional: 'Congressional',
+} as const
+export type CasePriority = keyof typeof CASE_PRIORITIES
+
+/** Veteran component of service (legacy `Branch` item). */
+export const SERVICE_COMPONENTS = {
+    regular_army: 'Regular Army',
+    army_of_the_united_states: 'Army of the United States',
+    army_reserve: 'Army Reserve',
+    army_national_guard: 'Army National Guard',
+    army_air_forces: 'Army Air Forces',
+    womens_army_corps: "Women's Army Corps",
+    other: 'Other',
+} as const
+
+export const SERVICE_ERAS = {
+    world_war_ii: 'World War II',
+    korea: 'Korea',
+    cold_war: 'Cold War',
+    vietnam: 'Vietnam',
+    gulf_war: 'Gulf War',
+    global_war_on_terrorism: 'Global War on Terrorism',
+    peacetime: 'Peacetime',
+    other: 'Other',
+} as const
+
+export const NOK_RELATIONSHIPS = {
+    self: 'Self (veteran)',
+    spouse: 'Spouse',
+    son: 'Son',
+    daughter: 'Daughter',
+    parent: 'Parent',
+    sibling: 'Sibling',
+    grandchild: 'Grandchild',
+    other_nok: 'Other next of kin',
+    unit: 'Unit / organization',
+} as const
+
+export const QC_RESULTS = {
+    pending: 'Pending',
+    pass: 'Pass',
+    fail_rework: 'Fail - rework',
 } as const
 export type SourceAgency = keyof typeof SOURCE_AGENCIES
 
@@ -160,6 +233,7 @@ export const NOTE_TYPES = {
 export const LINE_STATUSES = {
     pending: 'Pending',
     in_progress: 'In progress',
+    backordered: 'Backordered',
     complete: 'Complete',
     cancelled: 'Cancelled',
     unmapped: 'Unmapped',
@@ -333,8 +407,78 @@ export const AWARD_CATALOG = {
     parachutist_badge: 'Parachutist Badge',
     presidential_unit_citation: 'Presidential Unit Citation (Army)',
     meritorious_unit_commendation: 'Meritorious Unit Commendation',
+    medal_of_honor: 'Medal of Honor',
+    distinguished_service_medal: 'Distinguished Service Medal',
+    american_defense_service_medal: 'American Defense Service Medal',
+    armed_forces_expeditionary_medal: 'Armed Forces Expeditionary Medal',
+    republic_of_vietnam_campaign_medal: 'Republic of Vietnam Campaign Medal',
+    republic_of_vietnam_gallantry_cross_unit_citation: 'Republic of Vietnam Gallantry Cross Unit Citation',
+    republic_of_korea_war_service_medal: 'Republic of Korea War Service Medal',
+    united_nations_service_medal_korea: 'United Nations Service Medal (Korea)',
+    philippine_liberation_medal: 'Philippine Liberation Medal',
+    honorable_service_lapel_button: 'Honorable Service Lapel Button',
+    gold_star_lapel_button: 'Gold Star Lapel Button',
+    other: 'Other (see legacy award name)',
 } as const
 export type AwardKey = keyof typeof AWARD_CATALOG
+
+/** Legacy `AwardCode` item → catalog key. Codes are the HRC/NPRC authorization-file abbreviations. */
+export const AWARD_CODE_MAP: Readonly<Record<string, AwardKey>> = {
+    MOH: 'medal_of_honor',
+    DSC: 'distinguished_service_cross',
+    DSM: 'distinguished_service_medal',
+    SS: 'silver_star',
+    LM: 'legion_of_merit',
+    DFC: 'distinguished_flying_cross',
+    SM: 'soldiers_medal',
+    BSM: 'bronze_star_medal',
+    PH: 'purple_heart',
+    MSM: 'meritorious_service_medal',
+    AM: 'air_medal',
+    ARCOM: 'army_commendation_medal',
+    AAM: 'army_achievement_medal',
+    POW: 'prisoner_of_war_medal',
+    GCM: 'army_good_conduct_medal',
+    ARCAM: 'army_reserve_components_achievement_medal',
+    NDSM: 'national_defense_service_medal',
+    KSM: 'korean_service_medal',
+    VSM: 'vietnam_service_medal',
+    SWASM: 'southwest_asia_service_medal',
+    KCM: 'kosovo_campaign_medal',
+    'ACM-A': 'afghanistan_campaign_medal',
+    ICM: 'iraq_campaign_medal',
+    GWOTEM: 'global_war_on_terrorism_expeditionary_medal',
+    GWOTSM: 'global_war_on_terrorism_service_medal',
+    KDSM: 'korea_defense_service_medal',
+    AFSM: 'armed_forces_service_medal',
+    HSM: 'humanitarian_service_medal',
+    MOVSM: 'military_outstanding_volunteer_service_medal',
+    AFRM: 'armed_forces_reserve_medal',
+    NCOPDR: 'noncommissioned_officer_professional_development_ribbon',
+    ASR: 'army_service_ribbon',
+    OSR: 'overseas_service_ribbon',
+    ACM: 'american_campaign_medal',
+    APCM: 'asiatic_pacific_campaign_medal',
+    EAMECM: 'european_african_middle_eastern_campaign_medal',
+    WWIIVM: 'world_war_ii_victory_medal',
+    AOM: 'army_of_occupation_medal',
+    CIB: 'combat_infantryman_badge',
+    CMB: 'combat_medical_badge',
+    CAB: 'combat_action_badge',
+    EIB: 'expert_infantryman_badge',
+    PB: 'parachutist_badge',
+    PUC: 'presidential_unit_citation',
+    MUC: 'meritorious_unit_commendation',
+    ADSM: 'american_defense_service_medal',
+    AFEM: 'armed_forces_expeditionary_medal',
+    RVNCM: 'republic_of_vietnam_campaign_medal',
+    RVNGC: 'republic_of_vietnam_gallantry_cross_unit_citation',
+    ROKWSM: 'republic_of_korea_war_service_medal',
+    UNSMK: 'united_nations_service_medal_korea',
+    PLM: 'philippine_liberation_medal',
+    HSLB: 'honorable_service_lapel_button',
+    GSLB: 'gold_star_lapel_button',
+}
 
 /** Appurtenances / devices worn on the suspension or service ribbon. */
 export const AWARD_DEVICES = {
@@ -362,7 +506,11 @@ export const MIGRATION_EXCEPTION_TYPES = {
     invalid_reference: 'Unresolvable reference',
     validation: 'Contract validation failure',
     rejected_row: 'Row rejected by transform',
+    unmapped_value: 'Legacy value has no target choice',
+    contradictory_source: 'Contradictory legacy source data',
+    duplicate_business_key: 'Duplicate legacy business key',
 } as const
+export type MigrationExceptionType = keyof typeof MIGRATION_EXCEPTION_TYPES
 
 export const MIGRATION_EXCEPTION_STATES = {
     open: 'Open',

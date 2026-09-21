@@ -1,4 +1,3 @@
-/* eslint-disable no-undef, no-unused-vars */
 /**
  * Live extended price on x_cog_mah_request_line (quantity x unit price, 2 dp). The server
  * before rule recomputes it authoritatively (src/server/rules/requestLine.ts).

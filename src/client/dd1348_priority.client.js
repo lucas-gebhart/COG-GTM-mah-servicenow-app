@@ -1,4 +1,3 @@
-/* eslint-disable no-undef, no-unused-vars */
 function onChange(control, oldValue, newValue, isLoading) {
     if (isLoading || newValue === '') return
     var n = parseInt(newValue, 10)

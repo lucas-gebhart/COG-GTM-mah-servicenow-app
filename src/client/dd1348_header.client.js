@@ -1,4 +1,3 @@
-/* eslint-disable no-undef, no-unused-vars */
 /**
  * DD Form 1348-6 header — client-side field behaviour on x_cog_mah_heraldry_request.
  * Immediate operator feedback only; the before business rule (src/server/rules/heraldryRequest.ts)

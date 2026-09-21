@@ -6,6 +6,7 @@ import {
     DateTimeColumn,
     IntegerColumn,
     ReferenceColumn,
+    DateColumn,
 } from '@servicenow/sdk/core'
 import { AWARD_CATALOG, AWARD_DEVICES, LIFECYCLE_STATES, LIMITS, LINE_STATUSES } from '../../server/lib/domain'
 
@@ -27,6 +28,12 @@ export const x_cog_mah_award_line = Table({
         awards_case: ReferenceColumn({ label: 'Awards case', referenceTable: 'x_cog_mah_awards_case', mandatory: true, cascadeRule: 'delete' }),
         line_number: IntegerColumn({ label: 'Line', default: 1 }),
         award_name: ChoiceColumn({ label: 'Award', choices: AWARD_CATALOG, mandatory: true, dropdown: 'dropdown_with_none' }),
+        legacy_award_name: StringColumn({ label: 'Legacy award name', maxLength: 100 }),
+        legacy_award_code: StringColumn({ label: 'Legacy award code', maxLength: 12 }),
+        set_type: StringColumn({ label: 'Set type', maxLength: 40 }),
+        stock_number: StringColumn({ label: 'Stock number', maxLength: LIMITS.stockNumber }),
+        authority: StringColumn({ label: 'Authority', maxLength: 100 }),
+        backorder_eta: DateColumn({ label: 'Backorder ETA' }),
         device: ChoiceColumn({ label: 'Device / appurtenance', choices: AWARD_DEVICES, default: 'none', dropdown: 'dropdown_without_none' }),
         device_count: IntegerColumn({ label: 'Device count', default: 0 }),
         quantity: IntegerColumn({ label: 'Quantity', default: 1, mandatory: true }),

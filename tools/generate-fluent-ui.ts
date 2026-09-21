@@ -37,7 +37,10 @@ export function declaredColumns(): Record<DomainTableKey, Set<string>> {
         const key = file.replace('.now.ts', '') as DomainTableKey
         const src = readFileSync(TABLES_DIR + file, 'utf8')
         const cols = new Set<string>(PLATFORM_FIELDS)
-        for (const m of src.matchAll(/^ {8}([a-z0-9_]+): [A-Za-z]+Column\(/gm)) cols.add(m[1])
+        for (const m of src.matchAll(/^ {8}([a-z0-9_]+): [A-Za-z]+Column\(/gm)) {
+            const col = m[1]
+            if (col !== undefined) cols.add(col)
+        }
         out[key] = cols
     }
     return out

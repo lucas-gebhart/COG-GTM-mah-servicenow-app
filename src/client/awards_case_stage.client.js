@@ -1,4 +1,3 @@
-/* eslint-disable no-undef, no-unused-vars */
 function onLoad() {
     var flag = g_form.getValue('aging_flag')
     var days = g_form.getValue('days_in_stage')
