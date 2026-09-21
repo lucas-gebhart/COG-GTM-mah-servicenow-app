@@ -51,6 +51,7 @@ export const x_cog_mah_requester = Table({
 
         dedupe_key: StringColumn({ label: 'Dedupe key', maxLength: 120, readOnly: true }),
         merged_into: ReferenceColumn({ label: 'Merged into', referenceTable: 'x_cog_mah_requester', cascadeRule: 'clear' }),
+        merge_target: ReferenceColumn({ label: 'Merge into (survivor)', referenceTable: 'x_cog_mah_requester', cascadeRule: 'clear' }),
         duplicate_count: IntegerColumn({ label: 'Duplicates merged', default: 0, readOnly: true }),
         case_count: IntegerColumn({ label: 'Open cases', default: 0, readOnly: true }),
     },

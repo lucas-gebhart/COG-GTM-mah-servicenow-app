@@ -21,6 +21,7 @@ export type SecurityEventType =
     | 'intake_rejected'
     | 'intake_completed'
     | 'migration_exception'
+    | 'error'
 
 export interface SecurityEvent {
     event: SecurityEventType

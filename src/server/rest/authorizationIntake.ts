@@ -21,6 +21,7 @@ export interface IntakeRequest {
     body?: { dataString?: string }
     headers?: Record<string, string>
     queryParams?: Record<string, string[] | string>
+    pathParams?: Record<string, string>
     getHeader?: (name: string) => string | null
 }
 export interface IntakeResponse {

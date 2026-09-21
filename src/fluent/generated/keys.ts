@@ -5,6 +5,530 @@ declare global {
         namespace Internal {
             interface Keys extends KeysRegistry {
                 explicit: {
+                    acl_authorization_file_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: '2f844389800c4d2a893f2b2f53974f0c'
+                    }
+                    acl_authorization_file_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: '7338cb9bac1849038bffdd06d4861d98'
+                    }
+                    acl_authorization_file_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: 'fd1470a0064545a0bba102d7cc4aab8c'
+                    }
+                    acl_authorization_file_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: 'c77c9032ab6145adb6d3f3de6ef3cfb5'
+                    }
+                    acl_authorization_file_create: {
+                        table: 'sys_security_acl'
+                        id: 'b6f56247c4054dab86593812c68d81d3'
+                    }
+                    acl_authorization_file_delete: {
+                        table: 'sys_security_acl'
+                        id: '80c5199c38c64a3f83067fb54ed9c7d1'
+                    }
+                    acl_authorization_file_read: {
+                        table: 'sys_security_acl'
+                        id: 'b410275485334b6db0b0725c7b132063'
+                    }
+                    acl_authorization_file_write: {
+                        table: 'sys_security_acl'
+                        id: '4d51de133615486785971f92e91db5c8'
+                    }
+                    acl_award_line_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: '45303beaca57438a997f5e112d583e1e'
+                    }
+                    acl_award_line_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: '83db669144c54bfaa86b8b2966f6981b'
+                    }
+                    acl_award_line_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: '4f5695188b8c456e93a001bbff4695b5'
+                    }
+                    acl_award_line_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: '38a56c1bb75a45aa929d300f881e81a6'
+                    }
+                    acl_award_line_create: {
+                        table: 'sys_security_acl'
+                        id: '1776b42ee944466c876577264536dbef'
+                    }
+                    acl_award_line_delete: {
+                        table: 'sys_security_acl'
+                        id: 'e033584da4274bd0891c0ff022fe333b'
+                    }
+                    acl_award_line_read: {
+                        table: 'sys_security_acl'
+                        id: '1cda2cd65cc746488a970f8fbc39c3ef'
+                    }
+                    acl_award_line_write: {
+                        table: 'sys_security_acl'
+                        id: '393ca17367174579a831a5b90382ae3d'
+                    }
+                    acl_awards_case_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: 'ed0f12e67b8540049dca6e67af643a27'
+                    }
+                    acl_awards_case_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: 'de1874f071d14736a4fb058d218883b4'
+                    }
+                    acl_awards_case_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: 'e623aa28a9ae4b1892c8f35add434af3'
+                    }
+                    acl_awards_case_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: 'a11d5010f1e34577b25b76e0596377d0'
+                    }
+                    acl_awards_case_create: {
+                        table: 'sys_security_acl'
+                        id: '31f29687fab04458a36627087d3540e9'
+                    }
+                    acl_awards_case_delete: {
+                        table: 'sys_security_acl'
+                        id: '4a21c49027e343e5b7ab302d032afd96'
+                    }
+                    acl_awards_case_legacy_status_raw_write: {
+                        table: 'sys_security_acl'
+                        id: '916335bc86ac4e09a4385c5d804c7563'
+                    }
+                    acl_awards_case_legacy_unid_write: {
+                        table: 'sys_security_acl'
+                        id: '1783cefb7b3141bc867aa6018aadd7d3'
+                    }
+                    acl_awards_case_read: {
+                        table: 'sys_security_acl'
+                        id: '9e76351fd6764b4a9d92f5b8a5598f9c'
+                    }
+                    acl_awards_case_write: {
+                        table: 'sys_security_acl'
+                        id: 'd968a2ddfb254b998633ab831d6bc060'
+                    }
+                    acl_case_note_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: '05f762f171554e608ba1b6745918eb22'
+                    }
+                    acl_case_note_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: '278a3f5c9a164a0699863d32093d858b'
+                    }
+                    acl_case_note_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: '13555b2f1d354f0bb269b7fd0a07ab8a'
+                    }
+                    acl_case_note_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: '14cc5941a64d45ad8c058cbe5d0ee31c'
+                    }
+                    acl_case_note_create: {
+                        table: 'sys_security_acl'
+                        id: '94d8289f00af4198b886b8b858f88574'
+                    }
+                    acl_case_note_delete: {
+                        table: 'sys_security_acl'
+                        id: '29674c2d88ce4fa9a0539c9d66c2f3de'
+                    }
+                    acl_case_note_read: {
+                        table: 'sys_security_acl'
+                        id: 'f80c1f84779b4d7a87e6d0dd7ec06335'
+                    }
+                    acl_case_note_write: {
+                        table: 'sys_security_acl'
+                        id: '472b009f77b0460f967c4d61a1f1eb30'
+                    }
+                    acl_engraving_job_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: 'c8fd488563dd48b18ef1503601529ee3'
+                    }
+                    acl_engraving_job_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: 'a8787f3032374029a51de9dee3dc0c8c'
+                    }
+                    acl_engraving_job_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: '038ea1342d334f78ac7bd430ef21b8e0'
+                    }
+                    acl_engraving_job_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: '556fa9bd0c1d488b9e9f06f99a420628'
+                    }
+                    acl_engraving_job_create: {
+                        table: 'sys_security_acl'
+                        id: '3927b15dd98e49febb1c8b4279918660'
+                    }
+                    acl_engraving_job_delete: {
+                        table: 'sys_security_acl'
+                        id: '1e26855fa59040dcb667a0401529f2ed'
+                    }
+                    acl_engraving_job_read: {
+                        table: 'sys_security_acl'
+                        id: '173b2345eb0b479096301acb4a72c648'
+                    }
+                    acl_engraving_job_write: {
+                        table: 'sys_security_acl'
+                        id: 'dfdcb568ae7a44ad8af3a92b0b4f47b0'
+                    }
+                    acl_heraldic_item_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: '1ae4b6f8edfe47e48196f203e0fa828c'
+                    }
+                    acl_heraldic_item_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: '88b99e8370154b1289fe12eea3707bbe'
+                    }
+                    acl_heraldic_item_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: '3996f29637e447a49c8cfa576d14b079'
+                    }
+                    acl_heraldic_item_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: '954b88e0cb3343a3a4c7ef3e584bbe0a'
+                    }
+                    acl_heraldic_item_create: {
+                        table: 'sys_security_acl'
+                        id: '5c39e08e25ca4b7997cd62c5998c82a8'
+                    }
+                    acl_heraldic_item_delete: {
+                        table: 'sys_security_acl'
+                        id: 'cc05682ec2764c8f84ddc39b99cf9eca'
+                    }
+                    acl_heraldic_item_read: {
+                        table: 'sys_security_acl'
+                        id: '9b8cbe8883a34dc1a6e95975c5a409df'
+                    }
+                    acl_heraldic_item_write: {
+                        table: 'sys_security_acl'
+                        id: 'ff5a4abefd074c118e7c54fc87d5f6a4'
+                    }
+                    acl_heraldry_request_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: 'acd4ffd87663484492724320fca2c120'
+                    }
+                    acl_heraldry_request_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: '034e26fcdd914018be37d10a6730e614'
+                    }
+                    acl_heraldry_request_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: '179747aef5b745429d99331a4b488c25'
+                    }
+                    acl_heraldry_request_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: '19ec3725cf9748049e367263450fecd3'
+                    }
+                    acl_heraldry_request_create: {
+                        table: 'sys_security_acl'
+                        id: '24f8e7eb043e444d8e4326eb0da3c2c7'
+                    }
+                    acl_heraldry_request_delete: {
+                        table: 'sys_security_acl'
+                        id: '6ea6da3a1b08417bb18f66069269b733'
+                    }
+                    acl_heraldry_request_document_number_write: {
+                        table: 'sys_security_acl'
+                        id: '8067708abfa84c608f8d9a41b1182736'
+                    }
+                    acl_heraldry_request_fund_code_write: {
+                        table: 'sys_security_acl'
+                        id: '8599912a06d9443eabf7fcf6a2ae2c27'
+                    }
+                    acl_heraldry_request_justification_write: {
+                        table: 'sys_security_acl'
+                        id: 'fb89a0fc8a1944d78929d3c6aa7c49d0'
+                    }
+                    acl_heraldry_request_legacy_unid_write: {
+                        table: 'sys_security_acl'
+                        id: 'd3b2e88a6b4e421f9af8fb70bc1c4f82'
+                    }
+                    acl_heraldry_request_project_code_write: {
+                        table: 'sys_security_acl'
+                        id: 'e29f3be865f344fd9ea29c75549d011f'
+                    }
+                    acl_heraldry_request_read: {
+                        table: 'sys_security_acl'
+                        id: '915a7076f91946a0bcadefe81147efa8'
+                    }
+                    acl_heraldry_request_released_to_vendor_write: {
+                        table: 'sys_security_acl'
+                        id: '914df7866b3a4ac48df0f9d4c3273cdf'
+                    }
+                    acl_heraldry_request_vendor_write: {
+                        table: 'sys_security_acl'
+                        id: 'd8e1079b65624519a432dd8309d7e03e'
+                    }
+                    acl_heraldry_request_work_notes_read: {
+                        table: 'sys_security_acl'
+                        id: 'c86cfa02304b40e58a3db336d97c3afa'
+                    }
+                    acl_heraldry_request_work_notes_write: {
+                        table: 'sys_security_acl'
+                        id: 'ab99c30b4e6147c0a125852ba616f1bd'
+                    }
+                    acl_heraldry_request_write: {
+                        table: 'sys_security_acl'
+                        id: '3a41c863f48e48c5af11ca2fccac3cea'
+                    }
+                    acl_migration_exception_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: '8eec3ee211414922b824f43100a14a1f'
+                    }
+                    acl_migration_exception_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: '88a856f5724e4ee2ad37bd8253deae84'
+                    }
+                    acl_migration_exception_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: 'cac5dfe668a74447a3b16088017893e7'
+                    }
+                    acl_migration_exception_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: '600d82899bc14321a8c32aad5837d0a2'
+                    }
+                    acl_migration_exception_create: {
+                        table: 'sys_security_acl'
+                        id: '0075e039b63d44a7b3b7cb9dcb8201d8'
+                    }
+                    acl_migration_exception_delete: {
+                        table: 'sys_security_acl'
+                        id: '08f58a599f8b4969b1e4a019c3c155c7'
+                    }
+                    acl_migration_exception_read: {
+                        table: 'sys_security_acl'
+                        id: 'e18cdd3511204fc5bf043fcb41bf5517'
+                    }
+                    acl_migration_exception_write: {
+                        table: 'sys_security_acl'
+                        id: '4665f50b45ad4b14bf78456a08bb7b29'
+                    }
+                    acl_request_line_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: 'dc6ad0c003cd41f59361d126f7f5585f'
+                    }
+                    acl_request_line_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: 'c368584cd1ef450db8ec2cda25fb9786'
+                    }
+                    acl_request_line_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: '7e33999060fb42afa53c7fb58f8f0804'
+                    }
+                    acl_request_line_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: 'f866e940fae942619cb01ab1efca4173'
+                    }
+                    acl_request_line_create: {
+                        table: 'sys_security_acl'
+                        id: 'ab57b28ff495465990501d5f01e155ad'
+                    }
+                    acl_request_line_delete: {
+                        table: 'sys_security_acl'
+                        id: '69c264f79b7f44739393b600e52e36b1'
+                    }
+                    acl_request_line_quantity_write: {
+                        table: 'sys_security_acl'
+                        id: '9f9a14fc1fb845c4baead57f2cfa3402'
+                    }
+                    acl_request_line_read: {
+                        table: 'sys_security_acl'
+                        id: '5115a13fee104352bd5661507c6a4d76'
+                    }
+                    acl_request_line_unit_price_write: {
+                        table: 'sys_security_acl'
+                        id: '4355ec5eacb84bb187ac83663741543d'
+                    }
+                    acl_request_line_write: {
+                        table: 'sys_security_acl'
+                        id: '29c7e071c2fd4c1ca842cdd75d5e3154'
+                    }
+                    acl_requester_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: '81b2760cbcfc4f26a0e3006ffbb639d2'
+                    }
+                    acl_requester_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: '776817f52c834f158c0712042e11e56f'
+                    }
+                    acl_requester_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: 'a30a2c387f6f489fa34469d35697b6e8'
+                    }
+                    acl_requester_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: '186c22621b4b49b38a6d957a096a9e76'
+                    }
+                    acl_requester_create: {
+                        table: 'sys_security_acl'
+                        id: '39ce8bef44964f849199f43f9bab91e1'
+                    }
+                    acl_requester_delete: {
+                        table: 'sys_security_acl'
+                        id: '679fadd2ea8340f0bf24ca64a7356f1f'
+                    }
+                    acl_requester_dob_read: {
+                        table: 'sys_security_acl'
+                        id: 'b5b6e249d7a14f36a1c1a8e265bbe0fb'
+                    }
+                    acl_requester_merged_into_write: {
+                        table: 'sys_security_acl'
+                        id: 'abc34180681a4ca78772645676e58605'
+                    }
+                    acl_requester_read: {
+                        table: 'sys_security_acl'
+                        id: 'eaa011f3d286442185ccfe324bc1cdfe'
+                    }
+                    acl_requester_service_number_last4_read: {
+                        table: 'sys_security_acl'
+                        id: '8ad8867828664a1e81541b9ce4c5ed7f'
+                    }
+                    acl_requester_write: {
+                        table: 'sys_security_acl'
+                        id: 'ddada49bc85845e192671e8b87d809cd'
+                    }
+                    acl_rest_intake: {
+                        table: 'sys_security_acl'
+                        id: '29fb766b37b0474d962a5bea39a0d4c6'
+                    }
+                    acl_ses_flag_request_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: '411dd5ddc9544f18bbd62e688c27fd70'
+                    }
+                    acl_ses_flag_request_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: 'a270690df50a4108adff8ed68d1704d4'
+                    }
+                    acl_ses_flag_request_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: '20c24e1dca554dbea3cf27bc421c0381'
+                    }
+                    acl_ses_flag_request_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: 'b4eb8ad450f740f2b0e6c8c0eb0c8469'
+                    }
+                    acl_ses_flag_request_create: {
+                        table: 'sys_security_acl'
+                        id: '28724c3812fa438bb2032ba56c390cf8'
+                    }
+                    acl_ses_flag_request_delete: {
+                        table: 'sys_security_acl'
+                        id: 'e595320b6e1541abaccf84b9ca68e640'
+                    }
+                    acl_ses_flag_request_read: {
+                        table: 'sys_security_acl'
+                        id: '268db17c8b4a41ebaa93724124f68716'
+                    }
+                    acl_ses_flag_request_write: {
+                        table: 'sys_security_acl'
+                        id: '1ed2fbfb3afc4b21b09a1bedeb62ea7e'
+                    }
+                    acl_shipment_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: '42f3f8d2ea3b4a10b2ef809cba65c633'
+                    }
+                    acl_shipment_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: 'a6124dce5427427db6ed89ac923a1216'
+                    }
+                    acl_shipment_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: '1843ab5233dd45d1907392c506698107'
+                    }
+                    acl_shipment_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: '87d7c682bf924e7f9cd18bb41b9f456c'
+                    }
+                    acl_shipment_create: {
+                        table: 'sys_security_acl'
+                        id: '6e1b72d8a4b24863b9caebbfeabe00b2'
+                    }
+                    acl_shipment_delete: {
+                        table: 'sys_security_acl'
+                        id: '95467a74fa644a278f2e79719c96a574'
+                    }
+                    acl_shipment_read: {
+                        table: 'sys_security_acl'
+                        id: '962db85c8b4b470e99efed72c26125a4'
+                    }
+                    acl_shipment_write: {
+                        table: 'sys_security_acl'
+                        id: '422946c65ec1456ab71ab8a5b95e6b83'
+                    }
+                    acl_status_map_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: '49af1c3d2b214f1f8fb11d0f485e2b39'
+                    }
+                    acl_status_map_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: 'dc1d9fc766d54f09970967c1d3905238'
+                    }
+                    acl_status_map_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: '2c55e078e0f9410191af2110a3e21a8d'
+                    }
+                    acl_status_map_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: '5086731cda934e619912b09c67a11030'
+                    }
+                    acl_status_map_create: {
+                        table: 'sys_security_acl'
+                        id: 'a1fdc2ab905440e2bd84d4c4beb620a8'
+                    }
+                    acl_status_map_delete: {
+                        table: 'sys_security_acl'
+                        id: '568973c6598f4aefada06eb659d05763'
+                    }
+                    acl_status_map_read: {
+                        table: 'sys_security_acl'
+                        id: '5693ca61856a423f84f8dada85598e3f'
+                    }
+                    acl_status_map_write: {
+                        table: 'sys_security_acl'
+                        id: 'b8e33c10aa614c48b0caef9cc5f3bb1d'
+                    }
+                    acl_vendor_all_fields_create: {
+                        table: 'sys_security_acl'
+                        id: '01632f9bf03c4f2982e7854d88d10c95'
+                    }
+                    acl_vendor_all_fields_delete: {
+                        table: 'sys_security_acl'
+                        id: '43a9686ccfcf42ceac791e0a9ef05e08'
+                    }
+                    acl_vendor_all_fields_read: {
+                        table: 'sys_security_acl'
+                        id: '70ebc87ade124cc7a08d3701e5021a2d'
+                    }
+                    acl_vendor_all_fields_write: {
+                        table: 'sys_security_acl'
+                        id: '4519acc5b4c848a59e3d16979d223f04'
+                    }
+                    acl_vendor_create: {
+                        table: 'sys_security_acl'
+                        id: '25864b40dd8046edb28070ae656222be'
+                    }
+                    acl_vendor_delete: {
+                        table: 'sys_security_acl'
+                        id: '1a6fd10e08ff4e7a8f98e9418daa93f9'
+                    }
+                    acl_vendor_portal_user_write: {
+                        table: 'sys_security_acl'
+                        id: '3cab90b81ebd40c584a290871760c07d'
+                    }
+                    acl_vendor_read: {
+                        table: 'sys_security_acl'
+                        id: '829e6d06527a4bb88e8ce87304b8af0f'
+                    }
+                    acl_vendor_user_group_write: {
+                        table: 'sys_security_acl'
+                        id: 'addcdc42297a4de283ef24b01e89f5bc'
+                    }
+                    acl_vendor_write: {
+                        table: 'sys_security_acl'
+                        id: '38907405899543129286caecfe81960f'
+                    }
                     bom_json: {
                         table: 'sys_module'
                         id: '2dd75b3d1cf64bf7a030937706b4fc62'
@@ -105,9 +629,129 @@ declare global {
                         table: 'sys_script'
                         id: 'aec4175487af4c2c9b8b87f13bda8694'
                     }
+                    evt_case_aging_red: {
+                        table: 'sysevent_register'
+                        id: 'f1003fcc2a654c25bcdd987d05ed05a4'
+                    }
+                    evt_case_stage_changed: {
+                        table: 'sysevent_register'
+                        id: '2f3b16b46bad44f08104d796cb9f394d'
+                    }
+                    evt_request_released: {
+                        table: 'sysevent_register'
+                        id: '1cfe15f3232746a69779e762c0bfe67e'
+                    }
+                    evt_request_submitted: {
+                        table: 'sysevent_register'
+                        id: '1fc2b78e57c045c39626d7270fbc60c1'
+                    }
+                    evt_ses_submitted: {
+                        table: 'sysevent_register'
+                        id: 'f43f8a4316264a8ea65b7c83cc73add8'
+                    }
+                    job_nightly_aging: {
+                        table: 'sysauto_script'
+                        id: '4129a3ea3cf24675a4f468615b29ced4'
+                    }
+                    ntf_case_aging_red: {
+                        table: 'sysevent_email_action'
+                        id: '4e766ee924574c91800a3b7f9acec124'
+                    }
+                    ntf_case_stage_changed: {
+                        table: 'sysevent_email_action'
+                        id: 'de01f75160c149f280c9005b03ee7182'
+                    }
+                    ntf_request_released: {
+                        table: 'sysevent_email_action'
+                        id: '765e9d77d62848df835222eb676700fd'
+                    }
+                    ntf_request_submitted: {
+                        table: 'sysevent_email_action'
+                        id: '897cdf1f998c409ea0305947c2129cde'
+                    }
+                    ntf_ses_submitted: {
+                        table: 'sysevent_email_action'
+                        id: '01fb9ba25af24c84b74a58015ce7f072'
+                    }
                     package_json: {
                         table: 'sys_module'
                         id: '8f7bc9f3144c4e5582d1b1a1c4e968f7'
+                    }
+                    prop_aging_amber_days: {
+                        table: 'sys_properties'
+                        id: '1c6cb1667a304ef0b54ff4739e0f2ba5'
+                    }
+                    prop_aging_last_run: {
+                        table: 'sys_properties'
+                        id: 'b17b24f3ea504499a5d7efb519633bc7'
+                    }
+                    prop_aging_last_summary: {
+                        table: 'sys_properties'
+                        id: '56162cd9499c4d38beeea21d1305c29d'
+                    }
+                    prop_aging_red_days: {
+                        table: 'sys_properties'
+                        id: '4991037b54dd4865a530fbc944dc5f39'
+                    }
+                    prop_intake_max_bytes: {
+                        table: 'sys_properties'
+                        id: '7cdf41cd57eb43afb93a6eb3e28bda40'
+                    }
+                    prop_notifications_enabled: {
+                        table: 'sys_properties'
+                        id: 'e192d4ec948248ff96be080117307475'
+                    }
+                    rest_authorization_intake: {
+                        table: 'sys_ws_definition'
+                        id: 'af45f990a44f48d08a0bca93c8a8c080'
+                    }
+                    rest_case_status_get: {
+                        table: 'sys_ws_operation'
+                        id: '58296fd224b24c12af3155eb11b1ba1a'
+                    }
+                    rest_health_get: {
+                        table: 'sys_ws_operation'
+                        id: 'db4c5ad607eb46a3972173f044a7fec9'
+                    }
+                    rest_intake_hdr_file_name: {
+                        table: 'sys_ws_header'
+                        id: 'eb6b75e44b1b44d19657b55e4b915802'
+                    }
+                    rest_intake_param_file_name: {
+                        table: 'sys_ws_query_parameter'
+                        id: '1f7f5802f60f466fb1cfb503a1befef5'
+                    }
+                    rest_intake_post: {
+                        table: 'sys_ws_operation'
+                        id: '49cb73d0c53d4c399b8c5cdacb4b5615'
+                    }
+                    rest_intake_v1: {
+                        table: 'sys_ws_version'
+                        id: '96f931ba856145ceb8d7a20554d32e7f'
+                    }
+                    rest_reconciliation_get: {
+                        table: 'sys_ws_operation'
+                        id: '857616e04ea84268ba8164a50fe71d0f'
+                    }
+                    rest_status_param_last4: {
+                        table: 'sys_ws_query_parameter'
+                        id: 'c0d3a37a25c14d2187e8121186dbf939'
+                    }
+                    rest_status_param_zip: {
+                        table: 'sys_ws_query_parameter'
+                        id: '2bfe1209f48e482bb580f5885d5c1049'
+                    }
+                    si_aging: {
+                        table: 'sys_script_include'
+                        id: '3c3db29e77734b5ca5bfbdf4bb2e2012'
+                    }
+                    si_reconciliation: {
+                        table: 'sys_script_include'
+                        id: 'cbac0294ac4840288fe7c7733fd9c0b9'
+                    }
+                    si_status_inquiry: {
+                        table: 'sys_script_include'
+                        id: '662cb91ec57a47cd85b55012fd174c31'
                     }
                     src_server_jobs_nightlyAging_ts: {
                         table: 'sys_module'
@@ -141,6 +785,10 @@ declare global {
                         table: 'sys_module'
                         id: 'c554552255a74420aee2a7ccb9d78288'
                     }
+                    src_server_lib_security_ts: {
+                        table: 'sys_module'
+                        id: '67c269b39544437a88a0a20c54f9521b'
+                    }
                     src_server_lib_stageMachine_ts: {
                         table: 'sys_module'
                         id: '09e2ffae673c4ed09d65deb9b5f7fd47'
@@ -156,6 +804,10 @@ declare global {
                     src_server_rest_authorizationIntake_ts: {
                         table: 'sys_module'
                         id: 'a4a70a3fac9c4ebf8bf63e3be1137c7f'
+                    }
+                    src_server_rest_operations_ts: {
+                        table: 'sys_module'
+                        id: '44c7d68828c84b72845451a826d9699e'
                     }
                     src_server_rules_awardLine_ts: {
                         table: 'sys_module'
@@ -192,6 +844,18 @@ declare global {
                     src_server_rules_vendorIsolation_ts: {
                         table: 'sys_module'
                         id: '830a0470b78d4e18bff92c835b8a3fbf'
+                    }
+                    src_server_services_actions_ts: {
+                        table: 'sys_module'
+                        id: 'ee82992b54e940cea8990f00d14ec9dd'
+                    }
+                    src_server_services_reconciliation_ts: {
+                        table: 'sys_module'
+                        id: '0271aeec9c604351a73b5b351f89b434'
+                    }
+                    src_server_services_statusInquiry_ts: {
+                        table: 'sys_module'
+                        id: '355a136c624b4fdda7ac6457347fdfe4'
                     }
                 }
                 composite: [
@@ -252,6 +916,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '01085a5b15ae41a38277ce0113c69bc1'
+                        key: {
+                            sys_security_acl: '954b88e0cb3343a3a4c7ef3e584bbe0a'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '018d07d5018e4d2b8acfbc15179a874e'
+                        key: {
+                            sys_security_acl: 'a30a2c387f6f489fa34469d35697b6e8'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '0193a73c3356456cb727a39edcaaff1e'
                         key: {
@@ -267,6 +957,19 @@ declare global {
                             name: 'x_cog_mah_request_line'
                             element: 'number'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '01fc38c33a864a508984b3b3bcb75d46'
+                        key: {
+                            sys_security_acl: 'a11d5010f1e34577b25b76e0596377d0'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
                         }
                     },
                     {
@@ -345,6 +1048,45 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '03ba929b6a4a4b2591d44aa8398cf21a'
+                        key: {
+                            sys_security_acl: '24f8e7eb043e444d8e4326eb0da3c2c7'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '03ca3253d35c4b4292785dc77ef50cd0'
+                        key: {
+                            sys_security_acl: '94d8289f00af4198b886b8b858f88574'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '03ce3de5fdb44c008fe706dd4b913adb'
+                        key: {
+                            sys_security_acl: 'a11d5010f1e34577b25b76e0596377d0'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '03e190f0add441a6a31067bbf60f2f4b'
                         key: {
@@ -362,6 +1104,19 @@ declare global {
                             name: 'x_cog_mah_case_note'
                             element: 'NULL'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0457b0b04b7545abb74a7b7635b4ea3e'
+                        key: {
+                            sys_security_acl: '422946c65ec1456ab71ab8a5b95e6b83'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -443,6 +1198,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '055c169a7193448f8511d49fa0c92ab1'
+                        key: {
+                            sys_security_acl: 'd8e1079b65624519a432dd8309d7e03e'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '05701d436e134734bc227413f65989b6'
                         key: {
@@ -460,6 +1228,19 @@ declare global {
                             value: '08'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '06430de8e3594adaa92462a637fdd24c'
+                        key: {
+                            sys_security_acl: '4665f50b45ad4b14bf78456a08bb7b29'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -494,6 +1275,19 @@ declare global {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'legacy_form'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '06afc16afe39485c9f50b0de1db2d97b'
+                        key: {
+                            sys_security_acl: 'acd4ffd87663484492724320fca2c120'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -566,11 +1360,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '08a54caf8ec94f47b28b38336ee4a4f5'
+                        key: {
+                            sys_security_acl: 'eaa011f3d286442185ccfe324bc1cdfe'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '08a9bea2c39446739c695bf99e67b163'
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'target_field'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '08c4f72dbd5149ad8224412b135b1062'
+                        key: {
+                            sys_security_acl: '9b8cbe8883a34dc1a6e95975c5a409df'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
                         }
                     },
                     {
@@ -611,6 +1431,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '09defa63b4d54e2086a24c0ac52ef3db'
+                        key: {
+                            sys_security_acl: 'e18cdd3511204fc5bf043fcb41bf5517'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '0a03d53ad7c54fc5ae87a632863816de'
                         key: {
@@ -625,6 +1458,39 @@ declare global {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'submitted_at'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0a14d0d7fd364cd69f22047b08a0edd1'
+                        key: {
+                            sys_security_acl: 'fb89a0fc8a1944d78929d3c6aa7c49d0'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0a2bf88aac294ba8927ee9b9e41773d9'
+                        key: {
+                            sys_security_acl: '268db17c8b4a41ebaa93724124f68716'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_user_role'
+                        id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                        key: {
+                            name: 'x_cog_mah.admin'
                         }
                     },
                     {
@@ -645,11 +1511,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '0a94d7efc87340d6aaad5dd58e63d88e'
+                        key: {
+                            sys_security_acl: '87d7c682bf924e7f9cd18bb41b9f456c'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '0aef58ce0df049d5ac8ae974196474b0'
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'legacy_status_raw'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0b2487638be74367b02772c13da521d3'
+                        key: {
+                            sys_security_acl: '9b8cbe8883a34dc1a6e95975c5a409df'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0b2f5fe9bd074c54a445b503fb17f2f8'
+                        key: {
+                            sys_security_acl: '28724c3812fa438bb2032ba56c390cf8'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -708,11 +1613,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '0d221f99d10e4cd982447c383b36af73'
+                        key: {
+                            sys_security_acl: '2f844389800c4d2a893f2b2f53974f0c'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '0d4cb0fd72954a8b887e1337113b7741'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0d7d1675d3934e0f9bfb5a1c61940da6'
+                        key: {
+                            sys_security_acl: '411dd5ddc9544f18bbd62e688c27fd70'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0de68aab6c234b059fa79e04b87c8d4c'
+                        key: {
+                            sys_security_acl: 'ab57b28ff495465990501d5f01e155ad'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -724,6 +1668,32 @@ declare global {
                             value: 'SE'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0e08efa16a43468196d6b6647a8bc210'
+                        key: {
+                            sys_security_acl: 'acd4ffd87663484492724320fca2c120'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0e456aaaba0f47d6b3c9a597e0631c17'
+                        key: {
+                            sys_security_acl: 'ab99c30b4e6147c0a125852ba616f1bd'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -755,6 +1725,32 @@ declare global {
                             name: 'x_cog_mah_case_note'
                             element: 'customer_visible'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0f35f6513da84929aaa70fa83d9252d0'
+                        key: {
+                            sys_security_acl: '13555b2f1d354f0bb269b7fd0a07ab8a'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '0f5d9d2f871546d286a2ffb99db2b5be'
+                        key: {
+                            sys_security_acl: 'ab99c30b4e6147c0a125852ba616f1bd'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -825,6 +1821,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '10aeed77f30d4d818b58baa23453b584'
+                        key: {
+                            sys_security_acl: 'c8fd488563dd48b18ef1503601529ee3'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '10ed561a432f49babe67a797e2dd2424'
                         key: {
@@ -869,6 +1878,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '119617504ecf495b82e2f1d217d24183'
+                        key: {
+                            sys_security_acl: '9e76351fd6764b4a9d92f5b8a5598f9c'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '11a8bda1205b4b0691d6fefe16f48a5c'
+                        key: {
+                            sys_security_acl: '1a6fd10e08ff4e7a8f98e9418daa93f9'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '11b165efeb544d3bab0687853510e435'
                         key: {
@@ -888,12 +1923,38 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '12f2a821e1c1445c9830c1fa2029fb5b'
+                        key: {
+                            sys_security_acl: '25864b40dd8046edb28070ae656222be'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '12fd6487fd9e47609493d98ad4ff98fa'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'engraver'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '12ffc1e3daec4d9186db062c7e2b435d'
+                        key: {
+                            sys_security_acl: '4f5695188b8c456e93a001bbff4695b5'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
                         }
                     },
                     {
@@ -972,6 +2033,19 @@ declare global {
                             name: 'x_cog_mah_status_map'
                             element: 'active'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '150647a3908c48dc9b43036dc891ce50'
+                        key: {
+                            sys_security_acl: '9b8cbe8883a34dc1a6e95975c5a409df'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -1111,6 +2185,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '17d3f0c750784209ac2c19569847d487'
+                        key: {
+                            sys_security_acl: '186c22621b4b49b38a6d957a096a9e76'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '17e33b1153394eb38ec0630b2ef91543'
                         key: {
@@ -1126,6 +2213,19 @@ declare global {
                             name: 'x_cog_mah_migration_exception'
                             element: 'number'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '18619c7625754496a8714063cf46dce5'
+                        key: {
+                            sys_security_acl: '914df7866b3a4ac48df0f9d4c3273cdf'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -1154,6 +2254,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '192bcded0bc749548c555701655a9a5a'
+                        key: {
+                            sys_security_acl: '3a41c863f48e48c5af11ca2fccac3cea'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '1999b256bd3e43da8046cf345a116ad2'
                         key: {
@@ -1163,11 +2276,33 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '19b330db96a44c258e3ae5b72088a001'
+                        key: {
+                            sys_security_acl: '186c22621b4b49b38a6d957a096a9e76'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '19bd62efaa244bd4b46d90676cc0a9d0'
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'intake_channel'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '19c63c04540a4437811de8842d89664f'
+                        key: {
+                            name: 'x_cog_mah_requester'
+                            element: 'merge_target'
                             language: 'en'
                         }
                     },
@@ -1196,6 +2331,52 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '1a06746a9ba54bd697ee73420b54f1db'
+                        key: {
+                            sys_security_acl: '5115a13fee104352bd5661507c6a4d76'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '1a5f88316054469eab2056f567a73b66'
+                        key: {
+                            sys_security_acl: 'd968a2ddfb254b998633ab831d6bc060'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_user_role'
+                        id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                        key: {
+                            name: 'x_cog_mah.tacom_staff'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '1a77ea55016d4ef28afb26c646202fb4'
+                        key: {
+                            sys_security_acl: 'dc6ad0c003cd41f59361d126f7f5585f'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '1aa6fe83eb75486eab10e79a37475995'
                         key: {
@@ -1204,11 +2385,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '1aadfa43d6014cb98bc095813b95854b'
+                        key: {
+                            sys_security_acl: 'fb89a0fc8a1944d78929d3c6aa7c49d0'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '1ab4face7d5a4eb4922b2c7b86e4c11e'
+                        key: {
+                            sys_security_acl: '1cda2cd65cc746488a970f8fbc39c3ef'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '1aec34d9519046e9aa3ae64cb10b4cdd'
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'legacy_status'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '1b4e8601bf5d4666a86c963b6647237a'
+                        key: {
+                            sys_security_acl: '1776b42ee944466c876577264536dbef'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -1239,6 +2459,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '1c06640c173d402ea1754e3cb7219f65'
+                        key: {
+                            sys_security_acl: '5c39e08e25ca4b7997cd62c5998c82a8'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '1c3bef2da5eb4d0e8fbe18465b5b781a'
                         key: {
@@ -1263,6 +2496,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'unit_price'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '1c921593dc5b4553b5ab0a0b159e29f0'
+                        key: {
+                            sys_security_acl: '829e6d06527a4bb88e8ce87304b8af0f'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -1291,6 +2537,32 @@ declare global {
                         key: {
                             logical_table_name: 'x_cog_mah_award_line'
                             col_name_string: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '1cd84bbe8ff3408fae10ffebf3493de8'
+                        key: {
+                            sys_security_acl: '1843ab5233dd45d1907392c506698107'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '1cd9c7b8c01c422c9aff51f2046050ac'
+                        key: {
+                            sys_security_acl: '7338cb9bac1849038bffdd06d4861d98'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -1349,6 +2621,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '1f7a9a08662c4646a9fff5ff119a11b2'
+                        key: {
+                            sys_security_acl: '7e33999060fb42afa53c7fb58f8f0804'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '1fafa0d59e5846a9b7d819ef8ab6c66a'
                         key: {
@@ -1387,6 +2672,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '203c5cbde4834851b1585e7c8b003f52'
+                        key: {
+                            sys_security_acl: '38907405899543129286caecfe81960f'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '20a7e7288c3a4ce68f1efc4798f2cd1c'
                         key: {
@@ -1404,6 +2702,24 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_user_role_contains'
+                        id: '227b2fbf3a594daeafb82963f0569163'
+                        key: {
+                            role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                            contains: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '2298a8d1a78e4e1c987082033e3c5729'
                         key: {
@@ -1412,6 +2728,45 @@ declare global {
                             value: 'request_line'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '22cf5554ab704681843672dd3ae140ea'
+                        key: {
+                            sys_security_acl: 'b4eb8ad450f740f2b0e6c8c0eb0c8469'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '22e38aef710c4a90924d2ca53ded11da'
+                        key: {
+                            sys_security_acl: 'e623aa28a9ae4b1892c8f35add434af3'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '234741069614471ab1cf8abd29daa101'
+                        key: {
+                            sys_security_acl: 'abc34180681a4ca78772645676e58605'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -1494,11 +2849,68 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '2529d780b13b403780ef5b89fde42280'
+                        key: {
+                            sys_security_acl: '962db85c8b4b470e99efed72c26125a4'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '25625f86a8f844b89e4aea35ee03cde6'
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'legacy_form'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '260f5b0dae094f2f93460ce7aeb4e3a0'
+                        key: {
+                            sys_security_acl: '3996f29637e447a49c8cfa576d14b079'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_user_role_contains'
+                        id: '26101f8e4c814938a2d527b484a2a036'
+                        key: {
+                            role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                            contains: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '2656284a2f4b499180a2a606b272a5af'
+                        key: {
+                            sys_security_acl: 'cc05682ec2764c8f84ddc39b99cf9eca'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -1589,6 +3001,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '281a06be3f2d4460b0c80efa978bd66d'
+                        key: {
+                            sys_security_acl: '472b009f77b0460f967c4d61a1f1eb30'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '282794b9a3b846b3bcc460cb73ed8ced'
                         key: {
@@ -1597,6 +3022,19 @@ declare global {
                             value: '13'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '286595c5035142ab9de90838513af9fe'
+                        key: {
+                            sys_security_acl: '393ca17367174579a831a5b90382ae3d'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
                         }
                     },
                     {
@@ -1621,6 +3059,19 @@ declare global {
                             name: 'x_cog_mah_award_line'
                             element: 'stock_on_hand'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '291bd7d2685c4d44ae5f2eca42ab550f'
+                        key: {
+                            sys_security_acl: '411dd5ddc9544f18bbd62e688c27fd70'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -1670,6 +3121,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '2a052d3991c143a18ae7e8e4019d3daf'
+                        key: {
+                            sys_security_acl: '3996f29637e447a49c8cfa576d14b079'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '2a6866a31ced4b5b90be67b32855733d'
                         key: {
@@ -1687,6 +3151,19 @@ declare global {
                             name: 'x_cog_mah_shipment'
                             element: 'carrier'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '2aac3b943c4c464db223aaa0fcc77645'
+                        key: {
+                            sys_security_acl: '173b2345eb0b479096301acb4a72c648'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -1781,6 +3258,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '2dceaab002e84f2181152f8d54560490'
+                        key: {
+                            sys_security_acl: '19ec3725cf9748049e367263450fecd3'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '2ddfa3fac9ef493a9df2b6ff590a84ad'
                         key: {
@@ -1804,6 +3294,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'notes'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '2eb285669db54a7cb598fd1d4de5e6cd'
+                        key: {
+                            sys_security_acl: '70ebc87ade124cc7a08d3701e5021a2d'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -1899,6 +3402,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '30343a6a3d1f41f7a6c38b88524d7694'
+                        key: {
+                            sys_security_acl: '3a41c863f48e48c5af11ca2fccac3cea'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '30fcc7ff19c04ccd8b03e26d6ab87b1a'
+                        key: {
+                            sys_security_acl: 'e29f3be865f344fd9ea29c75549d011f'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '310d72331cfa41348d5381d098732c20'
                         key: {
@@ -1915,6 +3444,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '3143634de37341eda5e31ed12d639360'
+                        key: {
+                            sys_security_acl: '8599912a06d9443eabf7fcf6a2ae2c27'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '31852cce21f146af987b0a2ebcfdf105'
                         key: {
@@ -1923,6 +3465,19 @@ declare global {
                             value: 'internal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '318a2b9e3b28438dbadb0c01288afe49'
+                        key: {
+                            sys_security_acl: 'a270690df50a4108adff8ed68d1704d4'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -1960,6 +3515,19 @@ declare global {
                             value: 'unmapped'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '32d6fc56ef5b4ae5b72c544fb444373e'
+                        key: {
+                            sys_security_acl: '69c264f79b7f44739393b600e52e36b1'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -2027,11 +3595,76 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '35baa28113a54ba7aaf07866315f269b'
+                        key: {
+                            sys_security_acl: 'f80c1f84779b4d7a87e6d0dd7ec06335'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '361450fe7a784072ab6805b39ecac0bf'
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'line_number'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '36268e13027f4103b67c052c625dbdf8'
+                        key: {
+                            sys_security_acl: '5115a13fee104352bd5661507c6a4d76'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '36367dc9f9c74548b06f683bcc6cd210'
+                        key: {
+                            sys_security_acl: '45303beaca57438a997f5e112d583e1e'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '363c91a501054a238947c003a2570506'
+                        key: {
+                            sys_security_acl: '94d8289f00af4198b886b8b858f88574'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '36608c0937bb48e999259bbc54522520'
+                        key: {
+                            sys_security_acl: '1ae4b6f8edfe47e48196f203e0fa828c'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -2046,6 +3679,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '369093cc2177416ba5bf5c18622ecd26'
+                        key: {
+                            sys_security_acl: '962db85c8b4b470e99efed72c26125a4'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '36a233b013f44c52aa595feb4498edf6'
                         key: {
@@ -2054,6 +3700,19 @@ declare global {
                             value: 'EA'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '371a2d387d464ea5922a25f977d92442'
+                        key: {
+                            sys_security_acl: 'acd4ffd87663484492724320fca2c120'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -2095,6 +3754,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '37793afd1f8044a4bcca0fcffbf24312'
+                        key: {
+                            sys_security_acl: '1843ab5233dd45d1907392c506698107'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_number'
                         id: '3785fdd4a4254a54aa5d2477a867915b'
                         key: {
@@ -2116,6 +3788,32 @@ declare global {
                         key: {
                             logical_table_name: 'x_cog_mah_engraving_job'
                             col_name_string: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '380a0cde4903419b8f5993179dc5fa94'
+                        key: {
+                            sys_security_acl: '6e1b72d8a4b24863b9caebbfeabe00b2'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '38203c35936d4ea2b78611c5ea40db25'
+                        key: {
+                            sys_security_acl: '038ea1342d334f78ac7bd430ef21b8e0'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -2231,6 +3929,45 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '3ae6c2ad79a14473a3b5c95166875bc9'
+                        key: {
+                            sys_security_acl: 'acd4ffd87663484492724320fca2c120'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '3b22858249274a9ba3f48f485154748d'
+                        key: {
+                            sys_security_acl: '38a56c1bb75a45aa929d300f881e81a6'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '3b7ae241830f4090894c102b60376e16'
+                        key: {
+                            sys_security_acl: '9e76351fd6764b4a9d92f5b8a5598f9c'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '3b85b5ec370142e8a8397e19171705a8'
                         key: {
@@ -2247,6 +3984,19 @@ declare global {
                             name: 'x_cog_mah_probe'
                             element: 'received'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '3ba6f0cf4bba44c491ca723c8138efb9'
+                        key: {
+                            sys_security_acl: '556fa9bd0c1d488b9e9f06f99a420628'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -2277,6 +4027,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '3c18273ca3ce4768a4acf1ef78a29ef6'
+                        key: {
+                            sys_security_acl: '87d7c682bf924e7f9cd18bb41b9f456c'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '3c271c5b6e7a4a11bbe8e2f1a772c5e0'
+                        key: {
+                            sys_security_acl: '19ec3725cf9748049e367263450fecd3'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '3c4832e0612543499d6df0c337f74fcd'
                         key: {
@@ -2285,6 +4061,45 @@ declare global {
                             value: 'ups'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '3c548694456a4a7494e4492cf06d336e'
+                        key: {
+                            sys_security_acl: '29674c2d88ce4fa9a0539c9d66c2f3de'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '3c8783e52bb64ebd9af510d25be04e9a'
+                        key: {
+                            sys_security_acl: 'd968a2ddfb254b998633ab831d6bc060'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '3cb2bc3082144bc692593f1dec896f38'
+                        key: {
+                            sys_security_acl: '05f762f171554e608ba1b6745918eb22'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
                         }
                     },
                     {
@@ -2309,6 +4124,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '3d77efcc86944f008ab0a07ae1822c68'
+                        key: {
+                            sys_security_acl: 'd968a2ddfb254b998633ab831d6bc060'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '3db96a7d7f544a9188b4e4951bf26c52'
                         key: {
@@ -2328,6 +4156,19 @@ declare global {
                             value: 'silver_star'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '3e18a6af1aa9461c996b903cfe413c12'
+                        key: {
+                            sys_security_acl: '4d51de133615486785971f92e91db5c8'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -2356,6 +4197,40 @@ declare global {
                             name: 'x_cog_mah_requester'
                             element: 'city'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ws_query_parameter_map'
+                        id: '3eafb781f12e48aca95e5c443b1bea72'
+                        key: {
+                            web_service_operation: '58296fd224b24c12af3155eb11b1ba1a'
+                            web_service_query_parameter: '2bfe1209f48e482bb580f5885d5c1049'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '3f3a150a927c4334bc38821f294826c0'
+                        key: {
+                            sys_security_acl: '39ce8bef44964f849199f43f9bab91e1'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '3f75c69c85f54050b88bf946f0a67ec3'
+                        key: {
+                            sys_security_acl: '393ca17367174579a831a5b90382ae3d'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
                         }
                     },
                     {
@@ -2402,6 +4277,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '411937aa094a4c0093bb38c27b3eae57'
+                        key: {
+                            sys_security_acl: '25864b40dd8046edb28070ae656222be'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '412d27f63ec843c98efcd1cf4a212ae8'
                         key: {
@@ -2440,12 +4328,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_user_role'
+                        id: '41d49618c1e14b30a93ea258667ac1b1'
+                        key: {
+                            name: 'x_cog_mah.warehouse'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '423b84d084ea4a23a953991a061c3881'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'phone'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '423cb5f810d74a1b868bab52f2d502c0'
+                        key: {
+                            sys_security_acl: '70ebc87ade124cc7a08d3701e5021a2d'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
                         }
                     },
                     {
@@ -2457,6 +4365,32 @@ declare global {
                             value: 'guidon'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '42b73e62d63249f29aa25b8c449dcd79'
+                        key: {
+                            sys_security_acl: '038ea1342d334f78ac7bd430ef21b8e0'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '42cbd3de244546e7b9706088bd238c3d'
+                        key: {
+                            sys_security_acl: '5115a13fee104352bd5661507c6a4d76'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
                         }
                     },
                     {
@@ -2520,6 +4454,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '4413e18e96f046f0b07c4a4f86e9b58d'
+                        key: {
+                            sys_security_acl: 'dc6ad0c003cd41f59361d126f7f5585f'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '443f09febebc46109ae79fce9d57fc1d'
+                        key: {
+                            sys_security_acl: '915a7076f91946a0bcadefe81147efa8'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '44747b0dd53f4c3fb139a61356f10255'
                         key: {
@@ -2528,6 +4488,32 @@ declare global {
                             value: 'none'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '44768c53906349f4adee5d91292e63e2'
+                        key: {
+                            sys_security_acl: '1cda2cd65cc746488a970f8fbc39c3ef'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '4494f9009ce84939a9abaed4dde26f5e'
+                        key: {
+                            sys_security_acl: '556fa9bd0c1d488b9e9f06f99a420628'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
                         }
                     },
                     {
@@ -2562,6 +4548,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '45593bcd56d14a41a83c78c1cc8aa5c1'
+                        key: {
+                            sys_security_acl: '4a21c49027e343e5b7ab302d032afd96'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '458f4e06c71041959d6c828fdb65871c'
                         key: {
@@ -2587,6 +4586,19 @@ declare global {
                             name: 'x_cog_mah_awards_case'
                             element: 'aging_flag'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '4641ba93f27a4dc09ba707ffe6d500b9'
+                        key: {
+                            sys_security_acl: 'f866e940fae942619cb01ab1efca4173'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -2667,6 +4679,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '4783693d32064fe5a07d53d8cfb979e4'
+                        key: {
+                            sys_security_acl: 'b5b6e249d7a14f36a1c1a8e265bbe0fb'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '4845441f4b064f579baadc00b655270e'
+                        key: {
+                            sys_security_acl: '038ea1342d334f78ac7bd430ef21b8e0'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '486b2da48a8c4c47b8e1d43999dc2f42'
                         key: {
@@ -2680,6 +4718,32 @@ declare global {
                         id: '486ba17531114b6783e80e916a323560'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '4887d190367a44a686218a00d39f5d67'
+                        key: {
+                            sys_security_acl: '9b8cbe8883a34dc1a6e95975c5a409df'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '4896c6efc5644782a184a2ca2cf30326'
+                        key: {
+                            sys_security_acl: '05f762f171554e608ba1b6745918eb22'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
                         }
                     },
                     {
@@ -2717,12 +4781,64 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '494df67d14ea49dc93a99406d13a103b'
+                        key: {
+                            sys_security_acl: '38a56c1bb75a45aa929d300f881e81a6'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '49a80edb27e54a49b2b6eecf2671d952'
+                        key: {
+                            sys_security_acl: '1ed2fbfb3afc4b21b09a1bedeb62ea7e'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '4a0f1d20b9e24b268ed552b5d371005a'
+                        key: {
+                            sys_security_acl: '05f762f171554e608ba1b6745918eb22'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '4a3302fcd3e542a6830b9992cf0bb3c2'
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'exception_type'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '4a51fc7ca0214c4fa25a412cd97a806d'
+                        key: {
+                            sys_security_acl: '8067708abfa84c608f8d9a41b1182736'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -2745,6 +4861,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '4ada07784aa74e3f8be7d652b2032a9a'
+                        key: {
+                            sys_security_acl: '2f844389800c4d2a893f2b2f53974f0c'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '4aee5e06cf5748c79d521ddf1c0b9bf5'
                         key: {
@@ -2759,6 +4888,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'unit_of_issue'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '4b1de9d9cd8d4097aa5d827d8d45c18e'
+                        key: {
+                            sys_security_acl: 'f80c1f84779b4d7a87e6d0dd7ec06335'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -2799,6 +4941,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '4be3d7dce9dc4ba7b7915108b69a8227'
+                        key: {
+                            sys_security_acl: '29c7e071c2fd4c1ca842cdd75d5e3154'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '4bfe9e1dac5f42d08d3abc0edff2b824'
+                        key: {
+                            sys_security_acl: '29fb766b37b0474d962a5bea39a0d4c6'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '4c39b951ebb24b06b8b058b66ee8e360'
                         key: {
@@ -2833,6 +5001,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '4e556c14fa904cea8bd7ca2f0289bd7b'
+                        key: {
+                            sys_security_acl: 'dc6ad0c003cd41f59361d126f7f5585f'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '4e840d432dbb4ceeade419a108c679c4'
                         key: {
@@ -2847,6 +5028,19 @@ declare global {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'preferred_vendor'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '4f0ef50d7f964239a31e3da419a0ce6f'
+                        key: {
+                            sys_security_acl: '4f5695188b8c456e93a001bbff4695b5'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -2885,6 +5079,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '50340ee5d26c44a9a22fdf2d3a1c5107'
+                        key: {
+                            sys_security_acl: '01632f9bf03c4f2982e7854d88d10c95'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '503898939c894db49cb3003287f4e13a'
+                        key: {
+                            sys_security_acl: '1cda2cd65cc746488a970f8fbc39c3ef'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '5051f4e2ece340d8983fcbc7c9b6e82a'
                         key: {
@@ -2909,6 +5129,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '50aeb72b687f437899ccbe7cc06fd52a'
+                        key: {
+                            sys_security_acl: '7e33999060fb42afa53c7fb58f8f0804'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '50b0a9b2902042bf8a382c4f3a42569b'
                         key: {
@@ -2926,6 +5159,19 @@ declare global {
                             value: 'army_achievement_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '50cfc4c194c94ba19ed12fa60e515381'
+                        key: {
+                            sys_security_acl: 'f80c1f84779b4d7a87e6d0dd7ec06335'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -2976,6 +5222,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '513c531f5d0045ea9f14d7ba3fa24ee2'
+                        key: {
+                            sys_security_acl: 'dfdcb568ae7a44ad8af3a92b0b4f47b0'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '514d5e8af0a54b3299a4ef9b3f89bedc'
                         key: {
@@ -3011,6 +5270,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '51ad2c71a900451bbb380b195e33f396'
+                        key: {
+                            sys_security_acl: '393ca17367174579a831a5b90382ae3d'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '527307ec60f24584b1168a254fabcbea'
+                        key: {
+                            sys_security_acl: 'd8e1079b65624519a432dd8309d7e03e'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '528eb2c5646d4361a7ec163d5dd5a288'
                         key: {
@@ -3039,6 +5324,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '53326f8229f64ebc95b030272b6d9ddb'
+                        key: {
+                            sys_security_acl: '49af1c3d2b214f1f8fb11d0f485e2b39'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '533f1035f98b44d6951b39b36b07a16f'
                         key: {
@@ -3055,11 +5353,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '534a9808399a45ff80c85fb148b3c0be'
+                        key: {
+                            sys_security_acl: '8eec3ee211414922b824f43100a14a1f'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '53ed4fd569d54b8aa715e8765431ca8e'
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '5438169ccc2d494e8f6415eabf8fcdb4'
+                        key: {
+                            sys_security_acl: '7e33999060fb42afa53c7fb58f8f0804'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '5496d1feb6bb480c875d732c64cc8b2e'
+                        key: {
+                            sys_security_acl: '29c7e071c2fd4c1ca842cdd75d5e3154'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -3095,6 +5432,19 @@ declare global {
                             name: 'x_cog_mah_migration_exception'
                             element: 'raw_value'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '553b3d37f5184e93b3b6623d51557eda'
+                        key: {
+                            sys_security_acl: '14cc5941a64d45ad8c058cbe5d0ee31c'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -3136,11 +5486,76 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '55e6df94830e454dbab3df56b42124cf'
+                        key: {
+                            sys_security_acl: '43a9686ccfcf42ceac791e0a9ef05e08'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '55fed62e14b24541a3f2c1ebbd058840'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'active'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '562e24ae7a4f4969ad948374937c0b23'
+                        key: {
+                            sys_security_acl: 'ab57b28ff495465990501d5f01e155ad'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '563c99ed676d44abb9e5333fff1235a8'
+                        key: {
+                            sys_security_acl: '39ce8bef44964f849199f43f9bab91e1'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '56a92bd4edcd4766ae401413dad24d97'
+                        key: {
+                            sys_security_acl: '4519acc5b4c848a59e3d16979d223f04'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '56c7a1063fa24b03ae57b6dc637894ec'
+                        key: {
+                            sys_security_acl: 'f866e940fae942619cb01ab1efca4173'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -3211,6 +5626,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '57f25a5d87ca432cb3a303afd9f1f637'
+                        key: {
+                            sys_security_acl: '9e76351fd6764b4a9d92f5b8a5598f9c'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '585edb613f124959b0b605e1deb97f16'
+                        key: {
+                            sys_security_acl: '9e76351fd6764b4a9d92f5b8a5598f9c'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '586a4607d7184f868fc2c11da4fe05eb'
                         key: {
@@ -3233,11 +5674,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '58a17d755ce44ec3935053f6859c9a87'
+                        key: {
+                            sys_security_acl: '422946c65ec1456ab71ab8a5b95e6b83'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '58d7be9522434306a98d8dd9c59e5372'
+                        key: {
+                            sys_security_acl: '3996f29637e447a49c8cfa576d14b079'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '58de831932e54e22ad7a8d5e230295f0'
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '58fb7b1042a54f968b9dac420517cfcc'
+                        key: {
+                            sys_security_acl: 'a11d5010f1e34577b25b76e0596377d0'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -3249,6 +5729,19 @@ declare global {
                             value: 'submitted'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '592419e473be4981b4040aa0c85c7b64'
+                        key: {
+                            sys_security_acl: 'dc6ad0c003cd41f59361d126f7f5585f'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -3274,6 +5767,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '59733d73dd30428daa7bfb001947196b'
+                        key: {
+                            sys_security_acl: '05f762f171554e608ba1b6745918eb22'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '5988c270457d413584d43e4bc2cc455c'
+                        key: {
+                            sys_security_acl: '05f762f171554e608ba1b6745918eb22'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '598c6ba03a7d430b9cfe7b491344fa9c'
                         key: {
@@ -3291,6 +5810,19 @@ declare global {
                             value: 'closed'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '5a28746f6b414f70ae6ade605d3dc296'
+                        key: {
+                            sys_security_acl: '83db669144c54bfaa86b8b2966f6981b'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -3320,6 +5852,19 @@ declare global {
                             name: 'x_cog_mah_status_map'
                             element: 'NULL'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '5a87a93bd0a74c489bc4be917efeb9c3'
+                        key: {
+                            sys_security_acl: 'dfdcb568ae7a44ad8af3a92b0b4f47b0'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -3375,6 +5920,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '5c81c23b180241a7a0bda98be7052469'
+                        key: {
+                            sys_security_acl: '829e6d06527a4bb88e8ce87304b8af0f'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '5cac2eee19264e519f8b2644a761a24a'
                         key: {
@@ -3389,6 +5947,37 @@ declare global {
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'status'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '5cf623bfe3ad4c418206ab62a61d1537'
+                        key: {
+                            sys_security_acl: 'c86cfa02304b40e58a3db336d97c3afa'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_user_role_contains'
+                        id: '5d04c193aae741ee9c910e40b07804b7'
+                        key: {
+                            role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                            contains: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -3429,11 +6018,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '5e898cf19729434e90882d9a843391f1'
+                        key: {
+                            sys_security_acl: '1ae4b6f8edfe47e48196f203e0fa828c'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '5e8fc834a9a64d1899aa306fedf00f9c'
                         key: {
                             logical_table_name: 'x_cog_mah_ses_flag_request'
                             col_name_string: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_ws_query_parameter_map'
+                        id: '5ebe15f4be1a4f65b19bf96441d96ba3'
+                        key: {
+                            web_service_operation: '58296fd224b24c12af3155eb11b1ba1a'
+                            web_service_query_parameter: 'c0d3a37a25c14d2187e8121186dbf939'
                         }
                     },
                     {
@@ -3486,6 +6096,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '5f4d76ca077341de864a61578ec4551b'
+                        key: {
+                            sys_security_acl: '393ca17367174579a831a5b90382ae3d'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '5f57b5553dd746ef93ba52e50e7d3432'
                         key: {
@@ -3494,6 +6117,19 @@ declare global {
                             value: 'silver_oak_leaf_cluster'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '5fc5b924f6fd49d79199b367cdf2aea6'
+                        key: {
+                            sys_security_acl: '8067708abfa84c608f8d9a41b1182736'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -3552,12 +6188,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '6175698da9e14121867b32c89d9f70cc'
+                        key: {
+                            sys_security_acl: 'ff5a4abefd074c118e7c54fc87d5f6a4'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '61a8233628ce499dbd9e364e7e99b5a7'
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'legacy_unid'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '61f6cbf23b31439a9cebb7f8f26b2d83'
+                        key: {
+                            sys_security_acl: '3cab90b81ebd40c584a290871760c07d'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '621c8f82ef5943b4aa704b69badbae7b'
+                        key: {
+                            sys_security_acl: '9f9a14fc1fb845c4baead57f2cfa3402'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -3617,6 +6292,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '6392a01574904a19a8dbfcb131eabae6'
+                        key: {
+                            sys_security_acl: 'c86cfa02304b40e58a3db336d97c3afa'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: '6405980744fd43c396dc47635896bf48'
                         key: {
@@ -3639,6 +6327,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'address_state'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '6445f3928ef4468ab97eb347224f5e26'
+                        key: {
+                            sys_security_acl: '916335bc86ac4e09a4385c5d804c7563'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -3665,6 +6366,45 @@ declare global {
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'nomenclature'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '64c3ea3e5a3848d5a2092e2928320ce8'
+                        key: {
+                            sys_security_acl: '6ea6da3a1b08417bb18f66069269b733'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '64d18db8f2c5493a8545c74e177aff75'
+                        key: {
+                            sys_security_acl: '19ec3725cf9748049e367263450fecd3'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '64d2b2fcd38243b08695e0fca10e4add'
+                        key: {
+                            sys_security_acl: 'a11d5010f1e34577b25b76e0596377d0'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
                         }
                     },
                     {
@@ -3718,6 +6458,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '6613dee5232f4547a743965576b89064'
+                        key: {
+                            sys_security_acl: 'd968a2ddfb254b998633ab831d6bc060'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '6639b09b75bc41cfb5085bbf085e6ac5'
                         key: {
@@ -3738,6 +6491,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '6674171ec7534a70ae8411f00c467962'
+                        key: {
+                            sys_security_acl: '9b8cbe8883a34dc1a6e95975c5a409df'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '6686e771b0724997b90176a458f094b1'
                         key: {
@@ -3754,11 +6520,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '66dfb10f61ee4c91be64e1b1aeba9835'
+                        key: {
+                            sys_security_acl: '25864b40dd8046edb28070ae656222be'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '66f9043c02324f83bd2cb50cbefeddd8'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'country'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '66fe5eab536046299155ab58e9198bb3'
+                        key: {
+                            sys_security_acl: '94d8289f00af4198b886b8b858f88574'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -3773,11 +6565,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '67e7f037dcae4fa89e6b55c0ff370734'
+                        key: {
+                            sys_security_acl: '1cda2cd65cc746488a970f8fbc39c3ef'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '67f6f6255e894840b06e9f3bc3c31ef7'
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '680150b183c045d0a422eca6d3976e9e'
+                        key: {
+                            sys_security_acl: '70ebc87ade124cc7a08d3701e5021a2d'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '68308bbfa31b45998df9d232b6f1e8fe'
+                        key: {
+                            sys_security_acl: '28724c3812fa438bb2032ba56c390cf8'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -3820,12 +6651,38 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '68e6aebb321e4fccb3266a13425bed9e'
+                        key: {
+                            sys_security_acl: '1776b42ee944466c876577264536dbef'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '68f19c454034412d91f9c7637f65f656'
                         deleted: true
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'owner'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '6912ea87591e473ea390bc020cd1db0b'
+                        key: {
+                            sys_security_acl: '80c5199c38c64a3f83067fb54ed9c7d1'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -3870,6 +6727,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '6a34f7b76bf64078bb817b446fc1ea67'
+                        key: {
+                            sys_security_acl: 'c8fd488563dd48b18ef1503601529ee3'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '6abb546fd5004d79b6c3fd7873404e4a'
+                        key: {
+                            sys_security_acl: '038ea1342d334f78ac7bd430ef21b8e0'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '6af9253811d1430f98bf4fcd5488b1a0'
                         key: {
@@ -3898,6 +6781,19 @@ declare global {
                             value: 'unmapped'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '6b4cf20a04c54928bc3ccc9dbd96598f'
+                        key: {
+                            sys_security_acl: '915a7076f91946a0bcadefe81147efa8'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -3963,6 +6859,45 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '6c604c5f648c4ccaa8ffe5e70891a0d9'
+                        key: {
+                            sys_security_acl: '9f9a14fc1fb845c4baead57f2cfa3402'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '6c66a53f035c4ea4a4ac2189f32897af'
+                        key: {
+                            sys_security_acl: '829e6d06527a4bb88e8ce87304b8af0f'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '6d585a4fd6694731a818690eeb15e1c7'
+                        key: {
+                            sys_security_acl: '29c7e071c2fd4c1ca842cdd75d5e3154'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '6d5f0ab4d9cc4ed88474c5137e7b47d0'
                         key: {
@@ -3974,11 +6909,63 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '6d97c8d59c274a6d955a4b14b85f6cc7'
+                        key: {
+                            sys_security_acl: '9e76351fd6764b4a9d92f5b8a5598f9c'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '6dfa0b74262245c4b50b8e2ee72cbbb0'
+                        key: {
+                            sys_security_acl: '88b99e8370154b1289fe12eea3707bbe'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '6e1221f318614f1aafc2cd54a8127ad3'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '6e19e36073bf44f6bb09b290b7a71cd2'
+                        key: {
+                            sys_security_acl: 'ddada49bc85845e192671e8b87d809cd'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '6e1f7a5852504e08a6f2bbdfc94170c2'
+                        key: {
+                            sys_security_acl: '3a41c863f48e48c5af11ca2fccac3cea'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -4058,6 +7045,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '6f8ef815e1c34e99aa19e2d02a0e6020'
+                        key: {
+                            sys_security_acl: 'ff5a4abefd074c118e7c54fc87d5f6a4'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '6faf667d741b4a5c9a799e7aa7f1d486'
                         key: {
@@ -4066,6 +7066,19 @@ declare global {
                             value: 'EA'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '6fc352fbcaff4cf99523d82724a4fe96'
+                        key: {
+                            sys_security_acl: '94d8289f00af4198b886b8b858f88574'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
                         }
                     },
                     {
@@ -4078,12 +7091,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '6ff8159b176c40829b3a8bb6ccc90961'
+                        key: {
+                            sys_security_acl: '5693ca61856a423f84f8dada85598e3f'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '6ffab13d9a3c41109bd20a46031a0aab'
+                        key: {
+                            sys_security_acl: 'b410275485334b6db0b0725c7b132063'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '706658bcc7c847bbbe4c16b529bfa56d'
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'number'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '7068c2a38cba4ce7952922e427abdffc'
+                        key: {
+                            sys_security_acl: '556fa9bd0c1d488b9e9f06f99a420628'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
                         }
                     },
                     {
@@ -4110,6 +7162,32 @@ declare global {
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'engraving_required'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '70e1f2d7826049988bb3b6543c7ab57c'
+                        key: {
+                            sys_security_acl: '278a3f5c9a164a0699863d32093d858b'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '710ca243b4934225ae0488ebcddfa768'
+                        key: {
+                            sys_security_acl: '1843ab5233dd45d1907392c506698107'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -4205,6 +7283,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '729da4f1650b4ceebe464960034add73'
+                        key: {
+                            sys_security_acl: 'f80c1f84779b4d7a87e6d0dd7ec06335'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '72d32480da804fdab1b6ef94f25e2eeb'
+                        key: {
+                            sys_security_acl: 'fd1470a0064545a0bba102d7cc4aab8c'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: '7308c51317b048d9b7d7d51b38f31a23'
                         key: {
@@ -4250,6 +7354,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '7374f5dadf8549839c344be629a9dda7'
+                        key: {
+                            sys_security_acl: '954b88e0cb3343a3a4c7ef3e584bbe0a'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '73885808aa5948a79e682bbe94cbf6bc'
+                        key: {
+                            sys_security_acl: 'fd1470a0064545a0bba102d7cc4aab8c'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '73958feb57984026901ebba4d41b108b'
                         key: {
@@ -4276,6 +7406,19 @@ declare global {
                             name: 'x_cog_mah_engraving_job'
                             element: 'awards_case'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '73c0425150ef4249b5c826ede318c068'
+                        key: {
+                            sys_security_acl: '4f5695188b8c456e93a001bbff4695b5'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -4307,6 +7450,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '74da396f49d44075a19cc4018cad33c2'
+                        key: {
+                            sys_security_acl: 'dc1d9fc766d54f09970967c1d3905238'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '74ec6ed78e994b0f919ca6b350a171bf'
                         key: {
@@ -4320,6 +7476,19 @@ declare global {
                         id: '753dfdcea6684cba93efdee79f14dbab'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '754fb0fd41e34bc79b2acf38a1c54cb8'
+                        key: {
+                            sys_security_acl: '4519acc5b4c848a59e3d16979d223f04'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -4367,6 +7536,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '769faad39b6242f38df98de5f528d82a'
+                        key: {
+                            sys_security_acl: '01632f9bf03c4f2982e7854d88d10c95'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '76cd5c24d26e44a29a4d29544ae22aba'
                         key: {
@@ -4392,6 +7574,19 @@ declare global {
                             value: 'script'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '77f078fe1cf8456f91132b9a9e7c238f'
+                        key: {
+                            sys_security_acl: '3996f29637e447a49c8cfa576d14b079'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -4430,6 +7625,32 @@ declare global {
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'legacy_form'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '78f7d2e29761484bb24922bc9325fdbd'
+                        key: {
+                            sys_security_acl: '5115a13fee104352bd5661507c6a4d76'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '791c543265a6459cbee8b57a84377e74'
+                        key: {
+                            sys_security_acl: '94d8289f00af4198b886b8b858f88574'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -4507,6 +7728,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '7ab63d36e12243b2aafd2ff07267cfd5'
+                        key: {
+                            sys_security_acl: '45303beaca57438a997f5e112d583e1e'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '7abb541fda28482aa6443e1b19ff13d3'
                         key: {
@@ -4536,11 +7770,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '7b7bad00e003418c9744ce4db831ef16'
+                        key: {
+                            sys_security_acl: '42f3f8d2ea3b4a10b2ef809cba65c633'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: '7b8707b1825b4337b0f63ac30b708e6e'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'stage'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '7b89b611fdf341e88eefcf20ba984d06'
+                        key: {
+                            sys_security_acl: '31f29687fab04458a36627087d3540e9'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -4555,12 +7815,38 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '7c104118ec894a7cb629383e6ad48304'
+                        key: {
+                            sys_security_acl: '9b8cbe8883a34dc1a6e95975c5a409df'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '7ca24113d74f4d2a98d4ccbee8b3171d'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'flag_type'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '7cdd4de2e52e4fe38fb00677690f3d5b'
+                        key: {
+                            sys_security_acl: '31f29687fab04458a36627087d3540e9'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -4583,11 +7869,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '7d6187a012ab41d8aa194faff1486310'
+                        key: {
+                            sys_security_acl: 'e623aa28a9ae4b1892c8f35add434af3'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: '7d84e9dedf2a470d98bb1276d9502b92'
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'note_type'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '7d88e82d15e544d09a629d9a029ee499'
+                        key: {
+                            sys_security_acl: '6e1b72d8a4b24863b9caebbfeabe00b2'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '7dacb6d784d642f8a8d38f8af2c64d53'
+                        key: {
+                            sys_security_acl: '3927b15dd98e49febb1c8b4279918660'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -4608,12 +7933,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '7e37a5e360874091bfc59adf4db88ca1'
+                        key: {
+                            sys_security_acl: 'b5b6e249d7a14f36a1c1a8e265bbe0fb'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '7e6b0ba10a5042d08370d6af17628bb7'
+                        key: {
+                            sys_security_acl: 'ab99c30b4e6147c0a125852ba616f1bd'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '7e87ddb46b304e57bec8f341eecb4dd3'
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'pieces'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '7ef66029c9734a0ca80b8e39b10dbdca'
+                        key: {
+                            sys_security_acl: '1843ab5233dd45d1907392c506698107'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -4671,6 +8035,84 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '7f67eca7b86d4a67bc2c230f1ce69acf'
+                        key: {
+                            sys_security_acl: '38907405899543129286caecfe81960f'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '7fb238427646400e8ff6272f3893184a'
+                        key: {
+                            sys_security_acl: 'c77c9032ab6145adb6d3f3de6ef3cfb5'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '8009356793ce468fae6d40d2ec9e153f'
+                        key: {
+                            sys_security_acl: '5115a13fee104352bd5661507c6a4d76'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '801936d1b56a4db69d9070dada7ceb13'
+                        key: {
+                            sys_security_acl: '42f3f8d2ea3b4a10b2ef809cba65c633'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '801e2e4babf245b19b7659dbb56935fa'
+                        key: {
+                            sys_security_acl: 'f80c1f84779b4d7a87e6d0dd7ec06335'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '805c29a0b5f443559ddb53489722030b'
+                        key: {
+                            sys_security_acl: 'ed0f12e67b8540049dca6e67af643a27'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '8066c8eae15843b3acee81bc7a9f7565'
                         deleted: true
@@ -4680,6 +8122,32 @@ declare global {
                             value: 'other'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '808296137eb2430a8575a842c9675add'
+                        key: {
+                            sys_security_acl: '3996f29637e447a49c8cfa576d14b079'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '80f2e426101948a2a3618f90223d532a'
+                        key: {
+                            sys_security_acl: 'c8fd488563dd48b18ef1503601529ee3'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -4733,6 +8201,58 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '82a27429e04a4d2d9cd99b8590df26e4'
+                        key: {
+                            sys_security_acl: '29c7e071c2fd4c1ca842cdd75d5e3154'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '82a5acecec3d44519c7438605e769f08'
+                        key: {
+                            sys_security_acl: 'e623aa28a9ae4b1892c8f35add434af3'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '82c739f8329a496989a300a20cbbf92e'
+                        key: {
+                            sys_security_acl: 'b410275485334b6db0b0725c7b132063'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '82d114a07e78491c8466501cfaf03910'
+                        key: {
+                            sys_security_acl: '962db85c8b4b470e99efed72c26125a4'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '82e61c72e6a94e7e9a672c07a259678b'
                         key: {
@@ -4742,11 +8262,63 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '8300d1c627d24018b650413b59ad5b22'
+                        key: {
+                            sys_security_acl: '038ea1342d334f78ac7bd430ef21b8e0'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '83111c03a270416d8f80c2e4f00d97ad'
+                        key: {
+                            sys_security_acl: '7e33999060fb42afa53c7fb58f8f0804'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '833ad01ec7764e149b19e31d74df6bd5'
+                        key: {
+                            sys_security_acl: '173b2345eb0b479096301acb4a72c648'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '83716935a1884b2093de56067760652c'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'legacy_status_raw'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '839f17f1e44d40cd80fecef85f267b17'
+                        key: {
+                            sys_security_acl: '5086731cda934e619912b09c67a11030'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -4819,6 +8391,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '8593ca7583db4eb29ebaedf9bd87a432'
+                        key: {
+                            sys_security_acl: 'fb89a0fc8a1944d78929d3c6aa7c49d0'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '85a37a0ef15c4a989e120edc3f4af10d'
                         key: {
@@ -4855,6 +8440,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '86967d79be7b41559107a128aeb0b487'
+                        key: {
+                            sys_security_acl: '393ca17367174579a831a5b90382ae3d'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '86a70da2b88245cf9f1fdd46da103ac9'
                         key: {
@@ -4871,6 +8469,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'legacy_status_raw'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '86ac2adbcecb4be9a421eb5e327f0d4f'
+                        key: {
+                            sys_security_acl: '9f9a14fc1fb845c4baead57f2cfa3402'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -4909,6 +8520,45 @@ declare global {
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'legacy_last_modified'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '87c85404879e432dad4633d2bab7c16a'
+                        key: {
+                            sys_security_acl: '9e76351fd6764b4a9d92f5b8a5598f9c'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '87db124debf14358b6e363c7e485f4ce'
+                        key: {
+                            sys_security_acl: '1ae4b6f8edfe47e48196f203e0fa828c'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '88252b298766459b8736fd1225943ea5'
+                        key: {
+                            sys_security_acl: '3927b15dd98e49febb1c8b4279918660'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
                         }
                     },
                     {
@@ -4987,6 +8637,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '8a0c80a4609a4a06b469da1b6ef48165'
+                        key: {
+                            sys_security_acl: '9b8cbe8883a34dc1a6e95975c5a409df'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '8a2880e07c35467389fb6f0c30e4362d'
+                        key: {
+                            sys_security_acl: '3a41c863f48e48c5af11ca2fccac3cea'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '8a818a620f9149b693c99e02b0bef7bf'
                         key: {
@@ -5003,6 +8679,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '8aac367c419f49bc896469ada93e870a'
+                        key: {
+                            sys_security_acl: '01632f9bf03c4f2982e7854d88d10c95'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -5080,6 +8769,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '8bc59ff1bd41442a98152c3ef35864e1'
+                        key: {
+                            sys_security_acl: '05f762f171554e608ba1b6745918eb22'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_number'
                         id: '8bdf94487080461dbe91243f627611ce'
                         key: {
@@ -5094,6 +8796,19 @@ declare global {
                             name: 'x_cog_mah_authorization_file'
                             element: 'state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '8beb1d0ac02d46119634742a58047fa0'
+                        key: {
+                            sys_security_acl: '179747aef5b745429d99331a4b488c25'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -5113,6 +8828,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '8c2e33b5bb4e48aab21b5d927da651f7'
+                        key: {
+                            sys_security_acl: '600d82899bc14321a8c32aad5837d0a2'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '8c5f7e1a857b41a1b627bf0a886c1363'
                         key: {
@@ -5121,11 +8849,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '8c7f7406d7fd4ad48facd68c21dc340f'
+                        key: {
+                            sys_security_acl: '95467a74fa644a278f2e79719c96a574'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '8caa28ba82c4454799ea90372ca5c340'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'unit_of_issue'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '8d0a609fdf92490ca061194b358a4cac'
+                        key: {
+                            sys_security_acl: '39ce8bef44964f849199f43f9bab91e1'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -5151,6 +8905,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '8d823a2a2f994c5aa419a11eae552370'
+                        key: {
+                            sys_security_acl: '2c55e078e0f9410191af2110a3e21a8d'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '8d86dfa0b9da4b19aef0c9f6162106b6'
+                        key: {
+                            sys_security_acl: '7e33999060fb42afa53c7fb58f8f0804'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '8dbc4f8d01b44eb1971e6c97d8c48821'
                         key: {
@@ -5167,6 +8947,19 @@ declare global {
                             value: 'closed'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '8debc1bf51c948f7b7391f6c2ac6eab5'
+                        key: {
+                            sys_security_acl: '24f8e7eb043e444d8e4326eb0da3c2c7'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -5219,6 +9012,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '8f6b1aa33e19416b8b99d1326220dc01'
+                        key: {
+                            sys_security_acl: 'a11d5010f1e34577b25b76e0596377d0'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '8fa9626144294abd9728704a61727822'
                         key: {
@@ -5255,12 +9061,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '9004521241a14904a696a9764f5d1850'
+                        key: {
+                            sys_security_acl: '0075e039b63d44a7b3b7cb9dcb8201d8'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '905ed9de364b4fbebc5789aa93674733'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '909f6b4e98cb4141ba4b909bcea7446a'
+                        key: {
+                            sys_security_acl: 'addcdc42297a4de283ef24b01e89f5bc'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '90e28338bafd4716b85e769b506631d8'
+                        key: {
+                            sys_security_acl: '186c22621b4b49b38a6d957a096a9e76'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -5280,6 +9125,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'type'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '915297255f1b4994b9d3d33159ba2313'
+                        key: {
+                            sys_security_acl: '29c7e071c2fd4c1ca842cdd75d5e3154'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
                         }
                     },
                     {
@@ -5309,6 +9167,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '919adc01229440ab90bfdff32da8dc58'
+                        key: {
+                            sys_security_acl: '4355ec5eacb84bb187ac83663741543d'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '91b4eed4fd1742a29f3d5720ec9f2080'
+                        key: {
+                            sys_security_acl: 'd968a2ddfb254b998633ab831d6bc060'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '91c2b2c557a340c8b73fd269abe35911'
                         key: {
@@ -5320,11 +9204,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '91dd4518a69f42ef8a48e24adb1edb68'
+                        key: {
+                            sys_security_acl: 'de1874f071d14736a4fb058d218883b4'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '924723c48e6347ad993e7d247ca153e3'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'stock_number'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '925c5282d9034a678a23294503bc859c'
+                        key: {
+                            sys_security_acl: '81b2760cbcfc4f26a0e3006ffbb639d2'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '92680e8b17ed457bab229071b94bbb14'
+                        key: {
+                            sys_security_acl: '29fb766b37b0474d962a5bea39a0d4c6'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -5336,6 +9259,39 @@ declare global {
                             value: 'automobile'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '926bbde430c34b0fbfd62b9dfc3886f2'
+                        key: {
+                            sys_security_acl: 'c77c9032ab6145adb6d3f3de6ef3cfb5'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_user_role'
+                        id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                        key: {
+                            name: 'x_cog_mah.assembler'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '93340bdd51ae46d6afd24448719853dc'
+                        key: {
+                            sys_security_acl: 'f866e940fae942619cb01ab1efca4173'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -5354,6 +9310,19 @@ declare global {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'poc_phone'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '944d54a989d648bf8108c3eb90b54b0f'
+                        key: {
+                            sys_security_acl: 'b410275485334b6db0b0725c7b132063'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -5396,6 +9365,19 @@ declare global {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'active'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '94ed44bade374777bec9d4464ff93f86'
+                        key: {
+                            sys_security_acl: '173b2345eb0b479096301acb4a72c648'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -5446,6 +9428,19 @@ declare global {
                             value: 'prisoner_of_war_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '9579d53767d24bcb925fdbbbc19ceaf3'
+                        key: {
+                            sys_security_acl: '8599912a06d9443eabf7fcf6a2ae2c27'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -5504,6 +9499,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '96c4e1f94cf94656bf691dc0c2cae494'
+                        key: {
+                            sys_security_acl: 'c86cfa02304b40e58a3db336d97c3afa'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '96f149dc0bf24e88bf1fd57a369b1a03'
                         key: {
@@ -5557,6 +9565,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '97b07b7e75ce47b3bddac42063796e48'
+                        key: {
+                            sys_security_acl: 'cac5dfe668a74447a3b16088017893e7'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '97f23a85bd2f4a7694b478a1235bc87a'
                         key: {
@@ -5573,6 +9594,19 @@ declare global {
                             value: 'army_good_conduct_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '98317ebee7be4c12bd753f9bd735972c'
+                        key: {
+                            sys_security_acl: 'f866e940fae942619cb01ab1efca4173'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
                         }
                     },
                     {
@@ -5610,12 +9644,77 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '9918ae5981174f05a204792d102715c1'
+                        key: {
+                            sys_security_acl: 'b6f56247c4054dab86593812c68d81d3'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '99abbb5bd13d44b3a6c27b014112035d'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'project_code'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '99badfd69398426fb0a600957bfc9372'
+                        key: {
+                            sys_security_acl: '1ed2fbfb3afc4b21b09a1bedeb62ea7e'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '99dded970b1f44ee9191e8b3c3eb6f23'
+                        key: {
+                            sys_security_acl: 'f866e940fae942619cb01ab1efca4173'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '99fb0fb2f2b4418991b378877dd24d79'
+                        key: {
+                            sys_security_acl: 'ed0f12e67b8540049dca6e67af643a27'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '9a197a9b19bd465bab22472d4fef304a'
+                        key: {
+                            sys_security_acl: '2c55e078e0f9410191af2110a3e21a8d'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -5634,6 +9733,32 @@ declare global {
                             name: 'x_cog_mah_engraving_job'
                             element: 'qc_notes'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '9b39a8540aa24b128e6d7c8cf710f9f3'
+                        key: {
+                            sys_security_acl: '034e26fcdd914018be37d10a6730e614'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '9b7f8e9b225c49ff830c0a3ca0195575'
+                        key: {
+                            sys_security_acl: '1cda2cd65cc746488a970f8fbc39c3ef'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -5659,6 +9784,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '9cace2af2daf4aa6af7a2aaec4b02262'
+                        key: {
+                            sys_security_acl: '70ebc87ade124cc7a08d3701e5021a2d'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '9cf7437a7f6848b68de55ec9e76ccba3'
                         key: {
@@ -5681,11 +9819,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '9d49622f9f5b45f88b72b95fa78670e5'
+                        key: {
+                            sys_security_acl: '8ad8867828664a1e81541b9ce4c5ed7f'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '9da739f552dc4d46b36735afba8051fe'
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'heraldry_request'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '9dcb0b75240844da9360f870a04f391d'
+                        key: {
+                            sys_security_acl: 'a1fdc2ab905440e2bd84d4c4beb620a8'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -5726,6 +9890,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '9e95f27870e14b5a92dd866cc5fec3a7'
+                        key: {
+                            sys_security_acl: '45303beaca57438a997f5e112d583e1e'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '9e9e39a7870b4e258c841998e16fb594'
+                        key: {
+                            sys_security_acl: '13555b2f1d354f0bb269b7fd0a07ab8a'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '9ea74ee0197445d09c7930a7d6fc7fe1'
                         key: {
@@ -5762,6 +9952,19 @@ declare global {
                             value: 'unmapped'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: '9f58630deb6e410f8b17a151191fc7fa'
+                        key: {
+                            sys_security_acl: 'c86cfa02304b40e58a3db336d97c3afa'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -5837,6 +10040,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: '9fe398c970ef4b8ebfe66d1f5930fe26'
+                        key: {
+                            sys_security_acl: '1843ab5233dd45d1907392c506698107'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '9fe66ad8ea7041238609b8a9cbe80f6f'
                         key: {
@@ -5854,6 +10070,19 @@ declare global {
                             value: 'awards_case'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a00a2914439141db870f72b0856f012e'
+                        key: {
+                            sys_security_acl: '13555b2f1d354f0bb269b7fd0a07ab8a'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
                         }
                     },
                     {
@@ -5896,6 +10125,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'a0b67d383e92458882433a83658a9509'
+                        key: {
+                            sys_security_acl: '829e6d06527a4bb88e8ce87304b8af0f'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'a0be17d3832642bb81fd20b1b1f8df9b'
                         key: {
@@ -5912,6 +10154,32 @@ declare global {
                             value: 'accessory'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a15eed1dc19a4cfd89705131469de080'
+                        key: {
+                            sys_security_acl: '8ad8867828664a1e81541b9ce4c5ed7f'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a16d372f72bd439aacfc7aca665ee5ac'
+                        key: {
+                            sys_security_acl: '19ec3725cf9748049e367263450fecd3'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -5938,6 +10206,19 @@ declare global {
                         id: 'a1a38aa4fb4d42eabce895716bc2e30e'
                         key: {
                             name: 'x_cog_mah_awards_case'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a1c405902558458b894b2479fe58b44e'
+                        key: {
+                            sys_security_acl: '20c24e1dca554dbea3cf27bc421c0381'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -5985,6 +10266,19 @@ declare global {
                             value: 'cancelled'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a2fda61574fc4ab684eeadc207c9b6c4'
+                        key: {
+                            sys_security_acl: 'ab57b28ff495465990501d5f01e155ad'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -6058,6 +10352,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'a3c2effedcc04ed298b06ec213cc073a'
+                        key: {
+                            sys_security_acl: 'fb89a0fc8a1944d78929d3c6aa7c49d0'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'a3cb4b367ff749f2a541d7619b51770b'
                         key: {
@@ -6086,12 +10393,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'a3dd755f28e247cf9585564766b0b4ee'
+                        key: {
+                            sys_security_acl: '4f5695188b8c456e93a001bbff4695b5'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a419a0006114449b9ea554e0e978a61e'
+                        key: {
+                            sys_security_acl: '962db85c8b4b470e99efed72c26125a4'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'a4709487b8694d2abff1bb741b128f01'
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'active'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a47468e89f474ec99787179b3c2f2512'
+                        key: {
+                            sys_security_acl: '08f58a599f8b4969b1e4a019c3c155c7'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -6181,6 +10527,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'a674c1b5e33b4a139fcf1f784721d242'
+                        key: {
+                            sys_security_acl: '42f3f8d2ea3b4a10b2ef809cba65c633'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a6a426d1dc17431b8fba82e96f820b90'
+                        key: {
+                            sys_security_acl: '28724c3812fa438bb2032ba56c390cf8'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'a6a924079a6f40d9bb42733ed0ed9246'
                         key: {
@@ -6210,12 +10582,38 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'a6bda0dbb987423c8a6682cfe437bc88'
+                        key: {
+                            sys_security_acl: '954b88e0cb3343a3a4c7ef3e584bbe0a'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'a6c762aef2634dcd97eef466d54dd0de'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'legacy_form'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a6e1f7a4eaaf40c6b3236dba12350a15'
+                        key: {
+                            sys_security_acl: '3996f29637e447a49c8cfa576d14b079'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
                         }
                     },
                     {
@@ -6247,6 +10645,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'a7d5bcdce270444f8004510eaee5dac9'
+                        key: {
+                            sys_security_acl: '179747aef5b745429d99331a4b488c25'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'a81268862e164391bb1511787807895c'
                         key: {
@@ -6260,6 +10671,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a8d8fe66515d4efbb226bc148d55a53f'
+                        key: {
+                            sys_security_acl: 'ab99c30b4e6147c0a125852ba616f1bd'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -6281,6 +10705,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'a91f58a2390048b88cd4970cb5032c8a'
+                        key: {
+                            sys_security_acl: '70ebc87ade124cc7a08d3701e5021a2d'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: 'a92c5e70c8d94207a86f56dd31dde368'
                         key: {
@@ -6299,6 +10736,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'a9900639133f418891005edb8b71d8a4'
+                        key: {
+                            sys_security_acl: '88a856f5724e4ee2ad37bd8253deae84'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'a9a2ba19b0e6400794022e2503e6f6fb'
                         key: {
@@ -6307,11 +10757,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'a9c9353afed046d4be2be4e0005eff26'
+                        key: {
+                            sys_security_acl: 'b8e33c10aa614c48b0caef9cc5f3bb1d'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'a9f992d640d6456faa5b164554af9beb'
+                        key: {
+                            sys_security_acl: '422946c65ec1456ab71ab8a5b95e6b83'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'a9fb0b0d94ad4061827eca4062c0f3d6'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'address_1'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'aa77846e437147f5b0af2d068b50058e'
+                        key: {
+                            sys_security_acl: 'e18cdd3511204fc5bf043fcb41bf5517'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -6377,6 +10866,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'abaecb50fca04b7a82b995c5a4d37b6e'
+                        key: {
+                            sys_security_acl: '94d8289f00af4198b886b8b858f88574'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'ua_table_licensing_config'
                         id: 'ac19de910cf74fa9876050951548175d'
                         key: {
@@ -6423,6 +10925,32 @@ declare global {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'requesting_office'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'ad02c9ecaf66412e83b7405c4f1f5977'
+                        key: {
+                            sys_security_acl: 'b5b6e249d7a14f36a1c1a8e265bbe0fb'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'ad0a025225f44071b2e84bf4ed8df56b'
+                        key: {
+                            sys_security_acl: '179747aef5b745429d99331a4b488c25'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -6484,12 +11012,38 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'add813d1ef6a4a6aa278bc47204ae2ed'
+                        key: {
+                            sys_security_acl: '8ad8867828664a1e81541b9ce4c5ed7f'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'ae097cc124b34edf9d650be6c605859b'
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'ae5336e36def4d7083a1fccfc0f559c9'
+                        key: {
+                            sys_security_acl: '1776b42ee944466c876577264536dbef'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -6581,6 +11135,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'af7f190cc95342a5a298edbf1798fa8b'
+                        key: {
+                            sys_security_acl: '13555b2f1d354f0bb269b7fd0a07ab8a'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'af883acad402405189bf9dd0fe0ce688'
                         key: {
@@ -6592,11 +11159,63 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'afc7c4711f6d43159eae4d26c9d292ad'
+                        key: {
+                            sys_security_acl: '20c24e1dca554dbea3cf27bc421c0381'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'aff2e110973e4063aa8ee36ed164dd56'
+                        key: {
+                            sys_security_acl: 'b4eb8ad450f740f2b0e6c8c0eb0c8469'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'affc5011b9334f609e48ecb949d2ad01'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'closed_at'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'b00305017f324c849592fc89b0568846'
+                        key: {
+                            sys_security_acl: 'b6f56247c4054dab86593812c68d81d3'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'b007ee2e299f4b9cbf2156524ac19076'
+                        key: {
+                            sys_security_acl: 'cac5dfe668a74447a3b16088017893e7'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -6704,6 +11323,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'b2dce8db7afa4dc1a5d0e350e51f3411'
+                        key: {
+                            sys_security_acl: 'fd1470a0064545a0bba102d7cc4aab8c'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: 'b2f3f5d727e545be8776d65a5c5627c5'
                         key: {
@@ -6775,6 +11407,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'b42281e9e60543739dbec1544e4de20a'
+                        key: {
+                            sys_security_acl: 'f80c1f84779b4d7a87e6d0dd7ec06335'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'b4a9d111c91a43928b4e1bcefe917664'
                         key: {
@@ -6789,6 +11434,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'rework_count'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'b569e43816314ef18e50221338fde336'
+                        key: {
+                            sys_security_acl: '915a7076f91946a0bcadefe81147efa8'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
                         }
                     },
                     {
@@ -6869,6 +11527,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'b62261a242a2470b9cf84570fef11509'
+                        key: {
+                            sys_security_acl: 'dfdcb568ae7a44ad8af3a92b0b4f47b0'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'b6264c5f314040ffbf2f6b7c1b766aec'
+                        key: {
+                            sys_security_acl: 'f80c1f84779b4d7a87e6d0dd7ec06335'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'b6284eb0370b47528ae903635970412e'
                         key: {
@@ -6877,6 +11561,19 @@ declare global {
                             value: 'customer_contact'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'b63bc251e24342ddb0fe5b917d9a23ce'
+                        key: {
+                            sys_security_acl: '3927b15dd98e49febb1c8b4279918660'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -6904,6 +11601,65 @@ declare global {
                             value: 'inactive'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'b6c1d0fef5fa43ed850865a8d78c5776'
+                        key: {
+                            sys_security_acl: '173b2345eb0b479096301acb4a72c648'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_user_role'
+                        id: 'b6cc086383b5473697c1598ddc634729'
+                        key: {
+                            name: 'x_cog_mah.vendor'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'b6ee862d756944508c2dbdc5daf39b47'
+                        key: {
+                            sys_security_acl: 'e033584da4274bd0891c0ff022fe333b'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'b6eed856c18e4aaeb5cce194669c838c'
+                        key: {
+                            sys_security_acl: '411dd5ddc9544f18bbd62e688c27fd70'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'b6f8a7b7f87c4dfeac72629f9ceb6ea2'
+                        key: {
+                            sys_security_acl: '2f844389800c4d2a893f2b2f53974f0c'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -6961,6 +11717,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'b857d88178f04a7c9958f0c0d5de70d0'
+                        key: {
+                            sys_security_acl: '6e1b72d8a4b24863b9caebbfeabe00b2'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'b8ac7afeba1d4bad86aa8882374938b1'
                         key: {
@@ -6969,6 +11738,19 @@ declare global {
                             value: 'combat_action_badge'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'b8b873320ab04fae85b5e290612bed25'
+                        key: {
+                            sys_security_acl: '4f5695188b8c456e93a001bbff4695b5'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -7037,6 +11819,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'bc20bfc897c646a783a8d094f161ab2b'
+                        key: {
+                            sys_security_acl: 'a30a2c387f6f489fa34469d35697b6e8'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'bc323635fe63464a8d93951dca2b4436'
                         key: {
@@ -7045,11 +11840,76 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'bc42821b442d445c8d58d8494f0d0c42'
+                        key: {
+                            sys_security_acl: 'a6124dce5427427db6ed89ac923a1216'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'bc4cc51c480d42ad8923b66ac9e1c395'
+                        key: {
+                            sys_security_acl: '179747aef5b745429d99331a4b488c25'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'bc548299f96f403788713c2694872b4b'
+                        key: {
+                            sys_security_acl: '9b8cbe8883a34dc1a6e95975c5a409df'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'bccc6436cd2f428dab8c0f07011c4297'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'total_extended_price'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'bce7d7b3a9f94685bb581c636062fe8a'
+                        key: {
+                            sys_security_acl: 'e623aa28a9ae4b1892c8f35add434af3'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'bd1c1d6bad0d414f8d162640b0d38774'
+                        key: {
+                            sys_security_acl: '5c39e08e25ca4b7997cd62c5998c82a8'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -7087,6 +11947,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'bd70bfd741904d78abee53a0725407be'
+                        key: {
+                            sys_security_acl: '05f762f171554e608ba1b6745918eb22'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'bdd6980a04364278b26923d2184091bd'
                         key: {
@@ -7120,6 +11993,32 @@ declare global {
                         id: 'be3a22a3932e4a0e84e45c04cdbfef1e'
                         key: {
                             name: 'x_cog_mah_request_line'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'be520d7ceeae4418a657c66eb5c10680'
+                        key: {
+                            sys_security_acl: '914df7866b3a4ac48df0f9d4c3273cdf'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'be53befcf56e4bd8832b3dfca0162b3d'
+                        key: {
+                            sys_security_acl: '13555b2f1d354f0bb269b7fd0a07ab8a'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -7207,6 +12106,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'bfee4df504b74786baf1decd1b6dc59d'
+                        key: {
+                            sys_security_acl: 'd8e1079b65624519a432dd8309d7e03e'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'c0123e082b6a4fba9daaa4b046a0a19a'
                         key: {
@@ -7220,6 +12132,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'active'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c0b326e5bc28443eb359843fe1e12769'
+                        key: {
+                            sys_security_acl: '568973c6598f4aefada06eb659d05763'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -7242,6 +12167,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'c123c254959440898d39489e51fb0d10'
+                        key: {
+                            sys_security_acl: '179747aef5b745429d99331a4b488c25'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'c12949f8d4c94380a8d588ba3ed47023'
                         key: {
@@ -7256,6 +12194,24 @@ declare global {
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'batch_id'
+                        }
+                    },
+                    {
+                        table: 'sys_user_role_contains'
+                        id: 'c1a22a6d15ed4cb5b2f0eca6e5d452eb'
+                        key: {
+                            role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                            contains: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -7275,11 +12231,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'c28091a43b91419384fcf21568772e94'
+                        key: {
+                            sys_security_acl: '600d82899bc14321a8c32aad5837d0a2'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'c28d9d0977254e52ae50dd9ca2ccd039'
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c2e0da76213242a396334add54eacd0a'
+                        key: {
+                            sys_security_acl: '4f5695188b8c456e93a001bbff4695b5'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
                         }
                     },
                     {
@@ -7314,11 +12296,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'c3473444284840b2a162a56d850d88f8'
+                        key: {
+                            sys_security_acl: 'ddada49bc85845e192671e8b87d809cd'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c3bc7809b5a040eebe9f6104f513b163'
+                        key: {
+                            sys_security_acl: '8067708abfa84c608f8d9a41b1182736'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'c3d7e5d626b64909ae310a9341486280'
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c3e7333166f94d3ea0f473dfcf04df68'
+                        key: {
+                            sys_security_acl: '94d8289f00af4198b886b8b858f88574'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -7347,11 +12368,31 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_user_role'
+                        id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                        key: {
+                            name: 'x_cog_mah.csr'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'c479b912f7314663acdc3dbf56366454'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'drawing_number'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c47c1aaf5cc84ac9a5cd97dc599ba84c'
+                        key: {
+                            sys_security_acl: 'ab57b28ff495465990501d5f01e155ad'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -7373,11 +12414,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'c49b4ec0b6d749df90642ea0beeff2e6'
+                        key: {
+                            sys_security_acl: 'e623aa28a9ae4b1892c8f35add434af3'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'c4b7f6f59aca43708e44c06a53ec90a6'
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'legacy_last_modified'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c4c5f61d16eb4b8793343d466b7f29bc'
+                        key: {
+                            sys_security_acl: '4665f50b45ad4b14bf78456a08bb7b29'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -7396,6 +12463,19 @@ declare global {
                             name: 'x_cog_mah_request_line'
                             element: 'vendor_quantity_shipped'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c5393739a492479e896878af46926956'
+                        key: {
+                            sys_security_acl: 'ed0f12e67b8540049dca6e67af643a27'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -7421,11 +12501,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'c6a6f8911eaf4dd783b5e34ac7137a15'
+                        key: {
+                            sys_security_acl: '29fb766b37b0474d962a5bea39a0d4c6'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: 'c6cfd96f97734d03a986fe73df210742'
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'format'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c6dbd2da238742948fbb16b1970548e4'
+                        key: {
+                            sys_security_acl: '38a56c1bb75a45aa929d300f881e81a6'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
                         }
                     },
                     {
@@ -7449,6 +12555,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'c777b5be3b41462fbdda9e629b1e78d8'
+                        key: {
+                            sys_security_acl: '776817f52c834f158c0712042e11e56f'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: 'c792f792147749de946670e54f7f1eae'
                         key: {
@@ -7464,6 +12583,19 @@ declare global {
                             value: 'combat_infantryman_badge'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c7b321c15297496fa2927e0e0d21c2ac'
+                        key: {
+                            sys_security_acl: 'a30a2c387f6f489fa34469d35697b6e8'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -7485,6 +12617,32 @@ declare global {
                             value: 'heraldry_request'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c8b1415159394171973a1319c83bb826'
+                        key: {
+                            sys_security_acl: 'b410275485334b6db0b0725c7b132063'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c8d5ae45d4f74bf497d65225680de79e'
+                        key: {
+                            sys_security_acl: '268db17c8b4a41ebaa93724124f68716'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -7536,6 +12694,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'c95e88b4e14a44938c3a42dff41e9d87'
+                        key: {
+                            sys_security_acl: '4d51de133615486785971f92e91db5c8'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'c98d721dbbea46cbbaa7286b3a5790f4'
                         key: {
@@ -7544,6 +12715,19 @@ declare global {
                             value: 'open'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'c9b576d2aca44b88a6334cb41cb9ff85'
+                        key: {
+                            sys_security_acl: 'c368584cd1ef450db8ec2cda25fb9786'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -7673,6 +12857,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'cd45ecf2794d413fb004e6bfd6cd6718'
+                        key: {
+                            sys_security_acl: '8067708abfa84c608f8d9a41b1182736'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'cd61f512431045dea77a5638a972b33f'
                         key: {
@@ -7687,6 +12884,19 @@ declare global {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'drawing_number'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'cd7e65cf4ef24321ba52f55e372243af'
+                        key: {
+                            sys_security_acl: '24f8e7eb043e444d8e4326eb0da3c2c7'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -7723,12 +12933,45 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'ce8ec347f0c2439bbaa237f31ebacff7'
+                        key: {
+                            sys_security_acl: 'a30a2c387f6f489fa34469d35697b6e8'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_user_role'
+                        id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                        key: {
+                            name: 'x_cog_mah.dla'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'ceaf07fea59e4ec7aa6998900ca9a225'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'vendor_notes'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'cec29189ac074f18933f633a28f3fb1c'
+                        key: {
+                            sys_security_acl: '4355ec5eacb84bb187ac83663741543d'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -7753,6 +12996,24 @@ declare global {
                         id: 'cfdcd6e5ec0c4338a47a15be6dc24be5'
                         key: {
                             name: 'x_cog_mah_shipment'
+                        }
+                    },
+                    {
+                        table: 'sys_user_role_contains'
+                        id: 'd032f840527943ec98a1a84472048787'
+                        key: {
+                            role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                            contains: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
                         }
                     },
                     {
@@ -7809,6 +13070,65 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'd0efbadac6834e6ab1950b1a338d51d4'
+                        key: {
+                            sys_security_acl: 'd3b2e88a6b4e421f9af8fb70bc1c4f82'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd13e1ff2a7524bec9586549dc02ea773'
+                        key: {
+                            sys_security_acl: '31f29687fab04458a36627087d3540e9'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd1986a2cbe814a97851f1431f65e0d2b'
+                        key: {
+                            sys_security_acl: 'dfdcb568ae7a44ad8af3a92b0b4f47b0'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_user_role'
+                        id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                        key: {
+                            name: 'x_cog_mah.engraver'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd1d85774e858405b8816ac79058a46a3'
+                        key: {
+                            sys_security_acl: '5c39e08e25ca4b7997cd62c5998c82a8'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'd1e36e3f387d4590ab8203cc825b72a7'
                         key: {
@@ -7837,6 +13157,45 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'd2286880e1b744afadaa961cc4d30eb5'
+                        key: {
+                            sys_security_acl: 'd968a2ddfb254b998633ab831d6bc060'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd26a41689b7d43a699dd901a0b4995c4'
+                        key: {
+                            sys_security_acl: '05f762f171554e608ba1b6745918eb22'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd2aad3006a4d4b959f2c06d0643074fc'
+                        key: {
+                            sys_security_acl: '20c24e1dca554dbea3cf27bc421c0381'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'd3482ee5d28c4ff1baf8907f52ac72b8'
                         key: {
@@ -7851,6 +13210,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd382ae82f8bd4403b55c578d516fc1d1'
+                        key: {
+                            sys_security_acl: 'e29f3be865f344fd9ea29c75549d011f'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -7871,6 +13243,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'd3d0f47be119441590f7375f20ca3fa1'
+                        key: {
+                            sys_security_acl: '24f8e7eb043e444d8e4326eb0da3c2c7'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'd3d78a4193574054b0d97a8c616cb92e'
                         key: {
@@ -7879,6 +13264,32 @@ declare global {
                             value: 'award_line'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd412b968eaeb45409a043e471f431838'
+                        key: {
+                            sys_security_acl: '679fadd2ea8340f0bf24ca64a7356f1f'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd4802303b54f4f98b9a0c908a63308d3'
+                        key: {
+                            sys_security_acl: '19ec3725cf9748049e367263450fecd3'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
                         }
                     },
                     {
@@ -7895,6 +13306,32 @@ declare global {
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'authorization_file'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd538f810ef2a4e2d9cc088755aec5db3'
+                        key: {
+                            sys_security_acl: '3a41c863f48e48c5af11ca2fccac3cea'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd5ae6b77eec845ffba6ebb73a6bfca6b'
+                        key: {
+                            sys_security_acl: 'e29f3be865f344fd9ea29c75549d011f'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
@@ -7937,6 +13374,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'd61645ab67534d9cac25ffcf4bc98948'
+                        key: {
+                            name: 'x_cog_mah_requester'
+                            element: 'merge_target'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'd6456f53d50845b3b84d91d50b213704'
                         key: {
@@ -7969,6 +13414,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'd70648607f924f238a738b8fa64f08b2'
+                        key: {
+                            sys_security_acl: 'fd1470a0064545a0bba102d7cc4aab8c'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd763e672a33e4888bface76b0223a03d'
+                        key: {
+                            sys_security_acl: 'abc34180681a4ca78772645676e58605'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'd77a8e761ba34f529ce35d1beb4b3b7e'
                         key: {
@@ -7985,6 +13456,32 @@ declare global {
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'legacy_form'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd7c4ebc3078849f8b4b28c10b2040cb8'
+                        key: {
+                            sys_security_acl: '5693ca61856a423f84f8dada85598e3f'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd7d636f21a3642fbbf0ff7c6fdcd8060'
+                        key: {
+                            sys_security_acl: '9f9a14fc1fb845c4baead57f2cfa3402'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -8058,6 +13555,45 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'd96cfebd2fcd4111a5138f54cd6352b0'
+                        key: {
+                            sys_security_acl: 'ff5a4abefd074c118e7c54fc87d5f6a4'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd98ed3374ce24f63b46bef7f7a663041'
+                        key: {
+                            sys_security_acl: 'c77c9032ab6145adb6d3f3de6ef3cfb5'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'd9ac1216016c4819b2b055b669752bdb'
+                        key: {
+                            sys_security_acl: '4f5695188b8c456e93a001bbff4695b5'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'd9c329e0aa7c4acd813d912b7207b903'
                         key: {
@@ -8069,6 +13605,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'd9e6494323b8438ab4b6e6024150f298'
+                        key: {
+                            sys_security_acl: '87d7c682bf924e7f9cd18bb41b9f456c'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'da16388d6bb347b99bb9518b891a17e7'
                         key: {
@@ -8077,11 +13626,50 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'da2e806f295d4c918f903ce739085ee8'
+                        key: {
+                            sys_security_acl: '94d8289f00af4198b886b8b858f88574'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: 'da76c8b6b7624bbab4dc5c64d42617f3'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'status'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'da77b99ad47e4b4ca91f682ca6007c03'
+                        key: {
+                            sys_security_acl: '81b2760cbcfc4f26a0e3006ffbb639d2'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'dad0c2ce7b7d4444968f3cedcaec8ae5'
+                        key: {
+                            sys_security_acl: 'e29f3be865f344fd9ea29c75549d011f'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -8172,6 +13760,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'dda3e72c6afb4769a1c8e05d1fa0d6f4'
+                        key: {
+                            sys_security_acl: 'e595320b6e1541abaccf84b9ca68e640'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'de5cb108cc4b409a900d4d70c0c469bb'
                         key: {
@@ -8241,6 +13842,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'e081b46666684855851167181567e58f'
+                        key: {
+                            sys_security_acl: 'b6f56247c4054dab86593812c68d81d3'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'e12bf40b6903481486670080e65ede2d'
                         key: {
@@ -8302,6 +13916,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'e220fe4af8e048948af425b70c7603c3'
+                        key: {
+                            sys_security_acl: '1ed2fbfb3afc4b21b09a1bedeb62ea7e'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'e22f02dbd4e3473399de22d4bbba6ea1'
+                        key: {
+                            sys_security_acl: '38a56c1bb75a45aa929d300f881e81a6'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'e29449a1776746aca8e2b6512b796e85'
                         key: {
@@ -8338,6 +13978,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'e2c4ba6dd4fd4c88b02d2f351bded8fc'
+                        key: {
+                            sys_security_acl: '3996f29637e447a49c8cfa576d14b079'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'e302ab8e1a8e4b228c27a818771dc396'
                         key: {
@@ -8346,6 +13999,19 @@ declare global {
                             value: 'bronze_star_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'e321782ebb9141fd896df24b640e1840'
+                        key: {
+                            sys_security_acl: '914df7866b3a4ac48df0f9d4c3273cdf'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -8473,6 +14139,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'e5a662cfd2224f4bbdfe71d84319f9af'
+                        key: {
+                            sys_security_acl: 'a11d5010f1e34577b25b76e0596377d0'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'e5bf587e6d454aecbce48a0b3dcbceba'
                         key: {
@@ -8499,6 +14178,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'e605070beea74a6cbe8817821e268b80'
+                        key: {
+                            sys_security_acl: '8599912a06d9443eabf7fcf6a2ae2c27'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'e6129e1aa5084a3ebbecebab2fb99b7d'
                         key: {
@@ -8507,6 +14199,19 @@ declare global {
                             value: 'cancelled'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'e627ad52860449b5bdf771b4d1723a33'
+                        key: {
+                            sys_security_acl: '915a7076f91946a0bcadefe81147efa8'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -8550,6 +14255,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'e6745b85839c45fbbb4abc611e2e8332'
+                        key: {
+                            sys_security_acl: '81b2760cbcfc4f26a0e3006ffbb639d2'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'e6b3c604dc5543fd993412536f0ff72f'
                         key: {
@@ -8580,6 +14298,19 @@ declare global {
                             value: 'rework'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'e7e592669bde42ed8f0a0e673c725ed8'
+                        key: {
+                            sys_security_acl: '829e6d06527a4bb88e8ce87304b8af0f'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
                         }
                     },
                     {
@@ -8638,12 +14369,51 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'e89ae94dbdca42a584b8920d167975b5'
+                        key: {
+                            sys_security_acl: '4519acc5b4c848a59e3d16979d223f04'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'e8d7e1926d9b4c5f9bc0425826a44dcb'
+                        key: {
+                            sys_security_acl: '38907405899543129286caecfe81960f'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'e8f62ade70744ae19ea35c509d1e3278'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'exception_item'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'e90c8cbd680a4c41a9747327f415109e'
+                        key: {
+                            sys_security_acl: 'b4eb8ad450f740f2b0e6c8c0eb0c8469'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -8755,12 +14525,56 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'ea0a330d10944f9388b8356c0d8f356e'
+                        key: {
+                            sys_security_acl: '173b2345eb0b479096301acb4a72c648'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_user_role_contains'
+                        id: 'ea0e449b727b433b91203164fc4769ca'
+                        key: {
+                            role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                            contains: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'ea236118ea904a56a3847bfd80fef5cb'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'status'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'eab30a427d754b4993128e10012d1c6b'
+                        key: {
+                            sys_security_acl: '1cda2cd65cc746488a970f8fbc39c3ef'
+                            sys_user_role: {
+                                id: 'd1a7f5480821452f8f14fe5e1d562d58'
+                                key: {
+                                    name: 'x_cog_mah.engraver'
+                                }
+                            }
                         }
                     },
                     {
@@ -8779,6 +14593,19 @@ declare global {
                             name: 'x_cog_mah_migration_exception'
                             element: 'field_name'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'ead4b204779940b58c68122d1c783edc'
+                        key: {
+                            sys_security_acl: '29fb766b37b0474d962a5bea39a0d4c6'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -8836,6 +14663,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'ec0314b918b34757acb5be1a43c1c0a1'
+                        key: {
+                            sys_security_acl: '1783cefb7b3141bc867aa6018aadd7d3'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'ec130037c5f548a3964f52f82edf063f'
                         key: {
@@ -8871,6 +14711,19 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'ec90e84bd761444dbae9268efbf87d80'
+                        key: {
+                            sys_security_acl: '4355ec5eacb84bb187ac83663741543d'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'eca0a03309224639b433b21ade826c07'
                         key: {
@@ -8899,6 +14752,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'ecbf96e62d8549688fceb5a392f229bf'
+                        key: {
+                            sys_security_acl: 'a8787f3032374029a51de9dee3dc0c8c'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'ecfe92f6605e4951ba04dee7ee8b22a7'
+                        key: {
+                            sys_security_acl: '393ca17367174579a831a5b90382ae3d'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'ecff1e745162424aa3ab7b61b7bc7392'
                         key: {
@@ -8922,6 +14801,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'qc_notes'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'ed4ac77fcfd34bb8a44b37f3334e45b3'
+                        key: {
+                            sys_security_acl: '1cda2cd65cc746488a970f8fbc39c3ef'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -8988,12 +14880,33 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'eebc0a760e844a6cb432e921e5ee0bb8'
+                        key: {
+                            sys_security_acl: '556fa9bd0c1d488b9e9f06f99a420628'
+                            sys_user_role: {
+                                id: '1a63cf943a5c40208fe7e505c27dcc0c'
+                                key: {
+                                    name: 'x_cog_mah.tacom_staff'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'eeddc646f378428abaf119fe88438493'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'duplicate_count'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ws_header_map'
+                        id: 'ef1c9d42b5444b479a1639613cd2a8b1'
+                        key: {
+                            web_service_operation: '49cb73d0c53d4c399b8c5cdacb4b5615'
+                            web_service_header: 'eb6b75e44b1b44d19657b55e4b915802'
                         }
                     },
                     {
@@ -9010,6 +14923,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'aging_flag'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'ef7e513f73cb4a3988f54f2b4b8fb8db'
+                        key: {
+                            sys_security_acl: '268db17c8b4a41ebaa93724124f68716'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -9055,6 +14981,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'efd0b50ce1374e828da670a770df9a2e'
+                        key: {
+                            sys_security_acl: 'ddada49bc85845e192671e8b87d809cd'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'eff369bc568c4928b571e322e04bb5cf'
+                        key: {
+                            sys_security_acl: '3996f29637e447a49c8cfa576d14b079'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'f060b76db2d14ac7b0a7f95ae916f4b1'
                         key: {
@@ -9068,6 +15020,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'appointment_date'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'f0c2ae6e642945e2bb5ad455df10a6d0'
+                        key: {
+                            sys_security_acl: '8599912a06d9443eabf7fcf6a2ae2c27'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -9135,6 +15100,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'f22802ada67a43d38a730e5cb54daf05'
+                        key: {
+                            sys_security_acl: '1e26855fa59040dcb667a0401529f2ed'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'f229d19ea9044489ab0bb867f21499b2'
+                        key: {
+                            sys_security_acl: '38a56c1bb75a45aa929d300f881e81a6'
+                            sys_user_role: {
+                                id: '41d49618c1e14b30a93ea258667ac1b1'
+                                key: {
+                                    name: 'x_cog_mah.warehouse'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'f260e283954f4acaa63c7837ad4c17ab'
                         key: {
@@ -9143,6 +15134,19 @@ declare global {
                             value: 'legion_of_merit'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'f2a92aaa29ce465ab4e0e9599425c90d'
+                        key: {
+                            sys_security_acl: 'eaa011f3d286442185ccfe324bc1cdfe'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
                         }
                     },
                     {
@@ -9235,6 +15239,40 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'f56cc8f10dc447c3a4152cb7ffc0ca8f'
+                        key: {
+                            sys_security_acl: 'e623aa28a9ae4b1892c8f35add434af3'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_ws_query_parameter_map'
+                        id: 'f5879fcb35ac41d683ebfb6fcd7ba031'
+                        key: {
+                            web_service_operation: '49cb73d0c53d4c399b8c5cdacb4b5615'
+                            web_service_query_parameter: '1f7f5802f60f466fb1cfb503a1befef5'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'f5ced4d353b442168d6c33bf1a903df1'
+                        key: {
+                            sys_security_acl: '4d51de133615486785971f92e91db5c8'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'f650567de7b243f9a2a2eb04a20c0364'
                         key: {
@@ -9257,12 +15295,38 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'f6ba1e043b8049689070521206326173'
+                        key: {
+                            sys_security_acl: '38a56c1bb75a45aa929d300f881e81a6'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'f6c07125e22049068bfe6fb526ffd741'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'source_agency'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'f6f687f1e16545a5a27ee29c95cd5854'
+                        key: {
+                            sys_security_acl: 'eaa011f3d286442185ccfe324bc1cdfe'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
                         }
                     },
                     {
@@ -9334,6 +15398,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'f89e13e2239f449eb1fbc01c8d329e9a'
+                        key: {
+                            sys_security_acl: '13555b2f1d354f0bb269b7fd0a07ab8a'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'f8ac7816cb2e408fa4b75cf45ccb79a7'
+                        key: {
+                            sys_security_acl: 'eaa011f3d286442185ccfe324bc1cdfe'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'f8db8102d5254f669a3cffdea35c7767'
                         key: {
@@ -9342,6 +15432,19 @@ declare global {
                             value: 'system'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'f8de190d17334590a94e4359823733f2'
+                        key: {
+                            sys_security_acl: 'f80c1f84779b4d7a87e6d0dd7ec06335'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
                         }
                     },
                     {
@@ -9492,6 +15595,45 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_security_acl_role'
+                        id: 'fb8a0cc70f1e4483863c96bb855b0e9e'
+                        key: {
+                            sys_security_acl: 'e623aa28a9ae4b1892c8f35add434af3'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'fbea4189c1ac43c9a3898bd1244e99c5'
+                        key: {
+                            sys_security_acl: '915a7076f91946a0bcadefe81147efa8'
+                            sys_user_role: {
+                                id: 'c3ffa7c1d67144489b17ba4646eb673e'
+                                key: {
+                                    name: 'x_cog_mah.csr'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'fc59e932e7ef4f23983d394fafa8ab34'
+                        key: {
+                            sys_security_acl: '13555b2f1d354f0bb269b7fd0a07ab8a'
+                            sys_user_role: {
+                                id: 'cbdb0b20668d41d08c8331cd2b414b5a'
+                                key: {
+                                    name: 'x_cog_mah.vendor'
+                                }
+                            }
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'fc624ec929054c1a9f0b0d6b229f9167'
                         key: {
@@ -9516,6 +15658,19 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'requesting_unit'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'fd31c87d392c4673804264f1331543fe'
+                        key: {
+                            sys_security_acl: '9e76351fd6764b4a9d92f5b8a5598f9c'
+                            sys_user_role: {
+                                id: '92986fb87ff54a05a20f0d07ba3a4e3e'
+                                key: {
+                                    name: 'x_cog_mah.assembler'
+                                }
+                            }
                         }
                     },
                     {
@@ -9551,6 +15706,32 @@ declare global {
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'target_value'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'fe02aa841f214d29ae70bb2f4d204d34'
+                        key: {
+                            sys_security_acl: '962db85c8b4b470e99efed72c26125a4'
+                            sys_user_role: {
+                                id: '0a517467fdfe4a3bb09bcefb19a6c864'
+                                key: {
+                                    name: 'x_cog_mah.admin'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'fe4252460c9d4ba99cb224356e83526c'
+                        key: {
+                            sys_security_acl: '13555b2f1d354f0bb269b7fd0a07ab8a'
+                            sys_user_role: {
+                                id: 'cea6b709e3e34c8289d1a396a0bed20e'
+                                key: {
+                                    name: 'x_cog_mah.dla'
+                                }
+                            }
                         }
                     },
                     {
