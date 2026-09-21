@@ -844,10 +844,12 @@ declare global {
                     grmember_vendor_liberty: {
                         table: 'sys_user_grmember'
                         id: 'db052a1e9a6b433897b2bf06f190507a'
+                        deleted: true
                     }
                     group_role_vendor_liberty: {
                         table: 'sys_group_has_role'
                         id: '01f3b19096454044bfd6332467ee0612'
+                        deleted: true
                     }
                     group_vendor_liberty: {
                         table: 'sys_user_group'
@@ -856,34 +858,42 @@ declare global {
                     has_role_admin: {
                         table: 'sys_user_has_role'
                         id: 'a60aa8fd41364df5ac8b5af1b4b293f5'
+                        deleted: true
                     }
                     has_role_assembler: {
                         table: 'sys_user_has_role'
                         id: 'ead527142e51459fa352f34139ae50c4'
+                        deleted: true
                     }
                     has_role_csr: {
                         table: 'sys_user_has_role'
                         id: '1b48c2b1768848189c012e5b1f0c1c0e'
+                        deleted: true
                     }
                     has_role_dla: {
                         table: 'sys_user_has_role'
                         id: '8d6d1205c6fd4fc8a71f63ba7cb2843b'
+                        deleted: true
                     }
                     has_role_engraver: {
                         table: 'sys_user_has_role'
                         id: '7017afcfa4374444bd0030b75eb08bb8'
+                        deleted: true
                     }
                     has_role_tacom: {
                         table: 'sys_user_has_role'
                         id: '2873fd9aa8b9480bb44b5dec3aa41c59'
+                        deleted: true
                     }
                     has_role_vendor: {
                         table: 'sys_user_has_role'
                         id: '62c031c97b0a4ec4abe6555f0baf5c88'
+                        deleted: true
                     }
                     has_role_warehouse: {
                         table: 'sys_user_has_role'
                         id: '6187a8110dc04e61bd3349a9ced80cad'
+                        deleted: true
                     }
                     job_nightly_aging: {
                         table: 'sysauto_script'
@@ -2725,6 +2735,10 @@ declare global {
                     src_server_lib_statusMap_ts: {
                         table: 'sys_module'
                         id: '97ac65dc7e674a10bc3da0838c22c421'
+                    }
+                    src_server_lib_testUsers_ts: {
+                        table: 'sys_module'
+                        id: 'd32f47676cd54c0dac8c0198c37d24a0'
                     }
                     src_server_lib_uiLayout_ts: {
                         table: 'sys_module'
