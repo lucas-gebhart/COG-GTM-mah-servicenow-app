@@ -61,8 +61,8 @@ async function sleep(ms: number): Promise<void> {
 }
 
 /**
- * Scripted REST responses built with `response.setBody(x)` arrive as `{ "result": x }` (the platform
- * envelope); `--target-file` inputs written by earlier runs may already be unwrapped. Accept both.
+ * The application's routes stream `JSON.stringify(x)` directly, but responses built with
+ * `response.setBody(x)` (Table / Import Set APIs) arrive wrapped as `{ "result": x }`. Accept both.
  */
 export function unwrapResult<T>(body: unknown): T {
     if (body !== null && typeof body === 'object' && 'result' in body && Object.keys(body).length === 1) {

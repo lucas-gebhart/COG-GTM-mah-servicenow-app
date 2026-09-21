@@ -17,15 +17,7 @@ import { hasAnyRole, securityLog } from '../rules/glideSupport.ts'
 import { buildReconciliationReport } from '../services/reconciliation.ts'
 import { lookupCaseStatus } from '../services/statusInquiry.ts'
 import type { IntakeRequest, IntakeResponse } from './authorizationIntake.ts'
-
-const GENERIC_ERROR = 'The request could not be processed.'
-
-function headers(response: IntakeResponse): void {
-    response.setHeader('X-Content-Type-Options', 'nosniff')
-    response.setHeader('X-Frame-Options', 'DENY')
-    response.setHeader('Cache-Control', 'no-store')
-    response.setHeader('Content-Security-Policy', "default-src 'none'")
-}
+import { securityHeaders as headers, writeError, writeJson } from './respond.ts'
 
 function pathParam(request: IntakeRequest, name: string): string {
     const v = request.pathParams?.[name]
@@ -40,8 +32,7 @@ function queryParam(request: IntakeRequest, name: string): string {
 
 function deny(response: IntakeResponse, source: string, reference: string): void {
     securityLog({ event: 'authorization_failure', source, outcome: 'failure', reason: 'missing_role', details: { reference } })
-    response.setStatus(403)
-    response.setBody({ error: GENERIC_ERROR, reference })
+    writeError(response, 403, reference)
 }
 
 export function reconciliationReport(_request: IntakeRequest, response: IntakeResponse): void {
@@ -54,12 +45,10 @@ export function reconciliationReport(_request: IntakeRequest, response: IntakeRe
     try {
         const report = buildReconciliationReport()
         securityLog({ event: 'data_access', source: 'rest:reconciliation', outcome: 'success', details: { reference, tables: report.tables.length } })
-        response.setStatus(200)
-        response.setBody(report)
+        writeJson(response, 200, report)
     } catch (err) {
         securityLog({ event: 'error', source: 'rest:reconciliation', outcome: 'failure', reason: String(err), details: { reference } })
-        response.setStatus(500)
-        response.setBody({ error: GENERIC_ERROR, reference })
+        writeError(response, 500, reference)
     }
 }
 
@@ -75,8 +64,7 @@ export function caseStatus(request: IntakeRequest, response: IntakeResponse): vo
         service_number_last4: queryParam(request, 'last4'),
         zip: queryParam(request, 'zip'),
     })
-    response.setStatus(result.found ? 200 : 404)
-    response.setBody({ ...result, reference })
+    writeJson(response, result.found ? 200 : 404, { ...result, reference })
 }
 
 const BATCH_ID_PATTERN = /^[A-Za-z0-9._-]{1,40}$/
@@ -103,8 +91,7 @@ export function migrationFinalize(request: IntakeRequest, response: IntakeRespon
     }
     if (!BATCH_ID_PATTERN.test(batchId)) {
         securityLog({ event: 'validation_failure', source: 'rest:migration_finalize', outcome: 'failure', reason: 'invalid_batch_id', details: { reference } })
-        response.setStatus(400)
-        response.setBody({ error: GENERIC_ERROR, reference })
+        writeError(response, 400, reference)
         return
     }
     try {
@@ -112,12 +99,10 @@ export function migrationFinalize(request: IntakeRequest, response: IntakeRespon
         const aging = runNightlyAging()
         const exceptions = batchExceptionCounts(batchId)
         securityLog({ event: 'admin_action', source: 'rest:migration_finalize', outcome: 'success', details: { reference, batchId, ...merge } })
-        response.setStatus(200)
-        response.setBody({ batch_id: batchId, requesters: merge, aging, exceptions, reference })
+        writeJson(response, 200, { batch_id: batchId, requesters: merge, aging, exceptions, reference })
     } catch (err) {
         securityLog({ event: 'error', source: 'rest:migration_finalize', outcome: 'failure', reason: String(err), details: { reference, batchId } })
-        response.setStatus(500)
-        response.setBody({ error: GENERIC_ERROR, reference })
+        writeError(response, 500, reference)
     }
 }
 
@@ -127,8 +112,7 @@ export function health(_request: IntakeRequest, response: IntakeResponse): void 
         deny(response, 'rest:health', gs.generateGUID())
         return
     }
-    response.setStatus(200)
-    response.setBody({
+    writeJson(response, 200, {
         status: 'ok',
         aging_last_run: gs.getProperty('x_cog_mah.aging.last_run', ''),
         aging_last_summary: gs.getProperty('x_cog_mah.aging.last_summary', ''),

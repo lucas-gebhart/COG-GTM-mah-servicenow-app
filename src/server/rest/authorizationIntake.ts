@@ -16,6 +16,7 @@ import { computeDedupeKey } from '../lib/dedupe.ts'
 import { LIMITS, ROLES, TABLES } from '../lib/domain.ts'
 import { isValidFileName } from '../lib/validators.ts'
 import { hasAnyRole, nowValue, securityLog, str } from '../rules/glideSupport.ts'
+import { securityHeaders, writeError, writeJson, type RestResponse } from './respond.ts'
 
 /** Subset of the platform RESTAPIRequest / RESTAPIResponse surfaces used here. */
 export interface IntakeRequest {
@@ -25,11 +26,7 @@ export interface IntakeRequest {
     pathParams?: Record<string, string>
     getHeader?: (name: string) => string | null
 }
-export interface IntakeResponse {
-    setStatus: (code: number) => void
-    setBody: (body: unknown) => void
-    setHeader: (name: string, value: string) => void
-}
+export type IntakeResponse = RestResponse
 
 export interface IntakeSummary {
     status: 'accepted' | 'duplicate' | 'rejected'
@@ -42,7 +39,6 @@ export interface IntakeSummary {
     cases: string[]
 }
 
-const GENERIC_ERROR = 'The request could not be processed.'
 
 /** Stable 16-hex-digit content hash (FNV-1a 64 emulated with two 32-bit lanes) — no crypto dependency needed for idempotency. */
 export function contentHash(text: string): string {
@@ -74,17 +70,7 @@ function queryParam(request: IntakeRequest, name: string): string {
     return v === undefined ? '' : String(v)
 }
 
-function securityHeaders(response: IntakeResponse): void {
-    response.setHeader('X-Content-Type-Options', 'nosniff')
-    response.setHeader('X-Frame-Options', 'DENY')
-    response.setHeader('Cache-Control', 'no-store')
-    response.setHeader('Content-Security-Policy', "default-src 'none'")
-}
-
-function reject(response: IntakeResponse, status: number, reference: string): void {
-    response.setStatus(status)
-    response.setBody({ error: GENERIC_ERROR, reference })
-}
+const reject = writeError
 
 /** Route handler (request, response) => void. */
 export function authorizationIntake(request: IntakeRequest, response: IntakeResponse): void {
@@ -134,8 +120,7 @@ export function authorizationIntake(request: IntakeRequest, response: IntakeResp
                 cases: caseNumbersForFile(existing.getUniqueValue()),
             }
             securityLog({ event: 'intake_completed', source: 'rest:authorization_intake', outcome: 'success', reason: 'duplicate_file', record: existing.getUniqueValue(), details: { reference } })
-            response.setStatus(200)
-            response.setBody(summary)
+            writeJson(response, 200, summary)
             return
         }
 
@@ -162,8 +147,7 @@ export function authorizationIntake(request: IntakeRequest, response: IntakeResp
             record: result.fileSysId,
             details: { reference, accepted: result.summary.accepted, rejected: result.summary.rejected, duplicates: result.summary.duplicates, failed: result.summary.failed },
         })
-        response.setStatus(201)
-        response.setBody(result.summary)
+        writeJson(response, 201, result.summary)
     } catch (e) {
         const message = e instanceof Error ? `${e.name}: ${e.message}` : String(e)
         securityLog({ event: 'intake_rejected', source: 'rest:authorization_intake', outcome: 'failure', reason: 'exception', details: { reference, message } })

@@ -122,8 +122,9 @@ export function insertCaseNote(fields: { awards_case?: string; heraldry_request?
     note.setValue('state', 'open')
     if (!note.insert()) {
         securityLog({
-            event: 'system_note_dropped',
+            event: 'data_change_blocked',
             source: 'insertCaseNote',
+            reason: 'system_note_rejected',
             outcome: 'failure',
             table: 'x_cog_mah_case_note',
             record: fields.awards_case ?? fields.heraldry_request ?? '',
