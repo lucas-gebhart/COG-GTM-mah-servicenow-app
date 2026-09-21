@@ -6145,6 +6145,7 @@ declare global {
                     {
                         table: 'sys_ux_form_action'
                         id: '10dd70e92e8046759f4359b9b660f9d9'
+                        deleted: true
                         key: {
                             ui_action: 'ua_case_advance'
                         }
@@ -6620,6 +6621,13 @@ declare global {
                             value: 'unmapped'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: '13791c7012644a7ba4110d08eda1694c'
+                        key: {
+                            ui_action: '5c98e292c9854666a613c12baf887bb3'
                         }
                     },
                     {
@@ -8156,6 +8164,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ux_form_action'
+                        id: '1cf60b6034924f90aaaf508c45856202'
+                        key: {
+                            ui_action: '3423ff4a29754e6293e976b05a9b2f94'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '1d059ab71c0b4bb493b50ced6f62128f'
                         key: {
@@ -8513,6 +8528,7 @@ declare global {
                     {
                         table: 'sys_ux_form_action'
                         id: '1e578ffee7b64d7b9d98a69035908b79'
+                        deleted: true
                         key: {
                             ui_action: 'ua_ses_approve'
                         }
@@ -9952,6 +9968,13 @@ declare global {
                                 }
                             }
                             element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: '2665f7c5327743b897526db7416b2ab5'
+                        key: {
+                            ui_action: '75290c05192b46c89da81d86ac204a6c'
                         }
                     },
                     {
@@ -11616,6 +11639,7 @@ declare global {
                     {
                         table: 'sys_ux_form_action'
                         id: '302cc12923d344cea31c686d67a816aa'
+                        deleted: true
                         key: {
                             ui_action: 'ua_req_advance'
                         }
@@ -15189,6 +15213,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ux_form_action'
+                        id: '455cfb098fb1462db03587d5748e9d90'
+                        key: {
+                            ui_action: '15887e1136114a35b130be34744d53ab'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '4573b7dc34df4ac9a119b9533956f412'
                         key: {
@@ -16462,6 +16493,13 @@ declare global {
                                     name: 'x_cog_mah.engraver'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: '4d8b2212281a4ffe920bcc8df3eb31d2'
+                        key: {
+                            ui_action: '4e9ae3a3f3be483399f716ce07fc5564'
                         }
                     },
                     {
@@ -18853,6 +18891,13 @@ declare global {
                         id: '5b860aaed1564ff9af82a80ea0028c4d'
                         key: {
                             name: 'x_cog_mah_stg_request_line'
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: '5b9c4bb9ae2b4af3ab52399c17d9285f'
+                        key: {
+                            ui_action: '0d06cc073740476e9516c387a48cbb04'
                         }
                     },
                     {
@@ -21961,6 +22006,7 @@ declare global {
                     {
                         table: 'sys_ux_form_action'
                         id: '6d742d92b3b74d18a35a4779454af338'
+                        deleted: true
                         key: {
                             ui_action: 'ua_case_cancel'
                         }
@@ -25406,6 +25452,7 @@ declare global {
                     {
                         table: 'sys_ux_form_action'
                         id: '81ce6e425b804300a8c5163a94795a11'
+                        deleted: true
                         key: {
                             ui_action: 'ua_req_submit'
                         }
@@ -25854,6 +25901,7 @@ declare global {
                     {
                         table: 'sys_ux_form_action'
                         id: '8437ee78da26440886ea22f54d68b04c'
+                        deleted: true
                         key: {
                             ui_action: 'ua_req_release'
                         }
@@ -27238,6 +27286,13 @@ declare global {
                             name: 'x_cog_mah_stg_heraldry_request'
                             element: 'note_id'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: '89c4d9f27fe94178a88a5ab54614968a'
+                        key: {
+                            ui_action: '257ddd3d74934048ae18dcef18ab8f7e'
                         }
                     },
                     {
@@ -30305,6 +30360,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ux_form_action'
+                        id: '9ae68363378e4f759a7f31d8d4bd14f0'
+                        key: {
+                            ui_action: '28b88f304e92478397ad44fe841d916c'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '9aeb1653651f4241bac6ff986ab4e29e'
                         key: {
@@ -32035,6 +32097,13 @@ declare global {
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_ux_form_action'
+                        id: 'a566825682594dbf97a627073481bee3'
+                        key: {
+                            ui_action: 'a9505e7443a643ffabc5f964e3bda8e1'
                         }
                     },
                     {
@@ -37339,6 +37408,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ux_form_action'
+                        id: 'c501c44e9c8e4f6899a418b10c2bab7b'
+                        key: {
+                            ui_action: 'f3468f6a993843f5a142f75ebb5c3a2b'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'c5060fd584764b2bbcd7a9890ee2c6a4'
                         key: {
@@ -38377,6 +38453,7 @@ declare global {
                     {
                         table: 'sys_ux_form_action'
                         id: 'cb9be0e288bc4632a53dbbded3f3f0a7'
+                        deleted: true
                         key: {
                             ui_action: 'ua_req_review'
                         }
@@ -38596,6 +38673,7 @@ declare global {
                     {
                         table: 'sys_ux_form_action'
                         id: 'cd1e47dfc7914bf0b1e21c7744cda4fd'
+                        deleted: true
                         key: {
                             ui_action: 'ua_req_cancel'
                         }
@@ -39740,6 +39818,7 @@ declare global {
                     {
                         table: 'sys_ux_form_action'
                         id: 'd2f7493b4d81421ea076729b3027b78a'
+                        deleted: true
                         key: {
                             ui_action: 'ua_requester_merge'
                         }
@@ -47049,6 +47128,7 @@ declare global {
                     {
                         table: 'sys_ux_form_action'
                         id: 'ff208611a262417493f89a4c76a5a2df'
+                        deleted: true
                         key: {
                             ui_action: 'ua_ses_reject'
                         }
