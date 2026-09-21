@@ -29,8 +29,8 @@ The stage buckets (`in_work` = authorized, engraving, assembly_qc, warehouse; `s
 `terminal` = closed, cancelled; `exception` = unmapped) are declared once in
 `tools/lib/operations-catalog.ts` and asserted against `CASE_STAGES` by
 `tests/operations-sync.test.ts`, so adding a stage to the domain fails the build until it is
-assigned to a bucket. `terminal` is imported from `src/server/lib/aging.ts`, the case
-lifecycle's own definition: only closed and cancelled cases are inactive. A shipped case is still
+assigned to a bucket. `terminal` is `TERMINAL_CASE_STAGES` from `src/server/lib/domain.ts`, the
+case lifecycle's own definition: only closed and cancelled cases are inactive. A shipped case is still
 active and still ages (the aging job and the `active=true` queues include it) until it is closed;
 the SLA nevertheless stops at `shipped`, because the 60/75-day awards target is
 authorization-to-shipment. `SLA_STOP_STAGES` = `shipped` bucket + `terminal` bucket makes that

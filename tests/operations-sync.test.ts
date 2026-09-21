@@ -267,6 +267,14 @@ describe('application modules', () => {
         expect(dupes).toEqual([])
     })
 
+    it('docs/WORKSPACE.md module table lists exactly the catalog modules (both directions)', () => {
+        const doc = readFileSync('docs/WORKSPACE.md', 'utf8')
+        const section = doc.slice(doc.indexOf('### Application modules'), doc.indexOf('## What remains manual'))
+        const documented = [...section.matchAll(/^\| ([^|]+?) \| (?:report|list|`now)/gm)].map((m) => m[1] ?? '')
+        expect(sorted(documented)).toEqual(sorted(OPERATIONS_MODULES.map((m) => m.title)))
+        expect(doc).toContain(`${OPERATIONS_MODULES.length} modules`.replace(/^\d+/, (n) => ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'][Number(n)] ?? n))
+    })
+
     it('role exports referenced by the workspace file exist in roles.now.ts with the domain role names', () => {
         const roles = readFileSync('src/fluent/security/roles.now.ts', 'utf8')
         for (const key of Object.keys(ROLE_EXPORTS) as RoleKey[]) {

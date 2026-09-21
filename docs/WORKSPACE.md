@@ -20,7 +20,7 @@ records. Everything in this document is derived from the domain source of truth
 | `MAH Operations` workspace (`Workspace`, `UxListMenuConfig`, `Applicability`) | Fluent native, **generated** | `src/fluent/workspace/mah_operations_workspace.now.ts` |
 | `MAH Operations` dashboard (`Dashboard`, 18 widgets, workspace visibility) | Fluent native, **generated** | same file |
 | Workspace route ACL (`ux_route`, `now.mah-operations.*`) | Fluent `Acl()`, **generated** | same file |
-| 8 application modules + separator under the existing app menu | Fluent `Record()` on `sys_app_module`, **generated** | `src/fluent/ui/operations_modules.now.ts` |
+| 10 application modules + separator under the existing app menu | Fluent `Record()` on `sys_app_module`, **generated** | `src/fluent/ui/operations_modules.now.ts` |
 | Catalog (queries, buckets, columns, layout, roles) | TypeScript source of truth | `tools/lib/operations-catalog.ts` |
 | Generator | `npx tsx tools/generate-fluent-operations.ts` (`--check` fails when stale) | `tools/generate-fluent-operations.ts` |
 | Drift test | Vitest | `tests/operations-sync.test.ts` |
@@ -32,8 +32,8 @@ accepts literals inside metadata calls (no spread, helper functions or `satisfie
 catalog imports `CASE_STAGES`, `AGING_FLAGS`, `AGING_THRESHOLDS`, `ENGRAVING_STATUSES`,
 `REQUEST_STATES`, `EXCEPTION_TYPES`, `EXCEPTION_STATES`, `ROLES`, `TABLES`, `TABLE_ACCESS` and
 the list layouts, partitions every taxonomy into named buckets (for example
-`in_work` / `shipped` / `terminal` / `exception` stages, where `terminal` is imported from
-`src/server/lib/aging.ts` so it can never drift from the case lifecycle), and renders encoded
+`in_work` / `shipped` / `terminal` / `exception` stages, where `terminal` is `TERMINAL_CASE_STAGES` from
+`src/server/lib/domain.ts` so it can never drift from the case lifecycle), and renders encoded
 queries such as `stateINreleased_to_vendor,in_production,shipped`. The test asserts every
 partition covers its taxonomy exactly (both directions), pins control totals, and re-renders the
 generator in memory to prove the checked-in files match. Do not edit the generated files by hand.
@@ -122,7 +122,8 @@ the stacked report, and that no widget exceeds the 48-column grid.
 ### Application modules (`sys_app_module`)
 
 Added under the existing `MAH Case Management` application menu after a `MAH Operations`
-separator, without editing `src/fluent/ui/app_menu.now.ts`:
+separator. `src/fluent/ui/app_menu.now.ts` keeps only the record-oriented modules (lists, "new"
+links, migration and administration); every operational queue is defined once, here:
 
 | Module | Link | Roles |
 |---|---|---|
@@ -133,19 +134,13 @@ separator, without editing `src/fluent/ui/app_menu.now.ts`:
 | Assembly/QC queue | report *Assembly / QC queue* | awards-case readers |
 | Warehouse queue | report *Warehouse ready-to-ship queue* | awards-case readers |
 | Vendor work | report *Vendor work* | heraldry-request readers (tacom_staff, csr, dla, **vendor**, admin) |
+| DD 1348-6 review queue | list `x_cog_mah_heraldry_request`, submitted / in review, by requisition priority | tacom_staff, dla, admin |
+| SES flags pending decision | list `x_cog_mah_ses_flag_request`, submitted, by appointment date | tacom_staff, admin |
 | Migration exceptions | report *Open migration exceptions by type* | migration-exception readers (tacom_staff, admin) |
 
-`tests/operations-sync.test.ts` asserts the exact module titles and that the vendor role sees
-only `Vendor work`.
-
-**Overlap with the base menu.** `src/fluent/ui/app_menu.now.ts` (owned by the data-model
-workstream) already ships an operational block — *MAH Operations workspace*, *Aging: red (75+
-days)*, *Aging: amber (60–74 days)*, *Engraving queue*, *Assembly / QC queue*, *Warehouse queue*,
-*Vendor work (released / in production)*, *Migration exceptions (open)* — as list-view modules
-with their own filters and role sets. The eight modules above are the report/dashboard
-equivalents required for this workstream and use distinct `Now.ID` keys and orders (510–580),
-so both blocks install side by side. Keeping one block is a one-file decision for the owner of
-`app_menu.now.ts`; the recommended change is described in the pull request rather than made here.
+`tests/operations-sync.test.ts` asserts the exact module titles, that the vendor role sees
+only `Vendor work`, and that no module title or navigator destination (list + filter, report,
+workspace route) is declared twice across `app_menu.now.ts` and the generated file.
 
 ## What remains manual, and why
 
@@ -196,8 +191,8 @@ Expected from the build: 14 `sys_report`, 4 `sys_report_source`, 1 `par_dashboar
 On an instance after `now-sdk install`, as a `x_cog_mah.tacom_staff` user:
 
 1. Application navigator > *MAH Case Management*: a `MAH Operations` separator followed by the
-   eight modules above. Each report module opens the named report; *Operations dashboard* opens
-   `/now/mah-operations/home`.
+   ten modules above. Each report module opens the named report, the two list modules open a
+   filtered list, and *Operations dashboard* opens `/now/mah-operations/home`.
 2. The landing page shows the eight counters, the three charts and the queue lists. With the
    synthetic data set loaded, *Red (75+ days in stage)* + *Amber (60–74 days in stage)* is at
    most *Active awards cases*, and the stage bar chart sums to *Active awards cases*. The vendor
@@ -214,7 +209,7 @@ Role checks (impersonate):
 | `x_cog_mah.vendor` | only the `Vendor work` module; no access to `/now/mah-operations` |
 | `x_cog_mah.engraver` | dashboard, aging, engraving, assembly/QC and warehouse modules; no `Vendor work`, no `Migration exceptions` |
 | `x_cog_mah.warehouse` | dashboard, aging, assembly/QC and warehouse modules; no engraving, vendor or migration modules |
-| `x_cog_mah.tacom_staff` / `admin` | all eight modules |
+| `x_cog_mah.tacom_staff` / `admin` | all ten modules |
 
 Regenerating after a domain change:
 
