@@ -329,3 +329,18 @@ describe('flow action inputs', () => {
         expect(flow).not.toMatch(/notifications\.now/)
     })
 })
+
+describe('Fluent records reference other records by object, never by Now.ID key', () => {
+    it('Now.ID[...] appears only as $id (as a data value it installs the literal key string)', () => {
+        const fluentFiles = readdirSync('src/fluent', { recursive: true, withFileTypes: true })
+            .filter((e) => e.isFile() && e.name.endsWith('.now.ts'))
+            .map((e) => join(e.parentPath, e.name))
+        expect(fluentFiles.length).toBeGreaterThan(20)
+        for (const file of fluentFiles) {
+            const offenders = readFileSync(file, 'utf8')
+                .split('\n')
+                .filter((line) => /\bNow\.ID\[/.test(line.replace(/\/\/.*$/, '')) && !/(^\s*|[{,]\s*)\$id:\s*Now\.ID\[/.test(line))
+            expect(offenders, file).toEqual([])
+        }
+    })
+})

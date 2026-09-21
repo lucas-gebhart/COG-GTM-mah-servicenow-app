@@ -196,6 +196,14 @@ export function seedUnid(e: StatusMapEntry): string {
     return createHash('sha256').update(`status_map|${e.legacyForm}|${e.legacyStatus}`).digest('hex').slice(0, 32).toUpperCase()
 }
 
+/** Seeded rows are installed as application files, which bypass the column default, so they carry
+ *  fixed numbers below the table's auto-number start (MSM0002000 in status_map.now.ts). */
+export const STATUS_MAP_SEED_NUMBER_START = 1000
+export const STATUS_MAP_SEED_NUMBER_SPAN = 1000
+export function seedNumber(index: number): string {
+    return `MSM${String(STATUS_MAP_SEED_NUMBER_START + index).padStart(7, '0')}`
+}
+
 export function seedId(e: StatusMapEntry): string {
     const slug = e.legacyStatus.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '') || 'empty'
     // "ASSEMBLY/QC" and "ASSEMBLY QC" share a slug; the hash suffix keeps ids unique and stable.
@@ -210,7 +218,8 @@ export function renderStatusMapSeed(): string {
         '',
     ]
     const ids = new Set<string>()
-    for (const e of DEFAULT_STATUS_MAP) {
+    if (DEFAULT_STATUS_MAP.length >= STATUS_MAP_SEED_NUMBER_SPAN) throw new Error('status map seed exceeds its reserved number range')
+    DEFAULT_STATUS_MAP.forEach((e, i) => {
         const id = seedId(e)
         if (ids.has(id)) throw new Error(`duplicate status map seed id ${id}`)
         ids.add(id)
@@ -218,6 +227,7 @@ export function renderStatusMapSeed(): string {
         out.push(`    $id: Now.ID[${q(id)}],`)
         out.push("    table: 'x_cog_mah_status_map',")
         out.push('    data: {')
+        out.push(`        number: ${q(seedNumber(i))},`)
         out.push(`        legacy_unid: ${q(seedUnid(e))},`)
         out.push(`        legacy_form: ${q(e.legacyForm)},`)
         out.push(`        legacy_status: ${q(e.legacyStatus)},`)
@@ -230,7 +240,7 @@ export function renderStatusMapSeed(): string {
         out.push('    },')
         out.push('})')
         out.push('')
-    }
+    })
     return out.join('\n')
 }
 

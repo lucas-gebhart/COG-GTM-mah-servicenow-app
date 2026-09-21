@@ -180,100 +180,100 @@ export const mergeRequesterAction = UiAction({
 export const wsCaseAdvance = Record({
     $id: Now.ID['ws_fa_case_advance'],
     table: 'sys_ux_form_action',
-    data: { table: 'x_cog_mah_awards_case', ui_action: Now.ID['ua_case_advance'], action_type: 'ui_action', active: true, name: 'mah_advance_stage' },
+    data: { table: 'x_cog_mah_awards_case', ui_action: advanceCaseStageAction, action_type: 'ui_action', active: true, name: 'mah_advance_stage' },
 })
 export const wsCaseAdvanceItem = Record({
     $id: Now.ID['ws_li_case_advance'],
     table: 'sys_ux_form_action_layout_item',
-    data: { table: 'x_cog_mah_awards_case', name: 'mah_advance_stage_item', label: 'Advance stage', color: 'primary', overflow: false, order: 100, active: true, item_type: 'action', action: Now.ID['ws_fa_case_advance'] },
+    data: { table: 'x_cog_mah_awards_case', name: 'mah_advance_stage_item', label: 'Advance stage', color: 'primary', overflow: false, order: 100, active: true, item_type: 'action', action: wsCaseAdvance },
 })
 export const wsCaseCancel = Record({
     $id: Now.ID['ws_fa_case_cancel'],
     table: 'sys_ux_form_action',
-    data: { table: 'x_cog_mah_awards_case', ui_action: Now.ID['ua_case_cancel'], action_type: 'ui_action', active: true, name: 'mah_cancel_case' },
+    data: { table: 'x_cog_mah_awards_case', ui_action: cancelCaseAction, action_type: 'ui_action', active: true, name: 'mah_cancel_case' },
 })
 export const wsCaseCancelItem = Record({
     $id: Now.ID['ws_li_case_cancel'],
     table: 'sys_ux_form_action_layout_item',
-    data: { table: 'x_cog_mah_awards_case', name: 'mah_cancel_case_item', label: 'Cancel case', color: 'destructive', overflow: true, order: 900, active: true, item_type: 'action', action: Now.ID['ws_fa_case_cancel'] },
+    data: { table: 'x_cog_mah_awards_case', name: 'mah_cancel_case_item', label: 'Cancel case', color: 'destructive', overflow: true, order: 900, active: true, item_type: 'action', action: wsCaseCancel },
 })
 export const wsReqSubmit = Record({
     $id: Now.ID['ws_fa_req_submit'],
     table: 'sys_ux_form_action',
-    data: { table: 'x_cog_mah_heraldry_request', ui_action: Now.ID['ua_req_submit'], action_type: 'ui_action', active: true, name: 'mah_submit_request' },
+    data: { table: 'x_cog_mah_heraldry_request', ui_action: submitRequestAction, action_type: 'ui_action', active: true, name: 'mah_submit_request' },
 })
 export const wsReqSubmitItem = Record({
     $id: Now.ID['ws_li_req_submit'],
     table: 'sys_ux_form_action_layout_item',
-    data: { table: 'x_cog_mah_heraldry_request', name: 'mah_submit_request_item', label: 'Submit request', color: 'primary', overflow: false, order: 100, active: true, item_type: 'action', action: Now.ID['ws_fa_req_submit'] },
+    data: { table: 'x_cog_mah_heraldry_request', name: 'mah_submit_request_item', label: 'Submit request', color: 'primary', overflow: false, order: 100, active: true, item_type: 'action', action: wsReqSubmit },
 })
 export const wsReqReview = Record({
     $id: Now.ID['ws_fa_req_review'],
     table: 'sys_ux_form_action',
-    data: { table: 'x_cog_mah_heraldry_request', ui_action: Now.ID['ua_req_review'], action_type: 'ui_action', active: true, name: 'mah_start_review' },
+    data: { table: 'x_cog_mah_heraldry_request', ui_action: startReviewAction, action_type: 'ui_action', active: true, name: 'mah_start_review' },
 })
 export const wsReqReviewItem = Record({
     $id: Now.ID['ws_li_req_review'],
     table: 'sys_ux_form_action_layout_item',
-    data: { table: 'x_cog_mah_heraldry_request', name: 'mah_start_review_item', label: 'Start review', color: 'secondary', overflow: false, order: 110, active: true, item_type: 'action', action: Now.ID['ws_fa_req_review'] },
+    data: { table: 'x_cog_mah_heraldry_request', name: 'mah_start_review_item', label: 'Start review', color: 'secondary', overflow: false, order: 110, active: true, item_type: 'action', action: wsReqReview },
 })
 export const wsReqRelease = Record({
     $id: Now.ID['ws_fa_req_release'],
     table: 'sys_ux_form_action',
-    data: { table: 'x_cog_mah_heraldry_request', ui_action: Now.ID['ua_req_release'], action_type: 'ui_action', active: true, name: 'mah_release_to_vendor' },
+    data: { table: 'x_cog_mah_heraldry_request', ui_action: releaseToVendorAction, action_type: 'ui_action', active: true, name: 'mah_release_to_vendor' },
 })
 export const wsReqReleaseItem = Record({
     $id: Now.ID['ws_li_req_release'],
     table: 'sys_ux_form_action_layout_item',
-    data: { table: 'x_cog_mah_heraldry_request', name: 'mah_release_to_vendor_item', label: 'Release to vendor', color: 'primary', overflow: false, order: 120, active: true, item_type: 'action', action: Now.ID['ws_fa_req_release'] },
+    data: { table: 'x_cog_mah_heraldry_request', name: 'mah_release_to_vendor_item', label: 'Release to vendor', color: 'primary', overflow: false, order: 120, active: true, item_type: 'action', action: wsReqRelease },
 })
 export const wsReqAdvance = Record({
     $id: Now.ID['ws_fa_req_advance'],
     table: 'sys_ux_form_action',
-    data: { table: 'x_cog_mah_heraldry_request', ui_action: Now.ID['ua_req_advance'], action_type: 'ui_action', active: true, name: 'mah_advance_request' },
+    data: { table: 'x_cog_mah_heraldry_request', ui_action: advanceRequestAction, action_type: 'ui_action', active: true, name: 'mah_advance_request' },
 })
 export const wsReqAdvanceItem = Record({
     $id: Now.ID['ws_li_req_advance'],
     table: 'sys_ux_form_action_layout_item',
-    data: { table: 'x_cog_mah_heraldry_request', name: 'mah_advance_request_item', label: 'Advance state', color: 'secondary', overflow: false, order: 130, active: true, item_type: 'action', action: Now.ID['ws_fa_req_advance'] },
+    data: { table: 'x_cog_mah_heraldry_request', name: 'mah_advance_request_item', label: 'Advance state', color: 'secondary', overflow: false, order: 130, active: true, item_type: 'action', action: wsReqAdvance },
 })
 export const wsReqCancel = Record({
     $id: Now.ID['ws_fa_req_cancel'],
     table: 'sys_ux_form_action',
-    data: { table: 'x_cog_mah_heraldry_request', ui_action: Now.ID['ua_req_cancel'], action_type: 'ui_action', active: true, name: 'mah_cancel_request' },
+    data: { table: 'x_cog_mah_heraldry_request', ui_action: cancelRequestAction, action_type: 'ui_action', active: true, name: 'mah_cancel_request' },
 })
 export const wsReqCancelItem = Record({
     $id: Now.ID['ws_li_req_cancel'],
     table: 'sys_ux_form_action_layout_item',
-    data: { table: 'x_cog_mah_heraldry_request', name: 'mah_cancel_request_item', label: 'Cancel request', color: 'destructive', overflow: true, order: 900, active: true, item_type: 'action', action: Now.ID['ws_fa_req_cancel'] },
+    data: { table: 'x_cog_mah_heraldry_request', name: 'mah_cancel_request_item', label: 'Cancel request', color: 'destructive', overflow: true, order: 900, active: true, item_type: 'action', action: wsReqCancel },
 })
 export const wsSesApprove = Record({
     $id: Now.ID['ws_fa_ses_approve'],
     table: 'sys_ux_form_action',
-    data: { table: 'x_cog_mah_ses_flag_request', ui_action: Now.ID['ua_ses_approve'], action_type: 'ui_action', active: true, name: 'mah_ses_approve' },
+    data: { table: 'x_cog_mah_ses_flag_request', ui_action: approveSesAction, action_type: 'ui_action', active: true, name: 'mah_ses_approve' },
 })
 export const wsSesApproveItem = Record({
     $id: Now.ID['ws_li_ses_approve'],
     table: 'sys_ux_form_action_layout_item',
-    data: { table: 'x_cog_mah_ses_flag_request', name: 'mah_ses_approve_item', label: 'Approve', color: 'primary', overflow: false, order: 100, active: true, item_type: 'action', action: Now.ID['ws_fa_ses_approve'] },
+    data: { table: 'x_cog_mah_ses_flag_request', name: 'mah_ses_approve_item', label: 'Approve', color: 'primary', overflow: false, order: 100, active: true, item_type: 'action', action: wsSesApprove },
 })
 export const wsSesReject = Record({
     $id: Now.ID['ws_fa_ses_reject'],
     table: 'sys_ux_form_action',
-    data: { table: 'x_cog_mah_ses_flag_request', ui_action: Now.ID['ua_ses_reject'], action_type: 'ui_action', active: true, name: 'mah_ses_reject' },
+    data: { table: 'x_cog_mah_ses_flag_request', ui_action: rejectSesAction, action_type: 'ui_action', active: true, name: 'mah_ses_reject' },
 })
 export const wsSesRejectItem = Record({
     $id: Now.ID['ws_li_ses_reject'],
     table: 'sys_ux_form_action_layout_item',
-    data: { table: 'x_cog_mah_ses_flag_request', name: 'mah_ses_reject_item', label: 'Reject', color: 'destructive', overflow: true, order: 110, active: true, item_type: 'action', action: Now.ID['ws_fa_ses_reject'] },
+    data: { table: 'x_cog_mah_ses_flag_request', name: 'mah_ses_reject_item', label: 'Reject', color: 'destructive', overflow: true, order: 110, active: true, item_type: 'action', action: wsSesReject },
 })
 export const wsRequesterMerge = Record({
     $id: Now.ID['ws_fa_requester_merge'],
     table: 'sys_ux_form_action',
-    data: { table: 'x_cog_mah_requester', ui_action: Now.ID['ua_requester_merge'], action_type: 'ui_action', active: true, name: 'mah_merge_requester' },
+    data: { table: 'x_cog_mah_requester', ui_action: mergeRequesterAction, action_type: 'ui_action', active: true, name: 'mah_merge_requester' },
 })
 export const wsRequesterMergeItem = Record({
     $id: Now.ID['ws_li_requester_merge'],
     table: 'sys_ux_form_action_layout_item',
-    data: { table: 'x_cog_mah_requester', name: 'mah_merge_requester_item', label: 'Merge requester', color: 'primary', overflow: false, order: 100, active: true, item_type: 'action', action: Now.ID['ws_fa_requester_merge'] },
+    data: { table: 'x_cog_mah_requester', name: 'mah_merge_requester_item', label: 'Merge requester', color: 'primary', overflow: false, order: 100, active: true, item_type: 'action', action: wsRequesterMerge },
 })

@@ -163,7 +163,7 @@ export function renderRelatedLists(): string {
             out.push(`    $id: Now.ID['rl_${key}_${rl.child}_${rl.field}'],`)
             out.push("    table: 'sys_ui_related_list_entry',")
             out.push('    data: {')
-            out.push(`        list_id: Now.ID['rl_${key}'],`)
+            out.push(`        list_id: rl_${key},`)
             out.push(`        related_list: ${q(`${TABLES[rl.child]}.${rl.field}`)},`)
             out.push(`        position: ${i},`)
             if (rl.orderBy) out.push(`        order_by: ${q(rl.orderBy)},`)

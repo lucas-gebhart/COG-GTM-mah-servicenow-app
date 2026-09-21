@@ -45,7 +45,7 @@ export const x_cog_mah_status_map = Table({
         { name: 'idx_smap_legacy_unid', unique: true, element: 'legacy_unid' },
         { name: 'idx_smap_form_status', unique: true, element: ['legacy_form', 'legacy_status'] },
     ],
-    autoNumber: { prefix: 'MSM', number: 1000, numberOfDigits: 7 },
+    autoNumber: { prefix: 'MSM', number: 2000, numberOfDigits: 7 }, // MSM0001000–MSM0001999 reserved for seeded rows (generate-fluent-migration.ts)
     allowWebServiceAccess: true,
     actions: { read: true, create: true, update: true, delete: true },
 })
