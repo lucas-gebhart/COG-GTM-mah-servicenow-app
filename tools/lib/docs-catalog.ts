@@ -163,10 +163,11 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
     {
         kind: 'rule',
         legacy: 'Requester: DedupeKey computed item and "merge duplicates" agent',
-        behaviour: 'Deterministic dedupe key from normalized name / DOB / last-4 (unit-scoped for units, e-mail fallback); duplicates coalesced onto the newest record and repointed via merged_into',
-        files: ['src/server/lib/dedupe.ts', 'src/server/rules/requester.ts', 'src/server/services/actions.ts', 'src/server/migration/transformEngine.ts'],
+        behaviour: 'Deterministic dedupe key from normalized name / DOB / last-4 (unit-scoped for units, e-mail fallback); duplicates coalesced onto the newest record and repointed via merged_into; legacy MergedInto pointers preserved and flattened to a single hop',
+        files: ['src/server/lib/dedupe.ts', 'src/server/rules/requester.ts', 'src/server/services/actions.ts', 'src/server/migration/transformEngine.ts', 'src/server/migration/dryRun.ts'],
         artefacts: ['MAH Requester - validate, display name and dedupe key', 'MAH Requester - merge duplicates into survivor', 'Merge requester'],
         tests: [
+            'a legacy-merged requester keeps its pointer, counts as a merge, and never competes for survivor',
             'produces the same key for the same person regardless of formatting',
             'uses unit-scoped keys for units and e-mail fallback for thin records',
             'coalesces duplicates deterministically onto the newest record',
@@ -308,6 +309,7 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
             'rejects a file that ends inside a quoted field',
             'every transform reads only contract columns and writes legacy identity fields',
             'validates batch id, chunk size and form names',
+            'unwraps the scripted REST envelope and passes bare payloads through',
         ],
     },
     {

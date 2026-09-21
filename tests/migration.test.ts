@@ -8,6 +8,7 @@ import { transformRow, type SourceRow } from '../src/server/migration/rowTransfo
 import { RELATIONSHIP_MAP, VALUE_MAPS, mapAwardName, mapRequesterType, mapRequisitionPriority } from '../src/server/migration/valueMaps'
 import { parseCsv, rowToObject, toCsv } from '../tools/lib/csv'
 import { MIGRATION_FILES, renderAll } from '../tools/generate-fluent-migration'
+import { unwrapResult } from '../tools/lib/instance'
 import { headerMismatch } from '../tools/lib/sourceExport'
 import { parseArgs, stagingPayload } from '../tools/migrate'
 
@@ -172,6 +173,19 @@ describe('dry run + comparison', () => {
         expect(lines).toMatchObject({ rows: 3, loaded: 2, quarantined: 1 })
     })
 
+    it('a legacy-merged requester keeps its pointer, counts as a merge, and never competes for survivor', () => {
+        const merged = row('Requester', { UNID: UNID(23), RequesterID: 'R-4', FirstName: 'Ann', LastName: 'Lee', Email: 'ann@example.mil', Relationship: 'Veteran', Modified: '2026-03-01', MergedInto: 'R-2' })
+        const t = transformRow('Requester', merged, { now: NOW })
+        expect(t.legacyMergedInto).toBe('R-2')
+        expect(t.lookups.find((l) => l.field === 'merged_into')).toMatchObject({ value: 'R-2', required: false })
+        expect(t.warnings.map((w) => w.type)).toContain('duplicate_requester')
+        const r = dryRun({ sources: { ...sources, Requester: [...(sources.Requester ?? []), merged] }, now: NOW })
+        // UNID(23) is newer than R-1/R-2 but must not become the survivor: the live coalesce ignores merged rows.
+        expect(r.expected.duplicate_merge_count).toBe(2)
+        expect(r.expected.exception_counts['duplicate_requester']).toBe(2)
+        expect(r.expected.tables[TABLES.requester]).toBe(4)
+    })
+
     it('comparison passes on an identical target and names each differing check', () => {
         const r = dryRun({ sources, now: NOW })
         const target: TargetReport = {
@@ -202,6 +216,12 @@ describe('migrate CLI', () => {
         expect(payload['parent_unid']).toBe(UNID(9))
         expect(payload['parent_unid_2']).toBe(UNID(8))
         expect(payload).toMatchObject({ mah_batch_id: 'b-1', mah_source_row: '2', mah_source_file: 'vetmedals-AwardLine.csv' })
+    })
+
+    it('unwraps the scripted REST envelope and passes bare payloads through', () => {
+        expect(unwrapResult<{ a: number }>({ result: { a: 1 } })).toEqual({ a: 1 })
+        expect(unwrapResult<{ a: number }>({ a: 1 })).toEqual({ a: 1 })
+        expect(unwrapResult<unknown>({ result: [], import_set: 'ISET1' })).toEqual({ result: [], import_set: 'ISET1' })
     })
 
     it('validates batch id, chunk size and form names', () => {

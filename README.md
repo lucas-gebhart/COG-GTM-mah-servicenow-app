@@ -338,7 +338,7 @@ npm run reconcile -- --source sample-data --target-file out/target.json
 ```
 
 `tools/migrate.ts` validates every CSV header against the shared contract, pushes rows through
-`POST /api/now/import/<staging table>/insertMultiple` in `LOAD_ORDER`, calls
+`POST /api/now/import/<staging table>` (one synchronous row at a time) in `LOAD_ORDER`, calls
 `POST /api/x_cog_mah/authorization_intake/migration/finalize` (requester coalescing across both source
 databases, aging recompute, exception roll-up), fetches the reconciliation report and writes
 `expected.json`, `load.json`, `finalize.json`, `target.json` and `comparison.json` to `--out`.

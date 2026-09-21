@@ -59,6 +59,13 @@ import {
 
 export type SourceRow = Readonly<Record<string, string | undefined>>
 
+/**
+ * Import Set status message for a row the onBefore script quarantined (orphan parent). The
+ * platform reports an ignored row as `status: 'error'`, so the loader matches on this prefix
+ * to tell an intended quarantine apart from a real transform failure.
+ */
+export const QUARANTINE_STATUS_MESSAGE = 'Quarantined: parent not found'
+
 export interface RowWarning {
     type: MigrationExceptionType
     field: string
@@ -91,6 +98,8 @@ export interface RowTransform {
     headersRead: string[]
     /** Requester identity for post-insert dedupe (requester forms only). */
     dedupeKey?: string
+    /** Legacy `MergedInto` pointer (requester forms only): the row was already a duplicate in the source. */
+    legacyMergedInto?: string
 }
 
 export interface TransformContext {
@@ -489,10 +498,14 @@ function requester(b: RowBuilder, ctx: Required<TransformContext>): RowTransform
         zip: b.get('ZIP'),
     })
     b.set('dedupe_key', key)
-    if (mergedInto) b.lookup('merged_into', TABLES.requester, ['legacy_number', 'legacy_unid'], mergedInto, false)
+    if (mergedInto) {
+        b.lookup('merged_into', TABLES.requester, ['legacy_number', 'legacy_unid'], mergedInto, false)
+        b.warn('duplicate_requester', 'merged_into', mergedInto, `Requester already merged into ${mergedInto} in the legacy source (dedupe_key ${key})`)
+    }
 
     const t = finish(b, form, status)
     t.dedupeKey = key
+    if (mergedInto) t.legacyMergedInto = mergedInto
     return t
 }
 

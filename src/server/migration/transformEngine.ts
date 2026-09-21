@@ -21,7 +21,7 @@ import { TABLES } from '../lib/domain.ts'
 import { EXTRA_STAGING_COLUMNS, LEGACY_FORMS, stagingColumnMap, TARGET_BUSINESS_KEY_FIELD, type LegacyFormName } from '../lib/legacyContract.ts'
 import { formatSecurityEvent, type SecurityEventType } from '../lib/logging.ts'
 import { buildStatusLookup, DEFAULT_STATUS_MAP, normalizeStatusText, type StatusLookup, type StatusMapEntry } from '../lib/statusMap.ts'
-import { DIRECT_FIELD_MAPS, type ReferenceLookup, type RowTransform, type RowWarning, type SourceRow, transformRow } from './rowTransforms.ts'
+import { DIRECT_FIELD_MAPS, QUARANTINE_STATUS_MESSAGE, type ReferenceLookup, type RowTransform, type RowWarning, type SourceRow, transformRow } from './rowTransforms.ts'
 
 type AnyRecord = GlideRecord<string>
 
@@ -57,6 +57,8 @@ export interface MergeSummary {
     groups: number
     merged: number
     repointed: number
+    /** Legacy-merged rows whose `merged_into` pointed at a record that was itself merged here. */
+    flattened: number
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -312,7 +314,7 @@ export function onBefore(form: LegacyFormName, source: AnyRecord, target: AnyRec
                 },
             })
             log('migration_exception', { form, legacyUnid: meta.legacyUnid, parent: lookup.value, sourceRow: meta.sourceRow, type: 'orphan_parent' }, 'blocked')
-            return { ignore: true, statusMessage: 'Quarantined: parent not found', warningCount: 1, quarantined: true }
+            return { ignore: true, statusMessage: QUARANTINE_STATUS_MESSAGE, warningCount: 1, quarantined: true }
         }
         t.warnings.push({
             type: 'invalid_reference',
@@ -496,8 +498,48 @@ export function coalesceRequesterTable(batchId: string): MergeSummary {
             }
         }
     }
-    log('migration_run', { phase: 'coalesce_requesters', batchId, groups: groups.size, merged, repointed })
-    return { groups: groups.size, merged, repointed }
+    const flattened = flattenMergeChains()
+    log('migration_run', { phase: 'coalesce_requesters', batchId, groups: groups.size, merged, repointed, flattened })
+    return { groups: groups.size, merged, repointed, flattened }
+}
+
+/**
+ * A row the legacy system had already merged can point at a requester that this batch merged
+ * again (A → B in the source, B → C here). Re-point A at the final survivor so `merged_into`
+ * is always a single hop, and move A's cases along with it. Bounded so a cyclic source
+ * pointer cannot loop.
+ */
+function flattenMergeChains(): number {
+    let flattened = 0
+    const gr = new GlideRecord(TABLES.requester)
+    gr.addNotNullQuery('merged_into')
+    gr.query()
+    while (gr.next()) {
+        let survivor = get(gr, 'merged_into')
+        let hops = 0
+        while (hops < 8) {
+            const next = new GlideRecord(TABLES.requester)
+            if (!next.get(survivor) || !get(next, 'merged_into')) break
+            survivor = get(next, 'merged_into')
+            hops++
+        }
+        if (hops === 0 || survivor === String(gr.getUniqueValue())) continue
+        gr.setValue('merged_into', survivor)
+        gr.setWorkflow(false)
+        gr.update()
+        flattened++
+        for (const ref of REQUESTER_REFERENCES) {
+            const cases = new GlideRecord(ref.table)
+            cases.addQuery(ref.field, String(gr.getUniqueValue()))
+            cases.query()
+            while (cases.next()) {
+                cases.setValue(ref.field, survivor)
+                cases.setWorkflow(false)
+                cases.update()
+            }
+        }
+    }
+    return flattened
 }
 
 // ---------------------------------------------------------------------------------------------

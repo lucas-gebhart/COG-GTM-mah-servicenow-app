@@ -140,11 +140,15 @@ What happens, in order:
 
 1. `tools/lib/sourceExport.ts` discovers and header-validates each file; duplicate headers are preserved
    positionally (`ParentUNID`, `ParentUNID_2`).
-2. Rows are posted in chunks to `POST /api/now/import/<staging table>/insertMultiple` with
-   `mah_batch_id`, `mah_source_file`, `mah_source_row` stamped on each staging row.
+2. Rows are posted one at a time, in source order, to `POST /api/now/import/<staging table>` with
+   `mah_batch_id`, `mah_source_file`, `mah_source_row` stamped on each staging row. The single-row
+   route maps the body by column name and transforms synchronously, returning the per-row outcome;
+   `insertMultiple` is not used because it maps by column label and transforms asynchronously.
 3. The transform map for that form runs `MAHMigration.onStart / onBefore / onAfter / onComplete`
    (`src/server/migration/transformEngine.ts`): status → choice via `x_cog_mah_status_map`, date
-   normalization, parent resolution, orphan quarantine, business-key coalesce.
+   normalization, parent resolution, orphan quarantine, business-key coalesce. A quarantined orphan
+   comes back from the Import Set API as `status: error` with the `Quarantined: parent not found`
+   message; the loader reports those as `quarantined` (expected) rather than as load errors.
 4. After all files: `POST /api/x_cog_mah/authorization_intake/migration/finalize` coalesces requesters
    across both source databases (`merged_into`), recomputes aging, and rolls up the batch's exception counts.
 5. `GET /api/x_cog_mah/authorization_intake/reconciliation` is fetched and compared with the dry-run

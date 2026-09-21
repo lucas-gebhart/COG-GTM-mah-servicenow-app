@@ -60,6 +60,22 @@ async function sleep(ms: number): Promise<void> {
     await new Promise((r) => setTimeout(r, ms))
 }
 
+/**
+ * Scripted REST responses built with `response.setBody(x)` arrive as `{ "result": x }` (the platform
+ * envelope); `--target-file` inputs written by earlier runs may already be unwrapped. Accept both.
+ */
+export function unwrapResult<T>(body: unknown): T {
+    if (body !== null && typeof body === 'object' && 'result' in body && Object.keys(body).length === 1) {
+        return (body as { result: T }).result
+    }
+    return body as T
+}
+
+/** GET/POST a scripted REST route and return the unwrapped payload. */
+export async function callScriptedApi<T>(cfg: InstanceConfig, opts: RequestOptions): Promise<T> {
+    return unwrapResult<T>(await callInstance<unknown>(cfg, opts))
+}
+
 export async function callInstance<T>(cfg: InstanceConfig, opts: RequestOptions): Promise<T> {
     const url = `${cfg.baseUrl}${opts.path}`
     const auth = Buffer.from(`${cfg.username}:${cfg.password}`, 'utf8').toString('base64')

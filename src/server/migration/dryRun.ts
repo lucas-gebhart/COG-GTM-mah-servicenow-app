@@ -103,6 +103,7 @@ export function dryRun(input: DryRunInput): DryRunReport {
     const casesByAging: Record<string, number> = {}
     const requestsByState: Record<string, number> = {}
     const requesterCandidates: DedupeCandidate<RowTransform>[] = []
+    let legacyMergedRequesters = 0
     let quantityTotal = 0
     let extendedTotal = 0
     let sourceRows = 0
@@ -188,6 +189,8 @@ export function dryRun(input: DryRunInput): DryRunReport {
                 quantityTotal += Number(t.fields.quantity ?? 0) || 0
             } else if (t.targetTable === TABLES.request_line) {
                 extendedTotal += Number(t.fields.extended_price ?? 0) || 0
+            } else if (t.targetTable === TABLES.requester && t.legacyMergedInto) {
+                legacyMergedRequesters++
             } else if (t.targetTable === TABLES.requester && t.dedupeKey) {
                 requesterCandidates.push({ unid: legacyUnid, key: t.dedupeKey, lastModified: t.fields.legacy_last_modified ?? '', record: t })
             }
@@ -195,6 +198,9 @@ export function dryRun(input: DryRunInput): DryRunReport {
         forms.push(summary)
     }
 
+    // Rows the legacy system had already merged keep their pointer and were counted through the
+    // transform warning above; only unmerged rows compete for survivor, exactly as the live
+    // `coalesceRequesterTable` does.
     const merge = coalesceRequesters(requesterCandidates)
     exceptionCounts['duplicate_requester'] = (exceptionCounts['duplicate_requester'] ?? 0) + merge.mergedInto.size
 
@@ -207,7 +213,7 @@ export function dryRun(input: DryRunInput): DryRunReport {
             award_line_quantity_total: quantityTotal,
             request_line_extended_price_total: extendedTotal.toFixed(2),
             orphan_count: exceptionCounts['orphan_parent'] ?? 0,
-            duplicate_merge_count: merge.mergedInto.size,
+            duplicate_merge_count: merge.mergedInto.size + legacyMergedRequesters,
             unmapped_status_count: unmappedTotal,
             exception_counts: exceptionCounts,
             cases_by_stage: ordered(casesByStage, CASE_STAGE_ORDER),

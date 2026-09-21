@@ -55,20 +55,26 @@ export const RECONCILED_TABLES: readonly { key: DomainTableKey; legacyForm: stri
     { key: 'case_note', legacyForm: LEGACY_FORMS.case_note },
 ]
 
-function countRows(table: string, apply?: (gr: GlideRecord<string>) => void): number {
+/**
+ * Single ungrouped aggregate over a table. GlideAggregate groups by the aggregated column unless
+ * `setGroup(false)` is set, so every whole-table total goes through here to get exactly one
+ * result row.
+ */
+function total(table: string, type: 'COUNT' | 'SUM', field: string, apply?: (gr: GlideRecord<string>) => void): number {
     const ga = new GlideAggregate(table)
     if (apply) apply(ga as unknown as GlideRecord<string>)
-    ga.addAggregate('COUNT', 'sys_id')
+    ga.addAggregate(type, field)
+    ga.setGroup(false)
     ga.query()
-    return ga.next() ? Number(ga.getAggregate('COUNT', 'sys_id') || 0) : 0
+    return ga.next() ? Number(ga.getAggregate(type, field) || 0) : 0
+}
+
+function countRows(table: string, apply?: (gr: GlideRecord<string>) => void): number {
+    return total(table, 'COUNT', 'sys_id', apply)
 }
 
 function sumField(table: string, field: string, apply?: (gr: GlideRecord<string>) => void): number {
-    const ga = new GlideAggregate(table)
-    if (apply) apply(ga as unknown as GlideRecord<string>)
-    ga.addAggregate('SUM', field)
-    ga.query()
-    return ga.next() ? Number(ga.getAggregate('SUM', field) || 0) : 0
+    return total(table, 'SUM', field, apply)
 }
 
 function groupCounts(table: string, field: string, order: readonly string[]): Record<string, number> {
