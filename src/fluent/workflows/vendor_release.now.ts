@@ -10,7 +10,6 @@
  */
 import '@servicenow/sdk/global'
 import { action, Flow, trigger, wfa } from '@servicenow/sdk/automation'
-import { requestReleasedNotification } from '../notifications/notifications.now'
 
 Flow(
     {
@@ -36,7 +35,9 @@ Flow(
             action.core.sendNotification,
             { $id: Now.ID['flow_vendor_notify'], annotation: 'Release notice to the vendor contact' },
             {
-                notification: requestReleasedNotification,
+                // sys_id of `requestReleasedNotification` (Now.ID['ntf_request_released'] in generated/keys.ts).
+                // The input is a sysevent_email_action reference and must be the id, not the notification object.
+                notification: '765e9d77d62848df835222eb676700fd',
                 table_name: 'x_cog_mah_heraldry_request',
                 record: wfa.dataPill(params.trigger.current, 'reference'),
             }

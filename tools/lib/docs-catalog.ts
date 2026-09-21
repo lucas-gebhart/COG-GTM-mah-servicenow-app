@@ -217,7 +217,7 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
         behaviour: 'Event-driven notifications on stage change, request submission / vendor release, red aging and SES submission',
         files: ['src/fluent/notifications/events.now.ts', 'src/fluent/notifications/notifications.now.ts', 'src/server/rules/awardsCase.ts', 'src/server/rules/heraldryRequest.ts'],
         artefacts: ['MAH Awards case stage changed', 'MAH Awards case aging red (75 days)', 'MAH Heraldry request submitted', 'MAH Heraldry request released to vendor', 'MAH SES flag request submitted'],
-        tests: [],
+        tests: ['vendor-release flow references the release notification by the sys_id pinned in generated/keys.ts'],
     },
     {
         kind: 'agent',

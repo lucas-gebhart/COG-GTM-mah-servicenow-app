@@ -302,3 +302,16 @@ describe('generated Fluent files are in sync with the catalog', () => {
         }
     })
 })
+
+describe('flow action inputs', () => {
+    it('vendor-release flow references the release notification by the sys_id pinned in generated/keys.ts', () => {
+        // action.core.sendNotification takes a sysevent_email_action reference; handing it the Fluent object
+        // serialises the whole record into the flow snapshot and activation fails on the instance.
+        const keys = readFileSync('src/fluent/generated/keys.ts', 'utf8')
+        const pinned = /ntf_request_released:\s*\{\s*table: 'sysevent_email_action'\s*id: '([0-9a-f]{32})'/.exec(keys)?.[1]
+        expect(pinned).toBeTruthy()
+        const flow = readFileSync('src/fluent/workflows/vendor_release.now.ts', 'utf8')
+        expect(flow).toMatch(new RegExp(`notification: '${pinned}'`))
+        expect(flow).not.toMatch(/notifications\.now/)
+    })
+})
