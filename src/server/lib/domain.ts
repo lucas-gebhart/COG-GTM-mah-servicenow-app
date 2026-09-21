@@ -74,6 +74,21 @@ export const LIFECYCLE_STATES = {
     unmapped: 'Unmapped',
 } as const
 
+/** Requester lifecycle: survivors stay active, coalesced duplicates become merged. */
+export const REQUESTER_STATES = {
+    active: 'Active',
+    merged: 'Merged',
+    inactive: 'Inactive',
+    unmapped: 'Unmapped',
+} as const
+
+/** Catalog-style tables (heraldic items, vendors). */
+export const CATALOG_STATES = {
+    active: 'Active',
+    inactive: 'Inactive',
+    unmapped: 'Unmapped',
+} as const
+
 export const CASE_STAGES = {
     authorized: 'Authorized',
     engraving: 'Engraving',
@@ -126,6 +141,20 @@ export const PARSE_STATUSES = {
     parsed: 'Parsed',
     partial: 'Parsed with errors',
     failed: 'Failed',
+    unmapped: 'Unmapped',
+} as const
+
+export const FILE_FORMATS = {
+    json: 'JSON',
+    delimited: 'Delimited text',
+    dxl: 'Domino DXL',
+} as const
+
+export const NOTE_TYPES = {
+    customer_contact: 'Customer contact',
+    internal: 'Internal',
+    system: 'System',
+    migrated: 'Migrated from legacy',
 } as const
 
 export const LINE_STATUSES = {
@@ -211,6 +240,28 @@ export const SES_FLAG_TYPES = {
     automobile: 'Automobile SES flag (12 in x 18 in)',
     boat: 'Boat SES flag (12 in x 18 in)',
     desk: 'Desk set miniature SES flag',
+} as const
+
+/**
+ * MILSTRIP priority designators (PD 01-15) as the Force/Activity Designator (F/AD I-V)
+ * crossed with the Urgency of Need Designator (UND A/B/C) per DoD 4140.01 / DLM 4000.25.
+ */
+export const REQUISITION_PRIORITIES = {
+    '01': '01 - F/AD I, UND A',
+    '02': '02 - F/AD II, UND A',
+    '03': '03 - F/AD III, UND A',
+    '04': '04 - F/AD I, UND B',
+    '05': '05 - F/AD II, UND B',
+    '06': '06 - F/AD III, UND B',
+    '07': '07 - F/AD IV, UND A',
+    '08': '08 - F/AD V, UND A',
+    '09': '09 - F/AD IV, UND B',
+    '10': '10 - F/AD V, UND B',
+    '11': '11 - F/AD I, UND C',
+    '12': '12 - F/AD II, UND C',
+    '13': '13 - F/AD III, UND C',
+    '14': '14 - F/AD IV, UND C',
+    '15': '15 - F/AD V, UND C',
 } as const
 
 export const HERALDIC_CATEGORIES = {
@@ -321,14 +372,14 @@ export const MIGRATION_EXCEPTION_STATES = {
 } as const
 
 export const ROLES = {
-    tacom_staff: `${SCOPE}.tacom_staff`,
-    csr: `${SCOPE}.csr`,
-    engraver: `${SCOPE}.engraver`,
-    assembler: `${SCOPE}.assembler`,
-    warehouse: `${SCOPE}.warehouse`,
-    vendor: `${SCOPE}.vendor`,
-    dla: `${SCOPE}.dla`,
-    admin: `${SCOPE}.admin`,
+    tacom_staff: 'x_cog_mah.tacom_staff',
+    csr: 'x_cog_mah.csr',
+    engraver: 'x_cog_mah.engraver',
+    assembler: 'x_cog_mah.assembler',
+    warehouse: 'x_cog_mah.warehouse',
+    vendor: 'x_cog_mah.vendor',
+    dla: 'x_cog_mah.dla',
+    admin: 'x_cog_mah.admin',
 } as const
 export type RoleKey = keyof typeof ROLES
 
@@ -362,7 +413,7 @@ export const LIMITS = {
     maxQuantity: 999,
     maxLineQuantity: 10_000,
     maxAuthorizationRecords: 5_000,
-    maxIntakeBodyBytes: 5 * 1024 * 1024,
+    maxIntakeBodyBytes: 5242880,
 } as const
 
 /** Legacy status text exactly as the released-to-vendor guard reports it to users. */

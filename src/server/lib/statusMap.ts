@@ -7,7 +7,19 @@
  * (see src/fluent/records/status-map.now.ts); anything without a match lands in the
  * `unmapped` bucket and is recorded as a migration exception.
  */
-import { CASE_STAGES, ENGRAVING_STATUSES, LEGACY_FORMS, LINE_STATUSES, REQUEST_STATES, SES_FLAG_STATES, SHIPMENT_STATUSES, type LegacyForm } from './domain'
+import {
+    CASE_STAGES,
+    CATALOG_STATES,
+    ENGRAVING_STATUSES,
+    LEGACY_FORMS,
+    LINE_STATUSES,
+    PARSE_STATUSES,
+    REQUESTER_STATES,
+    REQUEST_STATES,
+    SES_FLAG_STATES,
+    SHIPMENT_STATUSES,
+    type LegacyForm,
+} from './domain'
 
 export const UNMAPPED = 'unmapped' as const
 
@@ -18,7 +30,7 @@ export interface StatusMapEntry {
     /** Choice value in the target table. */
     targetValue: string
     /** Target field the choice belongs to. */
-    targetField: 'stage' | 'state' | 'status'
+    targetField: 'stage' | 'state' | 'status' | 'parse_status'
 }
 
 /**
@@ -47,15 +59,15 @@ function entries(form: LegacyForm, field: StatusMapEntry['targetField'], map: Re
 export const STATUS_TARGET_CHOICES: Readonly<Record<LegacyForm, Readonly<Record<string, string>>>> = {
     AwardsCase: CASE_STAGES,
     AwardLine: LINE_STATUSES,
-    Requester: { active: 'Active', merged: 'Merged', inactive: 'Inactive', unmapped: 'Unmapped' },
-    AuthorizationFile: { received: 'Received', parsing: 'Parsing', parsed: 'Parsed', partial: 'Parsed with errors', failed: 'Failed', unmapped: 'Unmapped' },
+    Requester: REQUESTER_STATES,
+    AuthorizationFile: PARSE_STATUSES,
     EngravingJob: ENGRAVING_STATUSES,
     ShipmentRecord: SHIPMENT_STATUSES,
     Request: REQUEST_STATES,
     RequestLine: LINE_STATUSES,
-    HeraldicItem: { active: 'Active', inactive: 'Inactive', unmapped: 'Unmapped' },
+    HeraldicItem: CATALOG_STATES,
     SESFlagRequest: SES_FLAG_STATES,
-    Vendor: { active: 'Active', inactive: 'Inactive', unmapped: 'Unmapped' },
+    Vendor: CATALOG_STATES,
 }
 
 export const DEFAULT_STATUS_MAP: readonly StatusMapEntry[] = [
@@ -79,7 +91,7 @@ export const DEFAULT_STATUS_MAP: readonly StatusMapEntry[] = [
         merged: ['Merged', 'Duplicate', 'Dup'],
         inactive: ['Inactive', 'Deceased', 'Archived', 'Closed'],
     }),
-    ...entries(LEGACY_FORMS.authorization_file, 'state', {
+    ...entries(LEGACY_FORMS.authorization_file, 'parse_status', {
         received: ['Received', 'New', 'Uploaded'],
         parsing: ['Parsing', 'Processing', 'In Progress'],
         parsed: ['Parsed', 'Imported', 'Complete', 'Completed', 'Loaded'],
