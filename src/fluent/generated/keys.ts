@@ -841,6 +841,50 @@ declare global {
                         table: 'sys_hub_action_instance_v2'
                         id: '6d417b326acc44538c87005c2ecc640d'
                     }
+                    grmember_vendor_liberty: {
+                        table: 'sys_user_grmember'
+                        id: 'db052a1e9a6b433897b2bf06f190507a'
+                    }
+                    group_role_vendor_liberty: {
+                        table: 'sys_group_has_role'
+                        id: '01f3b19096454044bfd6332467ee0612'
+                    }
+                    group_vendor_liberty: {
+                        table: 'sys_user_group'
+                        id: 'dbb063c90c494459b47d197ecfb76352'
+                    }
+                    has_role_admin: {
+                        table: 'sys_user_has_role'
+                        id: 'a60aa8fd41364df5ac8b5af1b4b293f5'
+                    }
+                    has_role_assembler: {
+                        table: 'sys_user_has_role'
+                        id: 'ead527142e51459fa352f34139ae50c4'
+                    }
+                    has_role_csr: {
+                        table: 'sys_user_has_role'
+                        id: '1b48c2b1768848189c012e5b1f0c1c0e'
+                    }
+                    has_role_dla: {
+                        table: 'sys_user_has_role'
+                        id: '8d6d1205c6fd4fc8a71f63ba7cb2843b'
+                    }
+                    has_role_engraver: {
+                        table: 'sys_user_has_role'
+                        id: '7017afcfa4374444bd0030b75eb08bb8'
+                    }
+                    has_role_tacom: {
+                        table: 'sys_user_has_role'
+                        id: '2873fd9aa8b9480bb44b5dec3aa41c59'
+                    }
+                    has_role_vendor: {
+                        table: 'sys_user_has_role'
+                        id: '62c031c97b0a4ec4abe6555f0baf5c88'
+                    }
+                    has_role_warehouse: {
+                        table: 'sys_user_has_role'
+                        id: '6187a8110dc04e61bd3349a9ced80cad'
+                    }
                     job_nightly_aging: {
                         table: 'sysauto_script'
                         id: '4129a3ea3cf24675a4f468615b29ced4'
@@ -3047,6 +3091,38 @@ declare global {
                     ua_ses_reject: {
                         table: 'sys_ui_action'
                         id: '257ddd3d74934048ae18dcef18ab8f7e'
+                    }
+                    user_admin: {
+                        table: 'sys_user'
+                        id: 'f2f139695ee34b08a184c7e92a780ec2'
+                    }
+                    user_assembler: {
+                        table: 'sys_user'
+                        id: '8ce96f181eeb4c818bf9eed55727ee36'
+                    }
+                    user_csr: {
+                        table: 'sys_user'
+                        id: 'bbb170c8196343adbbe7bda3dd4cfcd2'
+                    }
+                    user_dla: {
+                        table: 'sys_user'
+                        id: '13142bdbe4ec4c8b90dabc38b2aa0293'
+                    }
+                    user_engraver: {
+                        table: 'sys_user'
+                        id: 'b28944ee3f7f4d4c9a09d8d98075ee50'
+                    }
+                    user_tacom: {
+                        table: 'sys_user'
+                        id: '385ab470388b46f5b1ba37a9fe50b889'
+                    }
+                    user_vendor: {
+                        table: 'sys_user'
+                        id: 'c8fb08b91ba649248fdf3b0b9e159409'
+                    }
+                    user_warehouse: {
+                        table: 'sys_user'
+                        id: 'afdf995e379642a3ae7950ec7bd71c05'
                     }
                     ws_li_case_advance: {
                         table: 'sys_ux_form_action_layout_item'

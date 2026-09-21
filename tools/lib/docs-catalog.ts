@@ -289,9 +289,11 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
         kind: 'export',
         legacy: 'DXL / CSV export of every form (13 files)',
         behaviour: 'Import Set staging table + data source + transform map per legacy form, generated from the shared contract',
-        files: ['src/server/lib/legacyContract.ts', 'tools/generate-fluent-migration.ts', 'src/fluent/migration/staging_tables.now.ts', 'src/fluent/migration/data_sources.now.ts', 'src/fluent/migration/transform_maps.now.ts'],
-        artefacts: ['x_cog_mah_stg_* tables', 'MAH Legacy * data sources', 'MAH * -> x_cog_mah_* transform maps'],
+        files: ['src/server/lib/legacyContract.ts', 'tools/generate-fluent-migration.ts', 'src/fluent/migration/staging_tables.now.ts', 'src/fluent/migration/data_sources.now.ts', 'src/fluent/migration/transform_maps.now.ts', 'tools/generate-sample-data.ts', 'sample-data/'],
+        artefacts: ['x_cog_mah_stg_* tables', 'MAH Legacy * data sources', 'MAH * -> x_cog_mah_* transform maps', 'sample-data/*.csv (deterministic miniature of the export)'],
         tests: [
+            'every header equals csvHeader(form) exactly, including the repeated ParentUNID',
+            'files on disk are byte-identical to a fresh generation (run npm run gen:sample-data)',
             'is in sync with the contract (run `npm run gen:migration` after changing legacyContract/statusMap/rowTransforms)',
             'declares one staging table, data source and transform map per legacy form',
             'header check names the first drifted column',
