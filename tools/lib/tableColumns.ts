@@ -26,6 +26,28 @@ export function declaredColumns(): Record<DomainTableKey, Set<string>> {
     return out
 }
 
+export interface ReferenceEdge {
+    table: DomainTableKey
+    column: string
+    referenceTable: string
+}
+
+/** Every `ReferenceColumn` declared in the Fluent table files, in file order. */
+export function referenceColumns(): ReferenceEdge[] {
+    const out: ReferenceEdge[] = []
+    for (const file of readdirSync(TABLES_DIR).sort()) {
+        if (!file.endsWith('.now.ts')) continue
+        const table = file.replace('.now.ts', '') as DomainTableKey
+        const src = readFileSync(TABLES_DIR + file, 'utf8')
+        for (const m of src.matchAll(/^ {8}([a-z0-9_]+): ReferenceColumn\(\{[\s\S]*?referenceTable: '([a-z0-9_]+)'/gm)) {
+            const column = m[1]
+            const referenceTable = m[2]
+            if (column !== undefined && referenceTable !== undefined) out.push({ table, column, referenceTable })
+        }
+    }
+    return out
+}
+
 /** `x_cog_mah_awards_case` → `awards_case`. */
 export function tableKey(table: string): DomainTableKey {
     return table.replace(/^x_cog_mah_/, '') as DomainTableKey

@@ -232,3 +232,17 @@ describe('generated Fluent migration metadata', () => {
         }
     })
 })
+
+describe('legacy contract ↔ data model', () => {
+    it('covers every legacy form and target table (both directions)', () => {
+        const targets = new Set(Object.values(LEGACY_FORMS).map((c) => c.targetTable))
+        const production = new Set(Object.values(TABLES).filter((t) => t !== TABLES.status_map && t !== TABLES.migration_exception))
+        expect([...targets].sort()).toEqual([...production].sort())
+        expect([...LOAD_ORDER].sort()).toEqual(Object.keys(LEGACY_FORMS).sort())
+        for (const form of LOAD_ORDER) {
+            const header = csvHeader(form)
+            expect(header.length, form).toBe(stagingColumnMap(form).length)
+            expect(header[0], form).toBe('UNID')
+        }
+    })
+})
