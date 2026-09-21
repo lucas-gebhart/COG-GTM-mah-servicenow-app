@@ -136,7 +136,7 @@ export const LEGACY_FORMS: Readonly<Record<LegacyFormName, LegacyFormContract>> 
         csvFile: 'vetmedals-AwardLine.csv',
         stagingTable: 'x_cog_mah_stg_award_line',
         targetTable: 'x_cog_mah_award_line',
-        columns: ['ParentCaseNumber', 'VeteranName', 'LineNumber', 'AwardName', 'AwardCode', 'AwardCategory', 'Quantity', 'SetType', 'Devices', 'DeviceCount', 'Engrave', 'EngravingText', 'StockNumber', 'LineStatus', 'BackorderETA', 'Authority', 'DocReaders', 'LineKey'],
+        columns: ['ParentCaseNumber', 'ParentUNID', 'VeteranName', 'LineNumber', 'AwardName', 'AwardCode', 'AwardCategory', 'Quantity', 'SetType', 'Devices', 'DeviceCount', 'Engrave', 'EngravingText', 'StockNumber', 'LineStatus', 'BackorderETA', 'Authority', 'DocReaders', 'LineKey'],
         businessKey: 'LineKey',
         statusColumn: 'LineStatus',
         parent: { column: 'ParentUNID', parentForm: 'AwardsCase', by: 'unid' },
@@ -176,7 +176,7 @@ export const LEGACY_FORMS: Readonly<Record<LegacyFormName, LegacyFormContract>> 
         csvFile: 'vetmedals-CaseNote.csv',
         stagingTable: 'x_cog_mah_stg_case_note',
         targetTable: 'x_cog_mah_case_note',
-        columns: ['ParentCaseNumber', 'NoteType', 'ContactName', 'ContactPhone', 'Body', 'Summary', 'FollowUpDate', 'FollowUpDone', 'NoteAuthor', 'NoteDate', 'DocReaders', 'DocAuthors'],
+        columns: ['ParentCaseNumber', 'ParentUNID', 'NoteType', 'ContactName', 'ContactPhone', 'Body', 'Summary', 'FollowUpDate', 'FollowUpDone', 'NoteAuthor', 'NoteDate', 'DocReaders', 'DocAuthors'],
         longColumns: ['Body'],
         parent: { column: 'ParentUNID', parentForm: 'AwardsCase', by: 'unid' },
         loadOrder: 90,
@@ -229,9 +229,45 @@ export const LOAD_ORDER: readonly LegacyFormName[] = (Object.values(LEGACY_FORMS
     .sort((a, b) => a.loadOrder - b.loadOrder)
     .map((f) => f.form)
 
-/** Full header row (common + form-specific) exactly as the export writes it. */
+/**
+ * Full header row (common + form-specific) exactly as the export writes it. Child forms whose
+ * Domino design carried its own `ParentUNID` item (AwardLine, CaseNote) repeat that header:
+ * the export writes the common envelope column and the form item side by side.
+ */
 export function csvHeader(form: LegacyFormName): readonly string[] {
     return [...COMMON_LEGACY_COLUMNS, ...LEGACY_FORMS[form].columns]
+}
+
+/**
+ * Key used for a header inside a parsed source row / staging column. The first occurrence
+ * keeps the header name; a repeated header gets an occurrence suffix (`ParentUNID_2`) so
+ * both values survive and the transform can flag disagreement between them.
+ */
+export function sourceKey(header: string, occurrence: number): string {
+    return occurrence <= 1 ? header : `${header}_${occurrence}`
+}
+
+export interface StagingColumn {
+    /** Header text as written in the CSV. */
+    header: string
+    /** Row key / basis for the staging column name (see `sourceKey`). */
+    key: string
+    /** Staging-table column name. */
+    column: string
+    /** 0-based position in the CSV header row. */
+    index: number
+    length: number
+}
+
+/** Positional header → staging-column mapping for a form, duplicates disambiguated. */
+export function stagingColumnMap(form: LegacyFormName): StagingColumn[] {
+    const seen = new Map<string, number>()
+    return csvHeader(form).map((header, index) => {
+        const occurrence = (seen.get(header) ?? 0) + 1
+        seen.set(header, occurrence)
+        const key = sourceKey(header, occurrence)
+        return { header, key, column: stagingColumnName(key), index, length: stagingColumnLength(form, header) }
+    })
 }
 
 /**
@@ -258,6 +294,43 @@ export function stagingColumnLength(form: LegacyFormName, header: string): numbe
 /** Stable `$id` / variable name suffix for a form's generated Fluent metadata. */
 export function formSlug(form: LegacyFormName): string {
     return stagingColumnName(form)
+}
+
+/**
+ * Columns every staging table carries in addition to the export headers. `tools/migrate.ts`
+ * fills them per row so each target record and migration exception can be traced back to
+ * the batch and the physical CSV line it came from.
+ */
+export const EXTRA_STAGING_COLUMNS = ['mah_batch_id', 'mah_source_row', 'mah_source_file'] as const
+
+/** All staging-table column names for a form, in declaration order. */
+export function stagingColumns(form: LegacyFormName): string[] {
+    return [...stagingColumnMap(form).map((c) => c.column), ...EXTRA_STAGING_COLUMNS]
+}
+
+/** Label of the Fluent data source (`sys_data_source`) that feeds a staging table. */
+export function dataSourceName(form: LegacyFormName): string {
+    const c = LEGACY_FORMS[form]
+    return `MAH Legacy ${c.database} ${c.legacyForm}`
+}
+
+/** Label of the Transform Map (`sys_transform_map`) for a form. */
+export function transformMapName(form: LegacyFormName): string {
+    return `MAH ${form} -> ${LEGACY_FORMS[form].targetTable}`
+}
+
+/** Column that holds the legacy business key on the target table, when the target has one. */
+export const TARGET_BUSINESS_KEY_FIELD: Readonly<Partial<Record<LegacyFormName, string>>> = {
+    Vendor: 'cage_code',
+    HeraldicItem: 'stock_number',
+    Requester: 'legacy_number',
+    HeraldryRequester: 'legacy_number',
+    AuthorizationFile: 'file_name',
+    AwardsCase: 'legacy_number',
+    EngravingJob: 'legacy_number',
+    ShipmentRecord: 'legacy_number',
+    Request: 'document_number',
+    SESFlagRequest: 'legacy_number',
 }
 
 /** Migration batch identifier: `<yyyymmdd>-<source>` — recorded on every migration exception. */
