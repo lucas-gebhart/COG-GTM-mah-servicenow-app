@@ -7,7 +7,7 @@
 import { GlideDateTime, GlideRecord, gs } from '@servicenow/glide'
 import { ROLES, type RoleKey } from '../lib/domain.ts'
 import { formatSecurityEvent, type SecurityEventInput } from '../lib/logging.ts'
-import { GENERIC_VALIDATION_MESSAGE, type ValidationResult } from '../lib/validators.ts'
+import { GENERIC_VALIDATION_MESSAGE, toSafeMultiline, type ValidationResult } from '../lib/validators.ts'
 
 export type AnyRecord = GlideRecord<string>
 
@@ -117,8 +117,17 @@ export function insertCaseNote(fields: { awards_case?: string; heraldry_request?
     note.setValue('note_type', fields.note_type)
     note.setValue('noted_at', nowValue())
     note.setValue('author', gs.getUserID())
-    note.setValue('body', fields.body.slice(0, 4000))
+    note.setValue('body', toSafeMultiline(fields.body, 4000))
     note.setValue('customer_visible', fields.customer_visible === true ? 'true' : 'false')
     note.setValue('state', 'open')
-    note.insert()
+    if (!note.insert()) {
+        securityLog({
+            event: 'system_note_dropped',
+            source: 'insertCaseNote',
+            outcome: 'failure',
+            table: 'x_cog_mah_case_note',
+            record: fields.awards_case ?? fields.heraldry_request ?? '',
+            details: { note_type: fields.note_type },
+        })
+    }
 }
