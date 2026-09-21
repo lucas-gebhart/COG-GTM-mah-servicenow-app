@@ -243,10 +243,14 @@ contains the session user — the ServiceNow equivalent of the Domino Readers fi
 
 ### Test users
 
-`src/fluent/security/test_users.now.ts` installs one synthetic user per role (`mah.tacom`, `mah.csr`,
-`mah.engraver`, `mah.assembler`, `mah.warehouse`, `mah.dla`, `mah.admin`, and the vendor portal user
-`mah.vendor.liberty` in group `MAH Vendor - Liberty Colors LLC`). No passwords ship with the application:
-use **Impersonate user** from an administrator session, or set passwords on the instance.
+`src/server/lib/testUsers.ts` is the registry of synthetic principals, one user per role (`mah.tacom`,
+`mah.csr`, `mah.engraver`, `mah.assembler`, `mah.warehouse`, `mah.dla`, `mah.admin`, and the vendor portal
+user `mah.vendor.liberty` in group `MAH Vendor - Liberty Colors LLC`). `src/fluent/security/test_users.now.ts`
+installs the `sys_user` / `sys_user_group` records with the application; the role grants and group
+membership are not application files (the installer skips `sys_user_has_role`, `sys_group_has_role`,
+`sys_user_grmember`), so run `npm run grant-roles` once after `now-sdk install` — it is idempotent and
+uses the same `SN_INSTANCE_URL` / credential variables as the migration tooling. No passwords ship with
+the application: use **Impersonate user** from an administrator session, or set passwords on the instance.
 
 ## REST API
 
@@ -310,6 +314,7 @@ it to `.env` (git-ignored) or export them in your shell.
 | `npm run test:watch` | `vitest` |
 | `npm run migrate` | `tsx tools/migrate.ts` |
 | `npm run reconcile` | `tsx tools/reconcile.ts` |
+| `npm run grant-roles` | `tsx tools/grant-test-roles.ts` |
 | `npm run gen:sample-data` | `tsx tools/generate-sample-data.ts` |
 | `npm run gen:docs` | `tsx tools/generate-docs.ts` |
 | `npm run gen:operations` | `tsx tools/generate-fluent-operations.ts` |

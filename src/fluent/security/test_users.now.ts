@@ -1,12 +1,13 @@
+// GENERATED FILE - do not edit by hand.
+// Source of truth: src/server/lib/testUsers.ts. Regenerate with `npm run gen:security`.
+//
+// Synthetic test users, one per application role, plus the vendor group used by the vendor
+// isolation rules. Only sys_user / sys_user_group rows ship with the application: role grants and
+// group memberships (sys_user_has_role, sys_group_has_role, sys_user_grmember) are not application
+// files and are skipped by the installer, so they are applied post-install by `npm run grant-roles`
+// (tools/grant-test-roles.ts) from the same registry. No passwords are shipped: sign in as an
+// administrator and use "Impersonate user", or set a password on the instance.
 import { Record } from '@servicenow/sdk/core'
-
-/**
- * Synthetic test users, one per application role, plus the vendor group used by the vendor
- * isolation rules. Names are fictitious. No passwords are shipped: sign in as an administrator
- * and use "Impersonate user" (the same path the verification screenshots use), or set a
- * password on the instance. `x_cog_mah_vendor.portal_user` / `user_group` are pointed at the
- * vendor user / group after migration (see docs/MIGRATION-RUNBOOK.md, cut-over step 3).
- */
 
 export const user_tacom = Record({
     $id: Now.ID['user_tacom'],
@@ -120,64 +121,4 @@ export const group_vendor_liberty = Record({
         description: 'Portal users of vendor CAGE 1CLR7. Members see only that vendor\'s heraldry requests.',
         active: true,
     },
-})
-
-export const grmember_vendor_liberty = Record({
-    $id: Now.ID['grmember_vendor_liberty'],
-    table: 'sys_user_grmember',
-    data: { group: Now.ID['group_vendor_liberty'], user: Now.ID['user_vendor'] },
-})
-
-export const group_role_vendor_liberty = Record({
-    $id: Now.ID['group_role_vendor_liberty'],
-    table: 'sys_group_has_role',
-    data: { group: Now.ID['group_vendor_liberty'], role: Now.ID['role_vendor'] },
-})
-
-export const has_role_tacom = Record({
-    $id: Now.ID['has_role_tacom'],
-    table: 'sys_user_has_role',
-    data: { user: Now.ID['user_tacom'], role: Now.ID['role_tacom_staff'] },
-})
-
-export const has_role_csr = Record({
-    $id: Now.ID['has_role_csr'],
-    table: 'sys_user_has_role',
-    data: { user: Now.ID['user_csr'], role: Now.ID['role_csr'] },
-})
-
-export const has_role_engraver = Record({
-    $id: Now.ID['has_role_engraver'],
-    table: 'sys_user_has_role',
-    data: { user: Now.ID['user_engraver'], role: Now.ID['role_engraver'] },
-})
-
-export const has_role_assembler = Record({
-    $id: Now.ID['has_role_assembler'],
-    table: 'sys_user_has_role',
-    data: { user: Now.ID['user_assembler'], role: Now.ID['role_assembler'] },
-})
-
-export const has_role_warehouse = Record({
-    $id: Now.ID['has_role_warehouse'],
-    table: 'sys_user_has_role',
-    data: { user: Now.ID['user_warehouse'], role: Now.ID['role_warehouse'] },
-})
-
-export const has_role_vendor = Record({
-    $id: Now.ID['has_role_vendor'],
-    table: 'sys_user_has_role',
-    data: { user: Now.ID['user_vendor'], role: Now.ID['role_vendor'] },
-})
-
-export const has_role_dla = Record({
-    $id: Now.ID['has_role_dla'],
-    table: 'sys_user_has_role',
-    data: { user: Now.ID['user_dla'], role: Now.ID['role_dla'] },
-})
-
-export const has_role_admin = Record({
-    $id: Now.ID['has_role_admin'],
-    table: 'sys_user_has_role',
-    data: { user: Now.ID['user_admin'], role: Now.ID['role_admin'] },
 })

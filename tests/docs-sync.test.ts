@@ -13,7 +13,7 @@ const TESTS_DIR = `${ROOT}tests/`
  * Test files that exercise tooling / generator synchronization or synthetic fixtures rather than a
  * legacy behaviour. Their cases are not required to appear in the equivalence matrix.
  */
-const NON_BEHAVIOUR_TEST_FILES = new Set(['operations-sync.test.ts', 'docs-sync.test.ts', 'sampleData.test.ts'])
+const NON_BEHAVIOUR_TEST_FILES = new Set(['operations-sync.test.ts', 'docs-sync.test.ts', 'test-users-sync.test.ts', 'sampleData.test.ts'])
 
 function testTitles(): Map<string, Set<string>> {
     const out = new Map<string, Set<string>>()
