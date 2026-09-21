@@ -8,6 +8,7 @@
 import '@servicenow/sdk/global'
 import { ApplicationMenu, Record } from '@servicenow/sdk/core'
 import { admin, assembler, csr, dla, engraver, tacomStaff, vendor, warehouse } from '../security/roles.now'
+import { RECONCILIATION_PAGE_ENDPOINT } from './reconciliation_page.now'
 
 export const mahCategory = Record({
     $id: Now.ID['app_category'],
@@ -144,11 +145,11 @@ export const modReconciliation = Record({
     $id: Now.ID['mod_reconciliation'],
     table: 'sys_app_module',
     data: {
-        title: 'Reconciliation report (JSON)',
+        title: 'Reconciliation report',
         application: mahMenu,
         link_type: 'DIRECT',
-        query: 'api/x_cog_mah/authorization_intake/reconciliation',
-        hint: 'Live target-side counts, orphans, merges, unmapped statuses and queue depth',
+        query: RECONCILIATION_PAGE_ENDPOINT,
+        hint: 'Live target-side counts, legacy UNID coverage, orphans, merges, unmapped statuses and queue depth (also GET /api/x_cog_mah/authorization_intake/reconciliation)',
         active: true,
         order: 450,
         roles: ['x_cog_mah.tacom_staff', 'x_cog_mah.dla', 'x_cog_mah.admin'],

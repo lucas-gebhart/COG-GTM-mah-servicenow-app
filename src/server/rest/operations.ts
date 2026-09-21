@@ -14,7 +14,7 @@ import { gs } from '@servicenow/glide'
 import { runNightlyAging } from '../jobs/nightlyAging.ts'
 import { batchExceptionCounts, coalesceRequesterTable } from '../migration/transformEngine.ts'
 import { hasAnyRole, securityLog } from '../rules/glideSupport.ts'
-import { buildReconciliationReport } from '../services/reconciliation.ts'
+import { RECONCILIATION_ROLES, buildReconciliationReport } from '../services/reconciliation.ts'
 import { lookupCaseStatus } from '../services/statusInquiry.ts'
 import type { IntakeRequest, IntakeResponse } from './authorizationIntake.ts'
 import { securityHeaders as headers, writeError, writeJson } from './respond.ts'
@@ -38,7 +38,7 @@ function deny(response: IntakeResponse, source: string, reference: string): void
 export function reconciliationReport(_request: IntakeRequest, response: IntakeResponse): void {
     const reference = gs.generateGUID()
     headers(response)
-    if (!hasAnyRole(['tacom_staff', 'dla', 'admin'])) {
+    if (!hasAnyRole(RECONCILIATION_ROLES)) {
         deny(response, 'rest:reconciliation', reference)
         return
     }

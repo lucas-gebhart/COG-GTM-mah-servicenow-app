@@ -347,6 +347,13 @@ databases, aging recompute, exception roll-up), fetches the reconciliation repor
 `expected.json`, `load.json`, `finalize.json`, `target.json` and `comparison.json` to `--out`.
 The same tooling runs unchanged against `sample-data` and against the sibling export.
 
+The same target-side report is available to operators in the instance as **MAH Case Management →
+Reconciliation report** (UI page `x_cog_mah_reconciliation.do`, rendered server-side by
+`src/server/lib/reconciliationHtml.ts` through the `MAHReconciliation` Script Include). The module
+uses a UI page rather than linking the browser straight at the Scripted REST route because a browser
+session has no REST user token (`User is not authenticated`); page and route share
+`buildReconciliationReport()` and the same role gate (`tacom_staff`, `dla`, `admin`).
+
 The step-by-step cut-over procedure, with rollback and go / no-go checkpoints, is in
 [docs/MIGRATION-RUNBOOK.md](docs/MIGRATION-RUNBOOK.md).
 

@@ -1,0 +1,9 @@
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+    <!-- Server-rendered operator report. Markup is produced (and escaped) by
+         src/server/lib/reconciliationHtml.ts via the MAHReconciliation Script Include;
+         the page itself carries no client script. -->
+    <g:evaluate var="jvar_page" object="false" jelly="false">
+        new MAHReconciliation().pageHtml();
+    </g:evaluate>
+    <g:no_escape>${jvar_page}</g:no_escape>
+</j:jelly>

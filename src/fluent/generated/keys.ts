@@ -2729,6 +2729,10 @@ declare global {
                         table: 'sys_module'
                         id: 'd6706dac2a2e4519bbe0ea9e1497379e'
                     }
+                    src_server_lib_reconciliationHtml_ts: {
+                        table: 'sys_module'
+                        id: 'fdfe0ec640a94829a851adbb1147d13f'
+                    }
                     src_server_lib_security_ts: {
                         table: 'sys_module'
                         id: '308e25827f29403f90d0435ca20feef7'
@@ -13186,6 +13190,13 @@ declare global {
                             name: 'x_cog_mah_shipment'
                             element: 'legacy_unid'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_page'
+                        id: '38bfa72ce4894a6297d0084bdeb94a51'
+                        key: {
+                            endpoint: 'x_cog_mah_reconciliation.do'
                         }
                     },
                     {

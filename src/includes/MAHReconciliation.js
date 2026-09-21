@@ -16,5 +16,9 @@ MAHReconciliation.prototype = {
     reportJson: function () {
         return JSON.stringify(this._mod.buildReconciliationReport())
     },
+    /** @returns {string} escaped HTML for the x_cog_mah_reconciliation.do UI page (role-gated, logged) */
+    pageHtml: function () {
+        return this._mod.reconciliationPageHtml()
+    },
     type: 'MAHReconciliation',
 }

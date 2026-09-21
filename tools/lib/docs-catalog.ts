@@ -366,9 +366,25 @@ export const EQUIVALENCE_MATRIX: readonly EquivalenceRow[] = [
         kind: 'export',
         legacy: 'Reconciliation of the export against the target',
         behaviour: 'Source counts / totals computed offline by the dry run and compared check-by-check with the instance report',
-        files: ['src/server/migration/compare.ts', 'src/server/services/reconciliation.ts', 'tools/migrate.ts', 'tools/reconcile.ts', 'src/includes/MAHReconciliation.js'],
-        artefacts: ['GET /api/x_cog_mah/authorization_intake/reconciliation', 'MAHReconciliation'],
-        tests: ['comparison passes on an identical target and names each differing check', 'builds the Import Set payload from staging columns plus batch traceability'],
+        files: [
+            'src/server/migration/compare.ts',
+            'src/server/services/reconciliation.ts',
+            'src/server/lib/reconciliationHtml.ts',
+            'src/server/pages/reconciliation.html',
+            'src/fluent/ui/reconciliation_page.now.ts',
+            'tools/migrate.ts',
+            'tools/reconcile.ts',
+            'src/includes/MAHReconciliation.js',
+        ],
+        artefacts: ['GET /api/x_cog_mah/authorization_intake/reconciliation', 'UI page x_cog_mah_reconciliation.do (module "Reconciliation report")', 'MAHReconciliation'],
+        tests: [
+            'comparison passes on an identical target and names each differing check',
+            'builds the Import Set payload from staging columns plus batch traceability',
+            'escapes every HTML-significant character',
+            'renders the reconciliation totals, per-table rows and queues in the page',
+            'never emits report values unescaped and ships no scripts or external assets',
+            'renders a generic denial page with only a correlation reference',
+        ],
     },
 ]
 

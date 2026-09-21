@@ -6,9 +6,10 @@
  * Every number here is computed from the live tables with GlideAggregate so the report can
  * never drift from the data it describes.
  */
-import { GlideAggregate, type GlideRecord } from '@servicenow/glide'
+import { GlideAggregate, gs, type GlideRecord } from '@servicenow/glide'
 import { CASE_STAGE_ORDER, LEGACY_FORMS, MIGRATION_EXCEPTION_TYPES, REQUEST_STATE_ORDER, TABLES, TARGET_STATUS_FIELD, type DomainTableKey } from '../lib/domain.ts'
-import { nowValue } from '../rules/glideSupport.ts'
+import { deniedHtml, reconciliationHtml } from '../lib/reconciliationHtml.ts'
+import { hasAnyRole, nowValue, securityLog } from '../rules/glideSupport.ts'
 
 export interface TableCount {
     table: string
@@ -133,4 +134,23 @@ export function buildReconciliationReport(): ReconciliationReport {
             ses_pending: countRows(TABLES.ses_flag_request, (gr) => gr.addQuery('state', 'IN', 'submitted,approved,in_production')),
         },
     }
+}
+
+/** Roles allowed to read the report, shared by the REST route and the operator UI page. */
+export const RECONCILIATION_ROLES = ['tacom_staff', 'dla', 'admin'] as const
+
+/**
+ * Markup for the `x_cog_mah_reconciliation.do` UI page. A browser session cannot call the
+ * Scripted REST route directly (the REST layer demands a user token), so the module renders the
+ * same report server-side. Unauthorised users get a generic page; the attempt is logged.
+ */
+export function reconciliationPageHtml(): string {
+    const reference = gs.generateGUID()
+    if (!hasAnyRole(RECONCILIATION_ROLES)) {
+        securityLog({ event: 'authorization_failure', source: 'ui_page:reconciliation', outcome: 'failure', reason: 'missing_role', details: { reference } })
+        return deniedHtml(reference)
+    }
+    const report = buildReconciliationReport()
+    securityLog({ event: 'data_access', source: 'ui_page:reconciliation', outcome: 'success', details: { reference, tables: report.tables.length } })
+    return reconciliationHtml(report)
 }
