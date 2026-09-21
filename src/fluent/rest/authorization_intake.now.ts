@@ -8,7 +8,7 @@
 import '@servicenow/sdk/global'
 import { Acl, RestApi } from '@servicenow/sdk/core'
 import { authorizationIntake } from '../../server/rest/authorizationIntake'
-import { caseStatus, health, reconciliationReport } from '../../server/rest/operations'
+import { caseStatus, health, migrationFinalize, reconciliationReport } from '../../server/rest/operations'
 import { admin, csr, dla, tacomStaff } from '../security/roles.now'
 
 export const intakeEndpointAcl = Acl({
@@ -115,6 +115,21 @@ export const authorizationIntakeApi = RestApi({
                 },
             ],
             script: caseStatus,
+        },
+        {
+            $id: Now.ID['rest_migration_finalize_post'],
+            name: 'Finalize migration batch',
+            method: 'POST',
+            path: '/migration/finalize',
+            version: 1,
+            authentication: true,
+            authorization: true,
+            consumes: 'application/json',
+            produces: 'application/json',
+            enforceAcl: [intakeEndpointAcl],
+            shortDescription: 'After the staging loads of one batch: merge duplicate requesters by dedupe_key, recompute aging, return exception counts by type.',
+            requestExample: '{"batch_id":"20260921-export"}',
+            script: migrationFinalize,
         },
         {
             $id: Now.ID['rest_health_get'],

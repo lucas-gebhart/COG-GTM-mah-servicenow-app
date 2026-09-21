@@ -677,6 +677,58 @@ declare global {
                         table: 'sys_script_client'
                         id: '73550b5c6f2a4f49b643fe8566a8e344'
                     }
+                    ds_authorization_file: {
+                        table: 'sys_data_source'
+                        id: '1052b674946a41ffbba8cf77379df3cd'
+                    }
+                    ds_award_line: {
+                        table: 'sys_data_source'
+                        id: '5c44b0da264e40f39bc690bf2d2cb9bb'
+                    }
+                    ds_awards_case: {
+                        table: 'sys_data_source'
+                        id: 'fdac94ed6bbf435aa9fd765e00987525'
+                    }
+                    ds_case_note: {
+                        table: 'sys_data_source'
+                        id: '83c5efba30ed499ea1289abc0b1c6bad'
+                    }
+                    ds_engraving_job: {
+                        table: 'sys_data_source'
+                        id: 'c6f87ba4938b4ef9b60a3ce1623bab41'
+                    }
+                    ds_heraldic_item: {
+                        table: 'sys_data_source'
+                        id: '5218fde2ddbd459d86d8f59586bf3a0d'
+                    }
+                    ds_heraldry_request: {
+                        table: 'sys_data_source'
+                        id: '80299426a5bb488388e7e2723116d5ab'
+                    }
+                    ds_request_line: {
+                        table: 'sys_data_source'
+                        id: '62375f8f1ab440c3a71cf82c080bec05'
+                    }
+                    ds_requester: {
+                        table: 'sys_data_source'
+                        id: '92559f191c944589adb276654fec44df'
+                    }
+                    ds_ses_flag_request: {
+                        table: 'sys_data_source'
+                        id: 'ad697a74638844ebb8a8d3111143e4ff'
+                    }
+                    ds_shipment: {
+                        table: 'sys_data_source'
+                        id: '910bdf10521f4c1e8847e59d32a3b389'
+                    }
+                    ds_unit_requester: {
+                        table: 'sys_data_source'
+                        id: 'd2928e6ea5f443c38a2dbc77506333e3'
+                    }
+                    ds_vendor: {
+                        table: 'sys_data_source'
+                        id: '877146fd6d894dd79b063c4413732add'
+                    }
                     evt_case_aging_red: {
                         table: 'sysevent_register'
                         id: 'f1003fcc2a654c25bcdd987d05ed05a4'
@@ -1005,6 +1057,10 @@ declare global {
                         table: 'sys_ws_version'
                         id: '96f931ba856145ceb8d7a20554d32e7f'
                     }
+                    rest_migration_finalize_post: {
+                        table: 'sys_ws_operation'
+                        id: '45c6c20ade094e218d32d4022338dd71'
+                    }
                     rest_reconciliation_get: {
                         table: 'sys_ws_operation'
                         id: '857616e04ea84268ba8164a50fe71d0f'
@@ -1113,6 +1169,10 @@ declare global {
                         table: 'sys_script_include'
                         id: '3c3db29e77734b5ca5bfbdf4bb2e2012'
                     }
+                    si_migration: {
+                        table: 'sys_script_include'
+                        id: '37621b206fce444481b8799ae5ce05be'
+                    }
                     si_reconciliation: {
                         table: 'sys_script_include'
                         id: 'cbac0294ac4840288fe7c7733fd9c0b9'
@@ -1120,6 +1180,1026 @@ declare global {
                     si_status_inquiry: {
                         table: 'sys_script_include'
                         id: '662cb91ec57a47cd85b55012fd174c31'
+                    }
+                    smap_authorizationfile_complete_d2d34d: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c55be933f5a54c5ebe8d08001b0d659f'
+                    }
+                    smap_authorizationfile_completed_1c5343: {
+                        table: 'x_cog_mah_status_map'
+                        id: '587add07abec4142a6dbb01d8dc07805'
+                    }
+                    smap_authorizationfile_error_452834: {
+                        table: 'x_cog_mah_status_map'
+                        id: '32f64cbef78940769069c8677fe65e4d'
+                    }
+                    smap_authorizationfile_failed_662b24: {
+                        table: 'x_cog_mah_status_map'
+                        id: '865e30173e604cfb96809c3c310f1b34'
+                    }
+                    smap_authorizationfile_imported_31a95c: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'b562619bd8184a90a41364003e6bf87c'
+                    }
+                    smap_authorizationfile_imported_with_errors_a97b8c: {
+                        table: 'x_cog_mah_status_map'
+                        id: '9915f2263ce740418ef753bacf9a2f59'
+                    }
+                    smap_authorizationfile_in_progress_8d5f30: {
+                        table: 'x_cog_mah_status_map'
+                        id: '72ee2ec26d114d4682575aa3119d5f66'
+                    }
+                    smap_authorizationfile_loaded_1e87d4: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'eb18ddf9ae73488cb6a3e260eedf1bc5'
+                    }
+                    smap_authorizationfile_new_bf2ec5: {
+                        table: 'x_cog_mah_status_map'
+                        id: '29b3e8da2e7e4c23ab1ba19b6b4cfa5b'
+                    }
+                    smap_authorizationfile_parsed_7fc3f9: {
+                        table: 'x_cog_mah_status_map'
+                        id: '5532bf9faf554d3186482a18d51650fc'
+                    }
+                    smap_authorizationfile_parsed_with_errors_0d605e: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'cfb8446ff0d84bd7866668078baa9772'
+                    }
+                    smap_authorizationfile_parsing_8f0c9f: {
+                        table: 'x_cog_mah_status_map'
+                        id: '63c9019e1bdd44e3a2d3bc662695ea15'
+                    }
+                    smap_authorizationfile_partial_714163: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'faa9aceb92e74b31871c4e859f08f83a'
+                    }
+                    smap_authorizationfile_processing_63c6f3: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd7e5f1c6625d40869302f9cbc82cc1af'
+                    }
+                    smap_authorizationfile_received_3bf216: {
+                        table: 'x_cog_mah_status_map'
+                        id: '2aa300f668cd44c8ac3fa4146b2b1428'
+                    }
+                    smap_authorizationfile_rejected_fb370d: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3198239e32fd4f7db3784bb48da6e365'
+                    }
+                    smap_authorizationfile_uploaded_82844f: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c4e12bb32cbb48f5bb25c6f9826af704'
+                    }
+                    smap_authorizationfile_warnings_3b3fa4: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3b99647cbf9b4ec288ab56d4fede37f9'
+                    }
+                    smap_awardline_assembly_392ed7: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'fa6fe631333d46038b79e669b3310654'
+                    }
+                    smap_awardline_authorized_12701a: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c695bed749d34ad18b37a85f9fc5ab90'
+                    }
+                    smap_awardline_b_o_f753a2: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'e6c6352eb8d24e2093d9a5a1b8424898'
+                    }
+                    smap_awardline_back_order_6be2c4: {
+                        table: 'x_cog_mah_status_map'
+                        id: '7b7077c764c9422b9d8b4da9c9b3d13f'
+                    }
+                    smap_awardline_backordered_1285a2: {
+                        table: 'x_cog_mah_status_map'
+                        id: '55aa927847054235904bbcd9c30fa150'
+                    }
+                    smap_awardline_bo_cba237: {
+                        table: 'x_cog_mah_status_map'
+                        id: '8e8c0d67e7c2422aacf043b2f8b2640e'
+                    }
+                    smap_awardline_canceled_666756: {
+                        table: 'x_cog_mah_status_map'
+                        id: '267fa2574d1e436b8cc098c34bb5262b'
+                    }
+                    smap_awardline_cancelled_271320: {
+                        table: 'x_cog_mah_status_map'
+                        id: '657a2313563a486fbfe9ae88015d39ad'
+                    }
+                    smap_awardline_closed_33ea1d: {
+                        table: 'x_cog_mah_status_map'
+                        id: '1da45307d349490081f6c6a663d2736a'
+                    }
+                    smap_awardline_complete_a013b0: {
+                        table: 'x_cog_mah_status_map'
+                        id: '6a80af6fe02d42209681cbbeab0782b6'
+                    }
+                    smap_awardline_completed_685cf5: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'b722a71a146a4fbb9fb34bf2f6960af1'
+                    }
+                    smap_awardline_done_d9f719: {
+                        table: 'x_cog_mah_status_map'
+                        id: '695a694f18b24ebeacbdbee664fee57d'
+                    }
+                    smap_awardline_engraved_4c5427: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'e233e216820e4af69f60b0f51037ce96'
+                    }
+                    smap_awardline_engraving_712033: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'ef78d3cfdc55459097b24e73936e87ff'
+                    }
+                    smap_awardline_in_progress_4776ea: {
+                        table: 'x_cog_mah_status_map'
+                        id: '1ad56263ee644ddb9320fc90d29bf580'
+                    }
+                    smap_awardline_new_29344c: {
+                        table: 'x_cog_mah_status_map'
+                        id: '7b9a9baa5ced42a7b197f2b9f297c3df'
+                    }
+                    smap_awardline_open_35cf12: {
+                        table: 'x_cog_mah_status_map'
+                        id: '39078b8348c24815ae7096c883e25d4f'
+                    }
+                    smap_awardline_pending_1c375f: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3a6fccc24cdc43c0b60a71e526971c11'
+                    }
+                    smap_awardline_picked_8bfc7b: {
+                        table: 'x_cog_mah_status_map'
+                        id: '5474547ca97a4e9ba7cc464863c24152'
+                    }
+                    smap_awardline_shipped_268cd1: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'b86752e1861c4fbc891c5c152ee2ca5e'
+                    }
+                    smap_awardline_void_40897e: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3ff0da603870443ab995e23732dd7fc2'
+                    }
+                    smap_awardline_working_c21656: {
+                        table: 'x_cog_mah_status_map'
+                        id: '54e219c559644f6e93de903ca3f7992e'
+                    }
+                    smap_awardscase_assembly_8e81df: {
+                        table: 'x_cog_mah_status_map'
+                        id: '1c7bf8a744944a3db2039524b335f32c'
+                    }
+                    smap_awardscase_assembly_qc_5fefc5: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'e769d6f5f24c4a218acd1af246ef8a77'
+                    }
+                    smap_awardscase_assembly_qc_810a51: {
+                        table: 'x_cog_mah_status_map'
+                        id: '8907153a175a45628b6f349b3b19f693'
+                    }
+                    smap_awardscase_at_engraver_40decb: {
+                        table: 'x_cog_mah_status_map'
+                        id: '1883a38b36ea48f284c88f117dae58ed'
+                    }
+                    smap_awardscase_at_warehouse_b364d3: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'a84710c1360b4c20a13369110d438b66'
+                    }
+                    smap_awardscase_auth_39071f: {
+                        table: 'x_cog_mah_status_map'
+                        id: '8c23ff851bb14f7cbd337535475187ee'
+                    }
+                    smap_awardscase_authorised_33401a: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'cbd82461b4af43318e39ab945d976499'
+                    }
+                    smap_awardscase_authorized_4ed430: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'ccec3f9d1ad54f7a9aa9ee4ff43bf6fc'
+                    }
+                    smap_awardscase_cancel_24e1db: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'cdee9ddfcf3b48ecbd7e25fa81649122'
+                    }
+                    smap_awardscase_canceled_b5a7a8: {
+                        table: 'x_cog_mah_status_map'
+                        id: '0ba583cf961f492c90be42e4f70f0b6f'
+                    }
+                    smap_awardscase_cancelled_e79838: {
+                        table: 'x_cog_mah_status_map'
+                        id: '0e99d43b6aa440ca80f2b08c614f1487'
+                    }
+                    smap_awardscase_closed_48846e: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'fa7975d930b545f481b14281e99e10e6'
+                    }
+                    smap_awardscase_closed_cancelled_e4660c: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'cbc68293d6894cf4972db115583c1a0e'
+                    }
+                    smap_awardscase_closed_complete_d9e2f7: {
+                        table: 'x_cog_mah_status_map'
+                        id: '2eb9d769d9574d4f9a03decc1a1cab1d'
+                    }
+                    smap_awardscase_complete_0f76fc: {
+                        table: 'x_cog_mah_status_map'
+                        id: '0889cab7983647f4bd76027d5d473fe7'
+                    }
+                    smap_awardscase_completed_580da0: {
+                        table: 'x_cog_mah_status_map'
+                        id: '8b06eb36b1584661b40005a3b55dd02f'
+                    }
+                    smap_awardscase_cxl_fe8a83: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd48859b8c242418b8ded550100311782'
+                    }
+                    smap_awardscase_delivered_264f74: {
+                        table: 'x_cog_mah_status_map'
+                        id: '471239e83e5646579310bb879430f98a'
+                    }
+                    smap_awardscase_done_ed8ab5: {
+                        table: 'x_cog_mah_status_map'
+                        id: '92505962bbb7407499546ba31e72d927'
+                    }
+                    smap_awardscase_engrave_6b4972: {
+                        table: 'x_cog_mah_status_map'
+                        id: '6dcc7bdc5d3f4d58b4afbe81c0e1788d'
+                    }
+                    smap_awardscase_engraving_0d8de6: {
+                        table: 'x_cog_mah_status_map'
+                        id: '9c5402485c45401195c8f707f853f24b'
+                    }
+                    smap_awardscase_engraving_queue_6dfca1: {
+                        table: 'x_cog_mah_status_map'
+                        id: '62926bdb716c434890211e80bc399d7f'
+                    }
+                    smap_awardscase_in_assembly_88ad16: {
+                        table: 'x_cog_mah_status_map'
+                        id: '903d4eb1d10741b68afe7049f4bda425'
+                    }
+                    smap_awardscase_in_engraving_eb2e8a: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd9fef4e0149e47d1b3d2bf73309c1c2f'
+                    }
+                    smap_awardscase_in_transit_388481: {
+                        table: 'x_cog_mah_status_map'
+                        id: '4d23416e08fb4f5eb8ef76a40b6c361d'
+                    }
+                    smap_awardscase_mailed_99e6f3: {
+                        table: 'x_cog_mah_status_map'
+                        id: '8598635af8e34bcb9f6847a057236805'
+                    }
+                    smap_awardscase_new_7b2fc0: {
+                        table: 'x_cog_mah_status_map'
+                        id: '4800c093df824767aa0f3ecbbc2ce163'
+                    }
+                    smap_awardscase_open_f1e530: {
+                        table: 'x_cog_mah_status_map'
+                        id: '09e6a2aecf6f4519be8424a62684cec8'
+                    }
+                    smap_awardscase_packed_9ced13: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c063b65b93764298846bbd2a3e2594f4'
+                    }
+                    smap_awardscase_pending_engraving_b460aa: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'bdf3c70f07a24bd48526711bd22e1af0'
+                    }
+                    smap_awardscase_qc_5f1628: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd15269da793f46efae2038b440925272'
+                    }
+                    smap_awardscase_quality_check_a136fe: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'ee046f7022de477e89de2894bc8e3193'
+                    }
+                    smap_awardscase_ready_to_ship_639c79: {
+                        table: 'x_cog_mah_status_map'
+                        id: '9d3219d9dd4648388ee4b2c4e6b250f0'
+                    }
+                    smap_awardscase_received_5333e1: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd632ddbabd0f4a769f8b0c61f9436f91'
+                    }
+                    smap_awardscase_sent_738863: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'ee6818cceaf2472495e8174b872aa45b'
+                    }
+                    smap_awardscase_shipped_1ba5a6: {
+                        table: 'x_cog_mah_status_map'
+                        id: '7486842c4da543818e8648344d07ecdd'
+                    }
+                    smap_awardscase_void_31f1f5: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3e9ac056943f42a3832e2fe312aa3b4f'
+                    }
+                    smap_awardscase_warehouse_100d13: {
+                        table: 'x_cog_mah_status_map'
+                        id: '923500d7fd0a41abaa7a12df06563ee7'
+                    }
+                    smap_awardscase_whse_4bb6ac: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'cc2f5c1b9dbf4976b835eb20c14912a3'
+                    }
+                    smap_awardscase_withdrawn_f9f842: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'aec3b5ffcbfe41d5aff31abb021fc023'
+                    }
+                    smap_casenote_cancelled_e57a91: {
+                        table: 'x_cog_mah_status_map'
+                        id: '649bf17c1a594097aa3e41ac51fa74b7'
+                    }
+                    smap_casenote_closed_016e4f: {
+                        table: 'x_cog_mah_status_map'
+                        id: '5f9b127e359b41b9847d4c2eeb61a492'
+                    }
+                    smap_casenote_complete_f109be: {
+                        table: 'x_cog_mah_status_map'
+                        id: '39f33244e7244955b29f7f7d84707469'
+                    }
+                    smap_casenote_deleted_edb572: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'f7e458c1a1c645c984c335bbbb7abc09'
+                    }
+                    smap_casenote_done_44ead4: {
+                        table: 'x_cog_mah_status_map'
+                        id: '341b6dea30f44e9491d6456b211fd263'
+                    }
+                    smap_casenote_empty_3a06eb: {
+                        table: 'x_cog_mah_status_map'
+                        id: '7a3ba11e861d4807a799510fc126a522'
+                    }
+                    smap_casenote_follow_up_pending_e82ded: {
+                        table: 'x_cog_mah_status_map'
+                        id: '746f72bf907f40758d7139680df26c07'
+                    }
+                    smap_casenote_no_e889cf: {
+                        table: 'x_cog_mah_status_map'
+                        id: '676d9dd5a2ff43a6a2feaaf81c426683'
+                    }
+                    smap_casenote_open_509369: {
+                        table: 'x_cog_mah_status_map'
+                        id: '316e8d221df0498ca0fc599c54a70b37'
+                    }
+                    smap_casenote_void_5ba257: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'be20c5682e8a43978d1ff96e2cac357b'
+                    }
+                    smap_casenote_yes_baef59: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'dd18c7e3b39e4755ae3e3e11025ce957'
+                    }
+                    smap_engravingjob_canceled_8b3e70: {
+                        table: 'x_cog_mah_status_map'
+                        id: '6947edf5280f4ebea5b2c756c36092c8'
+                    }
+                    smap_engravingjob_cancelled_a7eae6: {
+                        table: 'x_cog_mah_status_map'
+                        id: '50ea272097bb4829aea8b7e0cbb22f29'
+                    }
+                    smap_engravingjob_complete_b2d3ad: {
+                        table: 'x_cog_mah_status_map'
+                        id: '5beef319a0a844f8808650c7b787a7e7'
+                    }
+                    smap_engravingjob_completed_d860d3: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd04efd7754924a8cbebd58a801193b62'
+                    }
+                    smap_engravingjob_done_066ff2: {
+                        table: 'x_cog_mah_status_map'
+                        id: '5019b8133e344add9fc3c735089a42d7'
+                    }
+                    smap_engravingjob_engraving_3724db: {
+                        table: 'x_cog_mah_status_map'
+                        id: '5d24b49e4c68450a983a72c313bfb664'
+                    }
+                    smap_engravingjob_finished_92cd88: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c1f3c315819f48e28acc2bfe34f340fd'
+                    }
+                    smap_engravingjob_hold_bb11f2: {
+                        table: 'x_cog_mah_status_map'
+                        id: '0019c784b0c84e5fb1fdb77cd30f478d'
+                    }
+                    smap_engravingjob_in_progress_3b38bc: {
+                        table: 'x_cog_mah_status_map'
+                        id: '4b3fef3de61244b6ba9ec9af5d742a12'
+                    }
+                    smap_engravingjob_new_b4242a: {
+                        table: 'x_cog_mah_status_map'
+                        id: '289bd83ad6cd4a608cacd142865c0402'
+                    }
+                    smap_engravingjob_on_hold_ad2b2d: {
+                        table: 'x_cog_mah_status_map'
+                        id: '273c4810062c4bdb8f93a3253f2e84ba'
+                    }
+                    smap_engravingjob_pending_f1bc73: {
+                        table: 'x_cog_mah_status_map'
+                        id: '2ec5f1d8953d466f94464995cddcbe0a'
+                    }
+                    smap_engravingjob_qc_27a4b3: {
+                        table: 'x_cog_mah_status_map'
+                        id: '561c44e44f184da19887bd9f23c686a5'
+                    }
+                    smap_engravingjob_qc_hold_e5a145: {
+                        table: 'x_cog_mah_status_map'
+                        id: '4f0837a299c3411aadd516a16721cb9d'
+                    }
+                    smap_engravingjob_queued_a72c31: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3ad06d40c73b4f1f9e82937846fddbe3'
+                    }
+                    smap_engravingjob_re_engrave_31f9cb: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'b525bdab95894feda88482d2e4d2c567'
+                    }
+                    smap_engravingjob_redo_6494c9: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'b7fecf6bb5904f6b86dacd49d8f3f44b'
+                    }
+                    smap_engravingjob_rejected_ff84bd: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'f8917ee049ea40ca9f94b3b9da5febf8'
+                    }
+                    smap_engravingjob_rework_011c5a: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'ae6de587b233499c80abe531bf4b64f1'
+                    }
+                    smap_engravingjob_started_ffda55: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c1e9f62d8c034ebe84756861b69cdb94'
+                    }
+                    smap_engravingjob_void_272356: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'daaefd9ff07b4b2989f7421504af4d61'
+                    }
+                    smap_engravingjob_waiting_a8164a: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'bd36088aaf5b403bbf917e7e80bcd210'
+                    }
+                    smap_engravingjob_working_50f3d8: {
+                        table: 'x_cog_mah_status_map'
+                        id: '59f7e048e5f54dddba73f4d185da8204'
+                    }
+                    smap_heraldicitem_active_132fe5: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'fcbf617f77b84edabe4b8405cb031767'
+                    }
+                    smap_heraldicitem_available_d93324: {
+                        table: 'x_cog_mah_status_map'
+                        id: '026e6e8c07024237b35d92f14263c26f'
+                    }
+                    smap_heraldicitem_current_0c149b: {
+                        table: 'x_cog_mah_status_map'
+                        id: '81873e3a2122452f9b420d7bbdb92e4b'
+                    }
+                    smap_heraldicitem_discontinued_61e0da: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3259a60c81614fc4bd69babd7f0e4243'
+                    }
+                    smap_heraldicitem_empty_e2ede6: {
+                        table: 'x_cog_mah_status_map'
+                        id: '284082b4455849fe87a5e552b7550bea'
+                    }
+                    smap_heraldicitem_inactive_4bc78e: {
+                        table: 'x_cog_mah_status_map'
+                        id: '58c2917942804492b96f7cfd8cea58b6'
+                    }
+                    smap_heraldicitem_no_b21eec: {
+                        table: 'x_cog_mah_status_map'
+                        id: '4cfc5259d2504752aae3d6c147dbffd5'
+                    }
+                    smap_heraldicitem_obsolete_a5047a: {
+                        table: 'x_cog_mah_status_map'
+                        id: '2696e80c4f77497bb09e1ed6b9910c6c'
+                    }
+                    smap_heraldicitem_retired_b7109c: {
+                        table: 'x_cog_mah_status_map'
+                        id: '4d374735c06b4978832450ece747d4b8'
+                    }
+                    smap_heraldicitem_yes_05f885: {
+                        table: 'x_cog_mah_status_map'
+                        id: '26d55f506e63482da3357030b60d08fa'
+                    }
+                    smap_request_approved_114a39: {
+                        table: 'x_cog_mah_status_map'
+                        id: '8d6e5b3c8c584422bb424711b84bc890'
+                    }
+                    smap_request_at_vendor_4e57f8: {
+                        table: 'x_cog_mah_status_map'
+                        id: '69c87c41f2a640b3903f2421a0d813d2'
+                    }
+                    smap_request_being_made_900edb: {
+                        table: 'x_cog_mah_status_map'
+                        id: '6afd028c900d456a9a42d9afbf540573'
+                    }
+                    smap_request_cancel_e34942: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3c866bae7fc64a7aa4c44d2034f61629'
+                    }
+                    smap_request_canceled_20b2be: {
+                        table: 'x_cog_mah_status_map'
+                        id: '80cad5b625724e919db98bd687a70b97'
+                    }
+                    smap_request_cancelled_51e009: {
+                        table: 'x_cog_mah_status_map'
+                        id: '9137f30aa25742c4b603c3db7d4f3544'
+                    }
+                    smap_request_closed_a4216a: {
+                        table: 'x_cog_mah_status_map'
+                        id: '34aa9714a9f04fa2b1855344d1031549'
+                    }
+                    smap_request_complete_af3d00: {
+                        table: 'x_cog_mah_status_map'
+                        id: '2fa572baed5447179a8463b8e1fef54b'
+                    }
+                    smap_request_completed_4d5125: {
+                        table: 'x_cog_mah_status_map'
+                        id: '5a76eb42536c4c2db51a26b859cb7842'
+                    }
+                    smap_request_cxl_666634: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'b66c0d3c8d9e46e3a01b23e9ac81e6a7'
+                    }
+                    smap_request_delivered_d8d375: {
+                        table: 'x_cog_mah_status_map'
+                        id: '2f3a48b7bf0b43bba01ed0525306c205'
+                    }
+                    smap_request_dla_review_84a8fb: {
+                        table: 'x_cog_mah_status_map'
+                        id: '556f548856d74123a28e53350dbef1a0'
+                    }
+                    smap_request_done_681f62: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3adf434259b0451e921b9e55f5a159d7'
+                    }
+                    smap_request_draft_10c60a: {
+                        table: 'x_cog_mah_status_map'
+                        id: '43d83b050ff046fa915373c5df35e36a'
+                    }
+                    smap_request_in_production_bca577: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c9da6e60375e49cb94a2cf6d799e4edf'
+                    }
+                    smap_request_in_review_16e138: {
+                        table: 'x_cog_mah_status_map'
+                        id: '518ae5f52d684ddabe4e31dd320c7389'
+                    }
+                    smap_request_in_transit_854557: {
+                        table: 'x_cog_mah_status_map'
+                        id: '60be299173d2401b9cc7b86f0258ae7f'
+                    }
+                    smap_request_manufacturing_0aa706: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd45bd66a42af4dad98a63237246c5bca'
+                    }
+                    smap_request_new_995410: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c982ae45cdc146d4a67619ab706d9131'
+                    }
+                    smap_request_not_submitted_b2de07: {
+                        table: 'x_cog_mah_status_map'
+                        id: '58c584c8fb2940879f0693cc0e4edb4c'
+                    }
+                    smap_request_open_b556e7: {
+                        table: 'x_cog_mah_status_map'
+                        id: '394b204a123049e9a9241328b65bc809'
+                    }
+                    smap_request_pending_53e166: {
+                        table: 'x_cog_mah_status_map'
+                        id: '1e339310371c4044a0bc1edccad6bde2'
+                    }
+                    smap_request_pending_review_d70512: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'dcfd87835b7a448c8b28bdf755137141'
+                    }
+                    smap_request_production_2ad76a: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c411d95f9cdc4cf9a594973463a9c7ad'
+                    }
+                    smap_request_received_a05eb7: {
+                        table: 'x_cog_mah_status_map'
+                        id: '18874e2d23e645bc8b7a15b84458b337'
+                    }
+                    smap_request_released_a1976f: {
+                        table: 'x_cog_mah_status_map'
+                        id: '203e98c3d5004a1a9cd8dd913b5da2cf'
+                    }
+                    smap_request_released_to_vendor_3cd5ee: {
+                        table: 'x_cog_mah_status_map'
+                        id: '0e10972592454ff0acab6deb5f526142'
+                    }
+                    smap_request_released_vendor_2f3da2: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'a8050bdad0974927822fde683dd41c1c'
+                    }
+                    smap_request_review_d8d350: {
+                        table: 'x_cog_mah_status_map'
+                        id: '08d70f7748d14bce80a2ac04ebeee262'
+                    }
+                    smap_request_reviewing_aa6ebd: {
+                        table: 'x_cog_mah_status_map'
+                        id: '6491ec5e3caf40498d234e88dd1e3386'
+                    }
+                    smap_request_sent_79afe7: {
+                        table: 'x_cog_mah_status_map'
+                        id: '243abab1651945f1af5053e7868e5cf6'
+                    }
+                    smap_request_sent_to_vendor_aba8c8: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd15c6eec2db34305afcff25fb27883e4'
+                    }
+                    smap_request_ship_ff0e73: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'b09f420b2be246589380d82dc6614d00'
+                    }
+                    smap_request_shiped_e6f1b6: {
+                        table: 'x_cog_mah_status_map'
+                        id: '562ae144d6754d3bbbe6333866344b19'
+                    }
+                    smap_request_shipped_8d2fb1: {
+                        table: 'x_cog_mah_status_map'
+                        id: '54afe21211e3483397c6928a735c6d85'
+                    }
+                    smap_request_submitted_241978: {
+                        table: 'x_cog_mah_status_map'
+                        id: '209a205906174aac8c84b3205955a3a9'
+                    }
+                    smap_request_under_review_0d8587: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'aab2c11f608448e7808db49b2967d79a'
+                    }
+                    smap_request_vendor_3d7ec8: {
+                        table: 'x_cog_mah_status_map'
+                        id: '170623d59a4f4adfb26b579e24da7c70'
+                    }
+                    smap_request_void_1aa968: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c6853e64699349118da52db8b9c34adc'
+                    }
+                    smap_request_withdrawn_503828: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3ff1adab391342de8a328f14ad8e6419'
+                    }
+                    smap_requester_active_411d73: {
+                        table: 'x_cog_mah_status_map'
+                        id: '11e957af305b4881aadd8f841aa49ddb'
+                    }
+                    smap_requester_archived_73f8f7: {
+                        table: 'x_cog_mah_status_map'
+                        id: '30fbab5731ae45598bee1e593d194f46'
+                    }
+                    smap_requester_closed_3ab095: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'ca1a09cb470945d88a5f3b722a6c3e00'
+                    }
+                    smap_requester_current_9b0a92: {
+                        table: 'x_cog_mah_status_map'
+                        id: '9b2dc8e302324e7f91feb4dc2af93b79'
+                    }
+                    smap_requester_deceased_70f110: {
+                        table: 'x_cog_mah_status_map'
+                        id: '8f65e697e1d24a73a380ed6e57fa262c'
+                    }
+                    smap_requester_dup_ed1110: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'ad10ea3639b5429e84af69401a9ab7c0'
+                    }
+                    smap_requester_duplicate_9ca329: {
+                        table: 'x_cog_mah_status_map'
+                        id: '396095c92d6543faa37e05acf4948289'
+                    }
+                    smap_requester_empty_97f24a: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'b1debcdacdf748d38b55363c25db628f'
+                    }
+                    smap_requester_inactive_e4cd46: {
+                        table: 'x_cog_mah_status_map'
+                        id: '21a1d27b1c114a24af357b774ba56445'
+                    }
+                    smap_requester_merged_04b8c5: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3b1ee6807c5b45c38dea710f4e3a3349'
+                    }
+                    smap_requester_open_269a2c: {
+                        table: 'x_cog_mah_status_map'
+                        id: '9300d5d167fa467f9aea0b4b89fac1fc'
+                    }
+                    smap_requestline_b_o_615aea: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3e60c78244fb4fcba4c99cce3e37121c'
+                    }
+                    smap_requestline_back_order_9b5f63: {
+                        table: 'x_cog_mah_status_map'
+                        id: '5ae4ae407a5e4fe3885f8817e9fe5581'
+                    }
+                    smap_requestline_backordered_efc609: {
+                        table: 'x_cog_mah_status_map'
+                        id: '086d0f714d6d4c3ab3b7f5ab8cca3a06'
+                    }
+                    smap_requestline_bo_df34cc: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c4189314b64c4df9af8feefdb2e0b591'
+                    }
+                    smap_requestline_canceled_b712d4: {
+                        table: 'x_cog_mah_status_map'
+                        id: '810593fb0c75430a8d8a528c3c619f78'
+                    }
+                    smap_requestline_cancelled_f57e5b: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'e5a3f674c17e4c6aa4f0897da89e3ef9'
+                    }
+                    smap_requestline_closed_3fba87: {
+                        table: 'x_cog_mah_status_map'
+                        id: '7772ca8db5d441de825256ffe3ae499f'
+                    }
+                    smap_requestline_complete_01ef7a: {
+                        table: 'x_cog_mah_status_map'
+                        id: '494cc0ec9a8a4cf480958d555f8e767c'
+                    }
+                    smap_requestline_completed_e8ebcd: {
+                        table: 'x_cog_mah_status_map'
+                        id: '8adcfa138da249b3b61e5cfdad653d4a'
+                    }
+                    smap_requestline_delivered_36c6a4: {
+                        table: 'x_cog_mah_status_map'
+                        id: '7d6ecaacad434db1b57aaa274a13ad67'
+                    }
+                    smap_requestline_draft_ebffa2: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'e4fdd8ef9d8440b28d0bdac4ddf43a7a'
+                    }
+                    smap_requestline_in_production_9f92ac: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c9883211240141dbafad9548e9252a60'
+                    }
+                    smap_requestline_in_progress_9fe36d: {
+                        table: 'x_cog_mah_status_map'
+                        id: '93d435fa7c4743678cb32cc8d11b5654'
+                    }
+                    smap_requestline_new_3e1bc4: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd1613b9949e84d71b41d61dc81b3b060'
+                    }
+                    smap_requestline_open_a9dcd4: {
+                        table: 'x_cog_mah_status_map'
+                        id: '0997f420d9eb4f49951e41e70891465b'
+                    }
+                    smap_requestline_ordered_dfda8a: {
+                        table: 'x_cog_mah_status_map'
+                        id: '2e847787b1b44fce81479d49043421e5'
+                    }
+                    smap_requestline_pending_a95905: {
+                        table: 'x_cog_mah_status_map'
+                        id: '26c893ebd7b9450c88f5597d30a67b9b'
+                    }
+                    smap_requestline_production_20a6fd: {
+                        table: 'x_cog_mah_status_map'
+                        id: '1d88c6c421bb4049b0c0561ea9047caa'
+                    }
+                    smap_requestline_released_a3fcf7: {
+                        table: 'x_cog_mah_status_map'
+                        id: '979303f64b7b44b29dd7b61588cc1fa5'
+                    }
+                    smap_requestline_shipped_798373: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'b7cd183858af44b2b10a6f29ffa1fea8'
+                    }
+                    smap_requestline_void_09b067: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'f3df94c748c14a1eb849c3e2bd5c0365'
+                    }
+                    smap_sesflagrequest_approved_27907b: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'e2927af463a0417ea7372201cd6fed03'
+                    }
+                    smap_sesflagrequest_authorized_151a13: {
+                        table: 'x_cog_mah_status_map'
+                        id: '87d4b4708b02479fb4d2980a39bb6cc1'
+                    }
+                    smap_sesflagrequest_canceled_be8abe: {
+                        table: 'x_cog_mah_status_map'
+                        id: '5374037328af46adaf98116d3cb3f056'
+                    }
+                    smap_sesflagrequest_cancelled_73caf6: {
+                        table: 'x_cog_mah_status_map'
+                        id: '09efffa24b13444eb9f238dcafb07009'
+                    }
+                    smap_sesflagrequest_closed_d3d1f6: {
+                        table: 'x_cog_mah_status_map'
+                        id: '157d0301efd84afbb30fc6ae1ab97201'
+                    }
+                    smap_sesflagrequest_complete_091ed9: {
+                        table: 'x_cog_mah_status_map'
+                        id: '370c0bc8de9345a888f88d260a1f2bb1'
+                    }
+                    smap_sesflagrequest_completed_35e9f8: {
+                        table: 'x_cog_mah_status_map'
+                        id: '058faad734cc49bf86d43754321339d9'
+                    }
+                    smap_sesflagrequest_delivered_dc9c84: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'a866ed1366204db3bc70a1871e18e506'
+                    }
+                    smap_sesflagrequest_denied_215ad1: {
+                        table: 'x_cog_mah_status_map'
+                        id: '3fe37ecb875f4336a37625f38b196b7c'
+                    }
+                    smap_sesflagrequest_draft_48a2d6: {
+                        table: 'x_cog_mah_status_map'
+                        id: '41ca382afe014966a32e334d6f37dede'
+                    }
+                    smap_sesflagrequest_in_production_664e43: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'b1e97546b04546ef8560cd1d2665c1e0'
+                    }
+                    smap_sesflagrequest_new_f9c0cb: {
+                        table: 'x_cog_mah_status_map'
+                        id: '4d36cdfc474e4058aef4d729fc1b8b8b'
+                    }
+                    smap_sesflagrequest_not_approved_e36a07: {
+                        table: 'x_cog_mah_status_map'
+                        id: '073d0c77d8584f32a2c6edcded20ac77'
+                    }
+                    smap_sesflagrequest_open_1a5edc: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd7b297b73fa749958934f7cdcf45364f'
+                    }
+                    smap_sesflagrequest_ordered_b31dfc: {
+                        table: 'x_cog_mah_status_map'
+                        id: '6f11edb28d1d42729c2db5cbf56020ee'
+                    }
+                    smap_sesflagrequest_pending_dc9814: {
+                        table: 'x_cog_mah_status_map'
+                        id: '08947980ea134bc29dfc70a594c0a117'
+                    }
+                    smap_sesflagrequest_production_fae553: {
+                        table: 'x_cog_mah_status_map'
+                        id: '4c53ee933a754c88a556140aca289982'
+                    }
+                    smap_sesflagrequest_received_7ac9cf: {
+                        table: 'x_cog_mah_status_map'
+                        id: '42577be46a944ad7beed2c17fab326e2'
+                    }
+                    smap_sesflagrequest_rejected_288571: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c884ee7b6451493390b775224b0c3659'
+                    }
+                    smap_sesflagrequest_released_fddfeb: {
+                        table: 'x_cog_mah_status_map'
+                        id: '55a87346550c4f5a80c2f8b8242210b6'
+                    }
+                    smap_sesflagrequest_released_to_vendor_135ad0: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'ac4100daab054593a90635e55ee907d9'
+                    }
+                    smap_sesflagrequest_returned_9e5c4e: {
+                        table: 'x_cog_mah_status_map'
+                        id: '821f2d3d98a3441b9af6c4f750ec8d32'
+                    }
+                    smap_sesflagrequest_shipped_2d6a58: {
+                        table: 'x_cog_mah_status_map'
+                        id: '81df7686747a46c88f9cd6ae824fa9ed'
+                    }
+                    smap_sesflagrequest_submitted_bbe994: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd26008ecaea84b04a1ef22794aee43fb'
+                    }
+                    smap_sesflagrequest_validated_20ca3d: {
+                        table: 'x_cog_mah_status_map'
+                        id: '28b695a2d1c543bfa14adf5b2a29de96'
+                    }
+                    smap_sesflagrequest_void_6596d8: {
+                        table: 'x_cog_mah_status_map'
+                        id: '0f5e8387961d4dfab1ac53437c47a7c8'
+                    }
+                    smap_sesflagrequest_withdrawn_550cf2: {
+                        table: 'x_cog_mah_status_map'
+                        id: '1957a9ed430649f6acb40956dfa6ea95'
+                    }
+                    smap_shipmentrecord_claim_filed_e7ecda: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'ead440e5ea8b404093ca13eccb743625'
+                    }
+                    smap_shipmentrecord_complete_6dc7e8: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd5d41be606874c4885353b9cdf790121'
+                    }
+                    smap_shipmentrecord_completed_7ea4aa: {
+                        table: 'x_cog_mah_status_map'
+                        id: '4351cc5e932c4a2d938ee62370adb264'
+                    }
+                    smap_shipmentrecord_delivered_e0131e: {
+                        table: 'x_cog_mah_status_map'
+                        id: '29c6cf41c04f4d269709603e1e0e8fbd'
+                    }
+                    smap_shipmentrecord_in_transit_0364b9: {
+                        table: 'x_cog_mah_status_map'
+                        id: '752707346ee04c52b5d0430b98f8b30d'
+                    }
+                    smap_shipmentrecord_label_created_f93d20: {
+                        table: 'x_cog_mah_status_map'
+                        id: '370403e8f5b24df184da069cfb390b27'
+                    }
+                    smap_shipmentrecord_labeled_f3c9c6: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'be498ca661404b1d8b9a81489d914827'
+                    }
+                    smap_shipmentrecord_labelled_7883d2: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'c31c4acc4ef744f992917ff2ccdb6f19'
+                    }
+                    smap_shipmentrecord_lost_9fd257: {
+                        table: 'x_cog_mah_status_map'
+                        id: '2aa19090558d4e2aa1a11fbf59a59f31'
+                    }
+                    smap_shipmentrecord_mailed_1359fb: {
+                        table: 'x_cog_mah_status_map'
+                        id: '1d43c0a9fc8d41e7b5813cb292b8d9a3'
+                    }
+                    smap_shipmentrecord_manifested_898c0b: {
+                        table: 'x_cog_mah_status_map'
+                        id: '6ebf0bd55ad144c78b3563801de117e5'
+                    }
+                    smap_shipmentrecord_missing_4e3ebe: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'f0d522fed3e041829bf6d853d1afc5dd'
+                    }
+                    smap_shipmentrecord_new_e1ed1a: {
+                        table: 'x_cog_mah_status_map'
+                        id: '5836566a36b3448d94ad17bc389682b2'
+                    }
+                    smap_shipmentrecord_not_shipped_b76701: {
+                        table: 'x_cog_mah_status_map'
+                        id: '44ab272e62b44b1fbfac2bf9803b527e'
+                    }
+                    smap_shipmentrecord_pending_c14761: {
+                        table: 'x_cog_mah_status_map'
+                        id: '7096773b913648d39ed6948e1e23d779'
+                    }
+                    smap_shipmentrecord_received_4bf2f7: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'a5ca18ff3df94676ab51632bf35d4863'
+                    }
+                    smap_shipmentrecord_returned_bd3503: {
+                        table: 'x_cog_mah_status_map'
+                        id: '5a551ac9078b447097957c62bbba5461'
+                    }
+                    smap_shipmentrecord_returned_to_sender_4427ac: {
+                        table: 'x_cog_mah_status_map'
+                        id: '75db4851caea4a1c8204cca6beabffcc'
+                    }
+                    smap_shipmentrecord_rts_3de8f0: {
+                        table: 'x_cog_mah_status_map'
+                        id: '4ed217714c4c437abfe978b7a2c54536'
+                    }
+                    smap_shipmentrecord_sent_10a40c: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'f91b92f9b7074332a80c5e7de71dfed6'
+                    }
+                    smap_shipmentrecord_shipped_515ae8: {
+                        table: 'x_cog_mah_status_map'
+                        id: '467924e1e00e4c36b793e009adb384c2'
+                    }
+                    smap_shipmentrecord_undeliverable_699a1f: {
+                        table: 'x_cog_mah_status_map'
+                        id: '902979ee2ea8455a8ecf12089390eadc'
+                    }
+                    smap_vendor_active_e0f4c2: {
+                        table: 'x_cog_mah_status_map'
+                        id: '2143fd79dc58440587c6d01d994f33bc'
+                    }
+                    smap_vendor_approved_4989cd: {
+                        table: 'x_cog_mah_status_map'
+                        id: '407d2091f6494323a21420f723712f50'
+                    }
+                    smap_vendor_current_ab7887: {
+                        table: 'x_cog_mah_status_map'
+                        id: '2f8345452b7d4c938308fdb4fbad8bc8'
+                    }
+                    smap_vendor_debarred_83fce8: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'd04dc9959b0b4c1993c6428bcc9c5c87'
+                    }
+                    smap_vendor_empty_dddc61: {
+                        table: 'x_cog_mah_status_map'
+                        id: '05b13a1bf95d4a80b7af7f5c27d05fcd'
+                    }
+                    smap_vendor_inactive_d32ad2: {
+                        table: 'x_cog_mah_status_map'
+                        id: 'eea5b33011094272b4c56f72ca3e1b56'
+                    }
+                    smap_vendor_no_0f28e7: {
+                        table: 'x_cog_mah_status_map'
+                        id: '06ba20b25ae64bf1ad37a3ef4fe8db5b'
+                    }
+                    smap_vendor_suspended_18fc2d: {
+                        table: 'x_cog_mah_status_map'
+                        id: '0916793145174312af123ec74bcae02f'
+                    }
+                    smap_vendor_terminated_32514f: {
+                        table: 'x_cog_mah_status_map'
+                        id: '03c87b6bbe584610b615c514c67ebd8f'
+                    }
+                    smap_vendor_yes_adcd63: {
+                        table: 'x_cog_mah_status_map'
+                        id: '6aec2d6b28a746c182402fab48f63c63'
                     }
                     src_server_jobs_nightlyAging_ts: {
                         table: 'sys_module'
@@ -1177,6 +2257,18 @@ declare global {
                         table: 'sys_module'
                         id: '2140277860d54e57830314b13f95256c'
                     }
+                    src_server_migration_rowTransforms_ts: {
+                        table: 'sys_module'
+                        id: 'b19b8579bfad4c9982c82f9c8d8063ad'
+                    }
+                    src_server_migration_transformEngine_ts: {
+                        table: 'sys_module'
+                        id: '7e536ca3054f430f8550179ddcf75f5c'
+                    }
+                    src_server_migration_valueMaps_ts: {
+                        table: 'sys_module'
+                        id: 'ba5eb154b5144238b2f284f962f38a68'
+                    }
                     src_server_rest_authorizationIntake_ts: {
                         table: 'sys_module'
                         id: 'a4a70a3fac9c4ebf8bf63e3be1137c7f'
@@ -1232,6 +2324,266 @@ declare global {
                     src_server_services_statusInquiry_ts: {
                         table: 'sys_module'
                         id: '355a136c624b4fdda7ac6457347fdfe4'
+                    }
+                    tm_authorization_file: {
+                        table: 'sys_transform_map'
+                        id: '809b30825c3549b5800b84762a3956e3'
+                    }
+                    tm_authorization_file_onAfter: {
+                        table: 'sys_transform_script'
+                        id: 'baccf1a3347944359a5dba7fd21ecf3b'
+                    }
+                    tm_authorization_file_onBefore: {
+                        table: 'sys_transform_script'
+                        id: '1fcdf014f11a4318bc63fcbdf0d35926'
+                    }
+                    tm_authorization_file_onComplete: {
+                        table: 'sys_transform_script'
+                        id: '6a4d5f527da44cc884841cb703f3dada'
+                    }
+                    tm_authorization_file_onStart: {
+                        table: 'sys_transform_script'
+                        id: 'cc6a2cb57c844a638d153719e632cedd'
+                    }
+                    tm_award_line: {
+                        table: 'sys_transform_map'
+                        id: '4f84472a2b0b4c5ea5ebb079c1f84694'
+                    }
+                    tm_award_line_onAfter: {
+                        table: 'sys_transform_script'
+                        id: '406d0a26c2a8442e91da965b24ec4bf0'
+                    }
+                    tm_award_line_onBefore: {
+                        table: 'sys_transform_script'
+                        id: '1d68a2ff431d4d1a81afc985e9ce5728'
+                    }
+                    tm_award_line_onComplete: {
+                        table: 'sys_transform_script'
+                        id: 'cb94bb262c2a4497b4571f6ca710aee8'
+                    }
+                    tm_award_line_onStart: {
+                        table: 'sys_transform_script'
+                        id: 'aec9d3552b684a6b9ad372c0668c5911'
+                    }
+                    tm_awards_case: {
+                        table: 'sys_transform_map'
+                        id: '7c180fb2626a4e61b96a5314268f7714'
+                    }
+                    tm_awards_case_onAfter: {
+                        table: 'sys_transform_script'
+                        id: '011ed87e5d0b4d5ea016d0ff56ea793a'
+                    }
+                    tm_awards_case_onBefore: {
+                        table: 'sys_transform_script'
+                        id: 'f32f1f2c28214502b589f029ff2d88d1'
+                    }
+                    tm_awards_case_onComplete: {
+                        table: 'sys_transform_script'
+                        id: '00771628c58b4c21b867e2b3b292e358'
+                    }
+                    tm_awards_case_onStart: {
+                        table: 'sys_transform_script'
+                        id: '0247c972200e41bdad8fb384e72f828c'
+                    }
+                    tm_case_note: {
+                        table: 'sys_transform_map'
+                        id: '5dc9d6ff774941499143adc6d2aea78e'
+                    }
+                    tm_case_note_onAfter: {
+                        table: 'sys_transform_script'
+                        id: '4c4e3c04b9fa4d08bf6c213e34454806'
+                    }
+                    tm_case_note_onBefore: {
+                        table: 'sys_transform_script'
+                        id: '430897da39524b1187a8c1d1a1cdde5e'
+                    }
+                    tm_case_note_onComplete: {
+                        table: 'sys_transform_script'
+                        id: '402f491aff574a128e68e2cca3de70d0'
+                    }
+                    tm_case_note_onStart: {
+                        table: 'sys_transform_script'
+                        id: '812a724ce2374fab83f0a3871d30ecc7'
+                    }
+                    tm_engraving_job: {
+                        table: 'sys_transform_map'
+                        id: 'a8d75dc198644c9481b5ca8427a712f8'
+                    }
+                    tm_engraving_job_onAfter: {
+                        table: 'sys_transform_script'
+                        id: '389e1ab3372b47c4b6fee65ac1db698a'
+                    }
+                    tm_engraving_job_onBefore: {
+                        table: 'sys_transform_script'
+                        id: 'bbcacfdb70a240dda2accba113656139'
+                    }
+                    tm_engraving_job_onComplete: {
+                        table: 'sys_transform_script'
+                        id: '910d6c19d3fd48bea700629328aca234'
+                    }
+                    tm_engraving_job_onStart: {
+                        table: 'sys_transform_script'
+                        id: '1b506ae0d24343df9c5d5084d1f56401'
+                    }
+                    tm_heraldic_item: {
+                        table: 'sys_transform_map'
+                        id: '543eb031c83c4367813a92bf7c1e7286'
+                    }
+                    tm_heraldic_item_onAfter: {
+                        table: 'sys_transform_script'
+                        id: 'a15fb018f26647439067bbc940a2bc4a'
+                    }
+                    tm_heraldic_item_onBefore: {
+                        table: 'sys_transform_script'
+                        id: 'adebe92a481e4a5591e12cc8aba221f3'
+                    }
+                    tm_heraldic_item_onComplete: {
+                        table: 'sys_transform_script'
+                        id: '379477c6837b4e4ba8f0f903b509a16b'
+                    }
+                    tm_heraldic_item_onStart: {
+                        table: 'sys_transform_script'
+                        id: '9c2478033eac4b31ac7e1b81305c44ac'
+                    }
+                    tm_heraldry_request: {
+                        table: 'sys_transform_map'
+                        id: 'd7ceb9b9a99d403aabc70c87fd61af11'
+                    }
+                    tm_heraldry_request_onAfter: {
+                        table: 'sys_transform_script'
+                        id: 'bd2baeae3fe74cfb84917c751a5515dc'
+                    }
+                    tm_heraldry_request_onBefore: {
+                        table: 'sys_transform_script'
+                        id: '33a49332cbdf40df9f41799b57924491'
+                    }
+                    tm_heraldry_request_onComplete: {
+                        table: 'sys_transform_script'
+                        id: 'a390c89b45c0483a8623fb7122d0c875'
+                    }
+                    tm_heraldry_request_onStart: {
+                        table: 'sys_transform_script'
+                        id: 'e0d33e47608e44b4949e15c95dec7da4'
+                    }
+                    tm_request_line: {
+                        table: 'sys_transform_map'
+                        id: '88c82ae7f8204bef8445b39ffdfdb40a'
+                    }
+                    tm_request_line_onAfter: {
+                        table: 'sys_transform_script'
+                        id: 'bc77bc2bd8e040bab3229db0e9e9342c'
+                    }
+                    tm_request_line_onBefore: {
+                        table: 'sys_transform_script'
+                        id: '79f377519de04576856038bf99ea3e36'
+                    }
+                    tm_request_line_onComplete: {
+                        table: 'sys_transform_script'
+                        id: '266494a2ec2b404aba895edffc24c2b6'
+                    }
+                    tm_request_line_onStart: {
+                        table: 'sys_transform_script'
+                        id: 'cc9715abc663428885137bc9a259f691'
+                    }
+                    tm_requester: {
+                        table: 'sys_transform_map'
+                        id: '256611ef79f24e798d3eda66b586239b'
+                    }
+                    tm_requester_onAfter: {
+                        table: 'sys_transform_script'
+                        id: 'acfa22a16a0f4c7ebe8d1bee85777516'
+                    }
+                    tm_requester_onBefore: {
+                        table: 'sys_transform_script'
+                        id: '0b06faf51c4443fc84be5c37f6974305'
+                    }
+                    tm_requester_onComplete: {
+                        table: 'sys_transform_script'
+                        id: '6d59eba8c5694162aeed6e9ad0663df2'
+                    }
+                    tm_requester_onStart: {
+                        table: 'sys_transform_script'
+                        id: '7e2958a5c80e41b6bda1b5c7c2ff6c8e'
+                    }
+                    tm_ses_flag_request: {
+                        table: 'sys_transform_map'
+                        id: '4c96aa091bf9411690fb9535765b2ec9'
+                    }
+                    tm_ses_flag_request_onAfter: {
+                        table: 'sys_transform_script'
+                        id: '2b78c8fb19064357ac4ca65744c13f64'
+                    }
+                    tm_ses_flag_request_onBefore: {
+                        table: 'sys_transform_script'
+                        id: '62b202946e2e43f48d8c36f917a91a7c'
+                    }
+                    tm_ses_flag_request_onComplete: {
+                        table: 'sys_transform_script'
+                        id: '15972da379ff4ddbae81191ee2063bd7'
+                    }
+                    tm_ses_flag_request_onStart: {
+                        table: 'sys_transform_script'
+                        id: 'cbd84555d1604cc88d1ba2660889ca5f'
+                    }
+                    tm_shipment: {
+                        table: 'sys_transform_map'
+                        id: '1cbac6b6794e403db7b86aa6361c0986'
+                    }
+                    tm_shipment_onAfter: {
+                        table: 'sys_transform_script'
+                        id: '4ae67246675f4d7a8955f7a3c3e70d8a'
+                    }
+                    tm_shipment_onBefore: {
+                        table: 'sys_transform_script'
+                        id: 'd19fa15df9324eaaa83baeb1611b3e4d'
+                    }
+                    tm_shipment_onComplete: {
+                        table: 'sys_transform_script'
+                        id: '171143942b644bf4b862cae5489ab757'
+                    }
+                    tm_shipment_onStart: {
+                        table: 'sys_transform_script'
+                        id: '64d0c39a3c43486e87a30b7bd69611d1'
+                    }
+                    tm_unit_requester: {
+                        table: 'sys_transform_map'
+                        id: 'd2e94d7ef0d248f1a3ef92c36a321824'
+                    }
+                    tm_unit_requester_onAfter: {
+                        table: 'sys_transform_script'
+                        id: '70ef3deeb5ae4dd4b4a320745ef160df'
+                    }
+                    tm_unit_requester_onBefore: {
+                        table: 'sys_transform_script'
+                        id: '67295c61727c4ac4aa68c0b5ee5087e1'
+                    }
+                    tm_unit_requester_onComplete: {
+                        table: 'sys_transform_script'
+                        id: '3c0605c81f5549739fa19413fa2e214c'
+                    }
+                    tm_unit_requester_onStart: {
+                        table: 'sys_transform_script'
+                        id: '6ddc90a6da3e49668246bfec9ddae24a'
+                    }
+                    tm_vendor: {
+                        table: 'sys_transform_map'
+                        id: 'f301f6ad18af4c5dafef402ce796af3a'
+                    }
+                    tm_vendor_onAfter: {
+                        table: 'sys_transform_script'
+                        id: '94fc9b276c224e38b272f1f48baad75a'
+                    }
+                    tm_vendor_onBefore: {
+                        table: 'sys_transform_script'
+                        id: '8599922a238b4e4e939fce3048e14a18'
+                    }
+                    tm_vendor_onComplete: {
+                        table: 'sys_transform_script'
+                        id: '385fdd1c1f4d454d96946c2698ed0155'
+                    }
+                    tm_vendor_onStart: {
+                        table: 'sys_transform_script'
+                        id: '1453d564cd154b689059963d979b12bd'
                     }
                     ua_case_advance: {
                         table: 'sys_ui_action'
@@ -1315,6 +2667,15 @@ declare global {
                     }
                 }
                 composite: [
+                    {
+                        table: 'sys_documentation'
+                        id: '0005eb8398e14a4c8d16f762491f397a'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'remarks'
+                            language: 'en'
+                        }
+                    },
                     {
                         table: 'sys_choice'
                         id: '00061bee721a409bb64a0d9c06011e0a'
@@ -1425,6 +2786,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '00488c08c63947fd95e325d76250420a'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'first_name'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: '004aa64e4826466fb6070730a8941252'
                         key: {
@@ -1496,11 +2865,46 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '00a0d9cf3c9d4d4f86b1307fe0a138dd'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'entered_by'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '00a321cadd3544efa833708314efa561'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'unid'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '00a6dc60f1314bb6ac8eb96e787579c1'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '00b2a4eaa7ad479fa4964cc0c71e178a'
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'portal_user'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '00b6603514c24d1794b8dfcc6ca987b9'
+                        key: {
+                            map: '7c180fb2626a4e61b96a5314268f7714'
+                            target_field: 'legacy_unid'
                         }
                     },
                     {
@@ -1522,6 +2926,14 @@ declare global {
                                 }
                             }
                             sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '00de5637f3ae4f7fb26bea602c6a714c'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'status'
                         }
                     },
                     {
@@ -1627,6 +3039,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '01838ec4d18e4c2e9db2ebb3d38fb592'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'lead_time_days'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '018d07d5018e4d2b8acfbc15179a874e'
                         key: {
@@ -1658,6 +3079,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '019efd7261804827b87d4a30263d831b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'required_delivery_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '01b2357ad7c345648d7fa5093c7cc2fb'
                         key: {
@@ -1677,6 +3107,14 @@ declare global {
                             }
                             element: 'legacy_unid'
                             position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '01c7ab9055f045f696cc020b5c3a0470'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'carrier'
                         }
                     },
                     {
@@ -1765,6 +3203,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '0211f5b8c89a41028cb95e33116bdad2'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'approved_date'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '022430679e7c4f53b30b9668c01e9798'
+                        key: {
+                            map: '4f84472a2b0b4c5ea5ebb079c1f84694'
+                            target_field: 'legacy_award_name'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '022e6af087d64fbf80e6f0d3fad844a4'
                         key: {
@@ -1788,10 +3243,26 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '024065850b26408bbf40d76a75e39b4d'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'attachments'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '025118d0a696419b98f6fcfb2b436e42'
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'cases_created'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '0263fd8890554608aae78b29ec9a2c13'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'record_count'
                         }
                     },
                     {
@@ -1816,11 +3287,37 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '02978b987eea4ec39d7ea1ee49a0cbe3'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '0297aa3b0f0942669e3e6ac109d58099'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'lead_time_days'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '02af8db4aa454af49943b0cfc8391ce6'
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'source_row'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '02b8a6d1456a45ceb099005ddd331232'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'imported_by'
                         }
                     },
                     {
@@ -1830,6 +3327,23 @@ declare global {
                             name: 'x_cog_mah_awards_case'
                             element: 'service_from'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '02c188a255bd4f098ae16e61cee9b274'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'created_date'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '02d025e57006449a8b9cb6d7fec72763'
+                        key: {
+                            map: 'd7ceb9b9a99d403aabc70c87fd61af11'
+                            target_field: 'uic'
                         }
                     },
                     {
@@ -1850,6 +3364,22 @@ declare global {
                             value: 'noncommissioned_officer_professional_development_ribbon'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '02e4ea21a8e644b1b2b5d879679a967a'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'days_open'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '02e6891d04e146c19d846167c528aa22'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'doc_authors'
                         }
                     },
                     {
@@ -1892,6 +3422,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_db_object'
+                        id: '03616247078040c6aa7514ed19ba604e'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '03726dc7d0ef4c8cbbd37878e198044d'
                         deleted: true
@@ -1899,6 +3436,14 @@ declare global {
                             name: 'x_cog_mah_probe'
                             element: 'state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '03888cd20d49490d8d006954bcf7f11e'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'last_modified_date'
                         }
                     },
                     {
@@ -1933,6 +3478,15 @@ declare global {
                                 }
                             }
                             element: 'note_type'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '03b46e8cac404ea98a67162f6cf197b4'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'note_date'
+                            language: 'en'
                         }
                     },
                     {
@@ -1995,6 +3549,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '03e837d57a4148b9a9314a8c4b7b07df'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'uic'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '03fd8826195d4804b4701123171a3d13'
                         key: {
@@ -2017,6 +3579,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '0403a438424f4923b175b99922d7255e'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'last_updated_by'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '041263e2ec5b403596aaeafd152b0330'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'tracking_number'
+                        }
+                    },
+                    {
                         table: 'sys_ui_form'
                         id: '041f7cdf62d648c9809f20a3eb6de820'
                         key: {
@@ -2028,6 +3606,15 @@ declare global {
                                 }
                             }
                             sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '0441c2aac06f4d1784ab0954357da270'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'mah_source_row'
+                            language: 'en'
                         }
                     },
                     {
@@ -2083,6 +3670,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '045dac2e28744c78910948163bacff47'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'days_in_queue'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '046b3b8969794373a35adb963615ff37'
                         key: {
@@ -2132,6 +3727,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '04b59200bf214432a01244a7787a594e'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'mah_source_file'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '04c69247bb4f4530a46d11f36e27f905'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
@@ -2146,6 +3750,14 @@ declare global {
                             name: 'x_cog_mah_requester'
                             element: 'active'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '04d6d7da580643fd91cdae9eb07ddc6f'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'status_history'
                         }
                     },
                     {
@@ -2209,6 +3821,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '05003ca8b2b34d5581822b4350a95279'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'mah_source_file'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '0503410d30ad40f287b4927fb51050f0'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'note_id'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '0519da4c26244e608001fb39b730760a'
                         key: {
@@ -2222,6 +3851,31 @@ declare global {
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'zip'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '05289ebf181b4b3681ec291189abcf82'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'follow_up_date'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '052b37a9baab4d09878ee912491449c9'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'justification_text'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '0544143a60a846afaeba55068dd519f4'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'lookup_key'
+                            language: 'en'
                         }
                     },
                     {
@@ -2282,6 +3936,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'legacy_number'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '05d0c0fad5d8424f87bd1c049230907e'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'niin'
+                            language: 'en'
                         }
                     },
                     {
@@ -2427,6 +4090,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '06f0ac58596a459683de3194e98980b3'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'attachments'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '070e63c6d12d40779edf4ed62ae5c648'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
@@ -2462,6 +4133,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '072d45e501d2401f911651ea41124d22'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'cases_created'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '074820b7474b460bbf08aeb5de0fc85e'
                         key: {
@@ -2481,6 +4161,14 @@ declare global {
                             }
                             element: 'zip'
                             position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '07528c755d3945f89188870656d70e8f'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'created'
                         }
                     },
                     {
@@ -2539,6 +4227,24 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '08111176d105407db2e97da70c90db8e'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'attachments'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '08532a08e4f4475cbc901a58d1fd3ddb'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'display_name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '0860422a09ae4d2eb9568f05eff26e1a'
                         key: {
@@ -2561,6 +4267,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '0869500ae9c4457fa948f9b23a7dec13'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'released_by'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '08902b4b4db747d2b370823c26bb6696'
                         deleted: true
@@ -2570,6 +4285,14 @@ declare global {
                             value: 'vendor'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '0896d8ac1ac4459294391e6d18de63ad'
+                        key: {
+                            map: '88c82ae7f8204bef8445b39ffdfdb40a'
+                            target_field: 'legacy_unid'
                         }
                     },
                     {
@@ -2795,6 +4518,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '09be1bbbcfa744f5beb79f8dd5894f81'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '09defa63b4d54e2086a24c0ac52ef3db'
                         key: {
@@ -2805,6 +4537,14 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '09e9376194c44f3c8bba99ee3aa527b2'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'entered_date'
                         }
                     },
                     {
@@ -2827,6 +4567,15 @@ declare global {
                             }
                             element: 'line_document_number'
                             position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '09fee3eb6c884ea8b1e7296b67a67c39'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'attachments'
+                            language: 'en'
                         }
                     },
                     {
@@ -2933,6 +4682,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '0a84c0eaf80e41fcbc9bd73852717d57'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'source'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '0a94d7efc87340d6aaad5dd58e63d88e'
                         key: {
@@ -2943,6 +4701,23 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '0a9877a9ae6a4108b5e7ad901b7089fd'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'dodaac'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '0aeabcf3502740138a0826ba54661af2'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'era'
                         }
                     },
                     {
@@ -3022,6 +4797,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '0bb4734e2ea44f259157cc6eddf5177b'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'contents'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '0bcdf25a1c8346cbb0b9b9928fe5d497'
                         key: {
@@ -3041,6 +4824,22 @@ declare global {
                             }
                             element: 'match_count'
                             position: '8'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '0bd967818eaf4d9b99421f8eed97b4a4'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'last_name'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '0be3bf8160a842a59313d45220ed7c9c'
+                        key: {
+                            map: '4c96aa091bf9411690fb9535765b2ec9'
+                            target_field: 'position_title'
                         }
                     },
                     {
@@ -3099,11 +4898,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '0c48c5f9ef6349be98bc52c4a3666cea'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'unit_of_issue'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '0c60617e512c48278210ba86a60bb795'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'legacy_unid'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '0c6e082baae345bb9b38b7f28d5bcd9a'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'vendor_name'
                             language: 'en'
                         }
                     },
@@ -3142,6 +4958,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '0c778aed103f4e2bade5ff278cf66b02'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_city'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '0c7ea13b8c0446a3bad5622658f26b8c'
                         key: {
@@ -3150,11 +4975,36 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '0c9a68fc342d4fc38f7acd549929a169'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'weight_oz'
+                        }
+                    },
+                    {
                         table: 'sys_number'
                         id: '0cbcc82e50f74791afdb41187d38e315'
                         key: {
                             category: 'x_cog_mah_requester'
                             prefix: 'MAR'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '0cd29ecd86ae451098362d9a2fa70ebe'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'created_date'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '0cd7e84ce1484da9a0785746e40c6963'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'rework_count'
+                            language: 'en'
                         }
                     },
                     {
@@ -3191,6 +5041,15 @@ declare global {
                                 }
                             }
                             element: 'executive_name'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '0d3a5316b6964e11ac1f8f5af3b0c899'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'modified'
+                            language: 'en'
                         }
                     },
                     {
@@ -3315,6 +5174,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '0e0797f85bd648e3b28dac2c5db32b25'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'authorization_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '0e08efa16a43468196d6b6647a8bc210'
                         key: {
@@ -3348,6 +5216,22 @@ declare global {
                                 }
                             }
                             element: 'executive_tier'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '0e2bb1f97f774972be1d04c63fb5a1ed'
+                        key: {
+                            map: '5dc9d6ff774941499143adc6d2aea78e'
+                            target_field: 'legacy_note_type'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '0e3506409b4d44a596b90aa47473e670'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'attachments'
                         }
                     },
                     {
@@ -3426,6 +5310,14 @@ declare global {
                                 }
                             }
                             element: 'status'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '0eefed20cbe5430ba1cedb41c97a3d34'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'last_updated_by'
                         }
                     },
                     {
@@ -3660,6 +5552,24 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '0f8042aedd7a417dabcedfdf307211ff'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'extended_price'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '0f8207e60e63475e976aa925344f2cc4'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'picked_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '0f85ee0028534753861fcde4f5f0e984'
                         key: {
@@ -3774,6 +5684,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'flag_type'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '10480d10f5a74855aa92564dc1c37fe3'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'last_updated_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -4138,6 +6057,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '11ffeb2bb6da402888bde6c890340688'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'priority'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '11fff6cdfba0422390148c04d1c53625'
                         key: {
@@ -4226,6 +6154,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '1271aea37e1d467db7d79a72e133aa65'
+                        key: {
+                            map: '4f84472a2b0b4c5ea5ebb079c1f84694'
+                            target_field: 'set_type'
+                        }
+                    },
+                    {
+                        table: 'sys_db_object'
+                        id: '127a0f9bcc894e7ea40163988c481cca'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '1291ea5a85d94c19a7f7ebca13523837'
                         key: {
@@ -4268,6 +6211,14 @@ declare global {
                             }
                             element: 'justification'
                             position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '129bf2caa79d47aabe40b13448b44a20'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'created'
                         }
                     },
                     {
@@ -4361,6 +6312,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '12dd95bb980e478bbd6a89ea7d1a8fd9'
+                        key: {
+                            map: '543eb031c83c4367813a92bf7c1e7286'
+                            target_field: 'stock_number'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '12f2a821e1c1445c9830c1fa2029fb5b'
                         key: {
@@ -4419,6 +6378,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '13136b0a45b0437cb1c4f295274cdc17'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'niin'
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: '13162315d0344e649a1a4a63b3dbb7d4'
                         key: {
@@ -4443,6 +6410,31 @@ declare global {
                             value: 'authorized'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1323c9804c114de6a161d716ca64a5fe'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'aging_last_eval'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '13257b723ba24ae58139b4dff73f370b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'stock_number'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '134e7f9c8bd54bb59f8270d963e8d3ef'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'mah_source_file'
+                            language: 'en'
                         }
                     },
                     {
@@ -4625,6 +6617,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '1489b0bc68a24c7aa6efbd51c04005a2'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'mah_source_row'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '14931bd2abd84a51945f1e86984aa6c7'
                         key: {
@@ -4658,6 +6658,48 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '14b5bc8cf07d44e0a44ba6a55735bb12'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'parent_case_number'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '14cf1c976c284520b3955f3e1a82d9a3'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'created'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '14d24d9e5f2345fa9d3748a44d29ba26'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'supplementary_address'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '14e0109bfc8e425085c85cc4ae3fad4d'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'status_history'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '14e570fbaf714497987c937e0be68d50'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'trailer_checksum'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '150647a3908c48dc9b43036dc891ce50'
                         key: {
@@ -4668,6 +6710,15 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '150bf71971be44f8b86f30284e02f432'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'NULL'
+                            language: 'en'
                         }
                     },
                     {
@@ -4728,6 +6779,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '1558d7bc105546f890d461e2ea1a357f'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '15676fb6c0024263b636e3acce6f3ff4'
                         key: {
@@ -4772,6 +6832,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '1580cb4caa364093b796534c51c82fa6'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'zip'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '15815ac2ca0a48cc8f7f3cd6ba0fbdaa'
                         key: {
@@ -4780,6 +6849,14 @@ declare global {
                             value: 'in_progress'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '15b149bf955346a592b906661f3df89a'
+                        key: {
+                            map: 'f301f6ad18af4c5dafef402ce796af3a'
+                            target_field: 'cage_code'
                         }
                     },
                     {
@@ -4863,10 +6940,54 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '16293fd42ba047f68350747d81e6cb4b'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'doc_readers'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '162b03074be04a87b6d06ae76f009b79'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'record_count'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '1632aad772ed451e8ad043ecfdb1ea17'
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'weight_oz'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '163905299e034d228c8c5baaba2cd364'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '163f4f85667043f6bd8935746934b899'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_to_state'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '16510fe9a20b4bb592e43374f9bf2e81'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'mah_source_row'
+                            language: 'en'
                         }
                     },
                     {
@@ -4933,6 +7054,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '1689f8c09b2c453ab45af48c57f8f612'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'mah_source_row'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: '16a25b0d6e2741e390184cd883b090d0'
                         key: {
@@ -4987,6 +7116,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '16cbee0d3a644d7ea46116ee79f46cb6'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '16d7b7b55f4e4808a1df93fd1906a1cd'
                         deleted: true
@@ -5011,6 +7149,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '16e6cf65c6884366b297aebb669c1f5f'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'unit_name'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '16eec00e8455490f969286856db4151b'
                         key: {
                             name: 'x_cog_mah_request_line'
@@ -5027,12 +7173,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '170828855ee047d2ab97a7b54f655ace'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'unid'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '1710bb42152b45a28dccfdcd39bf718e'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'service_number_last4'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '17386024dac44e73ae8fd2f8fa5bf080'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'remarks'
                         }
                     },
                     {
@@ -5087,6 +7249,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '17afd6aa1c704732bea0aeea53fba870'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'parent_unid'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '17b9aea9aa374913a6fe0dc2740eeff6'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'parent_case_number'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '17ce68b094ba459899c5050dfc438793'
                         key: {
@@ -5111,12 +7290,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '17d72f69c90b4453985b8a5a94c8f00c'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'cancelled_by'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '17da286b3ed34b1e94e95dd62248b38f'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'mah_source_row'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '17e33b1153394eb38ec0630b2ef91543'
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'legacy_unid'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '17ff22f920c54e7ab98c8173da450009'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'vendor_users'
                         }
                     },
                     {
@@ -5152,6 +7356,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '18161de5770a4347a9a71167176f2c37'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'unid'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '181e2f86cfcc44f2b98d789d4dba5da0'
                         key: {
@@ -5180,6 +7392,30 @@ declare global {
                             name: 'x_cog_mah_requester'
                             element: 'legacy_number'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '182fc231af2e4100be3cf6a5f1eafd61'
+                        key: {
+                            map: 'd7ceb9b9a99d403aabc70c87fd61af11'
+                            target_field: 'requesting_unit'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '183dde8bc9d846598128b9734711d03b'
+                        key: {
+                            map: 'f301f6ad18af4c5dafef402ce796af3a'
+                            target_field: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '185d5a2235864a41bc5288960d02262a'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'last_updated_by'
                         }
                     },
                     {
@@ -5308,6 +7544,24 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '18b920e949164e7fa219aba862c0c58a'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'relationship'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '18c4b043eb4541f986c5c0154cae51df'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'created'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '18d3746febd043988a42afa78a373932'
                         key: {
@@ -5372,6 +7626,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '18e9a9406d674526b3fc958cd2da3948'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'address'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '18fcb2cd1e234102a0e45f7586af70e4'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'created'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '192a496ca8ec497698e7c8a3226110d3'
                         key: {
@@ -5390,6 +7660,39 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '19651a6932b7465884adb1cc189fb058'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_dodaac'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '196f412f82e441079d157fb9f8d30460'
+                        key: {
+                            map: 'd2e94d7ef0d248f1a3ef92c36a321824'
+                            target_field: 'unit_name'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '198c36cb1c9d455f9908894021453d09'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'engraving_date'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '198f6595ead34676b2d467bf1adae28a'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'nsn'
                         }
                     },
                     {
@@ -5420,6 +7723,14 @@ declare global {
                             name: 'x_cog_mah_request_line'
                             element: 'heraldry_request'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '199a8f30e48e4e02937f0daac8a6dc45'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'mah_source_row'
                         }
                     },
                     {
@@ -5535,6 +7846,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '1a25ba2762cb4eebabb5ae37d61e3329'
+                        key: {
+                            map: '1cbac6b6794e403db7b86aa6361c0986'
+                            target_field: 'contents'
+                        }
+                    },
+                    {
                         table: 'sys_ui_form'
                         id: '1a38439dee3a43e6aa73ce53a04793f8'
                         key: {
@@ -5635,6 +7954,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '1a9eb080df7f4453904912448360e858'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'mah_batch_id'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '1aa18d1025044b04b9a4b105583ee35a'
                         key: {
@@ -5662,6 +7990,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'line_number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1aa8f1f22e744f5999dd60db41009ea2'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_to_city'
                         }
                     },
                     {
@@ -5714,6 +8050,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '1acf53b34d80408bb905ba610335a039'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'status'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1ad05ad66e4d4423ad2104d8ac5ae7c8'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'signal_code'
+                        }
+                    },
+                    {
                         table: 'sys_ui_section'
                         id: '1ad0f46304db42ad87180b6f5bc07c3b'
                         key: {
@@ -5730,10 +8083,35 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '1ad2461ce86e4a84a221e3670c8eb210'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '1aec34d9519046e9aa3ae64cb10b4cdd'
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'legacy_status'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '1aff4a0305d04072aa772f54976c61b1'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'source_agency'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1b3cc5cfde9c4fc7aa85764a5608fcc5'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'item_key'
                         }
                     },
                     {
@@ -5836,6 +8214,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '1ba07e1766244e51a60bc651594f32a7'
+                        key: {
+                            map: '809b30825c3549b5800b84762a3956e3'
+                            target_field: 'legacy_unid'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '1ba55af6ccf6459da1f7d8b38b33c162'
                         deleted: true
@@ -5911,6 +8297,15 @@ declare global {
                             }
                             element: 'legacy_note_type'
                             position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '1bce50bd69194d5c864186c9170bade7'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'unit_of_issue'
+                            language: 'en'
                         }
                     },
                     {
@@ -5990,6 +8385,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '1c1a84dfed6d4c949200564909c9e46e'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'address_verified_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_section'
                         id: '1c1b7a5a70dd49e2a2c369f48eb3fa15'
                         key: {
@@ -6038,6 +8442,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '1c593e6f3505452d89474eac723408df'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'modified'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '1c5a214f3c8e44c297fd911ce6875791'
+                        key: {
+                            map: '7c180fb2626a4e61b96a5314268f7714'
+                            target_field: 'veteran_first_name'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '1c76ed28fe1c4792978775d42bdf9e84'
                         key: {
@@ -6054,6 +8475,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'unit_price'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1c8a78df28e341d58d41cd5c94531287'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'NULL'
                         }
                     },
                     {
@@ -6106,6 +8535,14 @@ declare global {
                             }
                             element: '.begin_split'
                             position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1cb56c001cb94813b4b8d9c7d0f9fe9f'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'created'
                         }
                     },
                     {
@@ -6177,10 +8614,34 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '1ce246cfcd2043768a1e9c728eb3596f'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'doc_readers'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1cf090b2e9a24108a3343e85d59f770a'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'lead_time_days'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '1cf374dff11241cdad2c2d2fc82ff3e0'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'ship_to_name'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1cf846da9d1346fcbcf2dd033fcfc0ab'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'created'
                         }
                     },
                     {
@@ -6192,11 +8653,45 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '1d87b864858b4720be29392db62724e9'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'NULL'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '1d89d4fe1fe741edba56bd7ba4ebaffc'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'completed'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '1d951d15381d410ca2b15b4ac5b37050'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'dodaac'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1da0211f7b1c45db848ee9efaa85bc28'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '1da5f6b86ce3494e9479e617c6a24441'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'line_status'
                             language: 'en'
                         }
                     },
@@ -6213,10 +8708,45 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '1df57f01b3ce429d89e8c0f620c4c6aa'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'deceased'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '1df78e5c02374be2b29c3bca9703e2bd'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'veteran_rank'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '1e154c4215064d28afdd1562b7d68575'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'executive_tier'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1e4a02f5bd084992859b84f0bfda80db'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'mah_batch_id'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '1e60fa6f2fb946c6b444a07b571285fe'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'last_modified_date'
                             language: 'en'
                         }
                     },
@@ -6285,6 +8815,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '1edde1d507bd4984a579c874d65cb105'
+                        key: {
+                            map: '809b30825c3549b5800b84762a3956e3'
+                            target_field: 'layout'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1f14afa3bd134efdb07859a5723d4040'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'unid'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '1f470413aa2245058d221949a58a5464'
                         key: {
@@ -6313,6 +8859,23 @@ declare global {
                             }
                             element: 'unit_price'
                             position: '11'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '1f53ec590a9d41dd802b9209c7e1cbcc'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'summary'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1f66881dcea04994b0c2463ec1f7bcef'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'mah_source_row'
                         }
                     },
                     {
@@ -6349,6 +8912,23 @@ declare global {
                                     name: 'x_cog_mah.vendor'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1f88d6efc41c4efb84fd80ee1c02a09b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'requester_rank'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '1f89f9ecb80147579418d7417a112ac0'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'shipped_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -6393,6 +8973,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '1fd3a6403782443e889ca8af7b701d8f'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'category'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '200ac70371b641bf82b87c9a6259bb56'
                         key: {
@@ -6412,6 +9001,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '202ac30aeacf4e2ea037beb87cecb985'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'modified'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '203c5cbde4834851b1585e7c8b003f52'
                         key: {
@@ -6422,6 +9020,15 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '208188dafd284aeea802561cf9272699'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'parent_unid'
+                            language: 'en'
                         }
                     },
                     {
@@ -6475,6 +9082,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '21466b7ced40462e9513bbbe4b9edefa'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'city'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '21757c6aec7045c8ad0b9fe5a01ecb02'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'mah_source_row'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '21a85c1c2c324ba5bab2fd92693dc6aa'
                         key: {
@@ -6497,12 +9121,44 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '21ada848ae724f37942f6700f6341212'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'parent_unid'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'item_option_new'
                         id: '21b609982fee4bb88c42b856fd721383'
                         key: {
                             cat_item: '74be602ca0cc4a8e981f83a5138007a4'
                             variable_set: 'NULL'
                             name: 'justification'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '21b951fa1c1747f690523444c54ce12a'
+                        key: {
+                            map: 'd7ceb9b9a99d403aabc70c87fd61af11'
+                            target_field: 'request_type'
+                        }
+                    },
+                    {
+                        table: 'sys_db_object'
+                        id: '21f6a6d5fd1c4b958b8e970fa412cd6e'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '223e59dcc6ca493d90eec64e4a33da90'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'entered_by'
                         }
                     },
                     {
@@ -6525,6 +9181,14 @@ declare global {
                             }
                             element: '.split'
                             position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '226ef1348fbb4a91a73e605a6d8f4941'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'unid'
                         }
                     },
                     {
@@ -6699,6 +9363,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '235011d8f0c540f0bb9509cba1381d64'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'preferred_contact'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '23538ad6ee2b4b5aa4a104df99ad173b'
                         key: {
@@ -6730,6 +9402,14 @@ declare global {
                             name: 'x_cog_mah_award_line'
                             element: 'number'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '23c53c557ba5499b8e613e9f765eafbf'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'NULL'
                         }
                     },
                     {
@@ -6835,6 +9515,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'approved_at'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '24a05b1452db4f3daccd98554892ef73'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'days_in_queue'
+                            language: 'en'
                         }
                     },
                     {
@@ -6945,6 +9634,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '24f2f1a6da5e407fb629e393d2ec6789'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'mah_batch_id'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '2502e2ea421c4340bb7c296fb4cf07fd'
                         key: {
@@ -6977,6 +9675,23 @@ declare global {
                                     name: 'x_cog_mah.warehouse'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2541c0e6291c478c92702482d5202902'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '2549cd6e60124c55baa6abce73bbc0f9'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'mah_batch_id'
+                            language: 'en'
                         }
                     },
                     {
@@ -7041,6 +9756,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '25697f62f6664346ab9d56152cba9ec2'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'aging_flag'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '25a0fbf40ccd45d586746ab2d8f31c9e'
                         deleted: true
@@ -7079,6 +9803,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '25d2f7cc1c554bfab49d4f62bf098050'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'vendor_key'
+                        }
+                    },
+                    {
                         table: 'sys_ui_section'
                         id: '25f0ccd37f0a41f799de6a2951fe843c'
                         key: {
@@ -7113,6 +9845,14 @@ declare global {
                             }
                             element: 'priority'
                             position: '15'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '2602dcc789bb43d381d4001e721b8ca6'
+                        key: {
+                            map: '7c180fb2626a4e61b96a5314268f7714'
+                            target_field: 'ship_to_city'
                         }
                     },
                     {
@@ -7305,11 +10045,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '26a4a543a7484417991b9408f227c389'
+                        key: {
+                            map: 'd2e94d7ef0d248f1a3ef92c36a321824'
+                            target_field: 'name'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '26baee17fbe74c9cbc296047482f8032'
                         key: {
                             logical_table_name: 'x_cog_mah_award_line'
                             col_name_string: 'awards_case'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '26c7916752704a7cb1fc58767406b12c'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'line_status'
+                            language: 'en'
                         }
                     },
                     {
@@ -7400,6 +10157,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '2773380328c2487fbd0c9642c1879336'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'mah_source_row'
+                        }
+                    },
+                    {
                         table: 'sys_ui_form_section'
                         id: '27777b304d4d4466825adfa0971c7efb'
                         key: {
@@ -7461,6 +10226,15 @@ declare global {
                                 }
                             }
                             element: 'exception_type'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '27cc073f756146938486a92f0cc5fe6d'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'last_updated_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -7682,6 +10456,31 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '287636e1da984d139fb85e84bbf4a2da'
+                        key: {
+                            map: '7c180fb2626a4e61b96a5314268f7714'
+                            target_field: 'ship_to_zip'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '287eaf3c22444ecbb1881ff3a425bb37'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'shipment_number'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '28806f45407344e6b62aa0a2ead63157'
+                        key: {
+                            map: '5dc9d6ff774941499143adc6d2aea78e'
+                            target_field: 'legacy_unid'
+                        }
+                    },
+                    {
                         table: 'ua_table_licensing_config'
                         id: '288d9da83a824ddd88b2739ce5eaffe6'
                         key: {
@@ -7760,6 +10559,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '28e9e2ef015242b2914a830ebf78535e'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'mah_source_row'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '28f527f278cf45a68b3cb6329ed29609'
                         key: {
@@ -7823,6 +10631,22 @@ declare global {
                             }
                             element: 'imported_at'
                             position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '293a4ea252eb46ada4975faced14bc20'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'note_id'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '294c4638c88249809aa28d6d5f233088'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'contact_phone'
                         }
                     },
                     {
@@ -7905,6 +10729,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '29dba5955ef4444d962ace16f7c6eb9d'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'requester_phone'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '29e623f3c08140bbaec3468178395562'
                         key: {
@@ -7924,6 +10756,14 @@ declare global {
                             }
                             element: 'active'
                             position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '29f8cf7eaa664aa9b978f9bfef8dddfc'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'note_id'
                         }
                     },
                     {
@@ -8001,6 +10841,23 @@ declare global {
                             name: 'x_cog_mah_shipment'
                             element: 'carrier'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '2a8dafbbbd304276822c82a558db164a'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'priority'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2a95a71e8277443c9e40aa9c13d3befd'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'qc_result'
                         }
                     },
                     {
@@ -8085,6 +10942,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '2acb40c073614b32a364607596528a07'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'signal_code'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2b091e85fe424586b89079f8a5950998'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'NULL'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '2b3401cb9b4441af881f0b1dfee94b19'
                         key: {
@@ -8093,6 +10967,15 @@ declare global {
                             value: 'submitted'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '2b53697088704b2fb9c82f9b7e294589'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'entered_date'
+                            language: 'en'
                         }
                     },
                     {
@@ -8119,6 +11002,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '2b9a841e8880415383e2e9930848c823'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'auth_file_name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '2bb477ef6029454e8b7b3425432ff6df'
                         key: {
@@ -8132,6 +11024,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'source_agency'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2bbae7c6b78d4b0fb5e8ffea74b0c350'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'award_code'
                         }
                     },
                     {
@@ -8164,6 +11064,40 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '2bef7f764cf34cf9bdaad83e9d96cc2b'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'doc_readers'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2c0c3d0e9b47457d9bec45c38e59c00e'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'delivered_date'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '2c0f73c7c7e04ab89535aae418421c1a'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_address2'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2c35b63b243f42899398aaba0c469681'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_status'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '2c5ee80f0666429a8971bd1535a0dc64'
                         key: {
@@ -8183,6 +11117,15 @@ declare global {
                             }
                             element: 'legacy_unid'
                             position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '2c6c09ec0b334a298bc3841f3313f945'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'stage'
+                            language: 'en'
                         }
                     },
                     {
@@ -8241,6 +11184,31 @@ declare global {
                         key: {
                             table: 'x_cog_mah_award_line'
                             short_description: 'MAH award line: engraving text only when engraving is required'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2ce9098bacfb4670901817e8927c8aea'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'rework_count'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '2cee91cb430747d98bb003738d76ffdc'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'modified'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2cfbb97ae79c4509a94e52a394c58325'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'job_number'
                         }
                     },
                     {
@@ -8335,6 +11303,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '2d9a8865ce274527a9b7c16d2d5c294d'
+                        key: {
+                            map: '809b30825c3549b5800b84762a3956e3'
+                            target_field: 'source_hash'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy_action'
                         id: '2da7ab03aa16427c88df09528df77cc7'
                         key: {
@@ -8346,6 +11322,14 @@ declare global {
                                 }
                             }
                             field: 'required_delivery_date'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2db1a0c7552848c9abc5a18a98217529'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'cancelled_date'
                         }
                     },
                     {
@@ -8476,6 +11460,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_db_object'
+                        id: '2e452d0f2ff242cab2baf2a1e489e2fe'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '2e4879c0cd7e4694886eb8cb3da651fc'
                         key: {
@@ -8544,6 +11535,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '2ec4257417194c1791f6c0f18aeba2f8'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'entered_by'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '2ed5fa50f3764e9cb0661274df645d6e'
                         key: {
                             name: 'x_cog_mah_awards_case'
@@ -8578,6 +11578,15 @@ declare global {
                         id: '2ee81a3c321c4fc4822c6edf337f6e0c'
                         key: {
                             name: 'x_cog_mah_status_map'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '2ef02cb77a544189b88ef95ce0570848'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'mah_batch_id'
+                            language: 'en'
                         }
                     },
                     {
@@ -8649,6 +11658,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'raw_value'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2f529074146f4a51a6d5d7516c6ff93e'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'shipped_by'
                         }
                     },
                     {
@@ -8789,6 +11806,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '2ff283fb375e45f0a8640285dd76d8f4'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_date_text'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'item_option_new'
                         id: '2ffb7687cf1b434cb1c93494039d2ef2'
                         key: {
@@ -8842,6 +11868,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '301385efebff464e81c3084488d6516c'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '30343a6a3d1f41f7a6c38b88524d7694'
                         key: {
@@ -8877,6 +11912,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '30411d804a8444398faae0842c96e636'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'parent_unid'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '3041ee7cb281490eb7da27bfc8cd20c8'
                         key: {
@@ -8904,6 +11948,38 @@ declare global {
                         key: {
                             table: 'x_cog_mah_requester'
                             short_description: 'MAH requester: merged duplicates are read-only'
+                        }
+                    },
+                    {
+                        table: 'ua_table_licensing_config'
+                        id: '30831d0a7c634d70b5d6659eb62630dd'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '308ce44d428d47d786d0926842296b49'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'cancel_reason'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '308d9efbd30a462c9ec6be9eb47f96a4'
+                        key: {
+                            map: '7c180fb2626a4e61b96a5314268f7714'
+                            target_field: 'pick_bin'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '3099e18fd2e6462ab2928549e73ed089'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'requester_key'
+                            language: 'en'
                         }
                     },
                     {
@@ -8950,11 +12026,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '311121201b824149ad2dbff21771500d'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '3124f99251614ca88bd21c96c7af22f6'
                         key: {
                             logical_table_name: 'x_cog_mah_requester'
                             col_name_string: 'last_name,first_name'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '31376a6691614543bb0c2cc0dc0f25ed'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'entered_by'
                         }
                     },
                     {
@@ -8977,6 +12070,15 @@ declare global {
                             }
                             element: 'number'
                             position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '313f0e26546e45529215409b9ca0c493'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'ship_to_street'
+                            language: 'en'
                         }
                     },
                     {
@@ -9108,6 +12210,24 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '31b233060fce46d696798f0b508103b6'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_to_city'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '31e3bd14c377486dbdc49f3d704b9aa1'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'lookup_key'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: '31f69d104a2544c798d8e29f7b0ee663'
                         key: {
@@ -9170,6 +12290,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '321fd567706a457e99174844263012fc'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'modified'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '324fa714317b401cb664b15c0a60aa5d'
                         key: {
@@ -9217,6 +12346,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '3278753cf4df44b88f8dad31d0dd4fd1'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'relationship'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: '32c2f83282e4440dbcc8294adf56b759'
                         key: {
@@ -9240,6 +12377,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '32cc77bca76243de8f7ea3767beb9730'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'doc_authors'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '32cda40510f64138bbe7781f65c2b25b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'uic'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '32d6fc56ef5b4ae5b72c544fb444373e'
                         key: {
@@ -9258,6 +12412,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '3320cff65e314623876e08b8a445a2df'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'modified'
+                            language: 'en'
                         }
                     },
                     {
@@ -9320,6 +12483,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '33dd690febbd486eaf662513b944c10c'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'cancel_reason'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: '33e20ea63a95491fb5995162489f3fed'
                         key: {
@@ -9372,6 +12544,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '34457af9d6924dc5b6953193817c84e4'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'ship_to_zip'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '3445eea9ded748cbb36bf4ecb10adac8'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'contents'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '3455cce80a6543f5a5814d3569e4cfe6'
                         key: {
@@ -9380,6 +12569,14 @@ declare global {
                             value: 'AuthorizationFile'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '345e752f52444c0d8f38d71ad72678fe'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'last_modified_date'
                         }
                     },
                     {
@@ -9494,6 +12691,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '357326d1a22b4b5f9ea69c836c25dd1c'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'doc_readers'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '358e0f46e2214c12ac19a5a2842bccc1'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'vendor_name'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '359c7d0de2b84feb9a0a5698fc6f39fe'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'days_in_stage'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '35a2b9c125294a4fa93aa08832dd4c80'
                         key: {
@@ -9526,6 +12749,23 @@ declare global {
                                     name: 'x_cog_mah.warehouse'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '35eeba9651c74c0bbaf816698d9884bb'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'import_status'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '35fa896372ac4759b7e4bdc66f36e0f1'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'note_date'
                         }
                     },
                     {
@@ -9598,6 +12838,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '365099dfa16c4e4f94045f1d05a87eab'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'description'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '36608c0937bb48e999259bbc54522520'
                         key: {
@@ -9658,6 +12907,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '36981ee98f484957b6e77299e6443ab7'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'requesters_matched'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '36a233b013f44c52aa595feb4498edf6'
                         key: {
@@ -9702,6 +12960,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '36c690f73b564417afc4f6e29168a227'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'imported_by'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '36c868e98c3e468b8b335583b8f4a33d'
                         deleted: true
@@ -9722,6 +12989,24 @@ declare global {
                             }
                             element: '.split'
                             position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '36c86dac0ad54b0f973a0b5b75acb4a1'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_name'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '36ce30a7a7dc4693a333580646010fba'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'attachments'
+                            language: 'en'
                         }
                     },
                     {
@@ -9746,6 +13031,14 @@ declare global {
                             value: 'closed'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '373c9351f80d4bf692bb78b33b70ae59'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_to_street'
                         }
                     },
                     {
@@ -9779,6 +13072,15 @@ declare global {
                             }
                             element: 'source_table'
                             position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '3748b331734449e4a42c7ab80023af0e'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'NULL'
+                            language: 'en'
                         }
                     },
                     {
@@ -9839,6 +13141,13 @@ declare global {
                         key: {
                             category: 'x_cog_mah_shipment'
                             prefix: 'MSH'
+                        }
+                    },
+                    {
+                        table: 'sys_db_object'
+                        id: '379b294ed90c485da35bf8e46656691f'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
                         }
                     },
                     {
@@ -9930,10 +13239,27 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '37e408e2d2f847c882934aeaf81cb913'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'warehouse_date'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '37eefe545f52405cb2f70c59b7d43d0c'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'active'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '37f95d3664ba4117b0ba1aca7a1f8467'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'NULL'
+                            language: 'en'
                         }
                     },
                     {
@@ -9979,6 +13305,15 @@ declare global {
                             value: 'triaged'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '382cd808d1ec444fb83ef419473cf916'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'unid'
+                            language: 'en'
                         }
                     },
                     {
@@ -10077,6 +13412,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '38a4ab14e9a94331b905ddccc9b9d916'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'line_status'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '38b86dabfbb149869856332d2c3c9608'
                         key: {
@@ -10108,6 +13451,40 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '38cedfca8f8b4d828430b6036cc4d132'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'zip'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '38d6aa1cfab24769b0ccc021a7abf91a'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '38e7025024374cf4a160ef3627e136c1'
+                        key: {
+                            map: '256611ef79f24e798d3eda66b586239b'
+                            target_field: 'zip'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '38e9085a74f243268d09900703e6da83'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '38e96d970c5249ae9ba49079fb3cc671'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
@@ -10127,6 +13504,14 @@ declare global {
                                 }
                             }
                             field: 'service_number_last4'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '38fe25d0846c468694a29bb5450697d8'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'mah_source_row'
                         }
                     },
                     {
@@ -10188,6 +13573,31 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'nomenclature'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '39ba2826d52e495787caf5e5870bd0af'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'unid'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '39d4d501de014f2787472957b9ee0e63'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'entered_by'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '39d4f45102b4473b8df111e4fdc29461'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'parent_unid'
                         }
                     },
                     {
@@ -10330,6 +13740,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '3af86af6b2224fdab3445a46f26572f5'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'address'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '3b22858249274a9ba3f48f485154748d'
                         key: {
@@ -10366,11 +13785,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '3b41425abb7c4031b046e6a0adcf1411'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'veteran_first_name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '3b42c290045c459e84c0f5649abc6e8e'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'role_title'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '3b5bcbecb57842eeba464cb06af6f934'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'ship_to_name'
                         }
                     },
                     {
@@ -10437,6 +13873,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '3b9d5194336c403aa3b9d2076b63e4e9'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'created'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '3ba6f0cf4bba44c491ca723c8138efb9'
                         key: {
@@ -10491,6 +13936,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '3be555a1994346e39c819b6074ac1b1e'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'mah_source_row'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '3be752298c5342b9ab73eab5eb22655a'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'device_count'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '3bf07785a9d747f4a082d385408e2815'
                         key: {
@@ -10514,6 +13976,14 @@ declare global {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'dodaac'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '3c166940d5094fa580609e41436b0087'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'ship_to_city'
                         }
                     },
                     {
@@ -10609,6 +14079,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '3c356058edf04cd9b92acc57f8c2d49e'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'email'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '3c4832e0612543499d6df0c337f74fcd'
                         key: {
@@ -10668,6 +14147,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '3cac50ae5a3d46b788b8000fe50df62a'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'transmission_date'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '3cb2bc3082144bc692593f1dec896f38'
                         key: {
@@ -10700,6 +14187,23 @@ declare global {
                             }
                             element: 'nsn_or_exception'
                             position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '3ce2446844ef4afe9ec0f2c238a67882'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'contact_name'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '3cec2092c4a644a7b1f26d8d46f6db43'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'ship_to_name'
+                            language: 'en'
                         }
                     },
                     {
@@ -10743,6 +14247,15 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '3d412bfd3f5b415c910634bd324bb5bb'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'attachments'
+                            language: 'en'
                         }
                     },
                     {
@@ -10920,6 +14433,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '3e90062e6fcb475d9bce3ac338e7ccb3'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'priority'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '3e969f88b1c140a28f4265e2059e7ea5'
                         key: {
@@ -10952,6 +14473,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '3ea41397262642ceb7df96f1e337f716'
+                        key: {
+                            map: '4c96aa091bf9411690fb9535765b2ec9'
+                            target_field: 'legacy_unid'
+                        }
+                    },
+                    {
                         table: 'sys_ws_query_parameter_map'
                         id: '3eafb781f12e48aca95e5c443b1bea72'
                         key: {
@@ -10979,6 +14508,15 @@ declare global {
                             }
                             element: 'legacy_unid'
                             position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '3ec2655348d145a8ac6c75f8e349698e'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'mah_batch_id'
+                            language: 'en'
                         }
                     },
                     {
@@ -11024,6 +14562,15 @@ declare global {
                                 }
                             }
                             element: 'nomenclature'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '3f1f1bd2c67c4c75bdee06079312bba3'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'contract_number'
+                            language: 'en'
                         }
                     },
                     {
@@ -11152,6 +14699,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '3ff9ad4691a94ebc99d4905f4d092065'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'shipped_date'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy_action'
                         id: '4017c104b7444586bc6cfaf21b0033c7'
                         key: {
@@ -11166,12 +14721,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '4021a79198b64eb38a567bca7009356a'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'flag_type'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '404716be511b47d1895634d65d1d4219'
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'shipped'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '405f1796529f49d18f327b8fdcd861f5'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'max_qty_per_request'
                         }
                     },
                     {
@@ -11262,6 +14833,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '4098904c9c5f49899b709685dfab32c1'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'merged_into'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '40a00d80e8a74888b7278be14b5ac8c6'
+                        key: {
+                            map: '543eb031c83c4367813a92bf7c1e7286'
+                            target_field: 'legacy_unid'
+                        }
+                    },
+                    {
                         table: 'sys_ui_action_role'
                         id: '40add9ae6bf645a2aea3750105419f8b'
                         key: {
@@ -11329,6 +14917,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '40c220e4ed5a4a2c9721ae3115771a04'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'ship_to_state'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '40c35f31684841a698622fa1dca695b4'
                         deleted: true
@@ -11392,6 +14989,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '413db09effbf4d7e826ab59b1ad605f9'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'partial'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '413ec37677bd488ab72539b9eb6b2be7'
                         key: {
@@ -11414,6 +15020,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '4148fb9d23804d2f8bd434cebd2a9b9c'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'email'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '417024605fe0437586edcaf0dba3a398'
                         key: {
@@ -11430,6 +15045,15 @@ declare global {
                             value: 'complete'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '4199702bd7d34ee288e415faafd87307'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'phone'
+                            language: 'en'
                         }
                     },
                     {
@@ -11470,6 +15094,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '41f13749addb4a9fa6e6296692d84fad'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'stock_number'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy_action'
                         id: '4216d121b9554f37b09060f0bbfb6c62'
                         key: {
@@ -11481,6 +15114,15 @@ declare global {
                                 }
                             }
                             field: 'vendor_ship_date'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '42289d04e6684f579584e997b9255bce'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'engraving_job_number'
+                            language: 'en'
                         }
                     },
                     {
@@ -11526,6 +15168,14 @@ declare global {
                             }
                             element: 'legacy_author'
                             position: '8'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '425d061a275f4c2d9f19e63556a5f8c6'
+                        key: {
+                            map: '7c180fb2626a4e61b96a5314268f7714'
+                            target_field: 'legacy_number'
                         }
                     },
                     {
@@ -11640,6 +15290,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '43119fcd15b74e0da1e1b7b7bb19ee3e'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '431f9cd8a9f54a12a6fa53f8c6ebd934'
                         key: {
@@ -11692,6 +15351,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'ua_table_licensing_config'
+                        id: '4341abbf5ff2405eb9d790f98d8fc7eb'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                        }
+                    },
+                    {
                         table: 'item_option_new'
                         id: '4343f67f79f54cc8bda67718334003c0'
                         key: {
@@ -11736,6 +15402,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'active'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '43c7fabc03c244b390edb02306fca63c'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'phone'
+                            language: 'en'
                         }
                     },
                     {
@@ -11812,6 +15487,15 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '446ad9d6aef942e68670dc35e0f62df3'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'mah_batch_id'
+                            language: 'en'
                         }
                     },
                     {
@@ -11906,6 +15590,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '44e364e8641a4fa8acf3f7c668464676'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'email'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '44f1d82bcaf7438fb26742b4c0360396'
                         key: {
@@ -11937,6 +15629,14 @@ declare global {
                                 }
                             }
                             element: 'line_number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '450a9317ad524d259c5157ba8d9c3803'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'service_number'
                         }
                     },
                     {
@@ -12047,6 +15747,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '45c335ea59bf462da5b7294cabbf6b38'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'font'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '45cd8b13187c4491b0054104ab2f61d2'
                         deleted: true
@@ -12087,6 +15796,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '45f0114f1e9a42acb06ef836be79efdc'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'backorder_eta'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: '45fef56e8b4443d3a851bd5c48f88db2'
                         key: {
@@ -12110,6 +15828,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '45ff7bc9c6774c0fbb9324d757c8b173'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'award_category'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '4602117c4ebb48579662562d74f17e8f'
+                        key: {
+                            map: '256611ef79f24e798d3eda66b586239b'
+                            target_field: 'legacy_unid'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '46169d9cb3ea4df7a92f58e3d945a0c8'
                         deleted: true
@@ -12119,6 +15853,14 @@ declare global {
                             value: 'ses_flag_request'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '4625524e184348b9963da939656e4ac6'
+                        key: {
+                            map: '4f84472a2b0b4c5ea5ebb079c1f84694'
+                            target_field: 'legacy_award_code'
                         }
                     },
                     {
@@ -12326,6 +16068,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '474e0095bbdf4c3e897ba4030a6e72f7'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'NULL'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '4760e10ab6ee42f5938230b566855a39'
                         key: {
@@ -12355,6 +16105,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '47808246a0ad4f7e8668ae817f6c9e0a'
+                        key: {
+                            map: '4f84472a2b0b4c5ea5ebb079c1f84694'
+                            target_field: 'authority'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '4783693d32064fe5a07d53d8cfb979e4'
                         key: {
@@ -12365,6 +16123,22 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '47ce581083a74b5e991e2202a2221ae1'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'branch'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '47e02e4feab84319a60c5262b6908fe4'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'mah_source_row'
                         }
                     },
                     {
@@ -12426,6 +16200,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '485fd1752aeb422791fe262137d3403f'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'phone'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '486b2da48a8c4c47b8e1d43999dc2f42'
                         key: {
@@ -12477,6 +16259,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '488a5c8205b24781a727d9d9f1f3a8df'
+                        key: {
+                            map: 'd7ceb9b9a99d403aabc70c87fd61af11'
+                            target_field: 'fund_code'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '4896c6efc5644782a184a2ca2cf30326'
                         key: {
@@ -12487,6 +16277,23 @@ declare global {
                                     name: 'x_cog_mah.warehouse'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '48ac3d8ca73d49be83e5a17aa861ab93'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'stage_before_hold'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '48c00ebbee5f4c80ac860224ea40aebc'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'last_modified_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -12531,6 +16338,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '492b41e4bf5d4d33a78620649ad074de'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'quantity'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '493c472c627c4c33a5db55a3775b6c65'
                         key: {
@@ -12557,6 +16373,30 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '4957593587b04545b2b306a4dc4a4378'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'unid'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '4980c0d064d24a589e105343455976cd'
+                        key: {
+                            map: 'd2e94d7ef0d248f1a3ef92c36a321824'
+                            target_field: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '49910837469c4366827dc75eacee0279'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'doc_authors'
                         }
                     },
                     {
@@ -12664,6 +16504,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '4a0dde95fb8440a59d3f00987f5b776e'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'email'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '4a0f1d20b9e24b268ed552b5d371005a'
                         key: {
@@ -12674,6 +16522,14 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '4a27bbddf30646b995b245697b8cff08'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'priority'
                         }
                     },
                     {
@@ -12774,6 +16630,15 @@ declare global {
                                     sys_domain: 'global'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '4a7e0f98a6294ca3b321672bd9917ca4'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'created'
+                            language: 'en'
                         }
                     },
                     {
@@ -12926,12 +16791,36 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '4b3a1b9e3f874077b15b3ccbf8901536'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'note_id'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '4b7e725a4aa74bd988d5a15194c6498c'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'machine'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '4b8e737fc36c41a3a5900b1729045fee'
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'line_number'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '4b91bbe7a2e14b848335b728678f61ed'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'NULL'
                         }
                     },
                     {
@@ -12954,6 +16843,22 @@ declare global {
                             }
                             element: 'signal_code'
                             position: '8'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '4bce89b5d3864ba9b3005045fa516148'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'received_date'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '4bd626b85f4241cbb253a6b2605ae843'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'email'
                         }
                     },
                     {
@@ -13123,6 +17028,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '4cd9f1abd7f24bda8a14c6b54dcc14f9'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'doc_readers'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '4ce31a121d2c4388ae6754a71d72abea'
                         key: {
@@ -13179,6 +17093,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '4d26589b6cf94e58a9e6face5e39315b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'mah_batch_id'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '4d8de1bc7e8849258e829210175f6f2f'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_action_role'
                         id: '4d9c1e66f96244289c11dabe418249c9'
                         key: {
@@ -13212,6 +17143,14 @@ declare global {
                             }
                             element: 'record_count'
                             position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '4dcc8f753ab64e45ad1242558ad575d9'
+                        key: {
+                            map: '256611ef79f24e798d3eda66b586239b'
+                            target_field: 'last_name'
                         }
                     },
                     {
@@ -13447,6 +17386,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '4f242937af52443689b78c9104d1ee4f'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'justification'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '4f3bc1d4afcb497e8a9b6977cca1bc97'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '4f400ec847e34238b346d6f3e7ac48a9'
                         key: {
@@ -13469,6 +17425,31 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '4f48ed6db06a48df87d816ec2070e92a'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'created'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '4f65889a93254fc19b8c70f46935b597'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'item_key'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '4f6f95bb45ad415c8b0169a03d81004f'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'shipped_date'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '4f7f288eb89a4885a0040842c4eb8dcd'
                         key: {
@@ -13488,6 +17469,31 @@ declare global {
                             }
                             element: 'legacy_last_modified'
                             position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '4faaa4946928443b99abf1a6420a08b3'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'mah_source_row'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '4fb8f764950647c286d924496e363c97'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'quantity'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '4fcfb562af424688bb8b0c7dc57c4175'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'lookup_key'
                         }
                     },
                     {
@@ -13524,6 +17530,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '4ff41898b9fd47fca79d237affbecf16'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'mah_batch_id'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: '4ffc82bdec9b4559aa2056554ccbebeb'
                         key: {
@@ -13551,6 +17565,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'priority_handling'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '502bd02813614e66af57ea8ef9ef707d'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'last_updated_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -13602,6 +17625,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '503dea118c7d4073a33fb89307d73ed9'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'doc_authors'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '503f107b7c0d4a8cafffd30c482b16ad'
                         key: {
@@ -13650,6 +17682,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '508515e244c2470395a291ab3224f59c'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'parent_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '50a35b84360644bca0f4036f22ad3253'
                         key: {
                             name: 'x_cog_mah_case_note'
@@ -13687,6 +17727,14 @@ declare global {
                             value: 'army_achievement_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '50c722b8358e414b97b099e9fd5a012b'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'modified'
                         }
                     },
                     {
@@ -13795,6 +17843,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '5124293504af45e99cbc41830c557300'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'attachments'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '513a5f1c0bb44bc2a1b049b18a4c4279'
                         key: {
@@ -13854,6 +17911,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'work_notes'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '5177e016fc444f20965b1bca759d19b7'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'unid'
+                            language: 'en'
                         }
                     },
                     {
@@ -13920,6 +17986,24 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '51cbd33c57aa4812a7db566902b1ffc8'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_dodaac'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '51e927e535c54394bedd8c8b3b8fd308'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '51ec39fc1b644645b7637075140e4903'
                         key: {
@@ -13939,6 +18023,14 @@ declare global {
                             }
                             element: 'appointment_date'
                             position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '51fc1c8d1b5e4b6ea1073f730ca5b392'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'last_updated_by'
                         }
                     },
                     {
@@ -13986,10 +18078,26 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '527c45c15f3247e49c7fc578ed43b2b3'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'mah_source_file'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '528eb2c5646d4361a7ec163d5dd5a288'
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'legacy_status_raw'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '529a2961419a4de5a33baed582b58836'
+                        key: {
+                            map: '256611ef79f24e798d3eda66b586239b'
+                            target_field: 'first_name'
                         }
                     },
                     {
@@ -14007,6 +18115,14 @@ declare global {
                             name: 'x_cog_mah_shipment'
                             element: 'status'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '52b51200da944e0087557850ce5fdf0a'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'vendor_ship_date'
                         }
                     },
                     {
@@ -14029,6 +18145,15 @@ declare global {
                             }
                             element: 'legacy_author'
                             position: '10'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '52dd625b25b04c97b335230fe693eb84'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'created'
+                            language: 'en'
                         }
                     },
                     {
@@ -14083,6 +18208,24 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '53337fc386ad4095b3f3ce574ed39fa0'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '5335f536c747475c853d27af1a9d84ca'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'approved_vendors'
+                            language: 'en'
                         }
                     },
                     {
@@ -14180,6 +18323,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '539ac45b47ac4adaaa13016f24aaa834'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'dodaac'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '53a9089748c34790833dda1e4597ceea'
                         deleted: true
@@ -14203,6 +18354,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '53a9df67bb654a06aad43288c81e32d4'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'created'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy_action'
                         id: '53dd5d97cca14864b112e55e871e6007'
                         key: {
@@ -14222,6 +18382,23 @@ declare global {
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '53fa9171252d42da98a0660dd6a54dd0'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'note_id'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '53fb855ed0a74be1b6429c552b756592'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'job_number'
+                            language: 'en'
                         }
                     },
                     {
@@ -14316,6 +18493,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '543cbfc98c5c4e4d95052b5c9186c94c'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'role'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: '54844bc3dda143e0b3f30ea6edc19187'
                         key: {
@@ -14384,6 +18570,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '54d70a2a109e476fb9028eb88c10001f'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'requesters_created'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '54dcdf7c919c43c0b1d53bee07b82502'
                         key: {
                             name: 'x_cog_mah_request_line'
@@ -14400,6 +18595,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '54ea8bac2e984f41940e06cab0e7c1ab'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_to_name'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '54f639e383894d008161a7011ae5e48d'
                         key: {
@@ -14410,10 +18613,26 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '551297354d004af4b687ffe3ec7a9ea3'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'requester_name'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '551fd19c88ac468cb55d417725a71c95'
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'legacy_award_name'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '5522c14f50af46b18ad70a3d439e338c'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'modified'
                         }
                     },
                     {
@@ -14446,6 +18665,23 @@ declare global {
                             value: 'cancelled'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '55565c8c574744f989413d3e5a432670'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'proof_checked'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '5578d7466b824639978de3dd49614617'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'engraver'
                         }
                     },
                     {
@@ -14552,6 +18788,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '5612db1acbfb419f88060be2f4b12000'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'name'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '562e24ae7a4f4969ad948374937c0b23'
                         key: {
@@ -14618,6 +18862,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '56d353b77878423f8e6de8b5fdfa1532'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'modified'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy_action'
                         id: '56e5510bfda741c693180514fcf5a3f8'
                         key: {
@@ -14629,6 +18881,15 @@ declare global {
                                 }
                             }
                             field: 'days_in_stage'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '56e8baaf2a404ca0a86138266622066c'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'mah_source_file'
+                            language: 'en'
                         }
                     },
                     {
@@ -14665,6 +18926,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '56f4f09708904b93b34d5e66edd9a546'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'parent_unid'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '56f8c234a38a468abe2fceb99dd0130d'
                         key: {
@@ -14678,6 +18948,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'estimated_ship_date'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '57295c30b3cf40d2b3d1061524430f17'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'lookup_key'
+                            language: 'en'
                         }
                     },
                     {
@@ -14705,6 +18984,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'received'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '574d935aeba8403aa239446092908c98'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'checksum_match'
+                            language: 'en'
                         }
                     },
                     {
@@ -14839,6 +19127,14 @@ declare global {
                             }
                             element: 'duplicate_count'
                             position: '14'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '57df2d50596349c8afef9e3a5f862361'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'mah_source_file'
                         }
                     },
                     {
@@ -15005,6 +19301,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '588249f0fda646b1a8b625b02d70e16a'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'created'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '58957e17a2dc42719ae1c2a69bce8f11'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'follow_up_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '58a17d755ce44ec3935053f6859c9a87'
                         key: {
@@ -15096,6 +19409,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '59063a700a714d3fb1c5115b63bb4e56'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'imported_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '591554c2964745dd99afb08bac6e937a'
                         key: {
@@ -15164,6 +19486,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '5949773a10774f5ab5eca85f539d84e3'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_zip'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '595d48d1bd174baf90effc8ee434a74b'
                         key: {
@@ -15210,6 +19540,14 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '598bb4ac4313427c82d524e874f5e260'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'lookup_key'
                         }
                     },
                     {
@@ -15300,6 +19638,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '59ead4db3376413f85eefce030fc013a'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'mi'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '5a114f11739340b8b21eb1ffd8c6f7dd'
                         key: {
@@ -15308,6 +19654,14 @@ declare global {
                             value: 'closed'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '5a1ab8683b80419b8ea9f591be3e334b'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'note_id'
                         }
                     },
                     {
@@ -15321,6 +19675,14 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '5a480b39719d4c21bbf0d1186fd631f9'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'items'
                         }
                     },
                     {
@@ -15340,6 +19702,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'source_record_id'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '5a65acf7ab0c451699861861698f40e9'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'unit_price'
                             language: 'en'
                         }
                     },
@@ -15468,6 +19839,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '5ac4f9d3592342a8a15a8c43c51aae6a'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'entered_date'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '5adb5c64e161498f8431ba25991afe56'
                         key: {
@@ -15495,6 +19874,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'active'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '5ae31e7e76804e7f9011f439d06052fb'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'unid'
                         }
                     },
                     {
@@ -15664,6 +20051,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '5bfd830757184f3fba3b2f474810a01a'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'created'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '5c0af875d350405b94d83454e899f2c3'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'note_id'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: '5c67c0304ab84ef4b0399b71570a124d'
                         key: {
@@ -15794,6 +20197,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '5d6b65ffd17048c4b938de3c27ce5ebc'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'modified'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '5d735f03ce1d49828da99b180eedf988'
                         key: {
@@ -15847,6 +20258,14 @@ declare global {
                                 }
                             }
                             element: 'assigned_to'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '5ddc2f0ffd1142dca2470e0e50389bfe'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'created'
                         }
                     },
                     {
@@ -15958,6 +20377,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '5e002549394d49b981a212a6b85e381b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'rpd'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '5e013f9de76f460594e74ac001cd9aa4'
                         deleted: true
@@ -16012,6 +20440,22 @@ declare global {
                             value: 'AwardLine'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '5e30e6f42853484aa8b97a17e3b5d3ff'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'note_type'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '5e72918a82d44cc5983f7178a3a9bce2'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'exception_data'
                         }
                     },
                     {
@@ -16141,6 +20585,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '5f02a19fc434439e91bb47462adc9121'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'parent_doc_number'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '5f19503b2444466fb5dcea9beb82e5f2'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
@@ -16160,6 +20613,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '5f49be510e93498f9f1e8c7605cd0f29'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'approved_vendors'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '5f4d76ca077341de864a61578ec4551b'
                         key: {
@@ -16173,6 +20634,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '5f5399956d0b4d6893d730fa6be890ec'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'service_to'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '5f57b5553dd746ef93ba52e50e7d3432'
                         key: {
@@ -16181,6 +20651,14 @@ declare global {
                             value: 'silver_oak_leaf_cluster'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '5f6193b0b6684c7eaf5674c786bda0ec'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'doc_readers'
                         }
                     },
                     {
@@ -16242,6 +20720,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '5fca04d9bec6403581efc77dca0f8322'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'parent_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '5fd1b2f754d84668af3c9e5e7c79af5c'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'quantity'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '5fd5447e0a3749229a3293c3c10977b7'
                         key: {
@@ -16272,6 +20767,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '602f63a8dac84877a5bea6c08e945a66'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'phone'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '6035c3fe895c4f57b5ff913afeb82d56'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'NULL'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '603f5cee75af4b1eb90503b57daffcc6'
                         key: {
@@ -16289,12 +20800,61 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '604d3ffc7d4b4641a5666b9b8cff98fd'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'veteran_name'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '604dd3fc528b487988985d5dfbfee780'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'ship_to_state'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '6076879c9db54e84a525a4bbaf0369c7'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'records_rejected'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '60c410d1291040eeb482263da5a60fc0'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'authority'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '60ee5d69976d48eeb135f01fade6322c'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'file_key'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '6109fccb5e604ed18b5ab94ca63b62a7'
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'seeded'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '610c0a54825a4f67abf3fdda8c9e1009'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'mah_source_file'
                         }
                     },
                     {
@@ -16337,11 +20897,29 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '6156588c1f494dd7b734cfbc2fddfd64'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'postage'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '6172c290f9e941a0a90e6eed3c6f6b5f'
                         deleted: true
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'owner'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '6172cc477f71404c985c8c46b726c09f'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'tracking_number'
                             language: 'en'
                         }
                     },
@@ -16356,6 +20934,14 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '6188c763ac8b4949971c9917bbf9b730'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'dodaac'
                         }
                     },
                     {
@@ -16380,6 +20966,21 @@ declare global {
                             name: 'x_cog_mah_request_line'
                             element: 'legacy_unid'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '61a8952df31144518555a66261ad3b7a'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'requesters_matched'
+                        }
+                    },
+                    {
+                        table: 'ua_table_licensing_config'
+                        id: '61e290cb67944cc2971cc2ee41606134'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
                         }
                     },
                     {
@@ -16448,6 +21049,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '626c4dfe2c824661add911e098bef193'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'case_number'
+                        }
+                    },
+                    {
+                        table: 'ua_table_licensing_config'
+                        id: '627009495e5c4d78bfbfb1dfd36a9d21'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                        }
+                    },
+                    {
                         table: 'sys_ui_form_section'
                         id: '6271628a2bf44464b16f4cd3905e283e'
                         key: {
@@ -16481,6 +21097,24 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '62a0a347e3814dd5838fefd2a67616cf'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'entered_by'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '62bb7e1dfc6549d5a3ab9b7ff7bb8698'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'attachments'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '62bea3181ac64304a6c0037e55b77ffd'
                         key: {
@@ -16489,11 +21123,35 @@ declare global {
                         }
                     },
                     {
+                        table: 'ua_table_licensing_config'
+                        id: '62c619baf5fa479c87b8df54b10b8af2'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                        }
+                    },
+                    {
                         table: 'sys_index'
                         id: '62d854db26fe48e1a4bcb9fa5ff58d6b'
                         key: {
                             logical_table_name: 'x_cog_mah_case_note'
                             col_name_string: 'awards_case'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '62d8caf8f19e454b9200e9f11c5629fb'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'engraving_text'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '62dbb44de49f409a9a47bc53333177b8'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'doc_readers'
+                            language: 'en'
                         }
                     },
                     {
@@ -16578,6 +21236,15 @@ declare global {
                             }
                             element: '.begin_split'
                             position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '633957692f764c689050fa52509e7f34'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'machine'
+                            language: 'en'
                         }
                     },
                     {
@@ -16774,6 +21441,24 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '6430ead0e17944359d7f522d184b96b2'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'suffix'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '6434227838da4bc1819a2fb95f8c0769'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'rank'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '6445f3928ef4468ab97eb347224f5e26'
                         key: {
@@ -16849,6 +21534,24 @@ declare global {
                                     sys_domain: 'global'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '6493fe6d7dce49ef8bf23e4b76021e44'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '64a8692e397d41caa18b34275fa0a496'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'last_updated_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -16954,11 +21657,36 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '6503f310ccd54da18400592399bae673'
+                        key: {
+                            map: '543eb031c83c4367813a92bf7c1e7286'
+                            target_field: 'nomenclature'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '652fdd592a144d2eb397070357465668'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'unit_name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '653a7e251b124a38a377b0638a932b3b'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'assignment_group'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '65414568638147beaa7acdf602c7fc13'
+                        key: {
+                            map: '256611ef79f24e798d3eda66b586239b'
+                            target_field: 'city'
                         }
                     },
                     {
@@ -16968,6 +21696,14 @@ declare global {
                             name: 'x_cog_mah_shipment'
                             element: 'exception_note'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '657b1853205c4ed8a6e63e555cdf1d56'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'attachments'
                         }
                     },
                     {
@@ -17004,6 +21740,23 @@ declare global {
                                 }
                             }
                             element: 'unit_of_issue'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '65aacc45eac14a8f9121fb005a1228b5'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'contract_number'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '65cfadf34c68489d81b8e013110448c5'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'exception_note'
+                            language: 'en'
                         }
                     },
                     {
@@ -17249,6 +22002,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '67115771091345d3ae5a28e824282d34'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'state'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy_action'
                         id: '6745be3561ca44908e58cf9801fa93d2'
                         key: {
@@ -17263,6 +22024,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '676191480e67493894a96bfa6cd87457'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'created'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '678dc6ac502640d29f9271801e1665e2'
                         key: {
@@ -17271,6 +22040,14 @@ declare global {
                             value: 'pending'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '67c4013bc66548849e87079934a533d3'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'note_id'
                         }
                     },
                     {
@@ -17330,6 +22107,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '681f20bf6b2942b3a2f3ddbf4550587e'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'shipment_number'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '68308bbfa31b45998df9d232b6f1e8fe'
                         key: {
@@ -17363,6 +22148,14 @@ declare global {
                             }
                             element: 'status'
                             position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '68425f1f169045669cca97d0467f1ca3'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'assembly_date'
                         }
                     },
                     {
@@ -17411,6 +22204,13 @@ declare global {
                             name: 'x_cog_mah_requester'
                             element: 'dodaac'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_db_object'
+                        id: '68920145a97b40908fcd225adb77a5c2'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
                         }
                     },
                     {
@@ -17500,6 +22300,22 @@ declare global {
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'owner'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '68feeb3ac04442b1b4b1b8d09a393d32'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'submitted_date'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '690aa7bae49b4ad984d2a88b9f69cb03'
+                        key: {
+                            map: 'a8d75dc198644c9481b5ca8427a712f8'
+                            target_field: 'legacy_number'
                         }
                     },
                     {
@@ -17612,6 +22428,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '69b677dc00784c9788b0bda5270269f1'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'engraving_text'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'ua_table_licensing_config'
+                        id: '69bc278beb154817a3cd229a451cc7d0'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                        }
+                    },
+                    {
                         table: 'sys_ui_form_section'
                         id: '69f844f4bd054ffcbc02d33d28370116'
                         key: {
@@ -17642,6 +22474,14 @@ declare global {
                                     sys_domain: 'global'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '69fc54ab26b34f4f9b03730f66914fdc'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'devices'
                         }
                     },
                     {
@@ -17769,6 +22609,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '6ae2b87b9e66421b919236eaa1b52683'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'parent_unid_2'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '6af9253811d1430f98bf4fcd5488b1a0'
                         key: {
@@ -17831,6 +22679,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '6b35bbfaa907461fab0b2b9b9cb88e50'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'completed_date'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '6b4cf20a04c54928bc3ccc9dbd96598f'
                         key: {
@@ -17841,6 +22697,14 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '6b52e3ae4ce4462e8df2e8c2e5ec89e9'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'zip'
                         }
                     },
                     {
@@ -17964,6 +22828,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '6bf1e1a3bb40438f889cb4878ef377d8'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'mah_source_file'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '6c141c13b7854f03b8d490402a20c8df'
                         key: {
@@ -18054,6 +22927,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '6c7cf1fe091049d9b51a8b38c668721a'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_to_zip'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '6c7d6ddebce24977b252d7a8a9b8298f'
                         key: {
                             name: 'x_cog_mah_case_note'
@@ -18074,6 +22956,31 @@ declare global {
                                 }
                             }
                             sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '6ccca3e63bcb4a4180df57ca444e58a8'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'created'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '6cef4c54c3cc4add84d12b69ed188330'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'body'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '6cef5c3d2d10410eb8cb8bddfabe191a'
+                        key: {
+                            map: 'f301f6ad18af4c5dafef402ce796af3a'
+                            target_field: 'poc'
                         }
                     },
                     {
@@ -18128,6 +23035,14 @@ declare global {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'vendor'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '6d4e70aa28e24a9ebde1eca9533668f7'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'active'
                         }
                     },
                     {
@@ -18200,6 +23115,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '6d70eb64a5a044f6a4c5c277f67539db'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'last_updated_by'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '6d747b1579d24ef499784305b0f3fd72'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'engraving_job_number'
+                        }
+                    },
+                    {
                         table: 'sys_ui_form_section'
                         id: '6d827a2ad89e4fb3ac680bc230afbc96'
                         key: {
@@ -18265,6 +23197,15 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '6dc7adccae5b4214b2cfde8d7718c4fd'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'fund_code'
+                            language: 'en'
                         }
                     },
                     {
@@ -18410,6 +23351,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '6e6aaceb34f74b3d811f7dc1a7b6772f'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'created'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '6e7914c5ac9f433d81eddee0d67d7c86'
                         key: {
@@ -18489,6 +23438,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'award_name'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '6ecd474c57c4408991a3241e009ec340'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'engraving_required'
+                            language: 'en'
                         }
                     },
                     {
@@ -18589,6 +23547,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '6f950610a6e54ff8aa0f119ef51b3ca3'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'fsc'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '6faf667d741b4a5c9a799e7aa7f1d486'
                         key: {
@@ -18610,6 +23576,21 @@ declare global {
                                     name: 'x_cog_mah.vendor'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_db_object'
+                        id: '6fc647b8089c49eabbb9970cfcc55297'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '6fc6af6cfbb34fb296b6b7e34c790e62'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'attachments'
                         }
                     },
                     {
@@ -18680,6 +23661,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '702bca70aeeb41f5ba31ac1f433a8265'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'created'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '702cd0c0fa5d4b57b428e44721882851'
                         key: {
@@ -18724,12 +23714,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '7040471c073b4a6aa2c3380343f278a1'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'released_date'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '706658bcc7c847bbbe4c16b529bfa56d'
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'number'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '7067391cfaae4e978e578e1830e2a4a0'
+                        key: {
+                            map: 'd7ceb9b9a99d403aabc70c87fd61af11'
+                            target_field: 'project_code'
                         }
                     },
                     {
@@ -18813,6 +23819,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '70dada5db3fe461688baeef9667e7d44'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'job_status'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '70e001af28fe47768be4bcdf2640e113'
                         key: {
@@ -18831,6 +23846,48 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '70ef83d63517491ab5f8308743d05324'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'authorization_date'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '70f51e741351499689985644ec8fd0ef'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'case_number'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '70fd86cf108b47319f478fa0ba52102b'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'poc'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '710713a413da45d0a72944a672bb3533'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'note_id'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '7109400fcdaa4e41989735e870d25f90'
+                        key: {
+                            map: '1cbac6b6794e403db7b86aa6361c0986'
+                            target_field: 'legacy_unid'
                         }
                     },
                     {
@@ -18888,6 +23945,14 @@ declare global {
                             value: 'soldiers_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '71b2075d734048778ebac44f1f8be413'
+                        key: {
+                            map: '1cbac6b6794e403db7b86aa6361c0986'
+                            target_field: 'legacy_number'
                         }
                     },
                     {
@@ -18953,6 +24018,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '71df367942ae4604a8cb0d87bc74b680'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'carrier'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '71fd2d4ed3ab48e390c95534e61da420'
                         key: {
@@ -18980,6 +24054,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '720a9c0f2ce5472ea62840e8f07aa3eb'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'shipped_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '7219e0a569f34582bf77a198da822f76'
                         key: {
@@ -18996,6 +24079,31 @@ declare global {
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '726ce8059ac645e490417002889a57c2'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'mah_source_row'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '727bdb7a763a460e91c2278608ac0a8e'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'vendor_key'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '727d16210d8246ba836be1b8021c7576'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'delivered_date'
+                            language: 'en'
                         }
                     },
                     {
@@ -19044,6 +24152,31 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '72ad9275f39b449f845f25a9c78ab2c7'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'note_id'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '72bbf6e8f9c0489f9e0af47c249d105a'
+                        key: {
+                            map: 'd7ceb9b9a99d403aabc70c87fd61af11'
+                            target_field: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '72bd0f99ceba44e49d2b0437c7d39c47'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'attachments'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '72d32480da804fdab1b6ef94f25e2eeb'
                         key: {
@@ -19076,6 +24209,15 @@ declare global {
                             }
                             element: 'merge_target'
                             position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '72f312a03a514e358481ebfa5908d611'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'lookup_key'
+                            language: 'en'
                         }
                     },
                     {
@@ -19238,6 +24380,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '73b51f2479184570a738956850e9920f'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'active'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '73b6bfbabd7b420da08ee69c6552b8a7'
                         key: {
                             name: 'x_cog_mah_engraving_job'
@@ -19294,6 +24445,22 @@ declare global {
                             }
                             element: '.begin_split'
                             position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '742030b4be664b208c446dd1bbf4d3a9'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'street'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '74450091e4b1493f85e95a828bca8fd3'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'unit_name'
                         }
                     },
                     {
@@ -19361,6 +24528,14 @@ declare global {
                             }
                             element: '.split'
                             position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '7487f33e19474971874feaa81d2ee22f'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'unid'
                         }
                     },
                     {
@@ -19441,6 +24616,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_db_object'
+                        id: '74a39ad14e3e4a4aa93415508c975535'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                        }
+                    },
+                    {
                         table: 'sys_ui_form_section'
                         id: '74a3d122a6704150b14dd1c7f8d6750b'
                         key: {
@@ -19493,6 +24675,14 @@ declare global {
                             }
                             element: 'legacy_last_modified'
                             position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '74bde0d37dcf4df59154db9b7f242da4'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'required_delivery_date'
                         }
                     },
                     {
@@ -19578,6 +24768,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '74e4688bb8394e468378196c3aad0da0'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'uic'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '74ec6ed78e994b0f919ca6b350a171bf'
                         key: {
                             name: 'x_cog_mah_awards_case'
@@ -19586,10 +24785,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '7503a0980f304430ad24b69899f55700'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'last_updated_by'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'ua_table_licensing_config'
                         id: '753dfdcea6684cba93efdee79f14dbab'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '7548e0ef27c94442a564ddd7ed150273'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '754d471a42cb41b4970cd2a1e66f1f34'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'attachments'
+                            language: 'en'
                         }
                     },
                     {
@@ -19639,6 +24865,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_db_object'
+                        id: '75c3bfe56f5548b7b103092424d23d22'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '75eb5bf713eb49b7bf1a5df025a74b78'
                         key: {
@@ -19680,6 +24913,40 @@ declare global {
                             }
                             element: 'body'
                             position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '75fb753ebb2e4032b653442a1d695ebe'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'set_type'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '76327e523e9d476da427a70aa92ea37c'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'engraving_text'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '763eb26766be480c8103e320abd6c4bf'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'project_code'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '765f54334f474b3abcf81ff61af26f07'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'approval_date'
                         }
                     },
                     {
@@ -19849,6 +25116,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '778b489e6a914a948b020db734c504cb'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'active'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_section'
                         id: '77a7aaedf1e742759c0242b0981803f1'
                         key: {
@@ -19884,6 +25160,14 @@ declare global {
                             }
                             element: 'rework_count'
                             position: '11'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '77ebff40b1804c59a56ed89b97e79a19'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'quantity'
                         }
                     },
                     {
@@ -19927,6 +25211,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'phone'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '782db6392e1646ffa55774a4af71b9aa'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'request_type'
+                            language: 'en'
                         }
                     },
                     {
@@ -20058,6 +25351,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '79469d3c32dd4f5aba1b55f052b1cabd'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'approved_by'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '794c23897a4a45ea86e45ddfc9326eac'
                         key: {
@@ -20066,6 +25367,23 @@ declare global {
                             value: 'overseas_service_ribbon'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '796f54a636364384ba2705d1caf7bf27'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'document_number'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '797c4e22f5ad41eeba04a4e8404806e0'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'vendor_ship_date'
+                            language: 'en'
                         }
                     },
                     {
@@ -20119,6 +25437,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '79d575d8ec2143aa9cb5a2f8ddad5e49'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'modified'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '79f588a737714c0c909ec679660f2c5e'
                         deleted: true
@@ -20145,6 +25471,14 @@ declare global {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'niin'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '7a35ff538c7c4b66943a60cc32164378'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'mah_batch_id'
                         }
                     },
                     {
@@ -20414,6 +25748,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '7baed532cecd4882b127bdef45180c3d'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'line_number'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '7bcceace1e324618a58921488415726d'
                         key: {
@@ -20514,6 +25857,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '7cb623747c254fde8410c51a3e34de1a'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'estimated_ship_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '7cc54bfd1f164555bcb90a68c445af6a'
                         key: {
@@ -20549,6 +25901,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '7ce3cb5eaba546d487b0a0de7b19e855'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_to_street'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '7cf271e02d5e4115a61dc5e7fc535a0b'
                         key: {
@@ -20568,6 +25929,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '7d129c392a6a4a679f542c01ed06a6b1'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'contact_phone'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_action_role'
                         id: '7d1da2746230461c91104a849e228cf1'
                         key: {
@@ -20578,6 +25948,14 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '7d4e3ae0150744fb801c00f1cfcad445'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'auth_file_name'
                         }
                     },
                     {
@@ -20727,6 +26105,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '7df96230d9bb497e921a573fdc2cae4b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'branch'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '7dffeb72a80546c9b28988ee2afda50a'
                         key: {
                             name: 'x_cog_mah_awards_case'
@@ -20814,6 +26200,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '7e51858d92284ed894cee9d2e96c4625'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'mah_source_file'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '7e6b0ba10a5042d08370d6af17628bb7'
                         key: {
@@ -20847,6 +26241,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '7ef04f53f0834e3697ff979877ae7f23'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'mah_batch_id'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '7ef66029c9734a0ca80b8e39b10dbdca'
                         key: {
@@ -20857,6 +26259,14 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '7f00bb0e568043e290f70d2da31031f2'
+                        key: {
+                            map: '5dc9d6ff774941499143adc6d2aea78e'
+                            target_field: 'contact_name'
                         }
                     },
                     {
@@ -21039,6 +26449,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '8002e22ee6fc4f09a1ab8ee9f5e0e378'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'layout'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '8009356793ce468fae6d40d2ec9e153f'
                         key: {
@@ -21078,6 +26496,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '80417c000b064295a315fcc914e8a752'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_state'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '805a44a6e7ad40a4afd845d3d5d7beb2'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'note_author'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '805c29a0b5f443559ddb53489722030b'
                         key: {
@@ -21088,6 +26523,15 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '8062329e16e34902b2963ded353386bf'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'products'
+                            language: 'en'
                         }
                     },
                     {
@@ -21108,6 +26552,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'exception_data'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '80803f1b716c4087b0cbeb959a248f0a'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'body'
                             language: 'en'
                         }
                     },
@@ -21160,6 +26613,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '8132e8b927d74a95b5a4fe9eb44ca690'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'stage'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '8136d75980b541f5878e2a0abfdb5fd3'
                         deleted: true
@@ -21183,11 +26644,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '813a4211d08d4f5c8644cf6415ddf402'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'veteran_mi'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '8144f9cc1be9493aa4c84303a8072793'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'engraver'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '814a75aa334243c5a31325b3fad7caa3'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'parent_unid'
+                            language: 'en'
                         }
                     },
                     {
@@ -21210,6 +26689,14 @@ declare global {
                             }
                             element: '.split'
                             position: '10'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '81907b4bd00a492184c03c6a227007bc'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'modified'
                         }
                     },
                     {
@@ -21340,6 +26827,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '823fd65c61264685832ab238d8e2f8e1'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'veteran_name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'question_choice'
                         id: '824a1decfde44697a77138aa15394798'
                         key: {
@@ -21360,6 +26856,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'work_notes'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '827a6cf43dec48ee8e772603c2760ccc'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'priority'
                         }
                     },
                     {
@@ -21445,6 +26949,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '82ad92748bf3465a99d96f19378656a2'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'executive_title'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '82ade38dcca54179b184aab090d60e95'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'award_name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: '82c702ae39a64f6c9e230b5281dbf863'
                         key: {
@@ -21526,6 +27047,14 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '831d2bd0433b4d26934ab96abe343a18'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'mah_batch_id'
                         }
                     },
                     {
@@ -21632,6 +27161,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '846ff81e56504ace8bb20740dfd9a379'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'mah_batch_id'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy_action'
                         id: '8475434731764598835b09c88e69549f'
                         key: {
@@ -21716,6 +27254,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '84e9c26687674065a7adfd7fc17b0878'
+                        key: {
+                            map: '88c82ae7f8204bef8445b39ffdfdb40a'
+                            target_field: 'nomenclature'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '84ef0992ac6d46d582e5935e4c8ffe15'
                         key: {
@@ -21770,6 +27316,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '8536d71a436b4e388174648388f9759b'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'executive_name'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '856129674e41429b9a108ac5401ce66f'
                         key: {
                             name: 'x_cog_mah_case_note'
@@ -21782,6 +27336,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'exception_type'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '8589a93b2b354b11a1255bb8d7352f41'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'fsc'
+                            language: 'en'
                         }
                     },
                     {
@@ -21849,6 +27412,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '85f522003d6d4583b6bb81b0c025386a'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'last_updated_by'
+                        }
+                    },
+                    {
                         table: 'sys_ui_action_role'
                         id: '8609b0eec496430fa9c4dd42da245df1'
                         key: {
@@ -21885,11 +27456,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '86115ed9da9f4737ae184f4f86e6c172'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'state'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '861692b8362e4a358efbade964f9ec5b'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'started'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '861e34e54cf0460cad6ef99aaa2618a4'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'modified'
                         }
                     },
                     {
@@ -22062,6 +27650,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '86effb121bf64bc99bad9049ce11050f'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'created'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '870154e04cc24dd7b6facac617de2d1e'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '8716bd323e1c4eaf8e4d74e299439f1d'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'vendor_users'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '873dfc539541401a9cd55cdf58ab15eb'
                         key: {
@@ -22174,6 +27788,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '87d24dc36f9d40a980f93c2de2ede897'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'requester_rank'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '87db124debf14358b6e363c7e485f4ce'
                         key: {
@@ -22241,6 +27864,14 @@ declare global {
                                     name: 'x_cog_mah.engraver'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '8827ebb4459d479f81ce8058f71005eb'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'follow_up_done'
                         }
                     },
                     {
@@ -22537,6 +28168,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '8996269b2fcf4c0e95ccf0900dae47d7'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'started_date'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '899b740810ac4bc6b5b82c2336bb4cee'
                         key: {
@@ -22623,6 +28262,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '89f194c6c3be4948ab9b8f152f45ede5'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'ship_to_zip'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '89f2e27b8f6642a680a9ad6f2398b8dd'
                         key: {
@@ -22676,6 +28324,15 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '8a38657557e14c4788c9102b41377037'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'line_count'
+                            language: 'en'
                         }
                     },
                     {
@@ -22778,6 +28435,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '8aba01ce964543e68ee7a1c0abd102df'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'status'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '8ac15fa9f89e40e8bfbb4a184b129ac0'
                         key: {
@@ -22843,6 +28508,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '8b0ffd3590e841298b7f373150844a3d'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '8b41ae576fc843c09916f79fa163c68a'
                         key: {
@@ -22859,6 +28533,15 @@ declare global {
                             value: 'purple_heart'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '8b646e6340c343539e50136c83fae6ab'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'total_value'
+                            language: 'en'
                         }
                     },
                     {
@@ -22916,6 +28599,14 @@ declare global {
                             value: 'request_line'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '8b8915c851eb404aa67cf9f5a00bb82e'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'engraving_required'
                         }
                     },
                     {
@@ -23070,6 +28761,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '8c1564620d9940d6921af779562053cf'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'parent_unid_2'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_action_role'
                         id: '8c23ff61268c4e969939be6cf4e6ddf3'
                         key: {
@@ -23158,6 +28858,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '8cb4e3759815440eb3b6bf5113d05143'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'tracking_number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '8cd21d15dd6b4e9781602ee8cf3d3b5d'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'executive_tier'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '8d0a609fdf92490ca061194b358a4cac'
                         key: {
@@ -23205,6 +28921,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '8d5365bd9a3b4aa99157db510a56dbce'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'attachments'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '8d63f11bff434453b5696bf1b975f81a'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'entered_by'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '8d6bef3a8a6c402bb345bde3d6fa491a'
                         key: {
@@ -23213,6 +28946,13 @@ declare global {
                             value: 'RL'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_db_object'
+                        id: '8d7e58d705ae4b988ec3686c88c46965'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
                         }
                     },
                     {
@@ -23338,6 +29078,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '8dcc3a05fe064428804721331ea67a63'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'parent_unid_2'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_section'
                         id: '8ddef1236acb4b9d89f304dcfd0f5788'
                         key: {
@@ -23444,6 +29193,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '8e737cf0166b49cdb272fca48cf01e28'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'assembly_date'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '8e7d32a206a74f39a41de8e40c002a7c'
+                        key: {
+                            map: '543eb031c83c4367813a92bf7c1e7286'
+                            target_field: 'niin'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '8e8171b891bf41e1befeb7490cdae125'
                         key: {
@@ -23483,6 +29249,14 @@ declare global {
                             value: 'HeraldicItem'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '8ed820c6370e4aa2b7a900129f55dc84'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'reviewed_by'
                         }
                     },
                     {
@@ -23676,6 +29450,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '902600b5e1034a12bae84c029eca397f'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'total_value'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9051dc44a0d84698adaa62ffe1319e0b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'justification'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '90554a765c64449793dd144449b4e4fe'
                         key: {
@@ -23693,6 +29484,23 @@ declare global {
                             name: 'x_cog_mah_awards_case'
                             element: 'state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '90645daf1cdd4f929ba071128dc7e82f'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'engraving_text'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '9075756c6c1b48369d9e172845c40b7a'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'doc_readers'
                         }
                     },
                     {
@@ -23718,6 +29526,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '90861736b4c34bf087f2968a04dcee9f'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'mah_source_file'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '909f6b4e98cb4141ba4b909bcea7446a'
                         key: {
@@ -23728,6 +29544,15 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '90c6dad8ac3c4dab9c1b69fc538de36a'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'mah_source_row'
+                            language: 'en'
                         }
                     },
                     {
@@ -23801,6 +29626,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '9145f1852c5d42a3b065d9da3171cb18'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'modified'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '915297255f1b4994b9d3d33159ba2313'
                         key: {
@@ -23811,6 +29644,14 @@ declare global {
                                     name: 'x_cog_mah.vendor'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '9175792a36e542ca9f2db0a2ff38c5df'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'authority'
                         }
                     },
                     {
@@ -23935,6 +29776,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '91e865151bda4cdfa1c1acdf1ee505d8'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'products'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: '91f642b0123a4698ae7374c5d8727a1e'
                         key: {
@@ -23967,11 +29816,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '92198ee9d02548a896defd3efa999957'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'service_number'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '921c96aaf3d349f688a241b3af5ae84d'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'branch'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '922026e71ec04aa08dab78a248c3bd21'
+                        key: {
+                            map: '4c96aa091bf9411690fb9535765b2ec9'
+                            target_field: 'legacy_flag_type'
                         }
                     },
                     {
@@ -24039,6 +29905,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '926961792bab47f28d37fc92a625c49f'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'doc_readers'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '926afda97933474b88bc63b8bf7f6a77'
                         key: {
@@ -24060,6 +29935,24 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '927a2c31d3b54e1cbf828480618cd9a1'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'vendor_name'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '927d0df87cb548778fa359c50df682f0'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'status_inquiry_key'
+                            language: 'en'
                         }
                     },
                     {
@@ -24093,6 +29986,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'ua_table_licensing_config'
+                        id: '9298b1f6416f4bd7bb006c7e3cca71e5'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '92995bb5e52f46d188161810c134550f'
                         key: {
@@ -24112,6 +30012,14 @@ declare global {
                             }
                             element: '.split'
                             position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '92a80a75b44c4e5984e532f3dc1dc344'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'reference'
                         }
                     },
                     {
@@ -24228,6 +30136,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '933bdafe0d9c4be39e13b93419f6dd13'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'file_key'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '9361c3db619741f18629015d8ee6c73a'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'award_name'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '93697f27c7f84587b0e994d550810159'
                         key: {
@@ -24247,6 +30172,14 @@ declare global {
                             }
                             element: 'legacy_last_modified'
                             position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '938422671eab4ea6acc7badb937207e7'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'line_key'
                         }
                     },
                     {
@@ -24272,6 +30205,24 @@ declare global {
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'dodaac'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '93c4b85bda61405db7919f05093c5f04'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'branch'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '93ce5ba77f8f4bcbb05a532367e0beef'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'mah_source_row'
+                            language: 'en'
                         }
                     },
                     {
@@ -24416,6 +30367,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '94c9f00662f1467bb61c851988ecae50'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'created'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '94d123a1a42b42e7a5b53eb83cd8efab'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'pick_bin'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '94d1e804b0144b999f577df0c4a36014'
                         key: {
@@ -24436,6 +30404,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '94eadf18ee3b4298afd336a4d6844599'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_status'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '94ec8d60d6c74e249ca2a70537abcf5a'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'mah_source_file'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '94ed44bade374777bec9d4464ff93f86'
                         key: {
@@ -24450,10 +30435,26 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '94ed8e6adc6a4173bca98b7a6edb01f7'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'postage'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '94ee9264653b4f72bafd1f91084c5401'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'position_title'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '94f270fde0ee48f3adeb99035e46d833'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'doc_readers'
                         }
                     },
                     {
@@ -24465,6 +30466,15 @@ declare global {
                             value: 'other'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '95018d1fffd540cf90e58ce185403912'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'requester_id'
+                            language: 'en'
                         }
                     },
                     {
@@ -24502,6 +30512,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'ship_to_dodaac'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '956773a1ca054fb7938615c1525228f2'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'job_status'
                         }
                     },
                     {
@@ -24581,6 +30599,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '95ad8b06cc5246d29adfcb33e9d52ee0'
+                        key: {
+                            map: '7c180fb2626a4e61b96a5314268f7714'
+                            target_field: 'veteran_last_name'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '95bcdf0fdb0c42f68a31ae46da232813'
                         key: {
@@ -24589,6 +30615,15 @@ declare global {
                             value: 'cold_war'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '95c6404c07414bf892bbe75e2447f700'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'unid'
+                            language: 'en'
                         }
                     },
                     {
@@ -24606,6 +30641,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '96115a5988c2446385381632479f4719'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'doc_readers'
                         }
                     },
                     {
@@ -24632,10 +30675,37 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '961f2581e6e44bb095019604d7f584d0'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'mah_source_file'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '96269c791e8d48848a22effe36afc686'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'mah_batch_id'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '967dfc115ddc4b3ab33ee3d47a6c42d0'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'stage'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9690ad8679af43abbe7fb2d6f35b1408'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'return_reason'
                             language: 'en'
                         }
                     },
@@ -24699,6 +30769,15 @@ declare global {
                             }
                             element: 'legacy_last_modified'
                             position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '96b87352d6764b04943e7d40c8b434c4'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'started_date'
+                            language: 'en'
                         }
                     },
                     {
@@ -24773,6 +30852,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'legacy_note_type'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '970750f9f14f42e491304eb517cbdc2a'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'attachments'
+                            language: 'en'
                         }
                     },
                     {
@@ -24896,6 +30984,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '97c1e573c91f47e0868e32c514a526d8'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'unit_of_issue'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '97d39de5463745698058e14e5b720f9c'
                         deleted: true
@@ -24950,6 +31046,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '97f601dbc67c4fcb81eb2b7138da6c44'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'source'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '97f68717e56149de8e36c2a144c99434'
                         key: {
@@ -24958,6 +31062,33 @@ declare global {
                             value: 'army_good_conduct_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '97fbc917480940c79c236ff866b6e3ae'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'stock_number'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9816edbcdbea47f2837eb869c922e820'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'last_updated_by'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9824ac481b184e4ca2fbe6634da41b03'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'released_date'
+                            language: 'en'
                         }
                     },
                     {
@@ -25006,6 +31137,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '988c3029ef694ee8b9f76f3ba50ae118'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'line_number'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '989dfef1f8b34fc28462487eb04a4aff'
                         key: {
@@ -25036,11 +31175,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '98d59465e1f0402d96b165d0b4e6c4a5'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'line_number'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '98f5f537c3ba4db790869c0b1c14ae2c'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'note_type'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '98fcdce2b78442b78040ad8474bde8c0'
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'record_count'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9909316abc2c45239236a82a07d49959'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'engrave'
                             language: 'en'
                         }
                     },
@@ -25108,6 +31273,32 @@ declare global {
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'service_component'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '999001f45aad4047819d87eeb2a02fc9'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'mah_source_row'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '999928dd7beb4dfd86b20a0de14cf35b'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'nsn'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '99a74a188b8647749c29a7ee868d4bad'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'modified'
                         }
                     },
                     {
@@ -25258,6 +31449,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '9a7316537f264aeb8c4387c852ba40ac'
+                        key: {
+                            map: '1cbac6b6794e403db7b86aa6361c0986'
+                            target_field: 'tracking_number'
+                        }
+                    },
+                    {
                         table: 'question_choice'
                         id: '9a7885c23d8f4cd1a5257cfc6582ba7d'
                         key: {
@@ -25351,6 +31550,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '9ae09a91133b4e42baf4b583acf373c3'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'requester_role'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '9afdd63afdde4e0c9c8b52c1aed9f449'
                         key: {
                             name: 'x_cog_mah_vendor'
@@ -25403,6 +31610,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '9b39cc31ee094dceb2d92975530e1d73'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'modified'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: '9b3a0561c5ad4ed3911d5df8798d172b'
                         key: {
@@ -25423,6 +31638,15 @@ declare global {
                                 }
                             }
                             element: 'seeded'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9b53c4a3d7654403ac76cc87fb4fb0f6'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'requester_key'
+                            language: 'en'
                         }
                     },
                     {
@@ -25473,6 +31697,24 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '9bba1063231548ff87fe68bedeb956a4'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'modified'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9bbac85169214ccf932fa61884e32a88'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'devices'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: '9bd09658e7ad46bda37059e13a7850c0'
                         key: {
@@ -25496,6 +31738,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '9bd4a768be0b457aa9c80330ce9474db'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'category'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '9bdcf8c8e3784af7899923cb08517ef7'
                         key: {
@@ -25515,6 +31765,65 @@ declare global {
                             }
                             element: '.split'
                             position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9be949cae25344079a1a3cbda6ae10d0'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'unit_price'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '9c2031a2ea534f64bac67e2f48bfef72'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'parent_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '9c270218381d488e952ae6c93b0e506d'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'last_modified_by'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9c49f0b7eff544b28801c4ab8610f0df'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'mah_source_row'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '9c5c6c93104a44a1bd33e4410047816d'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'case_number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '9c70c276fd9346e18dbf3283b1c9bf93'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'note_id'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9c7e8a14c4374e57ac9ebb7728da619a'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'email'
+                            language: 'en'
                         }
                     },
                     {
@@ -25576,6 +31885,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '9cf881c1e4bd4d0990570362ac1a27b3'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'closed_date'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: '9d068b50140f4883a4e1021cb254d28f'
                         key: {
@@ -25599,6 +31916,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '9d163915bed246f48e0563b61c1b657c'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'created'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '9d26fea26ab646d99547de1351301ca4'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'lookup_key'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '9d2cd640fe0144429125680e840d46b6'
                         key: {
@@ -25618,6 +31952,23 @@ declare global {
                             }
                             element: 'unit_price'
                             position: '12'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9d32bf901f4745e8a2f322ffa56d115d'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'unid'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '9d41175e4e44490fbcd2dbb4ffe42a36'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'requester_key'
                         }
                     },
                     {
@@ -25663,6 +32014,15 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9dfd3c8c0c044553a2b81eab5e8e56d1'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'status_inquiry_key'
+                            language: 'en'
                         }
                     },
                     {
@@ -25759,6 +32119,24 @@ declare global {
                             }
                             element: '.split'
                             position: '10'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9e32d797f987401abdb3b518842db986'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'first_name'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9e5cd46b0dbe4d4f9753d37e3b732dfe'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'unid'
+                            language: 'en'
                         }
                     },
                     {
@@ -25860,6 +32238,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '9ef9bfc0fd67476aaba0cb93d9e48f03'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'ship_to_street'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '9f0680d0cb094460a434cd305278a4c2'
                         key: {
@@ -25900,6 +32286,15 @@ declare global {
                             }
                             element: 'executive_name'
                             position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9f25e3a3fd4541c58198f1ffeea29e54'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'modified'
+                            language: 'en'
                         }
                     },
                     {
@@ -26049,6 +32444,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: '9fb090e18ef84a25b16cd54c18cc1e2a'
+                        key: {
+                            map: '256611ef79f24e798d3eda66b586239b'
+                            target_field: 'legacy_number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '9fbafcb36b434a71988ccc24ede2b6ea'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'merged_into'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '9fc99a414d6f468fb65db46f0df0e4f0'
                         key: {
@@ -26081,6 +32492,15 @@ declare global {
                         key: {
                             logical_table_name: 'x_cog_mah_engraving_job'
                             col_name_string: 'status,engraver'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '9fdf6c93dbc6453a9dbc38bc996a3c89'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'doc_authors'
+                            language: 'en'
                         }
                     },
                     {
@@ -26218,6 +32638,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'a039e02ee2b04d6eb7968e6f787513c6'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'item_description'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'a050bead503f40f9901df88fe6942a7e'
                         deleted: true
@@ -26283,6 +32712,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'a084ac1a430a445ab6ad596b641f3edd'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'modified'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a0a456be716d4c6893e3a75deb492926'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'requester_name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'a0b67d383e92458882433a83658a9509'
                         key: {
@@ -26301,6 +32747,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'address'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a0e2a04e68f742f3b1e5c541109713e8'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'parent_unid'
+                            language: 'en'
                         }
                     },
                     {
@@ -26323,6 +32778,14 @@ declare global {
                             }
                             element: 'heraldry_request'
                             position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a0ef429011964d63aede2f1cf34f4f35'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'quantity'
                         }
                     },
                     {
@@ -26360,6 +32823,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'a150df04468e4b74addd527a786b8909'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'created'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'a15eed1dc19a4cfd89705131469de080'
                         key: {
@@ -26383,6 +32855,15 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a191ab05a6ca4086b5479ce291a75cb3'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_zip'
+                            language: 'en'
                         }
                     },
                     {
@@ -26466,6 +32947,15 @@ declare global {
                             value: 'american_campaign_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a1d617bffedb49a087cc59f4e8448e40'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'approved_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -26555,6 +33045,57 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'a22e576641b446c29a73c50f7ea64502'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'notes'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a2541330b34d417c81f6eabd72c11717'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_city'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a27e6388d6764cd5bc4f2f10cd57174a'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'mah_source_row'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a2830b19a2d940d6817f061098de7bce'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'last_modified_date'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a296c73185be490a9c378b4fb8091701'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'vendor_group'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a29789517b1f41b2b9b9a1699aa21b50'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'unid'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'a2b4b5b838144b5c841f13d283d4e766'
                         key: {
@@ -26572,6 +33113,14 @@ declare global {
                             value: 'cancelled'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a2eb2292934a4a6ebb98e5cfce46b789'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'exception_note'
                         }
                     },
                     {
@@ -26633,6 +33182,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'a30dc9eb1c054f12937fdb5cd1bb42b3'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'doc_readers'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'a30e70bcc293483b8fe37cae3e9487c9'
                         key: {
                             name: 'x_cog_mah_authorization_file'
@@ -26649,10 +33206,27 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'a34330f1ce0a42338a93f50497ae2385'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'fund_code'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'a348dfbf0dd94ac89f6e6a2e5399651a'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'executive_name'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a34ef5bb085b441492ce7c88945c3b49'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'parent_unid'
+                            language: 'en'
                         }
                     },
                     {
@@ -26670,6 +33244,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'phone'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a390b1438733471e97ad0698a96c85f3'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'device_count'
                             language: 'en'
                         }
                     },
@@ -26701,6 +33284,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'poc_phone'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a3bc5a0edc7f447f8ed4769bc6c84d3f'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'queued_date'
                         }
                     },
                     {
@@ -26800,6 +33391,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'a3e8a530672642439b5844f151f0ee81'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'created'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'a419a0006114449b9ea554e0e978a61e'
                         key: {
@@ -26810,6 +33410,22 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'a41de105ffcf424e932c9276515ca405'
+                        key: {
+                            map: 'd7ceb9b9a99d403aabc70c87fd61af11'
+                            target_field: 'signal_code'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a44dc3ae427a4859806d553bc4235d62'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'address_verified_date'
                         }
                     },
                     {
@@ -26832,6 +33448,22 @@ declare global {
                             }
                             element: 'address'
                             position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a454ac00c3004bbfb28fe1403426492f'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'mah_source_file'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a45ba5c2da9542db8166c9e1003d86fe'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'mah_source_file'
                         }
                     },
                     {
@@ -26943,12 +33575,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'a4ffa1afe7524b669c26a590a288b4f0'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'last_updated_by'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'a512607ab65d49fd98aa62b105015108'
                         key: {
                             name: 'x_cog_mah_case_note'
                             element: 'state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a51ce94f68e34688bf0c341b04451aa3'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'import_status'
                         }
                     },
                     {
@@ -26982,6 +33630,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'a5684daf9d894a2286330bbcbcee1384'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'parent_unid_2'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'a56ab8c9071e4c82a2459d454d349ed4'
                         key: {
@@ -27012,6 +33668,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'a57f8170891c43fcb2ca43c23a31a625'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'unid'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'a5bba6ccb36a475197e2656e430d078e'
                         key: {
@@ -27031,6 +33696,14 @@ declare global {
                             }
                             element: 'line_number'
                             position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a5cf20c7f2c4453ca99b9c6a931931aa'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_name'
                         }
                     },
                     {
@@ -27111,6 +33784,24 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'a618c1099b5647229190ae82c6fcb5f4'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'phone'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a63021fc6633475494e3a8c62d1a87d4'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'status_history'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'a635cb70e2c24a91a1de56a6b0443718'
                         deleted: true
@@ -27131,6 +33822,23 @@ declare global {
                             }
                             element: 'requester_poc'
                             position: '13'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a64f7efd750b4ec3b5942e77e7f0c68c'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'modified'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a66093235620466ea5b00f05477a05a9'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'state'
                         }
                     },
                     {
@@ -27175,6 +33883,14 @@ declare global {
                             name: 'x_cog_mah_engraving_job'
                             element: 'proof_checked'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a6925f470e0a4623994cb262cddef630'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'attachments'
                         }
                     },
                     {
@@ -27319,6 +34035,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'a71deb39862e4951ac68984d6717623e'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'last_updated_by'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a721f4008fbf4821897a7587c5c531ab'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'ship_to_address'
+                        }
+                    },
+                    {
                         table: 'sys_ux_form_action'
                         id: 'a75de3d5435a4a25b124f98b450e9c31'
                         key: {
@@ -27416,6 +34148,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: 'a7be7fd914e44e71aa9d901bb0972a72'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'parent_case_number'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: 'a7c5ef33795049fc98a69b2173e7b6dd'
                         key: {
                             name: 'x_cog_mah_case_note'
@@ -27437,6 +34178,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'a80d2e57a9e5411db96f26b4ffd0304a'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'mah_batch_id'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'a81268862e164391bb1511787807895c'
                         key: {
@@ -27453,6 +34203,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'a84afc378a1342f3804095fea5ac07e5'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'organization'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_section'
                         id: 'a8688720fae64786b6532eaa20b693e3'
                         key: {
@@ -27465,6 +34224,38 @@ declare global {
                                 }
                             }
                             sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a870b858af5c4a89add164cf30ac0954'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'veteran_rank'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a87b00e38fb14e45af157a6e1f33a752'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'attachments'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a89876ddf9554550a16135d3b764991c'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'parent_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a8c10b84c71741eda3c134a33f1d11bd'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_date_text'
                         }
                     },
                     {
@@ -27599,6 +34390,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'a96b2cfa3b1f4b7d89708c601850dbb6'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'street'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: 'a988c79dc0114c138244bf1a2ae0d07d'
                         key: {
@@ -27666,6 +34466,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'a9b183442a404e37a6c08a9a0b8f683a'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'service_to'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a9bfc9c6f15c45ebbe09c1b627d7e751'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'veteran_first_name'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'a9c9353afed046d4be2be4e0005eff26'
                         key: {
@@ -27698,6 +34514,14 @@ declare global {
                             }
                             element: '.end_split'
                             position: '8'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'a9f496229b8b4719aa7d3c12858038d4'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'NULL'
                         }
                     },
                     {
@@ -27745,6 +34569,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'aa2f8d0d97a7495a969092645075d25b'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'line_key'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'aa76572b468947ce96feb0d958b5016a'
                         deleted: true
@@ -27778,6 +34611,14 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'aa84f2dd181942fa90e4a4ce1f77755b'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'assigned_csr'
                         }
                     },
                     {
@@ -27816,12 +34657,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'aaa796e5e1a54b1c84b6881f8737f619'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'requester_key'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'aaa9397d3ae24dbbbe76df657bb2a7a7'
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'vendor_ship_date'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'aaad44bf11954b3288062d43545093cc'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'mah_source_file'
                         }
                     },
                     {
@@ -27891,6 +34748,23 @@ declare global {
                                 }
                             }
                             sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'ab84595bd5514f5fb9873138617f5215'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'created'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'ab8e6688856a44a8adb6954d0ffecb36'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'import_log'
+                            language: 'en'
                         }
                     },
                     {
@@ -28027,6 +34901,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'ac0b30a7552f4b7eb5a63ef25ec30709'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'address_verified'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'ua_table_licensing_config'
                         id: 'ac19de910cf74fa9876050951548175d'
                         key: {
@@ -28039,6 +34922,14 @@ declare global {
                         deleted: true
                         key: {
                             name: 'x_cog_mah_probe'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'ac4d67acb6b14fde8f0c6dc010831095'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'imported_date'
                         }
                     },
                     {
@@ -28078,6 +34969,15 @@ declare global {
                             }
                             element: 'legacy_number'
                             position: '2'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'acc0e1361d24478e8567f2f8ceec88a8'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'mah_batch_id'
+                            language: 'en'
                         }
                     },
                     {
@@ -28178,6 +35078,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'ua_table_licensing_config'
+                        id: 'ad0ff11db43f4e07911f7f8914a2a7c6'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'ad26d19e978246d48f8409cd5b4f1fa3'
                         key: {
@@ -28272,6 +35179,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'ad9a8d9f882e40b8912a67230293fc8a'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'engrave'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: 'adc6b41847da425388c837dc2ef224a5'
                         key: {
@@ -28351,6 +35266,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'ae4e9462e843408e87e14298db1d30c8'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'piece_count'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'ae5336e36def4d7083a1fccfc0f559c9'
                         key: {
@@ -28361,6 +35285,22 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'ae6b2ca8200c4989aad5a2323c4dd235'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'zip'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'ae6e558857f744b5b63ec13bc56470ba'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'days_in_stage'
                         }
                     },
                     {
@@ -28414,6 +35354,15 @@ declare global {
                             }
                             element: '.begin_split'
                             position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'aedc39532b9a4bb08fa8cb8520d4567d'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'award_code'
+                            language: 'en'
                         }
                     },
                     {
@@ -28489,6 +35438,24 @@ declare global {
                             value: 'meritorious_unit_commendation'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'af458b4c4f0a442a9d402bda42f3670a'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'layout'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'af45f6ecf7a84316a7d0a1565c88cf3c'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'vendor_key'
+                            language: 'en'
                         }
                     },
                     {
@@ -28576,6 +35543,14 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'afe50fd438904e03b328a722e6911a9d'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'uic'
                         }
                     },
                     {
@@ -28707,6 +35682,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'b047b074118a4f1a9dda8865616947b8'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'mah_batch_id'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'b051d1185f9f4f0790c844d3f7baed06'
                         key: {
@@ -28814,6 +35797,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'b0c0fa18413e4e6e8a3d9f1ac61e9060'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'unit_name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'b0c3e2d1467643c299a8e5aedbd0e634'
                         key: {
@@ -28848,6 +35840,32 @@ declare global {
                             value: 'heraldic_item'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'b11d4251915844c18f040a5aa4729ada'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'display_name'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'b13a199924cb4f43a17c12c6d94ffa54'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'notes'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'b164b7cfccf2476884ffc638030ab437'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'exception_data'
+                            language: 'en'
                         }
                     },
                     {
@@ -28949,6 +35967,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'b202a9a6b5d14046a6b393d2b27e4bc1'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'dodaac'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: 'b2218576124746ab994ea2700240b40c'
                         key: {
@@ -28969,6 +35996,14 @@ declare global {
                                 }
                             }
                             element: 'quantity'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'b2797674078f4b5c8a09af56378535f8'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'requester_email'
                         }
                     },
                     {
@@ -29002,6 +36037,14 @@ declare global {
                             value: 'parsed'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'b2ba2ebb61874ca3a2cc1b1632776931'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'entered_by'
                         }
                     },
                     {
@@ -29061,6 +36104,14 @@ declare global {
                                 }
                             }
                             element: 'legacy_number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'b30f6861eda34a78944c67a2e1650d79'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_to_zip'
                         }
                     },
                     {
@@ -29167,6 +36218,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'b366cdc4baef4d3b8593215698867006'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'aging_last_eval'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy_action'
                         id: 'b3718f5d51174c67af6804bfcd6357a4'
                         key: {
@@ -29210,6 +36270,15 @@ declare global {
                                     name: 'x_cog_mah.dla'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'b3ef0bad83674f5bbb7feb1fabed6010'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'unid'
+                            language: 'en'
                         }
                     },
                     {
@@ -29296,6 +36365,15 @@ declare global {
                             }
                             element: 'requester_poc'
                             position: '17'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'b48420bb2b5541088f772c07b931a358'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'note_id'
+                            language: 'en'
                         }
                     },
                     {
@@ -29413,6 +36491,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'b5457bd834ab4581b8ab4be3ad2c3740'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'mah_source_row'
+                        }
+                    },
+                    {
                         table: 'sys_ui_section'
                         id: 'b5537c7c7f6943cd8a64eccd5d94c791'
                         key: {
@@ -29465,6 +36551,14 @@ declare global {
                             name: 'x_cog_mah_shipment'
                             element: 'weight_oz'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'b598064e20b748c0bce229f484705f9c'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'parent_unid'
                         }
                     },
                     {
@@ -29522,6 +36616,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'partial'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'b5bfd65f99d947ca9b0550b21a194e52'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'note_id'
                         }
                     },
                     {
@@ -29665,10 +36767,34 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'b64dbfe7c282482e9ae583836c24cd67'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'set_type'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'b67022b656f3408d89f2371e57358520'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'summary'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'b68f6c84a08a454fba53e2611db19c75'
                         key: {
                             name: 'x_cog_mah_migration_exception'
                             element: 'target_table'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'b69ebe9eff864716a01b7ba84fc906bb'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'last_updated_by'
                         }
                     },
                     {
@@ -29792,6 +36918,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'b72c87321b15471aaa974fb186f76274'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'doc_readers'
+                        }
+                    },
+                    {
                         table: 'sys_ui_form'
                         id: 'b7336cfb17764cbbbc393ddeaa7be3c4'
                         key: {
@@ -29829,6 +36963,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: 'b74b2cba100a46f0abc7904b139e49fb'
+                        key: {
+                            map: '809b30825c3549b5800b84762a3956e3'
+                            target_field: 'legacy_number'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'b75d389e7d23412996d25c14e0d83e82'
                         key: {
@@ -29854,6 +36996,31 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldic_item'
                             element: 'approved_vendors'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'b789ee8f0c194b28a2734a058581721d'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'doc_authors'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'b78d7d47fdcc4190b33ac03dfaa1aeff'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'last_modified_by'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'b78d9abe061c429faa46bfb16d3ee203'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'vendor_group'
+                            language: 'en'
                         }
                     },
                     {
@@ -30352,6 +37519,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: 'ba67abbc388340bda287984255395e6c'
+                        key: {
+                            map: 'f301f6ad18af4c5dafef402ce796af3a'
+                            target_field: 'name'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'ba6da79fbebc488fb3c5bf69ee163676'
                         key: {
@@ -30374,6 +37549,15 @@ declare global {
                                 }
                             }
                             sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bab642c1eba34e18b1c463eaa1eec3d8'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'max_qty_per_request'
+                            language: 'en'
                         }
                     },
                     {
@@ -30423,6 +37607,40 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'bb1a8ca70044423c943b67073717485a'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'parent_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bb1bcaa2fc0e4730a0d4458dd56deefa'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'requester_role'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bb207c3acebf45caafd2b544e9793bc9'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'doc_authors'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'bb30132430014b3e8b2722f5d8832301'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'project_code'
+                        }
+                    },
+                    {
                         table: 'sys_ui_action_role'
                         id: 'bb4684b38c4a4e5bb44faad3aa30d4cb'
                         key: {
@@ -30433,6 +37651,50 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bb46d75e3ef94203973950d4f18a0882'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'line_count'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bb5f2fa2486345b797859ea1643fb60e'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'auth_file_line'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bb63c5375ca94d15929e4cc5ae58fab2'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'status'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'bb72d9433f6c4c60af6287ef9b0c3bec'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'modified'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bbca461e98a74115b642cf8e6e37c2af'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'award_category'
+                            language: 'en'
                         }
                     },
                     {
@@ -30459,12 +37721,27 @@ declare global {
                         }
                     },
                     {
+                        table: 'ua_table_licensing_config'
+                        id: 'bbfba3b6ed9a471bb98131e2e49b0cd3'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'bc0f7fbea7d24fd1a39c02b024845a39'
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'legacy_form'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'bc1d3860e6954f2fa6a1c01df925fd0d'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'dodaac'
                         }
                     },
                     {
@@ -30545,6 +37822,14 @@ declare global {
                             }
                             element: 'field_name'
                             position: '14'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'bc2f475e9b8143e1ad5f7bbd7709838c'
+                        key: {
+                            map: 'f301f6ad18af4c5dafef402ce796af3a'
+                            target_field: 'contract_number'
                         }
                     },
                     {
@@ -30714,10 +37999,34 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'bcb05bee9734465ea9cfd3af887cb221'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'requester_id'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'bccc6436cd2f428dab8c0f07011c4297'
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'total_extended_price'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'bccfd84310064585bedb6caf515f8b58'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'parent_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'bcd7187a7ee546399bfc685ab96236ec'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'approved_date'
                         }
                     },
                     {
@@ -30740,6 +38049,15 @@ declare global {
                             }
                             element: 'vendor_ship_date'
                             position: '16'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bce5c834c7d445388070176433b157fb'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'executive_tier'
+                            language: 'en'
                         }
                     },
                     {
@@ -30790,6 +38108,14 @@ declare global {
                             }
                             element: 'batch_id'
                             position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'bd131ac0224c4f70ac9669b1d2a02303'
+                        key: {
+                            map: '4c96aa091bf9411690fb9535765b2ec9'
+                            target_field: 'executive_name'
                         }
                     },
                     {
@@ -30929,12 +38255,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'bda53dcbca034806a3eb0835fb666676'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'veteran_mi'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'bdd6980a04364278b26923d2184091bd'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'bde0524f068b447e9a1792bd5ff36998'
+                        key: {
+                            map: '7c180fb2626a4e61b96a5314268f7714'
+                            target_field: 'ship_to_name'
                         }
                     },
                     {
@@ -30968,6 +38310,31 @@ declare global {
                             value: 'validation'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'be21db26c64a40da871de09b5dd17dd3'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'requester_name'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'be29d01f92e54d339709e0810f6d51fe'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'mah_batch_id'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'be2d060c334a40449f34efa510fb7fc0'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'justification'
                         }
                     },
                     {
@@ -31087,6 +38454,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'be812e6ddc8e4c298cda6d41e8d736fd'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'parent_unid'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice_set'
                         id: 'be86e3e1e9834446968a746eacfacb21'
                         key: {
@@ -31114,6 +38490,15 @@ declare global {
                             }
                             element: '.begin_split'
                             position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'beb29bcc8ae44e899b0b99e48b1e104e'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'contact_name'
+                            language: 'en'
                         }
                     },
                     {
@@ -31166,6 +38551,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'bf0bb90755714963a2cebbacaa9d5fcb'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'doc_readers'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'bf0c0e7512d94e49ad4c31f410411160'
                         key: {
@@ -31197,6 +38591,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'bf1d52b0da2a4a52ace45d9ef5786c7b'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'queued_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'bf32a762e56d4e93bdeee46c9c8c5549'
                         key: {
@@ -31214,6 +38617,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'name'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'bf374fc2f7604df7b53403d68778c1cd'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'requesters_created'
                         }
                     },
                     {
@@ -31304,6 +38715,32 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'bfc1313a0ccd4db1a9162272d8c74897'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'document_number'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'bfc396eea6cb46c19492ed2e1b5cd6c0'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'stock_number'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bfcd143c8bf7454b94d5819c244ff65a'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'submitted_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'bfd2cb7f11dc4895bfd0a9c16d476bce'
                         key: {
@@ -31320,6 +38757,33 @@ declare global {
                         key: {
                             name: 'x_cog_mah_vendor'
                             element: 'name'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bfd9dac2e65f45758816c549c58d1f66'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_address1'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bfe1977fba004ae3bc407f0ee81f7a1c'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'service_from'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'bfe7ad26c6a34e90aefa49e7d805c6bf'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'unid'
                             language: 'en'
                         }
                     },
@@ -31359,6 +38823,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_request_line'
                             element: 'active'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c0264e11b74b48809d0d7ef59b5898cd'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'engraver'
+                            language: 'en'
                         }
                     },
                     {
@@ -31406,6 +38879,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'c0a6f48f57754308a895c6c67b4073d6'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'last_updated_by'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'c0aa460f0f8d4f33a32e91d0d6565eb7'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
@@ -31427,6 +38908,23 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'c0cc8653f18e486385d00675d4510306'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'released_date'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c0d3138283254728a05bd4ce0a3d38f9'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'doc_readers'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'c0e6fe25e77c4cf1b1db8b79926034d3'
                         key: {
                             name: 'x_cog_mah_heraldic_item'
@@ -31442,6 +38940,14 @@ declare global {
                             value: 'cancelled'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c10f20770b094a169950c4caba173a24'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'line_doc_number'
                         }
                     },
                     {
@@ -31473,6 +38979,13 @@ declare global {
                             cat_item: '74be602ca0cc4a8e981f83a5138007a4'
                             variable_set: 'NULL'
                             name: 'document_number'
+                        }
+                    },
+                    {
+                        table: 'ua_table_licensing_config'
+                        id: 'c12a296171c44843932a979d676323ba'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
                         }
                     },
                     {
@@ -31532,6 +39045,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'c169a1eea41a4abc9fe490147075a384'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'relationship'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'c1709b047c65416abd09c0c0fdc1f2d1'
                         key: {
@@ -31562,6 +39084,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'c1951d7904794c568491b87a4907f8a5'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'modified'
+                        }
+                    },
+                    {
                         table: 'sys_user_role_contains'
                         id: 'c1a22a6d15ed4cb5b2f0eca6e5d452eb'
                         key: {
@@ -31577,6 +39107,24 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c1a44bfb788e47e4a36fe89475a4b761'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'unid'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c1b62f5aac4e457aba3882f09345c585'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'doc_readers'
+                            language: 'en'
                         }
                     },
                     {
@@ -31612,10 +39160,26 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'c22d202287dc428b8eff4d2dd2590023'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'organization'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'c26f066ba1d8469e85f37af83afac7b7'
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c27e2b5855874344990df0837c65b323'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'note_id'
                         }
                     },
                     {
@@ -31637,6 +39201,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c297957b76a14dd68b95a3738dec9b06'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'unid'
                         }
                     },
                     {
@@ -31669,6 +39241,14 @@ declare global {
                             }
                             element: 'name'
                             position: '7'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c2ce948e60f2498a8eb7fb85f8358281'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'created_date'
                         }
                     },
                     {
@@ -31743,6 +39323,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_db_object'
+                        id: 'c3128857c6cb470681a4cd51755ca93b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'c31f79674eed408f886c3c6283c807bf'
                         key: {
@@ -31772,6 +39359,15 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c371df5c37da444080687b8deb83a92e'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'mah_source_file'
+                            language: 'en'
                         }
                     },
                     {
@@ -31879,6 +39475,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'c3f9080b43a74f49bb719761199fd55e'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'parent_unid'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'c3fc33c949174cbbaee8b7bf8f8797c4'
                         key: {
@@ -31927,6 +39531,14 @@ declare global {
                             }
                             element: 'quantity'
                             position: '12'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c439320fcc764f1ca9a86ba7701cda9b'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'font'
                         }
                     },
                     {
@@ -32006,6 +39618,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'c4a01328465442cbb9de80267509f572'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'mah_source_row'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'c4b7f6f59aca43708e44c06a53ec90a6'
                         key: {
                             name: 'x_cog_mah_authorization_file'
@@ -32023,6 +39643,14 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c4c9cb3f474941b28e72ce6963b18d7b'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'mah_batch_id'
                         }
                     },
                     {
@@ -32088,6 +39716,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'c5309faba1da410c9e8e88d941c911fc'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'parent_unid'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'c533c9f2d1e648db81d2d68841e99b22'
                         key: {
@@ -32121,6 +39757,15 @@ declare global {
                                 }
                             }
                             field: 'dodaac'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c59646f2611c466fba5be3e41b2f08e3'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'mah_source_file'
+                            language: 'en'
                         }
                     },
                     {
@@ -32158,6 +39803,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'c5d8396136bc4f9496392a3ec4cf5eb6'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'unid'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c5d8566bf4224f68ba51bf49a276ec20'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'completed_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'c618444598dc4eeba220f29e53555943'
                         key: {
@@ -32185,6 +39847,22 @@ declare global {
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'authority'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c63393ae210f45d19ea8b03148c84440'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'mah_source_file'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c63dffac24a44d9688529efb153cddad'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'role'
                         }
                     },
                     {
@@ -32263,6 +39941,14 @@ declare global {
                             }
                             element: 'released_by'
                             position: '9'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c6a2ce83ab5341528a3f2fa91d0725f8'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'estimated_ship_date'
                         }
                     },
                     {
@@ -32387,6 +40073,14 @@ declare global {
                             }
                             element: 'state'
                             position: '7'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c74e85a0ef454340a86a3b9d3470f502'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'veteran_name'
                         }
                     },
                     {
@@ -32524,6 +40218,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: 'c7c2c1cbcff049b795a0616437ab3f0c'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'last_modified_by'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: 'c7fc1e0e3bc647bebce9cb7268e291ff'
                         deleted: true
                         key: {
@@ -32586,6 +40289,49 @@ declare global {
                             }
                             element: '.begin_split'
                             position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c83bd997a9344e739137c69c26888d0e'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'mah_batch_id'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'c8525aded3db4fc3b286358ae4bda434'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'last_updated_by'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c85543de212f4cb1a16758bcf2eddab5'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'entered_date'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c8945c6c8fc6453a8733f5e20c10c847'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'note_author'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c8a64ac339384a508c487990773cedc9'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'priority'
+                            language: 'en'
                         }
                     },
                     {
@@ -32657,6 +40403,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'c933dc73058e498b86a529e2e0385531'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'suffix'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'c93b32ee87dc4cd3a4198fae758f4207'
                         key: {
@@ -32712,6 +40466,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'c97ecfdd060e4995a43a9a6fe685ccac'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'justification'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'c98d721dbbea46cbbaa7286b3a5790f4'
                         key: {
@@ -32759,6 +40522,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'c9a89215abd443e096d6bbef019961c6'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'file_name'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'c9ab69673e964b6590c5be088736a5d8'
                         deleted: true
@@ -32790,6 +40561,14 @@ declare global {
                             value: 'manual'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'c9b51f5e29854c4c9645e9a3e6053078'
+                        key: {
+                            map: 'a8d75dc198644c9481b5ca8427a712f8'
+                            target_field: 'legacy_unid'
                         }
                     },
                     {
@@ -32906,6 +40685,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'ca74ab0e162c4082a1d131679054a7b0'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'last_updated_by'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'item_option_new'
                         id: 'cacc3be935cd46d0b0761cb84fd67a07'
                         key: {
@@ -33012,6 +40800,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'cb9a9f75285e46c8adbd6d9b56f82fb4'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'released_by'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'cb9b3d9939dc413fb028e6103f7567bc'
                         key: {
@@ -33101,6 +40897,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: 'cc43714d8381434197c52efb7bebc297'
+                        key: {
+                            map: '809b30825c3549b5800b84762a3956e3'
+                            target_field: 'file_name'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'cc45a147fe7244cfb9771bca90aeebc0'
                         key: {
@@ -33153,6 +40957,41 @@ declare global {
                             value: 'SE'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'cc64cb9b743e49bcb82123c4d8f8fc7d'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'created'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'cc6fba0b9cb844fbb04bcc14189d8f4b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'released_date'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'cc79c45dd3ce4b8f89da2952facd8805'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'mah_source_file'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'cc9a3f2bc4674b77b1f528a38fc20492'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'uic'
                         }
                     },
                     {
@@ -33211,6 +41050,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'cce81dacd9b24ebd96037a0825bc7834'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'justification_text'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: 'ccec26cf17f847849d71bdd1c4ab904b'
                         key: {
@@ -33231,6 +41079,24 @@ declare global {
                                 }
                             }
                             element: 'sys_updated_on'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'cd048224c44046128776035b4b8ce944'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'modified'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'cd059b2101a34ed4a7dce11b7752aee4'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'entered_date'
+                            language: 'en'
                         }
                     },
                     {
@@ -33315,6 +41181,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'cd4ade401abc4a6697d34eca7e592e19'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'doc_readers'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'cd51b271a63b45c286896594a1b34655'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'vendor_key'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'cd585aa196ef47b39fc6cdeb0cb7168e'
                         key: {
@@ -33342,6 +41224,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
                             element: 'legacy_last_modified'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'cd693244d86e4d57b65aaa47c7d97f29'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'vendor_key'
+                            language: 'en'
                         }
                     },
                     {
@@ -33390,6 +41281,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'cd9d50144ea84e37bf98081d576d5d7a'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'warehouse_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'cdb32b14fab7410a83f10d2768bafd74'
                         key: {
@@ -33404,6 +41304,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_probe'
                             element: 'source_agency'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'cdbd9f05b7dc4e849b24edb18b183313'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'ses_flag_number'
                         }
                     },
                     {
@@ -33444,6 +41352,14 @@ declare global {
                                 }
                             }
                             element: 'partial'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'cdf906776e43488a9b4b0daee4ebfc2a'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'last_updated_by'
                         }
                     },
                     {
@@ -33533,6 +41449,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'ce8c1938020042fbaf10a609f4d03e67'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'request_type'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'ce8ec347f0c2439bbaa237f31ebacff7'
                         key: {
@@ -33543,6 +41467,15 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'ce95c19c85bb43e5bf6a81fc3eaadbc9'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'mi'
+                            language: 'en'
                         }
                     },
                     {
@@ -33572,6 +41505,24 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'cedddbec564e432786437d634338f83f'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'parent_unid'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'cf253a128ef244f59aeb33a13148c3d6'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'era'
+                            language: 'en'
                         }
                     },
                     {
@@ -33698,6 +41649,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'd0312829932c46ca913374f6b4a2d0fd'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'records_rejected'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_user_role_contains'
                         id: 'd032f840527943ec98a1a84472048787'
                         key: {
@@ -33713,6 +41673,14 @@ declare global {
                                     name: 'x_cog_mah.assembler'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'd03e02a0fa71405cab3a599e8598c7cc'
+                        key: {
+                            map: 'a8d75dc198644c9481b5ca8427a712f8'
+                            target_field: 'machine'
                         }
                     },
                     {
@@ -33746,6 +41714,14 @@ declare global {
                             }
                             element: 'flag_type'
                             position: '12'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'd05a3ab242314a89bc839b807b2c5dea'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'lookup_key'
                         }
                     },
                     {
@@ -33859,6 +41835,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'd0e4ad4d4740417095a7c5cafe5cff69'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'last_updated_by'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'd0e7a3d0a091443aaba98c1ea8a4f3ec'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'mah_source_file'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'd0ed9485b98042ff89d7e76b86c93c6a'
                         key: {
@@ -33968,6 +41960,24 @@ declare global {
                                 }
                             }
                             element: 'merged_into'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'd1786fec16fb4752b71266d9cab5ba9f'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'd1908b772ccb4eaf99052d24cabfe9af'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'mah_batch_id'
+                            language: 'en'
                         }
                     },
                     {
@@ -34139,6 +42149,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'd24f1b7e00fd45b09926f2538e43f2db'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'unid'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: 'd26638f1427a42ecb5c1b93483645e49'
                         key: {
@@ -34172,6 +42191,15 @@ declare global {
                                     name: 'x_cog_mah.vendor'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'd2a65807090f425ea01342568a0dd3a6'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'parent_unid'
+                            language: 'en'
                         }
                     },
                     {
@@ -34229,6 +42257,23 @@ declare global {
                             }
                             element: 'active'
                             position: '20'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'd2f567c4b00f4a4c92419edf46d6aefa'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'requester_name'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'd30dc81c85b847a0953ceba9592ddd41'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'line_number'
+                            language: 'en'
                         }
                     },
                     {
@@ -34482,6 +42527,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: 'd3ef0e14262e4b218b2452c82d8bc5c3'
+                        key: {
+                            map: '5dc9d6ff774941499143adc6d2aea78e'
+                            target_field: 'summary'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'd412b968eaeb45409a043e471f431838'
                         key: {
@@ -34492,6 +42545,15 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'd41e236e908b4b4980ebe397092fbfef'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'reviewed_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -34562,11 +42624,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'd5053647392b48d6aa69a5990088cb41'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'mah_source_file'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'd505f1a904924f7a81f6955999e2b16f'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'authorization_file'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'd50eea5fec3d461fafced60114f92539'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'checksum_match'
                         }
                     },
                     {
@@ -34651,6 +42730,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'd5b0ab3758044035b57ebcd391ecd170'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'authorization_date'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'd5bd5bc4f28a4712b882078e0f1ef793'
                         deleted: true
@@ -34682,6 +42769,14 @@ declare global {
                             value: 'BX'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'd5d2eec744d8405a89686247b5003401'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'mah_batch_id'
                         }
                     },
                     {
@@ -34803,6 +42898,14 @@ declare global {
                             }
                             element: '.end_split'
                             position: '19'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'd6d97696eb224668a5324c3536445c46'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'active'
                         }
                     },
                     {
@@ -34968,6 +43071,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'd7cdcbea02ea486590dbde4c85368310'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'veteran_last_name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'd7d636f21a3642fbbf0ff7c6fdcd8060'
                         key: {
@@ -34978,6 +43090,14 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'd80757312430498a87721c13b3373028'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'picked_date'
                         }
                     },
                     {
@@ -35031,6 +43151,32 @@ declare global {
                                 }
                             }
                             field: 'vendor_notes'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'd86c6ea4e1774d8a8231279fdbb43c60'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'attachments'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'd8743196a07945359bc9ec14b674a92c'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'line_count'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'd87a84f6fe114c0fb4c9db2861a8e779'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_to_name'
+                            language: 'en'
                         }
                     },
                     {
@@ -35107,6 +43253,38 @@ declare global {
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'legacy_status_raw'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'd9090aa09f164e6592bb9f0f384518da'
+                        key: {
+                            map: '4c96aa091bf9411690fb9535765b2ec9'
+                            target_field: 'requesting_office'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'd90b71a625ac4d19999855fbb867296f'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'hold_reason'
+                        }
+                    },
+                    {
+                        table: 'ua_table_licensing_config'
+                        id: 'd93925830d804181b5efae899547abe0'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'd9414d488482449c83b8290e16dec713'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'cancelled_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -35207,6 +43385,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'd9fffa688bb947a7a23fdc003e5123f5'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'source_agency'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'da0440c31ecb4983b628b37627b034ab'
                         key: {
@@ -35250,6 +43436,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'da38236ccdb04194a14fc8a49b415033'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'item_name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'da72c55f5b854577983673cbf47b2be8'
                         key: {
@@ -35290,6 +43485,15 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'da839d16abe04abbac2d4d3035fd55f7'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'tracking_number'
+                            language: 'en'
                         }
                     },
                     {
@@ -35369,6 +43573,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'db08435617194dbda97bc28e6fa64201'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'db30aa9e68714731a5623a0c199fffa1'
                         key: {
@@ -35378,10 +43591,27 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'db47226160c74826921b3d47e9f2a6d7'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'mah_source_file'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'db6bd0151e044ff68b472f927d32c491'
                         key: {
                             name: 'x_cog_mah_awards_case'
                             element: 'cancel_reason'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'db781b74a55f4d1fa7e7fab688227078'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'attachments'
+                            language: 'en'
                         }
                     },
                     {
@@ -35402,6 +43632,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'dba4ce8e53ac4ccf9f3d733153c28067'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'mah_batch_id'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'dbb9abee2685454fb8a251d57b0f6d4d'
                         key: {
                             name: 'x_cog_mah_case_note'
@@ -35417,6 +43655,31 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'dbf122e5e2574a2480d3327c2967af4b'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'lines_created'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'ua_table_licensing_config'
+                        id: 'dc37ef5f06e149189e91d1f016be3eb7'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'dc42c985aaa849fd8d3e8b9b162c0468'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'hold_reason'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'dc4a638a63764a04ae6f6659914bbc47'
                         key: {
@@ -35425,6 +43688,22 @@ declare global {
                             value: 'manual'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'dc5d1d491b794f379ebd25b897d643e2'
+                        key: {
+                            map: 'd2e94d7ef0d248f1a3ef92c36a321824'
+                            target_field: 'rank'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'dc6689f1980246caa844e9e7aac3ae70'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'item_description'
                         }
                     },
                     {
@@ -35518,6 +43797,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'dceb2042b57c4836a306e13bbb359ac4'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'closed_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'dd27384271024b22956523d54c44c111'
                         key: {
@@ -35526,6 +43814,14 @@ declare global {
                             value: 'armed_forces_reserve_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'dd377c7f6cf34e5c8ced395a581daba6'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'return_reason'
                         }
                     },
                     {
@@ -35637,6 +43933,21 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_db_object'
+                        id: 'ddc2b152352445ab87c4ac5554241c0b'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'ddc9b72638af4bd194b83c28faec8618'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'mah_batch_id'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy'
                         id: 'dddec8ca30d14275803193320b5b5cb0'
                         key: {
@@ -35657,6 +43968,15 @@ declare global {
                                 }
                             }
                             sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'de331ef28d7e4e5296a6a51ffe95f5fa'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'reference'
+                            language: 'en'
                         }
                     },
                     {
@@ -35717,6 +44037,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'deb528de76b34649ad4bdf229bdbda7f'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_address2'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'dec57b69af0746ff8b316d2bb198e3c8'
                         deleted: true
@@ -35771,6 +44099,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'dee49cf46dbe470a980129dc79688698'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'last_updated_by'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'df0259671df74db7a2056d5be287533f'
                         key: {
@@ -35799,6 +44136,41 @@ declare global {
                                 }
                             }
                             element: 'record_count'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'df3e68c688474e60ab365e14005ea36e'
+                        key: {
+                            map: 'd2e94d7ef0d248f1a3ef92c36a321824'
+                            target_field: 'legacy_number'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'df55ac3c57b741568c65337926203744'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'mah_source_file'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'df6315e1b8ef427db6e6718a7ab0612f'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'weight_oz'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'df76cddce3d34fda99e468b920f8ab4e'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'doc_authors'
+                            language: 'en'
                         }
                     },
                     {
@@ -35855,6 +44227,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'e024718be4f64383a429c93d1325c346'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'executive_title'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'e02bd4bbfdbf4ed2b473805bcdd87734'
                         key: {
@@ -35888,6 +44269,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'e051897980314b1d9edd2317912d8795'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'modified'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e0599f0004d14f96adb389705f6153c5'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_address1'
+                        }
+                    },
+                    {
                         table: 'sys_ui_action_role'
                         id: 'e07bbb7c6f354760869973a3e2961069'
                         key: {
@@ -35911,6 +44309,14 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'e08d563890d44ba9a284e0f96c626513'
+                        key: {
+                            map: '4f84472a2b0b4c5ea5ebb079c1f84694'
+                            target_field: 'stock_number'
                         }
                     },
                     {
@@ -35960,6 +44366,40 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'e0d38c53b7c5489182068169a85ec886'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'city'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e0e172d2cba6482284013d807893d3cb'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'aging_flag'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e0e357030b0d47c6aeac8e09ce167d00'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'engraving_date'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e0e9ac428c944e68a811fba8e6426821'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'qc_result'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: 'e11183c2b4b741b5bd6d161ae4ae48d0'
                         key: {
@@ -35999,6 +44439,24 @@ declare global {
                             value: 'vietnam'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e135098140f84f5da03df35796232574'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'parent_unid'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e137fe664635474fb6b397a23b1b1ba3'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'mah_source_file'
+                            language: 'en'
                         }
                     },
                     {
@@ -36075,6 +44533,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'e16fab89c064483aacf77bdda5a0cea9'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'source'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e18e5605d6354c908b0292ea34c0c052'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'mah_batch_id'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy_action'
                         id: 'e19842183d834be3b68ac533f956514b'
                         key: {
@@ -36126,6 +44601,14 @@ declare global {
                         id: 'e1b784bb771e485e892f57e382fbe1ae'
                         key: {
                             name: 'x_cog_mah_status_map'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e1be7ce70722430db1a4ce962f320c7c'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'doc_readers'
                         }
                     },
                     {
@@ -36235,6 +44718,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'e22b7fbe495844128923f29a90dabd63'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'parent_unid'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'e22f02dbd4e3473399de22d4bbba6ea1'
                         key: {
@@ -36316,6 +44807,32 @@ declare global {
                                 }
                             }
                             sys_domain: 'global'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e28f275ade2a4a90b4b462c4738469e1'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'attachments'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e2903c12a96441dd8e1521d51b446c6a'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'attachments'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e292ff1a1f2a4c4ca3821be562d0b630'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'stage_before_hold'
+                            language: 'en'
                         }
                     },
                     {
@@ -36413,6 +44930,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'e2c5fa04768e4d86b7f7b0d0de27c2d4'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'line_count'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'e2deb7fdff5d4947bd4a6501270e3241'
                         key: {
@@ -36435,6 +44960,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'e2e32a84be7e40ef867d57587fcfd652'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'mah_source_row'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'e2e62d55b99446df922ad962217e75b9'
                         key: {
@@ -36454,6 +44988,15 @@ declare global {
                             }
                             element: 'active'
                             position: '16'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e2f453d5f8c0405a9339ba55e95b59ce'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'last_updated_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -36491,10 +45034,27 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'e332241b0bcc4dd9ac1b7e4a0ed2a413'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'authorization_date'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'e339b2d862084e91b0ce5b2e0683e959'
                         key: {
                             name: 'x_cog_mah_authorization_file'
                             element: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e342efebd4044224a2f93c9b5c4d811e'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'veteran_name'
+                            language: 'en'
                         }
                     },
                     {
@@ -36573,11 +45133,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'e3d87a00473c402286b2fea6979e93c7'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'case_number'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'e3da1963d979479ca5bd6727f8379b3e'
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'legacy_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e3ecbf3f8ebe4c8fa680f0df4078aaf8'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'phone'
                         }
                     },
                     {
@@ -36675,6 +45252,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: 'e4d86089c38c45cf8987b97bfc54f551'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'poc'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: 'e4dd6ef4fa6848a7aef21dbf32eb0118'
                         key: {
                             name: 'x_cog_mah_ses_flag_request'
@@ -36735,6 +45321,14 @@ declare global {
                             }
                             element: '.split'
                             position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e4f6c845815742d6be93db0e31350675'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'vendor_name'
                         }
                     },
                     {
@@ -36830,6 +45424,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'e562ba1831504b06b2b467d4d171b8d1'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'transmission_date'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e56f3adeecd543e294a6ee47bd441a35'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'vendor_key'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: 'e571fb78382b4c0d996cde4823ab34c9'
                         key: {
@@ -36883,6 +45494,22 @@ declare global {
                             name: 'x_cog_mah_vendor'
                             element: 'legacy_last_modified'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e58f76eed3f8448f8dd29eb22d76a1b8'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'veteran_last_name'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e59ea46a876b46d3aa18cb8bd4367d5d'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'entered_date'
                         }
                     },
                     {
@@ -37045,6 +45672,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_db_object'
+                        id: 'e64fe1c10661431c9e3ab84b5011ed8a'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e6528345fe1a421ebed8de807908b45a'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'mah_source_row'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'e65ed61d42ba4a99ae506c5bbfc5d63a'
                         key: {
@@ -37152,6 +45795,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'e683d9ab79d94388bcc8516ae55542eb'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'source'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'item_option_new'
                         id: 'e6a522ef7c334e3796dce46f6a250bc1'
                         key: {
@@ -37169,6 +45821,14 @@ declare global {
                             value: 'world_war_ii_victory_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e6e6cc90ad94413aba1ec6533fd6772c'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'ship_to_state'
                         }
                     },
                     {
@@ -37191,6 +45851,30 @@ declare global {
                             }
                             element: '.split'
                             position: '10'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e6f438a58fad4893824dbf9c2d3d7605'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'attachments'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e70e15cf547a4c7ab3da5b9911bb795c'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'attachments'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e71f4823494448039656a71c62b4879f'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'mah_source_file'
                         }
                     },
                     {
@@ -37250,6 +45934,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'e74d86c022a04abbaa073e2523650225'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'last_updated_by'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'e762bf7962e54bc5a366ab5b076d256d'
                         key: {
@@ -37269,6 +45961,24 @@ declare global {
                             }
                             element: 'active'
                             position: '17'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e770abc7716748ef9c30a63bee298224'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'note_id'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e77cb5d4bc6245ba8f20010d7fc9341e'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'modified'
+                            language: 'en'
                         }
                     },
                     {
@@ -37294,6 +46004,23 @@ declare global {
                                 }
                             }
                             field: 'vendor_tracking_number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e7b760d52d4847c595efaf385f0ebb25'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'extended_price'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e7b7beb61c0846ccab6bef838569a8f2'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'doc_readers'
+                            language: 'en'
                         }
                     },
                     {
@@ -37343,6 +46070,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'e7f0b96cbbfe41d4a46b348c40ca43ef'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'parent_doc_number'
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: 'e7f2f14b05cc45f497cd326036dad25e'
                         key: {
@@ -37361,6 +46096,14 @@ declare global {
                                 }
                             }
                             field: 'phone'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e7f5393fdde34ad3b61c529d50a7393b'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'backorder_eta'
                         }
                     },
                     {
@@ -37452,12 +46195,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'e87e1cd07bcf41ac827a30f384592d89'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'city'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'e88acef64fff4160b46f5fd7fe773c79'
                         key: {
                             name: 'x_cog_mah_award_line'
                             element: 'engraving_required'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e8920767bf404bfb90f5d74352c96b53'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'deceased'
                         }
                     },
                     {
@@ -37482,6 +46241,49 @@ declare global {
                                     name: 'x_cog_mah.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e8a1201c93d74dd9aa37d3c0d0d5778d'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'attachments'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e8a76d492583427987780d394a00eda6'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'ship_to_state'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e8cb8f13baa24160a623055c5278b510'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'rank'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e8ce35b8097c4309b877fdc2a48488b3'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'last_updated_by'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e8d131b9ce424810860997bcb21f85e4'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'created_date'
+                            language: 'en'
                         }
                     },
                     {
@@ -37584,6 +46386,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'e918961a09ba40ccb26f24eb740e4df9'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'state'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'e92efbca861c4fbd88768a60538965bb'
                         key: {
@@ -37603,6 +46414,14 @@ declare global {
                             value: 'armed_forces_service_medal'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e95e1ecd7de545a7890df4962319458b'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'proof_checked'
                         }
                     },
                     {
@@ -37628,6 +46447,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'e97e8cde28d14a8b81bd7a0f93bc6dd5'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'pick_bin'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'e982a0bcfed54365bcf07cc0ac5c1e05'
                         key: {
@@ -37649,6 +46477,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'state'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e98c1000fb514ab888906e1110165580'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'parent_unid'
                         }
                     },
                     {
@@ -37684,6 +46520,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'e9a61344f24144f38ddfb02356731c08'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'cancelled_date'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'e9b13d481c4d4fdcb0b8e521ebf6b28a'
                         key: {
@@ -37711,6 +46556,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_heraldry_request'
                             element: 'justification'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e9ba9fdc0b594ce08010237c0fbc50ee'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'requester_email'
                             language: 'en'
                         }
                     },
@@ -37759,6 +46613,14 @@ declare global {
                             value: 'other'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e9e6a5acdf8b455897b67dd876211b5b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'rpd'
                         }
                     },
                     {
@@ -37831,6 +46693,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: 'ea1307dc2dfb4f56bba62a8caf46e709'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'approval_date'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: 'ea236118ea904a56a3847bfd80fef5cb'
                         key: {
                             name: 'x_cog_mah_engraving_job'
@@ -37880,6 +46751,15 @@ declare global {
                             }
                             element: 'approved_at'
                             position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'ea63f8feb1e34c019f9551c922dbee20'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'last_updated_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -37947,6 +46827,15 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'eae5a98808c6492da1f37a08f890a094'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'mah_source_file'
+                            language: 'en'
                         }
                     },
                     {
@@ -38149,6 +47038,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'ec12a68e6b3e4e42b987c9e58220b24f'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'item_name'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'ec130037c5f548a3964f52f82edf063f'
                         key: {
                             name: 'x_cog_mah_requester'
@@ -38175,6 +47072,24 @@ declare global {
                             }
                             element: 'stage_entered_at'
                             position: '14'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'ec23394a05a24d40bafd4a3ec9f23076'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'vendor_key'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'ec2412be9bd64289a12a82b23836d7b3'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'last_updated_by'
+                            language: 'en'
                         }
                     },
                     {
@@ -38397,6 +47312,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'ed3518764acc416a82c8ead13c6110f4'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'assigned_csr'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'ed4ac77fcfd34bb8a44b37f3334e45b3'
                         key: {
@@ -38407,6 +47331,32 @@ declare global {
                                     name: 'x_cog_mah.admin'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'ed5135a40157489fac781741fd6b0648'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'line_doc_number'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'ed54e92b97764a77a1e0d70b6ebb9789'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'doc_readers'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'ed5a6ada04724b19bde5304a2c097f10'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'city'
                         }
                     },
                     {
@@ -38438,6 +47388,23 @@ declare global {
                             }
                             element: 'priority_handling'
                             position: '7'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'ed7b718d96cf4bc4a59eb8f0ceb6aa2d'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'auth_file_line'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'edac6c54ebfa4172a111452a9b816118'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'preferred_contact'
+                            language: 'en'
                         }
                     },
                     {
@@ -38610,6 +47577,41 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: 'ee1cb556bfa945078cdb2afafdf1348f'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'case_number'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'ee1fa2e0983641c1968cd1b5d671502b'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'last_name'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'ee7bf66117434b5d93785fbf91096ecc'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'lead_time_days'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'ee86216572b94319a00dea3269feb84b'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'shipped_date'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: 'eea671eee426412fa79a9d4b6fbbf7dd'
                         key: {
                             name: 'x_cog_mah_status_map'
@@ -38652,6 +47654,24 @@ declare global {
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'duplicate_count'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'eede96b59e4545229642e9e37446b9d0'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'requester_phone'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'eef2280ba2dd4475b0c39777401a1585'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'uic'
                             language: 'en'
                         }
                     },
@@ -38776,6 +47796,22 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'efa4b33a50d441a695718201483ac7e4'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'line_status'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'efacc2b86b024cfa9411152f6c555219'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'description'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'efb89eaea01f4ffeb74195fa8d68db41'
                         key: {
                             name: 'x_cog_mah_migration_exception'
@@ -38841,6 +47877,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'f00f47c5480a45b9ada5cab1d1fd6185'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'ses_flag_number'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'f01b422477144461b0bf7c54a4639ccb'
                         deleted: true
@@ -38894,6 +47939,15 @@ declare global {
                             }
                             element: 'contents'
                             position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'f059624f7e3b4493b7c108fbcac1524f'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'supplementary_address'
+                            language: 'en'
                         }
                     },
                     {
@@ -38986,6 +48040,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'f0f00161474c47e5810b4501ac98cbf6'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'service_from'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'f0f4c5e57f3a4945bdfecc04a85c83a7'
                         key: {
@@ -39049,6 +48111,14 @@ declare global {
                             }
                             element: 'legacy_status_raw'
                             position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'f177a0eec5ab4645aa4cb0c0cedcb21b'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'unid'
                         }
                     },
                     {
@@ -39172,6 +48242,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'f1e993e5172545c2b740fcf58487237d'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'attachments'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'f21fb670eee14bba8519c64c5be17c50'
                         key: {
@@ -39206,6 +48284,15 @@ declare global {
                                     name: 'x_cog_mah.warehouse'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'f231a4ec3ec049ea8d53be719bf7d194'
+                        key: {
+                            name: 'x_cog_mah_stg_unit_requester'
+                            element: 'parent_unid'
+                            language: 'en'
                         }
                     },
                     {
@@ -39255,6 +48342,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_requester'
                             element: 'legacy_number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'f2882108446a46158e1f1bd7edf696f0'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'case_number'
                         }
                     },
                     {
@@ -39403,6 +48498,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'f37e8688644d497eb66df623383b90f9'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'trailer_checksum'
+                        }
+                    },
+                    {
                         table: 'sys_ui_section'
                         id: 'f38f9017513d417abc753543a62706d7'
                         key: {
@@ -39457,6 +48560,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'f4056ff75e10480fb86544092430198d'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'unid'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'f40e31a883d84a4ca9700aff0a9f5b7e'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'lines_created'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: 'f41bbca7a07d4d14a062aff647ee9217'
                         key: {
@@ -39480,6 +48599,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'f423fc88fc1f4c9da9bbd9a7407aadcb'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'items'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'f42d9be2e5b34565b956915dc2a13401'
                         key: {
@@ -39499,6 +48627,14 @@ declare global {
                             value: '03'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'f47c4e3075ea4c96ae7ba38006d3d8b5'
+                        key: {
+                            map: '4f84472a2b0b4c5ea5ebb079c1f84694'
+                            target_field: 'legacy_unid'
                         }
                     },
                     {
@@ -39534,6 +48670,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: 'f4cce80479204af69ac6179cd4f8015a'
+                        key: {
+                            map: '543eb031c83c4367813a92bf7c1e7286'
+                            target_field: 'reference'
+                        }
+                    },
+                    {
                         table: 'sys_ux_form_action'
                         id: 'f4d167d8d77842ebac10b2c26ddf6551'
                         key: {
@@ -39541,10 +48685,35 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'f4e68f975e864634b7e7b5c2fffa8eca'
+                        key: {
+                            name: 'x_cog_mah_stg_vendor'
+                            element: 'mah_source_row'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'f4feebad003841349420ce02cc4ec632'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'parent_unid'
+                        }
+                    },
+                    {
                         table: 'sys_db_object'
                         id: 'f51597e7d3854b94ae99236191ec2940'
                         key: {
                             name: 'x_cog_mah_requester'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'f51750ebf64a492280c7d9a2441ceef0'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'executive_name'
+                            language: 'en'
                         }
                     },
                     {
@@ -39598,6 +48767,15 @@ declare global {
                                 }
                             }
                             element: 'category'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'f5664fe5d1404157ae1396ce3dc7164f'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'ship_to_city'
+                            language: 'en'
                         }
                     },
                     {
@@ -39719,6 +48897,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'f5af6d9d0baa451bb38025ecd4338f50'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'import_log'
+                        }
+                    },
+                    {
                         table: 'question_choice'
                         id: 'f5b391fabce645e8850f40b204e49188'
                         key: {
@@ -39731,6 +48917,15 @@ declare global {
                                 }
                             }
                             value: '07'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'f5cd8a72c2ef4fbe837fdde3e11315fc'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'branch'
+                            language: 'en'
                         }
                     },
                     {
@@ -39792,6 +48987,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'f609b950efbd48f5909d013cdd847396'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'file_name'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'f61c6a80d74043eaac4610ea0d81a9e4'
                         key: {
@@ -39836,6 +49040,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: 'f61d2e8fa8714ea7b1eccb79e5c6264b'
+                        key: {
+                            map: '4c96aa091bf9411690fb9535765b2ec9'
+                            target_field: 'legacy_number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'f62234111e7b4bdcac37446160d5a053'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
+                            element: 'veteran_name'
+                        }
+                    },
+                    {
                         table: 'sys_ui_list_element'
                         id: 'f642fa2d55354841b8c517b5b7ad4b1e'
                         key: {
@@ -39859,6 +49079,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'f6447a34f6bb423f8aa00d1a494e8f2b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'NULL'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'f650567de7b243f9a2a2eb04a20c0364'
                         key: {
@@ -39867,6 +49095,15 @@ declare global {
                             value: 'in_production'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'f686af87d66e4add9fad7552c0c10a2b'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'modified'
+                            language: 'en'
                         }
                     },
                     {
@@ -39879,6 +49116,15 @@ declare global {
                             value: 'heraldic_item'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'f68e9d0d91184d3da26d289b173d9385'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'received_date'
+                            language: 'en'
                         }
                     },
                     {
@@ -39901,6 +49147,14 @@ declare global {
                             }
                             element: 'lines_created'
                             position: '6'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'f69a1ef14a9d4a32ac9afdb977e444cb'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'status_inquiry_key'
                         }
                     },
                     {
@@ -40052,6 +49306,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'f7667e68dcc8458fa97cb6f47dd9217f'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'address_verified'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'f76d0f34d0e643eeaa47d78b6ae0896c'
                         key: {
                             name: 'x_cog_mah_requester'
@@ -40107,11 +49369,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'f7f786412836429eb6e2539eccf2915d'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_policy'
                         id: 'f7ff83af6dcd4d699d0e28acccdfca53'
                         key: {
                             table: 'x_cog_mah_heraldry_request'
                             short_description: 'MAH DD1348-6: vendor fulfilment fields visible only after release'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'f80ded4d8e2d476c9bffb221b7f98acc'
+                        key: {
+                            map: '543eb031c83c4367813a92bf7c1e7286'
+                            target_field: 'branch'
                         }
                     },
                     {
@@ -40146,6 +49425,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'f83d1b84b8364ea69861bf1994bf51c5'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'unit_price'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'f853ca227a65488091f6d7c5eadeeeeb'
                         key: {
@@ -40176,6 +49463,23 @@ declare global {
                             }
                             element: 'work_notes'
                             position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'f8651195b9dc40ef94133ef56656098e'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldry_request'
+                            element: 'vendor_key'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'f868d2682df64f31881bfd92ad78963a'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'unid'
                         }
                     },
                     {
@@ -40244,6 +49548,14 @@ declare global {
                             name: 'x_cog_mah_awards_case'
                             element: 'hold_reason'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'f8b7641a3d844bcab9ba932ffd2c9e4c'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'relationship'
                         }
                     },
                     {
@@ -40336,6 +49648,14 @@ declare global {
                             value: 'system'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'f8dd9985c8c74d2aae3de970ae5a202c'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'mah_source_row'
                         }
                     },
                     {
@@ -40449,6 +49769,22 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'f96581c518ad45549d31d45ca0e0056d'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'unit_price'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'f973a2ea07bc46799b086b3a47960210'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'partial'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'f97bdc39100d4780a006441e8abb867d'
                         key: {
@@ -40475,6 +49811,15 @@ declare global {
                         id: 'f991480834574f78b85097c50b14155f'
                         key: {
                             name: 'x_cog_mah_requester'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'f9920528af9b4a2d9c85d0c47c8e4ca0'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'mah_batch_id'
+                            language: 'en'
                         }
                     },
                     {
@@ -40539,6 +49884,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_transform_entry'
+                        id: 'f9bbb7ae1eb749f6821974a28ed3a149'
+                        key: {
+                            map: 'd7ceb9b9a99d403aabc70c87fd61af11'
+                            target_field: 'dodaac'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'f9d5743750dc40198ed03104b9fd3ce0'
                         key: {
@@ -40556,6 +49909,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'f9fa517d36004348a62b4f86cc459535'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'cases_created'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'fa07f86597f643fe841b4ff8875db80d'
                         key: {
@@ -40564,6 +49925,14 @@ declare global {
                             value: 'pass'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'fa10d8223e8e4da4bcab48a594b7aaca'
+                        key: {
+                            map: '88c82ae7f8204bef8445b39ffdfdb40a'
+                            target_field: 'line_document_number'
                         }
                     },
                     {
@@ -40626,6 +49995,15 @@ declare global {
                                 }
                             }
                             element: 'requesting_unit'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'faa90a7b60554b3f9509c57cff91cad3'
+                        key: {
+                            name: 'x_cog_mah_stg_requester'
+                            element: 'doc_readers'
+                            language: 'en'
                         }
                     },
                     {
@@ -40708,6 +50086,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'faf7b23a6b00413396ba346ec64a24a1'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'quantity'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'fb04ef0fe965414db28b18bff1acad45'
                         key: {
@@ -40727,6 +50114,23 @@ declare global {
                             }
                             element: 'number'
                             position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'fb125d638cbe43ef8f339dbb940de5ae'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'attachments'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'fb1fe3530d44443cbd03e584881d051b'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'follow_up_done'
+                            language: 'en'
                         }
                     },
                     {
@@ -40774,6 +50178,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'fb914552fcf74072adf6ed910f10acb3'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'fb9f1f19e4d3405e8235f80337d1ac2a'
                         key: {
@@ -40793,6 +50206,15 @@ declare global {
                             }
                             element: '.begin_split'
                             position: '0'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'fbaf15efb3c54887927f2589e78b188e'
+                        key: {
+                            name: 'x_cog_mah_stg_request_line'
+                            element: 'unit_of_issue'
+                            language: 'en'
                         }
                     },
                     {
@@ -40837,6 +50259,32 @@ declare global {
                                     name: 'x_cog_mah.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'fc10ecf92a364d9da20f634828115b25'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'status_history'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'fc32860640ce42ea995f261467770796'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'status_inquiry_key'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'fc39afbc1e744711b3a935e7106f023b'
+                        key: {
+                            name: 'x_cog_mah_stg_case_note'
+                            element: 'parent_case_number'
+                            language: 'en'
                         }
                     },
                     {
@@ -40924,6 +50372,23 @@ declare global {
                             value: '12'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'fca18781b3b84af9833f6b8927940149'
+                        key: {
+                            name: 'x_cog_mah_stg_authorization_file'
+                            element: 'doc_readers'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'fcbd732e4bc04df292f1a7b567660a46'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'ship_to_address'
+                            language: 'en'
                         }
                     },
                     {
@@ -41023,6 +50488,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'fcf03e2b98484ae2b1d9e6603e35622a'
+                        key: {
+                            name: 'x_cog_mah_stg_shipment'
+                            element: 'piece_count'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'fcf70aaab3c24d75a6a12ffa4678064b'
                         key: {
@@ -41085,6 +50558,23 @@ declare global {
                         key: {
                             name: 'x_cog_mah_engraving_job'
                             element: 'status'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'fd46f4c761db4f13bf0a3f1f7cdf6e53'
+                        key: {
+                            name: 'x_cog_mah_stg_award_line'
+                            element: 'veteran_name'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'fd473e6697884422b975cc56bc3713d4'
+                        key: {
+                            map: '543eb031c83c4367813a92bf7c1e7286'
+                            target_field: 'fsc'
                         }
                     },
                     {
@@ -41167,6 +50657,13 @@ declare global {
                         key: {
                             name: 'x_cog_mah_status_map'
                             element: 'target_value'
+                        }
+                    },
+                    {
+                        table: 'ua_table_licensing_config'
+                        id: 'fdd050c2db8e4a2ca83e0ebad8a1fce5'
+                        key: {
+                            name: 'x_cog_mah_stg_engraving_job'
                         }
                     },
                     {
@@ -41290,6 +50787,32 @@ declare global {
                         key: {
                             name: 'x_cog_mah_shipment'
                             element: 'partial'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'fe5ddf739cb34a4cb7f69edc570982dd'
+                        key: {
+                            name: 'x_cog_mah_stg_heraldic_item'
+                            element: 'unid'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'fe65acb696314fe38f8cc429d6081712'
+                        key: {
+                            name: 'x_cog_mah_stg_ses_flag_request'
+                            element: 'flag_type'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'febd751f4a8e4ad88dc0a0d7054af8cf'
+                        key: {
+                            name: 'x_cog_mah_stg_awards_case'
+                            element: 'days_open'
                             language: 'en'
                         }
                     },
@@ -41421,6 +50944,14 @@ declare global {
                             cat_item: '74be602ca0cc4a8e981f83a5138007a4'
                             variable_set: 'NULL'
                             name: 'dodaac'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: 'ffeca807878a419da05f9e5eed1ea4a3'
+                        key: {
+                            map: 'd7ceb9b9a99d403aabc70c87fd61af11'
+                            target_field: 'document_number'
                         }
                     },
                     {

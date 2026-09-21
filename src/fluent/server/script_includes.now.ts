@@ -23,6 +23,14 @@ export const mahStatusInquiry = ScriptInclude({
     callerAccess: 'tracking',
 })
 
+export const mahMigration = ScriptInclude({
+    $id: Now.ID['si_migration'],
+    name: 'MAHMigration',
+    script: Now.include('../../includes/MAHMigration.js'),
+    description: 'Transform Map bridge for the legacy import: status mapping, reference resolution, orphan quarantine, requester coalescing, migration exceptions.',
+    accessibleFrom: 'package_private',
+})
+
 export const mahAging = ScriptInclude({
     $id: Now.ID['si_aging'],
     name: 'MAHAging',

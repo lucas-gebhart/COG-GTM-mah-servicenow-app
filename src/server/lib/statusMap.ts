@@ -50,8 +50,19 @@ export function normalizeStatusText(raw: unknown): string {
 
 function entries(form: LegacyForm, field: StatusMapEntry['targetField'], map: Record<string, string[]>): StatusMapEntry[] {
     const out: StatusMapEntry[] = []
+    const seen = new Set<string>()
     for (const [targetValue, variants] of Object.entries(map)) {
-        for (const v of variants) out.push({ legacyForm: form, legacyStatus: normalizeStatusText(v), targetValue, targetField: field })
+        for (const v of variants) {
+            const legacyStatus = normalizeStatusText(v)
+            if (seen.has(legacyStatus)) {
+                if (out.some((e) => e.legacyStatus === legacyStatus && e.targetValue !== targetValue)) {
+                    throw new Error(`status map ${form}: "${legacyStatus}" maps to two targets`)
+                }
+                continue
+            }
+            seen.add(legacyStatus)
+            out.push({ legacyForm: form, legacyStatus, targetValue, targetField: field })
+        }
     }
     return out
 }
