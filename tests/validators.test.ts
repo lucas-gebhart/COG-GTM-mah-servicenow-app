@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest'
+import { readFileSync, readdirSync } from 'node:fs'
+import { join } from 'node:path'
 import {
     validateCageCode,
     validateDd1348Header,
@@ -137,5 +139,18 @@ describe('general whitelist validators', () => {
         expect(validateCageCode('1A2B3').valid).toBe(true)
         expect(validateCageCode('1A2BO').valid).toBe(false)
         expect(validateCageCode('1A2B').valid).toBe(false)
+    })
+})
+
+describe('record producer scripts coerce platform values before validating', () => {
+    it('never passes a raw producer.<variable> into a validator (typeof check would reject the platform string object)', () => {
+        const dir = 'src/producers'
+        const files = readdirSync(dir).filter((f) => f.endsWith('.producer.js'))
+        expect(files.length).toBe(3)
+        for (const file of files) {
+            const source = readFileSync(join(dir, file), 'utf8')
+            const raw = source.split('\n').filter((line) => /validators\.\w+\([^)]*\bproducer\./.test(line))
+            expect(raw, file).toEqual([])
+        }
     })
 })
