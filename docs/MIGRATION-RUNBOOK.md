@@ -76,7 +76,7 @@ Goal: the ServiceNow application is built, tested and installed on the target in
 | --- | --- | --- |
 | 3.1 | `npm ci && npm run lint && npm test && npx now-sdk build` | all green |
 | 3.2 | Confirm generated metadata is current: `npm run gen:ui -- --check`, `gen:security -- --check`, `gen:migration -- --check`, `gen:operations -- --check`, `gen:docs -- --check` | exit 0 (also enforced by the Vitest sync suites) |
-| 3.3 | `npx now-sdk auth --add https://<instance>.service-now.com` then `npx now-sdk install` | application `MAH Case Management` present in *System Applications*, tables and roles listed below exist |
+| 3.3 | `npx now-sdk auth --add https://<instance>.service-now.com` then `npm run deploy` (build + install) | application `MAH Case Management` present in *System Applications*, tables and roles listed below exist |
 | 3.4 | `npm run grant-roles` grants the synthetic test users (`src/server/lib/testUsers.ts`) their roles and the vendor group membership through the Table API — the installer skips `sys_user_has_role` / `sys_group_has_role` / `sys_user_grmember` rows. Grant real users the roles in `README.md` → "Roles and access" the same way | `sys_user_has_role`, `sys_group_has_role`, `sys_user_grmember` |
 | 3.5 | Schedule `MAH Nightly Aging` (installed inactive-safe; confirm run time in *System Definition → Scheduled Jobs*) | job record |
 

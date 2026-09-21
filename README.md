@@ -296,10 +296,11 @@ Install to an instance (credentials are stored by the SDK's credential store, ne
 
 ```bash
 npx now-sdk auth --add https://<instance>.service-now.com   # prompts for user / password
-npx now-sdk install                                          # deploys x_cog_mah
+npm run deploy                                               # now-sdk build && now-sdk install: deploys x_cog_mah
 ```
 
-`now.config.json` holds only the scope and application name. `.env.example` lists the variables the
+`now-sdk install` uploads whatever is in `dist/` without rebuilding, so always deploy through `npm run deploy`
+(build + install) rather than a bare `now-sdk install`. `now.config.json` holds only the scope and application name. `.env.example` lists the variables the
 migration tooling reads (`SN_INSTANCE_URL`, `SERVICENOW_PDI_USERNAME`, `SERVICENOW_PDI_PASSWORD`); copy
 it to `.env` (git-ignored) or export them in your shell.
 
@@ -309,7 +310,7 @@ it to `.env` (git-ignored) or export them in your shell.
 | Script | Runs |
 | --- | --- |
 | `npm run build` | `now-sdk build` |
-| `npm run deploy` | `now-sdk install` |
+| `npm run deploy` | `now-sdk build && now-sdk install` |
 | `npm run transform` | `now-sdk transform` |
 | `npm run types` | `now-sdk dependencies` |
 | `npm run lint` | `eslint . && tsc -p tsconfig.json --noEmit` |
