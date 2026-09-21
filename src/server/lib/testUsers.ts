@@ -23,6 +23,8 @@ export interface TestUser {
     readonly roles: readonly RoleKey[]
     /** Groups the user is a member of (sys_user_grmember), by TestGroup key. */
     readonly groups: readonly string[]
+    /** CAGE code of the `x_cog_mah_vendor` row whose `portal_user` this user becomes (vendor isolation). */
+    readonly vendorCageCode?: string
 }
 
 export interface TestGroup {
@@ -32,14 +34,17 @@ export interface TestGroup {
     readonly description: string
     /** Roles granted on the group (sys_group_has_role). */
     readonly roles: readonly RoleKey[]
+    /** CAGE code of the `x_cog_mah_vendor` row whose `user_group` this group becomes (vendor isolation). */
+    readonly vendorCageCode?: string
 }
 
 export const TEST_GROUPS: readonly TestGroup[] = [
     {
-        key: 'vendor_liberty',
-        name: 'MAH Vendor - Liberty Colors LLC',
+        key: 'vendor_clearfield',
+        name: 'MAH Vendor - Clearfield Colors & Regalia',
         description: "Portal users of vendor CAGE 1CLR7. Members see only that vendor's heraldry requests.",
         roles: ['vendor'],
+        vendorCageCode: '1CLR7',
     },
 ]
 
@@ -96,13 +101,14 @@ export const TEST_USERS: readonly TestUser[] = [
     },
     {
         key: 'vendor',
-        userName: 'mah.vendor.liberty',
+        userName: 'mah.vendor.clearfield',
         firstName: 'Evelyn',
         lastName: 'Fortenbury',
-        title: 'Vendor portal user, Liberty Colors LLC (synthetic)',
-        email: 'mah.vendor.liberty@example.com',
+        title: 'Vendor portal user, Clearfield Colors & Regalia (synthetic)',
+        email: 'mah.vendor.clearfield@example.com',
         roles: ['vendor'],
-        groups: ['vendor_liberty'],
+        groups: ['vendor_clearfield'],
+        vendorCageCode: '1CLR7',
     },
     {
         key: 'dla',
@@ -126,13 +132,26 @@ export const TEST_USERS: readonly TestUser[] = [
     },
 ]
 
+export interface VendorLink {
+    readonly cageCode: string
+    /** `x_cog_mah_vendor.portal_user` by user_name, when a test user is that vendor's portal login. */
+    readonly userName?: string
+    /** `x_cog_mah_vendor.user_group` by group name, when a test group is that vendor's portal group. */
+    readonly group?: string
+}
+
 export interface RoleGrantPlan {
     readonly userRoles: readonly { userName: string; role: string }[]
     readonly groupRoles: readonly { group: string; role: string }[]
     readonly memberships: readonly { userName: string; group: string }[]
+    /** Vendor rows (by CAGE) that must point at a test principal for the isolation rules to bite. */
+    readonly vendorLinks: readonly VendorLink[]
 }
 
-/** Flatten the registry into the three membership tables the Table API tool has to populate. */
+/**
+ * Flatten the registry into the three membership tables the Table API tool has to populate, plus
+ * the vendor links (portal_user / user_group are cut-over settings, never migrated from the legacy export).
+ */
 export function roleGrantPlan(users: readonly TestUser[] = TEST_USERS, groups: readonly TestGroup[] = TEST_GROUPS): RoleGrantPlan {
     const groupByKey = new Map(groups.map((g) => [g.key, g]))
     const userRoles: { userName: string; role: string }[] = []
@@ -146,5 +165,18 @@ export function roleGrantPlan(users: readonly TestUser[] = TEST_USERS, groups: r
         }
     }
     const groupRoles = groups.flatMap((g) => g.roles.map((r) => ({ group: g.name, role: ROLES[r] })))
-    return { userRoles, groupRoles, memberships }
+    const linksByCage = new Map<string, { cageCode: string; userName?: string; group?: string }>()
+    for (const u of users) {
+        if (u.vendorCageCode === undefined) continue
+        const link = linksByCage.get(u.vendorCageCode) ?? { cageCode: u.vendorCageCode }
+        if (link.userName !== undefined) throw new Error(`two test users claim vendor CAGE ${u.vendorCageCode}`)
+        linksByCage.set(u.vendorCageCode, { ...link, userName: u.userName })
+    }
+    for (const g of groups) {
+        if (g.vendorCageCode === undefined) continue
+        const link = linksByCage.get(g.vendorCageCode) ?? { cageCode: g.vendorCageCode }
+        if (link.group !== undefined) throw new Error(`two test groups claim vendor CAGE ${g.vendorCageCode}`)
+        linksByCage.set(g.vendorCageCode, { ...link, group: g.name })
+    }
+    return { userRoles, groupRoles, memberships, vendorLinks: [...linksByCage.values()] }
 }

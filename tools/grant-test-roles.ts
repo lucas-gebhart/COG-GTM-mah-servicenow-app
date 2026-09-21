@@ -7,8 +7,10 @@
  * `sys_user_has_role`, `sys_group_has_role` and `sys_user_grmember` are not application-file
  * tables, so the application installer refuses the rows ("permission denied") even though the
  * `sys_user` / `sys_user_group` records install. This tool applies the same registry
- * (src/server/lib/testUsers.ts) through the Table API; credentials come from the environment
- * only (see .env.example).
+ * (src/server/lib/testUsers.ts) through the Table API, then points each vendor row named in the
+ * registry (by CAGE code) at its portal user / group so the vendor isolation rules have a
+ * principal to isolate — `portal_user` / `user_group` are cut-over settings that the legacy
+ * export never carries. Credentials come from the environment only (see .env.example).
  */
 import { fileURLToPath } from 'node:url'
 import { roleGrantPlan, type RoleGrantPlan } from '../src/server/lib/testUsers'
@@ -16,7 +18,7 @@ import { callInstance, type InstanceConfig, instanceFromEnv } from './lib/instan
 
 interface TableRow {
     sys_id: string
-    [field: string]: string
+    [field: string]: string | { value: string; link?: string }
 }
 interface TableResponse {
     result: TableRow[]
@@ -91,7 +93,35 @@ export async function applyPlan(cfg: InstanceConfig, plan: RoleGrantPlan, log: (
         const [user, group] = await Promise.all([id('sys_user', 'user_name', m.userName), id('sys_user_group', 'name', m.group)])
         await grant('sys_user_grmember', [['user', user], ['group', group]], `${m.userName} in ${m.group}`)
     }
+    log('vendor portal links')
+    for (const link of plan.vendorLinks) {
+        const vendor = await id('x_cog_mah_vendor', 'cage_code', link.cageCode)
+        const patch: Record<string, string> = {}
+        if (link.userName !== undefined) patch.portal_user = await id('sys_user', 'user_name', link.userName)
+        if (link.group !== undefined) patch.user_group = await id('sys_user_group', 'name', link.group)
+        const current = await callInstance<{ result: TableRow }>(cfg, {
+            method: 'GET',
+            path: `/api/now/table/x_cog_mah_vendor/${vendor}?sysparm_fields=portal_user,user_group&sysparm_display_value=false`,
+        })
+        const row = current.result
+        const stale = Object.entries(patch).filter(([field, value]) => refValue(row[field]) !== value)
+        if (stale.length === 0) {
+            summary.skipped++
+            log(`  = vendor ${link.cageCode} already linked`)
+            continue
+        }
+        await callInstance(cfg, { method: 'PATCH', path: `/api/now/table/x_cog_mah_vendor/${vendor}?sysparm_fields=sys_id`, body: Object.fromEntries(stale) })
+        summary.created++
+        log(`  + vendor ${link.cageCode} -> ${stale.map(([f]) => f).join(', ')}`)
+    }
     return summary
+}
+
+/** Reference fields come back as `{ value, link }` objects or plain strings depending on sysparm options. */
+function refValue(v: TableRow[string] | undefined): string {
+    if (v === undefined) return ''
+    if (typeof v === 'string') return v
+    return v.value
 }
 
 export async function main(argv: readonly string[], log: (s: string) => void = console.log): Promise<number> {

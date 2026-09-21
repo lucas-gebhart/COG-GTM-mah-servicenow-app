@@ -851,9 +851,14 @@ declare global {
                         id: '01f3b19096454044bfd6332467ee0612'
                         deleted: true
                     }
+                    group_vendor_clearfield: {
+                        table: 'sys_user_group'
+                        id: '35f74c1860c94ceb805ff99fed0bb8de'
+                    }
                     group_vendor_liberty: {
                         table: 'sys_user_group'
                         id: 'dbb063c90c494459b47d197ecfb76352'
+                        deleted: true
                     }
                     has_role_admin: {
                         table: 'sys_user_has_role'

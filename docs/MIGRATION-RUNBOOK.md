@@ -192,7 +192,7 @@ npm run reconcile -- --source sample-data --target-file out/<batch>/target.json 
 | Orphans | `x_cog_mah_migration_exception` type `orphan_parent`: the quoted parent UNID is genuinely absent from the export |
 | Status fidelity | `legacy_status_raw` is verbatim on every record; `x_cog_mah_status_map` rows with `seeded=false` are the ones added during characterization |
 | Aging | After `MAH Nightly Aging` (run it once manually: *Scheduled Jobs → Execute Now*), `cases_by_aging_flag` matches `expected.json` |
-| Security | Impersonate `mah.vendor.liberty`: heraldry request list shows only that vendor's requests; internal tables are inaccessible |
+| Security | Impersonate `mah.vendor.clearfield`: heraldry request list shows only that vendor's requests; internal tables are inaccessible |
 
 Checkpoint V1 (go / no-go for cut-over): `comparison.json` `ok: true`, spot checks signed off, security
 check signed off, aging job ran cleanly, exception queue triaged (every exception `triaged`, `resolved`
@@ -206,7 +206,7 @@ Goal: switch users from Domino to ServiceNow with a defined freeze window and a 
 | --- | --- | --- |
 | 6.1 Freeze | Set the Domino databases read-only (ACL: all roles → Reader). Announce the freeze window. | Restore ACL |
 | 6.2 Final export | Run the HAAS DXL / CSV export one last time; note the row counts. | — |
-| 6.3 Final load | Phase 4 with a new `--batch-id`. Only deltas change because every transform coalesces on the UNID. Then map `x_cog_mah_vendor.portal_user` / `user_group` for each active vendor (`legacy_vendor_users` holds the Notes canonical name to match). | Delete records where `sys_created_on` ≥ freeze **and** `legacy_unid` is empty, or restore the pre-load update set / clone |
+| 6.3 Final load | Phase 4 with a new `--batch-id`. Only deltas change because every transform coalesces on the UNID. Then map `x_cog_mah_vendor.portal_user` / `user_group` for each active vendor (`legacy_vendor_users` holds the Notes canonical name to match; `npm run grant-roles` does this for the vendors named in `src/server/lib/testUsers.ts`). | Delete records where `sys_created_on` ≥ freeze **and** `legacy_unid` is empty, or restore the pre-load update set / clone |
 | 6.4 Final validate | Phase 5 in `--strict` mode; compare against the 6.2 counts. | If `DIFF` → stay on Domino, lift freeze, fix, repeat from 6.2 |
 | 6.5 Go / no-go | Sign-off from TACOM MAH lead, DLA liaison and the platform owner on: comparison `ok`, exception queue empty of `open`, REST intake tested with a real authorization file, notifications routed. | — |
 | 6.6 Switch | Enable the record producers on Employee Center, publish the `MAH Operations` workspace, point the HRC / NPRC file feed at `POST /api/x_cog_mah/authorization_intake`, set `MAH Nightly Aging` active. | Disable producers / workspace; re-point the feed to Domino |

@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { ROLES, type RoleKey } from '../src/server/lib/domain'
 import { roleGrantPlan, TEST_GROUPS, TEST_USERS } from '../src/server/lib/testUsers'
 import { renderTestUsers, TEST_USERS_FILE } from '../tools/generate-fluent-security'
+import { parseCsv } from '../tools/lib/csv'
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url))
 const FLUENT = readFileSync(TEST_USERS_FILE, 'utf8')
@@ -37,11 +38,26 @@ describe('test user registry', () => {
         const plan = roleGrantPlan()
         expect(plan.userRoles).toHaveLength(TEST_USERS.reduce((n, u) => n + u.roles.length, 0))
         for (const g of plan.userRoles) expect(g.role).toMatch(/^x_cog_mah\./)
-        expect(plan.groupRoles).toEqual([{ group: 'MAH Vendor - Liberty Colors LLC', role: 'x_cog_mah.vendor' }])
-        expect(plan.memberships).toEqual([{ userName: 'mah.vendor.liberty', group: 'MAH Vendor - Liberty Colors LLC' }])
+        expect(plan.groupRoles).toEqual([{ group: 'MAH Vendor - Clearfield Colors & Regalia', role: 'x_cog_mah.vendor' }])
+        expect(plan.memberships).toEqual([{ userName: 'mah.vendor.clearfield', group: 'MAH Vendor - Clearfield Colors & Regalia' }])
+        expect(plan.vendorLinks).toEqual([{ cageCode: '1CLR7', userName: 'mah.vendor.clearfield', group: 'MAH Vendor - Clearfield Colors & Regalia' }])
         const [first] = TEST_USERS
         if (!first) throw new Error('registry is empty')
         expect(() => roleGrantPlan([{ ...first, groups: ['nope'] }], TEST_GROUPS)).toThrow(/unknown group/)
+        expect(() => roleGrantPlan([...TEST_USERS, { ...first, userName: 'dup', vendorCageCode: '1CLR7' }], TEST_GROUPS)).toThrow(/two test users/)
+    })
+
+    it('every vendor CAGE the registry links to exists exactly once in the sample legacy export', () => {
+        const csv = parseCsv(readFileSync(`${ROOT}sample-data/heraldry-Vendor.csv`, 'utf8'))
+        const cageIdx = csv.header.indexOf('VendorKey')
+        expect(cageIdx).toBeGreaterThanOrEqual(0)
+        const cages = csv.rows.map((r) => r[cageIdx])
+        const linked = roleGrantPlan().vendorLinks.map((l) => l.cageCode)
+        expect(linked.length).toBeGreaterThan(0)
+        for (const cage of linked) {
+            expect(cage).toMatch(/^[0-9A-HJ-NP-Z]{5}$/)
+            expect(cages.filter((c) => c === cage), cage).toHaveLength(1)
+        }
     })
 
     it('documentation lists every test user and the grant-roles step', () => {

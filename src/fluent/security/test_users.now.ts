@@ -78,11 +78,11 @@ export const user_vendor = Record({
     $id: Now.ID['user_vendor'],
     table: 'sys_user',
     data: {
-        user_name: 'mah.vendor.liberty',
+        user_name: 'mah.vendor.clearfield',
         first_name: 'Evelyn',
         last_name: 'Fortenbury',
-        title: 'Vendor portal user, Liberty Colors LLC (synthetic)',
-        email: 'mah.vendor.liberty@example.com',
+        title: 'Vendor portal user, Clearfield Colors & Regalia (synthetic)',
+        email: 'mah.vendor.clearfield@example.com',
         active: true,
     },
 })
@@ -113,11 +113,11 @@ export const user_admin = Record({
     },
 })
 
-export const group_vendor_liberty = Record({
-    $id: Now.ID['group_vendor_liberty'],
+export const group_vendor_clearfield = Record({
+    $id: Now.ID['group_vendor_clearfield'],
     table: 'sys_user_group',
     data: {
-        name: 'MAH Vendor - Liberty Colors LLC',
+        name: 'MAH Vendor - Clearfield Colors & Regalia',
         description: 'Portal users of vendor CAGE 1CLR7. Members see only that vendor\'s heraldry requests.',
         active: true,
     },

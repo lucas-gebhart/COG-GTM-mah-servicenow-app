@@ -50,7 +50,7 @@ export class InstanceError extends Error {
 }
 
 export interface RequestOptions {
-    method: 'GET' | 'POST'
+    method: 'GET' | 'POST' | 'PATCH'
     path: string
     body?: unknown
     retries?: number

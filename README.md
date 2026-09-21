@@ -245,11 +245,14 @@ contains the session user — the ServiceNow equivalent of the Domino Readers fi
 
 `src/server/lib/testUsers.ts` is the registry of synthetic principals, one user per role (`mah.tacom`,
 `mah.csr`, `mah.engraver`, `mah.assembler`, `mah.warehouse`, `mah.dla`, `mah.admin`, and the vendor portal
-user `mah.vendor.liberty` in group `MAH Vendor - Liberty Colors LLC`). `src/fluent/security/test_users.now.ts`
+user `mah.vendor.clearfield` in group `MAH Vendor - Clearfield Colors & Regalia`). `src/fluent/security/test_users.now.ts`
 installs the `sys_user` / `sys_user_group` records with the application; the role grants and group
 membership are not application files (the installer skips `sys_user_has_role`, `sys_group_has_role`,
 `sys_user_grmember`), so run `npm run grant-roles` once after `now-sdk install` — it is idempotent and
-uses the same `SN_INSTANCE_URL` / credential variables as the migration tooling. No passwords ship with
+uses the same `SN_INSTANCE_URL` / credential variables as the migration tooling. The same run points
+`x_cog_mah_vendor.portal_user` / `user_group` of the vendor whose CAGE the registry names (`1CLR7`,
+Clearfield Colors & Regalia in the sample export) at the vendor test user and group, so vendor isolation
+can be exercised immediately after the sample load. No passwords ship with
 the application: use **Impersonate user** from an administrator session, or set passwords on the instance.
 
 ## REST API
