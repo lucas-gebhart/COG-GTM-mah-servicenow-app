@@ -1,0 +1,336 @@
+/**
+ * Scripted REST handler for POST /api/x_cog_mah/authorization_intake.
+ *
+ * Replaces the `ImportAuthorizationFile` LotusScript agent, which read an HRC/NPRC
+ * delimited drop file from a mail-in database and created AwardsCase / AwardLine
+ * documents. The handler:
+ *   1. enforces role + body size limits,
+ *   2. parses JSON or delimited bodies with the pure, unit-tested parser,
+ *   3. is idempotent on (source_agency, source_record_id) and on the whole-file hash,
+ *   4. creates authorization_file + requester + awards_case + award_line records,
+ *   5. returns only a generic summary to the caller and writes detailed JSON logs.
+ */
+import { GlideRecord, gs } from '@servicenow/glide'
+import { formatParseLog, intakeCaseDescription, parseAuthorizationFile, summarizeParse, type AuthorizationRecord, type IntakeLogEntry, type ParsedAuthorizationFile } from '../lib/authFileParser.ts'
+import { computeDedupeKey } from '../lib/dedupe.ts'
+import { LIMITS, ROLES, TABLES } from '../lib/domain.ts'
+import { isValidFileName } from '../lib/validators.ts'
+import { hasAnyRole, nowValue, securityLog, str } from '../rules/glideSupport.ts'
+import { securityHeaders, writeError, writeJson, type RestResponse } from './respond.ts'
+
+/** Subset of the platform RESTAPIRequest / RESTAPIResponse surfaces used here. */
+export interface IntakeRequest {
+    body?: { dataString?: string }
+    headers?: Record<string, string>
+    queryParams?: Record<string, string[] | string>
+    pathParams?: Record<string, string>
+    getHeader?: (name: string) => string | null
+}
+export type IntakeResponse = RestResponse
+
+export interface IntakeSummary {
+    status: 'accepted' | 'duplicate' | 'rejected'
+    authorization_file: string
+    accepted: number
+    rejected: number
+    duplicates: number
+    /** Records that parsed cleanly but were refused by a table rule at insert time. */
+    failed: number
+    cases: string[]
+}
+
+
+/** Stable 16-hex-digit content hash (FNV-1a 64 emulated with two 32-bit lanes) — no crypto dependency needed for idempotency. */
+export function contentHash(text: string): string {
+    let h1 = 0x811c9dc5
+    let h2 = 0x01000193
+    for (let i = 0; i < text.length; i += 1) {
+        const c = text.charCodeAt(i)
+        h1 = Math.imul(h1 ^ c, 0x01000193) >>> 0
+        h2 = Math.imul(h2 ^ (c + i), 0x01000193) >>> 0
+    }
+    return h1.toString(16).padStart(8, '0') + h2.toString(16).padStart(8, '0')
+}
+
+function header(request: IntakeRequest, name: string): string {
+    if (typeof request.getHeader === 'function') {
+        const v = request.getHeader(name)
+        if (v) return String(v)
+    }
+    const headers = request.headers ?? {}
+    for (const k of Object.keys(headers)) {
+        if (k.toLowerCase() === name.toLowerCase()) return String(headers[k] ?? '')
+    }
+    return ''
+}
+
+function queryParam(request: IntakeRequest, name: string): string {
+    const v = request.queryParams?.[name]
+    if (Array.isArray(v)) return String(v[0] ?? '')
+    return v === undefined ? '' : String(v)
+}
+
+const reject = writeError
+
+/** Route handler (request, response) => void. */
+export function authorizationIntake(request: IntakeRequest, response: IntakeResponse): void {
+    const reference = gs.generateGUID()
+    securityHeaders(response)
+    try {
+        if (!hasAnyRole(['tacom_staff', 'csr', 'admin'])) {
+            securityLog({ event: 'authorization_failure', source: 'rest:authorization_intake', outcome: 'failure', reason: 'missing_role', details: { reference } })
+            reject(response, 403, reference)
+            return
+        }
+        const body = request.body?.dataString ?? ''
+        if (body.length === 0) {
+            securityLog({ event: 'intake_rejected', source: 'rest:authorization_intake', outcome: 'failure', reason: 'empty_body', details: { reference } })
+            reject(response, 400, reference)
+            return
+        }
+        if (body.length > LIMITS.maxIntakeBodyBytes) {
+            securityLog({ event: 'intake_rejected', source: 'rest:authorization_intake', outcome: 'failure', reason: 'body_too_large', details: { reference, bytes: body.length } })
+            reject(response, 413, reference)
+            return
+        }
+        const contentType = header(request, 'Content-Type') || 'application/json'
+        const requestedName = header(request, 'X-File-Name') || queryParam(request, 'file_name')
+        const fileName = isValidFileName(requestedName) ? requestedName : undefined
+
+        securityLog({
+            event: 'intake_received',
+            source: 'rest:authorization_intake',
+            outcome: 'success',
+            details: { reference, bytes: body.length, contentType, fileName: fileName ?? '' },
+        })
+
+        const hash = contentHash(body)
+        const existing = new GlideRecord(TABLES.authorization_file)
+        existing.addQuery('source_hash', hash)
+        existing.setLimit(1)
+        existing.query()
+        if (existing.next()) {
+            const summary: IntakeSummary = {
+                status: 'duplicate',
+                authorization_file: str(existing, 'number'),
+                accepted: Number(str(existing, 'accepted_count') || 0),
+                rejected: Number(str(existing, 'rejected_count') || 0),
+                duplicates: Number(str(existing, 'duplicate_count') || 0),
+                failed: 0,
+                cases: caseNumbersForFile(existing.getUniqueValue()),
+            }
+            securityLog({ event: 'intake_completed', source: 'rest:authorization_intake', outcome: 'success', reason: 'duplicate_file', record: existing.getUniqueValue(), details: { reference } })
+            writeJson(response, 200, summary)
+            return
+        }
+
+        const parsed = parseAuthorizationFile(body, contentType, fileName)
+        const counts = summarizeParse(parsed)
+        if (parsed.records.length === 0) {
+            securityLog({
+                event: 'intake_rejected',
+                source: 'rest:authorization_intake',
+                outcome: 'failure',
+                reason: 'no_valid_records',
+                details: { reference, rejected: counts.rejected, fileIssues: parsed.fileIssues.map((i) => `${i.field}:${i.code}`).join(';') },
+            })
+            reject(response, 400, reference)
+            return
+        }
+
+        const result = loadParsedFile(parsed, hash, body.length)
+        securityLog({
+            event: 'intake_completed',
+            source: 'rest:authorization_intake',
+            outcome: 'success',
+            table: TABLES.authorization_file,
+            record: result.fileSysId,
+            details: { reference, accepted: result.summary.accepted, rejected: result.summary.rejected, duplicates: result.summary.duplicates, failed: result.summary.failed },
+        })
+        writeJson(response, 201, result.summary)
+    } catch (e) {
+        const message = e instanceof Error ? `${e.name}: ${e.message}` : String(e)
+        securityLog({ event: 'intake_rejected', source: 'rest:authorization_intake', outcome: 'failure', reason: 'exception', details: { reference, message } })
+        reject(response, 500, reference)
+    }
+}
+
+function caseNumbersForFile(fileSysId: string): string[] {
+    const out: string[] = []
+    const gr = new GlideRecord(TABLES.awards_case)
+    gr.addQuery('authorization_file', fileSysId)
+    gr.orderBy('number')
+    gr.query()
+    while (gr.next()) out.push(str(gr, 'number'))
+    return out
+}
+
+export function loadParsedFile(parsed: ParsedAuthorizationFile, hash: string, bytes: number): { fileSysId: string; summary: IntakeSummary } {
+    const file = new GlideRecord(TABLES.authorization_file)
+    file.initialize()
+    file.setValue('file_name', parsed.file_name)
+    file.setValue('received', nowValue())
+    file.setValue('source_agency', parsed.source_agency)
+    file.setValue('format', parsed.format)
+    file.setValue('record_count', String(parsed.records.length + parsed.rejected.length))
+    file.setValue('parse_status', 'parsing')
+    file.setValue('source_hash', hash)
+    file.setValue('submitted_by', gs.getUserID())
+    file.setValue('intake_channel', 'rest')
+    file.setValue('legacy_form', 'AuthorizationFile')
+    file.setValue('state', 'open')
+    file.setValue('active', 'true')
+    const fileSysId = insertedSysId(file)
+    if (!fileSysId) throw new Error(`${TABLES.authorization_file} insert was aborted by a table rule`)
+
+    const cases: string[] = []
+    let duplicates = 0
+    let accepted = 0
+    let failed = 0
+    const log: IntakeLogEntry[] = []
+
+    for (const record of parsed.records) {
+        const existingCase = findCaseBySource(record)
+        if (existingCase) {
+            duplicates += 1
+            log.push({ kind: 'duplicate', source_record_id: record.source_record_id, case_number: existingCase })
+            continue
+        }
+        const requesterSysId = findOrCreateRequester(record)
+        if (!requesterSysId) {
+            failed += 1
+            log.push({ kind: 'failed', source_record_id: record.source_record_id, table: TABLES.requester })
+            continue
+        }
+        const caseNumber = createCase(record, requesterSysId, fileSysId)
+        if (!caseNumber) {
+            failed += 1
+            log.push({ kind: 'failed', source_record_id: record.source_record_id, table: TABLES.awards_case })
+            continue
+        }
+        cases.push(caseNumber)
+        accepted += 1
+        log.push({ kind: 'accepted', source_record_id: record.source_record_id, case_number: caseNumber })
+    }
+
+    const incomplete = parsed.rejected.length > 0 || parsed.fileIssues.length > 0 || failed > 0
+    file.setValue('accepted_count', String(accepted))
+    file.setValue('rejected_count', String(parsed.rejected.length + failed))
+    file.setValue('duplicate_count', String(duplicates))
+    file.setValue('parse_status', accepted === 0 ? 'failed' : incomplete ? 'partial' : 'parsed')
+    file.setValue('parse_log', formatParseLog(parsed, bytes, log))
+    file.setValue('state', 'closed')
+    file.setValue('active', 'false')
+    if (!file.update()) throw new Error(`${TABLES.authorization_file} update was aborted by a table rule`)
+
+    return {
+        fileSysId,
+        summary: { status: 'accepted', authorization_file: str(file, 'number'), accepted, rejected: parsed.rejected.length, duplicates, failed, cases },
+    }
+}
+
+/** `GlideRecord.insert()` returns null when a before rule calls `setAbortAction(true)`. */
+function insertedSysId(gr: GlideRecord<string>): string {
+    const id = gr.insert()
+    return id === null || id === undefined ? '' : String(id)
+}
+
+function findCaseBySource(record: AuthorizationRecord): string | null {
+    const gr = new GlideRecord(TABLES.awards_case)
+    gr.addQuery('source_agency', record.source_agency)
+    gr.addQuery('source_record_id', record.source_record_id)
+    gr.setLimit(1)
+    gr.query()
+    return gr.next() ? str(gr, 'number') : null
+}
+
+function findOrCreateRequester(record: AuthorizationRecord): string {
+    const rq = record.requester
+    const key = computeDedupeKey({
+        type: rq.type,
+        first_name: rq.first_name,
+        last_name: rq.last_name,
+        unit_name: rq.unit_name,
+        service_number_last4: rq.service_number_last4,
+        dob: rq.dob,
+        email: rq.email,
+        zip: rq.zip,
+    })
+    if (key) {
+        const existing = new GlideRecord(TABLES.requester)
+        existing.addQuery('dedupe_key', key)
+        existing.addNullQuery('merged_into')
+        existing.setLimit(1)
+        existing.query()
+        if (existing.next()) return existing.getUniqueValue()
+    }
+    const gr = new GlideRecord(TABLES.requester)
+    gr.initialize()
+    gr.setValue('type', rq.type)
+    gr.setValue('first_name', rq.first_name)
+    gr.setValue('last_name', rq.last_name)
+    gr.setValue('unit_name', rq.unit_name)
+    gr.setValue('service_number_last4', rq.service_number_last4)
+    if (rq.dob) gr.setValue('dob', rq.dob)
+    gr.setValue('email', rq.email)
+    gr.setValue('phone', rq.phone)
+    gr.setValue('address_1', rq.address_1)
+    gr.setValue('address_2', rq.address_2)
+    gr.setValue('city', rq.city)
+    gr.setValue('address_state', rq.state)
+    gr.setValue('zip', rq.zip)
+    gr.setValue('country', 'US')
+    gr.setValue('state', 'active')
+    gr.setValue('active', 'true')
+    gr.setValue('legacy_form', 'Requester')
+    return insertedSysId(gr)
+}
+
+function createCase(record: AuthorizationRecord, requesterSysId: string, fileSysId: string): string {
+    const rq = record.requester
+    const c = new GlideRecord(TABLES.awards_case)
+    c.initialize()
+    c.setValue('requester', requesterSysId)
+    c.setValue('authorization_file', fileSysId)
+    c.setValue('source_agency', record.source_agency)
+    c.setValue('source_record_id', record.source_record_id)
+    if (record.authorization_date) c.setValue('authorization_date', record.authorization_date)
+    c.setValue('stage', 'authorized')
+    c.setValue('state', 'open')
+    c.setValue('active', 'true')
+    c.setValue('legacy_form', 'AwardsCase')
+    c.setValue('ship_to_name', record.ship_to || (rq.type === 'unit' ? rq.unit_name : `${rq.first_name} ${rq.last_name}`.trim()))
+    c.setValue('ship_to_address_1', rq.address_1)
+    c.setValue('ship_to_address_2', rq.address_2)
+    c.setValue('ship_to_city', rq.city)
+    c.setValue('ship_to_state', rq.state)
+    c.setValue('ship_to_zip', rq.zip)
+    c.setValue('ship_to_country', 'US')
+    c.setValue('short_description', intakeCaseDescription(record))
+    const caseSysId = insertedSysId(c)
+    if (!caseSysId) return ''
+
+    let lineNo = 0
+    for (const award of record.awards) {
+        lineNo += 1
+        const line = new GlideRecord(TABLES.award_line)
+        line.initialize()
+        line.setValue('awards_case', caseSysId)
+        line.setValue('line_number', String(lineNo))
+        line.setValue('award_name', award.award_name)
+        line.setValue('device', award.device)
+        line.setValue('quantity', String(award.quantity))
+        line.setValue('engraving_text', award.engraving_text)
+        line.setValue('engraving_required', award.engraving_required ? 'true' : 'false')
+        line.setValue('status', 'pending')
+        line.setValue('state', 'open')
+        line.setValue('active', 'true')
+        line.setValue('legacy_form', 'AwardLine')
+        line.insert()
+    }
+    const saved = new GlideRecord(TABLES.awards_case)
+    return saved.get(caseSysId) ? str(saved, 'number') : caseSysId
+}
+
+/** Roles allowed to call the intake endpoint (used by the REST ACL script). */
+export const INTAKE_ROLES: readonly string[] = [ROLES.tacom_staff, ROLES.csr, ROLES.admin]

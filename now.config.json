@@ -1,0 +1,6 @@
+{
+    "scope": "x_cog_mah",
+    "scopeId": "0a414490dc1944458d7f7257cf53b555",
+    "name": "MAH Case Management",
+    "tsconfigPath": "./src/server/tsconfig.json"
+}

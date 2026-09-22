@@ -1,0 +1,16 @@
+node_modules/
+dist/
+target/
+.now/
+@types/
+*.tsbuildinfo
+.jest_cache
+.env
+.env.*
+!.env.example
+coverage/
+out/
+reconciliation-*.json
+migration-run-*.json
+.DS_Store
+reports/
