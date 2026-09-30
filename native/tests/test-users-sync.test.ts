@@ -26,9 +26,10 @@ describe('test user registry', () => {
         const fluentUserNames = [...FLUENT.matchAll(/user_name: '([^']+)'/g)].map((m) => m[1])
         const fluentGroupNames = [...FLUENT.matchAll(/^\s+name: '([^']+)'/gm)].map((m) => m[1])
         expect([...fluentUserNames].sort()).toEqual(TEST_USERS.map((u) => u.userName).sort())
-        expect([...fluentGroupNames].sort()).toEqual(TEST_GROUPS.map((g) => g.name).sort())
+        // operational groups (TACOM, engraving, assembly, warehouse) are declared in groups.now.ts; only vendor groups render here
+        expect([...fluentGroupNames].sort()).toEqual(TEST_GROUPS.filter((g) => g.vendorCageCode).map((g) => g.name).sort())
         for (const u of TEST_USERS) expect(FLUENT).toContain(`Now.ID['user_${u.key}']`)
-        for (const g of TEST_GROUPS) expect(FLUENT).toContain(`Now.ID['group_${g.key}']`)
+        for (const g of TEST_GROUPS.filter((x) => x.vendorCageCode)) expect(FLUENT).toContain(`Now.ID['group_${g.key}']`)
         for (const table of ['sys_user_has_role', 'sys_group_has_role', 'sys_user_grmember']) {
             expect(FLUENT).not.toMatch(new RegExp(`table:\\s*'${table}'`))
         }
@@ -38,8 +39,13 @@ describe('test user registry', () => {
         const plan = roleGrantPlan()
         expect(plan.userRoles).toHaveLength(TEST_USERS.reduce((n, u) => n + u.roles.length, 0))
         for (const g of plan.userRoles) expect(g.role).toMatch(/^x_cog_mah_native\./)
-        expect(plan.groupRoles).toEqual([{ group: GROUPS.vendor_clearfield, role: 'x_cog_mah_native.vendor' }])
-        expect(plan.memberships).toEqual([{ userName: 'mah.vendor.clearfield', group: GROUPS.vendor_clearfield }])
+        expect(plan.groupRoles).toHaveLength(TEST_GROUPS.reduce((n, g) => n + g.roles.length, 0))
+        expect(plan.groupRoles).toContainEqual({ group: GROUPS.vendor_clearfield, role: 'x_cog_mah_native.vendor' })
+        expect(plan.groupRoles).toContainEqual({ group: GROUPS.tacom, role: 'x_cog_mah_native.tacom_staff' })
+        expect(plan.memberships).toHaveLength(TEST_USERS.reduce((n, u) => n + u.groups.length, 0))
+        expect(plan.memberships).toContainEqual({ userName: 'mah.vendor.clearfield', group: GROUPS.vendor_clearfield })
+        // the review flow's approver group must have members or "Ask for approval" skips with no approvers
+        expect(plan.memberships).toContainEqual({ userName: 'mah.tacom', group: GROUPS.tacom })
         expect(plan.vendorLinks).toEqual([{ cageCode: '1CLR7', userName: 'mah.vendor.clearfield', group: GROUPS.vendor_clearfield }])
         const [first] = TEST_USERS
         if (!first) throw new Error('registry is empty')

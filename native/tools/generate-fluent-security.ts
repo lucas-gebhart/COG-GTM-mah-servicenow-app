@@ -52,7 +52,9 @@ export function renderTestUsers(): string {
             ''
         )
     }
-    for (const g of TEST_GROUPS) {
+    // Operational groups (TACOM, engraving, assembly, warehouse) are declared in groups.now.ts next to the
+    // assignment rules that target them; only the vendor group ships with its test user here.
+    for (const g of TEST_GROUPS.filter((x) => x.vendorCageCode)) {
         out.push(
             `export const group_${g.key} = Record({`,
             `    $id: Now.ID['group_${g.key}'],`,

@@ -40,7 +40,7 @@ export const caseSlaBreachedNotification = EmailNotification({
     active: true,
     triggerConditions: {
         generationType: 'engine',
-        onRecordInsert: false,
+        onRecordInsert: true, // a backdated case's SLA is born breached (retroactive start) and must notify too
         onRecordUpdate: true,
         condition: 'has_breachedCHANGESTOtrue^task.sys_class_name=x_cog_mah_native_awards_case^sla.nameSTARTSWITHMAH Native awards case',
     },

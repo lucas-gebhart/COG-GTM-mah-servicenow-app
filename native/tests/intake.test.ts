@@ -83,6 +83,7 @@ describe('Import Set API intake (x_cog_mah_native_stg_authorization_line)', () =
         expect(intakeStage({ inserted: 2, updated: 1, error: 0 })).toBe('parsed')
         expect(intakeStage({ inserted: 2, updated: 0, error: 1 })).toBe('partial')
         expect(intakeStage({ inserted: 0, updated: 0, error: 3 })).toBe('failed')
+        expect(intakeStage({ inserted: 0, updated: 0, error: 0 })).toBe('parsed')
         expect(intakeParseLog('f.txt', { total: 4, inserted: 2, updated: 1, ignored: 0, error: 1 }, 2, 3)).toMatch(/4 staging row\(s\)[\s\S]*accepted 3[\s\S]*rejected 1[\s\S]*cases linked 2, award lines 3/)
     })
 

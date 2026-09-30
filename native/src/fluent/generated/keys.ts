@@ -6081,6 +6081,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '160e2270848e484a96b35f2cd3cb7914'
+                        key: {
+                            list_id: {
+                                id: '878a6d97e7f749e8b5d6570f994c2d13'
+                                key: {
+                                    name: 'x_cog_mah_native_stg_authorization_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'sys_import_state_comment'
+                        }
+                    },
+                    {
                         table: 'ua_table_licensing_config'
                         id: '161ccaf4aedf4d569dffcfa1da2fc2a3'
                         key: {
@@ -9075,6 +9098,29 @@ declare global {
                         key: {
                             logical_table_name: 'x_cog_mah_native_requester'
                             col_name_string: 'last_name,first_name'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '29db0eeaad4b4c449a4e7bd23d3d3f3a'
+                        key: {
+                            list_id: {
+                                id: '878a6d97e7f749e8b5d6570f994c2d13'
+                                key: {
+                                    name: 'x_cog_mah_native_stg_authorization_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'sys_target_sys_id'
                         }
                     },
                     {
@@ -12257,6 +12303,29 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list_element'
+                        id: '3ed21fc4af864300a71767234f5b77c9'
+                        key: {
+                            list_id: {
+                                id: '878a6d97e7f749e8b5d6570f994c2d13'
+                                key: {
+                                    name: 'x_cog_mah_native_stg_authorization_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'sys_import_set'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '3efd765a196a428282f1adf4ba18954e'
                         key: {
@@ -13938,6 +14007,29 @@ declare global {
                     },
                     {
                         table: 'sys_ui_list_element'
+                        id: '4cbd14cec26746ea9df4a086a34e891b'
+                        key: {
+                            list_id: {
+                                id: '878a6d97e7f749e8b5d6570f994c2d13'
+                                key: {
+                                    name: 'x_cog_mah_native_stg_authorization_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'sys_created_on'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
                         id: '4cbff5b9b87d4654b79606c379bafa71'
                         key: {
                             list_id: {
@@ -15562,6 +15654,29 @@ declare global {
                             value: 'unmapped'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '57ab34953f6b40a9bb6214c3a6120df0'
+                        key: {
+                            list_id: {
+                                id: '878a6d97e7f749e8b5d6570f994c2d13'
+                                key: {
+                                    name: 'x_cog_mah_native_stg_authorization_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'record_id'
                         }
                     },
                     {
@@ -22942,6 +23057,23 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_ui_list'
+                        id: '878a6d97e7f749e8b5d6570f994c2d13'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            view: {
+                                id: 'Default view'
+                                key: {
+                                    name: 'NULL'
+                                }
+                            }
+                            sys_domain: 'global'
+                            element: 'NULL'
+                            relationship: 'NULL'
+                            parent: 'NULL'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: '878e8f4517d34b76bbc10b6f188f33d9'
                         key: {
@@ -26117,6 +26249,29 @@ declare global {
                             }
                             element: 'estimated_ship_date'
                             position: '11'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: '9bed723c140f4e318872815583125e7d'
+                        key: {
+                            list_id: {
+                                id: '878a6d97e7f749e8b5d6570f994c2d13'
+                                key: {
+                                    name: 'x_cog_mah_native_stg_authorization_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'file_name'
                         }
                     },
                     {
@@ -36557,6 +36712,29 @@ declare global {
                     },
                     {
                         table: 'sys_ui_list_element'
+                        id: 'db640012334b44fab3e2aa3b4c5e94b9'
+                        key: {
+                            list_id: {
+                                id: '878a6d97e7f749e8b5d6570f994c2d13'
+                                key: {
+                                    name: 'x_cog_mah_native_stg_authorization_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'last_name'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
                         id: 'db69f041437d42ce950046b300014bbe'
                         key: {
                             list_id: {
@@ -36902,6 +37080,29 @@ declare global {
                         key: {
                             name: 'x_cog_mah_native_stg_engraving_job'
                             element: 'proof_checked'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_list_element'
+                        id: 'dd3be5058f4e4502bfecbabc5e60fe0d'
+                        key: {
+                            list_id: {
+                                id: '878a6d97e7f749e8b5d6570f994c2d13'
+                                key: {
+                                    name: 'x_cog_mah_native_stg_authorization_line'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                    element: 'NULL'
+                                    relationship: 'NULL'
+                                    parent: 'NULL'
+                                }
+                            }
+                            element: 'sys_import_state'
                         }
                     },
                     {

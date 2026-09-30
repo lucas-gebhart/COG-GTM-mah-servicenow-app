@@ -8,7 +8,7 @@
  * validators stay in the Import Set in state `error` with the reason in `sys_import_state_comment`.
  * Logic lives in src/server/intake/importSetIntake.ts (unit-tested); this file is metadata only.
  */
-import { ImportSet, StringColumn, Table } from '@servicenow/sdk/core'
+import { ImportSet, List, StringColumn, Table, default_view } from '@servicenow/sdk/core'
 
 export const x_cog_mah_native_stg_authorization_line = Table({
     name: 'x_cog_mah_native_stg_authorization_line',
@@ -79,5 +79,21 @@ export const tm_intake_authorization_line = ImportSet({
             active: true,
             script: "(function runTransformScript(source, map, log, target) {\n    new x_cog_mah_native.MAHNativeMigration().intakeComplete(import_set);\n})(source, map, log, target);",
         },
+    ],
+})
+
+// Import Set rows are the intake's exception surface: the list shows the row's native outcome next to its source key.
+List({
+    table: 'x_cog_mah_native_stg_authorization_line',
+    view: default_view,
+    columns: [
+        { element: 'record_id' },
+        { element: 'file_name' },
+        { element: 'last_name' },
+        { element: 'sys_import_set' },
+        { element: 'sys_import_state' },
+        { element: 'sys_import_state_comment' },
+        { element: 'sys_target_sys_id' },
+        { element: 'sys_created_on' },
     ],
 })

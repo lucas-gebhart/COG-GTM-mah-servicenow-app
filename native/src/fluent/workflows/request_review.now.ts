@@ -93,13 +93,13 @@ Flow(
             () => {
                 wfa.action(
                     action.core.updateRecord,
-                    { $id: Now.ID['flow_review_rollback'], annotation: 'Rejected: roll back to Draft' },
+                    { $id: Now.ID['flow_review_rollback'], annotation: 'Rejected: send back to Submitted' },
                     {
                         table_name: 'x_cog_mah_native_heraldry_request',
                         record: wfa.dataPill(params.trigger.current, 'reference'),
                         values: TemplateValue({
-                            stage: 'draft',
-                            work_notes: 'Rejected in review by TACOM Awards Staff; rolled back to Draft for correction and resubmission.',
+                            stage: 'submitted',
+                            work_notes: 'Rejected in review by TACOM Awards Staff; sent back to Submitted for correction (the stage machine only allows in_review → submitted).',
                         }),
                     }
                 )

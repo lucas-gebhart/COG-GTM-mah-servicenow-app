@@ -40,6 +40,30 @@ export interface TestGroup {
 
 export const TEST_GROUPS: readonly TestGroup[] = [
     {
+        key: 'tacom',
+        name: GROUPS.tacom,
+        description: 'TACOM Awards Staff: reviewers/approvers of heraldry requests and owners of awards-case SLAs.',
+        roles: ['tacom_staff'],
+    },
+    {
+        key: 'engraving',
+        name: GROUPS.engraving,
+        description: 'Engraving shop: assignment group of engraving-job tasks (VTB lanes).',
+        roles: ['engraver'],
+    },
+    {
+        key: 'assembly',
+        name: GROUPS.assembly,
+        description: 'Assembly and QC: assignment group of awards cases in Assembly/QC.',
+        roles: ['assembler'],
+    },
+    {
+        key: 'warehouse',
+        name: GROUPS.warehouse,
+        description: 'Warehouse: assignment group of shipment tasks.',
+        roles: ['warehouse'],
+    },
+    {
         key: 'vendor_clearfield',
         name: GROUPS.vendor_clearfield,
         description: "Portal users of vendor CAGE 1CLR7. Members see only that vendor's heraldry requests.",
@@ -57,7 +81,7 @@ export const TEST_USERS: readonly TestUser[] = [
         title: 'MAH Program Lead (synthetic)',
         email: 'mah.tacom@example.mil',
         roles: ['tacom_staff'],
-        groups: [],
+        groups: ['tacom'],
     },
     {
         key: 'csr',
@@ -77,7 +101,7 @@ export const TEST_USERS: readonly TestUser[] = [
         title: 'Engraving Technician (synthetic)',
         email: 'mah.engraver@example.mil',
         roles: ['engraver'],
-        groups: [],
+        groups: ['engraving'],
     },
     {
         key: 'assembler',
@@ -87,7 +111,7 @@ export const TEST_USERS: readonly TestUser[] = [
         title: 'Assembly / QC Technician (synthetic)',
         email: 'mah.assembler@example.mil',
         roles: ['assembler'],
-        groups: [],
+        groups: ['assembly'],
     },
     {
         key: 'warehouse',
@@ -97,7 +121,7 @@ export const TEST_USERS: readonly TestUser[] = [
         title: 'Warehouse Specialist (synthetic)',
         email: 'mah.warehouse@example.mil',
         roles: ['warehouse'],
-        groups: [],
+        groups: ['warehouse'],
     },
     {
         key: 'vendor',
@@ -128,7 +152,7 @@ export const TEST_USERS: readonly TestUser[] = [
         title: 'MAH Application Administrator (synthetic)',
         email: 'mah.admin@example.mil',
         roles: ['admin'],
-        groups: [],
+        groups: ['tacom'],
     },
 ]
 

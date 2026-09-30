@@ -69,8 +69,8 @@ export interface IntakeRunCounts {
 }
 
 export function intakeStage(c: Pick<IntakeRunCounts, 'inserted' | 'updated' | 'error'>): 'parsed' | 'partial' | 'failed' {
-    if (c.inserted + c.updated === 0) return 'failed'
-    return c.error > 0 ? 'partial' : 'parsed'
+    if (c.error === 0) return 'parsed' // a file made only of already-loaded duplicates parsed fine, it just changed nothing
+    return c.inserted + c.updated === 0 ? 'failed' : 'partial'
 }
 
 export function intakeParseLog(fileName: string, c: IntakeRunCounts, cases: number, lines: number): string {

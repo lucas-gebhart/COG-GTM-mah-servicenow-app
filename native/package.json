@@ -19,6 +19,7 @@
         "migrate": "tsx tools/migrate.ts",
         "reconcile": "tsx tools/reconcile.ts",
         "grant-roles": "tsx tools/grant-roles.ts",
+        "vtb-sync": "tsx tools/vtb-sync.ts",
         "inventory": "tsx tools/inventory.ts",
         "gen:ui": "tsx tools/generate-fluent-ui.ts",
         "gen:security": "tsx tools/generate-fluent-security.ts",
