@@ -351,11 +351,14 @@ export function onBefore(form: LegacyFormName, source: AnyRecord, target: AnyRec
         // persists mapped-column changes and reports a journal-only update as "No field values changed",
         // so the note is written to the parent here and the staging row is left `ignored` with an explicit
         // comment. Re-runs are idempotent: a note whose marker is already on the task is not repeated.
-        if (!isUpdate) {
+        const parentSysId = isUpdate
+            ? String(target.getUniqueValue())
+            : resolveLookup({ field: 'sys_id', table: t.targetTable, matchFields: ['legacy_unid'], value: t.fields.legacy_unid ?? '', required: true })
+        if (!parentSysId) {
             s.quarantined++
             return { ignore: true, error: true, statusMessage: `${QUARANTINE_STATUS_MESSAGE}: orphan_parent[legacy_unid]: parent case ${t.fields.legacy_unid ?? ''} not found`, warningCount: 1, quarantined: true }
         }
-        const outcome = appendJournal(t.targetTable, String(target.getUniqueValue()), t.fields)
+        const outcome = appendJournal(t.targetTable, parentSysId, t.fields)
         s.warnings += t.warnings.length
         log('import_set_row', { form, legacyUnid: meta.legacyUnid, sourceRow: meta.sourceRow, journal: outcome })
         return { ignore: true, error: false, statusMessage: [outcome, formatWarnings(t.warnings)].filter(Boolean).join('\n').slice(0, 4000), warningCount: t.warnings.length, quarantined: false }

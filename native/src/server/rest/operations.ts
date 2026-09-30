@@ -31,7 +31,7 @@ function deny(response: OpsResponse, source: string, reference: string): void {
     writeError(response, 403, reference)
 }
 
-export function reconciliationReport(_request: OpsRequest, response: OpsResponse): void {
+export function reconciliationReport(request: OpsRequest, response: OpsResponse): void {
     const reference = gs.generateGUID()
     headers(response)
     if (!hasAnyRole(RECONCILIATION_ROLES)) {
@@ -39,13 +39,20 @@ export function reconciliationReport(_request: OpsRequest, response: OpsResponse
         return
     }
     try {
-        const report = buildReconciliationReport()
+        const report = buildReconciliationReport(queryBatchId(request))
         securityLog({ event: 'data_access', source: 'rest:reconciliation', outcome: 'success', details: { reference, tables: report.tables.length } })
         writeJson(response, 200, report)
     } catch (err) {
         securityLog({ event: 'error', source: 'rest:reconciliation', outcome: 'failure', reason: String(err), details: { reference } })
         writeError(response, 500, reference)
     }
+}
+
+/** Whitelisted `?batch_id=` query parameter; anything unexpected yields '' (→ latest batch). */
+export function queryBatchId(request: OpsRequest): string {
+    const raw = request.queryParams?.['batch_id']
+    const id = Array.isArray(raw) ? String(raw[0] ?? '') : String(raw ?? '')
+    return BATCH_ID_PATTERN.test(id) ? id : ''
 }
 
 /** Parse and whitelist the batch id from a small JSON body; anything unexpected yields ''. */

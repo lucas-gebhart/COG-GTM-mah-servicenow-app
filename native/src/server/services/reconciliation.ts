@@ -21,6 +21,8 @@ export interface TableCount {
 
 export interface ReconciliationReport {
     generated_at: string
+    /** Batch whose staging rows the import-row states / exception counts describe. */
+    batch_id: string
     tables: TableCount[]
     companies: { rows: number; withLegacyUnid: number }
     award_line_quantity_total: number
@@ -94,44 +96,66 @@ function groupCounts(table: string, field: string, order: readonly string[], app
 /** `type[field]: message` lines (warnings) and `Quarantined: parent not found: orphan_parent[...]` comments. */
 const EXCEPTION_TYPE = /(?:^|\n)(?:Quarantined: parent not found: )?([a-z_]+)\[/g
 
-/** Exception counts by type from the Import Set rows' state comments, plus the requesters merged on the instance. */
-export function exceptionCountsFromImportRows(importSets: readonly string[]): Record<string, number> {
-    const out: Record<string, number> = {}
-    if (importSets.length === 0) return out
-    const gr = new GlideRecord(PLATFORM_TABLES.import_set_row)
-    gr.addQuery('sys_import_set', 'IN', importSets.join(','))
-    gr.addNotNullQuery('sys_import_state_comment')
-    gr.query()
-    while (gr.next()) {
-        const comment = String(gr.getValue('sys_import_state_comment') ?? '')
-        const re = new RegExp(EXCEPTION_TYPE.source, 'g')
-        let m: RegExpExecArray | null
-        while ((m = re.exec(comment)) !== null) {
-            const type = m[1] ?? ''
-            if (type) out[type] = (out[type] ?? 0) + 1
-        }
-    }
+/** Staging tables (one per legacy form; the two requester forms share one). */
+export function stagingTables(): string[] {
+    const out: string[] = []
+    for (const form of Object.values(LEGACY_CONTRACT)) if (!out.includes(form.stagingTable)) out.push(form.stagingTable)
     return out
 }
 
-/**
- * The most recent Import Set per staging table: reconciliation reports the latest run, so a rerun
- * (idempotent coalesce) does not double-count exceptions from earlier batches.
- */
-export function latestImportSets(): string[] {
-    const out: string[] = []
-    for (const form of Object.values(LEGACY_CONTRACT)) {
-        const gr = new GlideRecord(PLATFORM_TABLES.import_set)
-        gr.addQuery('table_name', form.stagingTable)
+/** The batch id of the most recently loaded staging row, so a report without `?batch_id=` describes the last run. */
+export function latestBatchId(): string {
+    let best = ''
+    let bestAt = ''
+    for (const table of stagingTables()) {
+        const gr = new GlideRecord(table)
         gr.orderByDesc('sys_created_on')
         gr.setLimit(1)
         gr.query()
-        if (gr.next()) out.push(String(gr.getUniqueValue()))
+        if (!gr.next()) continue
+        const at = String(gr.getValue('sys_created_on') ?? '')
+        if (at > bestAt) {
+            bestAt = at
+            best = String(gr.getValue('mah_batch_id') ?? '')
+        }
     }
-    return out
+    return best
 }
 
-export function buildReconciliationReport(): ReconciliationReport {
+export interface ImportRowSummary {
+    states: Record<string, number>
+    exceptions: Record<string, number>
+}
+
+/**
+ * Import Set row states and exception types (parsed from `sys_import_state_comment`) for one batch.
+ * Rows are selected by the `mah_batch_id` staging column rather than by import set: the Import Set
+ * API appends to whichever set is still `loading`, so a set can span batches while a batch id cannot.
+ */
+export function importRowsForBatch(batchId: string): ImportRowSummary {
+    const states: Record<string, number> = { inserted: 0, updated: 0, ignored: 0, error: 0 }
+    const exceptions: Record<string, number> = {}
+    if (!batchId) return { states, exceptions }
+    for (const table of stagingTables()) {
+        const gr = new GlideRecord(table)
+        gr.addQuery('mah_batch_id', batchId)
+        gr.query()
+        while (gr.next()) {
+            const state = String(gr.getValue('sys_import_state') ?? '') || '(empty)'
+            states[state] = (states[state] ?? 0) + 1
+            const comment = String(gr.getValue('sys_import_state_comment') ?? '')
+            const re = new RegExp(EXCEPTION_TYPE.source, 'g')
+            let m: RegExpExecArray | null
+            while ((m = re.exec(comment)) !== null) {
+                const type = m[1] ?? ''
+                if (type) exceptions[type] = (exceptions[type] ?? 0) + 1
+            }
+        }
+    }
+    return { states, exceptions }
+}
+
+export function buildReconciliationReport(requestedBatchId = ''): ReconciliationReport {
     const tables: TableCount[] = []
     let unmappedTotal = 0
     for (const entry of RECONCILED_TABLES) {
@@ -147,14 +171,14 @@ export function buildReconciliationReport(): ReconciliationReport {
             unmappedStatus: unmapped,
         })
     }
-    const importSets = latestImportSets()
-    const importRowStates = groupCounts(PLATFORM_TABLES.import_set_row, 'sys_import_state', ['inserted', 'updated', 'ignored', 'error'], (gr) =>
-        gr.addQuery('sys_import_set', 'IN', importSets.join(',') || 'none'),
-    )
+    const batchId = requestedBatchId || latestBatchId()
+    const importRows = importRowsForBatch(batchId)
+    const importRowStates = importRows.states
     const taskStateOrder = Object.values(TASK_STATES).map(String)
     const mergedRequesters = countRows(TABLES.requester, (gr) => gr.addNotNullQuery('merged_into'))
     return {
         generated_at: nowValue(),
+        batch_id: batchId,
         tables,
         companies: {
             rows: countRows(PLATFORM_TABLES.company, (gr) => gr.addNotNullQuery(COMPANY_FIELDS.legacy_unid)),
@@ -166,7 +190,7 @@ export function buildReconciliationReport(): ReconciliationReport {
         duplicate_merge_count: mergedRequesters,
         unmapped_status_count: unmappedTotal,
         import_row_states: importRowStates,
-        exception_counts: exceptionCountsFromImportRows(importSets),
+        exception_counts: importRows.exceptions,
         journal_entries: countRows(PLATFORM_TABLES.journal, (gr) => gr.addQuery('name', 'STARTSWITH', 'x_cog_mah_native_')),
         cases_by_stage: groupCounts(TABLES.awards_case, 'stage', CASE_STAGE_ORDER),
         cases_by_task_state: groupCounts(TABLES.awards_case, 'state', taskStateOrder),

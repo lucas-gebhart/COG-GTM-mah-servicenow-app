@@ -55,7 +55,7 @@ counted; inherited `task` / `cmdb_model` columns are not).
 | Scripted REST APIs | 1 | 1 | 0 |
 | UI Builder workspaces | 1 | 0 | -1 |
 | UI pages | 1 | 0 | -1 |
-| Lines of server-side script (TypeScript + JS producers/includes) | 8101 | 7728 | -373 |
+| Lines of server-side script (TypeScript + JS producers/includes) | 8101 | 7762 | -339 |
 | Server-side script files | 43 | 38 | -5 |
 | Lines of client-side script | 155 | 157 | +2 |
 
@@ -70,7 +70,7 @@ Reading the numbers honestly:
   extension inherits (`number`, `state`, `priority`, `assigned_to`, `work_notes`, `sla_due`, …) and the
   ~35 on `cmdb_model`. The mission's own vocabulary (DD 1348-6 header, veteran identity, ship-to, engraving)
   is the same size in both builds — that is the part no platform table models.
-- **Server-side lines 8101 → 7728.** Most of the mission's TypeScript is shared pure logic (validators,
+- **Server-side lines 8101 → 7762.** Most of the mission's TypeScript is shared pure logic (validators,
   pricing, parser, contract, status map, dedupe, row transforms: ~4 500 lines) and is identical by design.
   The genuine deletions are aging (~300), reconciliation HTML/UI page (~350), intake REST (~250), exception
   roll-up and case-note handling; the additions are the task-state mapping and the SLA-band status inquiry.

@@ -30,7 +30,7 @@ import { dryRun, type DryRunReport } from '../src/server/migration/dryRun'
 import { QUARANTINE_STATUS_MESSAGE, type SourceRow } from '../src/server/migration/rowTransforms'
 import { callInstance, callScriptedApi, instanceFromEnv, type InstanceConfig } from './lib/instance'
 import { readSourceExport, sourcesByForm, type SourceFile } from './lib/sourceExport'
-import { FINALIZE_PATH, RECONCILIATION_PATH } from './reconcile'
+import { FINALIZE_PATH, reconciliationPath } from './reconcile'
 
 export interface MigrateArgs {
     source: string
@@ -104,24 +104,9 @@ export function classifyResult(r: ImportResultRow): { status: string; message: s
     return { status: quarantined ? 'quarantined' : (r.status ?? 'unknown'), message }
 }
 
-/**
- * The Import Set API appends rows to any import set for the staging table that is still in state `loading`,
- * so every batch first marks such sets `loaded`; each run then owns exactly one import set per staging table
- * and the reconciliation endpoint (latest import set per table) reports only this batch.
- */
-export async function closeOpenImportSets(cfg: InstanceConfig, stagingTable: string): Promise<number> {
-    const q = encodeURIComponent(`table_name=${stagingTable}^state=loading`)
-    const open = await callInstance<{ result?: { sys_id: string }[] }>(cfg, { method: 'GET', path: `/api/now/table/sys_import_set?sysparm_fields=sys_id&sysparm_limit=50&sysparm_query=${q}` })
-    for (const set of open.result ?? []) {
-        await callInstance(cfg, { method: 'PATCH', path: `/api/now/table/sys_import_set/${set.sys_id}`, body: { state: 'loaded' } })
-    }
-    return open.result?.length ?? 0
-}
-
 export async function loadForm(cfg: InstanceConfig, file: SourceFile, args: MigrateArgs, log: (s: string) => void): Promise<FormLoadSummary> {
     const stagingTable = LEGACY_FORMS[file.form].stagingTable
     const summary: FormLoadSummary = { form: file.form, stagingTable, rows: file.rows.length, importSets: [], statuses: {}, errors: [] }
-    await closeOpenImportSets(cfg, stagingTable)
     for (let i = 0; i < file.rows.length; i++) {
         const row = file.rows[i]
         if (!row) continue
@@ -138,7 +123,6 @@ export async function loadForm(cfg: InstanceConfig, file: SourceFile, args: Migr
         const done = i + 1
         if (done % args.chunk === 0 || done === file.rows.length) log(`  ${file.file}: ${done}/${file.rows.length} rows → ${summary.importSets.join(',') || '?'}`)
     }
-    await closeOpenImportSets(cfg, stagingTable)
     return summary
 }
 
@@ -183,7 +167,7 @@ export async function main(argv: readonly string[], log: (s: string) => void = c
     writeFileSync(join(args.out, 'finalize.json'), JSON.stringify(fin, null, 2))
     log(`  requesters merged=${fin.requesters.merged} repointed=${fin.requesters.repointed} flattened=${fin.requesters.flattened}`)
 
-    const actual = await callScriptedApi<TargetReport>(cfg, { method: 'GET', path: RECONCILIATION_PATH })
+    const actual = await callScriptedApi<TargetReport>(cfg, { method: 'GET', path: reconciliationPath(args.batchId) })
     writeFileSync(join(args.out, 'target.json'), JSON.stringify(actual, null, 2))
     const cmp = compareReports(expected.expected, actual)
     writeFileSync(join(args.out, 'comparison.json'), JSON.stringify(cmp, null, 2))

@@ -20,6 +20,11 @@ import { callScriptedApi, instanceFromEnv, unwrapResult } from './lib/instance'
 import { readSourceExport, sourcesByForm } from './lib/sourceExport'
 
 export const RECONCILIATION_PATH = '/api/x_cog_mah_native/mah_operations/reconciliation'
+
+/** Reconciliation endpoint for one batch (`--batch-id`); without it the instance reports its latest batch. */
+export function reconciliationPath(batchId?: string): string {
+    return batchId ? `${RECONCILIATION_PATH}?batch_id=${encodeURIComponent(batchId)}` : RECONCILIATION_PATH
+}
 export const FINALIZE_PATH = '/api/x_cog_mah_native/mah_operations/migration/finalize'
 
 export async function main(argv: readonly string[], log: (s: string) => void = console.log): Promise<number> {
@@ -30,12 +35,13 @@ export async function main(argv: readonly string[], log: (s: string) => void = c
     const source = resolve(get('--source') ?? '../sample-data')
     const out = resolve(get('--out') ?? 'reports/reconcile.json')
     const targetFile = get('--target-file')
+    const batchId = get('--batch-id')
 
     const exp = readSourceExport(source)
     const expected = dryRun({ sources: sourcesByForm(exp), now: new Date().toISOString().slice(0, 19).replace('T', ' ') })
     const actual: TargetReport = targetFile
         ? unwrapResult<TargetReport>(JSON.parse(readFileSync(resolve(targetFile), 'utf8')))
-        : await callScriptedApi<TargetReport>(instanceFromEnv(), { method: 'GET', path: RECONCILIATION_PATH })
+        : await callScriptedApi<TargetReport>(instanceFromEnv(), { method: 'GET', path: reconciliationPath(batchId) })
     const comparison = compareReports(expected.expected, actual)
 
     mkdirSync(dirname(out), { recursive: true })
