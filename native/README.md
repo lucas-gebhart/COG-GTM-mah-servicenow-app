@@ -129,6 +129,7 @@ npx now-sdk build     # compiles and validates the Fluent metadata
 npx now-sdk auth --add https://<instance>.service-now.com   # credentials go to the SDK credential store, never this repo
 npm run deploy                                               # now-sdk build && now-sdk install: deploys x_cog_mah_native
 npm run grant-roles                                          # roles, group membership, vendor user → company
+npm run vtb-sync                                             # seed the engraving board's cards (metadata-created boards start empty)
 ```
 
 `.env.example` lists what the tooling reads (`SN_INSTANCE_URL`, `SERVICENOW_PDI_USERNAME`,
@@ -145,6 +146,7 @@ holds only scope, scope id and application name.
 | `npm run migrate` | `tsx tools/migrate.ts` — Import Set API load of `../sample-data` in dependency order, then finalize + reconcile |
 | `npm run reconcile` | `tsx tools/reconcile.ts` — source vs target JSON comparison |
 | `npm run grant-roles` | `tsx tools/grant-roles.ts` |
+| `npm run vtb-sync` | `tsx tools/vtb-sync.ts` — one `vtb_card` per open engraving job in its `stage` lane (idempotent; see NATIVE-VS-CUSTOM "Workspace / boards") |
 | `npm run inventory` | `tsx tools/inventory.ts [--json]` — the NATIVE-VS-CUSTOM numbers, from both trees |
 | `npm run gen:ui` / `gen:security` / `gen:migration` | regenerate lists/forms/related lists, ACLs/test users, staging tables/data sources/transform maps |
 

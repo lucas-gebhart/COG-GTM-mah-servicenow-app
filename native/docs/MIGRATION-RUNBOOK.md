@@ -117,7 +117,7 @@ Checkpoint V: `comparison.ok = true` (or every `DIFF` explained and accepted in 
 | --- | --- | --- |
 | 6.1 Freeze | Domino databases read-only; announce the window. | Restore ACL |
 | 6.2 Final export | Last DXL/CSV export; record counts. | — |
-| 6.3 Final load | Phase 4 with a new `--batch-id` (deltas only, coalesce on UNID). Then `npm run grant-roles` and set `sys_user.company` for every real vendor user (the platform's company link replaces v1's `portal_user`). | Delete records where `sys_created_on` ≥ freeze **and** `legacy_unid` is empty, or restore the pre-load clone |
+| 6.3 Final load | Phase 4 with a new `--batch-id` (deltas only, coalesce on UNID). Then `npm run grant-roles` and `npm run vtb-sync` and set `sys_user.company` for every real vendor user (the platform's company link replaces v1's `portal_user`). | Delete records where `sys_created_on` ≥ freeze **and** `legacy_unid` is empty, or restore the pre-load clone |
 | 6.4 Final validate | Phase 5 `--strict` against 6.2 counts. | If `DIFF` → stay on Domino, lift freeze, fix, repeat from 6.2 |
 | 6.5 Go / no-go | Sign-off from TACOM MAH lead, DLA liaison, platform owner: comparison `ok`, no `error` staging rows left unexplained, Import Set intake tested with a real authorization file, SLAs running (`task_sla` rows present on open cases), approval flow tested end to end, notifications routed. | — |
 | 6.6 Switch | Enable the record producers on Employee Center, publish the dashboard and VTB, point the HRC / NPRC feed at `POST /api/now/import/x_cog_mah_native_stg_authorization_line`, activate the flows and SLA definitions. | Disable producers; re-point the feed; deactivate flows |
