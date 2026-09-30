@@ -1,0 +1,6 @@
+{
+    "scope": "x_cog_mah_native",
+    "scopeId": "2de054dbf20645ceaaa01abc9a19152c",
+    "name": "MAH Case Management (Native)",
+    "tsconfigPath": "./src/server/tsconfig.json"
+}
