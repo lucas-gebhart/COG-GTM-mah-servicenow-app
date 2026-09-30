@@ -204,14 +204,19 @@ export function resolveLookup(lookup: ReferenceLookup): string {
 // ---------------------------------------------------------------------------------------------
 
 /** Another target row already carries this business key under a different legacy UNID. */
-/** True when the other row (by UNID) sits earlier in this batch's staging rows, or came from an earlier batch. */
+/**
+ * True when the other row (by UNID) sits earlier in the source than this one. The Import Set API
+ * transforms each row as it lands, so the other row's newest staging copy (this batch if it has
+ * arrived, else the previous batch) carries its source row number; no staging copy at all means
+ * the record came from outside the sample export and this row is the duplicate.
+ */
 export function loadedBeforeRow(form: LegacyFormName, meta: RowMeta, otherUnid: string): boolean {
-    const [batchCol, rowCol] = EXTRA_STAGING_COLUMNS
+    const [, rowCol] = EXTRA_STAGING_COLUMNS
     const gr = new GlideRecord(LEGACY_FORMS[form].stagingTable)
     const unidCol = gr.isValidField('unid') ? 'unid' : gr.isValidField('u_unid') ? 'u_unid' : ''
     if (!unidCol) return true
     gr.addQuery(unidCol, otherUnid)
-    gr.addQuery(gr.isValidField(batchCol) ? batchCol : `u_${batchCol}`, meta.batchId)
+    gr.orderByDesc('sys_created_on')
     gr.setLimit(1)
     gr.query()
     if (!gr.next()) return true
