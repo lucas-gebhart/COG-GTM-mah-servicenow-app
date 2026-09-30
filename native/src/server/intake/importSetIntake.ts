@@ -347,8 +347,9 @@ function noteRejectedRow(importSet: string, fileName: string, message: string): 
     files.setLimit(1)
     files.query()
     if (!files.next()) return
+    // The rejected row is already staged (pending, no comment yet) and was therefore counted as inserted.
     const counts = intakeRunCounts(importSet, fileName)
-    counts.total++
+    counts.inserted = Math.max(0, counts.inserted - 1)
     counts.error++
     const fileSysId = String(files.getUniqueValue())
     const cases = countWhere(TABLES.awards_case, 'authorization_file_task', fileSysId)

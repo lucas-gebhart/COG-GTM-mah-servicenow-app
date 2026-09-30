@@ -2838,6 +2838,26 @@ declare global {
                         table: 'vtb_board'
                         id: 'd13ac2c1576647a3aeede53ced693438'
                     }
+                    vtb_engraving_lane_complete: {
+                        table: 'vtb_lane'
+                        id: 'ccda3688b630453a9395fa38a4874e7f'
+                    }
+                    vtb_engraving_lane_in_progress: {
+                        table: 'vtb_lane'
+                        id: '11acfc2655614656a27d388d56953a15'
+                    }
+                    vtb_engraving_lane_qc_hold: {
+                        table: 'vtb_lane'
+                        id: '2aa9f541fec1408897aef93aeb513578'
+                    }
+                    vtb_engraving_lane_queued: {
+                        table: 'vtb_lane'
+                        id: '1c81db5b427f49b5a4623b6697546c0a'
+                    }
+                    vtb_engraving_lane_rework: {
+                        table: 'vtb_lane'
+                        id: '9b31076ac0634e9ea72e2f0f9e3ef226'
+                    }
                 }
                 composite: [
                     {
