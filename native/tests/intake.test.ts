@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { DELIMITED_COLUMNS } from '../src/server/lib/authFileParser'
 import { INTAKE_IMPORT_PATH, INTAKE_STAGING_TABLE, TABLES } from '../src/server/lib/domain'
-import { INTAKE_COLUMNS, intakeParseLog, intakeStage, rowToDelimited, validateIntakeRow, type IntakeRow } from '../src/server/intake/importSetIntake'
+import { INTAKE_COLUMNS, INTAKE_DUPLICATE_MESSAGE, INTAKE_REJECTED_MESSAGE, classifyPendingRow, intakeParseLog, intakeStage, rowToDelimited, validateIntakeRow, type IntakeRow } from '../src/server/intake/importSetIntake'
 
 const good: IntakeRow = {
     file_name: 'hrc-2026-09-30.txt',
@@ -76,6 +76,10 @@ describe('Import Set API intake (x_cog_mah_native_stg_authorization_line)', () =
     })
 
     it('derives the authorization-file parse stage from the Import Set row states', () => {
+        expect(classifyPendingRow(`${INTAKE_REJECTED_MESSAGE}: requester.dob: DOB is not a recognized date`)).toBe('error')
+        expect(classifyPendingRow(`${INTAKE_DUPLICATE_MESSAGE}: X already loaded as NMAH0001001`)).toBe('ignored')
+        expect(classifyPendingRow('Additional award line for NMAH0001001')).toBe('ignored')
+        expect(classifyPendingRow('')).toBe('inserted')
         expect(intakeStage({ inserted: 2, updated: 1, error: 0 })).toBe('parsed')
         expect(intakeStage({ inserted: 2, updated: 0, error: 1 })).toBe('partial')
         expect(intakeStage({ inserted: 0, updated: 0, error: 3 })).toBe('failed')

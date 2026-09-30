@@ -211,7 +211,7 @@ export function intakeBefore(source: AnyRecord, target: AnyRecord, _isUpdateFlag
             log('intake_rejected', { importSet, recordId: record.source_record_id, existingCase: get(loaded, 'number'), type: 'duplicate' }, 'blocked')
             return { ignore: true, error: false, statusMessage: `${INTAKE_DUPLICATE_MESSAGE}: ${record.source_record_id} already loaded as ${get(loaded, 'number')}`, warningCount: 1, quarantined: false }
         }
-        return { ignore: false, error: false, statusMessage: `Additional award line for ${get(loaded, 'number')}`, warningCount: 0, quarantined: false }
+        return { ignore: false, error: false, statusMessage: `${INTAKE_ADDITIONAL_LINE_MESSAGE} ${get(loaded, 'number')}`, warningCount: 0, quarantined: false }
     }
 
     const requester = findOrCreateRequester(record)
@@ -298,13 +298,16 @@ export function intakeAfter(source: AnyRecord, target: AnyRecord): void {
     log('data_change', { table: TABLES.award_line, awardsCase: caseSysId, award: award.award_name, created: id !== '' }, id ? 'success' : 'failure')
 }
 
-function countRows(importSet: string, fileName: string, state?: string): number {
-    const gr = new GlideRecord(INTAKE_STAGING_TABLE)
-    gr.addQuery('sys_import_set', importSet)
-    gr.addQuery('file_name', fileName)
-    if (state) gr.addQuery('sys_import_state', state)
-    gr.query()
-    return gr.getRowCount()
+export const INTAKE_ADDITIONAL_LINE_MESSAGE = 'Additional award line for'
+
+/**
+ * The Import Set engine writes a staging row's final state after onComplete has fired, so the row that
+ * triggered this onComplete is still `pending`; its outcome is derived from the comment onBefore left on it.
+ */
+export function classifyPendingRow(comment: string): keyof Omit<IntakeRunCounts, 'total'> {
+    if (comment.startsWith(INTAKE_REJECTED_MESSAGE)) return 'error'
+    if (comment.startsWith(INTAKE_DUPLICATE_MESSAGE) || comment.startsWith(INTAKE_ADDITIONAL_LINE_MESSAGE)) return 'ignored'
+    return 'inserted'
 }
 
 function countWhere(table: string, field: string, value: string): number {
@@ -316,13 +319,18 @@ function countWhere(table: string, field: string, value: string): number {
 
 /** Staging-row outcomes of one file within one Import Set (the API reuses an open set across calls). */
 export function intakeRunCounts(importSet: string, fileName: string): IntakeRunCounts {
-    return {
-        total: countRows(importSet, fileName),
-        inserted: countRows(importSet, fileName, 'inserted'),
-        updated: countRows(importSet, fileName, 'updated'),
-        ignored: countRows(importSet, fileName, 'ignored'),
-        error: countRows(importSet, fileName, 'error'),
+    const counts: IntakeRunCounts = { total: 0, inserted: 0, updated: 0, ignored: 0, error: 0 }
+    const gr = new GlideRecord(INTAKE_STAGING_TABLE)
+    gr.addQuery('sys_import_set', importSet)
+    gr.addQuery('file_name', fileName)
+    gr.query()
+    while (gr.next()) {
+        counts.total++
+        const state = get(gr, 'sys_import_state')
+        const key = state === '' || state === 'pending' ? classifyPendingRow(get(gr, 'sys_import_state_comment')) : state
+        if (key === 'inserted' || key === 'updated' || key === 'ignored' || key === 'error') counts[key]++
     }
+    return counts
 }
 
 /** onComplete: the authorization-file task(s) of this run get the counters, parse stage and a work note. */
