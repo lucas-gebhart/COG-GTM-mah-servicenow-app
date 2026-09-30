@@ -41,8 +41,8 @@ counted; inherited `task` / `cmdb_model` columns are not).
 | … of which extend `task` | 0 | 6 | +6 |
 | Custom columns defined on those tables | 380 | 282 | -98 |
 | Scoped columns added to platform tables | 0 | 9 | +9 |
-| Import Set staging tables (migration only) | 13 | 13 | 0 |
-| Import Set staging columns (migration only) | 424 | 424 | 0 |
+| Import Set staging tables (migration only) | 13 | 14 | +1 |
+| Import Set staging columns (migration only) | 424 | 447 | +23 |
 | Business rules | 24 | 23 | -1 |
 | Script includes | 4 | 3 | -1 |
 | Client scripts | 10 | 10 | 0 |
@@ -55,8 +55,8 @@ counted; inherited `task` / `cmdb_model` columns are not).
 | Scripted REST APIs | 1 | 1 | 0 |
 | UI Builder workspaces | 1 | 0 | -1 |
 | UI pages | 1 | 0 | -1 |
-| Lines of server-side script (TypeScript + JS producers/includes) | 8101 | 7848 | -253 |
-| Server-side script files | 43 | 38 | -5 |
+| Lines of server-side script (TypeScript + JS producers/includes) | 8101 | 8217 | +116 |
+| Server-side script files | 43 | 39 | -4 |
 | Lines of client-side script | 155 | 157 | +2 |
 
 Reading the numbers honestly:
@@ -70,10 +70,15 @@ Reading the numbers honestly:
   extension inherits (`number`, `state`, `priority`, `assigned_to`, `work_notes`, `sla_due`, …) and the
   ~35 on `cmdb_model`. The mission's own vocabulary (DD 1348-6 header, veteran identity, ship-to, engraving)
   is the same size in both builds — that is the part no platform table models.
-- **Server-side lines 8101 → 7848.** Most of the mission's TypeScript is shared pure logic (validators,
-  pricing, parser, contract, status map, dedupe, row transforms: ~4 500 lines) and is identical by design.
-  The genuine deletions are aging (~300), reconciliation HTML/UI page (~350), intake REST (~250), exception
-  roll-up and case-note handling; the additions are the task-state mapping and the SLA-band status inquiry.
+- **Server-side lines 8101 → 8217 (+1%).** Honest result: the line count did not fall. Most of the mission's
+  TypeScript is shared pure logic (validators, pricing, parser, contract, status map, dedupe, row transforms:
+  ~4 500 lines) and is identical by design. The genuine deletions are aging (~300), the reconciliation HTML/UI
+  page (~350), the intake REST resource (~250), exception roll-up and case-note handling. What came back is the
+  Import Set side: the transform engine that quarantines rows as native `error` states, resolves references,
+  writes task journals and coalesces requesters (~650), the Import Set API intake hooks (~300), the task-state
+  mapping and the SLA-band status inquiry. The saving is in *runtime surface* (tables, columns, a scheduled
+  job, a workspace, a UI page, 18 ACLs) and in what the platform now does unattended (SLA timers, approvals,
+  activity stream, import run reports), not in lines of TypeScript.
 - **Business rules 24 → 23, ACLs 132 → 114.** Rules barely move because the guard rails (validation,
   release lock, forward-only) are mission rules, not platform gaps. ACLs shrink with the retired tables;
   task-level ACLs and `core_company` read are inherited and not counted.

@@ -35,6 +35,29 @@ MAHNativeMigration.prototype = {
         return this._mod.onComplete(form, importSet ? String(importSet.getUniqueValue()) : '')
     },
 
+    /**
+     * Live intake (x_cog_mah_native_stg_authorization_line → awards case): the transform scripts of
+     * `tm_intake_authorization_line` call these; logic in src/server/intake/importSetIntake.ts.
+     */
+    intakeBefore: function (source, target, isUpdate) {
+        return this._intake().intakeBefore(source, target, Boolean(isUpdate))
+    },
+
+    intakeAfter: function (source, target) {
+        this._intake().intakeAfter(source, target)
+    },
+
+    intakeComplete: function (importSet) {
+        return this._intake().intakeComplete(importSet ? String(importSet.getUniqueValue()) : '')
+    },
+
+    _intake: function () {
+        if (!this._intakeMod) {
+            this._intakeMod = require('x_cog_mah_native/mah-case-management-native/0.1.0/src/server/intake/importSetIntake.ts')
+        }
+        return this._intakeMod
+    },
+
     /** Merge duplicate requesters by dedupe_key; called once per batch from tools/migrate.ts. */
     coalesceRequesters: function (batchId) {
         return this._mod.coalesceRequesterTable(String(batchId || ''))

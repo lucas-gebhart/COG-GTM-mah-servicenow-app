@@ -2349,6 +2349,10 @@ declare global {
                         table: 'x_cog_mah_native_status_map'
                         id: 'cf293a388b5d4e3ab88b055e9c488583'
                     }
+                    src_server_intake_importSetIntake_ts: {
+                        table: 'sys_module'
+                        id: 'd3bef41e7def404cac4a308cd2a4e3fa'
+                    }
                     src_server_lib_authFileParser_ts: {
                         table: 'sys_module'
                         id: '31d308ccef724a1ca262e25482094dda'
@@ -2616,6 +2620,22 @@ declare global {
                     tm_heraldry_request_onStart: {
                         table: 'sys_transform_script'
                         id: '54a6fe7e627b49b589e466dd4975d756'
+                    }
+                    tm_intake_authorization_line: {
+                        table: 'sys_transform_map'
+                        id: '6179b60a24d24e348b6b5f564f38f8e3'
+                    }
+                    tm_intake_authorization_line_onAfter: {
+                        table: 'sys_transform_script'
+                        id: 'dd60f211900b463089e72f7515888b0c'
+                    }
+                    tm_intake_authorization_line_onBefore: {
+                        table: 'sys_transform_script'
+                        id: '81473a80b3a64807b0f813fbeb399898'
+                    }
+                    tm_intake_authorization_line_onComplete: {
+                        table: 'sys_transform_script'
+                        id: 'd61981a507f14dd1acceb28555ff2eed'
                     }
                     tm_request_line: {
                         table: 'sys_transform_map'
@@ -3668,6 +3688,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '059064b567bc471d91d0f25caf8e7095'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'unit_name'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '05aea90736744108bafa59678c115ad2'
                         key: {
@@ -4308,6 +4336,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_native_stg_awards_case'
                             element: 'engraving_required'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '09b36dca8c2c4fe8a9fe5937e078966e'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'record_id'
                         }
                     },
                     {
@@ -5824,6 +5860,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'ua_table_licensing_config'
+                        id: '149409d3657d45a6ba216c2a4c9067d8'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '149dd9e225dc423aabf05dbb27c54048'
                         key: {
@@ -6799,6 +6842,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '1c1db86bd3f94ce9925653758d320398'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'phone'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '1c2b2933ef1d42c2869ab03a6efcc6d0'
                         key: {
@@ -6900,6 +6951,14 @@ declare global {
                                     name: 'x_cog_mah_native.tacom_staff'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1ca75468d9284fa085cdf8156a046598'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'file_name'
                         }
                     },
                     {
@@ -7092,6 +7151,14 @@ declare global {
                         key: {
                             name: 'x_cog_mah_native_ses_flag_request'
                             element: 'legacy_number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '1da0f46c258346cfa68cc17ada41d980'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'email'
                         }
                     },
                     {
@@ -7378,6 +7445,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '1f2e75ebc54b4a588b016919e79a7174'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'award_name'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '1f4f624db3134f5586991efcfd2345eb'
                         key: {
@@ -7628,6 +7703,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_native_stg_heraldry_request'
                             element: 'doc_readers'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '20af1260f787421a82810396c5f306c4'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'file_name'
+                            language: 'en'
                         }
                     },
                     {
@@ -8654,6 +8738,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '278b366b7a26478ca2cfaa55b1152755'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'NULL'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '27ab9693e98248b4a9b7a1735ba336a4'
                         key: {
@@ -8725,6 +8818,14 @@ declare global {
                         key: {
                             map: '2a8715a0e2754a8fb75937eba337c410'
                             target_field: 'legacy_number'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '2810d892cc594e0bb77cb0b17dd01fcc'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'NULL'
                         }
                     },
                     {
@@ -9557,6 +9658,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '2db0664b7d9d4ef0bb4520cdee90d29f'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'engraving_required'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: '2dbc21638a6d49519247e4882d00c19b'
                         key: {
@@ -9723,6 +9832,15 @@ declare global {
                             }
                             element: 'comments'
                             position: '1'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '2eeb815bebfa48ee897e485b203b3f2a'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'address_2'
+                            language: 'en'
                         }
                     },
                     {
@@ -10182,6 +10300,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '31aeb659c866477282359808d1c84783'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'address_2'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '31bb4d9077a04f7b8c6045279c07dfac'
                         key: {
@@ -10228,6 +10354,14 @@ declare global {
                             name: 'x_cog_mah_native_shipment'
                             element: 'service_level'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '32390d45132c4d41bfb6baca1d8c5d10'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'address_1'
                         }
                     },
                     {
@@ -10706,6 +10840,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_native_stg_ses_flag_request'
                             element: 'mah_batch_id'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '360b931ef6f74fd897208db930538f9f'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'agency'
                             language: 'en'
                         }
                     },
@@ -11809,6 +11952,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '3d228dd8d64e42fb97778c68af30fc0f'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'city'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '3d507e4d0ce647c2b9ce65961f1d1ed5'
                         key: {
                             name: 'x_cog_mah_native_stg_awards_case'
@@ -12028,6 +12179,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_native_stg_heraldic_item'
                             element: 'reference'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '3ea2e8d735ba44b5a6f9f8b584f738ef'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'authorization_date'
                             language: 'en'
                         }
                     },
@@ -15619,6 +15779,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '59dc826e16594699adb12fd1a2ba697f'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'record_id'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '5a01a978a997448ca667ac4884501350'
                         key: {
                             name: 'x_cog_mah_native_shipment'
@@ -16183,6 +16352,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_native_stg_heraldic_item'
                             element: 'unid'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '5cd8280f13884f4597db2b46ed0218dc'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'last_name'
                             language: 'en'
                         }
                     },
@@ -18749,6 +18927,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '6e6804fa70374d9d93de5634ce7afce9'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'service_number_last4'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: '6e6decb57e854acd9676b521dbd9458e'
                         key: {
@@ -19034,6 +19220,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_native_status_map'
                             element: 'active'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '6fd48fdcf5db4c5b904d4a06f564e1ce'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'quantity'
+                            language: 'en'
                         }
                     },
                     {
@@ -19684,6 +19879,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '737cc1ad36cf4fd19158611c520c0f16'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'last_name'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '73bab68e43e044eeaac50aae6fe9cc30'
                         key: {
@@ -19782,6 +19985,15 @@ declare global {
                             }
                             element: '.split'
                             position: '4'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '746029531a6346b1a5d1d944da555708'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'unit_name'
+                            language: 'en'
                         }
                     },
                     {
@@ -19987,6 +20199,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_native_stg_vendor'
                             element: 'modified'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '76080ee7665149ed93995c40f8d35295'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'email'
+                            language: 'en'
                         }
                     },
                     {
@@ -21170,6 +21391,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '7c813dd8a0f747b18ebe0e8deb5d4915'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'dob'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_user_role'
                         id: '7c82ee9af5d74521980738693ebd38f4'
                         key: {
@@ -21363,6 +21593,14 @@ declare global {
                             name: 'x_cog_mah_native_stg_engraving_job'
                             element: 'veteran_name'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '7e1c8a845dff4ed58e4c48af3586c550'
+                        key: {
+                            map: '6179b60a24d24e348b6b5f564f38f8e3'
+                            target_field: 'source_record_id'
                         }
                     },
                     {
@@ -21635,6 +21873,14 @@ declare global {
                             value: 'distinguished_flying_cross'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '8117bcea76144db78f7b86e762d73f30'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'dob'
                         }
                     },
                     {
@@ -22440,6 +22686,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: '85fdb2d8fc2e41028fd65283ea2996b3'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'engraving_text'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: '86172e1433404d67ac4ff06c99c04131'
                         key: {
@@ -22476,6 +22730,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_native_award_line'
                             element: 'engraving_text'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: '867392b5004549cbb1a21d52ba7cedc0'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'city'
                             language: 'en'
                         }
                     },
@@ -22944,6 +23207,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: '89220a8e68e346babd4a9afa7c87ca1a'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'service_number_last4'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: '89491284630b47bda85de43cb671a49e'
                         key: {
@@ -23009,6 +23281,14 @@ declare global {
                             name: 'x_cog_mah_native_request_line'
                             element: 'state'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '897b9334708b4014adad99c0b69da4f1'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'first_name'
                         }
                     },
                     {
@@ -25910,6 +26190,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: '9cbb1ed5807d4dc6bc86ff719ccf377c'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'quantity'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: '9cd00469b204480c8f1c47ccd7e67015'
                         key: {
                             name: 'x_cog_mah_native_stg_authorization_file'
@@ -26396,6 +26684,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'a0725b6dd84e417d9c7ba0d572bd59cf'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'zip'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'a0aaf36a55c1456ab84b0b7d31caa837'
                         key: {
                             name: 'x_cog_mah_native_heraldry_request'
@@ -26430,6 +26726,15 @@ declare global {
                         key: {
                             name: 'x_cog_mah_native_stg_case_note'
                             element: 'parent_case_number'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a0c8d9703b65474da9fd9cf9ad119aba'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'engraving_required'
                             language: 'en'
                         }
                     },
@@ -30235,11 +30540,28 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary'
+                        id: 'b65dbe8e4c48493187273e784a361bf1'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'requester_type'
+                        }
+                    },
+                    {
                         table: 'sys_documentation'
                         id: 'b683a7354f8243c59a5dd3309b2a598b'
                         key: {
                             name: 'x_cog_mah_native_heraldry_request'
                             element: 'vendor_acknowledged'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'b6adf80c67104d269733e6d7d3f8afbe'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'state'
                             language: 'en'
                         }
                     },
@@ -30680,6 +31002,14 @@ declare global {
                             name: 'x_cog_mah_native_stg_ses_flag_request'
                             element: 'organization'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'bb1b1f3d0dbb48b688d9d930ea1f55fb'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'state'
                         }
                     },
                     {
@@ -31671,6 +32001,13 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_db_object'
+                        id: 'c1b7445c410f48329b0ae94ddecf39aa'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                        }
+                    },
+                    {
                         table: 'sys_ui_element'
                         id: 'c1c24efc558c41d2a0bb893faee8564c'
                         key: {
@@ -31990,6 +32327,15 @@ declare global {
                             }
                             element: '.split'
                             position: '11'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c3be2b039a7f4396acc3008f0ebfda3c'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'requester_type'
+                            language: 'en'
                         }
                     },
                     {
@@ -32883,6 +33229,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'c8b9b31963e84f8692a8c399249928c3'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'zip'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'c8f14b9a4969491285c76d071be6122e'
                         key: {
@@ -33389,6 +33744,14 @@ declare global {
                             name: 'x_cog_mah_native_stg_heraldic_item'
                             element: 'unit_price'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'cb8409df1d1e45fc8a04a53a70146d42'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'ship_to'
                         }
                     },
                     {
@@ -34507,6 +34870,15 @@ declare global {
                                     name: 'x_cog_mah_native.vendor'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'd1f4033741944eb18b645c2aa0d5f75b'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'award_name'
+                            language: 'en'
                         }
                     },
                     {
@@ -37520,6 +37892,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: 'e4ba6f7b0df448659f2c1aa4ab9337c5'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'first_name'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: 'e4bc341bd9ce4a41bedafd2336609e60'
                         key: {
                             name: 'x_cog_mah_native_stg_request_line'
@@ -38164,6 +38545,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'e9ccbf4f28b64a51a740d991329ac0cd'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'ship_to'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'ua_table_licensing_config'
                         id: 'e9d1007e14d846a794e281ff0c964626'
                         key: {
@@ -38459,6 +38849,14 @@ declare global {
                     },
                     {
                         table: 'sys_dictionary'
+                        id: 'eb79b0dfcaae4d61a9e21f526bc3b41f'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'agency'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
                         id: 'eb85d44171a44c37a3341abeab9d2a34'
                         key: {
                             name: 'x_cog_mah_native_stg_requester'
@@ -38582,6 +38980,14 @@ declare global {
                             }
                             element: 'uic'
                             position: '5'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'ec7ebaacdd384b20b8875c478cfe2eaa'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'device'
                         }
                     },
                     {
@@ -39000,6 +39406,15 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'ef227df0359044b8a46f1111afa566df'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'engraving_text'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_security_acl_role'
                         id: 'ef2799f91f8549a4bfc61b786e78b3f5'
                         key: {
@@ -39010,6 +39425,15 @@ declare global {
                                     name: 'x_cog_mah_native.csr'
                                 }
                             }
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'ef304ff93fc047c28c3499c480454f09'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'address_1'
+                            language: 'en'
                         }
                     },
                     {
@@ -39575,11 +39999,37 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_documentation'
+                        id: 'f28fe200835c4b19bc497142e2bd9585'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'phone'
+                            language: 'en'
+                        }
+                    },
+                    {
                         table: 'sys_dictionary'
                         id: 'f2bbcc4669404e70b3815b226618f79b'
                         key: {
                             name: 'x_cog_mah_native_stg_ses_flag_request'
                             element: 'parent_unid'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'f2c6d433440a40fca06260cf69b7efe5'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'authorization_date'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'f2cc793b731d492b95b476a307fcde7e'
+                        key: {
+                            name: 'x_cog_mah_native_stg_authorization_line'
+                            element: 'device'
+                            language: 'en'
                         }
                     },
                     {

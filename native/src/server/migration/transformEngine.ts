@@ -106,7 +106,7 @@ function get(gr: AnyRecord, field: string): string {
 }
 
 /** Staging columns may be created with or without the platform `u_` prefix depending on how the table was materialised. */
-function stagingValue(gr: AnyRecord, column: string): string {
+export function stagingValue(gr: AnyRecord, column: string): string {
     if (gr.isValidField(column)) return get(gr, column)
     const prefixed = `u_${column}`
     if (gr.isValidField(prefixed)) return get(gr, prefixed)

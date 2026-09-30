@@ -38,7 +38,7 @@ the PDI. Labels: **[repository-derived]** / **[verified on the PDI]** / **[propo
 | Legacy behaviour | v1 artefact | v2 native artefact | Proven by (v2) |
 | --- | --- | --- | --- |
 | NightlyAging (scheduled) | "MAH Nightly Aging" job + `MAHAging` | **no job** — the SLA engine | inventory: scheduled jobs 1 → 0; SLA rows in SCREENS |
-| ImportAuthorizationFile (file drop) | Scripted REST `/api/x_cog_mah/authorization_intake` | **Import Set API** `POST /api/now/import/x_cog_mah_native_stg_authorization_line` + transform map → authorization-file task, cases, lines; bad rows → state `error` | "parses and normalizes …" (authFileParser titles); SCREENS intake row |
+| ImportAuthorizationFile (file drop) | Scripted REST `/api/x_cog_mah/authorization_intake` | **Import Set API** `POST /api/now/import/x_cog_mah_native_stg_authorization_line` + transform map → authorization-file task, cases, lines; bad rows → state `error` | "parses and normalizes …" (authFileParser titles); `tests/intake.test.ts` (row → v1 validators, reject cases); SCREENS intake row |
 | SendStatusMail | 5 notifications / 4 events | same events on task tables + "MAH Native awards case Task SLA breached" on `task_sla` | `now-sdk build`; SCREENS notification row |
 | Security / audit logging | `logging.ts` (`app: x_cog_mah`) | same module, `app: x_cog_mah_native` | "strips control characters and clamps length"; "redacts secret-looking keys and emits one-line JSON" |
 
