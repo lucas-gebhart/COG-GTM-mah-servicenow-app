@@ -182,8 +182,17 @@ function reject(message: string, details: Record<string, string | number | boole
     return { ignore: true, error: true, statusMessage: message.slice(0, 4000), warningCount: 1, quarantined: true }
 }
 
+/** The case a source record id already coalesces to, or '' (the transformer's own update flag is not reliable in onBefore). */
+function existingCase(sourceRecordId: string): AnyRecord | null {
+    const gr = new GlideRecord(TABLES.awards_case)
+    gr.addQuery('source_record_id', sourceRecordId)
+    gr.setLimit(1)
+    gr.query()
+    return gr.next() ? gr : null
+}
+
 /** onBefore of the intake transform: validate, resolve file/requester/agency, fill the case. */
-export function intakeBefore(source: AnyRecord, target: AnyRecord, isUpdate: boolean): BeforeResult {
+export function intakeBefore(source: AnyRecord, target: AnyRecord, _isUpdateFlag: boolean): BeforeResult {
     const row = readIntakeRow(source)
     const importSet = get(source, 'sys_import_set')
     const v = validateIntakeRow(row)
@@ -194,14 +203,15 @@ export function intakeBefore(source: AnyRecord, target: AnyRecord, isUpdate: boo
     const fileSysId = ensureAuthorizationFile(v.fileName, record, importSet)
     if (!fileSysId) return reject(`${INTAKE_REJECTED_MESSAGE}: authorization file task could not be created`, { importSet, file: v.fileName })
 
-    if (isUpdate) {
+    const loaded = existingCase(record.source_record_id)
+    if (loaded) {
         // Coalesced on source_record_id: another line of the same record in this run appends a line
         // (onAfter); the same record from an earlier file is a duplicate and is left `ignored`.
-        if (get(target, 'authorization_file') !== fileSysId) {
-            log('intake_rejected', { importSet, recordId: record.source_record_id, existingCase: get(target, 'number'), type: 'duplicate' }, 'blocked')
-            return { ignore: true, error: false, statusMessage: `${INTAKE_DUPLICATE_MESSAGE}: ${record.source_record_id} already loaded as ${get(target, 'number')}`, warningCount: 1, quarantined: false }
+        if (get(loaded, 'authorization_file') !== fileSysId) {
+            log('intake_rejected', { importSet, recordId: record.source_record_id, existingCase: get(loaded, 'number'), type: 'duplicate' }, 'blocked')
+            return { ignore: true, error: false, statusMessage: `${INTAKE_DUPLICATE_MESSAGE}: ${record.source_record_id} already loaded as ${get(loaded, 'number')}`, warningCount: 1, quarantined: false }
         }
-        return { ignore: false, error: false, statusMessage: `Additional award line for ${get(target, 'number')}`, warningCount: 0, quarantined: false }
+        return { ignore: false, error: false, statusMessage: `Additional award line for ${get(loaded, 'number')}`, warningCount: 0, quarantined: false }
     }
 
     const requester = findOrCreateRequester(record)
