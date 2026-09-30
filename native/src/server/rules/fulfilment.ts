@@ -9,11 +9,12 @@
 import { GlideRecord, gs } from '@servicenow/glide'
 import { EVENTS, ROLES, TABLES } from '../lib/domain.ts'
 import { mergeResults, validateEmail, validateEngravingText, validateMultiline, validatePhone, validateQuantity, validateSafeText } from '../lib/validators.ts'
-import { abortWithMessage, abortWithValidation, applyTaskPriority, applyTaskState, nowValue, securityLog, setIfEmpty, str, type AnyRecord } from './glideSupport.ts'
+import { abortWithMessage, abortWithValidation, applyTaskPriority, applyTaskState, nowValue, securityLog, setIfEmpty, str, type AnyRecord, isMigrationImport } from './glideSupport.ts'
 
 // ---------------------------------------------------------------- engraving job
 
 export function engravingJobBefore(current: AnyRecord, previous: AnyRecord): void {
+    if (isMigrationImport()) return
     const table = TABLES.engraving_job
     const result = mergeResults([validateEngravingText(str(current, 'text'), 'text'), validateMultiline('qc_notes', str(current, 'work_notes'), 4000)])
     if (!result.valid) {
@@ -51,6 +52,7 @@ export function engravingJobBefore(current: AnyRecord, previous: AnyRecord): voi
 }
 
 export function engravingJobAfter(current: AnyRecord): void {
+    if (isMigrationImport()) return
     if (!current.getElement('stage')?.changesTo('complete')) return
     const lineId = str(current, 'award_line')
     if (lineId) {
@@ -79,6 +81,7 @@ export function engravingJobAfter(current: AnyRecord): void {
 // ---------------------------------------------------------------- shipment
 
 export function shipmentBefore(current: AnyRecord): void {
+    if (isMigrationImport()) return
     const table = TABLES.shipment
     const tracking = str(current, 'tracking_number')
     const results = [validateSafeText('service_level', str(current, 'service_level'), 40, false), validateMultiline('ship_to', str(current, 'ship_to'), 500)]
@@ -122,6 +125,7 @@ export function shipmentBefore(current: AnyRecord): void {
 }
 
 export function shipmentAfter(current: AnyRecord): void {
+    if (isMigrationImport()) return
     const caseId = str(current, 'parent')
     if (!caseId) return
     const stageEl = current.getElement('stage')
@@ -146,6 +150,7 @@ export function shipmentAfter(current: AnyRecord): void {
 const SES_TERMINAL: ReadonlySet<string> = new Set(['delivered', 'rejected', 'cancelled'])
 
 export function sesFlagRequestBefore(current: AnyRecord, previous: AnyRecord): void {
+    if (isMigrationImport()) return
     const table = TABLES.ses_flag_request
     const results = [
         validateSafeText('requesting_office', str(current, 'requesting_office'), 120, true),
@@ -196,6 +201,7 @@ export function sesFlagRequestBefore(current: AnyRecord, previous: AnyRecord): v
 }
 
 export function sesFlagRequestAfter(current: AnyRecord, previous: AnyRecord): void {
+    if (isMigrationImport()) return
     const isInsert = previous === null || previous === undefined || str(previous, 'sys_id') === ''
     if (!isInsert && !current.getElement('stage')?.changes()) return
     securityLog({

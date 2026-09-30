@@ -20,6 +20,7 @@ import {
     securityLog,
     str,
     type AnyRecord,
+    isMigrationImport,
 } from './glideSupport.ts'
 
 function openLineCount(caseSysId: string): number {
@@ -43,6 +44,7 @@ function hasShipment(caseSysId: string): boolean {
 
 /** before insert/update */
 export function awardsCaseBefore(current: AnyRecord, previous: AnyRecord): void {
+    if (isMigrationImport()) return
     const table = TABLES.awards_case
     const isInsert = current.isNewRecord()
     const fromStage = (isInsert ? 'authorized' : str(previous, 'stage') || 'authorized') as CaseStage
@@ -98,6 +100,7 @@ export function awardsCaseBefore(current: AnyRecord, previous: AnyRecord): void 
 
 /** after insert/update */
 export function awardsCaseAfter(current: AnyRecord, previous: AnyRecord): void {
+    if (isMigrationImport()) return
     const table = TABLES.awards_case
     const isInsert = previous === null || previous === undefined || str(previous, 'sys_id') === ''
     const stageChanged = isInsert || Boolean(current.getElement('stage')?.changes())

@@ -4,10 +4,12 @@
  * data tests can pin it and `tools/reconcile.ts` can print it.
  */
 import type { ExpectedTargets } from './dryRun.ts'
+import { PLATFORM_TABLES } from '../lib/domain.ts'
 
 /** Shape of the native reconciliation (Table API aggregates over the target tables) that the comparison reads. */
 export interface TargetReport {
     tables: readonly { table: string; rows: number }[]
+    companies: { rows: number; withLegacyUnid: number }
     award_line_quantity_total: number
     request_line_extended_price_total: string
     orphan_count: number
@@ -39,7 +41,7 @@ function check(name: string, expected: string | number, actual: string | number)
 
 export function compareReports(expected: ExpectedTargets, actual: TargetReport): ComparisonReport {
     const checks: CheckResult[] = []
-    const actualRows = new Map(actual.tables.map((t) => [t.table, t.rows]))
+    const actualRows = new Map<string, number>([...actual.tables.map((t): [string, number] => [t.table, t.rows]), [PLATFORM_TABLES.company, actual.companies.rows]])
     for (const [table, rows] of Object.entries(expected.tables).sort(([a], [b]) => a.localeCompare(b))) {
         checks.push(check(`rows:${table}`, rows, actualRows.get(table) ?? 0))
     }

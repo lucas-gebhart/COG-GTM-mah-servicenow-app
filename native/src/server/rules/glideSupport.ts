@@ -7,11 +7,16 @@
  * `comments`) written straight onto the task record.
  */
 import { GlideDateTime, GlideRecord, gs } from '@servicenow/glide'
-import { ROLES, TASK_PRIORITIES, TASK_PRIORITY_BY_HANDLING, taskStateForStage, type CasePriority, type RoleKey, type TaskTableKey } from '../lib/domain.ts'
+import { MIGRATION_SESSION_FLAG, ROLES, TASK_PRIORITIES, TASK_PRIORITY_BY_HANDLING, taskStateForStage, type CasePriority, type RoleKey, type TaskTableKey } from '../lib/domain.ts'
 import { formatSecurityEvent, type SecurityEventInput } from '../lib/logging.ts'
 import { GENERIC_VALIDATION_MESSAGE, toSafeMultiline, type ValidationResult } from '../lib/validators.ts'
 
 export type AnyRecord = GlideRecord<string>
+
+/** True while the Import Set transform is loading legacy rows: guard rails step aside, platform engines still run. */
+export function isMigrationImport(): boolean {
+    return gs.getSession().getClientData(MIGRATION_SESSION_FLAG) === 'true'
+}
 
 export function nowValue(): string {
     return new GlideDateTime().getValue()

@@ -19,6 +19,7 @@
 import { createHash } from 'node:crypto'
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
+import { TABLES, TASK_TABLE_KEYS } from '../src/server/lib/domain.ts'
 import {
     dataSourceName,
     EXTRA_STAGING_COLUMNS,
@@ -32,6 +33,9 @@ import {
 import { COMPANY_FIELDS, PLATFORM_TABLES } from '../src/server/lib/domain'
 import { DEFAULT_STATUS_MAP, type StatusMapEntry } from '../src/server/lib/statusMap'
 import { DIRECT_FIELD_MAPS } from '../src/server/migration/rowTransforms'
+
+/** Task-extending targets run business rules so the platform engines (Task SLA, assignment rules, flows) attach to migrated records. */
+const TASK_TARGET_TABLES: ReadonlySet<string> = new Set(TASK_TABLE_KEYS.map((k) => TABLES[k]))
 
 const OUT_DIR = fileURLToPath(new URL('../src/fluent/migration/', import.meta.url))
 
@@ -128,7 +132,7 @@ function hookScript(form: LegacyFormName, when: 'onStart' | 'onBefore' | 'onAfte
         case 'onBefore':
             return [
                 '(function runTransformScript(source, map, log, target) {',
-                `    var r = new ${BRIDGE}().onBefore(${q(form)}, source, target, action == 'update');`,
+                `    var r = new ${BRIDGE}().onBefore(${q(form)}, source, target, !target.isNewRecord());`,
                 '    if (r.ignore) { ignore = true; }',
                 '    if (r.error) { error = true; error_message = r.statusMessage; }',
                 '    if (r.statusMessage) { status_message = r.statusMessage; }',
@@ -167,7 +171,7 @@ export function renderTransformMaps(): string {
         out.push(`    targetTable: ${q(c.targetTable)},`)
         out.push('    active: true,')
         out.push(`    order: ${c.loadOrder},`)
-        out.push('    runBusinessRules: false,')
+        out.push(`    runBusinessRules: ${TASK_TARGET_TABLES.has(c.targetTable) ? 'true' : 'false'},`)
         out.push("    enforceMandatoryFields: 'no',")
         out.push('    copyEmptyFields: false,')
         out.push(`    createOnEmptyCoalesce: ${DIRECT_FIELD_MAPS[form].legacy_unid === undefined ? 'true' : 'false'},`)

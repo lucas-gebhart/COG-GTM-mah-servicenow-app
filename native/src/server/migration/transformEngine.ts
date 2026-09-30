@@ -17,7 +17,7 @@
  */
 import { GlideDateTime, GlideRecord, gs } from '@servicenow/glide'
 import { coalesceRequesters, type DedupeCandidate } from '../lib/dedupe.ts'
-import { COMPANY_FIELDS, PLATFORM_TABLES, SOURCE_AGENCIES, TABLES } from '../lib/domain.ts'
+import { COMPANY_FIELDS, PLATFORM_TABLES, SOURCE_AGENCIES, TABLES, MIGRATION_SESSION_FLAG } from '../lib/domain.ts'
 import { EXTRA_STAGING_COLUMNS, LEGACY_FORMS, stagingColumnMap, TARGET_BUSINESS_KEY_FIELD, type LegacyFormName } from '../lib/legacyContract.ts'
 import { formatSecurityEvent, type SecurityEventType } from '../lib/logging.ts'
 import { buildStatusLookup, DEFAULT_STATUS_MAP, normalizeStatusText, type StatusLookup, type StatusMapEntry } from '../lib/statusMap.ts'
@@ -296,6 +296,7 @@ export function onStart(form: LegacyFormName, importSet: string): void {
         statusMatches: new Map(),
         lookup: instanceStatusLookup(),
     }
+    gs.getSession().putClientData(MIGRATION_SESSION_FLAG, 'true')
     const agenciesCreated = form === 'AwardsCase' || form === 'AuthorizationFile' ? ensureAgencyCompanies() : 0
     log('migration_run', { phase: 'start', form, importSet, agenciesCreated })
 }
@@ -433,6 +434,7 @@ export function onComplete(form: LegacyFormName, importSet: string): CompletionS
     }
     if (form === 'Requester' || form === 'HeraldryRequester') summary.merge = coalesceRequesterTable(s.batchId)
     log('migration_run', { phase: 'complete', ...summary, merge: summary.merge ? JSON.stringify(summary.merge) : '' })
+    gs.getSession().putClientData(MIGRATION_SESSION_FLAG, '')
     run = null
     return summary
 }

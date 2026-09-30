@@ -7,7 +7,8 @@
  * states (error / ignored) on the native staging tables.
  */
 import { GlideAggregate, GlideRecord } from '@servicenow/glide'
-import { CASE_STAGE_ORDER, COMPANY_FIELDS, LEGACY_FORMS, PLATFORM_TABLES, REQUEST_STATE_ORDER, STAGING_TABLE_PREFIX, TABLES, TARGET_STATUS_FIELD, TASK_STATES, type DomainTableKey } from '../lib/domain.ts'
+import { CASE_STAGE_ORDER, COMPANY_FIELDS, LEGACY_FORMS, PLATFORM_TABLES, REQUEST_STATE_ORDER, TABLES, TARGET_STATUS_FIELD, TASK_STATES, type DomainTableKey } from '../lib/domain.ts'
+import { LEGACY_FORMS as LEGACY_CONTRACT } from '../lib/legacyContract.ts'
 import { nowValue } from '../rules/glideSupport.ts'
 
 export interface TableCount {
@@ -94,10 +95,11 @@ function groupCounts(table: string, field: string, order: readonly string[], app
 const EXCEPTION_TYPE = /(?:^|\n)(?:Quarantined: parent not found: )?([a-z_]+)\[/g
 
 /** Exception counts by type from the Import Set rows' state comments, plus the requesters merged on the instance. */
-export function exceptionCountsFromImportRows(mergedRequesters: number): Record<string, number> {
+export function exceptionCountsFromImportRows(importSets: readonly string[]): Record<string, number> {
     const out: Record<string, number> = {}
+    if (importSets.length === 0) return out
     const gr = new GlideRecord(PLATFORM_TABLES.import_set_row)
-    gr.addQuery('sys_class_name', 'STARTSWITH', STAGING_TABLE_PREFIX)
+    gr.addQuery('sys_import_set', 'IN', importSets.join(','))
     gr.addNotNullQuery('sys_import_state_comment')
     gr.query()
     while (gr.next()) {
@@ -109,7 +111,23 @@ export function exceptionCountsFromImportRows(mergedRequesters: number): Record<
             if (type) out[type] = (out[type] ?? 0) + 1
         }
     }
-    if (mergedRequesters > 0) out['duplicate_requester'] = (out['duplicate_requester'] ?? 0) + mergedRequesters
+    return out
+}
+
+/**
+ * The most recent Import Set per staging table: reconciliation reports the latest run, so a rerun
+ * (idempotent coalesce) does not double-count exceptions from earlier batches.
+ */
+export function latestImportSets(): string[] {
+    const out: string[] = []
+    for (const form of Object.values(LEGACY_CONTRACT)) {
+        const gr = new GlideRecord(PLATFORM_TABLES.import_set)
+        gr.addQuery('table_name', form.stagingTable)
+        gr.orderByDesc('sys_created_on')
+        gr.setLimit(1)
+        gr.query()
+        if (gr.next()) out.push(String(gr.getUniqueValue()))
+    }
     return out
 }
 
@@ -129,8 +147,9 @@ export function buildReconciliationReport(): ReconciliationReport {
             unmappedStatus: unmapped,
         })
     }
-    const importRowStates = groupCounts(PLATFORM_TABLES.import_set_row, 'state', ['inserted', 'updated', 'ignored', 'error'], (gr) =>
-        gr.addQuery('sys_class_name', 'STARTSWITH', STAGING_TABLE_PREFIX),
+    const importSets = latestImportSets()
+    const importRowStates = groupCounts(PLATFORM_TABLES.import_set_row, 'sys_import_state', ['inserted', 'updated', 'ignored', 'error'], (gr) =>
+        gr.addQuery('sys_import_set', 'IN', importSets.join(',') || 'none'),
     )
     const taskStateOrder = Object.values(TASK_STATES).map(String)
     const mergedRequesters = countRows(TABLES.requester, (gr) => gr.addNotNullQuery('merged_into'))
@@ -147,7 +166,7 @@ export function buildReconciliationReport(): ReconciliationReport {
         duplicate_merge_count: mergedRequesters,
         unmapped_status_count: unmappedTotal,
         import_row_states: importRowStates,
-        exception_counts: exceptionCountsFromImportRows(mergedRequesters),
+        exception_counts: exceptionCountsFromImportRows(importSets),
         journal_entries: countRows(PLATFORM_TABLES.journal, (gr) => gr.addQuery('name', 'STARTSWITH', 'x_cog_mah_native_')),
         cases_by_stage: groupCounts(TABLES.awards_case, 'stage', CASE_STAGE_ORDER),
         cases_by_task_state: groupCounts(TABLES.awards_case, 'state', taskStateOrder),

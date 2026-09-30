@@ -6,9 +6,10 @@
 import { GlideRecord, gs } from '@servicenow/glide'
 import { COMPANY_FIELDS, PLATFORM_TABLES, TABLES } from '../lib/domain.ts'
 import { mergeResults, validateCageCode, validateEmail, validateFileName, validateMultiline, validateNsn, validateSafeText } from '../lib/validators.ts'
-import { abortWithMessage, abortWithValidation, applyTaskState, nowValue, securityLog, setIfEmpty, str, type AnyRecord } from './glideSupport.ts'
+import { abortWithMessage, abortWithValidation, applyTaskState, nowValue, securityLog, setIfEmpty, str, type AnyRecord, isMigrationImport } from './glideSupport.ts'
 
 export function authorizationFileBefore(current: AnyRecord): void {
+    if (isMigrationImport()) return
     const table = TABLES.authorization_file
     const result = mergeResults([validateFileName('file_name', str(current, 'file_name'), true), validateMultiline('parse_log', str(current, 'parse_log'), 8000)])
     if (!result.valid) {

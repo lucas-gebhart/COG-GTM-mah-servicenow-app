@@ -23,6 +23,7 @@ import {
     securityLog,
     str,
     type AnyRecord,
+    isMigrationImport,
 } from './glideSupport.ts'
 
 const HEADER_FIELDS = [
@@ -73,6 +74,7 @@ export function validateHeader(current: AnyRecord): ReturnType<typeof validateDd
 
 /** before insert/update */
 export function heraldryRequestBefore(current: AnyRecord, previous: AnyRecord): void {
+    if (isMigrationImport()) return
     const table = TABLES.heraldry_request
     const isInsert = current.isNewRecord()
     const fromStage = (isInsert ? 'draft' : str(previous, 'stage')) as RequestState
@@ -162,6 +164,7 @@ export function heraldryRequestBefore(current: AnyRecord, previous: AnyRecord): 
 
 /** after insert/update */
 export function heraldryRequestAfter(current: AnyRecord, previous: AnyRecord): void {
+    if (isMigrationImport()) return
     const table = TABLES.heraldry_request
     const stageEl = current.getElement('stage')
     const isInsert = previous === null || previous === undefined || str(previous, 'sys_id') === ''

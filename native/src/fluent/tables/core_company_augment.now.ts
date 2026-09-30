@@ -17,7 +17,7 @@ export const core_company = Table({
         x_cog_mah_native_lead_time_days: IntegerColumn({ label: 'Lead time days (MAH)', default: 0 }),
         x_cog_mah_native_poc: StringColumn({ label: 'Point of contact (MAH)', maxLength: LIMITS.name }),
         x_cog_mah_native_poc_email: EmailColumn({ label: 'POC email (MAH)', maxLength: LIMITS.email }),
-        x_cog_mah_native_agency_code: StringColumn({ label: 'Source agency code (MAH)', maxLength: 10 }),
+        x_cog_mah_native_agency_code: StringColumn({ label: 'Source agency code (MAH)', maxLength: 40 }),
         x_cog_mah_native_capabilities: StringColumn({ label: 'Capabilities / products (MAH)', maxLength: 255 }),
     },
 })

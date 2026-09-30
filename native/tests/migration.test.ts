@@ -199,6 +199,7 @@ describe('dry run + comparison', () => {
         const r = dryRun({ sources, now: NOW })
         const target: TargetReport = {
             tables: Object.entries(r.expected.tables).map(([table, rows]) => ({ table, rows })),
+            companies: { rows: r.expected.tables['core_company'] ?? 0, withLegacyUnid: r.expected.tables['core_company'] ?? 0 },
             award_line_quantity_total: r.expected.award_line_quantity_total,
             request_line_extended_price_total: r.expected.request_line_extended_price_total,
             orphan_count: r.expected.orphan_count,
@@ -269,8 +270,20 @@ describe('generated Fluent migration metadata', () => {
         expect(vendorMap).toContain(`${COMPANY_FIELDS.legacy_unid}: { sourceField: 'unid', coalesce: true`)
         expect(vendorMap).not.toContain('\n        legacy_unid:')
         // `action` is the string 'insert' | 'update'; the bridge needs a boolean or duplicate-key detection never runs.
-        expect(maps).toContain("onBefore('Vendor', source, target, action == 'update')")
+        expect(maps).toContain("onBefore('Vendor', source, target, !target.isNewRecord())")
         expect(maps).not.toContain('target, action);')
+        expect(maps).not.toContain("action == 'update'")
+    })
+
+    it('runs business rules only for task-extending targets so Task SLA, assignment rules and flows attach to migrated records', () => {
+        const maps = readFileSync(MIGRATION_FILES.transformMaps, 'utf8')
+        const block = (name: string): string => maps.slice(maps.indexOf(`export const ${name}`), maps.indexOf('export const', maps.indexOf(`export const ${name}`) + 1))
+        for (const task of ['tm_awards_case', 'tm_case_note', 'tm_heraldry_request', 'tm_ses_flag_request', 'tm_engraving_job', 'tm_shipment', 'tm_authorization_file']) {
+            expect(block(task), task).toContain('runBusinessRules: true')
+        }
+        for (const plain of ['tm_vendor', 'tm_heraldic_item', 'tm_requester', 'tm_unit_requester', 'tm_award_line', 'tm_request_line']) {
+            expect(block(plain), plain).toContain('runBusinessRules: false')
+        }
     })
 })
 

@@ -53,6 +53,9 @@ export const PLATFORM_TABLES = {
 } as const
 
 /** Custom tables that extend `task` and therefore inherit number / state / active / assignment / journals / SLA / approvals. */
+/** Session flag set by the migration transform while it loads rows; scoped guard-rail rules step aside, platform engines still run. */
+export const MIGRATION_SESSION_FLAG = 'x_cog_mah_native.migration_import' as const
+
 export const TASK_TABLE_KEYS = ['awards_case', 'heraldry_request', 'ses_flag_request', 'engraving_job', 'shipment', 'authorization_file'] as const satisfies readonly DomainTableKey[]
 export type TaskTableKey = (typeof TASK_TABLE_KEYS)[number]
 export function isTaskTable(key: DomainTableKey): key is TaskTableKey {
