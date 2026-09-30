@@ -18,7 +18,7 @@ export const form_awards_case = Form({
                         { type: 'table_field', field: 'requester' },
                         { type: 'table_field', field: 'requester_relationship' },
                         { type: 'table_field', field: 'source_agency' },
-                        { type: 'table_field', field: 'authorization_file' },
+                        { type: 'table_field', field: 'authorization_file_task' },
                         { type: 'table_field', field: 'authorization_file_line' },
                         { type: 'table_field', field: 'source_record_id' },
                         { type: 'table_field', field: 'authorization_date' },

@@ -1116,6 +1116,11 @@ declare global {
                     rl_authorization_file_awards_case_authorization_file: {
                         table: 'sys_ui_related_list_entry'
                         id: 'bd125615816347379faf6ae7a2e95ae9'
+                        deleted: true
+                    }
+                    rl_authorization_file_awards_case_authorization_file_task: {
+                        table: 'sys_ui_related_list_entry'
+                        id: 'c40915d8a38b49ac934405f5cede0690'
                     }
                     rl_authorization_file_sysapproval_approver_sysapproval: {
                         table: 'sys_ui_related_list_entry'
@@ -3551,6 +3556,7 @@ declare global {
                     {
                         table: 'sys_dictionary'
                         id: '0499bbbd3dd14205b2d5134c36e69bee'
+                        deleted: true
                         key: {
                             name: 'x_cog_mah_native_awards_case'
                             element: 'authorization_file'
@@ -8942,6 +8948,7 @@ declare global {
                     {
                         table: 'sys_ui_element'
                         id: '29879d5d1bd84182937c4d0e107522fc'
+                        deleted: true
                         key: {
                             sys_ui_section: {
                                 id: 'c13974e101ef4dc4a5c7d7e457d1390b'
@@ -18293,6 +18300,15 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
+                        id: '6983561f42224df391c30f8c60ee4a1f'
+                        key: {
+                            name: 'x_cog_mah_native_awards_case'
+                            element: 'authorization_file_task'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
                         id: '69a09f84fcf04195abb6d9b2dd3b9cbe'
                         key: {
                             name: 'x_cog_mah_native_stg_engraving_job'
@@ -18759,6 +18775,14 @@ declare global {
                             }
                             element: 'requesting_office'
                             position: '3'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '6d5c4bfc399d4f16be61c3139be27d70'
+                        key: {
+                            name: 'x_cog_mah_native_awards_case'
+                            element: 'authorization_file_task'
                         }
                     },
                     {
@@ -27413,6 +27437,28 @@ declare global {
                             value: 'numeral'
                             language: 'en'
                             dependent_value: 'NULL'
+                        }
+                    },
+                    {
+                        table: 'sys_ui_element'
+                        id: 'a4cfabcbaf9f468584f12c50b1f472c9'
+                        key: {
+                            sys_ui_section: {
+                                id: 'c13974e101ef4dc4a5c7d7e457d1390b'
+                                key: {
+                                    name: 'x_cog_mah_native_awards_case'
+                                    caption: 'Awards case'
+                                    view: {
+                                        id: 'Default view'
+                                        key: {
+                                            name: 'NULL'
+                                        }
+                                    }
+                                    sys_domain: 'global'
+                                }
+                            }
+                            element: 'authorization_file_task'
+                            position: '6'
                         }
                     },
                     {
@@ -36411,6 +36457,7 @@ declare global {
                     {
                         table: 'sys_documentation'
                         id: 'db1c85416c4840788a07b825d202c1c6'
+                        deleted: true
                         key: {
                             name: 'x_cog_mah_native_awards_case'
                             element: 'authorization_file'

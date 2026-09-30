@@ -447,7 +447,7 @@ function awardsCase(b: RowBuilder, ctx: Required<TransformContext>): RowTransfor
     b.set('work_notes', workNotes.slice(0, 4000))
 
     b.lookup('requester', TABLES.requester, ['legacy_number', 'legacy_unid'], b.get('RequesterKey'), false)
-    b.lookup('authorization_file', TABLES.authorization_file, ['file_name', 'legacy_number'], b.get('AuthFileName'), false)
+    b.lookup('authorization_file_task', TABLES.authorization_file, ['file_name', 'legacy_number'], b.get('AuthFileName'), false)
 
     return finish(b, form, status)
 }

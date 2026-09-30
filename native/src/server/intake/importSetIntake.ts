@@ -207,7 +207,7 @@ export function intakeBefore(source: AnyRecord, target: AnyRecord, _isUpdateFlag
     if (loaded) {
         // Coalesced on source_record_id: another line of the same record in this run appends a line
         // (onAfter); the same record from an earlier file is a duplicate and is left `ignored`.
-        if (get(loaded, 'authorization_file') !== fileSysId) {
+        if (get(loaded, 'authorization_file_task') !== fileSysId) {
             log('intake_rejected', { importSet, recordId: record.source_record_id, existingCase: get(loaded, 'number'), type: 'duplicate' }, 'blocked')
             return { ignore: true, error: false, statusMessage: `${INTAKE_DUPLICATE_MESSAGE}: ${record.source_record_id} already loaded as ${get(loaded, 'number')}`, warningCount: 1, quarantined: false }
         }
@@ -223,7 +223,7 @@ export function intakeBefore(source: AnyRecord, target: AnyRecord, _isUpdateFlag
         legacy_unid: gs.generateGUID(),
         legacy_form: 'AwardsCase',
         requester,
-        authorization_file: fileSysId,
+        authorization_file_task: fileSysId,
         source_agency: agencyCompany(record.source_agency),
         source_record_id: record.source_record_id,
         authorization_date: record.authorization_date,
@@ -333,8 +333,8 @@ export function intakeComplete(importSet: string): { files: number; counts: Inta
     while (files.next()) {
         n++
         const fileSysId = String(files.getUniqueValue())
-        const cases = countWhere(TABLES.awards_case, 'authorization_file', fileSysId)
-        const lines = countWhere(TABLES.award_line, 'awards_case.authorization_file', fileSysId)
+        const cases = countWhere(TABLES.awards_case, 'authorization_file_task', fileSysId)
+        const lines = countWhere(TABLES.award_line, 'awards_case.authorization_file_task', fileSysId)
         const stage = intakeStage(counts)
         const s = taskStateForStage('authorization_file', stage)
         files.setValue('record_count', String(counts.total))

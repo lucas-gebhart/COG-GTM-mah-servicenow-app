@@ -23,7 +23,10 @@ export const x_cog_mah_native_awards_case = Table({
 
         requester: ReferenceColumn({ label: 'Requester', referenceTable: 'x_cog_mah_native_requester', cascadeRule: 'restrict' }),
         requester_relationship: ChoiceColumn({ label: 'Requester relationship', choices: NOK_RELATIONSHIPS, dropdown: 'dropdown_with_none' }),
-        authorization_file: ReferenceColumn({ label: 'Authorization file', referenceTable: 'x_cog_mah_native_authorization_file', cascadeRule: 'clear' }),
+        // Named `_task` on purpose: on the PDI the task hierarchy never materialised a physical column called
+        // `authorization_file` for this table (dictionary row present, `isValidField()` false, every re-create attempt
+        // failed silently) while any other name worked. Verified 2026-09-30; see docs/SCREENS.md.
+        authorization_file_task: ReferenceColumn({ label: 'Authorization file', referenceTable: 'x_cog_mah_native_authorization_file', cascadeRule: 'clear' }),
         authorization_file_line: IntegerColumn({ label: 'Authorization file line' }),
         source_agency: ReferenceColumn({
             label: 'Source agency (company)',

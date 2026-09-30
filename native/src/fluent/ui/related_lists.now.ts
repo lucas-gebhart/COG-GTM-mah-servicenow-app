@@ -103,12 +103,12 @@ export const rl_authorization_file = Record({
     table: 'sys_ui_related_list',
     data: { name: 'x_cog_mah_native_authorization_file', view: 'Default view' },
 })
-export const rl_authorization_file_awards_case_authorization_file = Record({
-    $id: Now.ID['rl_authorization_file_awards_case_authorization_file'],
+export const rl_authorization_file_awards_case_authorization_file_task = Record({
+    $id: Now.ID['rl_authorization_file_awards_case_authorization_file_task'],
     table: 'sys_ui_related_list_entry',
     data: {
         list_id: rl_authorization_file,
-        related_list: 'x_cog_mah_native_awards_case.authorization_file',
+        related_list: 'x_cog_mah_native_awards_case.authorization_file_task',
         position: 0,
         order_by: 'number',
     },

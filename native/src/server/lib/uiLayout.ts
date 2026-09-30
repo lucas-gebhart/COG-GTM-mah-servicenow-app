@@ -55,7 +55,7 @@ export const UI_LAYOUT: Readonly<Record<DomainTableKey, TableLayout>> = {
         sections: [
             {
                 caption: 'Awards case',
-                left: ['number', 'legacy_number', 'requester', 'requester_relationship', 'source_agency', 'authorization_file', 'authorization_file_line', 'source_record_id', 'authorization_date'],
+                left: ['number', 'legacy_number', 'requester', 'requester_relationship', 'source_agency', 'authorization_file_task', 'authorization_file_line', 'source_record_id', 'authorization_date'],
                 right: ['stage', 'state', 'stage_entered_at', 'priority', 'handling_priority', 'priority_handling', 'assigned_to', 'assignment_group', 'opened_at', 'active'],
             },
             {
@@ -153,7 +153,7 @@ export const UI_LAYOUT: Readonly<Record<DomainTableKey, TableLayout>> = {
             ACTIVITY,
             LEGACY,
         ],
-        relatedLists: [{ child: 'awards_case', field: 'authorization_file', orderBy: 'number' }],
+        relatedLists: [{ child: 'awards_case', field: 'authorization_file_task', orderBy: 'number' }],
         nativeRelatedLists: TASK_RELATED_LISTS,
         legacyViews: ['Intake\\Authorization Files'],
     },
