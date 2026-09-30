@@ -197,7 +197,9 @@ export function intakeBefore(source: AnyRecord, target: AnyRecord, _isUpdateFlag
     const importSet = get(source, 'sys_import_set')
     const v = validateIntakeRow(row)
     if (!v.record) {
-        return reject(`${INTAKE_REJECTED_MESSAGE}: ${v.issues.join('; ')}`, { importSet, recordId: cell(row.record_id).slice(0, 64), issues: v.issues.length })
+        const message = `${INTAKE_REJECTED_MESSAGE}: ${v.issues.join('; ')}`
+        noteRejectedRow(importSet, v.fileName, message)
+        return reject(message, { importSet, recordId: cell(row.record_id).slice(0, 64), issues: v.issues.length })
     }
     const record = v.record
     const fileSysId = ensureAuthorizationFile(v.fileName, record, importSet)
@@ -333,6 +335,44 @@ export function intakeRunCounts(importSet: string, fileName: string): IntakeRunC
     return counts
 }
 
+/**
+ * A rejected row never reaches onComplete with its state committed, so its authorization-file task (when an
+ * earlier valid row of the same file already created it) is updated here, from onBefore.
+ */
+function noteRejectedRow(importSet: string, fileName: string, message: string): void {
+    if (!importSet || !fileName) return
+    const files = new GlideRecord(TABLES.authorization_file)
+    files.addQuery('import_set', importSet)
+    files.addQuery('file_name', fileName)
+    files.setLimit(1)
+    files.query()
+    if (!files.next()) return
+    const counts = intakeRunCounts(importSet, fileName)
+    counts.total++
+    counts.error++
+    const fileSysId = String(files.getUniqueValue())
+    const cases = countWhere(TABLES.awards_case, 'authorization_file_task', fileSysId)
+    const lines = countWhere(TABLES.award_line, 'awards_case.authorization_file_task', fileSysId)
+    applyFileCounts(files, counts, cases, lines)
+    setJournal(files, 'work_notes', message.slice(0, 4000))
+    files.update()
+}
+
+function applyFileCounts(files: AnyRecord, counts: IntakeRunCounts, cases: number, lines: number): void {
+    const stage = intakeStage(counts)
+    const s = taskStateForStage('authorization_file', stage)
+    files.setValue('record_count', String(counts.total))
+    files.setValue('accepted_count', String(counts.inserted + counts.updated))
+    files.setValue('rejected_count', String(counts.error))
+    files.setValue('duplicate_count', String(counts.ignored))
+    files.setValue('cases_created', String(cases))
+    files.setValue('lines_created', String(lines))
+    files.setValue('stage', stage)
+    files.setValue('state', String(s.state))
+    files.setValue('active', s.active ? 'true' : 'false')
+    files.setValue('parse_log', intakeParseLog(get(files, 'file_name'), counts, cases, lines))
+}
+
 /** onComplete: the authorization-file task(s) of this run get the counters, parse stage and a work note. */
 export function intakeComplete(importSet: string): { files: number; counts: IntakeRunCounts } {
     const counts: IntakeRunCounts = { total: 0, inserted: 0, updated: 0, ignored: 0, error: 0 }
@@ -347,18 +387,7 @@ export function intakeComplete(importSet: string): { files: number; counts: Inta
         for (const k of Object.keys(counts) as (keyof IntakeRunCounts)[]) counts[k] += fileCounts[k]
         const cases = countWhere(TABLES.awards_case, 'authorization_file_task', fileSysId)
         const lines = countWhere(TABLES.award_line, 'awards_case.authorization_file_task', fileSysId)
-        const stage = intakeStage(fileCounts)
-        const s = taskStateForStage('authorization_file', stage)
-        files.setValue('record_count', String(fileCounts.total))
-        files.setValue('accepted_count', String(fileCounts.inserted + fileCounts.updated))
-        files.setValue('rejected_count', String(fileCounts.error))
-        files.setValue('duplicate_count', String(fileCounts.ignored))
-        files.setValue('cases_created', String(cases))
-        files.setValue('lines_created', String(lines))
-        files.setValue('stage', stage)
-        files.setValue('state', String(s.state))
-        files.setValue('active', s.active ? 'true' : 'false')
-        files.setValue('parse_log', intakeParseLog(get(files, 'file_name'), fileCounts, cases, lines))
+        applyFileCounts(files, fileCounts, cases, lines)
         setJournal(files, 'work_notes', intakeParseLog(get(files, 'file_name'), fileCounts, cases, lines))
         files.update()
     }
