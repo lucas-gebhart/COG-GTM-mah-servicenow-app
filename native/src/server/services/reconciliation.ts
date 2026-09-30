@@ -48,7 +48,7 @@ export interface ReconciliationReport {
 }
 
 /** Tables that carry a legacy form and participate in source ↔ target row-count checks. */
-export const RECONCILED_TABLES: readonly { key: DomainTableKey; legacyForm: string }[] = [
+export const RECONCILED_TABLES: readonly { key: DomainTableKey; legacyForm: string; where?: (gr: GlideRecord<string>) => void }[] = [
     { key: 'awards_case', legacyForm: LEGACY_FORMS.awards_case },
     { key: 'award_line', legacyForm: LEGACY_FORMS.award_line },
     { key: 'requester', legacyForm: LEGACY_FORMS.requester },
@@ -57,7 +57,8 @@ export const RECONCILED_TABLES: readonly { key: DomainTableKey; legacyForm: stri
     { key: 'shipment', legacyForm: LEGACY_FORMS.shipment },
     { key: 'heraldry_request', legacyForm: LEGACY_FORMS.heraldry_request },
     { key: 'request_line', legacyForm: LEGACY_FORMS.request_line },
-    { key: 'catalog_item', legacyForm: LEGACY_FORMS.catalog_item },
+    // heraldic items only: the award catalog rows on the same cmdb_model extension are seeded, not migrated
+    { key: 'catalog_item', legacyForm: LEGACY_FORMS.catalog_item, where: (gr) => gr.addQuery('catalog_kind', 'heraldic') },
     { key: 'ses_flag_request', legacyForm: LEGACY_FORMS.ses_flag_request },
 ]
 
@@ -161,21 +162,32 @@ export function buildReconciliationReport(requestedBatchId = ''): Reconciliation
     for (const entry of RECONCILED_TABLES) {
         const table = TABLES[entry.key]
         const statusField = TARGET_STATUS_FIELD[entry.key]
-        const unmapped = statusField ? countRows(table, (gr) => gr.addQuery(statusField, 'unmapped')) : 0
+        const where = entry.where ?? ((): void => undefined)
+        const unmapped = statusField
+            ? countRows(table, (gr) => {
+                  where(gr)
+                  gr.addQuery(statusField, 'unmapped')
+              })
+            : 0
         unmappedTotal += unmapped
         tables.push({
             table,
             legacyForm: entry.legacyForm,
-            rows: countRows(table),
-            withLegacyUnid: countRows(table, (gr) => gr.addNotNullQuery('legacy_unid')),
+            rows: countRows(table, where),
+            withLegacyUnid: countRows(table, (gr) => {
+                where(gr)
+                gr.addNotNullQuery('legacy_unid')
+            }),
             unmappedStatus: unmapped,
         })
     }
     const batchId = requestedBatchId || latestBatchId()
     const importRows = importRowsForBatch(batchId)
+    const mergedRequesters = countRows(TABLES.requester, (gr) => gr.addNotNullQuery('merged_into'))
+    // a re-run coalesces nothing new, so the merges already on the instance are the duplicate count
+    importRows.exceptions['duplicate_requester'] = mergedRequesters
     const importRowStates = importRows.states
     const taskStateOrder = Object.values(TASK_STATES).map(String)
-    const mergedRequesters = countRows(TABLES.requester, (gr) => gr.addNotNullQuery('merged_into'))
     return {
         generated_at: nowValue(),
         batch_id: batchId,

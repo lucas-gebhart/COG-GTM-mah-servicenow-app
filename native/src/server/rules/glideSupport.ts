@@ -144,11 +144,19 @@ export function journal(current: AnyRecord, field: JournalField, text: string): 
 }
 
 /** Write a journal entry onto another task by sys_id (after rules / cascades). */
+/**
+ * Journal fields must be written through element assignment: `setValue()` on a journal_input
+ * column silently produces no `sys_journal_field` entry (verified on the PDI), the assignment does.
+ */
+export function setJournal(gr: GlideRecord<string>, field: JournalField, text: string): void {
+    ;(gr as unknown as Record<string, string>)[field] = text
+}
+
 export function journalOnTask(table: string, sysId: string, field: JournalField, text: string): void {
     if (!sysId) return
     const gr = new GlideRecord(table)
     if (!gr.get(sysId)) return
-    gr.setValue(field, toSafeMultiline(text, 4000))
+    setJournal(gr, field, toSafeMultiline(text, 4000))
     gr.setWorkflow(false)
     gr.update()
 }

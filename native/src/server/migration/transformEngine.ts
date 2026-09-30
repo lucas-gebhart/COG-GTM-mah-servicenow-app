@@ -17,7 +17,8 @@
  */
 import { GlideDateTime, GlideRecord, gs } from '@servicenow/glide'
 import { coalesceRequesters, type DedupeCandidate } from '../lib/dedupe.ts'
-import { COMPANY_FIELDS, PLATFORM_TABLES, SOURCE_AGENCIES, TABLES, MIGRATION_SESSION_FLAG } from '../lib/domain.ts'
+import { setJournal } from '../rules/glideSupport.ts'
+import { AWARD_CATALOG, COMPANY_FIELDS, PLATFORM_TABLES, SOURCE_AGENCIES, TABLES, MIGRATION_SESSION_FLAG } from '../lib/domain.ts'
 import { EXTRA_STAGING_COLUMNS, LEGACY_FORMS, stagingColumnMap, TARGET_BUSINESS_KEY_FIELD, type LegacyFormName } from '../lib/legacyContract.ts'
 import { formatSecurityEvent, type SecurityEventType } from '../lib/logging.ts'
 import { buildStatusLookup, DEFAULT_STATUS_MAP, normalizeStatusText, type StatusLookup, type StatusMapEntry } from '../lib/statusMap.ts'
@@ -176,6 +177,11 @@ export function readRowMeta(form: LegacyFormName, source: AnyRecord, row: Source
  * Exact match on each candidate field, parameterized. Requesters that were merged resolve to
  * their survivor so no case ever points at a duplicate.
  */
+/** Column that carries the Domino UNID on a target table (scoped column on core_company, `legacy_unid` elsewhere). */
+export function coalesceField(targetTable: string): string {
+    return targetTable === PLATFORM_TABLES.company ? COMPANY_FIELDS.legacy_unid : 'legacy_unid'
+}
+
 export function resolveLookup(lookup: ReferenceLookup): string {
     if (!lookup.value) return ''
     const gr = new GlideRecord(lookup.table)
@@ -242,7 +248,7 @@ export function appendJournal(table: string, sysId: string, fields: Readonly<Rec
         }
         const parent = new GlideRecord(table)
         if (!parent.get(sysId) || !parent.isValidField(journal)) continue
-        parent.setValue(journal, text)
+        setJournal(parent, journal, text)
         parent.update()
         written.push(`${journal} appended to ${get(parent, 'number')}`)
     }
@@ -280,6 +286,30 @@ export function ensureAgencyCompanies(): number {
     return created
 }
 
+/**
+ * The award / decoration catalog is a `cmdb_model` extension row per award (model_number = catalog
+ * key) so award lines reference a model record; seeded once, before the first award-line batch.
+ */
+export function ensureAwardModels(): number {
+    let created = 0
+    for (const [key, label] of Object.entries(AWARD_CATALOG)) {
+        const gr = new GlideRecord(TABLES.catalog_item)
+        gr.addQuery('model_number', key)
+        gr.setLimit(1)
+        gr.query()
+        if (gr.next()) continue
+        gr.initialize()
+        gr.setValue('name', label)
+        gr.setValue('display_name', label)
+        gr.setValue('model_number', key)
+        gr.setValue('catalog_kind', 'award')
+        gr.setValue('catalog_state', 'active')
+        gr.setValue('legacy_unid', `award:${key}`)
+        if (gr.insert()) created++
+    }
+    return created
+}
+
 // ---------------------------------------------------------------------------------------------
 // transform hooks
 // ---------------------------------------------------------------------------------------------
@@ -298,7 +328,8 @@ export function onStart(form: LegacyFormName, importSet: string): void {
     }
     gs.getSession().putClientData(MIGRATION_SESSION_FLAG, 'true')
     const agenciesCreated = form === 'AwardsCase' || form === 'AuthorizationFile' ? ensureAgencyCompanies() : 0
-    log('migration_run', { phase: 'start', form, importSet, agenciesCreated })
+    const awardModelsCreated = form === 'AwardLine' ? ensureAwardModels() : 0
+    log('migration_run', { phase: 'start', form, importSet, agenciesCreated, awardModelsCreated })
 }
 
 function state(form: LegacyFormName, importSet: string): RunState {
@@ -310,7 +341,7 @@ function state(form: LegacyFormName, importSet: string): RunState {
  * onBefore: transform the staging row, resolve references, quarantine orphans and set every
  * target field. Returns what the script must do with `ignore` / `error` / `status_message`.
  */
-export function onBefore(form: LegacyFormName, source: AnyRecord, target: AnyRecord, isUpdate: boolean): BeforeResult {
+export function onBefore(form: LegacyFormName, source: AnyRecord, target: AnyRecord, isUpdateFlag: boolean): BeforeResult {
     const row = readSourceRow(form, source)
     const meta = readRowMeta(form, source, row)
     const s = state(form, meta.importSet)
@@ -318,6 +349,9 @@ export function onBefore(form: LegacyFormName, source: AnyRecord, target: AnyRec
     s.rows++
 
     const t = transformRow(form, row, { now: nowValue(), statusLookup: s.lookup })
+    // The transformer's own update flag is not reliable inside onBefore for coalesced rows, so the
+    // coalesce key (legacy UNID) is checked directly: a row whose target already exists is a re-run.
+    const isUpdate = isUpdateFlag || (!t.journalOnly && Boolean(resolveLookup({ field: 'sys_id', table: t.targetTable, matchFields: [coalesceField(t.targetTable)], value: meta.legacyUnid, required: false })))
     if (t.statusNormalized) {
         const key = `${LEGACY_FORMS[form].legacyForm}\u0000${t.statusNormalized}`
         s.statusMatches.set(key, (s.statusMatches.get(key) ?? 0) + 1)
