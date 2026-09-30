@@ -204,6 +204,21 @@ export function resolveLookup(lookup: ReferenceLookup): string {
 // ---------------------------------------------------------------------------------------------
 
 /** Another target row already carries this business key under a different legacy UNID. */
+/** True when the other row (by UNID) sits earlier in this batch's staging rows, or came from an earlier batch. */
+export function loadedBeforeRow(form: LegacyFormName, meta: RowMeta, otherUnid: string): boolean {
+    const [batchCol, rowCol] = EXTRA_STAGING_COLUMNS
+    const gr = new GlideRecord(LEGACY_FORMS[form].stagingTable)
+    const unidCol = gr.isValidField('unid') ? 'unid' : gr.isValidField('u_unid') ? 'u_unid' : ''
+    if (!unidCol) return true
+    gr.addQuery(unidCol, otherUnid)
+    gr.addQuery(gr.isValidField(batchCol) ? batchCol : `u_${batchCol}`, meta.batchId)
+    gr.setLimit(1)
+    gr.query()
+    if (!gr.next()) return true
+    const otherRow = Number.parseInt(stagingValue(gr, rowCol), 10)
+    return !Number.isFinite(otherRow) || otherRow < meta.sourceRow
+}
+
 export function findDuplicateBusinessKey(form: LegacyFormName, t: RowTransform, legacyUnid: string): string {
     const field = TARGET_BUSINESS_KEY_FIELD[form]
     if (!field) return ''
@@ -290,6 +305,11 @@ export function ensureAgencyCompanies(): number {
  * The award / decoration catalog is a `cmdb_model` extension row per award (model_number = catalog
  * key) so award lines reference a model record; seeded once, before the first award-line batch.
  */
+/** Lineage key for a seeded award model: `AWD:` + catalog key, fitted to the 32-character UNID column. */
+export function awardModelUnid(key: string): string {
+    return `AWD:${key}`.slice(0, 32)
+}
+
 export function ensureAwardModels(): number {
     let created = 0
     for (const [key, label] of Object.entries(AWARD_CATALOG)) {
@@ -304,7 +324,7 @@ export function ensureAwardModels(): number {
         gr.setValue('model_number', key)
         gr.setValue('catalog_kind', 'award')
         gr.setValue('catalog_state', 'active')
-        gr.setValue('legacy_unid', `award:${key}`)
+        gr.setValue('legacy_unid', awardModelUnid(key))
         if (gr.insert()) created++
     }
     return created
@@ -397,9 +417,11 @@ export function onBefore(form: LegacyFormName, source: AnyRecord, target: AnyRec
         log('import_set_row', { form, legacyUnid: meta.legacyUnid, sourceRow: meta.sourceRow, journal: outcome })
         return { ignore: true, error: false, statusMessage: [outcome, formatWarnings(t.warnings)].filter(Boolean).join('\n').slice(0, 4000), warningCount: t.warnings.length, quarantined: false }
     }
-    if (!isUpdate) {
-        const dup = findDuplicateBusinessKey(form, t, meta.legacyUnid)
-        if (dup) {
+    // Same semantics as the dry run: only the row that comes *later* in the source is the duplicate,
+    // so a re-run of an already-loaded batch flags the same single row instead of both.
+    const dup = findDuplicateBusinessKey(form, t, meta.legacyUnid)
+    if (dup && loadedBeforeRow(form, meta, dup)) {
+        {
             const field = TARGET_BUSINESS_KEY_FIELD[form] ?? ''
             t.warnings.push({
                 type: 'duplicate_business_key',

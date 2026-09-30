@@ -36,8 +36,13 @@ export function catalogItemBefore(current: AnyRecord, previous: AnyRecord): void
         validateSafeText('drawing_number', str(current, 'drawing_number'), 40, false),
     ]
     const isException = str(current, 'exception_item') === 'true'
+    const isAward = str(current, 'catalog_kind') === 'award'
     const stock = str(current, 'model_number')
-    if (!isException) results.push(validateNsn(stock, 'model_number'))
+    if (isAward) {
+        // award / decoration models carry the catalog key, not an NSN
+        const ok = /^[a-z0-9_]{1,60}$/.test(stock)
+        results.push(ok ? { valid: true, issues: [] } : { valid: false, issues: [{ field: 'model_number', code: 'format', message: 'Award catalog key must be 1-60 lower-case letters, digits or underscores' }] })
+    } else if (!isException) results.push(validateNsn(stock, 'model_number'))
     else results.push(validateSafeText('model_number', stock, 20, true))
     const price = Number(str(current, 'cost') || 0)
     if (!Number.isFinite(price) || price < 0 || price > 100000) {
