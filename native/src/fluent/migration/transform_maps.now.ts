@@ -15,7 +15,7 @@ export const tm_vendor = ImportSet({
     copyEmptyFields: false,
     createOnEmptyCoalesce: true,
     fields: {
-        legacy_unid: { sourceField: 'unid', coalesce: true, coalesceCaseSensitive: false },
+        x_cog_mah_native_legacy_unid: { sourceField: 'unid', coalesce: true, coalesceCaseSensitive: false },
         name: { sourceField: 'vendor_name' },
         x_cog_mah_native_cage_code: { sourceField: 'vendor_key' },
         x_cog_mah_native_contract_number: { sourceField: 'contract_number' },
@@ -35,7 +35,7 @@ export const tm_vendor = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('Vendor', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('Vendor', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_vendor_onAfter'],
@@ -88,7 +88,7 @@ export const tm_heraldic_item = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('HeraldicItem', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('HeraldicItem', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_heraldic_item_onAfter'],
@@ -140,7 +140,7 @@ export const tm_requester = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('Requester', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('Requester', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_requester_onAfter'],
@@ -191,7 +191,7 @@ export const tm_unit_requester = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('HeraldryRequester', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('HeraldryRequester', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_unit_requester_onAfter'],
@@ -242,7 +242,7 @@ export const tm_authorization_file = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('AuthorizationFile', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('AuthorizationFile', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_authorization_file_onAfter'],
@@ -296,7 +296,7 @@ export const tm_awards_case = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('AwardsCase', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('AwardsCase', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_awards_case_onAfter'],
@@ -348,7 +348,7 @@ export const tm_award_line = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('AwardLine', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('AwardLine', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_award_line_onAfter'],
@@ -397,7 +397,7 @@ export const tm_engraving_job = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('EngravingJob', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('EngravingJob', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_engraving_job_onAfter'],
@@ -447,7 +447,7 @@ export const tm_shipment = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('ShipmentRecord', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('ShipmentRecord', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_shipment_onAfter'],
@@ -494,7 +494,7 @@ export const tm_case_note = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('CaseNote', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('CaseNote', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_case_note_onAfter'],
@@ -549,7 +549,7 @@ export const tm_heraldry_request = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('Request', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('Request', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_heraldry_request_onAfter'],
@@ -598,7 +598,7 @@ export const tm_request_line = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('RequestLine', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('RequestLine', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_request_line_onAfter'],
@@ -650,7 +650,7 @@ export const tm_ses_flag_request = ImportSet({
             when: 'onBefore',
             order: 200,
             active: true,
-            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('SESFlagRequest', source, target, action);\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
+            script: "(function runTransformScript(source, map, log, target) {\n    var r = new x_cog_mah_native.MAHNativeMigration().onBefore('SESFlagRequest', source, target, action == 'update');\n    if (r.ignore) { ignore = true; }\n    if (r.error) { error = true; error_message = r.statusMessage; }\n    if (r.statusMessage) { status_message = r.statusMessage; }\n})(source, map, log, target);",
         },
         {
             $id: Now.ID['tm_ses_flag_request_onAfter'],

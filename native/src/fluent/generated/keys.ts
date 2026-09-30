@@ -4796,6 +4796,7 @@ declare global {
                     {
                         table: 'sys_transform_entry'
                         id: '0d62e19c474e48268227ba4fe7791563'
+                        deleted: true
                         key: {
                             map: '32d0fc54537b4512b6f0a0bc3cbe2963'
                             target_field: 'legacy_unid'
@@ -5776,6 +5777,14 @@ declare global {
                             name: 'x_cog_mah_native_stg_vendor'
                             element: 'unid'
                             language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_transform_entry'
+                        id: '14595ab0913f4458b29a378d46f2736a'
+                        key: {
+                            map: '32d0fc54537b4512b6f0a0bc3cbe2963'
+                            target_field: 'x_cog_mah_native_legacy_unid'
                         }
                     },
                     {

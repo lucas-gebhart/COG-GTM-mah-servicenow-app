@@ -262,6 +262,16 @@ describe('generated Fluent migration metadata', () => {
             expect(maps).toContain(`onBefore('${form}'`)
         }
     })
+
+    it('coalesces the vendor registry on the scoped core_company lineage column and passes the real update flag to onBefore', () => {
+        const maps = readFileSync(MIGRATION_FILES.transformMaps, 'utf8')
+        const vendorMap = maps.slice(maps.indexOf('export const tm_vendor'), maps.indexOf('export const', maps.indexOf('export const tm_vendor') + 1))
+        expect(vendorMap).toContain(`${COMPANY_FIELDS.legacy_unid}: { sourceField: 'unid', coalesce: true`)
+        expect(vendorMap).not.toContain('\n        legacy_unid:')
+        // `action` is the string 'insert' | 'update'; the bridge needs a boolean or duplicate-key detection never runs.
+        expect(maps).toContain("onBefore('Vendor', source, target, action == 'update')")
+        expect(maps).not.toContain('target, action);')
+    })
 })
 
 describe('legacy contract ↔ data model', () => {

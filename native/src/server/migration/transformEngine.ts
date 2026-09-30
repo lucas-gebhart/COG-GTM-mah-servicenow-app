@@ -17,7 +17,7 @@
  */
 import { GlideDateTime, GlideRecord, gs } from '@servicenow/glide'
 import { coalesceRequesters, type DedupeCandidate } from '../lib/dedupe.ts'
-import { PLATFORM_TABLES, TABLES } from '../lib/domain.ts'
+import { COMPANY_FIELDS, PLATFORM_TABLES, SOURCE_AGENCIES, TABLES } from '../lib/domain.ts'
 import { EXTRA_STAGING_COLUMNS, LEGACY_FORMS, stagingColumnMap, TARGET_BUSINESS_KEY_FIELD, type LegacyFormName } from '../lib/legacyContract.ts'
 import { formatSecurityEvent, type SecurityEventType } from '../lib/logging.ts'
 import { buildStatusLookup, DEFAULT_STATUS_MAP, normalizeStatusText, type StatusLookup, type StatusMapEntry } from '../lib/statusMap.ts'
@@ -213,6 +213,74 @@ export function findDuplicateBusinessKey(form: LegacyFormName, t: RowTransform, 
 }
 
 // ---------------------------------------------------------------------------------------------
+// journal-only rows (CaseNote → task work_notes / comments)
+// ---------------------------------------------------------------------------------------------
+
+/** Every migrated note starts with `[Migrated note <unid8>]`; the marker keeps re-runs idempotent. */
+const NOTE_MARKER = /^\[Migrated note [0-9A-F]{8}\]/
+
+function journalExists(sysId: string, journal: string, marker: string): boolean {
+    const gr = new GlideRecord(PLATFORM_TABLES.journal)
+    gr.addQuery('element_id', sysId)
+    gr.addQuery('element', journal)
+    gr.addQuery('value', 'STARTSWITH', marker)
+    gr.setLimit(1)
+    gr.query()
+    return gr.next()
+}
+
+/** Write the note(s) carried by a journal-only row onto the parent task; returns the status comment. */
+export function appendJournal(table: string, sysId: string, fields: Readonly<Record<string, string>>): string {
+    const written: string[] = []
+    for (const journal of ['work_notes', 'comments'] as const) {
+        const text = fields[journal]
+        if (!text) continue
+        const marker = NOTE_MARKER.exec(text)?.[0] ?? ''
+        if (marker && journalExists(sysId, journal, marker)) {
+            written.push(`${journal} already migrated`)
+            continue
+        }
+        const parent = new GlideRecord(table)
+        if (!parent.get(sysId) || !parent.isValidField(journal)) continue
+        parent.setValue(journal, text)
+        parent.update()
+        written.push(`${journal} appended to ${get(parent, 'number')}`)
+    }
+    return written.length > 0 ? `Journal: ${written.join('; ')}` : 'Journal: nothing to write'
+}
+
+// ---------------------------------------------------------------------------------------------
+// source agencies live in core_company (one registry for agencies and vendors)
+// ---------------------------------------------------------------------------------------------
+
+const AGENCY_COMPANY_NAMES: Readonly<Record<string, string>> = {
+    hrc: 'US Army Human Resources Command (HRC)',
+    nprc: 'National Personnel Records Center (NPRC)',
+    congressional: 'Congressional inquiry (source)',
+    manual: 'Manual entry (source)',
+    other: 'Other source agency',
+}
+
+/** Create the missing agency companies so `source_agency` references resolve; idempotent by agency code. */
+export function ensureAgencyCompanies(): number {
+    let created = 0
+    for (const [code, label] of Object.entries(SOURCE_AGENCIES)) {
+        const gr = new GlideRecord(PLATFORM_TABLES.company)
+        gr.addQuery(COMPANY_FIELDS.agency_code, code)
+        gr.setLimit(1)
+        gr.query()
+        if (gr.next()) continue
+        gr.initialize()
+        gr.setValue('name', AGENCY_COMPANY_NAMES[code] ?? label)
+        gr.setValue(COMPANY_FIELDS.agency_code, code)
+        gr.setValue('vendor', false)
+        gr.setValue('manufacturer', false)
+        if (gr.insert()) created++
+    }
+    return created
+}
+
+// ---------------------------------------------------------------------------------------------
 // transform hooks
 // ---------------------------------------------------------------------------------------------
 
@@ -228,7 +296,8 @@ export function onStart(form: LegacyFormName, importSet: string): void {
         statusMatches: new Map(),
         lookup: instanceStatusLookup(),
     }
-    log('migration_run', { phase: 'start', form, importSet })
+    const agenciesCreated = form === 'AwardsCase' || form === 'AuthorizationFile' ? ensureAgencyCompanies() : 0
+    log('migration_run', { phase: 'start', form, importSet, agenciesCreated })
 }
 
 function state(form: LegacyFormName, importSet: string): RunState {
@@ -277,35 +346,37 @@ export function onBefore(form: LegacyFormName, source: AnyRecord, target: AnyRec
     }
 
     if (t.journalOnly) {
-        // The target is the existing parent task (coalesced on legacy_unid); only the journal field is written.
+        // The target is the existing parent task (coalesced on legacy_unid). The Import Set engine only
+        // persists mapped-column changes and reports a journal-only update as "No field values changed",
+        // so the note is written to the parent here and the staging row is left `ignored` with an explicit
+        // comment. Re-runs are idempotent: a note whose marker is already on the task is not repeated.
         if (!isUpdate) {
             s.quarantined++
             return { ignore: true, error: true, statusMessage: `${QUARANTINE_STATUS_MESSAGE}: orphan_parent[legacy_unid]: parent case ${t.fields.legacy_unid ?? ''} not found`, warningCount: 1, quarantined: true }
         }
-        for (const journal of ['work_notes', 'comments'] as const) {
-            const text = t.fields[journal]
-            if (text && target.isValidField(journal)) target.setValue(journal, text)
+        const outcome = appendJournal(t.targetTable, String(target.getUniqueValue()), t.fields)
+        s.warnings += t.warnings.length
+        log('import_set_row', { form, legacyUnid: meta.legacyUnid, sourceRow: meta.sourceRow, journal: outcome })
+        return { ignore: true, error: false, statusMessage: [outcome, formatWarnings(t.warnings)].filter(Boolean).join('\n').slice(0, 4000), warningCount: t.warnings.length, quarantined: false }
+    }
+    if (!isUpdate) {
+        const dup = findDuplicateBusinessKey(form, t, meta.legacyUnid)
+        if (dup) {
+            const field = TARGET_BUSINESS_KEY_FIELD[form] ?? ''
+            t.warnings.push({
+                type: 'duplicate_business_key',
+                field,
+                rawValue: t.fields[field] ?? '',
+                message: `Business key ${field} = ${t.fields[field] ?? ''} already loaded from legacy UNID ${dup}; both rows kept`,
+            })
         }
-    } else {
-        if (!isUpdate) {
-            const dup = findDuplicateBusinessKey(form, t, meta.legacyUnid)
-            if (dup) {
-                const field = TARGET_BUSINESS_KEY_FIELD[form] ?? ''
-                t.warnings.push({
-                    type: 'duplicate_business_key',
-                    field,
-                    rawValue: t.fields[field] ?? '',
-                    message: `Business key ${field} = ${t.fields[field] ?? ''} already loaded from legacy UNID ${dup}; both rows kept`,
-                })
-            }
-        }
-        // Field maps copy raw values before this hook runs; clear any the transform decided not to keep.
-        for (const f of Object.keys(DIRECT_FIELD_MAPS[form])) {
-            if (!(f in t.fields) && target.isValidField(f)) target.setValue(f, '')
-        }
-        for (const [field, value] of Object.entries(t.fields)) {
-            if (target.isValidField(field)) target.setValue(field, value)
-        }
+    }
+    // Field maps copy raw values before this hook runs; clear any the transform decided not to keep.
+    for (const f of Object.keys(DIRECT_FIELD_MAPS[form])) {
+        if (!(f in t.fields) && target.isValidField(f)) target.setValue(f, '')
+    }
+    for (const [field, value] of Object.entries(t.fields)) {
+        if (target.isValidField(field)) target.setValue(field, value)
     }
 
     s.warnings += t.warnings.length

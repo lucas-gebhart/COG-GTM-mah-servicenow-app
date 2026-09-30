@@ -29,6 +29,7 @@ import {
     transformMapName,
     type LegacyFormName,
 } from '../src/server/lib/legacyContract'
+import { COMPANY_FIELDS, PLATFORM_TABLES } from '../src/server/lib/domain'
 import { DEFAULT_STATUS_MAP, type StatusMapEntry } from '../src/server/lib/statusMap'
 import { DIRECT_FIELD_MAPS } from '../src/server/migration/rowTransforms'
 
@@ -127,7 +128,7 @@ function hookScript(form: LegacyFormName, when: 'onStart' | 'onBefore' | 'onAfte
         case 'onBefore':
             return [
                 '(function runTransformScript(source, map, log, target) {',
-                `    var r = new ${BRIDGE}().onBefore(${q(form)}, source, target, action);`,
+                `    var r = new ${BRIDGE}().onBefore(${q(form)}, source, target, action == 'update');`,
                 '    if (r.ignore) { ignore = true; }',
                 '    if (r.error) { error = true; error_message = r.statusMessage; }',
                 '    if (r.statusMessage) { status_message = r.statusMessage; }',
@@ -172,7 +173,9 @@ export function renderTransformMaps(): string {
         out.push(`    createOnEmptyCoalesce: ${DIRECT_FIELD_MAPS[form].legacy_unid === undefined ? 'true' : 'false'},`)
         out.push('    fields: {')
         // Journal-only forms (CaseNote) coalesce on the *parent* UNID: the target row is the existing task.
-        out.push(`        legacy_unid: { sourceField: ${q(coalesceColumn(form))}, coalesce: true, coalesceCaseSensitive: false },`)
+        // core_company is augmented, so its lineage column carries the scope prefix.
+        const lineage = c.targetTable === PLATFORM_TABLES.company ? COMPANY_FIELDS.legacy_unid : 'legacy_unid'
+        out.push(`        ${lineage}: { sourceField: ${q(coalesceColumn(form))}, coalesce: true, coalesceCaseSensitive: false },`)
         for (const [target, header] of Object.entries(DIRECT_FIELD_MAPS[form])) {
             if (target === 'legacy_unid') continue
             out.push(`        ${target}: { sourceField: ${q(stagingColumnFor(form, header))} },`)

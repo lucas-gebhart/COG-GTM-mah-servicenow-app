@@ -6,7 +6,7 @@
  * Migration exceptions are not a table any more: the counts come from `sys_import_set_row`
  * states (error / ignored) on the native staging tables.
  */
-import { GlideAggregate, type GlideRecord } from '@servicenow/glide'
+import { GlideAggregate, GlideRecord } from '@servicenow/glide'
 import { CASE_STAGE_ORDER, COMPANY_FIELDS, LEGACY_FORMS, PLATFORM_TABLES, REQUEST_STATE_ORDER, STAGING_TABLE_PREFIX, TABLES, TARGET_STATUS_FIELD, TASK_STATES, type DomainTableKey } from '../lib/domain.ts'
 import { nowValue } from '../rules/glideSupport.ts'
 
@@ -28,6 +28,8 @@ export interface ReconciliationReport {
     duplicate_merge_count: number
     unmapped_status_count: number
     import_row_states: Record<string, number>
+    /** Warning / quarantine types parsed from the staging rows' state comments (same keys as the dry run). */
+    exception_counts: Record<string, number>
     journal_entries: number
     cases_by_stage: Record<string, number>
     cases_by_task_state: Record<string, number>
@@ -88,6 +90,29 @@ function groupCounts(table: string, field: string, order: readonly string[], app
     return out
 }
 
+/** `type[field]: message` lines (warnings) and `Quarantined: parent not found: orphan_parent[...]` comments. */
+const EXCEPTION_TYPE = /(?:^|\n)(?:Quarantined: parent not found: )?([a-z_]+)\[/g
+
+/** Exception counts by type from the Import Set rows' state comments, plus the requesters merged on the instance. */
+export function exceptionCountsFromImportRows(mergedRequesters: number): Record<string, number> {
+    const out: Record<string, number> = {}
+    const gr = new GlideRecord(PLATFORM_TABLES.import_set_row)
+    gr.addQuery('sys_class_name', 'STARTSWITH', STAGING_TABLE_PREFIX)
+    gr.addNotNullQuery('sys_import_state_comment')
+    gr.query()
+    while (gr.next()) {
+        const comment = String(gr.getValue('sys_import_state_comment') ?? '')
+        const re = new RegExp(EXCEPTION_TYPE.source, 'g')
+        let m: RegExpExecArray | null
+        while ((m = re.exec(comment)) !== null) {
+            const type = m[1] ?? ''
+            if (type) out[type] = (out[type] ?? 0) + 1
+        }
+    }
+    if (mergedRequesters > 0) out['duplicate_requester'] = (out['duplicate_requester'] ?? 0) + mergedRequesters
+    return out
+}
+
 export function buildReconciliationReport(): ReconciliationReport {
     const tables: TableCount[] = []
     let unmappedTotal = 0
@@ -108,6 +133,7 @@ export function buildReconciliationReport(): ReconciliationReport {
         gr.addQuery('sys_class_name', 'STARTSWITH', STAGING_TABLE_PREFIX),
     )
     const taskStateOrder = Object.values(TASK_STATES).map(String)
+    const mergedRequesters = countRows(TABLES.requester, (gr) => gr.addNotNullQuery('merged_into'))
     return {
         generated_at: nowValue(),
         tables,
@@ -118,9 +144,10 @@ export function buildReconciliationReport(): ReconciliationReport {
         award_line_quantity_total: sumField(TABLES.award_line, 'quantity'),
         request_line_extended_price_total: sumField(TABLES.request_line, 'extended_price').toFixed(2),
         orphan_count: importRowStates['error'] ?? 0,
-        duplicate_merge_count: countRows(TABLES.requester, (gr) => gr.addNotNullQuery('merged_into')),
+        duplicate_merge_count: mergedRequesters,
         unmapped_status_count: unmappedTotal,
         import_row_states: importRowStates,
+        exception_counts: exceptionCountsFromImportRows(mergedRequesters),
         journal_entries: countRows(PLATFORM_TABLES.journal, (gr) => gr.addQuery('name', 'STARTSWITH', 'x_cog_mah_native_')),
         cases_by_stage: groupCounts(TABLES.awards_case, 'stage', CASE_STAGE_ORDER),
         cases_by_task_state: groupCounts(TABLES.awards_case, 'state', taskStateOrder),
