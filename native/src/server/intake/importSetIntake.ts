@@ -298,9 +298,10 @@ export function intakeAfter(source: AnyRecord, target: AnyRecord): void {
     log('data_change', { table: TABLES.award_line, awardsCase: caseSysId, award: award.award_name, created: id !== '' }, id ? 'success' : 'failure')
 }
 
-function countRows(importSet: string, state?: string): number {
+function countRows(importSet: string, fileName: string, state?: string): number {
     const gr = new GlideRecord(INTAKE_STAGING_TABLE)
     gr.addQuery('sys_import_set', importSet)
+    gr.addQuery('file_name', fileName)
     if (state) gr.addQuery('sys_import_state', state)
     gr.query()
     return gr.getRowCount()
@@ -313,19 +314,20 @@ function countWhere(table: string, field: string, value: string): number {
     return gr.getRowCount()
 }
 
-export function intakeRunCounts(importSet: string): IntakeRunCounts {
+/** Staging-row outcomes of one file within one Import Set (the API reuses an open set across calls). */
+export function intakeRunCounts(importSet: string, fileName: string): IntakeRunCounts {
     return {
-        total: countRows(importSet),
-        inserted: countRows(importSet, 'inserted'),
-        updated: countRows(importSet, 'updated'),
-        ignored: countRows(importSet, 'ignored'),
-        error: countRows(importSet, 'error'),
+        total: countRows(importSet, fileName),
+        inserted: countRows(importSet, fileName, 'inserted'),
+        updated: countRows(importSet, fileName, 'updated'),
+        ignored: countRows(importSet, fileName, 'ignored'),
+        error: countRows(importSet, fileName, 'error'),
     }
 }
 
 /** onComplete: the authorization-file task(s) of this run get the counters, parse stage and a work note. */
 export function intakeComplete(importSet: string): { files: number; counts: IntakeRunCounts } {
-    const counts = intakeRunCounts(importSet)
+    const counts: IntakeRunCounts = { total: 0, inserted: 0, updated: 0, ignored: 0, error: 0 }
     const files = new GlideRecord(TABLES.authorization_file)
     files.addQuery('import_set', importSet)
     files.query()
@@ -333,21 +335,23 @@ export function intakeComplete(importSet: string): { files: number; counts: Inta
     while (files.next()) {
         n++
         const fileSysId = String(files.getUniqueValue())
+        const fileCounts = intakeRunCounts(importSet, get(files, 'file_name'))
+        for (const k of Object.keys(counts) as (keyof IntakeRunCounts)[]) counts[k] += fileCounts[k]
         const cases = countWhere(TABLES.awards_case, 'authorization_file_task', fileSysId)
         const lines = countWhere(TABLES.award_line, 'awards_case.authorization_file_task', fileSysId)
-        const stage = intakeStage(counts)
+        const stage = intakeStage(fileCounts)
         const s = taskStateForStage('authorization_file', stage)
-        files.setValue('record_count', String(counts.total))
-        files.setValue('accepted_count', String(counts.inserted + counts.updated))
-        files.setValue('rejected_count', String(counts.error))
-        files.setValue('duplicate_count', String(counts.ignored))
+        files.setValue('record_count', String(fileCounts.total))
+        files.setValue('accepted_count', String(fileCounts.inserted + fileCounts.updated))
+        files.setValue('rejected_count', String(fileCounts.error))
+        files.setValue('duplicate_count', String(fileCounts.ignored))
         files.setValue('cases_created', String(cases))
         files.setValue('lines_created', String(lines))
         files.setValue('stage', stage)
         files.setValue('state', String(s.state))
         files.setValue('active', s.active ? 'true' : 'false')
-        files.setValue('parse_log', intakeParseLog(get(files, 'file_name'), counts, cases, lines))
-        setJournal(files, 'work_notes', intakeParseLog(get(files, 'file_name'), counts, cases, lines))
+        files.setValue('parse_log', intakeParseLog(get(files, 'file_name'), fileCounts, cases, lines))
+        setJournal(files, 'work_notes', intakeParseLog(get(files, 'file_name'), fileCounts, cases, lines))
         files.update()
     }
     log('intake_completed', { importSet, files: n, ...counts })
