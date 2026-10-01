@@ -6,7 +6,9 @@
  * empty and, on this PDI, neither opening it nor inserting/updating matching records created cards.
  * Cards are plain `vtb_card` rows (board, lane, task, order), so this tool creates the missing ones
  * through the Table API — idempotent, one card per matching task, lane = the lane whose `value`
- * equals the task's lane field. Run after `npm run migrate` (or whenever jobs were loaded outside the UI).
+ * equals the task's lane field — and moves an existing card whose lane no longer matches its task (on this PDI a
+ * drag on the board updates the task's `stage` but the card itself stays put). Run after `npm run migrate` or
+ * whenever jobs were loaded or changed outside the board.
  *
  *   npm run vtb-sync
  */
@@ -42,6 +44,7 @@ export interface SyncSummary {
     lanes: number
     matching: number
     created: number
+    moved: number
     skipped: number
     unlaned: number
 }
@@ -54,9 +57,9 @@ export async function syncBoard(cfg: InstanceConfig, boardName: string): Promise
     const lanes = await rows(cfg, 'vtb_lane', `board=${board.sys_id}`, 'sys_id,value,order')
     const laneByValue = new Map(lanes.map((l) => [ref(l.value), l.sys_id]))
     const tasks = await rows(cfg, table, `${ref(board.filter) || 'active=true'}^ORDERBYnumber`, `sys_id,number,${field}`)
-    const cards = await rows(cfg, 'vtb_card', `board=${board.sys_id}^removed=false`, 'sys_id,task')
-    const carded = new Set(cards.map((c) => ref(c.task)))
-    const summary: SyncSummary = { board: boardName, lanes: lanes.length, matching: tasks.length, created: 0, skipped: 0, unlaned: 0 }
+    const cards = await rows(cfg, 'vtb_card', `board=${board.sys_id}^removed=false`, 'sys_id,task,lane')
+    const cardByTask = new Map(cards.map((c) => [ref(c.task), c]))
+    const summary: SyncSummary = { board: boardName, lanes: lanes.length, matching: tasks.length, created: 0, moved: 0, skipped: 0, unlaned: 0 }
     let order = cards.length
     for (const t of tasks) {
         const lane = laneByValue.get(ref(t[field]))
@@ -64,8 +67,14 @@ export async function syncBoard(cfg: InstanceConfig, boardName: string): Promise
             summary.unlaned++
             continue
         }
-        if (carded.has(t.sys_id)) {
-            summary.skipped++
+        const card = cardByTask.get(t.sys_id)
+        if (card) {
+            if (ref(card.lane) === lane) {
+                summary.skipped++
+                continue
+            }
+            await callInstance(cfg, { method: 'PATCH', path: `/api/now/table/vtb_card/${card.sys_id}`, body: { lane } })
+            summary.moved++
             continue
         }
         await callInstance(cfg, {
@@ -82,7 +91,7 @@ async function main(): Promise<void> {
     const cfg = instanceFromEnv()
     for (const name of BOARD_NAMES) {
         const s = await syncBoard(cfg, name)
-        console.log(`${s.board}: lanes ${s.lanes}, matching tasks ${s.matching}, cards created ${s.created}, already present ${s.skipped}, no lane for value ${s.unlaned}`)
+        console.log(`${s.board}: lanes ${s.lanes}, matching tasks ${s.matching}, cards created ${s.created}, moved ${s.moved}, already in place ${s.skipped}, no lane for value ${s.unlaned}`)
     }
 }
 
