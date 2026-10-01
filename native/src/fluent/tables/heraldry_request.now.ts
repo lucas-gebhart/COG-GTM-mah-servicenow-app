@@ -1,4 +1,4 @@
-import { Table, StringColumn, ChoiceColumn, BooleanColumn, DateTimeColumn, DateColumn, DecimalColumn, EmailColumn, IntegerColumn, MultiLineTextColumn, ReferenceColumn, GenericColumn } from '@servicenow/sdk/core'
+import { BooleanColumn, ChoiceColumn, DateColumn, DateTimeColumn, DecimalColumn, EmailColumn, GenericColumn, IntegerColumn, MultiLineTextColumn, Record, ReferenceColumn, StringColumn, Table } from '@servicenow/sdk/core'
 import { CASE_PRIORITIES, LIMITS, REQUEST_STATES, REQUISITION_PRIORITIES } from '../../server/lib/domain'
 
 /**
@@ -72,4 +72,18 @@ export const x_cog_mah_native_heraldry_request = Table({
     autoNumber: { prefix: 'NHRQ', number: 1000, numberOfDigits: 7 },
     allowWebServiceAccess: true,
     actions: { read: true, create: true, update: true, delete: true },
+})
+
+// Inherited `task.company` carries the platform reference qualifier `customer=true`; MAH vendors are
+// `vendor=true` companies, so without this override the form lookup offers no vendor at all.
+export const heraldry_request_company_qualifier = Record({
+    $id: Now.ID['dict_override_nhrq_company'],
+    table: 'sys_dictionary_override',
+    data: {
+        name: 'x_cog_mah_native_heraldry_request',
+        base_table: 'task',
+        element: 'company',
+        reference_qual_override: true,
+        reference_qual: 'vendor=true^active=true',
+    },
 })

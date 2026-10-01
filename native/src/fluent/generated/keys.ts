@@ -29316,6 +29316,14 @@ declare global {
                         }
                     },
                     {
+                        table: 'sys_dictionary_override'
+                        id: 'aeaf51ec4c624a14a34b7448067837c7'
+                        key: {
+                            name: 'x_cog_mah_native_heraldry_request'
+                            element: 'company'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
                         id: 'aeb17aa704b84b51aca3badb9e116a99'
                         key: {
