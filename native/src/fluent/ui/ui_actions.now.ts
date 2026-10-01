@@ -24,6 +24,7 @@ export const advanceCaseStageAction = UiAction({
     actionName: 'mah_native_advance_stage',
     hint: 'Move the case to the next lifecycle stage (Authorized → Engraving → Assembly/QC → Warehouse → Shipped → Closed).',
     showUpdate: true,
+    showInsert: false, // stage transitions need a saved record: on an unsaved form the redirect lands on "Record not found"
     order: 100,
     condition: "current.active && ['authorized','engraving','assembly_qc','warehouse','shipped'].indexOf(String(current.stage)) >= 0",
     roles: [tacomStaff, csr, engraver, assembler, warehouse, admin],
@@ -39,6 +40,7 @@ export const cancelCaseAction = UiAction({
     actionName: 'mah_native_cancel_case',
     hint: 'Cancel this awards case. Requires a cancel reason.',
     showUpdate: true,
+    showInsert: false, // stage transitions need a saved record: on an unsaved form the redirect lands on "Record not found"
     order: 900,
     condition: "current.active && ['authorized','engraving','assembly_qc','warehouse'].indexOf(String(current.stage)) >= 0",
     roles: [tacomStaff, csr, admin],
@@ -56,6 +58,7 @@ export const submitRequestAction = UiAction({
     actionName: 'mah_native_submit_request',
     hint: 'Validate the DD Form 1348-6 header and submit the request for TACOM review.',
     showUpdate: true,
+    showInsert: false, // stage transitions need a saved record: on an unsaved form the redirect lands on "Record not found"
     order: 100,
     condition: "current.stage == 'draft'",
     roles: [tacomStaff, csr, dla, admin],
@@ -70,6 +73,7 @@ export const startReviewAction = UiAction({
     actionName: 'mah_native_start_review',
     hint: 'Take the request into TACOM review.',
     showUpdate: true,
+    showInsert: false, // stage transitions need a saved record: on an unsaved form the redirect lands on "Record not found"
     order: 110,
     condition: "current.stage == 'submitted'",
     roles: [tacomStaff, dla, admin],
@@ -84,6 +88,7 @@ export const releaseToVendorAction = UiAction({
     actionName: 'mah_native_release_to_vendor',
     hint: 'Release the request to the selected vendor. After release the request is locked.',
     showUpdate: true,
+    showInsert: false, // stage transitions need a saved record: on an unsaved form the redirect lands on "Record not found"
     order: 120,
     condition: "current.stage == 'in_review' && !current.company.nil() && current.approval == 'approved'",
     roles: [tacomStaff, admin],
@@ -98,6 +103,7 @@ export const advanceRequestAction = UiAction({
     actionName: 'mah_native_advance_request',
     hint: 'Released → In production → Shipped → Complete.',
     showUpdate: true,
+    showInsert: false, // stage transitions need a saved record: on an unsaved form the redirect lands on "Record not found"
     order: 130,
     condition: "['released_to_vendor','in_production','shipped'].indexOf(String(current.stage)) >= 0",
     roles: [tacomStaff, vendor, admin],
@@ -112,6 +118,7 @@ export const cancelRequestAction = UiAction({
     actionName: 'mah_native_cancel_request',
     hint: 'Cancel the request before it is released to a vendor.',
     showUpdate: true,
+    showInsert: false, // stage transitions need a saved record: on an unsaved form the redirect lands on "Record not found"
     order: 900,
     condition: "['draft','submitted','in_review'].indexOf(String(current.stage)) >= 0",
     roles: [tacomStaff, csr, dla, admin],
@@ -129,6 +136,7 @@ export const approveSesAction = UiAction({
     actionName: 'mah_native_ses_approve',
     hint: 'Approve the SES positional flag request (AR 840-10).',
     showUpdate: true,
+    showInsert: false, // stage transitions need a saved record: on an unsaved form the redirect lands on "Record not found"
     order: 100,
     condition: "current.stage == 'submitted'",
     roles: [tacomStaff, admin],
@@ -143,6 +151,7 @@ export const rejectSesAction = UiAction({
     actionName: 'mah_native_ses_reject',
     hint: 'Reject the request. Requires a rejection reason.',
     showUpdate: true,
+    showInsert: false, // stage transitions need a saved record: on an unsaved form the redirect lands on "Record not found"
     order: 110,
     condition: "current.stage == 'submitted'",
     roles: [tacomStaff, admin],
@@ -160,6 +169,7 @@ export const mergeRequesterAction = UiAction({
     actionName: 'mah_native_merge_requester',
     hint: 'Merge this duplicate into the requester chosen in "Merge into (survivor)". Cases repoint to the survivor.',
     showUpdate: true,
+    showInsert: false, // stage transitions need a saved record: on an unsaved form the redirect lands on "Record not found"
     order: 100,
     condition: "current.merged_into.nil() && !current.merge_target.nil()",
     roles: [tacomStaff, csr, admin],

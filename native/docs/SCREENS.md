@@ -43,3 +43,10 @@ and then inspected in the browser. The v1 rows were captured on the same instanc
    (same procedure the v1 install used). v1 was unaffected: its counts and pages were re-checked after every install.
 5. **Approval group.** The review flow's "Ask for approval" skips silently when the approver group has no members;
    `npm run grant-roles` now puts `mah.tacom` and `mah.admin` in *MAH Native - TACOM Awards Staff*.
+6. **Stage UI actions on unsaved forms.** The recorded walkthrough found that "Submit request" on a *new, unsaved*
+   request with an invalid header aborted the insert and then redirected to "Record not found"; the stage-transition
+   UI actions are now `show_insert=false`, so a request is saved (with the specific validation message on the form)
+   before it can be submitted.
+7. **Dashboard module.** The "MAH Operations (Native)" module opens the Platform Analytics workspace, which first
+   showed the previously viewed dashboard once during testing; the dashboard picker then showed the native one.
+   Observed once, not reproduced.
