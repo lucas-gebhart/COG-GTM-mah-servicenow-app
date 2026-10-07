@@ -1,3 +1,15 @@
+# Two implementations of the MAH mission
+
+| Directory | Build | Scope | Approach |
+| --- | --- | --- | --- |
+| `/` (this README) | **custom-table build** | `x_cog_mah` | Fourteen standalone custom tables, hand-written stage machine, aging job, exception table and Scripted REST intake |
+| [`/native`](native/README.md) | **platform-native build** | `x_cog_mah_native` | Six work-item tables extend `task`; vendors are `core_company`, the catalog is `cmdb_model`, aging is Task SLA, review is the approval engine, intake is the Import Set API |
+
+Both install side by side on the same instance and deliver the same business capability from the same
+synthetic legacy export (`sample-data/`). The comparison artefact for the showcase is
+[`native/docs/NATIVE-VS-CUSTOM.md`](native/docs/NATIVE-VS-CUSTOM.md); the native build's own guide is
+[`native/README.md`](native/README.md). Everything below this section describes the custom-table build.
+
 # MAH Case Management (`x_cog_mah`)
 
 ServiceNow scoped application for the U.S. Army TACOM ILSC **Medals, Awards & Heraldry (MAH)** mission,
